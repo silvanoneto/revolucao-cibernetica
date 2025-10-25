@@ -1,0 +1,64 @@
+# Core Framework
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
+
+# Scheduler para auto-regularização
+apscheduler
+
+# Spark
+pyspark
+
+# Database
+sqlalchemy
+alembic
+psycopg2-binary
+# sqlite3 já vem incluído no Python padrão
+
+# Vector Database & Embeddings
+chromadb
+sentence-transformers
+torch
+numpy
+
+# Graph Database
+networkx  # Atual implementação usa NetworkX
+neo4j     # Para migração futura (opcional)
+py2neo    # Para migração futura (opcional)
+
+# HTTP & API
+httpx
+requests
+aiohttp
+
+# Data Processing
+pandas
+pyarrow
+
+# Utilities
+python-dotenv
+python-multipart
+python-jose[cryptography]
+passlib[bcrypt]
+python-dateutil
+
+# Logging & Monitoring
+loguru
+prometheus-client
+
+# Testing
+pytest
+pytest-asyncio
+pytest-cov
+
+# Development
+black
+ruff
+mypy
+pre-commit
+
+# Documentation
+mkdocs
+mkdocs-material
+

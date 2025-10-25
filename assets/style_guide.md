@@ -1401,7 +1401,7 @@ Fique à vontade para contribuir ou entrar em contato.
 
 ## 🎉 Conclusão
 
-Você agora tem todas as informações para criar um site com o estilo "Revolução Cibernética":
+Você tem todas as informações para criar um site com o estilo "Revolução Cibernética":
 
 ✅ Cores vibrantes (roxo e rosa)  
 ✅ Tipografia moderna (Inter)  

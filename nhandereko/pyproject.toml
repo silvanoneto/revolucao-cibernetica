@@ -1,0 +1,81 @@
+[project]
+name = "nhandereko"
+version = "1.0.0"
+description = "Sistema de Feedback Loops Recursivos para Aprendizado Coletivo"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi",
+    "uvicorn[standard]",
+    "pydantic",
+    "pydantic-settings",
+    "apscheduler",
+    "pyspark",
+    "sqlalchemy",
+    "alembic",
+    "psycopg2-binary",
+    "chromadb",
+    "sentence-transformers",
+    "torch",
+    "numpy",
+    "networkx",
+    "httpx",
+    "requests",
+    "aiohttp",
+    "pandas",
+    "pyarrow",
+    "python-dotenv",
+    "python-multipart",
+    "python-jose[cryptography]",
+    "passlib[bcrypt]",
+    "python-dateutil",
+    "loguru",
+    "prometheus-client",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+    "pytest-cov",
+    "black",
+    "ruff",
+    "mypy",
+    "pre-commit",
+]
+docs = [
+    "mkdocs",
+    "mkdocs-material",
+]
+graph-db = [
+    "neo4j",
+    "py2neo",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["server", "scripts"]
+
+[tool.black]
+line-length = 100
+target-version = ["py312"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.mypy]
+python_version = "3.12"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+asyncio_mode = "auto"
