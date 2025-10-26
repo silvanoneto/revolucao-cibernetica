@@ -46,6 +46,7 @@ spark/
 htmlcov/
 .tox/
 .nox/
+.ruff_cache/
 
 # Backup
 *.bak
