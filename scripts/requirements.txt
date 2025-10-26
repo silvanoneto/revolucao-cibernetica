@@ -1,0 +1,15 @@
+# Dependências para exportação de conteúdo
+# A Revolução Cibernética - Scripts de Exportação
+
+# EPUB generation
+ebooklib
+
+# HTML parsing
+beautifulsoup4
+lxml
+
+# PDF generation
+xhtml2pdf
+
+# Image compression
+Pillow

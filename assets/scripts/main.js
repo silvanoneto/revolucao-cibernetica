@@ -260,3 +260,118 @@ function calculateReadingTime() {
         }
     }
 }
+
+// ====== EXPORTAÇÃO PDF ======
+function exportToPDF() {
+    // Redirecionar para a página de download com formato PDF
+    window.location.href = 'download.html?formato=pdf';
+}
+
+// ====== EXPORTAÇÃO EPUB ======
+function exportToEPUB() {
+    // Redirecionar para a página de download com formato EPUB
+    window.location.href = 'download.html?formato=epub';
+}
+
+// ====== EXPORTAÇÃO XML ======
+function exportToXML() {
+    // Redirecionar para a página de download com formato XML
+    window.location.href = 'download.html?formato=xml';
+}
+
+// ====== EXPORTAÇÃO JSONL ======
+function exportToJSONL() {
+    // Redirecionar para a página de download com formato JSONL
+    window.location.href = 'download.html?formato=jsonl';
+}
+
+// Adicionar animações CSS dinamicamente
+if (!document.getElementById('export-animations')) {
+    const style = document.createElement('style');
+    style.id = 'export-animations';
+    style.textContent = `
+        @keyframes slideIn {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes slideOut {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+        }
+        
+        /* Estilos do modo focado */
+        .focus-mode .content-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .focus-mode .header,
+        .focus-mode .chapter {
+            animation: focusIn 0.4s ease;
+        }
+        
+        @keyframes focusIn {
+            from {
+                opacity: 0.7;
+                transform: scale(0.98);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        /* Estilos de impressão otimizados */
+        @media print {
+            .mobile-menu-btn,
+            .mobile-overlay,
+            .sidebar,
+            .action-button,
+            .skip-link,
+            #reading-progress {
+                display: none !important;
+            }
+            
+            .content-container {
+                max-width: 100%;
+                padding: 0;
+            }
+            
+            .chapter {
+                page-break-after: always;
+            }
+            
+            h1, h2, h3 {
+                page-break-after: avoid;
+            }
+            
+            pre, blockquote, table {
+                page-break-inside: avoid;
+            }
+        }
+        
+        /* Hover nos botões de ação */
+        .action-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .action-button:active {
+            transform: translateY(0);
+        }
+    `;
+    document.head.appendChild(style);
+}
