@@ -42,7 +42,7 @@ jobs:
           curl -sS -X PUT \
             -H "Authorization: token $GITHUB_TOKEN" \
             -H "Accept: application/vnd.github+json" \
-            -d '{"source":{"branch":"gh-pages","path":"/"}}' \
+            -d '{"source":{"branch":"master","path":"/"}}' \
             "$api" | jq -r '.url, .status, .cname' || true
 
       - name: Show Pages status
