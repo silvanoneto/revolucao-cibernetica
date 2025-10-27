@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy to GitHub Pages (gh-pages)
 
 on:
   push:
@@ -12,22 +12,19 @@ permissions:
   id-token: write
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
-    name: Build and upload artifact
+    name: Build and publish to gh-pages
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Upload site to Pages artifact
-        uses: actions/upload-pages-artifact@v1
+      - name: Publish to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          path: ./
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    name: Deploy to GitHub Pages
-    steps:
-      - name: Deploy
-        uses: actions/deploy-pages@v1
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
+          # publish_branch: gh-pages (default)
+          # You can customize the committer name/email if desired
+          user_name: github-actions[bot]
+          user_email: github-actions[bot]@users.noreply.github.com
