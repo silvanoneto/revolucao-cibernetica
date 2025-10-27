@@ -5,6 +5,7 @@ Script para exportar o conteúdo do site "A Revolução Cibernética" para EPUB,
 
 import os
 import sys
+import warnings
 import xml.etree.ElementTree as ET
 from xml.dom import minidom
 from datetime import datetime
@@ -14,6 +15,10 @@ from xhtml2pdf import pisa  # type: ignore
 from PIL import Image
 from io import BytesIO
 import base64
+
+# Suprimir warnings de JSON decode do xhtml2pdf
+warnings.filterwarnings('ignore', message='.*JSON.*')
+warnings.filterwarnings('ignore', category=UserWarning, module='xhtml2pdf')
 
 
 def compress_image(image_data: bytes, max_size_kb: int = 500, quality: int = 75) -> bytes:
@@ -870,11 +875,28 @@ def create_pdf() -> str:
     print(f"\nGerando arquivo PDF: {output_file}")
 
     # Usar xhtml2pdf para converter HTML em PDF
-    with open(output_file, "wb") as pdf_file:
-        pisa_status = pisa.CreatePDF(final_html, dest=pdf_file, encoding="utf-8")
-
-    if pisa_status.err:
-        raise Exception(f"Erro ao gerar PDF: {pisa_status.err}")
+    # Suprimir warnings do xhtml2pdf redirecionando stdout e stderr temporariamente
+    import io
+    import contextlib
+    
+    stdout_backup = sys.stdout
+    stderr_backup = sys.stderr
+    sys.stdout = io.StringIO()
+    sys.stderr = io.StringIO()
+    
+    try:
+        with open(output_file, "wb") as pdf_file:
+            pisa_status = pisa.CreatePDF(final_html, dest=pdf_file, encoding="utf-8")
+        
+        sys.stdout = stdout_backup
+        sys.stderr = stderr_backup
+        
+        if pisa_status.err:
+            raise Exception(f"Erro ao gerar PDF: {pisa_status.err}")
+    except Exception as e:
+        sys.stdout = stdout_backup
+        sys.stderr = stderr_backup
+        raise e
 
     print(f"✓ PDF criado com sucesso: {output_file}")
 

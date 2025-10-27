@@ -33,7 +33,7 @@
             padding: 0;
             width: 100vw;
             height: 100vh;
-            background: var(--background);
+            background: #ffffff !important; /* Sempre branco */
             overflow: hidden;
             font-family: 'Inter', sans-serif;
         }
@@ -78,7 +78,7 @@
         /* 🌈 ANIMAÇÃO ARCO-ÍRIS */
         @keyframes rainbowGlow {
             0% {
-                border-
+                border-color: #8b5cf6;
                 box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
             }
 
@@ -113,7 +113,7 @@
             }
 
             100% {
-                border-
+                border-color: #8b5cf6;
                 box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
             }
         }
@@ -536,25 +536,6 @@
                 console.error('❌ Função de regeneração não encontrada');
             }
         }
-    </script>
-    
-    <!-- Script para sincronizar tema com localStorage -->
-    <script>
-        // Restaurar tema salvo (padrão: dark)
-        (function() {
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'light') {
-                document.documentElement.classList.remove('dark');
-            } else {
-                // Se não tem tema salvo ou é 'dark', aplica dark mode
-                document.documentElement.classList.add('dark');
-            }
-            
-            // Sincronizar tamanho de fonte também
-            const savedFontSize = localStorage.getItem('fontSize') || 'medium';
-            document.documentElement.classList.remove('font-small', 'font-medium', 'font-large');
-            document.documentElement.classList.add('font-' + savedFontSize);
-        })();
     </script>
 </body>
 
