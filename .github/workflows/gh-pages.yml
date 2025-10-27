@@ -32,3 +32,23 @@ jobs:
           # publish_branch: gh-pages (default)
           user_name: silvanoneto
           user_email: dev@silvanoneto.com
+
+      - name: Ensure GitHub Pages source is set to gh-pages (API)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          api="https://api.github.com/repos/${{ github.repository }}/pages"
+          echo "PUT $api -> set source to gh-pages"
+          curl -sS -X PUT \
+            -H "Authorization: token $GITHUB_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            -d '{"source":{"branch":"gh-pages","path":"/"}}' \
+            "$api" | jq -r '.url, .status, .cname' || true
+
+      - name: Show Pages status
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          api="https://api.github.com/repos/${{ github.repository }}/pages"
+          echo "GET $api -> pages info"
+          curl -sS -H "Authorization: token $GITHUB_TOKEN" -H "Accept: application/vnd.github+json" "$api" | jq || true
