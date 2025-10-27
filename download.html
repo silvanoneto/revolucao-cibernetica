@@ -286,6 +286,7 @@
                 font-size: 0.95rem;
                 margin-bottom: 1rem;
                 line-height: 1.5;
+                transition: opacity 0.2s ease;
             }
 
             .captcha-refresh {
@@ -662,22 +663,29 @@
         }
 
         function generateVisualCaptcha() {
+            console.log('🎲 generateVisualCaptcha() iniciado');
             if (!ctx) initCanvas();
             
             // Limpar canvas
             ctx.clearRect(0, 0, canvas.width, canvas.height);
+            console.log('🧹 Canvas limpo');
             
             // Reset
             captchaCircles = [];
             clickedOrder = [];
             
-            // Escolher tipo de desafio aleatório
-            currentChallengeType = getRandomChallengeType();
-            
-            // Atualizar instrução
-            const instruction = document.querySelector('.captcha-instruction');
-            if (instruction) {
-                instruction.innerHTML = getChallengeInstruction(currentChallengeType);
+            // Se não foi definido externamente, escolher tipo aleatório
+            if (!currentChallengeType) {
+                currentChallengeType = getRandomChallengeType();
+                console.log('🎯 Tipo de desafio escolhido:', currentChallengeType);
+                
+                // Atualizar instrução
+                const instruction = document.querySelector('.captcha-instruction');
+                if (instruction) {
+                    instruction.innerHTML = getChallengeInstruction(currentChallengeType);
+                }
+            } else {
+                console.log('🎯 Usando tipo já definido:', currentChallengeType);
             }
             
             // Gerar desafio específico
@@ -697,7 +705,9 @@
                     break;
             }
             
+            console.log('🎨 Total de círculos gerados:', captchaCircles.length);
             drawCircles();
+            console.log('✅ generateVisualCaptcha() completo');
         }
 
         function generateSizeChallenge() {
@@ -927,6 +937,7 @@
         }
 
         function drawCircles() {
+            console.log('🎨 drawCircles() chamado, círculos:', captchaCircles.length);
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             
             // Desenhar todos os círculos
@@ -1174,15 +1185,56 @@
         }
 
         function regenerateCaptcha() {
+            console.log('🔄 ========== REGENERATE CAPTCHA INICIADO ==========');
             const error = document.getElementById('captchaError');
-            error.classList.remove('active');
+            if (error) {
+                error.classList.remove('active');
+            }
             
             // Limpar completamente
             captchaCircles = [];
             clickedOrder = [];
+            console.log('🧹 Arrays limpos');
+            
+            // Limpar canvas imediatamente e com força
+            if (ctx && canvas) {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = 'white';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                console.log('🧹 Canvas limpo com força bruta');
+            }
+            
+            // Forçar mudança de tipo de desafio (garantir que seja diferente)
+            const oldType = currentChallengeType;
+            const challenges = [
+                'size-ascending',
+                'size-descending',
+                'color-sequence',
+                'position-left',
+                'odd-circles'
+            ];
+            
+            // Filtrar para pegar apenas tipos diferentes do atual
+            const availableTypes = challenges.filter(t => t !== oldType);
+            currentChallengeType = availableTypes[Math.floor(Math.random() * availableTypes.length)];
+            
+            console.log('🎯 Forçando mudança:', oldType, '→', currentChallengeType);
+            
+            // Atualizar instrução IMEDIATAMENTE (sem setTimeout)
+            const instruction = document.querySelector('.captcha-instruction');
+            if (instruction) {
+                const newInstruction = getChallengeInstruction(currentChallengeType);
+                instruction.innerHTML = newInstruction;
+                // Forçar reflow
+                void instruction.offsetHeight;
+                console.log('✅ Instrução atualizada IMEDIATAMENTE');
+            }
             
             // Gerar novo desafio
             generateVisualCaptcha();
+            console.log('✅ Novo desafio gerado');
+            console.log('🔄 ========== REGENERATE CAPTCHA COMPLETO ==========');
         }
 
         function showCaptcha() {
@@ -1281,8 +1333,46 @@
         }
 
         function downloadEPUB() {
-            // Mostrar captcha antes de fazer download
-            showCaptcha();
+            // Verificar se já passou pelo CAPTCHA no entry.html
+            const entryCaptchaPassed = sessionStorage.getItem('entry_captcha_passed');
+            
+            if (entryCaptchaPassed === 'true') {
+                // Já passou - fazer download direto
+                console.log('✅ CAPTCHA verificado - iniciando download');
+                performDownloadDirect();
+            } else {
+                // Redirecionar para entry.html
+                console.log('🔒 Redirecionando para verificação CAPTCHA');
+                const formatoParam = urlParams.get('formato') || 'epub';
+                window.location.href = `entry.html?return=download.html?formato=${formatoParam}`;
+            }
+        }
+        
+        // Função para fazer download direto
+        function performDownloadDirect() {
+            console.log('Iniciando download:', formato.nome, '→', formato.arquivo);
+            
+            const link = document.createElement('a');
+            link.href = formato.arquivo;
+            link.download = formato.arquivo.split('/').pop();
+            link.style.display = 'none';
+            link.setAttribute('download', formato.arquivo.split('/').pop());
+            
+            document.body.appendChild(link);
+            
+            try {
+                link.click();
+                showDownloadNotification();
+            } catch (error) {
+                console.error('Erro ao iniciar download:', error);
+                alert(`Erro ao baixar o arquivo ${formato.nome}.\nPor favor, tente novamente.`);
+            } finally {
+                setTimeout(() => {
+                    if (document.body.contains(link)) {
+                        document.body.removeChild(link);
+                    }
+                }, 500);
+            }
         }
 
         // Inicializar quando página carregar

@@ -1,225 +1,423 @@
-# A Revolução Cibernética: Manifesto e Sistema
+# 🌀 A Revolução Cibernética: Manifesto e Sistema
 
 > Da Teoria à Práxis: Cibernética de Segunda Ordem, Marxismo Digital e Inteligência Coletiva
 
 [![CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/4a43d727-59ec-4e74-b4f6-f075bef175b2/deploy-status)](https://app.netlify.com/projects/obestafera/deploys)
 
+---
+
 ## 📖 Sobre o Projeto
 
-Este projeto conecta **teoria crítica** e **implementação concreta**, apresentando:
+**A Revolução Cibernética** é uma **ontologia executável** — um manifesto filosófico-político que não apenas teoriza, mas **performa** suas próprias teses através de:
 
-1. **🔥 Manifesto Político:** "A Morte do Eu Individual e o Nascimento do Eu Coletivo" - análise filosófica da cibernética socialista
-2. **📚 Ensaio Teórico:** Síntese profunda sobre Cibernética, Marxismo e Capitalismo Digital no século XXI
-3. **🤖 Sistema Nhandereko:** Implementação real de inteligência coletiva baseada em cibernética de segunda ordem
+1. **🔥 Manifesto Político:** "A Morte do Eu Individual e o Nascimento do Eu Coletivo"
+2. **📚 Ensaio Teórico:** Interface ternária navegável com genealogia intelectual completa
+3. **🎨 Arte Generativa:** Canvas filosófico que visualiza sistemas cibernéticos
+4. **🤖 CAPTCHA Subversivo:** Sistema anti-bot que celebra movimento caótico
+5. **📥 Download:** EPUBs, PDFs e formatos estruturados (XML, JSONL)
 
-### Temas Centrais
+### 🎯 Três Pilares Fundacionais
 
-- 🔄 **Cibernética de primeira e segunda ordem** aplicada a sistemas sociais
-- 🌀 **Feedback loops** e agência coletiva na era digital
-- 💼 **Uberização do trabalho** e exploração algorítmica
-- 👁️ **Capitalismo de vigilância** como extrativismo de dados
-- 🌍 **Teoria da dependência** no capitalismo de plataforma
-- 🇧🇷 **Sul Global** como laboratório de cibernética popular
-- 🏗️ **Cooperativismo de plataforma** e tecnologias conviviais
+#### 1. **Pilar Filosófico: Ontologia Relacional**
+
+- **Tese:** O ser não é substância, mas **relação**
+- **Genealogia:** Bateson, Von Foerster, Deleuze & Guattari, Maturana & Varela
+- **Manifestação:** Formas geométricas cuja identidade emerge de relações, não essências
+
+#### 2. **Pilar Técnico: Sistema Ternário Universal**
+
+- **Tese:** A realidade digital é **ternária** (-1, 0, +1), não binária (0/1)
+- **Base:** Ternário balanceado (Knuth), Lógica trivalente (Łukasiewicz)
+- **Implementação:** Temporalidade (Passado/Presente/Futuro), Espacialidade (Bordas/Neutro/Centro)
+
+#### 3. **Pilar Práxico: Crítica Performativa**
+
+- **Tese:** A crítica da automação deve **performar** alternativas
+- **Estratégias:** CAPTCHA anti-algorítmico, código aberto, epistemologias plurais (Ubuntu, Nhandereko)
+
+---
 
 ## 🚀 Acesso Rápido
 
-- **Site Principal:** [https://obestafera.com/](https://obestafera.com/)
-- **Manifesto:** [manifesto.html](manifesto.html)
-- **Sistema Nhandereko:** [nhandereko/](nhandereko/)
+- **🌐 Site Principal:** [https://obestafera.com/](https://obestafera.com/)
+- **🔥 Manifesto:** [manifesto.html](https://obestafera.com/manifesto.html)
+- **📚 Ensaio Teórico:** [index.html](https://obestafera.com/)
+- **📥 Downloads:** [download.html](https://obestafera.com/download.html)
+
+---
 
 ## 🎯 Novidades (Outubro 2025)
 
-### ✨ Manifesto Renovado
-- **Nova seção introdutória:** "Você Está no Loop" - explica agência em feedback loops de forma acessível
-- **3 exemplos práticos:** Cybersyn moderno, exploração no iFood, vigilância no Instagram
-- **Seção "Primeiros Passos":** 4 níveis de ação concreta (ferramentas, organização, política, construção)
-- **Checklist de transformação:** 10 ações mensuráveis com sistema de pontuação
-- **Resumo visual:** Consolida aprendizado com cards e métricas
-- **50% mais sintético:** Redução de verbosidade mantendo profundidade teórica
-- **Botão GitHub:** Convite direto para contribuir na sidebar
+### 🔄 **Autocrítica e Responsabilidade Epistêmica**
 
-### 🤖 Sistema Nhandereko (Fase 1 Completa)
-- **Endpoint híbrido:** Integração de 4 camadas arquiteturais com 3 ordens operacionais
-- **Pesos dinâmicos:** Grafo evolui baseado em qualidade de feedback
-- **Métricas em tempo real:** 4 endpoints para monitorar saúde do sistema
-- **7 novas tabelas:** Infraestrutura para multi-agentes e consolidação
-- **Documentação completa:** Arquitetura, exemplos, melhorias propostas
+Aplicando **cibernética de segunda ordem** ao próprio projeto — o sistema se auto-observa e se corrige:
+
+#### **Correções Realizadas:**
+
+1. **Ubuntu (manifesto.html)**
+   - ✅ Tradução precisa: "Uma pessoa é uma pessoa **através** de outras pessoas" (Michael Onyebuchi Eze)
+   - ✅ Nota crítica reconhecendo debates internos (Pityana, feministas africanas)
+
+2. **Nhandereko Guarani (manifesto.html)**
+   - ✅ Nota crítica sobre limitações das fontes secundárias
+   - ✅ Compromisso com consulta a lideranças indígenas
+
+3. **Sistema Ternário (index.html)**
+   - ✅ Especificado como **analogia conceitual/pedagógica**
+   - ✅ Reconhecidas barreiras técnicas para adoção mainstream
+   - ✅ Conexão temporal clarificada como filosófica (inspirada em Łukasiewicz)
+
+#### **Validações Confirmadas:**
+
+- ✅ Referências cibernéticas ocidentais bem fundamentadas
+- ✅ Conexão válida com debates matemáticos contemporâneos (Benacerraf, estruturalismo)
+- ✅ Realismo Agencial de Karen Barad corretamente representado
+
+**Princípio:** *"Reconhecer erros não enfraquece o projeto — o fortalece. O loop se fecha: teoria ⇄ práxis."*
+
+---
+
+### ✨ Interface Ternária Navegável
+
+#### **Sistema Guaiamum** 🦀
+
+Metáfora orgânica para controle de perspectiva cibernética:
+
+- **Patas Posteriores** → Globe (+1) → Futuro/Síntese
+- **Centro Sensorial** → Plano (0) → Presente/Equilíbrio  
+- **Patas Anteriores** → Fisheye (-1) → Passado/Expansão
+- **Garras** → Rotação ±45° → Input/Output
+
+#### **Três Camadas Temporais:**
+
+| Camada | Valor | Conteúdo | Cor |
+|--------|-------|----------|-----|
+| **Passado** | -1 | Genealogia intelectual (1948-2023) | 🔴 Vermelho |
+| **Presente** | 0 | Manifesto e crítica atual | 🟢 Verde |
+| **Futuro** | +1 | Possibilidades e construção | 🔵 Azul |
+
+---
+
+### 🎨 Canvas Filosófico Interativo
+
+**Características:**
+
+- **Sistema de Caos Ternário:** Bordas (-1) ↔ Neutro (0) ↔ Centro (+1)
+- **Partículas Relacionais:** Identidade emerge de posição, velocidade, interações
+- **Fita de Möbius:** Visualização de loops infinitos (teoria ⇄ práxis)
+- **3 Loops Fractais:** Micro (indivíduo) → Macro (sociedade) → Meta (sistemas de sistemas)
+
+---
+
+### 🤖 CAPTCHA Anti-Algorítmico
+
+**Conceito:** Sistema de verificação que **celebra** movimento caótico humano, subvertendo lógica de automação:
+
+- **Captura movimento do mouse** em trajetória não-linear
+- **Requer** mínimo de 50 pontos de dados
+- **Valoriza** imprevisibilidade e variação
+- **Crítica performativa:** Humanos = movimento livre; Bots = padrões rígidos
+
+**Página de entrada:** [entry.html](https://obestafera.com/entry.html)
+
+---
 
 ## 📁 Estrutura do Projeto
 
-```
+```text
 revolucao-cibernetica/
-├── index.html                          # Ensaio teórico completo
-├── manifesto.html                      # Manifesto político acessível ✨ NOVO
+├── entry.html                          # CAPTCHA anti-algorítmico 🤖
+├── index.html                          # Ensaio teórico (interface ternária) 📚
+├── manifesto.html                      # Manifesto político acessível 🔥
+├── download.html                       # Formatos para download 📥
 ├── robots.txt & sitemap.xml            # SEO
+├── service-worker.js                   # PWA offline-first
+│
 ├── assets/
-│   ├── css/styles.css                  # Design responsivo + modo escuro
+│   ├── css/
+│   │   ├── styles.css                  # Design base + modo escuro
+│   │   ├── index-ternary.css           # Interface ternária navegável
+│   │   ├── manifesto-evolved.css       # Manifesto responsivo
+│   │   └── download.css                # Página de downloads
+│   │
 │   ├── images/                         # 50+ ilustrações conceituais
-│   └── scripts/main.js                 # Interatividade + navegação
-├── nhandereko/                         # Sistema de IA coletiva 🤖 NOVO
-│   ├── server/                         # FastAPI backend
-│   │   ├── main.py                     # Endpoints + consulta híbrida
-│   │   ├── database.py                 # 21 tabelas SQLite
-│   │   ├── graph.py                    # Grafo com pesos dinâmicos
-│   │   ├── embeddings.py               # Memória semântica
-│   │   └── sintese_expansao.py         # Lógica das 3 ordens
-│   ├── scripts/                        # Automação
-│   │   ├── init-db.py                  # Inicializa schema
-│   │   ├── start-server.sh             # Deploy local
-│   │   └── status-server.sh            # Monitoramento
-│   ├── docs/                           # Documentação técnica
-│   │   ├── ARQUITETURA.md              # 4 camadas + 3 ordens
-│   │   ├── MELHORIAS_PROPOSTAS.md      # Roadmap Fase 2 e 3
-│   │   ├── MELHORIAS_IMPLEMENTADAS.md  # Fase 1 completa
-│   │   ├── TRES_LOOPS.md               # Teoria dos loops
-│   │   └── INFORMACAO_COMO_LIGA.md     # Filosofia informacional
-│   └── tests/                          # Testes automatizados
-└── docs/                               # Documentação do manifesto
-    ├── MANIFESTO_MELHORIAS_ACESSIBILIDADE.md
-    └── MANIFESTO_REVISAO_SINTESE.md
+│   │   ├── 01_capa_revolucao_cibernetica.png
+│   │   ├── 02_abertura_multiplicidades.png
+│   │   ├── 03_ontologia_relacional.png
+│   │   └── ...
+│   │
+│   └── scripts/
+│       ├── main.js                     # Interatividade geral
+│       ├── captcha.js                  # Sistema anti-bot
+│       ├── ternary-navigation.js       # Navegação temporal (-1, 0, +1)
+│       ├── index-mobius.js             # Canvas: Fita de Möbius
+│       ├── tres-loops.js               # Canvas: 3 Loops Fractais
+│       ├── manifesto-background.js     # Canvas: Background filosófico
+│       └── manifesto-mobius.js         # Canvas: Möbius no manifesto
+│
+├── docs/                               # Documentação técnico-filosófica
+│   ├── SINTESE_COMPLETA_REVOLUCAO_CIBERNETICA.md    # Visão 360°
+│   ├── GUAIAMUM_ANATOMIA_FUNCIONAL.md               # Sistema de controle
+│   ├── META_OBSERVACAO_LOOPS.md                     # Cibernética aplicada
+│   ├── ESTRATEGIA_METODOLOGICA_TESE_ANTITESE.md     # Framework conceitual
+│   ├── LATERALIDADE_CANVAS_CIBERNETICO.md           # Arte generativa
+│   ├── EXPORT.md                                    # Formatos de exportação
+│   ├── XML_GUIDE.md                                 # Estrutura XML
+│   │
+│   ├── revolucao_cibernetica.pdf                    # Versão impressa
+│   ├── revolucao_cibernetica.epub                   # E-reader
+│   ├── revolucao_cibernetica.xml                    # Estruturado
+│   └── revolucao_cibernetica.jsonl                  # Machine-readable
+│
+├── scripts/
+│   ├── export_file.py                  # Geração de formatos
+│   ├── pyrightconfig.json              # Type checking
+│   └── requirements.txt                # Dependências Python
+│
+└── lei.md                              # Licença CC BY-SA 4.0
 ```
 
-## 🎨 Características
+---
 
-- ✨ **Design responsivo** - Desktop, tablet e mobile
-- 🌓 **Modo escuro nativo** - Otimizado para leitura prolongada
-- � **Feedback loops visuais** - Exemplos interativos e práticos
-- ♿ **Acessibilidade** - ARIA labels, navegação por teclado
-- 🔍 **SEO otimizado** - Meta tags, Schema.org, Open Graph
-- 📊 **Métricas de impacto** - Checklists e acompanhamento de progresso
+## 🎨 Características Técnicas
+
+### Frontend
+
+- ✨ **Design Responsivo** — Desktop, tablet e mobile
+- 🌓 **Modo Escuro Nativo** — Otimizado para leitura prolongada
+- 🎭 **Canvas Filosóficos** — 5 sistemas de arte generativa interativa
+- ♿ **Acessibilidade** — ARIA labels, navegação por teclado
+- 🔍 **SEO Otimizado** — Meta tags, Schema.org, Open Graph
+- 📱 **PWA** — Service worker, funciona offline
+
+### Tecnologias
+
+- **HTML5 Semântico** — Estrutura acessível
+- **CSS3 Avançado** — Variables, Grid, Flexbox, Animations
+- **Vanilla JavaScript** — Sem dependências, 100% customizado
+- **Canvas API** — Arte generativa de alta performance
+- **Python** — Scripts de exportação (Beautiful Soup, ebooklib)
+
+---
 
 ## 🏃 Como Executar Localmente
 
-### Site (Manifesto + Ensaio)
-
-1. Clone o repositório:
+### 1. Clone o Repositório
 
 ```bash
 git clone https://github.com/silvanoneto/revolucao-cibernetica.git
 cd revolucao-cibernetica
 ```
 
-2. Abra o arquivo `index.html` em seu navegador ou use um servidor local:
+### 2. Servidor Local
+
+Escolha uma opção:
 
 ```bash
 # Opção 1: Python
 python -m http.server 8000
 
-# Opção 2: Node.js (npx)
+# Opção 2: Node.js
 npx http-server
 
 # Opção 3: PHP
 php -S localhost:8000
 ```
 
-3. Acesse no navegador: `http://localhost:8000`
+### 3. Acesse no Navegador
 
-### Sistema Nhandereko
-
-Veja instruções detalhadas em [nhandereko/README.md](nhandereko/README.md)
-
-**Quick start:**
-
-```bash
-cd nhandereko
-pip install -r requirements.txt
-python scripts/init-db.py
-python server/main.py
+```
+http://localhost:8000/entry.html  # Começa pelo CAPTCHA
 ```
 
-Acesse: `http://localhost:8000/docs` (Swagger UI)
+**Fluxo de navegação:**
+```
+entry.html (CAPTCHA) → index.html (Ensaio) → manifesto.html (Político)
+                     ↓
+                download.html (Formatos)
+```
 
-## 📚 Conteúdo
+---
 
-### Manifesto: A Morte do Eu Individual
+## 📚 Conteúdo Detalhado
 
-1. **🌀 Você Está no Loop** - Introdução sobre agência em feedback loops
-2. **Abertura: Multiplicidades** - Ontologia relacional
-3. **Cibernética de Primeira Ordem** - Controle e exploração algorítmica
-4. **Cibernética de Segunda Ordem** - Autogestão e Cybersyn
-5. **Ética e Práxis** - Responsabilidade coletiva
-6. **Projeto Urgente** - Soberania tecnológica do Sul Global
-7. **🚀 Primeiros Passos** - 4 níveis de ação concreta
+### 🔥 Manifesto: A Morte do Eu Individual
 
-### Ensaio Teórico (index.html)
+**Seções:**
 
-Aprofundamento acadêmico dos temas do manifesto com referências completas.
+1. **🌀 Você Está no Loop** — Agência em feedback loops (Cybersyn, iFood, Instagram)
+2. **Abertura: Multiplicidades** — Ontologia relacional vs. atomismo
+3. **Do Eu Individual ao Eu Coletivo** — Ubuntu, Nhandereko, Realismo Agencial
+4. **Cibernética de Primeira Ordem** — Arquitetura de controle (Uber, Meta, fintech)
+5. **Cibernética de Segunda Ordem** — Cybersyn chileno, OGAS soviético
+6. **O Nascimento do Eu Coletivo** — Inteligência distribuída, ética aplicada
+7. **Projeto Urgente** — Soberania tecnológica do Sul Global
+8. **🚀 Primeiros Passos** — 4 níveis de ação concreta
 
-### Sistema Nhandereko
+**Inovações:**
 
-Implementação de sistema de conhecimento baseado em:
-- **3 Ordens Operacionais:** Síntese (read-only), Expansão (write-only), Evolução (read-write)
-- **4 Camadas Arquiteturais:** Estrutural (SQL), Histórica (eventos), Relacional (grafo), Memória (embeddings)
-- **Pesos Dinâmicos:** Grafo evolui baseado em qualidade de feedback
-- **Métricas em Tempo Real:** Monitoramento de saúde do sistema
+- Checklist de transformação (10 ações mensuráveis)
+- Resumo visual com cards e métricas
+- Navegação Möbius (teoria ⇄ práxis)
+- 3 Loops Fractais (Micro → Macro → Meta)
+
+---
+
+### 📚 Ensaio Teórico: Interface Ternária
+
+**Três Camadas Temporais:**
+
+#### 🔴 **Passado (-1)** — Genealogia Intelectual (1948-2023)
+
+Timeline interativa com:
+- **1948:** Norbert Wiener — *Cybernetics*
+- **1960:** Stafford Beer — Management Cybernetics
+- **1972:** Gregory Bateson — *Steps to an Ecology of Mind*
+- **1980:** Deleuze & Guattari — *Mil Platôs*
+- **2013:** Edward Snowden — Vazamentos da NSA
+- **2018:** Shoshana Zuboff — *The Age of Surveillance Capitalism*
+- **2022:** Boom de IA Generativa
+- **2025:** Este projeto
+
+#### 🟢 **Presente (0)** — Manifesto e Crítica
+
+Acesso direto ao manifesto político com exemplos práticos atuais.
+
+#### 🔵 **Futuro (+1)** — Construção e Possibilidades
+
+Horizontes de emancipação, cooperativismo de plataforma, cibernética popular.
+
+---
+
+### 📥 Downloads Disponíveis
+
+| Formato | Descrição | Uso |
+|---------|-----------|-----|
+| **PDF** | Versão impressa completa | Leitura offline, impressão |
+| **EPUB** | E-book para dispositivos | Kindle, Kobo, calibre |
+| **XML** | Estruturado semanticamente | Processamento automático |
+| **JSONL** | Machine-readable | Treinamento de IA, análise |
+
+**Acesse:** [download.html](https://obestafera.com/download.html)
+
+---
 
 ## 🤝 Contribuições
 
-Contribuições são bem-vindas! Este é um projeto de **inteligência coletiva** - teoria e prática.
+Este é um projeto de **inteligência coletiva** — teoria e prática. Contribuições são bem-vindas!
+
+### Como Contribuir
 
 Você pode:
 
-- 🐛 Reportar bugs ou problemas
-- 💡 Sugerir melhorias teóricas ou práticas
-- 📝 Corrigir erros, adicionar referências
-- 🎨 Melhorar design e acessibilidade
-- 🤖 Contribuir com código para o sistema Nhandereko
-- 📖 Traduzir para outros idiomas
-- 🔄 Compartilhar e adaptar (CC BY-SA 4.0)
+- 🐛 **Reportar bugs** ou problemas
+- 💡 **Sugerir melhorias** teóricas ou práticas
+- 📝 **Corrigir erros**, adicionar referências
+- 🎨 **Melhorar design** e acessibilidade
+- 🌐 **Traduzir** para outros idiomas
+- 🔄 **Compartilhar e adaptar** (CC BY-SA 4.0)
 
-**Como contribuir:**
+### Processo
 
-1. Faça um fork do projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/MinhaContribuicao`)
-3. Commit suas mudanças (`git commit -m 'Adiciona minha contribuição'`)
+1. Faça um **fork** do projeto
+2. Crie uma branch (`git checkout -b feature/MinhaContribuicao`)
+3. Commit suas mudanças (`git commit -m 'Adiciona X'`)
 4. Push para a branch (`git push origin feature/MinhaContribuicao`)
-5. Abra um Pull Request
+5. Abra um **Pull Request**
+
+---
+
+## 📚 Documentação Técnico-Filosófica
+
+### Principais Documentos
+
+| Documento | Descrição |
+|-----------|-----------|
+| [SINTESE_COMPLETA_REVOLUCAO_CIBERNETICA.md](docs/SINTESE_COMPLETA_REVOLUCAO_CIBERNETICA.md) | Visão panorâmica completa do projeto |
+| [GUAIAMUM_ANATOMIA_FUNCIONAL.md](docs/GUAIAMUM_ANATOMIA_FUNCIONAL.md) | Sistema de controle de perspectiva |
+| [META_OBSERVACAO_LOOPS.md](docs/META_OBSERVACAO_LOOPS.md) | Cibernética de segunda ordem aplicada |
+| [LATERALIDADE_CANVAS_CIBERNETICO.md](docs/LATERALIDADE_CANVAS_CIBERNETICO.md) | Arte generativa e sistemas visuais |
+| [EXPORT.md](docs/EXPORT.md) | Formatos de exportação e uso |
+| [XML_GUIDE.md](docs/XML_GUIDE.md) | Estrutura XML semântica |
+
+---
 
 ## 📄 Licença
 
-Este trabalho está licenciado sob [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/deed.pt-br) (CC BY-SA 4.0).
+Este trabalho está licenciado sob **[Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/deed.pt-br)** (CC BY-SA 4.0).
 
-**Você pode:**
+### Você pode:
 
-- ✅ **Compartilhar** — copiar e redistribuir o material em qualquer suporte ou formato
-- ✅ **Adaptar** — remixar, transformar e criar a partir do material
+- ✅ **Compartilhar** — copiar e redistribuir em qualquer formato
+- ✅ **Adaptar** — remixar, transformar, criar a partir do material
 
-**Desde que:**
+### Desde que:
 
-- 📝 **Atribuição** — você deve dar o crédito apropriado
-- 🔄 **CompartilhaIgual** — se remixar, transformar ou criar a partir do material, deve distribuir sob a mesma licença
+- 📝 **Atribuição** — dê o crédito apropriado
+- 🔄 **CompartilhaIgual** — distribua sob a mesma licença
+- 🚫 **Sem restrições adicionais** — não aplique termos legais/tecnológicos que restrinjam o que a licença permite
 
-## 🔗 Links
+---
 
-- 🌐 [Site Oficial](https://obestafera.com/)
-- 📄 [Licença CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.pt-br)
-- 💻 [GitHub Repository](https://github.com/silvanoneto/revolucao-cibernetica)
-- 📖 [Documentação Nhandereko](nhandereko/docs/)
+## 🔗 Links Importantes
+
+- 🌐 **Site Oficial:** [https://obestafera.com/](https://obestafera.com/)
+- 💻 **GitHub:** [github.com/silvanoneto/revolucao-cibernetica](https://github.com/silvanoneto/revolucao-cibernetica)
+- 📄 **Licença:** [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.pt-br)
+- 📖 **Documentação:** [docs/](docs/)
+
+---
 
 ## 🎯 Roadmap
 
-### ✅ Fase 1 - Fundação Sistêmica (Concluída)
-- [x] Manifesto acessível com exemplos práticos
-- [x] Endpoint de consulta híbrida (4 camadas + 3 ordens)
-- [x] Pesos dinâmicos no grafo
-- [x] Métricas em tempo real
-- [x] 7 novas tabelas no banco
+### ✅ Fase 1 — Fundação (Concluída)
 
-### 🚧 Fase 2 - Multi-Agentes (Em Planejamento)
-- [ ] GraphManagerMultiAgente (pesos por agente)
-- [ ] Sistema de manutenção automática
-- [ ] Testes de feedback loops
-- [ ] Comparação epistêmica entre agentes
+- [x] Manifesto político acessível
+- [x] Interface ternária navegável
+- [x] Canvas filosóficos (5 sistemas)
+- [x] CAPTCHA anti-algorítmico
+- [x] Múltiplos formatos de exportação
+- [x] Autocrítica e correções epistemológicas
 
-### 🔮 Fase 3 - Federação (Futuro)
-- [ ] Protocolo de sincronização entre instâncias
-- [ ] Governança distribuída
-- [ ] Meta-aprendizado coletivo
+### 🚧 Fase 2 — Expansão (Em Andamento)
+
+- [ ] **Traduções:** Inglês, Espanhol
+- [ ] **API pública:** Acesso programático ao conteúdo
+- [ ] **Comunidade:** Fórum de discussão
+- [ ] **Workshops:** Oficinas de cibernética popular
+
+### 🔮 Fase 3 — Federação (Futuro)
+
+- [ ] **Sistema Nhandereko:** IA coletiva distribuída
+- [ ] **Protocolo de sincronização:** Entre instâncias
+- [ ] **Governança distribuída:** Decisões coletivas
+- [ ] **Meta-aprendizado:** Inteligência emergente
+
+---
+
+## 💬 Citação
+
+> *"A revolução cibernética não será televisionada. Será programada, coletivamente, por nós."*
+
+---
+
+## 🙏 Agradecimentos
+
+Este projeto se apoia nos ombros de gigantes:
+
+**Cibernética:** Norbert Wiener, Stafford Beer, Gregory Bateson, Heinz von Foerster, Humberto Maturana, Francisco Varela
+
+**Filosofia:** Gilles Deleuze, Félix Guattari, Michel Foucault, Gilbert Simondon, Alfred North Whitehead, Karen Barad
+
+**Crítica Digital:** Shoshana Zuboff, Nick Srnicek, Evgeny Morozov, Siva Vaidhyanathan
+
+**Epistemologias Não-Ocidentais:** Filosofias Ubuntu, Cosmologias Guarani, Pensamento Budista
+
+**Marxismo Digital:** Ricardo Antunes, Ruy Braga, Christian Fuchs, Trebor Scholz
 
 ---
 
 **Feito com 🧠 e ❤️ para uma crítica radical do presente e construção coletiva do futuro**
 
-*"A revolução cibernética não será televisionada. Será programada, coletivamente, por nós."* 👊
+🌀 **A Revolução Cibernética** — Ontologia Executável | Teoria ⇄ Práxis

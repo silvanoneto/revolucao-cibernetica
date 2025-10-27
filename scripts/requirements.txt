@@ -1,5 +1,5 @@
-# Dependências para exportação de conteúdo
-# A Revolução Cibernética - Scripts de Exportação
+# Dependências para expansão de conteúdo
+# A Revolução Cibernética - Scripts de Expansão
 
 # EPUB generation
 ebooklib

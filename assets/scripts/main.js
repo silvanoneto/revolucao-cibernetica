@@ -5,10 +5,13 @@ function toggleTheme() {
     localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
 }
 
-// Restaurar tema salvo
+// Restaurar tema salvo (padrão: dark)
 const savedTheme = localStorage.getItem('theme');
 if (savedTheme === 'light') {
     document.documentElement.classList.remove('dark');
+} else {
+    // Se não tem tema salvo ou é 'dark', aplica dark mode
+    document.documentElement.classList.add('dark');
 }
 
 // ====== TAMANHO DO TEXTO ======
