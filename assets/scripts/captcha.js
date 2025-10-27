@@ -354,12 +354,9 @@ let metricsPanel = null;
 let metricsButton = null;
 
 function createMetricsButton() {
-    // 🎯 APENAS CRIAR BOTÃO NA PÁGINA DE DOWNLOAD
-    const isDownloadPage = window.location.pathname.includes('download.html') || 
-                           document.querySelector('.download-container') !== null;
-    
-    if (!isDownloadPage) {
-        console.log('📊 Botão de métricas desabilitado (não é página de download)');
+    // Criar botão sempre que houver canvas (habilitar em entry.html e download)
+    if (!canvas) {
+        console.log('📊 Botão de métricas desabilitado (canvas não inicializado)');
         return;
     }
     
@@ -405,6 +402,34 @@ function createMetricsButton() {
     const canvasContainer = canvas.parentElement;
     canvasContainer.style.position = 'relative';
     canvasContainer.appendChild(metricsButton);
+    
+    // 🦀 Criar controles Guaiamum (perspectivas) próximos ao botão de métricas
+    // Apenas criar se não existir
+    if (!document.querySelector('.guaiamum-controls')) {
+        const gu = document.createElement('div');
+        gu.className = 'guaiamum-controls';
+        gu.style.cssText = 'position:absolute; bottom:10px; left:10px; display:flex; gap:6px; z-index:1000;';
+
+        const directions = [
+            { d: 'left', label: '🦞' },
+            { d: 'front', label: '↖' },
+            { d: 'center', label: '•' },
+            { d: 'back', label: '↘' },
+            { d: 'right', label: '🦀' }
+        ];
+
+        directions.forEach(cfg => {
+            const b = document.createElement('button');
+            b.className = `guaiamum-btn guaiamum-${cfg.d}`;
+            b.title = `Guaiamum: ${cfg.d}`;
+            b.innerHTML = cfg.label;
+            b.style.cssText = 'width:36px;height:36px;border-radius:8px;border:1px solid rgba(139,92,246,0.4);background:rgba(0,0,0,0.6);color:#fff;cursor:pointer;';
+            b.addEventListener('click', () => setGuaiamumPerspective(cfg.d));
+            gu.appendChild(b);
+        });
+
+        canvasContainer.appendChild(gu);
+    }
     
     // Criar painel de métricas (inicialmente oculto)
     createMetricsPanel();
@@ -4989,6 +5014,61 @@ let entryCaptchaShapes = [];
 let entryClickedOrder = [];
 let entryCurrentChallengeType = '';
 let entryIsCanvasBlocked = false;
+// Contador de tentativas fracassadas da entrada (persistido em cookie)
+const COOKIE_ENTRY_ATTEMPTS = 'entry_failed_attempts';
+
+function setCookie(name, value, days = 365) {
+    try {
+        const expires = new Date(Date.now() + days * 86400000).toUTCString();
+        document.cookie = `${name}=${encodeURIComponent(String(value))}; expires=${expires}; path=/; SameSite=Strict`;
+    } catch (e) {
+        console.warn('⚠️ setCookie falhou', e);
+    }
+}
+
+function getCookie(name) {
+    try {
+        const cookies = document.cookie.split(';').map(c => c.trim());
+        for (let c of cookies) {
+            if (!c) continue;
+            const [k, ...rest] = c.split('=');
+            if (k === name) return decodeURIComponent(rest.join('='));
+        }
+    } catch (e) {
+        console.warn('⚠️ getCookie falhou', e);
+    }
+    return null;
+}
+
+function getEntryFailedAttempts() {
+    const v = parseInt(getCookie(COOKIE_ENTRY_ATTEMPTS) || '0', 10);
+    return isNaN(v) ? 0 : v;
+}
+
+function incrementEntryFailedAttempts() {
+    const next = getEntryFailedAttempts() + 1;
+    setCookie(COOKIE_ENTRY_ATTEMPTS, String(next), 365);
+    updateEntryAttemptsIndicator(next);
+    return next;
+}
+
+function resetEntryFailedAttempts() {
+    // remover cookie definindo expirada
+    try {
+        document.cookie = `${COOKIE_ENTRY_ATTEMPTS}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+    } catch {}
+    updateEntryAttemptsIndicator(0);
+}
+
+function updateEntryAttemptsIndicator(count) {
+    try {
+        const el = document.getElementById('entryAttemptsIndicator');
+        if (!el) return;
+        el.textContent = `Tentativas: ${count}`;
+        // Visual hint for debug: add a class when attempts > 0
+        if (count > 0) el.classList.add('has-attempts'); else el.classList.remove('has-attempts');
+    } catch (e) { /* ignore */ }
+}
 
 function initEntryCaptcha() {
     console.log('🎨 initEntryCaptcha() chamado');
@@ -5022,7 +5102,7 @@ function initEntryCaptcha() {
     return true;
 }
 
-function generateEntryCaptcha() {
+function generateEntryCaptcha(forcedType) {
     console.log('🎲 generateEntryCaptcha() iniciado - timestamp:', Date.now());
     
     // Verificar se canvas e contexto estão disponíveis
@@ -5051,8 +5131,13 @@ function generateEntryCaptcha() {
     
     console.log('✓ Canvas limpo - gerando novo desafio...');
     
-    // Escolher tipo de desafio aleatório (mesmos do download)
-    entryCurrentChallengeType = getRandomChallengeType();
+    // Escolher tipo de desafio — se a chamada fornecer um tipo explícito, usá-lo,
+    // caso contrário escolher aleatoriamente (compatibilidade com chamadas existentes)
+    if (typeof forcedType === 'string' && forcedType.length) {
+        entryCurrentChallengeType = forcedType;
+    } else {
+        entryCurrentChallengeType = getRandomChallengeType();
+    }
     console.log('🎯 Tipo de desafio entrada:', entryCurrentChallengeType);
     
     // Atualizar instrução (suporta múltiplos IDs para compatibilidade)
@@ -5561,6 +5646,8 @@ function verifyEntryCaptcha() {
     if (isCorrect) {
         // Sucesso!
         sessionStorage.setItem('entry_captcha_passed', 'true');
+        // Resetar contador de tentativas ao atingir sucesso
+        resetEntryFailedAttempts();
         document.getElementById('entryCaptchaOverlay').classList.remove('active');
         console.log('✅ Captcha de entrada verificado com sucesso!');
         return true;
@@ -5568,12 +5655,14 @@ function verifyEntryCaptcha() {
         // Erro
         showEntryCaptchaError();
         
-        // Bloquear e regenerar após 1.5s
-        blockEntryCaptcha(1.5);
-        setTimeout(() => {
-            unblockEntryCaptcha();
-            generateEntryCaptcha();
-        }, 1500);
+        // Incrementar contador de tentativas falhas e calcular duração adaptativa
+        const attempts = incrementEntryFailedAttempts();
+        // Regra: cada falha adiciona +1.5s, começando em 1.5s; cap em 120s para segurança
+        const adaptiveDuration = Math.min(1.5 + (attempts - 1) * 1.5, 120);
+        console.warn(`🔒 Falha na tentativa de entrada (#${attempts}) - bloqueando por ${adaptiveDuration}s`);
+
+        // Bloquear usando duração adaptativa; o fluxo de desbloqueio/reload é tratado por blockEntryCaptcha
+        blockEntryCaptcha(adaptiveDuration);
         
         return false;
     }
@@ -5607,7 +5696,48 @@ function blockEntryCaptcha(durationSeconds = 1.5) {
         modalOverlay.classList.add('active');
     }
     
+    // Garantir que o overlay ocupe toda a tela (forçar fullscreen)
+    overlay.style.position = 'fixed';
+    overlay.style.top = '0';
+    overlay.style.left = '0';
+    overlay.style.width = '100vw';
+    overlay.style.height = '100vh';
+    // Remover transform definido por CSS que centralizava como caixa — causa deslocamento para canto
+    overlay.style.transform = 'none';
+    overlay.style.minWidth = '0';
+    // Tornar os arredores totalmente transparentes (sem fundo, borda ou sombra)
+    overlay.style.background = 'transparent';
+    overlay.style.border = 'none';
+    overlay.style.boxShadow = 'none';
+    overlay.style.backdropFilter = 'none';
+    overlay.style.display = 'flex';
+    overlay.style.alignItems = 'center';
+    overlay.style.justifyContent = 'center';
+    overlay.style.zIndex = '99999';
     overlay.classList.add('active');
+
+    // Estilizar contador para destaque fullscreen
+    counter.style.fontFamily = "'JetBrains Mono', monospace";
+    counter.style.fontSize = '48px';
+    counter.style.letterSpacing = '0.35em';
+    counter.style.color = '#10b981';
+    counter.style.textAlign = 'center';
+    // Transitions: transform, opacity, color and background-color for smooth toggling
+    counter.style.transition = 'transform 120ms ease, opacity 80ms linear, color 120ms ease, background-color 800ms ease';
+    // Inicial background (escuro) e padding para melhor leitura
+    counter.style.backgroundColor = '#000';
+    counter.style.padding = '12px 20px';
+    counter.style.borderRadius = '8px';
+    // Tornar o texto em baixo (submessage) branco e arredores transparentes
+    try {
+        const sub = overlay.querySelector('.captcha-block-submessage');
+        if (sub) {
+            sub.style.color = '#ffffff';
+            // garantir fundo transparente no redor
+            sub.style.background = 'transparent';
+            sub.style.padding = '4px 8px';
+        }
+    } catch (e) { /* ignore */ }
     
     // ⚛️ SISTEMA TERNÁRIO (-1, 0, +1) - Passado, Presente, Futuro
     const durationMs = durationSeconds * 1000;
@@ -5621,16 +5751,92 @@ function blockEntryCaptcha(durationSeconds = 1.5) {
     
     let currentValue = startValue;
     
+    // Glitch helpers
+    const glitchTimeouts = [];
+    let lastRendered = '';
+    const glitchChars = ['@', '#', '%', '$', '&', '*', '+', '-', '~', '0', '1', '░', '▒', '▓'];
+
+    // Background toggle (smooth alternation between black and white)
+    let bgToggle = false;
+    const bgInterval = setInterval(() => {
+        try {
+            bgToggle = !bgToggle;
+            if (bgToggle) {
+                counter.style.backgroundColor = '#fff';
+                counter.style.color = '#0f172a';
+                counter.style.textShadow = 'none';
+            } else {
+                counter.style.backgroundColor = '#000';
+                counter.style.color = '#10b981';
+                counter.style.textShadow = '0 0 10px rgba(16,185,129,0.5)';
+            }
+        } catch (e) { /* ignore */ }
+    }, 800 + Math.floor(Math.random() * 400));
+
+    function makeGlitch(s) {
+        // Replace a few characters randomly to simulate glitch
+        const arr = s.split('');
+        const count = Math.max(1, Math.floor(arr.length * 0.25));
+        for (let i = 0; i < count; i++) {
+            const idx = Math.floor(Math.random() * arr.length);
+            arr[idx] = glitchChars[Math.floor(Math.random() * glitchChars.length)];
+        }
+        return arr.join('');
+    }
+
     const interval = setInterval(() => {
         currentValue += increment;
-        
+
         // Converter para representação ternária balanceada de 8 dígitos
         const ternary = decimalToBalancedTernary(currentValue, 8);
-        counter.textContent = ternary;
-        
+        lastRendered = ternary;
+        counter.textContent = lastRendered;
+
+        // Aleatoriamente disparar um pequeno 'glitch' visual
+        if (Math.random() < 0.12) {
+            const g = makeGlitch(lastRendered);
+            counter.textContent = g;
+            // transform + color flicker
+            counter.style.transform = `translate(${(Math.random()-0.5)*8}px, ${(Math.random()-0.5)*6}px) skew(${(Math.random()-0.5)*6}deg)`;
+            counter.style.color = ['#10b981', '#ec4899', '#f59e0b'][Math.floor(Math.random()*3)];
+
+            const t = setTimeout(() => {
+                counter.textContent = lastRendered;
+                counter.style.transform = '';
+                counter.style.color = '#10b981';
+            }, 80 + Math.floor(Math.random() * 220));
+            glitchTimeouts.push(t);
+        }
+
         if (currentValue >= endValue) {
             counter.textContent = '++++++++';
             clearInterval(interval);
+            // limpar glitches pendentes
+            while (glitchTimeouts.length) clearTimeout(glitchTimeouts.pop());
+            // parar alternância de fundo e restaurar estilos
+            try { clearInterval(bgInterval); } catch (e) {}
+            try {
+                counter.style.backgroundColor = '';
+                counter.style.color = '#10b981';
+                counter.style.textShadow = '0 0 10px rgba(16,185,129,0.5)';
+            } catch (e) {}
+
+            // Ao finalizar a contagem ternária, desbloquear e recarregar a página
+            try {
+                unblockEntryCaptcha();
+            } catch (e) {
+                console.warn('⚠️ Erro ao tentar desbloquear entrada antes de reload:', e);
+            }
+
+            // Pequeno delay para garantir que o DOM reflita o desbloqueio antes do reload
+            setTimeout(() => {
+                console.log('↻ Recarregando página após bloqueio ternário completar');
+                try {
+                    window.location.reload();
+                } catch (e) {
+                    try { location.reload(); } catch (e2) { console.warn('❌ reload falhou:', e2); }
+                }
+            }, 120);
         }
     }, updateInterval);
     
@@ -5690,6 +5896,46 @@ window.initEntryCaptcha = initEntryCaptcha;
 window.generateEntryCaptcha = generateEntryCaptcha;
 window.verifyEntryCaptcha = verifyEntryCaptcha;
 window.regenerateEntryCaptcha = regenerateEntryCaptcha;
+// Função auxiliar para TDD/UI: alterar desafio de entrada e regenerar o canvas
+function changeEntryChallenge(type) {
+    console.log('🔁 changeEntryChallenge() chamado com:', type);
+    try {
+        // Atualizar o tipo de desafio de entrada explicitamente
+        entryCurrentChallengeType = type;
+    } catch (e) {
+        // Se não existir entryCurrentChallengeType, atualizar currentChallengeType como fallback
+        console.warn('⚠️ entryCurrentChallengeType não definido, usando currentChallengeType como fallback');
+    try { currentChallengeType = type; } catch (e2) {}
+    }
+
+    // Chamar a geração do captcha de entrada (preferir window-level para permitir spies/mocks)
+    if (typeof window !== 'undefined' && typeof window.generateEntryCaptcha === 'function') {
+        // Passar o tipo explicitamente para que a geração use o desafio solicitado
+        window.generateEntryCaptcha(type);
+        return;
+    }
+
+    if (typeof generateEntryCaptcha === 'function') {
+        generateEntryCaptcha(type);
+        return;
+    }
+
+    // Fallback: chamar a geração visual genérica (window preferido)
+    if (typeof window !== 'undefined' && typeof window.generateVisualCaptcha === 'function') {
+        window.generateVisualCaptcha();
+        return;
+    }
+
+    if (typeof generateVisualCaptcha === 'function') {
+        generateVisualCaptcha();
+        return;
+    }
+
+    console.error('❌ Nenhuma função de geração de captcha encontrada para regenerar o desafio');
+}
+
+// Expor para uso no HTML/JS
+window.changeEntryChallenge = changeEntryChallenge;
 
 // Auto-inicializar captcha de entrada se o overlay estiver presente
 document.addEventListener('DOMContentLoaded', () => {
