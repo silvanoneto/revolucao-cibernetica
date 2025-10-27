@@ -97,17 +97,17 @@
 /* TAMANHOS DE TEXTO AJUSTÁVEIS           */
 /* ====================================== */
 /* Permite ao usuário escolher entre 3 tamanhos
-   de fonte base: 14px, 16px ou 18px */
+   de fonte base: 13px, 14px ou 16px */
 html.font-small {
-    font-size: 14px;
+    font-size: 13px;
 }
 
 html.font-medium {
-    font-size: 16px;
+    font-size: 14px;
 }
 
 html.font-large {
-    font-size: 18px;
+    font-size: 16px;
 }
 
 /* ====================================== */
@@ -193,7 +193,7 @@ pre,
 
 /* Tipografia Base */
 h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 1.5rem;
@@ -208,12 +208,12 @@ h1 {
 
 @media (max-width: 768px) {
     h1 {
-        font-size: 2rem;
+        font-size: 1.75rem;
     }
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 1.625rem;
     font-weight: 600;
     line-height: 1.3;
     margin-top: 3rem;
@@ -229,12 +229,12 @@ h2 {
 
 @media (max-width: 768px) {
     h2 {
-        font-size: 1.5rem;
+        font-size: 1.375rem;
     }
 }
 
 h3 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 600;
     line-height: 1.4;
     margin-top: 2rem;
@@ -249,12 +249,12 @@ h3 {
 
 @media (max-width: 768px) {
     h3 {
-        font-size: 1.25rem;
+        font-size: 1.125rem;
     }
 }
 
 h4 {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     font-weight: 600;
     line-height: 1.5;
     margin-top: 1.5rem;
@@ -268,7 +268,7 @@ h4 {
 }
 
 h5 {
-    font-size: 1.125rem;
+    font-size: 1rem;
     font-weight: 500;
     line-height: 1.5;
     margin-top: 1.25rem;
@@ -282,7 +282,7 @@ h5 {
 }
 
 h6 {
-    font-size: 1rem;
+    font-size: 0.9375rem;
     font-weight: 500;
     line-height: 1.5;
     margin-top: 1rem;

@@ -347,6 +347,24 @@ function openRizoma(startConcept = null) {
     
     // Render do grafo
     renderRizomaGraph();
+
+    // Após render, rolar suavemente até o card do conceito inicial (se houver)
+    setTimeout(() => {
+        if (startConcept) {
+            const card = document.querySelector(`[data-concept-key="${startConcept}"]`);
+            if (card) {
+                // Scroll dentro do overlay para centralizar o card
+                try {
+                    card.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
+                    // foco acessível
+                    if (typeof card.focus === 'function') card.focus({ preventScroll: true });
+                } catch (err) {
+                    // fallback simples
+                    card.scrollIntoView();
+                }
+            }
+        }
+    }, 200);
     
     // Impedir scroll do body
     document.body.style.overflow = 'hidden';
@@ -599,22 +617,34 @@ function renderRizomaGraph() {
     if (viewMode === 'graph') {
         renderGraphView(container, filteredConcepts);
     } else {
-        renderGridView(container, grid, filteredConcepts);
+        renderGridView(container, filteredConcepts);
     }
     
     rizomaOverlay.appendChild(container);
     
-    // Desenhar conexões se houver conceito selecionado (apenas no modo grid)
+    // Desenhar conexões e garantir que o card selecionado esteja visível (modo grid)
     if (selectedConcept && viewMode === 'grid') {
-        setTimeout(() => drawConnections(), 100);
+        setTimeout(() => {
+            const selectedCard = document.querySelector(`[data-concept-key="${selectedConcept}"]`);
+            if (selectedCard) {
+                try {
+                    selectedCard.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
+                    if (typeof selectedCard.focus === 'function') selectedCard.focus({ preventScroll: true });
+                } catch (err) {
+                    selectedCard.scrollIntoView();
+                }
+            }
+            drawConnections();
+        }, 200);
     }
 }
 
 /**
  * Renderizar visualização em grade
  */
-function renderGridView(container, grid, filteredConcepts) {
+function renderGridView(container, filteredConcepts) {
     // Grid de conceitos
+    const grid = document.createElement('div');
     grid.id = 'concepts-grid';
     grid.style.cssText = `
         display: grid;
@@ -1044,57 +1074,6 @@ function drawConnections() {
         svg.appendChild(line);
     });
 }
-    if (!selectedConcept) return;
-    
-    const svg = document.querySelector('#connection-svg-container svg');
-    if (!svg) return;
-    
-    // Limpar conexões anteriores
-    svg.innerHTML = '';
-    
-    // Obter posição do card selecionado
-    const selectedCard = document.querySelector(`[data-concept-key="${selectedConcept}"]`);
-    if (!selectedCard) return;
-    
-    const selectedRect = selectedCard.getBoundingClientRect();
-    const containerRect = document.getElementById('concepts-grid').getBoundingClientRect();
-    
-    const selectedCenterX = selectedRect.left + selectedRect.width / 2 - containerRect.left;
-    const selectedCenterY = selectedRect.top + selectedRect.height / 2 - containerRect.top;
-    
-    // Desenhar linha para cada conexão
-    const concept = conceptGraph[selectedConcept];
-    concept.connections.forEach(connKey => {
-        const connCard = document.querySelector(`[data-concept-key="${connKey}"]`);
-        if (!connCard) return;
-        
-        const connRect = connCard.getBoundingClientRect();
-        const connCenterX = connRect.left + connRect.width / 2 - containerRect.left;
-        const connCenterY = connRect.top + connRect.height / 2 - containerRect.top;
-        
-        // Criar linha SVG
-        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-        line.setAttribute('x1', selectedCenterX);
-        line.setAttribute('y1', selectedCenterY);
-        line.setAttribute('x2', connCenterX);
-        line.setAttribute('y2', connCenterY);
-        line.setAttribute('stroke', concept.color);
-        line.setAttribute('stroke-width', '2');
-        line.setAttribute('stroke-opacity', '0.5');
-        line.setAttribute('stroke-dasharray', '5,5');
-        
-        // Animação de "formiga marchando"
-        const animate = document.createElementNS('http://www.w3.org/2000/svg', 'animate');
-        animate.setAttribute('attributeName', 'stroke-dashoffset');
-        animate.setAttribute('from', '0');
-        animate.setAttribute('to', '10');
-        animate.setAttribute('dur', '0.5s');
-        animate.setAttribute('repeatCount', 'indefinite');
-        
-        line.appendChild(animate);
-        svg.appendChild(line);
-    });
-}
 
 
 /**
@@ -1359,54 +1338,204 @@ function hexToRgb(hex) {
 function tagConceptsInContent() {
     console.log('🏷️ Adicionando tags de conceitos...');
     
-    // Encontrar todos os conceitos mencionados no texto
-    Object.entries(conceptGraph).forEach(([key, concept]) => {
-        const regex = new RegExp(concept.name, 'gi');
+    // Função auxiliar para processar nó de texto
+    function processTextNode(textNode) {
+        const text = textNode.textContent;
+
+        // Build alternation of concept names (longest first to prefer longer matches)
+        const concepts = Object.entries(conceptGraph).map(([key, concept]) => ({ key, name: concept.name, color: concept.color }));
+        concepts.sort((a, b) => b.name.length - a.name.length);
+        const alternation = concepts.map(c => escapeRegExp(c.name)).join('|');
+
+        if (!alternation) return;
+
+        // Build combined regex (try unicode-aware, fallback to latin-range capture)
+        let combinedRegex;
+        let usesPrefix = false;
+        try {
+            combinedRegex = new RegExp('(?<!\\p{L})(' + alternation + ')(?!\\p{L})', 'giu');
+        } catch (err) {
+            // Fallback for older engines: capture prefix char (or start)
+            combinedRegex = new RegExp('(^|[^A-Za-zÀ-ÖØ-öø-ÿ])(' + alternation + ')(?=$|[^A-Za-zÀ-ÖØ-öø-ÿ])', 'gi');
+            usesPrefix = true;
+        }
+
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        let match;
+
+        while ((match = combinedRegex.exec(text)) !== null) {
+            const fullIndex = match.index;
+            if (usesPrefix) {
+                // match[1] = prefix, match[2] = word
+                const prefix = match[1] || '';
+                const word = match[2];
+                const start = fullIndex + prefix.length;
+                const end = start + word.length;
+
+                if (start > lastIndex) {
+                    fragment.appendChild(document.createTextNode(text.slice(lastIndex, start)));
+                }
+
+                // find corresponding concept key (case-insensitive)
+                const found = concepts.find(c => c.name.toLowerCase() === word.toLowerCase());
+                const span = document.createElement('span');
+                span.className = 'concept-tag';
+                span.dataset.concept = found ? found.key : word.toLowerCase();
+                span.style.color = found ? found.color : '#8b5cf6';
+                span.style.textDecoration = 'underline dotted';
+                span.style.cursor = 'pointer';
+                span.style.fontWeight = '500';
+                span.style.transition = 'all 0.3s ease';
+                span.textContent = word;
+                span.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); if (found) window.openRizoma(found.key); });
+                span.title = `🌀 Clique para explorar '${word}' no rizoma`;
+                // hover effects
+                span.addEventListener('mouseenter', () => {
+                    span.style.textDecoration = 'underline solid';
+                    if (found) span.style.textShadow = `0 0 8px rgba(${hexToRgb(found.color)}, 0.25)`;
+                });
+                span.addEventListener('mouseleave', () => {
+                    span.style.textDecoration = 'underline dotted';
+                    span.style.textShadow = 'none';
+                });
+
+                fragment.appendChild(span);
+                lastIndex = end;
+            } else {
+                // match[1] is the word
+                const word = match[1];
+                const start = match.index;
+                const end = start + word.length;
+
+                if (start > lastIndex) {
+                    fragment.appendChild(document.createTextNode(text.slice(lastIndex, start)));
+                }
+
+                const found = concepts.find(c => c.name.toLowerCase() === word.toLowerCase());
+                const span = document.createElement('span');
+                span.className = 'concept-tag';
+                span.dataset.concept = found ? found.key : word.toLowerCase();
+                span.style.color = found ? found.color : '#8b5cf6';
+                span.style.textDecoration = 'underline dotted';
+                span.style.cursor = 'pointer';
+                span.style.fontWeight = '500';
+                span.style.transition = 'all 0.3s ease';
+                span.textContent = word;
+                span.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); if (found) window.openRizoma(found.key); });
+                span.title = `🌀 Clique para explorar '${word}' no rizoma`;
+                // hover effects
+                span.addEventListener('mouseenter', () => {
+                    span.style.textDecoration = 'underline solid';
+                    if (found) span.style.textShadow = `0 0 8px rgba(${hexToRgb(found.color)}, 0.25)`;
+                });
+                span.addEventListener('mouseleave', () => {
+                    span.style.textDecoration = 'underline dotted';
+                    span.style.textShadow = 'none';
+                });
+
+                fragment.appendChild(span);
+                lastIndex = end;
+            }
+        }
+
+        if (lastIndex < text.length) {
+            fragment.appendChild(document.createTextNode(text.slice(lastIndex)));
+        }
+
+        // If no matches, do nothing
+        if (!fragment.childNodes.length) return;
+
+        const parent = textNode.parentNode;
+        parent.insertBefore(fragment, textNode);
+        parent.removeChild(textNode);
+    }
+    
+    // Procurar em parágrafos e listas, mas apenas nos nós de texto
+    const selectors = 'p, li, h1, h2, h3, h4, blockquote, td';
+    document.querySelectorAll(selectors).forEach(element => {
+        // Pular se já foi processado ou se contém elementos interativos
+        if (element.querySelector('.concept-tag') || 
+            element.querySelector('a') || 
+            element.querySelector('button') ||
+            element.closest('.sidebar') ||
+            element.closest('#rizoma-overlay')) {
+            return;
+        }
         
-        // Procurar em todos os parágrafos
-        document.querySelectorAll('p, li').forEach(element => {
-            if (element.innerHTML.includes('<span class="concept-tag"')) return; // Já tagueado
-            
-            element.innerHTML = element.innerHTML.replace(regex, (match) => {
-                return `<span class="concept-tag" data-concept="${key}" style="
-                    color: ${concept.color};
-                    text-decoration: underline dotted;
-                    cursor: help;
-                    transition: all 0.3s ease;
-                " 
-                onmouseover="this.style.textDecoration='underline solid'"
-                onmouseout="this.style.textDecoration='underline dotted'"
-                onclick="openRizoma('${key}')"
-                title="Clique para explorar conexões">${match}</span>`;
-            });
+        // Processar apenas nós de texto diretos
+        Array.from(element.childNodes).forEach(node => {
+            if (node.nodeType === Node.TEXT_NODE && node.textContent.trim()) {
+                processTextNode(node);
+            }
         });
     });
     
-    console.log('✅ Conceitos tagueados');
+    console.log('✅ Conceitos tagueados no conteúdo');
+}
+
+// Escapa caracteres especiais para construir safe regex a partir de strings
+function escapeRegExp(string) {
+    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+/**
+ * Build a regex to match a concept name as a whole word.
+ * Tries to use Unicode-aware lookarounds; if not supported, returns a fallback
+ * regex that captures a non-letter prefix so we can preserve it during replacement.
+ */
+function buildConceptRegex(escapedName) {
+    try {
+        // Prefer lookaround with Unicode property escapes
+        const regex = new RegExp('(?<!\\p{L})(' + escapedName + ')(?!\\p{L})', 'giu');
+        return { regex, usesPrefixGroup: false };
+    } catch (err) {
+        // Fallback: capture a non-letter prefix (or start of string) and the word
+        // Note: range A-Za-zÀ-ÖØ-öø-ÿ covers many Latin-1 accented chars
+        const fallback = new RegExp('(^|[^A-Za-zÀ-ÖØ-öø-ÿ])(' + escapedName + ')(?=$|[^A-Za-zÀ-ÖØ-öø-ÿ])', 'gi');
+        return { regex: fallback, usesPrefixGroup: true };
+    }
 }
 
 // Inicializar ao carregar página
 document.addEventListener('DOMContentLoaded', () => {
     console.log('🌀 Módulo de navegação rizomática carregado');
     
-    // Esperar 2 segundos antes de taguear (deixar conteúdo carregar)
-    setTimeout(() => {
-        initializeRizoma();
-        tagConceptsInContent();
-    }, 2000);
+    // Inicializar overlay imediatamente
+    initializeRizoma();
     
-    // Expor funções globalmente
+    // Expor funções globalmente ANTES de taguear
     window.openRizoma = openRizoma;
     window.closeRizoma = closeRizoma;
+    window.selectConcept = selectConcept;
+    window.hideConceptDetails = hideConceptDetails;
+    
+    // Esperar conteúdo carregar antes de taguear
+    setTimeout(() => {
+        tagConceptsInContent();
+        console.log('✅ Sistema rizomático pronto!');
+    }, 2000);
 });
 
-// Atalho de teclado: R para abrir rizoma
+// Atalho de teclado: R para abrir rizoma, ESC para fechar
 document.addEventListener('keydown', (e) => {
-    if (e.key === 'r' || e.key === 'R') {
-        if (!rizomaActive) {
-            openRizoma();
-        } else {
-            closeRizoma();
+    // R para toggle
+    if ((e.key === 'r' || e.key === 'R') && !e.ctrlKey && !e.metaKey && !e.altKey) {
+        // Verificar se não está digitando em um input
+        if (document.activeElement.tagName !== 'INPUT' && 
+            document.activeElement.tagName !== 'TEXTAREA') {
+            e.preventDefault();
+            if (!rizomaActive) {
+                openRizoma();
+            } else {
+                closeRizoma();
+            }
         }
+    }
+    
+    // ESC para fechar
+    if (e.key === 'Escape' && rizomaActive) {
+        e.preventDefault();
+        closeRizoma();
     }
 });

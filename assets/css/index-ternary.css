@@ -35,7 +35,7 @@
 }
 
 .ternary-header h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     background: linear-gradient(135deg, var(--vermelho), var(--verde), var(--azul));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -58,7 +58,7 @@
     display: inline-block;
     padding: 0.5rem 1rem;
     border-radius: 8px;
-    font-size: 0.95rem;
+    font-size: 0.875rem;
     font-weight: 600;
     transition: all 0.3s ease;
 }
@@ -155,13 +155,13 @@
 }
 
 .featured-section h2 {
-    font-size: 2rem;
+    font-size: 1.625rem;
     margin-bottom: 1rem;
     color: var(--azul);
 }
 
 .lead {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     color: var(--azul-claro);
     margin-bottom: 2rem;
     line-height: 1.6;
@@ -191,7 +191,7 @@
 .insight-card h3 {
     color: var(--azul-claro);
     margin-bottom: 1rem;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
 }
 
 .insight-card blockquote {
@@ -256,7 +256,7 @@
 .technique h3 {
     color: var(--verde);
     margin-bottom: 1rem;
-    font-size: 1.3rem;
+    font-size: 1.125rem;
 }
 
 .technique pre {
@@ -271,7 +271,7 @@
 .technique code {
     color: var(--azul-claro);
     font-family: 'JetBrains Mono', 'Fira Code', monospace;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
 .technique ul {
@@ -420,7 +420,7 @@
 .timeline-item h3 {
     color: var(--vermelho);
     margin: 0.5rem 0;
-    font-size: 1.2rem;
+    font-size: 1.05rem;
 }
 
 .timeline-item p {
@@ -453,7 +453,7 @@
 .future-card h3 {
     color: var(--azul-claro);
     margin-bottom: 1rem;
-    font-size: 1.3rem;
+    font-size: 1.125rem;
 }
 
 .future-card p {
@@ -550,7 +550,7 @@
     }
     
     .ternary-header h1 {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
     }
     
     .ternary-subtitle {
@@ -586,7 +586,7 @@
     }
     
     .lead {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
     
     .chapters-grid {
@@ -596,15 +596,15 @@
 
 @media (max-width: 480px) {
     .ternary-header h1 {
-        font-size: 1.5rem;
+        font-size: 1.375rem;
     }
     
     .featured-section h2 {
-        font-size: 1.5rem;
+        font-size: 1.375rem;
     }
     
     .insight-card h3 {
-        font-size: 1.2rem;
+        font-size: 1.125rem;
     }
 }
 
