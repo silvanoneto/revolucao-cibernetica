@@ -11,6 +11,20 @@
  * - Sem estrutura arbórea
  * 
  * CHANGELOG:
+ * - 2025-10-28 (v6): Expansão massiva do Capítulo 8 (Trabalho Imaterial, Cognitivo e Afetivo)
+ *   + 40+ novos conceitos: trabalho cognitivo, trabalho afetivo, general intellect
+ *   + Lazzarato: dimensões do trabalho imaterial (informacional + cultural/afetiva)
+ *   + Trabalho cognitivo: programadores, cientistas dados, general intellect (Marx/Grundrisse)
+ *   + Exemplos general intellect: Wikipedia, Stack Overflow, software livre, captura por IAs
+ *   + Trabalho afetivo: care work, emotional labor (Hochschild), produção de sociabilidade
+ *   + Hardt & Negri: bioprodução/produção biopolítica, indústrias biopolíticas
+ *   + Casos brasileiros: call centers (taylorismo afetivo), influencers (pirâmide digital), impulsionadores
+ *   + Caso internacional: moderadores Filipinas (trauma como trabalho)
+ *   + Subsunção real cibernética: vida inteira capturada (24/7, home office, autoexploração)
+ *   + Conceitos: feminização trabalho, precarização cognitiva, trabalho gratuito, parasocialidade
+ *   + Pós-fordismo: acumulação flexível, fábrica social, sempre-on
+ *   Total: ~310 conceitos mapeados
+ * 
  * - 2025-10-28 (v5): Expansão massiva do Capítulo 7 (Marxismo e Tecnologia - Debates Clássicos)
  *   + 30+ novos conceitos: Escola Frankfurt, Operaísmo, Pós-Colonialismo
  *   + Frankfurt: razão instrumental, indústria cultural, Marcuse (homem unidimensional), Adorno
@@ -838,8 +852,225 @@ const conceptGraph = {
     },
     'trabalho-imaterial': {
         name: 'Trabalho Imaterial',
-        description: 'Trabalho cognitivo, afetivo e comunicacional não-pago',
-        connections: ['mais-valia-dados', 'uberizacao', 'capitalismo-vigilancia', 'trabalho-reprodutivo'],
+        description: 'Trabalho cujo produto é informação, conhecimento, afeto ou relação social',
+        connections: ['trabalho-cognitivo', 'trabalho-afetivo', 'lazzarato', 'mais-valia-dados', 'uberizacao', 'capitalismo-vigilancia', 'trabalho-reprodutivo', 'pos-fordismo', 'general-intellect', 'fabrica-social'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'lazzarato': {
+        name: 'Maurizio Lazzarato',
+        description: 'Sociólogo italiano que cunhou o conceito de trabalho imaterial (1996)',
+        connections: ['trabalho-imaterial', 'trabalho-cognitivo', 'trabalho-afetivo', 'pos-operaismo', 'sociedade-divida'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'trabalho-cognitivo': {
+        name: 'Trabalho Cognitivo',
+        description: 'Trabalho que manipula conhecimento, informação e símbolos (programação, design, análise)',
+        connections: ['trabalho-imaterial', 'general-intellect', 'capitalismo-cognitivo', 'software-livre', 'ia', 'lazzarato', 'precarizacao-cognitiva', 'programadores', 'cientistas-dados'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'trabalho-afetivo': {
+        name: 'Trabalho Afetivo',
+        description: 'Trabalho que produz ou manipula afetos, emoções e relações sociais',
+        connections: ['trabalho-imaterial', 'trabalho-cuidado', 'emotional-labor', 'trabalho-sociabilidade', 'influencers', 'moderadores-conteudo', 'bioproducao', 'lazzarato', 'hardt', 'feminizacao-trabalho'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'trabalho-cuidado': {
+        name: 'Trabalho Corporal de Cuidado (Care Work)',
+        description: 'Enfermeiras, cuidadores, babás - manipulam corpos através de interação afetiva',
+        connections: ['trabalho-afetivo', 'trabalho-reprodutivo', 'feminizacao-trabalho', 'precarizacao', 'plataformizacao'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'emotional-labor': {
+        name: 'Trabalho Emocional (Emotional Labor)',
+        description: 'Gestão e performance de emoções como obrigação profissional (Arlie Hochschild)',
+        connections: ['trabalho-afetivo', 'call-centers-brasil', 'atendentes', 'vendedores', 'hochschild'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'hochschild': {
+        name: 'Arlie Hochschild',
+        description: 'Socióloga que desenvolveu conceito de emotional labor (The Managed Heart, 1983)',
+        connections: ['emotional-labor', 'trabalho-afetivo'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'trabalho-sociabilidade': {
+        name: 'Trabalho de Produção de Sociabilidade',
+        description: 'Produzir conexões sociais, comunidades, identidades (influencers, community managers)',
+        connections: ['trabalho-afetivo', 'influencers', 'community-managers', 'redes-sociais', 'parasocialidade'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'general-intellect': {
+        name: 'General Intellect (Intelecto Geral)',
+        description: 'Conhecimento social coletivo que se torna força produtiva (Marx, Grundrisse)',
+        connections: ['trabalho-cognitivo', 'trabalho-imaterial', 'capitalismo-cognitivo', 'software-livre', 'wikipedia-caso', 'stack-overflow', 'common-digital', 'pos-operaismo', 'negri'],
+        color: '#ef4444',
+        layer: -1
+    },
+    'capitalismo-cognitivo': {
+        name: 'Capitalismo Cognitivo',
+        description: 'Regime onde conhecimento e informação são principais fontes de valor',
+        connections: ['trabalho-cognitivo', 'general-intellect', 'propriedade-intelectual', 'patentes', 'copyright', 'comum-digital'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'wikipedia-caso': {
+        name: 'Caso Wikipedia',
+        description: 'Exemplo de general intellect: 6M artigos, produção colaborativa, captura corporativa por IAs',
+        connections: ['general-intellect', 'software-livre', 'comum-digital', 'captura-comum', 'ia'],
+        color: '#10b981',
+        layer: 0
+    },
+    'stack-overflow': {
+        name: 'Caso Stack Overflow',
+        description: 'Plataforma de Q&A para programadores: conhecimento coletivo valendo US$ 1,8 bi (2021)',
+        connections: ['general-intellect', 'trabalho-cognitivo', 'captura-comum', 'trabalho-gratuito'],
+        color: '#10b981',
+        layer: 0
+    },
+    'captura-comum': {
+        name: 'Captura do Comum',
+        description: 'Privatização de conhecimento produzido coletivamente (via plataformas, patentes, copyright)',
+        connections: ['general-intellect', 'comum-digital', 'propriedade-intelectual', 'wikipedia-caso', 'stack-overflow', 'ia-treinamento'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'ia-treinamento': {
+        name: 'Dados de Treinamento para IA',
+        description: 'GPT/Gemini treinados com bilhões de textos coletivos (livros, código, posts) sem compensação',
+        connections: ['captura-comum', 'ia', 'general-intellect', 'copyright', 'trabalho-gratuito'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'hardt': {
+        name: 'Michael Hardt',
+        description: 'Professor Duke University, co-autor de Império/Multidão com Negri. Teórico do trabalho afetivo',
+        connections: ['trabalho-afetivo', 'bioproducao', 'negri', 'imperio-livro', 'multidao-conceito'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'bioproducao': {
+        name: 'Bioprodução (Produção Biopolítica)',
+        description: 'Capital produz e gerencia não só mercadorias, mas a própria vida (saúde, afeto, cultura)',
+        connections: ['trabalho-afetivo', 'hardt', 'negri', 'foucault', 'biopolitica', 'industrias-biopoliticas'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'industrias-biopoliticas': {
+        name: 'Indústrias Biopolíticas',
+        description: 'Farmacêuticas, planos saúde, entretenimento, segurança privada, redes sociais',
+        connections: ['bioproducao', 'trabalho-afetivo', 'capitalismo-vigilancia'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'feminizacao-trabalho': {
+        name: 'Feminização do Trabalho',
+        description: 'Qualidades historicamente femininas (cuidado, empatia) exigidas de todos, mas desvalorizadas',
+        connections: ['trabalho-afetivo', 'trabalho-reprodutivo', 'trabalho-cuidado', 'pos-fordismo', 'precarizacao', 'federici'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'moderadores-conteudo': {
+        name: 'Caso: Moderadores Filipinas',
+        description: 'Manila: epicentro global da moderação traumática (violência, abuso) - PTSD, US$300-500/mês',
+        connections: ['trabalho-afetivo', 'emotional-labor', 'necropolitica', 'imperialismo-digital', 'ghost-work', 'precarizacao'],
+        color: '#10b981',
+        layer: 0
+    },
+    'call-centers-brasil': {
+        name: 'Caso: Call Centers Brasil',
+        description: '1,5M trabalhadores: taylorismo afetivo - TMA em segundos, scripts obrigatórios, LER/DORT',
+        connections: ['emotional-labor', 'trabalho-afetivo', 'fordismo', 'taylorismo', 'precarizacao', 'trabalho-imaterial'],
+        color: '#10b981',
+        layer: 0
+    },
+    'influencers-brasil': {
+        name: 'Caso: Criadores de Conteúdo Brasil',
+        description: '500k+ vivendo de conteúdo: pirâmide (0,01% ganham, 90% trabalham de graça), vida íntima vira produto',
+        connections: ['trabalho-afetivo', 'trabalho-sociabilidade', 'plataformizacao', 'algoritmos', 'trabalho-gratuito', 'autoexploracao', 'parasocialidade'],
+        color: '#10b981',
+        layer: 0
+    },
+    'impulsionadores-brasil': {
+        name: 'Caso: "Impulsionadores" Brasil',
+        description: 'Jovens vendendo gestão de mídias sociais/tráfego pago - trabalho cognitivo precarizado periférico',
+        connections: ['trabalho-cognitivo', 'precarizacao', 'autoexploracao', 'algoritmos', 'periferia-global'],
+        color: '#10b981',
+        layer: 0
+    },
+    'parasocialidade': {
+        name: 'Relações Parasociais',
+        description: 'Vínculos unilaterais audiência→influencer sentidos como amizade real - trabalho afetivo monetizado',
+        connections: ['trabalho-sociabilidade', 'influencers-brasil', 'trabalho-afetivo', 'redes-sociais'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'subsuncao-cibernetica': {
+        name: 'Subsunção Real Cibernética (Vital)',
+        description: 'Capital captura não só tempo de trabalho, mas vida inteira: afetos, relações, corpo, lazer 24/7',
+        connections: ['subsuncao-real', 'trabalho-imaterial', 'pos-fordismo', 'fabrica-social', 'uberizacao', 'sempre-on', 'home-office'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'sempre-on': {
+        name: 'Trabalho 24/7 (Always On)',
+        description: 'Dissolução fronteiras trabalho/vida: e-mails à noite, networking em "lazer", home office sem expediente',
+        connections: ['subsuncao-cibernetica', 'precarizacao', 'burnout', 'trabalho-cognitivo', 'trabalho-afetivo'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'home-office': {
+        name: 'Home Office como Armadilha',
+        description: '"Trabalhe de onde quiser" = casa vira fábrica permanente, sem divisão espacial trabalho/vida',
+        connections: ['subsuncao-cibernetica', 'sempre-on', 'precarizacao', 'pandemia-covid'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'autoexploracao': {
+        name: 'Autoexploração Gamificada',
+        description: 'Paixão como ideologia: quanto mais ama trabalho, mais aceita precariedade - "faça o que ama"',
+        connections: ['precarizacao', 'trabalho-imaterial', 'subsuncao-cibernetica', 'influencers-brasil', 'impulsionadores-brasil', 'lazzarato'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'trabalho-gratuito': {
+        name: 'Trabalho Não-Pago Massivo',
+        description: 'Usuários geram conteúdo/dados que plataformas monetizam sem compensação',
+        connections: ['trabalho-imaterial', 'mais-valia-dados', 'capitalismo-vigilancia', 'wikipedia-caso', 'stack-overflow', 'ia-treinamento', 'influencers-brasil'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'precarizacao-cognitiva': {
+        name: 'Precarização do Trabalho Cognitivo',
+        description: 'Programadores, designers, cientistas em contratos temporários, freela sem direitos, burnout',
+        connections: ['trabalho-cognitivo', 'precarizacao', 'burnout', 'sempre-on', 'pos-fordismo'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'sociedade-divida': {
+        name: 'Sociedade da Dívida (Lazzarato)',
+        description: 'Endividamento (estudantes, trabalhadores, países) como controle social - futuro subordinado ao capital',
+        connections: ['lazzarato', 'precarizacao', 'financeirizacao'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'pos-fordismo': {
+        name: 'Pós-Fordismo (Acumulação Flexível)',
+        description: 'Modelo produtivo: flexibilização, terceirização, just-in-time, centralidade do trabalho imaterial',
+        connections: ['fordismo', 'trabalho-imaterial', 'precarizacao', 'uberizacao', 'fabrica-social', 'feminizacao-trabalho', 'recusa-trabalho'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'fabrica-social': {
+        name: 'Fábrica Social',
+        description: 'Produção de valor se estende para além da fábrica - toda sociedade vira produtiva (comunicação, lazer, cultura)',
+        connections: ['pos-fordismo', 'trabalho-imaterial', 'subsuncao-cibernetica', 'pos-operaismo', 'negri'],
         color: '#ef4444',
         layer: 0
     },
