@@ -58,6 +58,14 @@
 
     /* ========== LEGADO BINÁRIO (REMOVIDO - apenas comentário histórico) ========== */
     /* As cores roxo e rosa foram substituídas pelo sistema RGB ternário completo */
+    /* Largura responsiva da sidebar: usa unidades relativas para evitar valores fixos em px */
+    --sidebar-width: clamp(16rem, 20vw, 22rem);
+    /* Espaçamento externo configurável para o container principal */
+    --content-horizontal-margin: clamp(1rem, 3.5vw, 2rem); /* responsive lateral gutter */
+    --content-bottom-margin: 3rem; /* margem inferior fora do padding */
+    /* Espaçamento inicial usado no Capítulo 0 — aplicado globalmente como padding-top */
+    /* Assunção: valor razoável observado no capítulo inicial; pode ser ajustado se preferir menor/maior */
+    --chapter-initial-padding: 4rem;
 }
 
 .dark {
@@ -695,15 +703,21 @@ mark {
 
 @media (min-width: 1280px) {
     .main-container {
-        grid-template-columns: 1fr 320px;
+        /* Keep single-column layout; sidebar will appear as overlay when opened */
+        grid-template-columns: 1fr;
     }
 }
 
 /* Conteúdo */
 .content-container {
     max-width: 48rem;
-    margin: 0 auto;
-    padding: 3rem 1.5rem;
+    /* manter centralização horizontal com auto; aplicar margem inferior configurável */
+    margin: 0 auto var(--content-bottom-margin);
+    /* Aplicar o espaçamento inicial do Capítulo 0 ao topo de todo o conteúdo */
+    padding-top: var(--chapter-initial-padding);
+    /* Espaçamento interno lateral responsivo */
+    padding-inline: var(--content-horizontal-margin);
+    padding-bottom: 3rem;
     width: 100%;
     box-sizing: border-box;
     overflow-x: hidden;
@@ -713,41 +727,62 @@ mark {
 
 @media (min-width: 1280px) {
     .content-container {
-        padding: 4rem 2rem;
+        /* Em telas largas, manter o mesmo padding-top (capítulo inicial) e aumentar laterais */
+        padding-top: var(--chapter-initial-padding);
+        /* lateral gutter responsivo */
+        padding-inline: var(--content-horizontal-margin);
+        padding-bottom: 4rem;
+        margin-bottom: var(--content-bottom-margin);
     }
 }
+
+/* Reservar espaço à direita para a sidebar fixa (evita que o conteúdo seja coberto)
+   O sidebar tem 320px de largura e posição fixed à direita; em larguras grandes,
+   afastamos o conteúdo principal para a esquerda adicionando margin-right. */
+/* Removed fixed margin-right: sidebar is now overlay and should not push content */
 
 /* Ajuste específico para telas médias (tablets em paisagem) */
 @media (max-width: 1279px) and (min-width: 900px) {
     .content-container {
         max-width: 100%;
-        padding: 3rem 2rem;
+        padding-top: var(--chapter-initial-padding);
+        padding-inline: var(--content-horizontal-margin);
+        margin-bottom: var(--content-bottom-margin);
     }
 }
 
 @media (max-width: 900px) {
     .content-container {
         max-width: 100%;
-        padding: 2.5rem 2rem;
+        padding-top: var(--chapter-initial-padding);
+        padding-inline: var(--content-horizontal-margin);
+        margin-bottom: var(--content-bottom-margin);
     }
 }
 
 @media (max-width: 800px) {
     .content-container {
         max-width: 100%;
-        padding: 2rem 1.5rem;
+        padding-top: var(--chapter-initial-padding);
+        padding-inline: var(--content-horizontal-margin);
+        margin-bottom: var(--content-bottom-margin);
     }
 }
 
 @media (max-width: 640px) {
     .content-container {
-        padding: 2rem 1rem;
+        padding-top: var(--chapter-initial-padding);
+        padding-inline: var(--content-horizontal-margin);
+        margin-bottom: calc(var(--content-bottom-margin) - 0.5rem);
     }
 }
 
 @media (max-width: 480px) {
     .content-container {
-        padding: 1.5rem 0.75rem;
+        padding-top: var(--chapter-initial-padding);
+        padding-right: 0.75rem;
+        padding-left: 0.75rem;
+        margin-bottom: calc(var(--content-bottom-margin) - 0.75rem);
     }
 
     /* Reduzir margens laterais em listas */
@@ -773,7 +808,7 @@ mark {
     top: 0;
     right: 0;
     height: 100vh;
-    width: 320px;
+    width: var(--sidebar-width);
     background-color: var(--background);
     border-left: none;
     overflow-y: auto;
@@ -781,11 +816,8 @@ mark {
     display: none;
 }
 
-@media (min-width: 1280px) {
-    .sidebar {
-        display: block;
-    }
-}
+/* Sidebar remains hidden by default; it will be shown when the class
+   `.mobile-open` is added (overlay behavior). */
 
 .sidebar-header {
     margin-bottom: 2rem;
@@ -1283,11 +1315,7 @@ html:not(.dark) .font-size-toggle {
     }
 }
 
-@media (min-width: 1280px) {
-    .mobile-menu-btn {
-        display: none;
-    }
-}
+/* Keep mobile menu button visible on all viewports so the sidebar can open as overlay */
 
 .sidebar.mobile-open {
     display: block;
@@ -1317,9 +1345,16 @@ html:not(.dark) .font-size-toggle {
     }
 }
 
-/* Seções */
+/* Seções: reduzir para evitar espaçamento duplicado com padding-top global */
 section+section {
-    margin-top: 6rem;
+    margin-top: 3rem;
+}
+
+/* Em telas muito pequenas, reduzir ainda mais para melhorar densidade */
+@media (max-width: 640px) {
+    section+section {
+        margin-top: 2rem;
+    }
 }
 
 /* Responsividade */
@@ -1347,7 +1382,10 @@ section+section {
 
     /* Melhor espaçamento em tablets */
     .content-container {
-        padding: 2.5rem 1.5rem;
+        /* manter padding-top do capítulo inicial e ajustar laterais para tablets */
+        padding-top: var(--chapter-initial-padding);
+        padding-inline: var(--content-horizontal-margin);
+        padding-bottom: 2.5rem;
     }
 
     /* Ajustar sidebar em tablets */
@@ -2466,7 +2504,10 @@ html:not(.dark) .nota-final {
 
     /* Reduzir padding do conteúdo */
     .content-container {
-        padding: 1rem;
+        /* Em telas muito pequenas, reduzir laterais mas preservar padding-top do capítulo inicial */
+        padding-top: var(--chapter-initial-padding);
+        padding-inline: var(--content-horizontal-margin);
+        padding-bottom: 1rem;
     }
 
     /* Ajustar tamanho dos botões */
