@@ -1,7 +1,7 @@
 # A Revolução Cibernética - Rizoma de Conceitos
-**Versão:** 2.0  
+**Versão:** 2.1  
 **Data:** 2025-10-28T02:09:26.064Z  
-**Total de Conceitos:** 124
+**Total de Conceitos:** 172
 
 ## 📊 Estatísticas
 
@@ -33,11 +33,35 @@ Conjunto finito de instruções para resolver problema
 
 ---
 
+#### Alquimia → Química (`alquimia-quimica`)
+
+Segundo salto: proto-ciência hermética → ciência quantitativa dos elementos
+
+**Conexões:** `filosofia-ciencia`, `balanca-lavoisier`, `conservacao-massa`, `industria-quimica`
+
+---
+
+#### Aristóteles → Newton (`aristoteles-newton`)
+
+Primeiro salto: filosofia natural → física matemática experimental
+
+**Conexões:** `filosofia-ciencia`, `telescopio-galileu`, `metodo-cientifico`, `revolucao-industrial`
+
+---
+
 #### Autopoiese (`autopoiese`)
 
 Sistemas que se auto-criam (Maturana & Varela)
 
 **Conexões:** `cibernetica`, `feedback`, `nhandereko`, `fechamento-operacional`, `acoplamento-estrutural`, `recursividade`, `segunda-ordem`
+
+---
+
+#### Balança Analítica de Lavoisier (`balanca-lavoisier`)
+
+Instrumento que quantifica massa, provando conservação e destruindo alquimia
+
+**Conexões:** `alquimia-quimica`, `instrumentos-cientificos`, `conservacao-massa`
 
 ---
 
@@ -145,6 +169,14 @@ Ferramentas, tecnologias, conhecimentos para transformar natureza
 
 ---
 
+#### Lei da Conservação da Massa (`conservacao-massa`)
+
+Nada se cria, nada se perde — massa total é constante em reações químicas
+
+**Conexões:** `balanca-lavoisier`, `nomenclatura-sistematica`, `materialismo-cientifico`
+
+---
+
 #### Mercadoria (`mercadoria`)
 
 Produto do trabalho destinado à troca no mercado
@@ -158,6 +190,14 @@ Produto do trabalho destinado à troca no mercado
 Não é uno nem múltiplo - é multiplicidade
 
 **Conexões:** `rizoma`, `devir`, `ontologia-relacional`
+
+---
+
+#### Nomenclatura Química Sistemática (`nomenclatura-sistematica`)
+
+Abandono de símbolos herméticos, criação de linguagem descritiva (H₂O)
+
+**Conexões:** `alquimia-quimica`, `linguagem-operacional`
 
 ---
 
@@ -238,6 +278,14 @@ Estrutura não-hierárquica (Deleuze & Guattari)
 Teórica do trabalho reprodutivo e acumulação primitiva
 
 **Conexões:** `trabalho-reprodutivo`, `ciberfeminismo`
+
+---
+
+#### Telescópio de Galileu (`telescopio-galileu`)
+
+Instrumento material que força crise teórica: luas de Júpiter contradizem geocentrismo
+
+**Conexões:** `aristoteles-newton`, `ponte-metodologica`, `instrumentos-cientificos`
 
 ---
 
@@ -331,6 +379,14 @@ Estranhamento do trabalhador em relação ao produto e ao processo
 
 ---
 
+#### Arquitetura de von Neumann (`arquitetura-von-neumann`)
+
+Modelo de computador de programa armazenado — base de todos computadores modernos
+
+**Conexões:** `maquina-turing`, `computador-universal`, `cibernetica`
+
+---
+
 #### Automação (`automacao`)
 
 Substituição de trabalho humano por máquinas
@@ -411,6 +467,38 @@ Dinheiro → Mercadorias → Produção → Mais Dinheiro
 
 ---
 
+#### Circuitos Lógicos (`circuitos-logicos`)
+
+Claude Shannon: operações booleanas (AND/OR/NOT) implementáveis em eletrônica
+
+**Conexões:** `logica-computacao`, `portas-logicas`, `shannon`
+
+---
+
+#### Colonização da Imaginação (`colonizacao-imaginacao`)
+
+Incapacidade de conceber alternativas — realismo capitalista (Mark Fisher)
+
+**Conexões:** `saltos-abortados`, `realismo-capitalista`, `tina`, `cosmotecnica`
+
+---
+
+#### Cooptação Capitalista (`cooptacao-capitalista`)
+
+Capital metaboliza críticas, despolitiza via mercantilização (contracultura→publicidade)
+
+**Conexões:** `saltos-abortados`, `neutralizar-conteudo`, `feminismo-girlboss`, `opensource-bigtech`
+
+---
+
+#### Crise do Paradigma Booleano (`crise-paradigma-booleano`)
+
+Lógica True/False inadequada para ambiguidade — redes neurais são caixa-preta probabilística
+
+**Conexões:** `ia-salto-andamento`, `logica-computacao`, `emergencia`
+
+---
+
 #### Crítica Performativa (`critica-performativa`)
 
 Sistema que executa sua própria crítica
@@ -440,6 +528,14 @@ Não há nuvem - há data centers consumindo rios para refrigeração
 Limites e possibilidades de tecnologia na democracia
 
 **Conexões:** `problema-parada`, `limites-tecnologia`, `planejamento-participativo`
+
+---
+
+#### Democracia Aumentada vs Totalitarismo (`democracia-aumentada-vs-totalitarismo`)
+
+Bifurcação: IA pode gerar Cybersyn 2.0 OU Social Credit System global
+
+**Conexões:** `ia-salto-andamento`, `cybersyn`, `soberania-digital`, `vigilancia`
 
 ---
 
@@ -507,6 +603,14 @@ Propriedades qualitativas novas que surgem no sistema mas não existem nos compo
 
 ---
 
+#### Era Digital (`era-digital`)
+
+Lógica materializada: ciberespaço, algoritmos constituindo sujeitos, internet
+
+**Conexões:** `logica-computacao`, `recriacao-real`, `capitalismo-plataforma`, `sujeito-automatico`
+
+---
+
 #### Escalada Simétrica (`escalada-simetrica`)
 
 Feedback positivo descontrolado em interações competitivas (Bateson)
@@ -563,6 +667,14 @@ Amplificador - crescimento exponencial ou colapso (microfonia, vício)
 
 ---
 
+#### Feminismo → Girl Boss (`feminismo-girlboss`)
+
+Movimento anticapitalista reduzido a empoderamento individual no mercado (Lean In)
+
+**Conexões:** `cooptacao-capitalista`, `neoliberalismo-progressista`
+
+---
+
 #### Fetichismo da Mercadoria (`fetichismo`)
 
 Relações sociais aparecem como relações entre coisas
@@ -603,6 +715,14 @@ Guerra das redes, soberania tecnológica, BRICS vs OTAN
 
 ---
 
+#### Golpe no Chile (1973) (`golpe-chile`)
+
+Pinochet destrói Cybersyn, mata/exila técnicos — assassinato de possibilidade
+
+**Conexões:** `repressao-direta`, `cybersyn`, `allende`
+
+---
+
 #### Guaiamum Lateral (`guaiamum`)
 
 Movimento diagonal, não-linear, caranguejo
@@ -635,11 +755,27 @@ Armadilhas para capturar bots invasores
 
 ---
 
+#### IA como Salto em Andamento (`ia-salto-andamento`)
+
+De lógica determinística (Turing) → sistemas probabilísticos (redes neurais) — quem controla?
+
+**Conexões:** `urgencia-etica`, `ia`, `crise-paradigma-booleano`, `democracia-aumentada-vs-totalitarismo`
+
+---
+
 #### Ideologia (`ideologia`)
 
 Sistema de representações que mascara contradições reais
 
 **Conexões:** `fetichismo`, `fetichismo-digital`, `alienacao`
+
+---
+
+#### Indústria Química (`industria-quimica`)
+
+Química materializada: fertilizantes, corantes, plásticos, medicamentos sintéticos
+
+**Conexões:** `alquimia-quimica`, `recriacao-real`, `sintese-ureia`, `materialidade-computacao`
 
 ---
 
@@ -696,6 +832,14 @@ Nem tudo pode ser "resolvido com tecnologia" - exige política
 Coordenação comportamental através de acoplamento estrutural, não transmissão de informação
 
 **Conexões:** `acoplamento-estrutural`, `comunicacao`, `cibernetica`
+
+---
+
+#### Lógica → Computação (`logica-computacao`)
+
+Terceiro salto: cálculo formal do pensamento → máquinas universais de silício
+
+**Conexões:** `filosofia-ciencia`, `maquina-turing`, `circuitos-logicos`, `era-digital`
 
 ---
 
@@ -779,11 +923,27 @@ Concentração de poder via efeitos de rede
 
 ---
 
+#### Máquina de Turing (`maquina-turing`)
+
+Experimento mental (1936): qualquer computação redutível a operações simples
+
+**Conexões:** `logica-computacao`, `instrumentos-cientificos`, `arquitetura-von-neumann`, `teoria-computabilidade`
+
+---
+
 #### Necropolítica Digital (`necropolitica-digital`)
 
 Algoritmos que decidem quem vive e quem morre (Mbembe)
 
 **Conexões:** `feedback-positivo`, `enigma`, `e-waste`, `moderacao-conteudo`, `gabinete-odio`
+
+---
+
+#### Neutralizar Conteúdo, Manter Forma (`neutralizar-conteudo`)
+
+Padrão: aceitar forma radical mas esvaziar conteúdo revolucionário
+
+**Conexões:** `cooptacao-capitalista`, `cooperativas-uber`, `blockchain-especulativo`, `greenwashing`
 
 ---
 
@@ -800,6 +960,14 @@ Filosofia que se performa em código
 Resistir via não-transparência (Édouard Glissant)
 
 **Conexões:** `resistencia`, `honeypots`, `captcha`
+
+---
+
+#### Open Source → Big Tech (`opensource-bigtech`)
+
+Software livre capturado: Google/Facebook usam Linux/Apache gratuitamente, lucram bilhões
+
+**Conexões:** `cooptacao-capitalista`, `commons-digital`, `extracao-valor`
 
 ---
 
@@ -851,6 +1019,14 @@ Prova: nem tudo é computável - limites matemáticos da tecnologia
 
 ---
 
+#### Realismo Capitalista (`realismo-capitalista`)
+
+"Mais fácil imaginar fim do mundo que fim do capitalismo" (Mark Fisher)
+
+**Conexões:** `colonizacao-imaginacao`, `hegemonia`, `naturalizacao-capitalismo`
+
+---
+
 #### Recompensa Variável (`recompensa-variavel`)
 
 Incerteza maximiza dopamina (slot machine = próximo scroll)
@@ -867,6 +1043,14 @@ Lei 13.467 - legalização da mais-valia absoluta
 
 ---
 
+#### Repressão Direta (`repressao-direta`)
+
+Destruição física de infraestrutura revolucionária (Cybersyn queimado, Panteras mortos)
+
+**Conexões:** `saltos-abortados`, `golpe-chile`, `cointelpro`, `terrorismo-estado`
+
+---
+
 #### Resistência em Código (`resistencia`)
 
 Técnicas práticas de contra-automação
@@ -875,11 +1059,43 @@ Técnicas práticas de contra-automação
 
 ---
 
+#### Revolução Industrial (`revolucao-industrial`)
+
+Física newtoniana materializada em máquinas a vapor, ferrovias, fábricas
+
+**Conexões:** `aristoteles-newton`, `recriacao-real`, `forcas-produtivas`, `capitalismo`
+
+---
+
+#### Saltos Abortados (`saltos-abortados`)
+
+Transformações impedidas por repressão, cooptação ou limitação epistêmica
+
+**Conexões:** `salto-dialetico`, `repressao-direta`, `cooptacao-capitalista`, `colonizacao-imaginacao`
+
+---
+
 #### Sistema Ternário (-1, 0, +1) (`sistema-ternario`)
 
 Base 3 balanceada para representar temporalidade
 
 **Conexões:** `temporalidade`, `feedback`, `backfeed`
+
+---
+
+#### Síntese da Ureia (Wöhler 1828) (`sintese-ureia`)
+
+Primeira substância orgânica sintetizada artificialmente — quebra barreira vivo/não-vivo
+
+**Conexões:** `industria-quimica`, `materialismo-cientifico`
+
+---
+
+#### TINA (There Is No Alternative) (`tina`)
+
+Slogan thatcherista: neoliberalismo como única racionalidade possível
+
+**Conexões:** `realismo-capitalista`, `hegemonia`, `cosmotecnica`
 
 ---
 
@@ -939,6 +1155,14 @@ Precarização do trabalho via plataformas digitais
 
 ---
 
+#### Urgência Ética (`urgencia-etica`)
+
+Saltos atuais (IA, quântica, bio) exigem direcionamento consciente — tempo é limitado
+
+**Conexões:** `salto-dialetico`, `ia-salto-andamento`, `responsabilidade-coletiva`
+
+---
+
 #### Vigilância Digital (`vigilancia`)
 
 Monitoramento contínuo de comportamento para extração de valor
@@ -965,6 +1189,62 @@ Apps como máquinas de Wiener: feedback positivo dopamina → mais scroll
 
 ### Camada 1: Futuro (+1)
 
+#### Anomalias Empíricas (`anomalias-empiricas`)
+
+Observações que teoria vigente não consegue explicar (Kuhn)
+
+**Conexões:** `crise-abstracao`, `tycho-brahe`, `mudanca-paradigma`
+
+---
+
+#### Condições Materiais do Salto (`condicoes-materiais-salto`)
+
+Saltos exigem infraestrutura, relações sociais e hegemonia cultural adequadas
+
+**Conexões:** `salto-dialetico`, `infraestrutura-tecnologica`, `relacoes-producao`, `hegemonia-cultural`
+
+---
+
+#### Crise da Abstração (`crise-abstracao`)
+
+Fase 1: quando filosofia encontra contradições empíricas insolúveis
+
+**Conexões:** `salto-dialetico`, `anomalias-empiricas`, `limites-paradigma`
+
+---
+
+#### De Leitor a Construtor (`leitor-construtor`)
+
+Fase 3 pendente: organizar cooperativas, implementar protocolos, construir redes mesh
+
+**Conexões:** `salto-livro`, `cooperativas-plataforma`, `protocolos-federados`, `redes-mesh`, `politicas-publicas`
+
+---
+
+#### Dessacralização da Natureza (`dessacralizacao-natureza`)
+
+Natureza deixa de ser sagrada, torna-se recurso quantificável e explorável
+
+**Conexões:** `hegemonia-cultural`, `matematizacao`, `extrativismo`, `cosmotecnica`
+
+---
+
+#### Espiral Dialética (`espiral-dialetica`)
+
+Conhecimento não linear nem circular — espiral ascendente acumulando complexidade
+
+**Conexões:** `tese-antitese-sintese`, `progresso-nao-linear`, `acumulacao-conhecimento`
+
+---
+
+#### Filosofia → Ciência (`filosofia-ciencia`)
+
+Transformação de abstração em ferramentas materiais testáveis
+
+**Conexões:** `salto-dialetico`, `aristoteles-newton`, `alquimia-quimica`, `logica-computacao`
+
+---
+
 #### Grafo de Conceitos (`grafo-conceitos`)
 
 Estrutura de dados que representa o rizoma
@@ -973,11 +1253,67 @@ Estrutura de dados que representa o rizoma
 
 ---
 
+#### Hegemonia Cultural (`hegemonia-cultural`)
+
+Consenso ativo sobre racionalidade (Gramsci) — saltos precisam ser aceitos culturalmente
+
+**Conexões:** `condicoes-materiais-salto`, `iluminismo`, `dessacralizacao-natureza`, `cosmotecnica`
+
+---
+
+#### Humildade Epistemológica (`humildade-epistemologica`)
+
+Toda síntese é provisória — novas crises gerarão novos saltos (inclusive deste livro)
+
+**Conexões:** `espiral-dialetica`, `falibilismo`, `conhecimento-processo`
+
+---
+
+#### Iluminismo (`iluminismo`)
+
+Projeto cultural: razão universal, progresso linear, instrumentalização da natureza
+
+**Conexões:** `hegemonia-cultural`, `sapere-aude`, `universalismo-racionalista`, `ultrarracionalismo`
+
+---
+
+#### Infraestrutura Tecnológica (`infraestrutura-tecnologica`)
+
+Base material prévia necessária (vidro para telescópio, silício para chips)
+
+**Conexões:** `condicoes-materiais-salto`, `dependencia-tecnologica`, `cadeia-suprimentos`
+
+---
+
+#### Instrumentos Científicos (`instrumentos-cientificos`)
+
+Ferramentas que estendem sentidos e permitem testar teoria
+
+**Conexões:** `ponte-metodologica`, `telescopio-galileu`, `balanca-lavoisier`, `maquina-turing`
+
+---
+
+#### Matematização (`matematizacao`)
+
+Expressão de fenômenos naturais em linguagem matemática (F=ma)
+
+**Conexões:** `ponte-metodologica`, `newton-principia`, `linguagem-operacional`
+
+---
+
 #### Modo Colaborativo (`modo-colaborativo`)
 
 Interação síncrona entre usuários (planejado)
 
 **Conexões:** `nhandereko`, `navegacao-rizomatica`, `websocket`
+
+---
+
+#### Método Experimental (`metodo-experimental`)
+
+Isolar variáveis, criar condições controladas, replicar observações
+
+**Conexões:** `ponte-metodologica`, `plano-inclinado-galileu`, `reproducibilidade`
 
 ---
 
@@ -994,6 +1330,54 @@ Este sistema que você está usando agora
 Orquestrador de conhecimento autopoiético
 
 **Conexões:** `autopoiese`, `epistemologia-guarani`, `modo-colaborativo`
+
+---
+
+#### O Salto Que Este Livro Tenta (`salto-livro`)
+
+Meta-reflexão: livro como Fases 1-2 do salto, leitor completa Fase 3 com prática
+
+**Conexões:** `salto-dialetico`, `teoria-pratica`, `leitor-construtor`, `praxis`
+
+---
+
+#### Ponte Metodológica (`ponte-metodologica`)
+
+Fase 2: ferramentas materiais que operacionalizam conceitos filosóficos
+
+**Conexões:** `salto-dialetico`, `instrumentos-cientificos`, `matematizacao`, `metodo-experimental`
+
+---
+
+#### Recriação do Real (`recriacao-real`)
+
+Fase 3: nova ciência gera tecnologias que transformam mundo material
+
+**Conexões:** `salto-dialetico`, `revolucao-industrial`, `industria-quimica`, `era-digital`
+
+---
+
+#### Salto Dialético (`salto-dialetico`)
+
+Processo pelo qual filosofia abstrata se transforma em ciência concreta que recria o mundo
+
+**Conexões:** `tese-antitese-sintese`, `filosofia-ciencia`, `materialismo-dialetico`, `praxis`
+
+---
+
+#### Sapere Aude (Kant) (`sapere-aude`)
+
+"Ouse saber" — lema iluminista da razão liberada de superstição
+
+**Conexões:** `iluminismo`, `emancipacao-racional`
+
+---
+
+#### Tese-Antítese-Síntese (`tese-antitese-sintese`)
+
+Movimento dialético hegeliano: contradição gera superação qualitativa
+
+**Conexões:** `salto-dialetico`, `negacao-negacao`, `espiral-dialetica`
 
 ---
 

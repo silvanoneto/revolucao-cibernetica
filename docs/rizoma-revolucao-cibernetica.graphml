@@ -752,6 +752,294 @@
       <data key="color">#6366f1</data>
       <data key="layer">0</data>
     </node>
+    <node id="salto-dialetico">
+      <data key="name">Salto Dialético</data>
+      <data key="description">Processo pelo qual filosofia abstrata se transforma em ciência concreta que recria o mundo</data>
+      <data key="color">#8b5cf6</data>
+      <data key="layer">1</data>
+    </node>
+    <node id="tese-antitese-sintese">
+      <data key="name">Tese-Antítese-Síntese</data>
+      <data key="description">Movimento dialético hegeliano: contradição gera superação qualitativa</data>
+      <data key="color">#8b5cf6</data>
+      <data key="layer">1</data>
+    </node>
+    <node id="filosofia-ciencia">
+      <data key="name">Filosofia → Ciência</data>
+      <data key="description">Transformação de abstração em ferramentas materiais testáveis</data>
+      <data key="color">#8b5cf6</data>
+      <data key="layer">1</data>
+    </node>
+    <node id="aristoteles-newton">
+      <data key="name">Aristóteles → Newton</data>
+      <data key="description">Primeiro salto: filosofia natural → física matemática experimental</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">-1</data>
+    </node>
+    <node id="crise-abstracao">
+      <data key="name">Crise da Abstração</data>
+      <data key="description">Fase 1: quando filosofia encontra contradições empíricas insolúveis</data>
+      <data key="color">#8b5cf6</data>
+      <data key="layer">1</data>
+    </node>
+    <node id="anomalias-empiricas">
+      <data key="name">Anomalias Empíricas</data>
+      <data key="description">Observações que teoria vigente não consegue explicar (Kuhn)</data>
+      <data key="color">#8b5cf6</data>
+      <data key="layer">1</data>
+    </node>
+    <node id="telescopio-galileu">
+      <data key="name">Telescópio de Galileu</data>
+      <data key="description">Instrumento material que força crise teórica: luas de Júpiter contradizem geocentrismo</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">-1</data>
+    </node>
+    <node id="ponte-metodologica">
+      <data key="name">Ponte Metodológica</data>
+      <data key="description">Fase 2: ferramentas materiais que operacionalizam conceitos filosóficos</data>
+      <data key="color">#8b5cf6</data>
+      <data key="layer">1</data>
+    </node>
+    <node id="instrumentos-cientificos">
+      <data key="name">Instrumentos Científicos</data>
+      <data key="description">Ferramentas que estendem sentidos e permitem testar teoria</data>
+      <data key="color">#8b5cf6</data>
+      <data key="layer">1</data>
+    </node>
+    <node id="matematizacao">
+      <data key="name">Matematização</data>
+      <data key="description">Expressão de fenômenos naturais em linguagem matemática (F=ma)</data>
+      <data key="color">#8b5cf6</data>
+      <data key="layer">1</data>
+    </node>
+    <node id="metodo-experimental">
+      <data key="name">Método Experimental</data>
+      <data key="description">Isolar variáveis, criar condições controladas, replicar observações</data>
+      <data key="color">#8b5cf6</data>
+      <data key="layer">1</data>
+    </node>
+    <node id="recriacao-real">
+      <data key="name">Recriação do Real</data>
+      <data key="description">Fase 3: nova ciência gera tecnologias que transformam mundo material</data>
+      <data key="color">#8b5cf6</data>
+      <data key="layer">1</data>
+    </node>
+    <node id="revolucao-industrial">
+      <data key="name">Revolução Industrial</data>
+      <data key="description">Física newtoniana materializada em máquinas a vapor, ferrovias, fábricas</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="alquimia-quimica">
+      <data key="name">Alquimia → Química</data>
+      <data key="description">Segundo salto: proto-ciência hermética → ciência quantitativa dos elementos</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">-1</data>
+    </node>
+    <node id="balanca-lavoisier">
+      <data key="name">Balança Analítica de Lavoisier</data>
+      <data key="description">Instrumento que quantifica massa, provando conservação e destruindo alquimia</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">-1</data>
+    </node>
+    <node id="conservacao-massa">
+      <data key="name">Lei da Conservação da Massa</data>
+      <data key="description">Nada se cria, nada se perde — massa total é constante em reações químicas</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">-1</data>
+    </node>
+    <node id="nomenclatura-sistematica">
+      <data key="name">Nomenclatura Química Sistemática</data>
+      <data key="description">Abandono de símbolos herméticos, criação de linguagem descritiva (H₂O)</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">-1</data>
+    </node>
+    <node id="industria-quimica">
+      <data key="name">Indústria Química</data>
+      <data key="description">Química materializada: fertilizantes, corantes, plásticos, medicamentos sintéticos</data>
+      <data key="color">#10b981</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="sintese-ureia">
+      <data key="name">Síntese da Ureia (Wöhler 1828)</data>
+      <data key="description">Primeira substância orgânica sintetizada artificialmente — quebra barreira vivo/não-vivo</data>
+      <data key="color">#10b981</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="logica-computacao">
+      <data key="name">Lógica → Computação</data>
+      <data key="description">Terceiro salto: cálculo formal do pensamento → máquinas universais de silício</data>
+      <data key="color">#6366f1</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="maquina-turing">
+      <data key="name">Máquina de Turing</data>
+      <data key="description">Experimento mental (1936): qualquer computação redutível a operações simples</data>
+      <data key="color">#6366f1</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="circuitos-logicos">
+      <data key="name">Circuitos Lógicos</data>
+      <data key="description">Claude Shannon: operações booleanas (AND/OR/NOT) implementáveis em eletrônica</data>
+      <data key="color">#6366f1</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="arquitetura-von-neumann">
+      <data key="name">Arquitetura de von Neumann</data>
+      <data key="description">Modelo de computador de programa armazenado — base de todos computadores modernos</data>
+      <data key="color">#6366f1</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="era-digital">
+      <data key="name">Era Digital</data>
+      <data key="description">Lógica materializada: ciberespaço, algoritmos constituindo sujeitos, internet</data>
+      <data key="color">#6366f1</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="condicoes-materiais-salto">
+      <data key="name">Condições Materiais do Salto</data>
+      <data key="description">Saltos exigem infraestrutura, relações sociais e hegemonia cultural adequadas</data>
+      <data key="color">#8b5cf6</data>
+      <data key="layer">1</data>
+    </node>
+    <node id="infraestrutura-tecnologica">
+      <data key="name">Infraestrutura Tecnológica</data>
+      <data key="description">Base material prévia necessária (vidro para telescópio, silício para chips)</data>
+      <data key="color">#8b5cf6</data>
+      <data key="layer">1</data>
+    </node>
+    <node id="hegemonia-cultural">
+      <data key="name">Hegemonia Cultural</data>
+      <data key="description">Consenso ativo sobre racionalidade (Gramsci) — saltos precisam ser aceitos culturalmente</data>
+      <data key="color">#8b5cf6</data>
+      <data key="layer">1</data>
+    </node>
+    <node id="iluminismo">
+      <data key="name">Iluminismo</data>
+      <data key="description">Projeto cultural: razão universal, progresso linear, instrumentalização da natureza</data>
+      <data key="color">#8b5cf6</data>
+      <data key="layer">1</data>
+    </node>
+    <node id="sapere-aude">
+      <data key="name">Sapere Aude (Kant)</data>
+      <data key="description">"Ouse saber" — lema iluminista da razão liberada de superstição</data>
+      <data key="color">#8b5cf6</data>
+      <data key="layer">1</data>
+    </node>
+    <node id="dessacralizacao-natureza">
+      <data key="name">Dessacralização da Natureza</data>
+      <data key="description">Natureza deixa de ser sagrada, torna-se recurso quantificável e explorável</data>
+      <data key="color">#8b5cf6</data>
+      <data key="layer">1</data>
+    </node>
+    <node id="saltos-abortados">
+      <data key="name">Saltos Abortados</data>
+      <data key="description">Transformações impedidas por repressão, cooptação ou limitação epistêmica</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="repressao-direta">
+      <data key="name">Repressão Direta</data>
+      <data key="description">Destruição física de infraestrutura revolucionária (Cybersyn queimado, Panteras mortos)</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="golpe-chile">
+      <data key="name">Golpe no Chile (1973)</data>
+      <data key="description">Pinochet destrói Cybersyn, mata/exila técnicos — assassinato de possibilidade</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="cooptacao-capitalista">
+      <data key="name">Cooptação Capitalista</data>
+      <data key="description">Capital metaboliza críticas, despolitiza via mercantilização (contracultura→publicidade)</data>
+      <data key="color">#10b981</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="neutralizar-conteudo">
+      <data key="name">Neutralizar Conteúdo, Manter Forma</data>
+      <data key="description">Padrão: aceitar forma radical mas esvaziar conteúdo revolucionário</data>
+      <data key="color">#10b981</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="feminismo-girlboss">
+      <data key="name">Feminismo → Girl Boss</data>
+      <data key="description">Movimento anticapitalista reduzido a empoderamento individual no mercado (Lean In)</data>
+      <data key="color">#10b981</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="opensource-bigtech">
+      <data key="name">Open Source → Big Tech</data>
+      <data key="description">Software livre capturado: Google/Facebook usam Linux/Apache gratuitamente, lucram bilhões</data>
+      <data key="color">#10b981</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="colonizacao-imaginacao">
+      <data key="name">Colonização da Imaginação</data>
+      <data key="description">Incapacidade de conceber alternativas — realismo capitalista (Mark Fisher)</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="realismo-capitalista">
+      <data key="name">Realismo Capitalista</data>
+      <data key="description">"Mais fácil imaginar fim do mundo que fim do capitalismo" (Mark Fisher)</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="tina">
+      <data key="name">TINA (There Is No Alternative)</data>
+      <data key="description">Slogan thatcherista: neoliberalismo como única racionalidade possível</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="salto-livro">
+      <data key="name">O Salto Que Este Livro Tenta</data>
+      <data key="description">Meta-reflexão: livro como Fases 1-2 do salto, leitor completa Fase 3 com prática</data>
+      <data key="color">#8b5cf6</data>
+      <data key="layer">1</data>
+    </node>
+    <node id="leitor-construtor">
+      <data key="name">De Leitor a Construtor</data>
+      <data key="description">Fase 3 pendente: organizar cooperativas, implementar protocolos, construir redes mesh</data>
+      <data key="color">#8b5cf6</data>
+      <data key="layer">1</data>
+    </node>
+    <node id="espiral-dialetica">
+      <data key="name">Espiral Dialética</data>
+      <data key="description">Conhecimento não linear nem circular — espiral ascendente acumulando complexidade</data>
+      <data key="color">#8b5cf6</data>
+      <data key="layer">1</data>
+    </node>
+    <node id="humildade-epistemologica">
+      <data key="name">Humildade Epistemológica</data>
+      <data key="description">Toda síntese é provisória — novas crises gerarão novos saltos (inclusive deste livro)</data>
+      <data key="color">#8b5cf6</data>
+      <data key="layer">1</data>
+    </node>
+    <node id="urgencia-etica">
+      <data key="name">Urgência Ética</data>
+      <data key="description">Saltos atuais (IA, quântica, bio) exigem direcionamento consciente — tempo é limitado</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="ia-salto-andamento">
+      <data key="name">IA como Salto em Andamento</data>
+      <data key="description">De lógica determinística (Turing) → sistemas probabilísticos (redes neurais) — quem controla?</data>
+      <data key="color">#6366f1</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="crise-paradigma-booleano">
+      <data key="name">Crise do Paradigma Booleano</data>
+      <data key="description">Lógica True/False inadequada para ambiguidade — redes neurais são caixa-preta probabilística</data>
+      <data key="color">#6366f1</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="democracia-aumentada-vs-totalitarismo">
+      <data key="name">Democracia Aumentada vs Totalitarismo</data>
+      <data key="description">Bifurcação: IA pode gerar Cybersyn 2.0 OU Social Credit System global</data>
+      <data key="color">#6366f1</data>
+      <data key="layer">0</data>
+    </node>
     <edge source="mercadoria" target="valor-uso"/>
     <edge source="mercadoria" target="valor-troca"/>
     <edge source="mercadoria" target="fetichismo"/>
@@ -1032,5 +1320,128 @@
     <edge source="geopolitica" target="vigilancia"/>
     <edge source="geopolitica" target="internet"/>
     <edge source="internet" target="capitalismo-vigilancia"/>
+    <edge source="salto-dialetico" target="tese-antitese-sintese"/>
+    <edge source="salto-dialetico" target="filosofia-ciencia"/>
+    <edge source="salto-dialetico" target="materialismo-dialetico"/>
+    <edge source="salto-dialetico" target="praxis"/>
+    <edge source="tese-antitese-sintese" target="negacao-negacao"/>
+    <edge source="tese-antitese-sintese" target="espiral-dialetica"/>
+    <edge source="filosofia-ciencia" target="aristoteles-newton"/>
+    <edge source="filosofia-ciencia" target="alquimia-quimica"/>
+    <edge source="filosofia-ciencia" target="logica-computacao"/>
+    <edge source="aristoteles-newton" target="telescopio-galileu"/>
+    <edge source="aristoteles-newton" target="metodo-cientifico"/>
+    <edge source="aristoteles-newton" target="revolucao-industrial"/>
+    <edge source="crise-abstracao" target="salto-dialetico"/>
+    <edge source="crise-abstracao" target="anomalias-empiricas"/>
+    <edge source="crise-abstracao" target="limites-paradigma"/>
+    <edge source="anomalias-empiricas" target="tycho-brahe"/>
+    <edge source="anomalias-empiricas" target="mudanca-paradigma"/>
+    <edge source="telescopio-galileu" target="ponte-metodologica"/>
+    <edge source="telescopio-galileu" target="instrumentos-cientificos"/>
+    <edge source="ponte-metodologica" target="salto-dialetico"/>
+    <edge source="ponte-metodologica" target="instrumentos-cientificos"/>
+    <edge source="ponte-metodologica" target="matematizacao"/>
+    <edge source="ponte-metodologica" target="metodo-experimental"/>
+    <edge source="instrumentos-cientificos" target="balanca-lavoisier"/>
+    <edge source="instrumentos-cientificos" target="maquina-turing"/>
+    <edge source="matematizacao" target="newton-principia"/>
+    <edge source="matematizacao" target="linguagem-operacional"/>
+    <edge source="metodo-experimental" target="plano-inclinado-galileu"/>
+    <edge source="metodo-experimental" target="reproducibilidade"/>
+    <edge source="recriacao-real" target="salto-dialetico"/>
+    <edge source="recriacao-real" target="revolucao-industrial"/>
+    <edge source="recriacao-real" target="industria-quimica"/>
+    <edge source="recriacao-real" target="era-digital"/>
+    <edge source="revolucao-industrial" target="forcas-produtivas"/>
+    <edge source="revolucao-industrial" target="capitalismo"/>
+    <edge source="alquimia-quimica" target="balanca-lavoisier"/>
+    <edge source="alquimia-quimica" target="conservacao-massa"/>
+    <edge source="alquimia-quimica" target="industria-quimica"/>
+    <edge source="balanca-lavoisier" target="conservacao-massa"/>
+    <edge source="conservacao-massa" target="nomenclatura-sistematica"/>
+    <edge source="conservacao-massa" target="materialismo-cientifico"/>
+    <edge source="nomenclatura-sistematica" target="alquimia-quimica"/>
+    <edge source="nomenclatura-sistematica" target="linguagem-operacional"/>
+    <edge source="industria-quimica" target="sintese-ureia"/>
+    <edge source="industria-quimica" target="materialidade-computacao"/>
+    <edge source="sintese-ureia" target="materialismo-cientifico"/>
+    <edge source="logica-computacao" target="maquina-turing"/>
+    <edge source="logica-computacao" target="circuitos-logicos"/>
+    <edge source="logica-computacao" target="era-digital"/>
+    <edge source="maquina-turing" target="arquitetura-von-neumann"/>
+    <edge source="maquina-turing" target="teoria-computabilidade"/>
+    <edge source="circuitos-logicos" target="portas-logicas"/>
+    <edge source="circuitos-logicos" target="shannon"/>
+    <edge source="arquitetura-von-neumann" target="computador-universal"/>
+    <edge source="arquitetura-von-neumann" target="cibernetica"/>
+    <edge source="era-digital" target="capitalismo-plataforma"/>
+    <edge source="era-digital" target="sujeito-automatico"/>
+    <edge source="condicoes-materiais-salto" target="salto-dialetico"/>
+    <edge source="condicoes-materiais-salto" target="infraestrutura-tecnologica"/>
+    <edge source="condicoes-materiais-salto" target="relacoes-producao"/>
+    <edge source="condicoes-materiais-salto" target="hegemonia-cultural"/>
+    <edge source="infraestrutura-tecnologica" target="dependencia-tecnologica"/>
+    <edge source="infraestrutura-tecnologica" target="cadeia-suprimentos"/>
+    <edge source="hegemonia-cultural" target="iluminismo"/>
+    <edge source="hegemonia-cultural" target="dessacralizacao-natureza"/>
+    <edge source="hegemonia-cultural" target="cosmotecnica"/>
+    <edge source="iluminismo" target="sapere-aude"/>
+    <edge source="iluminismo" target="universalismo-racionalista"/>
+    <edge source="iluminismo" target="ultrarracionalismo"/>
+    <edge source="sapere-aude" target="emancipacao-racional"/>
+    <edge source="dessacralizacao-natureza" target="matematizacao"/>
+    <edge source="dessacralizacao-natureza" target="extrativismo"/>
+    <edge source="dessacralizacao-natureza" target="cosmotecnica"/>
+    <edge source="saltos-abortados" target="salto-dialetico"/>
+    <edge source="saltos-abortados" target="repressao-direta"/>
+    <edge source="saltos-abortados" target="cooptacao-capitalista"/>
+    <edge source="saltos-abortados" target="colonizacao-imaginacao"/>
+    <edge source="repressao-direta" target="golpe-chile"/>
+    <edge source="repressao-direta" target="cointelpro"/>
+    <edge source="repressao-direta" target="terrorismo-estado"/>
+    <edge source="golpe-chile" target="cybersyn"/>
+    <edge source="golpe-chile" target="allende"/>
+    <edge source="cooptacao-capitalista" target="neutralizar-conteudo"/>
+    <edge source="cooptacao-capitalista" target="feminismo-girlboss"/>
+    <edge source="cooptacao-capitalista" target="opensource-bigtech"/>
+    <edge source="neutralizar-conteudo" target="cooperativas-uber"/>
+    <edge source="neutralizar-conteudo" target="blockchain-especulativo"/>
+    <edge source="neutralizar-conteudo" target="greenwashing"/>
+    <edge source="feminismo-girlboss" target="neoliberalismo-progressista"/>
+    <edge source="opensource-bigtech" target="commons-digital"/>
+    <edge source="opensource-bigtech" target="extracao-valor"/>
+    <edge source="colonizacao-imaginacao" target="realismo-capitalista"/>
+    <edge source="colonizacao-imaginacao" target="tina"/>
+    <edge source="colonizacao-imaginacao" target="cosmotecnica"/>
+    <edge source="realismo-capitalista" target="hegemonia"/>
+    <edge source="realismo-capitalista" target="naturalizacao-capitalismo"/>
+    <edge source="tina" target="realismo-capitalista"/>
+    <edge source="tina" target="hegemonia"/>
+    <edge source="tina" target="cosmotecnica"/>
+    <edge source="salto-livro" target="salto-dialetico"/>
+    <edge source="salto-livro" target="teoria-pratica"/>
+    <edge source="salto-livro" target="leitor-construtor"/>
+    <edge source="salto-livro" target="praxis"/>
+    <edge source="leitor-construtor" target="cooperativas-plataforma"/>
+    <edge source="leitor-construtor" target="protocolos-federados"/>
+    <edge source="leitor-construtor" target="redes-mesh"/>
+    <edge source="leitor-construtor" target="politicas-publicas"/>
+    <edge source="espiral-dialetica" target="progresso-nao-linear"/>
+    <edge source="espiral-dialetica" target="acumulacao-conhecimento"/>
+    <edge source="humildade-epistemologica" target="espiral-dialetica"/>
+    <edge source="humildade-epistemologica" target="falibilismo"/>
+    <edge source="humildade-epistemologica" target="conhecimento-processo"/>
+    <edge source="urgencia-etica" target="salto-dialetico"/>
+    <edge source="urgencia-etica" target="ia-salto-andamento"/>
+    <edge source="urgencia-etica" target="responsabilidade-coletiva"/>
+    <edge source="ia-salto-andamento" target="ia"/>
+    <edge source="ia-salto-andamento" target="crise-paradigma-booleano"/>
+    <edge source="ia-salto-andamento" target="democracia-aumentada-vs-totalitarismo"/>
+    <edge source="crise-paradigma-booleano" target="logica-computacao"/>
+    <edge source="crise-paradigma-booleano" target="emergencia"/>
+    <edge source="democracia-aumentada-vs-totalitarismo" target="cybersyn"/>
+    <edge source="democracia-aumentada-vs-totalitarismo" target="soberania-digital"/>
+    <edge source="democracia-aumentada-vs-totalitarismo" target="vigilancia"/>
   </graph>
 </graphml>

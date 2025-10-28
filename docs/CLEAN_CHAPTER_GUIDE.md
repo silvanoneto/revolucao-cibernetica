@@ -62,7 +62,7 @@ O repositório recebeu a seguinte declaração/fórmula filosófica em `lei.md`.
 
 Trecho (texto original em `lei.md`):
 
-> # LEI UNIVERSAL DA DIALÉTICA INFORMACIONAL HOMEM-MAQUINA
+> LEI UNIVERSAL DA DIALÉTICA INFORMACIONAL HOMEM-MAQUINA
 >
 > Com o manifesto em mãos, adentremos nos falsos "Möbius" (de primeira ordem) do Index da Humanidade e transforme no Möbius de vida, Nhandereko como filosofia.
 >
