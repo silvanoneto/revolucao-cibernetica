@@ -3,7 +3,6 @@
 > Da Teoria à Práxis: Cibernética de Segunda Ordem, Marxismo Digital e Inteligência Coletiva
 
 [![CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/4a43d727-59ec-4e74-b4f6-f075bef175b2/deploy-status)](https://app.netlify.com/projects/obestafera/deploys)
 
 ---
 
