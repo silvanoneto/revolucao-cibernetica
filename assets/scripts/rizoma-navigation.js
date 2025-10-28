@@ -11,6 +11,113 @@
  * - Sem estrutura arbórea
  * 
  * CHANGELOG:
+ * - 2025-10-28 (v17): Expansão massiva do Capítulo 20 (Guerra das Redes: Geopolítica Cibernética)
+ *   + 50+ novos conceitos: arquitetura império do dólar, SWIFT, CIPS, SPFS, BRICS Pay, infraestrutura física
+ *   + Privilégio exorbitante: déficit US$ 1 tri/ano sustentável, 88% transações globais envolvem dólar, 59% reservas mundiais
+ *   + Petrodólar: acordo Nixon-Saud 1974, petróleo vendido apenas em dólares, demanda artificial permanente
+ *   + SWIFT: 11.000 bancos, 44,8 milhões mensagens/dia, formalmente neutro mas arma geopolítica americana
+ *   + Sanções russas 2022: 7 bancos desconectados SWIFT, rublo -30% em 1 semana, US$ 300 bi reservas congeladas
+ *   + CIPS chinês: 1.444 participantes em 109 países, US$ 98 tri/ano volume, 2-3% reservas globais yuan (vs 59% dólar)
+ *   + SPFS russo: 556 participantes (20 países), 2,5 milhões mensagens/dia, custo 10x menor que SWIFT, lento mas funcional
+ *   + BRICS Pay: integração Pix/UPI/FPS/Alipay, arquitetura federada 4 camadas, 3,5 bilhões pessoas (45% humanidade)
+ *   + Desafios BRICS: divergência interesses China/Rússia/Índia, volatilidade cambial, pressão EUA (sanções secundárias)
+ *   + Lei Ashby geopolítica: sistema unipolar = baixa variedade (controle EUA), multipolar = alta variedade (resiliência BRICS)
+ *   + VSM geopolítico: S1 (operações bancos), S2 (coordenação SWIFT/BRICS Pay), S3 (controle Tesouro EUA/Bancos Centrais), S4 (inteligência FMI/Novo Banco), S5 (política hegemonia vs multipolaridade)
+ *   + Cabos submarinos: 530 cabos, 1,4 milhão km, 99% tráfego internet, Google 33 cabos, Meta 17, Amazon 14, China 25 (Rota Seda Digital)
+ *   + Sul-Sul subdesenvolvido: ZERO cabos diretos África-LATAM, tráfego passa por EUA/Europa, latência +200ms
+ *   + Espionagem NSA: programa TEMPORA (UK), copia TODO tráfego cabos britânicos, Snowden revelou 2013
+ *   + Starlink: 5.500 satélites (60% de todos satélites órbita), meta 42.000 até 2027, 2,6 milhões assinantes, latência 20-40ms
+ *   + Uso militar Starlink: Ucrânia (20 mil terminais doados Musk), Taiwan (recusado por Musk teme China), controle privado infraestrutura crítica
+ *   + Alternativas satélites: Guowang chinês (13.000 satélites até 2030), Sfera russo (640), IRIS² UE (290, €6 bi), ISRO Índia (200)
+ *   + Data centers: AWS 32% mercado global (US$ 90 bi/ano), Azure 23%, Google Cloud 11%, Big 3 = 66% processamento mundial
+ *   + CLOUD Act 2018: EUA pode requisitar dados de empresas americanas MESMO fora território americano, viola GDPR europeia
+ *   + Brasil 70% dados em nuvens americanas, LGPD exige dados sensíveis no Brasil mas infraestrutura pública insuficiente
+ *   + Soberania digital: cabos Sul-Sul, data centers públicos regionais, constelações satélites próprias — custo US$ 200-500 bi em 15 anos
+ *   + Desdolarização: não banir dólar, mas torná-lo redundante/opcional — começar nicho (intra-BRICS) e expandir via efeito rede
+ *   Total: ~960 conceitos mapeados
+ * 
+ * - 2025-10-28 (v16): Expansão massiva do Capítulo 19 (Outros Experimentos e a Nova Fronteira do Planejamento)
+ *   + 50+ novos conceitos: autogestão iugoslava, Período Especial Cuba, crédito social, cooperativismo de plataforma
+ *   + Iugoslávia (1950-1991): Tito, cisma com Stalin 1948, samoupravljanje (autogestão), propriedade social
+ *   + Edvard Kardelj: teórico autogestão, "sociedade vs Estado", paradoxo (teorizou contra burocracia, foi vice-presidente)
+ *   + Lei Empresas Econômicas 1950: conselhos trabalhadores elegem direção, uma pessoa = um voto
+ *   + Mercado socialista: cooperativas competem, crescimento 6%/ano (1950-70), mas contradições insuperáveis
+ *   + Contradições Iugoslávia: desigualdade regional (Eslovênia 5-6x Kosovo), desemprego 15%, nacionalismo, dívida US$ 20bi
+ *   + Benjamin Ward: problema teórico — autogestão maximiza renda/trabalhador, não emprego (subprodução)
+ *   + Colapso 1991-99: guerras, genocídio Srebrenica (8 mil mortos), 140 mil mortos total, 4 milhões deslocados
+ *   + Lição: autogestão + mercado capitalista = contradição estrutural (mercado esmaga democracia)
+ *   + Cuba Período Especial (1991-93): PIB -35%, importações -75%, petróleo -86%, calorias 3000→1900/dia
+ *   + Organopônicos: hortas urbanas, permacultura, 20-30 kg/m²/ano (10x agricultura normal), 50% vegetais Havana (1997)
+ *   + Nelso Companioni: agrônomo pioneiro, Alamar, 26 mil hortas (1997), modelo global FAO/PNUD
+ *   + Biotecnologia cubana: vacinas (meningite B, hepatite B, COVID Abdala/Soberana), genéricos de qualidade
+ *   + Reformas mercado: turismo 340k→1.7mi (1990-2000), dolarização 1993, desigualdade reemergente (taxista>cirurgião)
+ *   + Lição Cuba: resiliência local + rigidez central = inovação bloqueada; transição energética abrupta possível mas traumática
+ *   + Crédito Social China: shèhuì xìnyòng tǐxì, não é "score único Black Mirror", mas ecossistema fragmentado 3 camadas
+ *   + PBOC: crédito financeiro tradicional, 560 milhões pessoas, histórico empréstimos (mais "normal")
+ *   + Enterprise Social Credit: foco compliance corporativo, blacklists empresas (33 mi entradas), 290 mi restrições aplicadas
+ *   + Pilotos municipais: ~40 cidades, Rongcheng (Shandong) — 1.000 pontos base, perde por lixo/bicicleta calçada
+ *   + Sesame Credit (Zhima): Alibaba/Ant Financial, 350-950, combina pagamentos + compras + rede social + comportamento online
+ *   + Crédito Ocidental: Serasa (Brasil 1968), FICO (EUA 1989), 69 milhões negativados Brasil (1 em 3 adultos)
+ *   + Racismo codificado score: EUA brancos 734, negros 677 — diferença 60 pontos = juros 3-5% maiores = dezenas milhares dólares
+ *   + 3 diferenças China/Ocidente: 1) fusão explícita Estado-Empresa, 2) expansão para "comportamento cívico", 3) opacidade total
+ *   + Capitalismo vigilância (Ocidente) vs Socialismo vigilância (China): ambos distópicos, controle privado vs estatal-corporativo
+ *   + Governança algorítmica democrática: código aberto, trusts de dados cooperativos, abolição certos scores (emprego)
+ *   + Trebor Scholz: acadêmico alemão-americano, cunhou "platform cooperativism" (2014), livro-manifesto 2016
+ *   + Platform Cooperativism Consortium: New School NYC, mapeia cooperativas, treina, conecta desenvolvedores
+ *   + 7 princípios cooperativistas ICA adaptados digital: adesão livre, controle democrático (1 pessoa=1 voto), participação econômica
+ *   + CoopCycle: 30+ cooperativas entrega bicicleta, 10 países, software livre GitHub, taxa 15-20% (vs 30-40% Uber Eats)
+ *   + Fairbnb: Itália/Holanda, 50% taxas → projetos comunitários locais, anti-gentrificação, 500 listagens (vs 7 mi Airbnb)
+ *   + Up & Go: Nova York, mulheres latinas limpeza, 95% pagamento → trabalhadoras (vs 50-60% apps capitalistas)
+ *   + Resonate: streaming musical, stream-to-own (0.002€/stream, 9x = compra 0.02€), governança multi-stakeholder
+ *   + Stocksy: cooperativa fotógrafos Canadá, 50-75% venda foto (vs 15-35% Shutterstock), US$ 15mi faturamento 2022
+ *   + Brasil cooperativas: Motorsapp (SP, mototaxistas, taxa 12%), Celeiro (Porto Alegre, orgânicos), Cataki (100+ cooperativas)
+ *   + 5 barreiras escala cooperativas: 1) acesso capital (VCs despejaram US$ 25bi Uber), 2) efeitos rede/lock-in, 3) infraestrutura tech cara, 4) dumping predatório, 5) legislação hostil
+ *   + Estratégias sobrevivência: federação (CoopCycle modelo), nicho antes massa, apoio estatal (Barcelona software livre), multi-stakeholder
+ *   + Tecnologias habilitadoras: DAOs (smart contracts governança), IA logística livre (OSRM), software livre como commons (Linux)
+ *   + 3 cenários futuro: 1) nichos 5-10% (cooperativas sobrevivem pequenas), 2) regulação justa 30-40%, 3) colapso+reconstrução
+ *   + Lição síntese: alternativa existe e funciona (centenas cooperativas), barreira não é técnica mas POLÍTICA (precisa Estado aliado)
+ *   + Coordenação distribuída: autonomia local + coordenação global via plataformas digitais transparentes (VSM Beer aplicado)
+ *   + Planejamento participativo digital: deliberação direta trabalhadores/consumidores, IA para simulação cenários, orçamento participativo escala
+ *   + Propriedade social diversificada: cooperativas trabalhadores/consumidores + estatal democrática + commons digitais + comunitária
+ *   Total: ~910 conceitos mapeados
+ * 
+ * - 2025-10-28 (v15): Expansão massiva do Capítulo 18 (Projeto Cybersyn - Chile 1970-73)
+ *   + 50+ novos conceitos: via chilena ao socialismo, Fernando Flores, detalhes técnicos Cybersyn
+ *   + Contexto histórico: Allende, Unidade Popular, via chilena (democracia + socialismo), bloqueio EUA
+ *   + Fernando Flores: ministro 27 anos, arquiteto político, co-design com trabalhadores, torturado 3 anos
+ *   + Raúl Espejo (28 anos): liderou equipe Cyberstride, exilou-se UK após golpe
+ *   + Gui Bonsiepe: designer alemão, sala operações futurista (7 cadeiras, painéis, estética igualitária)
+ *   + Tecnologia: Cyberstride (software bayesiano), Cybernet (telex), IBM 360/50 alugado, algedônica (gráficos)
+ *   + Tecnologia apropriada: telex (anos 30) + 1 mainframe = funcionou - lição para Sul Global
+ *   + VSM detalhado: 5 sistemas (Operações, Coordenação, Controle, Inteligência, Política) aplicados à economia
+ *   + Lei Ashby: variedade requisita, atenuador/amplificador variedade, anti-microgerenciamento
+ *   + Greve caminhoneiros Out/1972: 26 dias, CIA financiou, Cybersyn coordenou 200 caminhões em 24h - prova funciona
+ *   + CIA/Nixon/Kissinger: Operação Fubelt, US$ 8mi (~50mi hoje) para desestabilizar, financiar golpe
+ *   + Golpe 11/Set/1973: Pinochet bombardeou La Moneda, Allende suicidou-se, ditadura 17 anos (40 mil mortos)
+ *   + Destruição Cybersyn: sala operações destruída, mainframe devolvido IBM, engenheiros presos/torturados/exilados
+ *   + Eden Medina: historiadora MIT/Indiana, "Cybernetic Revolutionaries" (2011) - redescobriu história apagada
+ *   + Lições para hoje: 1) Planejamento≠controle, 2) Tech apropriada>futurismo, 3) Design=política, 4) Defesa necessária
+ *   + Cybersyn 2.0: com internet/IA/blockchain/IoT - 100x mais fácil hoje, barreira é política não técnica
+ *   Total: ~860 conceitos mapeados
+ * 
+ * - 2025-10-28 (v14): Expansão massiva do Capítulo 17 (OGAS - A Internet Vermelha da URSS)
+ *   + 60+ novos conceitos: planejamento cibernético soviético, resistência burocrática, lições históricas
+ *   + Problema planejamento: Gosplan (12 milhões preços, 50 mil empresas), planos quinquenais (6 meses-2 anos atraso)
+ *   + Ineficiência: 15-25% produção desperdiçada (50-80 bilhões rublos/ano), escassez crônica bens consumo
+ *   + Economia informal: Blat (favores), Tolkach (fixadores) - sistema funcionava via opacidade
+ *   + Debate cálculo socialista: Mises/Hayek vs Lange/Glushkov - cibernética como solução técnica
+ *   + Anatoly Kitov: EASU (1959), primeira rede dual militar-econômica, demitido por generais
+ *   + Viktor Glushkov: OGAS (1962-1970), arquitetura 3 camadas (centro/regional/fábrica), economia sem dinheiro
+ *   + Resistência burocrática: Gosplan (temia obsolescência), ministérios (feudos isolados), Partido (medo tecnocracia)
+ *   + Aliança paradoxal: conservadores + reformistas mercado uniram contra OGAS - esmagaram terceira via
+ *   + Fracasso 1970: Politburo negou financiamento, sistemas fragmentados incompatíveis, desperdício massivo
+ *   + Morte Glushkov 1982: ataque cardíaco aos 58 anos, exausto por luta burocrática
+ *   + 5 lições críticas: 1) Informação=Poder, 2) Tech sem democracia=dominação, 3) Path dependence, 4) Timing, 5) Conhecimento local
+ *   + Contrafactuais: URSS com internet antes EUA?, vigilância total?, fracasso político inevitável?
+ *   + OGAS vs Cybersyn: 1ª ordem (controle cima) vs 2ª ordem (workers no loop) - lição dialética
+ *   + Conexões: Caps 6 (cibernética 2ª ordem), 18 (Cybersyn), 26 (Nhandereko), 30 (dialética)
+ *   Total: ~810 conceitos mapeados
+ * 
  * - 2025-10-28 (v13): Expansão massiva do Capítulo 16 (Farmácia Global e Guerra às Drogas Digital)
  *   + 40+ novos conceitos: farmácia de apartheid, guerra às drogas, policiamento preditivo, complexo industrial-terapêutico
  *   + Guerra às Drogas: Nixon/Ehrlichman, racismo estrutural, encarceramento massa, genocídio juventude negra
@@ -3247,27 +3354,334 @@ const conceptGraph = {
         layer: 0
     },
     
+    // ========================================
+    // CAPÍTULO 17: OGAS - A INTERNET VERMELHA DA URSS
+    // ========================================
+    
     // Planejamento Cibernético
     'planejamento-cibernetico': {
         name: 'Planejamento Cibernético',
         description: 'Cibernética resolve "problema do cálculo" via feedback em tempo real',
-        connections: ['calculo-socialista', 'hayek', 'ogas', 'cybersyn', 'glushkov', 'beer'],
+        connections: ['calculo-socialista', 'hayek', 'ogas', 'cybersyn', 'glushkov', 'beer', 'gosplan'],
         color: '#22c55e',
         layer: 0
     },
+    
+    // Problema do Planejamento Soviético
+    'gosplan': {
+        name: 'Gosplan',
+        description: 'Agência central de planejamento soviético (1921-1991) - coordenava 12 milhões de preços, 50 mil empresas',
+        connections: ['ogas', 'planejamento-cibernetico', 'burocracia-sovietica', 'planos-quinquenais'],
+        color: '#ef4444',
+        layer: -1
+    },
+    'planos-quinquenais': {
+        name: 'Planos Quinquenais',
+        description: 'Planos econômicos de 5 anos (1928-1991) - rígidos, desatualizados (6 meses a 2 anos de atraso)',
+        connections: ['gosplan', 'ogas', 'ineficiencia-burocratica'],
+        color: '#ef4444',
+        layer: -1
+    },
+    'ineficiencia-burocratica': {
+        name: 'Ineficiência Crônica do Planejamento',
+        description: '15-25% da produção soviética desperdiçada (50-80 bilhões rublos/ano)',
+        connections: ['gosplan', 'planos-quinquenais', 'economia-informal-sovietica', 'ogas'],
+        color: '#ef4444',
+        layer: -1
+    },
+    'economia-informal-sovietica': {
+        name: 'Economia Informal Soviética',
+        description: 'Blat (favores) + Tolkach (fixadores) - sistema real funcionava por opacidade',
+        connections: ['ineficiencia-burocratica', 'blat', 'tolkach', 'ogas-ameaca'],
+        color: '#ef4444',
+        layer: -1
+    },
+    'blat': {
+        name: 'Blat',
+        description: 'Sistema de favores/contatos pessoais para contornar ineficiências',
+        connections: ['economia-informal-sovietica', 'tolkach', 'burocracia-sovietica'],
+        color: '#ef4444',
+        layer: -1
+    },
+    'tolkach': {
+        name: 'Tolkach (Fixador)',
+        description: 'Intermediário semi-legal que resolvia gargalos via subornos e trocas',
+        connections: ['economia-informal-sovietica', 'blat', 'corrupcao-sovietica'],
+        color: '#ef4444',
+        layer: -1
+    },
+    
+    // O Projeto OGAS
     'ogas': {
-        name: 'OGAS (СССР)',
-        description: 'Rede soviética proposta por Glushkov (1962) - nunca implementada',
-        connections: ['glushkov', 'planejamento-cibernetico', 'cybersyn', 'feedback'],
+        name: 'OGAS (Система Автоматизированная)',
+        description: 'Sistema Automatizado de Gestão da Economia Nacional (1962) - "internet vermelha" que nunca foi',
+        connections: ['glushkov', 'planejamento-cibernetico', 'cybersyn', 'feedback', 'arquitetura-ogas', 'fracasso-ogas'],
         color: '#22c55e',
         layer: -1
     },
-    'glushkov': {
-        name: 'Viktor Glushkov',
-        description: 'Ciberneticista soviético - propôs OGAS (bloqueado por burocracia)',
-        connections: ['ogas', 'planejamento-cibernetico', 'hayek', 'cibernetica'],
+    'arquitetura-ogas': {
+        name: 'Arquitetura OGAS (3 camadas)',
+        description: '(1) Centro Moscou, (2) 200 centros regionais, (3) 20 mil terminais em fábricas - rede hierárquica',
+        connections: ['ogas', 'glushkov', 'computadores-sovieticos-besm', 'rede-telex'],
         color: '#22c55e',
         layer: -1
+    },
+    'computadores-sovieticos-besm': {
+        name: 'Computadores BESM',
+        description: 'Série soviética (anos 60) - competitiva com IBM 7090, 1 milhão ops/seg',
+        connections: ['arquitetura-ogas', 'ogas', 'tecnologia-sovietica'],
+        color: '#22c55e',
+        layer: -1
+    },
+    'rede-telex': {
+        name: 'Rede de Telex',
+        description: 'Tecnologia de transmissão de dados proposta para OGAS - já existente, baixo custo',
+        connections: ['arquitetura-ogas', 'ogas'],
+        color: '#22c55e',
+        layer: -1
+    },
+    'economia-sem-dinheiro': {
+        name: 'Economia sem Dinheiro (visão Glushkov)',
+        description: 'Abolir rublo - transações via cartões magnéticos rastreáveis eletronicamente',
+        connections: ['ogas', 'glushkov', 'comunismo-automatico', 'vigilancia-total-risco'],
+        color: '#22c55e',
+        layer: -1
+    },
+    'comunismo-automatico': {
+        name: 'Comunismo Automático',
+        description: 'Sonho de Glushkov: sistema auto-regulado via feedback, política obsoleta',
+        connections: ['economia-sem-dinheiro', 'ogas', 'tecnocracia-sovietica', 'erro-glushkov'],
+        color: '#22c55e',
+        layer: -1
+    },
+    'erro-glushkov': {
+        name: 'Erro de Glushkov: Tecnocracia Sem Política',
+        description: 'Assumiu que burocratas aceitariam eficiência - ignorou que eles otimizam sobrevivência própria',
+        connections: ['comunismo-automatico', 'glushkov', 'burocracia-sovietica', 'resistencia-ogas'],
+        color: '#dc2626',
+        layer: -1
+    },
+    
+    // Atores Principais
+    'glushkov': {
+        name: 'Viktor Glushkov (1923-1982)',
+        description: 'Ciberneticista ucraniano, diretor Instituto Cibernética Kiev - arquiteto OGAS, morreu derrotado',
+        connections: ['ogas', 'planejamento-cibernetico', 'hayek', 'cibernetica', 'kitov', 'erro-glushkov'],
+        color: '#22c55e',
+        layer: -1
+    },
+    'kitov': {
+        name: 'Anatoly Kitov (1920-2005)',
+        description: 'Coronel e matemático - propôs EASU (1959), primeira rede dual militar-econômica, demitido em 1960',
+        connections: ['glushkov', 'ogas', 'easu', 'burocracia-militar'],
+        color: '#22c55e',
+        layer: -1
+    },
+    'easu': {
+        name: 'EASU (Sistema Unificado)',
+        description: 'Proposta de Kitov (1959): computadores militares processariam dados econômicos - rejeitada por generais',
+        connections: ['kitov', 'ogas', 'burocracia-militar'],
+        color: '#ef4444',
+        layer: -1
+    },
+    
+    // Resistência Burocrática ao OGAS
+    'resistencia-ogas': {
+        name: 'Resistência Burocrática ao OGAS',
+        description: 'Gosplan + ministérios + Partido + reformistas - aliança contra Glushkov (1962-1970)',
+        connections: ['ogas', 'burocracia-sovietica', 'gosplan-contra-ogas', 'ministerios-contra-ogas', 'partido-contra-ogas'],
+        color: '#dc2626',
+        layer: -1
+    },
+    'gosplan-contra-ogas': {
+        name: 'Gosplan Contra OGAS',
+        description: 'Planejadores temiam obsolescência - OGAS exporia ineficiência e acordos informais',
+        connections: ['resistencia-ogas', 'gosplan', 'ogas-ameaca', 'economia-informal-sovietica'],
+        color: '#dc2626',
+        layer: -1
+    },
+    'ogas-ameaca': {
+        name: 'OGAS como Ameaça Existencial',
+        description: 'Transparência = morte da burocracia - informação descentralizada = poder descentralizado',
+        connections: ['gosplan-contra-ogas', 'economia-informal-sovietica', 'informacao-poder'],
+        color: '#dc2626',
+        layer: -1
+    },
+    'ministerios-contra-ogas': {
+        name: 'Ministérios Contra OGAS',
+        description: 'Cada ministério = feudo isolado - OGAS propunha integração horizontal, ameaçava autonomia',
+        connections: ['resistencia-ogas', 'ogas', 'compartimentalizacao-burocratica'],
+        color: '#dc2626',
+        layer: -1
+    },
+    'compartimentalizacao-burocratica': {
+        name: 'Compartimentalização Burocrática',
+        description: 'Ministérios recusaram compartilhar dados - sabotagem via incompatibilidade',
+        connections: ['ministerios-contra-ogas', 'path-dependence', 'sistemas-incompativeis'],
+        color: '#dc2626',
+        layer: -1
+    },
+    'partido-contra-ogas': {
+        name: 'Partido Comunista Contra OGAS',
+        description: 'Medo de "ditador eletrônico" - e se computador recomendar algo contra linha do Partido?',
+        connections: ['resistencia-ogas', 'ogas', 'brezhnev-desconfia', 'tecnocracia-sovietica'],
+        color: '#dc2626',
+        layer: -1
+    },
+    'brezhnev-desconfia': {
+        name: 'Brezhnev: "Quem Controla Esse Sistema?"',
+        description: 'Liderança não entendia cibernética - desconfiava de "auto-regulação" (1967)',
+        connections: ['partido-contra-ogas', 'ogas', 'burocracia-sovietica'],
+        color: '#dc2626',
+        layer: -1
+    },
+    'reformistas-contra-ogas': {
+        name: 'Reformistas de Mercado Contra OGAS',
+        description: 'Liberman e cia temiam que planejamento eficiente fortalecesse ortodoxia - queriam mercado',
+        connections: ['resistencia-ogas', 'ogas', 'reformas-kosygin', 'alianca-paradoxal'],
+        color: '#dc2626',
+        layer: -1
+    },
+    'reformas-kosygin': {
+        name: 'Reformas Kosygin (1965)',
+        description: 'Tentativa de introduzir mecanismos de mercado - rival ideológico do OGAS',
+        connections: ['reformistas-contra-ogas', 'socialismo-mercado'],
+        color: '#ef4444',
+        layer: -1
+    },
+    'alianca-paradoxal': {
+        name: 'Aliança Paradoxal Contra OGAS',
+        description: 'Conservadores + reformistas, por razões opostas, se uniram contra Glushkov - esmagaram terceira via',
+        connections: ['reformistas-contra-ogas', 'partido-contra-ogas', 'resistencia-ogas'],
+        color: '#dc2626',
+        layer: -1
+    },
+    
+    // Fracasso e Lições
+    'fracasso-ogas': {
+        name: 'Fracasso do OGAS (1970)',
+        description: 'Politburo negou financiamento - optou por sistemas fragmentados incompatíveis',
+        connections: ['ogas', 'resistencia-ogas', 'morte-glushkov', 'sistemas-incompativeis', 'licoes-ogas'],
+        color: '#dc2626',
+        layer: -1
+    },
+    'sistemas-incompativeis': {
+        name: 'Sistemas Incompatíveis (anos 70-80)',
+        description: 'URSS construiu centenas de sistemas locais - nenhum falava com outro, desperdício massivo',
+        connections: ['fracasso-ogas', 'compartimentalizacao-burocratica', 'path-dependence'],
+        color: '#dc2626',
+        layer: -1
+    },
+    'morte-glushkov': {
+        name: 'Morte de Glushkov (1982)',
+        description: 'Ataque cardíaco aos 58 anos - exausto por 20 anos de luta burocrática',
+        connections: ['fracasso-ogas', 'glushkov', 'burocracia-mata-inovacao'],
+        color: '#dc2626',
+        layer: -1
+    },
+    'burocracia-mata-inovacao': {
+        name: 'Burocracia Mata Inovação',
+        description: 'Estruturas de poder preferem ineficiência a mudança que ameaça seu monopólio',
+        connections: ['morte-glushkov', 'fracasso-ogas', 'resistencia-ogas', 'path-dependence'],
+        color: '#dc2626',
+        layer: 0
+    },
+    
+    // Lições Críticas
+    'licoes-ogas': {
+        name: 'Cinco Lições do OGAS',
+        description: '1) Informação=Poder 2) Tech sem democracia=dominação 3) Path dependence 4) Timing crucial 5) Conhecimento local',
+        connections: ['fracasso-ogas', 'informacao-poder', 'tech-sem-democracia', 'path-dependence', 'conhecimento-local-hayek'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'informacao-poder': {
+        name: 'Informação é Poder (Literal)',
+        description: 'Descentralizar informação = descentralizar poder - burocracia não aceitou',
+        connections: ['licoes-ogas', 'ogas-ameaca', 'capitalismo-vigilancia', 'centralizacao-dados'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'tech-sem-democracia': {
+        name: 'Tecnologia sem Democracia = Dominação',
+        description: 'Planejamento para quem? Decidido por quem? OGAS falhou porque URSS não tinha democracia operária',
+        connections: ['licoes-ogas', 'erro-glushkov', 'controle-operario', 'nhandereko'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'path-dependence': {
+        name: 'Path Dependence (Dependência de Trajetória)',
+        description: 'Decisões ruins do passado travam possibilidades futuras - investimentos em tech incompatível',
+        connections: ['licoes-ogas', 'sistemas-incompativeis', 'compartimentalizacao-burocratica', 'combustiveis-fosseis'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'conhecimento-local-hayek': {
+        name: 'Paradoxo do Planejamento Ótimo',
+        description: 'Hayek certo: conhecimento local tácito não transmissível ao centro - mas solução não é mercado, é descentralização democrática',
+        connections: ['licoes-ogas', 'hayek', 'cybersyn-descentralizado', 'planejamento-subsidiario'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'planejamento-subsidiario': {
+        name: 'Planejamento Subsidiário',
+        description: 'Decisões no nível mais baixo possível - coordenação só quando necessário',
+        connections: ['conhecimento-local-hayek', 'cybersyn', 'vsm', 'democracia-direta'],
+        color: '#10b981',
+        layer: 1
+    },
+    
+    // Contrafactuais
+    'contrafactual-ogas': {
+        name: 'E Se OGAS Tivesse Funcionado?',
+        description: '3 cenários: (1) Socialismo high-tech vence, (2) Distopia vigilância total, (3) Eficiência marginal mas colapso político',
+        connections: ['ogas', 'urss-internet-antes-eua', 'vigilancia-total-risco', 'fracasso-inevitavel'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'urss-internet-antes-eua': {
+        name: 'URSS Teria Internet Antes dos EUA',
+        description: 'OGAS online em 1975 vs ARPANET civil em 1983 - mundo digital bilíngue',
+        connections: ['contrafactual-ogas', 'ogas', 'arpanet'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'vigilancia-total-risco': {
+        name: 'Risco de Vigilância Total',
+        description: 'Economia sem dinheiro = toda transação rastreável - KGB integraria rede, Panóptico eletrônico',
+        connections: ['contrafactual-ogas', 'economia-sem-dinheiro', 'capitalismo-vigilancia'],
+        color: '#dc2626',
+        layer: -1
+    },
+    'fracasso-inevitavel': {
+        name: 'Fracasso Político Inevitável',
+        description: 'OGAS compraria 10-20 anos mas sem democracia, sem feedback consumidor, problemas nacionalismo - colapsaria',
+        connections: ['contrafactual-ogas', 'tech-sem-democracia', 'licoes-ogas'],
+        color: '#dc2626',
+        layer: -1
+    },
+    
+    // Conexões Teóricas
+    'burocracia-sovietica': {
+        name: 'Burocracia Soviética',
+        description: 'Estrato social que monopolizava planejamento/aparato estatal - defendia poder, não eficiência',
+        connections: ['gosplan', 'resistencia-ogas', 'blat', 'tolkach', 'burocracia-mata-inovacao'],
+        color: '#ef4444',
+        layer: -1
+    },
+    'tecnocracia-sovietica': {
+        name: 'Tecnocracia Soviética',
+        description: 'Elite científica (Glushkov, Kitov) que acreditava tech resolveria política - erro fatal',
+        connections: ['glushkov', 'kitov', 'erro-glushkov', 'comunismo-automatico'],
+        color: '#ef4444',
+        layer: -1
+    },
+    'ogas-vs-cybersyn': {
+        name: 'OGAS vs Cybersyn: Lição Dialética',
+        description: 'OGAS = 1ª ordem (controle de cima), Cybersyn = 2ª ordem (workers no loop) - por isso um falhou e outro quase funcionou',
+        connections: ['ogas', 'cybersyn', 'cibernetica-primeira-ordem', 'cibernetica-segunda-ordem', 'licoes-ogas'],
+        color: '#8b5cf6',
+        layer: 0
     },
     'beer': {
         name: 'Stafford Beer',
@@ -3296,6 +3710,260 @@ const conceptGraph = {
         connections: ['cybersyn', 'necropolitica-digital', 'duplo-uso-militar'],
         color: '#dc2626',
         layer: -1
+    },
+    
+    // Cybersyn - Expansão Capítulo 18 (2025-10-28)
+    'allende': {
+        name: 'Salvador Allende',
+        description: 'Presidente socialista Chile (1970-73), via chilena ao socialismo, apoiou Cybersyn',
+        connections: ['cybersyn', 'unidade-popular', 'golpe-pinochet', 'fernando-flores'],
+        color: '#22c55e',
+        layer: -1
+    },
+    'unidade-popular': {
+        name: 'Unidade Popular',
+        description: 'Coalizão esquerda chilena que elegeu Allende (socialistas, comunistas, radicais)',
+        connections: ['allende', 'cybersyn', 'golpe-pinochet', 'via-chilena-socialismo'],
+        color: '#22c55e',
+        layer: -1
+    },
+    'via-chilena-socialismo': {
+        name: 'Via Chilena ao Socialismo',
+        description: 'Construir socialismo por vias democráticas/pacíficas, sem revolução armada - 3ª via',
+        connections: ['allende', 'unidade-popular', 'cybersyn', 'golpe-pinochet'],
+        color: '#22c55e',
+        layer: -1
+    },
+    'fernando-flores': {
+        name: 'Fernando Flores',
+        description: 'Ministro Economia Allende, arquiteto político Cybersyn, PhD Berkeley, senador Chile',
+        connections: ['cybersyn', 'beer', 'allende', 'tortura-ditadura', 'design-ontologico'],
+        color: '#22c55e',
+        layer: -1
+    },
+    'raul-espejo': {
+        name: 'Raúl Espejo',
+        description: 'Engenheiro 28 anos, liderou equipe Cyberstride, exilou-se UK após golpe',
+        connections: ['cybersyn', 'cyberstride', 'fernando-flores', 'golpe-pinochet'],
+        color: '#22c55e',
+        layer: -1
+    },
+    'gui-bonsiepe': {
+        name: 'Gui Bonsiepe',
+        description: 'Designer alemão que projetou sala operações Cybersyn - estética futurista igualitária',
+        connections: ['sala-operacoes-cybersyn', 'design-politico', 'cybersyn'],
+        color: '#22c55e',
+        layer: -1
+    },
+    'cyberstride': {
+        name: 'Cyberstride',
+        description: 'Software análise estatística Cybersyn - métodos bayesianos, detecta anomalias tempo real',
+        connections: ['cybersyn', 'algedonica', 'ibm-360', 'raul-espejo', 'filtro-variedade'],
+        color: '#22c55e',
+        layer: -1
+    },
+    'algedonica': {
+        name: 'Algedônica (Gráficos)',
+        description: 'Do grego algos (dor) + hedone (prazer) - visualização saúde econômica via cores',
+        connections: ['cyberstride', 'beer', 'cybersyn', 'dashboard-economico'],
+        color: '#22c55e',
+        layer: -1
+    },
+    'sala-operacoes-cybersyn': {
+        name: 'Sala de Operações (Opsroom)',
+        description: '7 cadeiras giratórias, painéis, telas - design para deliberação coletiva, não comando',
+        connections: ['cybersyn', 'gui-bonsiepe', 'design-politico', 'democracia-visual'],
+        color: '#22c55e',
+        layer: -1
+    },
+    'ibm-360': {
+        name: 'IBM 360/50',
+        description: 'Mainframe alugado usado pelo Cybersyn, devolvido à IBM após golpe 1973',
+        connections: ['cybersyn', 'cyberstride', 'tecnologia-apropriada'],
+        color: '#22c55e',
+        layer: -1
+    },
+    'telex-network': {
+        name: 'Rede de Telex',
+        description: '~500 máquinas telex (tech anos 30) conectando fábricas a Santiago - solução low-tech',
+        connections: ['cybernet', 'cybersyn', 'tecnologia-apropriada', 'gambiarra-revolucionaria'],
+        color: '#22c55e',
+        layer: -1
+    },
+    'tecnologia-apropriada': {
+        name: 'Tecnologia Apropriada',
+        description: 'Usar tech disponível/acessível criativamente, não esperar por futurismo - Cybersyn modelo',
+        connections: ['cybersyn', 'telex-network', 'gambiarra-revolucionaria', 'sul-global'],
+        color: '#10b981',
+        layer: 1
+    },
+    'variedade-requisita-ashby': {
+        name: 'Lei Variedade Requisita (Ashby)',
+        description: '"Apenas variedade pode absorver variedade" - controle precisa = complexidade do controlado',
+        connections: ['ashby', 'vsm', 'beer', 'cybersyn', 'anti-microgerenciamento'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'ashby': {
+        name: 'William Ross Ashby',
+        description: 'Ciberneticista britânico - Lei da Variedade Requisita, influenciou Beer',
+        connections: ['variedade-requisita-ashby', 'beer', 'wiener', 'cibernetica'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'atenuador-variedade': {
+        name: 'Atenuador de Variedade',
+        description: 'Centro filtra informação, lida apenas com exceções - evita sobrecarga (conceito Beer)',
+        connections: ['variedade-requisita-ashby', 'beer', 'vsm', 'cybersyn'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'amplificador-variedade': {
+        name: 'Amplificador de Variedade',
+        description: 'Centro dá ferramentas para unidades se auto-regularem - aumenta capacidade resposta',
+        connections: ['variedade-requisita-ashby', 'beer', 'vsm', 'cybersyn', 'autonomia-local'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'autonomia-vs-coesao': {
+        name: 'Autonomia vs Coesão',
+        description: 'Tensão central VSM: unidades precisam autonomia LOCAL + coesão GLOBAL para viabilidade',
+        connections: ['vsm', 'beer', 'cybersyn', 'federalismo-cibernetico'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'sistema-1-vsm': {
+        name: 'Sistema 1 (VSM - Operações)',
+        description: 'Unidades autônomas fazem trabalho real - no Cybersyn: fábricas com autonomia decisória',
+        connections: ['vsm', 'beer', 'cybersyn', 'autonomia-local'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'sistema-2-vsm': {
+        name: 'Sistema 2 (VSM - Coordenação)',
+        description: 'Previne conflitos entre unidades - no Cybersyn: protocolos telex, alocação matéria-prima',
+        connections: ['vsm', 'beer', 'cybersyn', 'coordenacao-descentralizada'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'sistema-3-vsm': {
+        name: 'Sistema 3 (VSM - Controle Operacional)',
+        description: 'Otimiza recursos presente - no Cybersyn: Cyberstride detecta gargalos, realoca recursos',
+        connections: ['vsm', 'beer', 'cybersyn', 'cyberstride', 'otimizacao-tempo-real'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'sistema-4-vsm': {
+        name: 'Sistema 4 (VSM - Inteligência/Planejamento)',
+        description: 'Monitora ambiente externo, planeja futuro - no Cybersyn: economistas simulam políticas',
+        connections: ['vsm', 'beer', 'cybersyn', 'planejamento-adaptativo'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'sistema-5-vsm': {
+        name: 'Sistema 5 (VSM - Política/Identidade)',
+        description: 'Define valores, prioridades - no Cybersyn: governo Allende + assembleias trabalhadores',
+        connections: ['vsm', 'beer', 'cybersyn', 'democracia-economica', 'allende'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'greve-caminhoneiros-1972-detalhes': {
+        name: 'Greve 1972 - Logística Resistência',
+        description: '26 dias, CIA financiou, Cybersyn coordenou 200 caminhões leais em 24h - 30% capacidade mantida',
+        connections: ['greve-caminhoneiros-1972', 'cybersyn', 'cia-chile', 'prova-conceito'],
+        color: '#22c55e',
+        layer: 0
+    },
+    'cia-chile': {
+        name: 'CIA - Operação Fubelt',
+        description: 'US$ 8mi (~50mi hoje) para desestabilizar Allende - financiou greve, propaganda, golpe',
+        connections: ['golpe-pinochet', 'greve-caminhoneiros-1972', 'allende', 'imperialismo-digital'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'operacao-fubelt': {
+        name: 'Operação Fubelt (nome código)',
+        description: 'Plano CIA derrubar Allende - docs desclassificados provam financiamento golpe',
+        connections: ['cia-chile', 'golpe-pinochet', 'kissinger', 'nixon'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'kissinger': {
+        name: 'Henry Kissinger',
+        description: 'Secretário Estado EUA - "não deixaremos Chile virar outra Cuba" - ordenou sabotagem',
+        connections: ['cia-chile', 'operacao-fubelt', 'golpe-pinochet', 'imperialismo'],
+        color: '#dc2626',
+        layer: -1
+    },
+    'nixon': {
+        name: 'Richard Nixon',
+        description: 'Presidente EUA (1969-74) - ordenou CIA desestabilizar Allende, financiou golpe',
+        connections: ['cia-chile', 'operacao-fubelt', 'golpe-pinochet', 'guerra-fria'],
+        color: '#dc2626',
+        layer: -1
+    },
+    'tortura-ditadura-chile': {
+        name: 'Tortura Ditadura Pinochet',
+        description: '40 mil mortos/torturados/desaparecidos (1973-90) - Flores 3 anos Ilha Dawson',
+        connections: ['golpe-pinochet', 'fernando-flores', 'raul-espejo', 'necropolitica'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'destruicao-sala-operacoes': {
+        name: 'Destruição Sala Operações',
+        description: 'Soldados invadiram, pensaram "espionagem soviética", destruíram cadeiras/painéis',
+        connections: ['golpe-pinochet', 'sala-operacoes-cybersyn', 'apagamento-historico'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'apagamento-historico-cybersyn': {
+        name: 'Apagamento Histórico Cybersyn',
+        description: 'Ditadura destruiu docs, censurou história - esquecido até anos 2000 (Eden Medina)',
+        connections: ['golpe-pinochet', 'cybersyn', 'eden-medina', 'historia-luta'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'eden-medina': {
+        name: 'Eden Medina',
+        description: 'Historiadora MIT/Indiana - "Cybernetic Revolutionaries" (2011) - redescobriu Cybersyn',
+        connections: ['cybersyn', 'apagamento-historico-cybersyn', 'historia-luta', 'prova-viabilidade'],
+        color: '#10b981',
+        layer: 0
+    },
+    'prova-viabilidade-socialismo': {
+        name: 'Cybersyn = Prova Viabilidade',
+        description: 'Socialismo cibernético não é utopia - já foi feito, funcionou, foi assassinado (não falhou)',
+        connections: ['cybersyn', 'ogas-vs-cybersyn', 'eden-medina', 'licoes-para-hoje'],
+        color: '#10b981',
+        layer: 1
+    },
+    'licoes-cybersyn-hoje': {
+        name: 'Lições Cybersyn para Século XXI',
+        description: '1) Planejamento≠controle, 2) Tech apropriada>futurismo, 3) Design=política, 4) Defesa necessária, 5) Workers no loop',
+        connections: ['cybersyn', 'prova-viabilidade-socialismo', 'cooperativas-plataforma', 'blockchain-dao'],
+        color: '#10b981',
+        layer: 1
+    },
+    'cybersyn-2-0': {
+        name: 'Cybersyn 2.0 (possibilidades)',
+        description: 'Com internet, IA, blockchain, IoT - tudo que Cybersyn fez em 1971 é 100x mais fácil hoje',
+        connections: ['licoes-cybersyn-hoje', 'cooperativas-plataforma', 'blockchain-dao', 'xai', 'iot-sensores'],
+        color: '#10b981',
+        layer: 1
+    },
+    'design-politico': {
+        name: 'Design Político',
+        description: 'Design materializa valores - sala Cybersyn (igualitária) vs NASA (hierárquica)',
+        connections: ['sala-operacoes-cybersyn', 'gui-bonsiepe', 'dark-patterns', 'ux-emancipatorio'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'co-design-democratico': {
+        name: 'Co-Design Democrático',
+        description: 'Flores organizou reuniões fábricas - workers decidiram quais dados coletar, como exibir',
+        connections: ['fernando-flores', 'cybersyn', 'participacao-trabalhadores', 'cibernetica-segunda-ordem'],
+        color: '#22c55e',
+        layer: 0
     },
     
     // Dependência Digital (atualização 2025)
@@ -4885,6 +5553,463 @@ const conceptGraph = {
         connections: ['descriminalizacao-portugal', 'reducao-danos-universal', 'farmacia-apartheid', 'guerra-drogas'],
         color: '#22c55e',
         layer: 1
+    },
+
+    // ========================================
+    // CAPÍTULO 19: OUTROS EXPERIMENTOS E NOVA FRONTEIRA DO PLANEJAMENTO
+    // ========================================
+    
+    // 19.1 - Autogestão Iugoslávia
+    'autogestao-iugoslavia': {
+        name: 'Autogestão Iugoslava (Samoupravljanje)',
+        description: 'Empresas geridas por conselhos de trabalhadores eleitos. Propriedade social (nem privada nem estatal). Mercado socialista: competição + autogestão = contradição que causou colapso',
+        connections: ['tito', 'kardelj', 'propriedade-social', 'mercado-socialista', 'cooperativismo-plataforma'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'tito': {
+        name: 'Josip Broz Tito',
+        description: 'Líder iugoslavo. Rompeu com Stalin (1948), criou "terceira via": socialismo não-stalinista. Nacionalismo comunista vs controle soviético',
+        connections: ['autogestao-iugoslavia', 'kardelj', 'cisma-stalin'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'kardelj': {
+        name: 'Edvard Kardelj',
+        description: 'Teórico da autogestão. Paradoxo: teorizou contra burocracia estatal, mas foi vice-presidente por décadas. Sistema dependia de carisma, não estruturas',
+        connections: ['autogestao-iugoslavia', 'tito', 'propriedade-social'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'propriedade-social': {
+        name: 'Propriedade Social',
+        description: 'Categoria jurídica única: nem privada nem estatal, pertence "à sociedade". Gerida por trabalhadores. Tentativa de superar tanto capitalismo quanto estatismo',
+        connections: ['autogestao-iugoslavia', 'kardelj', 'cooperativismo-plataforma'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'mercado-socialista': {
+        name: 'Mercado Socialista',
+        description: 'Cooperativas autogeridas competindo em mercado. Cresceu 6%/ano (1950-70), MAS mercado pressiona comportamento capitalista: demissões, desigualdade, subprodução',
+        connections: ['autogestao-iugoslavia', 'benjamin-ward', 'colapso-iugoslavia'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'benjamin-ward': {
+        name: 'Benjamin Ward (Problema Teórico)',
+        description: 'Cooperativas maximizam renda/trabalhador, não emprego total. Resultado: subprodução crônica, resistência contratar mesmo com demanda alta',
+        connections: ['mercado-socialista', 'autogestao-iugoslavia'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'colapso-iugoslavia': {
+        name: 'Colapso Iugoslávia (1991-99)',
+        description: '140 mil mortos, 4 milhões deslocados. Genocídio Srebrenica (8 mil). Desigualdade regional (Eslovênia 5-6x Kosovo), dívida US$ 20bi, nacionalismo. Lição: autogestão + mercado = contradição insuperável',
+        connections: ['mercado-socialista', 'autogestao-iugoslavia'],
+        color: '#ef4444',
+        layer: -1
+    },
+    
+    // 19.2 - Cuba Período Especial
+    'periodo-especial-cuba': {
+        name: 'Período Especial Cuba (1991-93)',
+        description: 'Colapso URSS = PIB -35%, importações -75%, petróleo -86%. Calorias 3000→1900/dia. Transição energética abrupta forçada. Inovação na adversidade',
+        connections: ['organoponicos', 'companioni', 'biotecnologia-cubana', 'resiliencia-local'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'organoponicos': {
+        name: 'Organopônicos (Hortas Urbanas)',
+        description: 'Agricultura urbana orgânica. 20-30 kg/m²/ano (10x normal). 26 mil hortas em Havana (1997), 50% dos vegetais. Modelo global (FAO/PNUD)',
+        connections: ['periodo-especial-cuba', 'companioni', 'permacultura'],
+        color: '#22c55e',
+        layer: 0
+    },
+    'companioni': {
+        name: 'Nelso Companioni',
+        description: 'Agrônomo pioneiro dos organopônicos. Alamar (Havana). Provou: em crise, comunidades locais inovam mais rápido que burocracia central',
+        connections: ['organoponicos', 'periodo-especial-cuba'],
+        color: '#22c55e',
+        layer: 0
+    },
+    'biotecnologia-cubana': {
+        name: 'Biotecnologia Cubana',
+        description: 'Vacinas próprias: meningite B, hepatite B, COVID (Abdala/Soberana). Genéricos de qualidade. Paradoxo: país bloqueado há 60 anos com indústria farmacêutica avançada',
+        connections: ['periodo-especial-cuba'],
+        color: '#22c55e',
+        layer: 0
+    },
+    'resiliencia-local': {
+        name: 'Resiliência Local vs Rigidez Central',
+        description: 'Cuba: capacidade de auto-organização local extraordinária, MAS burocracia central atrasou escala. Lição: precisa cibernética 2ª ordem (autonomia local + coordenação democrática)',
+        connections: ['periodo-especial-cuba', 'organoponicos', 'cybersyn', 'cooperativismo-plataforma'],
+        color: '#22c55e',
+        layer: 1
+    },
+    
+    // 19.3 - Crédito Social e Governança por Score
+    'credito-social-china': {
+        name: 'Sistema de Crédito Social Chinês',
+        description: 'NÃO é "score único Black Mirror". Ecossistema fragmentado 3 camadas: financeiro (PBOC), corporativo (blacklists empresas), pilotos municipais (~40 cidades)',
+        connections: ['pboc', 'enterprise-social-credit', 'sesame-credit', 'governanca-algoritmica'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'pboc': {
+        name: 'PBOC (Crédito Financeiro)',
+        description: 'Banco Central China. Score de crédito tradicional (como Serasa/FICO). 560 milhões pessoas. Histórico empréstimos. Mais "normal" dos três sistemas',
+        connections: ['credito-social-china', 'serasa-fico'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'enterprise-social-credit': {
+        name: 'Enterprise Social Credit',
+        description: 'Foco: compliance corporativo. 33 milhões blacklists empresas. 290 milhões restrições aplicadas (CEOs impedidos viajar, licitações bloqueadas). Combate fraude/poluição',
+        connections: ['credito-social-china'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'sesame-credit': {
+        name: 'Sesame Credit (Zhima - Alibaba)',
+        description: 'Score privado 350-950. Combina: pagamentos + compras + rede social + comportamento online. Capitalismo de vigilância chinês. Comprar fraldas ↑ score, videogames ↓',
+        connections: ['credito-social-china', 'capitalismo-vigilancia'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'serasa-fico': {
+        name: 'Serasa/FICO (Crédito Ocidental)',
+        description: 'Governança algorítmica privada. Brasil: 69 milhões negativados (1 em 3 adultos). EUA: racismo codificado (brancos 734, negros 677 = juros 3-5% maiores)',
+        connections: ['pboc', 'governanca-algoritmica', 'racismo-algoritmico'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'governanca-algoritmica': {
+        name: 'Governança Algorítmica',
+        description: 'Convergência global: Ocidente = vigilância privada para lucro, China = vigilância estatal-corporativa para controle. Ambos distópicos. Precisamos: código aberto + trusts de dados cooperativos',
+        connections: ['credito-social-china', 'serasa-fico', 'sesame-credit', 'capitalismo-vigilancia'],
+        color: '#ef4444',
+        layer: 0
+    },
+    
+    // 19.4 - Cooperativismo de Plataforma
+    'cooperativismo-plataforma': {
+        name: 'Cooperativismo de Plataforma',
+        description: 'Plataformas digitais de propriedade e gestão democrática dos trabalhadores/usuários. Mesma tecnologia (apps), controle invertido. Alternativa existe e funciona (centenas de cooperativas), barreira é POLÍTICA',
+        connections: ['trebor-scholz', 'coopcycle', 'fairbnb', 'up-go', 'resonate', 'stocksy', 'cooperativas-brasil'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'trebor-scholz': {
+        name: 'Trebor Scholz',
+        description: 'Acadêmico alemão-americano. Cunhou "platform cooperativism" (2014), livro-manifesto (2016). Platform Cooperativism Consortium (New School NYC). Argumento: cooperativas mais sustentáveis que startups VC',
+        connections: ['cooperativismo-plataforma'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'coopcycle': {
+        name: 'CoopCycle (Europa)',
+        description: '30+ cooperativas entrega bicicleta, 10 países. Software livre (GitHub). Taxa 15-20% vs 30-40% Uber Eats. Federação = economia de escala. Modelo replicável',
+        connections: ['cooperativismo-plataforma', 'software-livre', 'federacao-cooperativas'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'fairbnb': {
+        name: 'Fairbnb (Itália/Holanda)',
+        description: '50% das taxas → projetos comunitários locais. Anti-gentrificação. 500 listagens vs 7 milhões Airbnb. Pequena mas crescendo em cidades conscientes',
+        connections: ['cooperativismo-plataforma'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'up-go': {
+        name: 'Up & Go (Nova York)',
+        description: 'Cooperativa limpeza. Mulheres latinas/imigrantes. 95% pagamento → trabalhadoras vs 50-60% apps capitalistas. Trabalhadoras ganham 40-50% mais, decidem tudo democraticamente',
+        connections: ['cooperativismo-plataforma'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'resonate': {
+        name: 'Resonate (Streaming Musical)',
+        description: 'Stream-to-own: 0.002€/stream, 9x = compra 0.02€. Governança multi-stakeholder (artistas + ouvintes + trabalhadores). Vs Spotify que paga 0.003€/stream infinito',
+        connections: ['cooperativismo-plataforma'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'stocksy': {
+        name: 'Stocksy (Fotos - Canadá)',
+        description: 'Cooperativa fotógrafos. 50-75% venda foto vs 15-35% Shutterstock. US$ 15mi faturamento (2022), distribuiu US$ 7,5mi para 1.000+ fotógrafos-membros',
+        connections: ['cooperativismo-plataforma'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'cooperativas-brasil': {
+        name: 'Cooperativas Digitais Brasil',
+        description: 'Motorsapp (SP, mototaxistas, taxa 12%), Celeiro (Porto Alegre, orgânicos), Cataki (100+ cooperativas catadores). Potencial inexplorado, precisam apoio estatal',
+        connections: ['cooperativismo-plataforma'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'barreiras-cooperativas': {
+        name: '5 Barreiras Escala Cooperativas',
+        description: '1) Capital (VCs despejaram US$ 25bi no Uber), 2) Efeitos rede/lock-in, 3) Infraestrutura tech cara, 4) Dumping predatório, 5) Legislação hostil. Solução: apoio estatal + federação',
+        connections: ['cooperativismo-plataforma', 'coopcycle', 'apoio-estatal-cooperativas'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'federacao-cooperativas': {
+        name: 'Federação de Cooperativas',
+        description: 'Estratégia escala: cooperativas locais pequenas, federadas em rede grande. Compartilham: software, marca, conhecimento, contratos públicos. CoopCycle = 30 coops = 1.500 trabalhadores',
+        connections: ['coopcycle', 'cooperativismo-plataforma', 'software-livre'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'apoio-estatal-cooperativas': {
+        name: 'Apoio Estatal a Cooperativas',
+        description: 'Estado precisa tomar lado: financiar formação, compras públicas cooperativas, forçar interoperabilidade (API aberta), facilitar conversão empresa→cooperativa. Barcelona, Bologna = modelos',
+        connections: ['cooperativismo-plataforma', 'barreiras-cooperativas'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'software-livre': {
+        name: 'Software Livre como Commons',
+        description: 'Linux roda 90% servidores. Cooperativas podem compartilhar stack tecnológico (OSRM = roteamento livre). Custos divididos, benefícios compartilhados. Tech não é barreira',
+        connections: ['coopcycle', 'federacao-cooperativas', 'cooperativismo-plataforma'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'coordenacao-distribuida': {
+        name: 'Coordenação Distribuída',
+        description: 'Futuro pós-capitalista: autonomia local + coordenação global via plataformas digitais transparentes. VSM de Beer aplicado a federação de cooperativas. Planejamento ≠ controle, = liberdade coletiva',
+        connections: ['cooperativismo-plataforma', 'resiliencia-local', 'vsm', 'cybersyn'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'planejamento-participativo-digital': {
+        name: 'Planejamento Participativo Digital',
+        description: 'Deliberação direta trabalhadores/consumidores via plataformas. IA para simulação cenários, orçamento participativo em escala nacional/global. Tecnologia existe, falta vontade política',
+        connections: ['coordenacao-distribuida', 'cooperativismo-plataforma'],
+        color: '#22c55e',
+        layer: 1
+    },
+
+    // ========================================
+    // CAPÍTULO 20: GUERRA DAS REDES - GEOPOLÍTICA CIBERNÉTICA
+    // ========================================
+    'privilegio-exorbitante': {
+        name: 'Privilégio Exorbitante do Dólar',
+        description: 'Valéry Giscard d\'Estaing (1960s): vantagem estrutural EUA por emitir moeda reserva global. 88% transações envolvem dólar, 59% reservas mundiais. EUA imprime dólares para pagar déficit US$ 1 tri/ano sem sofrer inflação (exportada ao mundo)',
+        connections: ['petrodolar', 'swift', 'desdolarizacao', 'imperio-dolar'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'petrodolar': {
+        name: 'Petrodólar',
+        description: 'Acordo Nixon-Saud (1974): petróleo vendido APENAS em dólares. Criou demanda artificial permanente pela moeda americana. Petróleo = commodity mais comercializada (US$ 2 tri/ano), logo todos precisam acumular dólares. Base do privilégio exorbitante',
+        connections: ['privilegio-exorbitante', 'imperio-dolar', 'desdolarizacao'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'imperio-dolar': {
+        name: 'Arquitetura do Império do Dólar',
+        description: 'Sistema financeiro global = sistema cibernético centralizado. Dólar = protocolo universal, SWIFT = infraestrutura de controle. Permite EUA monitorar/bloquear/sancionar qualquer país. Poder de rede em forma pura',
+        connections: ['swift', 'privilegio-exorbitante', 'petrodolar', 'sancoes-financeiras'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'swift': {
+        name: 'SWIFT',
+        description: 'Society for Worldwide Interbank Financial Telecommunication (1973). 11.000 bancos, 44,8 mi mensagens/dia. Formalmente cooperativa neutra (Bélgica), mas funciona como extensão do Tesouro dos EUA. Jurisdição sobre dólar = poder geopolítico',
+        connections: ['imperio-dolar', 'sancoes-financeiras', 'cips', 'spfs', 'brics-pay'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'sancoes-financeiras': {
+        name: 'Sanções Financeiras como Guerra de Informação',
+        description: 'Desconectar país do SWIFT = isolar economicamente sem disparar tiro. Casos: Irã 2012, Rússia 2022 (7 bancos, rublo -30%, US$ 300 bi reservas congeladas). É ataque à INFRAESTRUTURA DE INFORMAÇÃO, não aos ativos. Poder de rede puro',
+        connections: ['swift', 'imperio-dolar', 'sancoes-russia-2022', 'desdolarizacao'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'sancoes-russia-2022': {
+        name: 'Caso: Sanções Russas 2022',
+        description: '26/fev/2022: 7 bancos russos excluídos do SWIFT. Impacto imediato: rublo -30%, inflação 2%→17%, importações colapsaram. MAS: economia não colapsou — SPFS expandido, comércio em yuan/rublo, Bitcoin +400%. Sanções aceleraram desdolarização global',
+        connections: ['sancoes-financeiras', 'swift', 'spfs', 'cips', 'desdolarizacao'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'desdolarizacao': {
+        name: 'Desdolarização',
+        description: 'Não banir dólar, mas torná-lo redundante/opcional. Comércio em moedas locais, sistemas pagamento alternativos (CIPS, SPFS, BRICS Pay). Acelerada pós-sanções russas 2022 — países perceberam: depender 100% SWIFT = risco existencial',
+        connections: ['brics-pay', 'cips', 'spfs', 'sancoes-russia-2022', 'multipolaridade'],
+        color: '#047857',
+        layer: 1
+    },
+    'cips': {
+        name: 'CIPS (Sistema Chinês)',
+        description: 'Cross-Border Interbank Payment System (2015, PBOC). 1.444 participantes em 109 países, US$ 98 tri/ano volume. Liquida transações em yuan (vs SWIFT que só envia mensagens). Yuan ainda 2-3% reservas globais, mas crescendo 15%/ano. Semente de infraestrutura paralela',
+        connections: ['swift', 'desdolarizacao', 'yuan-digital', 'brics-pay', 'multipolaridade'],
+        color: '#047857',
+        layer: 1
+    },
+    'spfs': {
+        name: 'SPFS (Sistema Russo)',
+        description: 'System for Transfer of Financial Messages (2014, Banco Central Rússia). 556 participantes (20 países), 2,5 mi mensagens/dia. Custo 10x menor que SWIFT, mas lento (horas, não segundos). Modo emergência — funciona, mas ninguém quer usar exceto sob sanções',
+        connections: ['swift', 'desdolarizacao', 'sancoes-russia-2022', 'brics-pay'],
+        color: '#047857',
+        layer: 1
+    },
+    'brics-pay': {
+        name: 'BRICS Pay',
+        description: 'Plataforma federada integrando Pix (Brasil), UPI (Índia), FPS (Rússia), Alipay/WeChat (China). Não é moeda única — é camada de interoperabilidade. 3,5 bi pessoas (45% humanidade), PIB US$ 28 tri. Fase piloto 2025, implementação 2027-30. Estratégia: começar nicho, expandir via efeito rede',
+        connections: ['desdolarizacao', 'cips', 'spfs', 'pix', 'multipolaridade', 'soberania-rede'],
+        color: '#047857',
+        layer: 1
+    },
+    'yuan-digital': {
+        name: 'Yuan Digital (e-CNY)',
+        description: 'CBDC chinês. Permite internacionalização do yuan mantendo controle de capital. Dilema: liberalizar para competir com dólar OU manter controle para estabilidade? China tenta ambos via moeda digital. Se combinar com CIPS = ecossistema completo independente do dólar',
+        connections: ['cips', 'desdolarizacao', 'cbdcs', 'vigilancia-financeira'],
+        color: '#047857',
+        layer: 1
+    },
+    'multipolaridade': {
+        name: 'Multipolaridade e Variedade',
+        description: 'Sistema multipolar (múltiplas moedas/protocolos) = alta variedade (Lei de Ashby). Menos eficiente que unipolar, mas MUITO mais resiliente. Se um nó falha/vira arma, outros compensam. Batalha geopolítica = batalha pela variedade: EUA quer baixa (controle), BRICS quer alta (autonomia)',
+        connections: ['lei-ashby-geopolitica', 'vsm-geopolitico', 'brics-pay', 'soberania-rede'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'lei-ashby-geopolitica': {
+        name: 'Lei de Ashby Aplicada à Geopolítica',
+        description: '"Apenas variedade absorve variedade" (Ashby 1956). Sistema unipolar: Centro (EUA) tem 1 protocolo mas absorve variedade de 193 países via SWIFT. Sistema multipolar: Variedade distribuída — nenhum centro pode absorver tudo. Poder diluído = democracia de rede',
+        connections: ['multipolaridade', 'vsm-geopolitico', 'lei-ashby', 'variedade-requisita'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'vsm-geopolitico': {
+        name: 'VSM Geopolítico',
+        description: 'Stafford Beer aplicado a sistemas financeiros globais. Unipolar: S3 hipertrofiado (controle Tesouro EUA), S1 atrofiado (bancos sem autonomia). Multipolar: S1 robusto (autonomia local), S2 cooperativo (BRICS Pay), S3 descentralizado (bancos centrais nacionais). VSM distribuído = mais viável',
+        connections: ['multipolaridade', 'vsm', 'lei-ashby-geopolitica', 'brics-pay'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'soberania-rede': {
+        name: 'Soberania de Rede',
+        description: 'Capacidade de controlar infraestrutura própria de informação/comunicação. Não basta ter moeda alternativa — precisa de cabos submarinos, data centers, satélites. Sem infraestrutura física própria = colônia digital, mesmo com protocolos alternativos',
+        connections: ['brics-pay', 'cabos-submarinos', 'data-centers-soberania', 'starlink-geopolitica', 'infraestrutura-critica'],
+        color: '#06b6d4',
+        layer: 1
+    },
+    'cabos-submarinos': {
+        name: 'Cabos Submarinos',
+        description: '99% tráfego internet entre continentes. 530 cabos, 1,4 mi km. Controle: Google 33, Meta 17, Amazon 14, China 25 (Rota Seda Digital). Sul-Sul subdesenvolvido: ZERO cabos diretos África-LATAM — tráfego passa por EUA/Europa (+200ms latência). NSA intercepta tudo (Snowden 2013)',
+        connections: ['soberania-rede', 'espionagem-nsa', 'infraestrutura-critica', 'rota-seda-digital'],
+        color: '#06b6d4',
+        layer: 0
+    },
+    'espionagem-nsa': {
+        name: 'Espionagem NSA em Cabos',
+        description: 'Programa TEMPORA (UK): NSA + GCHQ copiam TODO tráfego que passa por cabos britânicos. Snowden revelou 2013. Pontos de aterrissagem de cabos = pontos de interceptação. Não há privacidade estrutural quando infraestrutura é controlada por adversário',
+        connections: ['cabos-submarinos', 'soberania-rede', 'vigilancia-massa', 'cloud-act'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'starlink-geopolitica': {
+        name: 'Starlink e Militarização do Espaço',
+        description: '5.500 satélites Musk (60% de todos satélites órbita), meta 42.000 até 2027. 2,6 mi assinantes, latência 20-40ms. Uso militar Ucrânia (20k terminais) — mas Musk tem controle total, desliga regiões. Infraestrutura crítica privatizada = feudalismo digital espacial',
+        connections: ['soberania-rede', 'infraestrutura-critica', 'alternativas-starlink', 'brasil-amazonia-starlink'],
+        color: '#a855f7',
+        layer: 0
+    },
+    'alternativas-starlink': {
+        name: 'Alternativas Soberanas a Starlink',
+        description: 'Guowang chinês (13.000 satélites até 2030), Sfera russo (640), IRIS² UE (290, €6 bi), ISRO Índia (200). Brasil: ZERO plano soberano — dependência total Starlink/Amazon Kuiper. Corrida espacial 2.0: quem controla órbita baixa controla internet do futuro',
+        connections: ['starlink-geopolitica', 'soberania-rede'],
+        color: '#a855f7',
+        layer: 1
+    },
+    'brasil-amazonia-starlink': {
+        name: 'Starlink na Amazônia',
+        description: '200k assinantes Starlink na Amazônia (única opção áreas remotas). Governo Lula tentou regular (representante legal, bloqueio X/Twitter 2023-24). Tensão: como regular infraestrutura crítica controlada por bilionário estrangeiro? Soberania amazônica ameaçada',
+        connections: ['starlink-geopolitica', 'soberania-rede', 'brasil-geopolitica'],
+        color: '#a855f7',
+        layer: 0
+    },
+    'data-centers-soberania': {
+        name: 'Data Centers e Soberania Digital',
+        description: 'AWS 32% mercado global (US$ 90 bi/ano), Azure 23%, Google 11% — Big 3 = 66% processamento mundial. Brasil 70% dados em nuvens americanas. CLOUD Act (2018): EUA pode requisitar dados MESMO fora território americano. Sem data centers públicos = colônia digital',
+        connections: ['soberania-rede', 'cloud-act', 'brasil-dados-eua', 'alternativas-nuvem'],
+        color: '#fb923c',
+        layer: 0
+    },
+    'cloud-act': {
+        name: 'CLOUD Act (2018)',
+        description: 'Lei americana: governo EUA pode requisitar dados armazenados por empresas americanas, MESMO em servidores fora dos EUA. Microsoft tem data center em Dublin? FBI pode exigir dados de clientes europeus. Viola GDPR. Hipocrisia: EUA acusa Huawei de espionagem mas faz o mesmo via Cisco/Juniper',
+        connections: ['data-centers-soberania', 'espionagem-nsa', 'soberania-rede'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'brasil-dados-eua': {
+        name: 'Brasil: 70% Dados em Nuvens Americanas',
+        description: 'LGPD (2020) exige dados sensíveis no Brasil, mas infraestrutura pública insuficiente (Serpro 20 petabytes vs AWS 200+ exabytes). Empresas pagam multas ou usam "data centers locais" AWS (que são apenas pontos presença conectados a infraestrutura americana). Soberania ilusória',
+        connections: ['data-centers-soberania', 'soberania-rede', 'brasil-geopolitica', 'lgpd'],
+        color: '#fb923c',
+        layer: 0
+    },
+    'alternativas-nuvem': {
+        name: 'Alternativas Soberanas de Nuvem',
+        description: 'Gaia-X (UE): fracasso — virou "selo certificação" ao invés de infraestrutura real. China: monopólio estatal-privado (Alibaba, Tencent, Huawei) + Grande Firewall. Índia: MeghRaj (nuvem governamental). Brasil precisa: "AWS pública" interoperável com BRICS. Custo: R$ 50-100 bi em 10 anos',
+        connections: ['data-centers-soberania', 'soberania-rede', 'brics-infraestrutura'],
+        color: '#fb923c',
+        layer: 1
+    },
+    'rota-seda-digital': {
+        name: 'Rota da Seda Digital (China)',
+        description: 'Extensão da Belt and Road Initiative: China constrói cabos submarinos, data centers, redes 5G na Ásia, África, LATAM. HMN Tech + China Telecom controlam 25 cabos (crescimento 400% desde 2015). Conecta Sul-Sul sem passar por EUA/Europa — mas substitui dependência americana por chinesa',
+        connections: ['cabos-submarinos', 'soberania-rede', 'cips', 'multipolaridade'],
+        color: '#06b6d4',
+        layer: 1
+    },
+    'infraestrutura-critica': {
+        name: 'Infraestrutura Crítica Digital',
+        description: 'Cabos submarinos, data centers, satélites, sistemas pagamento = infraestrutura crítica — ataques cibernéticos = ato de guerra. Pontos de estrangulamento: Estreito de Malaca (12 cabos, 40% tráfego Ásia-Ocidente), Suez (8), Bering (2). Cortar poucos cabos isola continentes',
+        connections: ['cabos-submarinos', 'soberania-rede', 'starlink-geopolitica', 'swift'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'brics-infraestrutura': {
+        name: 'Infraestrutura BRICS',
+        description: 'Proposta: cabos Sul-Sul (Brasil-África, Índia-África, China-LATAM), data centers públicos regionais, constelações satélites próprias. Custo estimado: US$ 200-500 bi em 15 anos. Parece caro? Defesa EUA custa US$ 900 bi/ANO. Infraestrutura digital É defesa nacional do século XXI',
+        connections: ['soberania-rede', 'brics-pay', 'cabos-submarinos', 'alternativas-starlink', 'data-centers-soberania'],
+        color: '#047857',
+        layer: 1
+    },
+    'brasil-geopolitica': {
+        name: 'Dilema Brasileiro: Entre Blocos',
+        description: 'Brasil: faz parte BRICS (apoia desdolarização) mas integrado a EUA (comércio US$ 80 bi/ano, investimentos US$ 120 bi). Tenta "equilibrar", mas acaba subordinado a ambos — não tem soberania de rede própria. Precisa escolher: construir alternativas OU aceitar dependência permanente',
+        connections: ['brics-pay', 'soberania-rede', 'brasil-dados-eua', 'brasil-amazonia-starlink', 'pix'],
+        color: '#f59e0b',
+        layer: 0
+    },
+    'pix': {
+        name: 'Pix: Soberania de Pagamento',
+        description: 'Sistema público pagamento instantâneo (Banco Central, 2020). 155 milhões usuários, gratuito. Antes: Visa/Mastercard monopolizavam. Depois: sistema nacional soberano. Maior sucesso política pública digital da década. BRICS Pay tenta replicar Pix em escala internacional',
+        connections: ['brics-pay', 'soberania-rede', 'brasil-geopolitica', 'desdolarizacao'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'cbdcs': {
+        name: 'CBDCs (Moedas Digitais Banco Central)',
+        description: 'Drex (Brasil), e-CNY (China), euro digital (UE). Aceleram desdolarização (facilitam pagamentos internacionais) MAS aumentam vigilância estatal (rastreamento total transações). Trade-off: privacidade vs soberania monetária. Precisa design que minimize vigilância (criptografia conhecimento zero)',
+        connections: ['yuan-digital', 'desdolarizacao', 'vigilancia-financeira', 'pix'],
+        color: '#f59e0b',
+        layer: 1
+    },
+    'vigilancia-financeira': {
+        name: 'Vigilância Financeira',
+        description: 'SWIFT permite EUA monitorar todas transações em dólar (panóptico financeiro global). CBDCs permitem Estados rastrearem 100% transações cidadãos. Capitalismo vigilância (Ocidente, privado) vs Socialismo vigilância (China, estatal). Ambos distópicos. Alternativa: governança algorítmica democrática, código aberto',
+        connections: ['swift', 'yuan-digital', 'cbdcs', 'capitalismo-vigilancia', 'crédito-social-china'],
+        color: '#ef4444',
+        layer: 0
     }
 };
 
