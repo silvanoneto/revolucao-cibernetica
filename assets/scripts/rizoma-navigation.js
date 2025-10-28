@@ -11,6 +11,16 @@
  * - Sem estrutura arbórea
  * 
  * CHANGELOG:
+ * - 2025-10-28 (v5): Expansão massiva do Capítulo 7 (Marxismo e Tecnologia - Debates Clássicos)
+ *   + 30+ novos conceitos: Escola Frankfurt, Operaísmo, Pós-Colonialismo
+ *   + Frankfurt: razão instrumental, indústria cultural, Marcuse (homem unidimensional), Adorno
+ *   + Operaísmo: Tronti, Panzieri, composição técnica/política, recusa do trabalho
+ *   + Operário-massa → operário social → fábrica social (aplicado à uberização)
+ *   + Pós-Colonial: Fanon, Quijano, colonialidade, dependência tecnológica
+ *   + Imperialismo digital: colonialismo de dados, extrativismo, cosmotécnicas (Yuk Hui)
+ *   + Conexões: algoritmos como razão instrumental, breque dos apps como recusa do trabalho
+ *   Total: ~230 conceitos mapeados
+ * 
  * - 2025-10-28 (v4): Expansão massiva do Capítulo 4 (Economia Política & Dependência)
  *   + 45+ novos conceitos: CEPAL, Prebisch, Furtado, Marini, dependência, superexploração
  *   + Debate cálculo socialista: Mises, Hayek, Lange, conhecimento disperso
@@ -1116,6 +1126,226 @@ const conceptGraph = {
         connections: ['darpa', 'geopolitica', 'capitalismo-vigilancia'],
         color: '#6366f1',
         layer: 0
+    },
+
+    // ========================================
+    // CAPÍTULO 7: MARXISMO E TECNOLOGIA - DEBATES CLÁSSICOS
+    // ========================================
+    'determinismo-tecnologico': {
+        name: 'Determinismo Tecnológico',
+        description: 'Visão de que a tecnologia determina a sociedade ("o moinho a vapor nos deu o capitalista")',
+        connections: ['construtivismo-social', 'forcas-produtivas', 'relacoes-producao'],
+        color: '#ef4444',
+        layer: -1 // Passado (debate clássico)
+    },
+    'construtivismo-social': {
+        name: 'Construtivismo Social da Tecnologia',
+        description: 'A sociedade molda a tecnologia, não o contrário - escolhas políticas definem design',
+        connections: ['determinismo-tecnologico', 'operaismo', 'cosmotecnica'],
+        color: '#ef4444',
+        layer: -1
+    },
+    
+    // Escola de Frankfurt
+    'escola-frankfurt': {
+        name: 'Escola de Frankfurt',
+        description: 'Teoria crítica: Adorno, Horkheimer, Marcuse - crítica da razão instrumental',
+        connections: ['razao-instrumental', 'industria-cultural', 'marcuse', 'adorno'],
+        color: '#dc2626',
+        layer: -1
+    },
+    'razao-instrumental': {
+        name: 'Razão Instrumental',
+        description: 'Razão reduzida a cálculo de meios eficientes, sem questionar os fins',
+        connections: ['escola-frankfurt', 'adorno', 'marcuse', 'algoritmos'],
+        color: '#dc2626',
+        layer: 0 // Presente (crítica aplicável ao digital)
+    },
+    'adorno': {
+        name: 'Theodor Adorno',
+        description: 'Filósofo da Escola de Frankfurt - crítica da indústria cultural',
+        connections: ['escola-frankfurt', 'industria-cultural', 'pseudo-individualizacao', 'horkheimer'],
+        color: '#dc2626',
+        layer: -1
+    },
+    'horkheimer': {
+        name: 'Max Horkheimer',
+        description: 'Filósofo da Escola de Frankfurt - co-autor da Dialética do Esclarecimento',
+        connections: ['escola-frankfurt', 'adorno', 'razao-instrumental'],
+        color: '#dc2626',
+        layer: -1
+    },
+    'marcuse': {
+        name: 'Herbert Marcuse',
+        description: 'O Homem Unidimensional (1964) - tecnologia como controle através do conforto',
+        connections: ['escola-frankfurt', 'homem-unidimensional', 'falsas-necessidades', 'razao-instrumental'],
+        color: '#dc2626',
+        layer: -1
+    },
+    'homem-unidimensional': {
+        name: 'Homem Unidimensional',
+        description: 'Indivíduo cuja capacidade crítica foi suprimida por satisfação de falsas necessidades',
+        connections: ['marcuse', 'falsas-necessidades', 'industria-cultural', 'vicio-digital'],
+        color: '#dc2626',
+        layer: 0 // Presente (crítica ao usuário de redes sociais)
+    },
+    'falsas-necessidades': {
+        name: 'Falsas Necessidades',
+        description: 'Desejos criados pelo sistema para integrar indivíduos à lógica capitalista',
+        connections: ['marcuse', 'homem-unidimensional', 'industria-cultural', 'capitalismo-vigilancia'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'industria-cultural': {
+        name: 'Indústria Cultural',
+        description: 'Produção em massa de cultura padronizada para pacificar e controlar',
+        connections: ['adorno', 'escola-frankfurt', 'pseudo-individualizacao', 'plataformas', 'algoritmos'],
+        color: '#dc2626',
+        layer: 0 // Presente (Netflix, Spotify, TikTok)
+    },
+    'pseudo-individualizacao': {
+        name: 'Pseudo-Individualização',
+        description: 'Ilusão de escolha e personalidade dentro de sistema padronizado',
+        connections: ['industria-cultural', 'adorno', 'algoritmos', 'plataformas'],
+        color: '#dc2626',
+        layer: 0
+    },
+    
+    // Operaísmo Italiano
+    'operaismo': {
+        name: 'Operaísmo Italiano',
+        description: 'Inversão da perspectiva: luta operária como motor da história (Tronti, Panzieri)',
+        connections: ['tronti', 'panzieri', 'recusa-trabalho', 'composicao-tecnica', 'pos-operaismo'],
+        color: '#8b5cf6',
+        layer: -1 // Passado (anos 1960-70)
+    },
+    'tronti': {
+        name: 'Mario Tronti',
+        description: 'Operários e Capital (1966) - capital é REATIVO à luta operária',
+        connections: ['operaismo', 'recusa-trabalho', 'composicao-tecnica', 'composicao-politica'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'panzieri': {
+        name: 'Raniero Panzieri',
+        description: 'Fundador do operaísmo - tecnologia como arma política do capital',
+        connections: ['operaismo', 'tronti', 'composicao-tecnica'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'composicao-tecnica': {
+        name: 'Composição Técnica da Classe',
+        description: 'Organização do trabalho imposta pelo capital (divisão de tarefas, ritmo, hierarquia)',
+        connections: ['operaismo', 'composicao-politica', 'subsuncao-real', 'algoritmos'],
+        color: '#8b5cf6',
+        layer: 0 // Presente (gerenciamento algorítmico)
+    },
+    'composicao-politica': {
+        name: 'Composição Política da Classe',
+        description: 'Capacidade organizativa e consciência coletiva dos trabalhadores',
+        connections: ['operaismo', 'composicao-tecnica', 'recusa-trabalho', 'breque-apps'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'recusa-trabalho': {
+        name: 'Recusa do Trabalho',
+        description: 'Estratégia: trabalhar menos, desvincular renda do trabalho, afirmar necessidades',
+        connections: ['operaismo', 'tronti', 'greve', 'breque-apps', 'pos-operaismo'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'operario-massa': {
+        name: 'Operário-Massa',
+        description: 'Trabalhador fordista desqualificado mas concentrado (poder de bloqueio)',
+        connections: ['operaismo', 'fordismo', 'operario-social', 'composicao-tecnica'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'operario-social': {
+        name: 'Operário Social',
+        description: 'Exploração além da fábrica - cidade inteira como "fábrica social"',
+        connections: ['operario-massa', 'operaismo', 'pos-operaismo', 'uberizacao', 'fabrica-social'],
+        color: '#8b5cf6',
+        layer: 0 // Presente (trabalho de plataforma)
+    },
+    'fabrica-social': {
+        name: 'Fábrica Social',
+        description: 'Toda a sociedade se torna espaço de exploração e luta (não só a fábrica)',
+        connections: ['operario-social', 'pos-operaismo', 'uberizacao', 'breque-apps'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    
+    // Pensamento Pós-Colonial
+    'pos-colonialismo': {
+        name: 'Pensamento Pós-Colonial',
+        description: 'Crítica da modernidade europeia como projeto colonial (Fanon, Césaire, Quijano)',
+        connections: ['fanon', 'quijano', 'colonialidade', 'cosmotecnica', 'dependencia'],
+        color: '#22c55e',
+        layer: -1
+    },
+    'fanon': {
+        name: 'Frantz Fanon',
+        description: 'Os Condenados da Terra - violência colonial e descolonização tecnológica',
+        connections: ['pos-colonialismo', 'colonialidade', 'violencia-colonial', 'cosmotecnica'],
+        color: '#22c55e',
+        layer: -1
+    },
+    'quijano': {
+        name: 'Aníbal Quijano',
+        description: 'Colonialidade do Poder - modernidade inseparável da colonialidade',
+        connections: ['pos-colonialismo', 'colonialidade', 'centro-periferia', 'dependencia'],
+        color: '#22c55e',
+        layer: -1
+    },
+    'colonialidade': {
+        name: 'Colonialidade',
+        description: 'Padrões de poder colonial que sobrevivem ao colonialismo formal',
+        connections: ['quijano', 'pos-colonialismo', 'dependencia-tecnologica', 'extrativismo-dados'],
+        color: '#22c55e',
+        layer: 0 // Presente (colonialismo digital)
+    },
+    'dependencia-tecnologica': {
+        name: 'Dependência Tecnológica',
+        description: 'Sul não participa do design das tecnologias que usa - importa do Norte',
+        connections: ['colonialidade', 'centro-periferia', 'imperialismo-digital', 'cosmotecnica'],
+        color: '#22c55e',
+        layer: 0
+    },
+    'imperialismo-digital': {
+        name: 'Imperialismo Digital',
+        description: 'Continuidade do imperialismo via tecnologia (algoritmos, plataformas, IA)',
+        connections: ['dependencia-tecnologica', 'colonialidade', 'extrativismo-dados', 'geopolitica'],
+        color: '#22c55e',
+        layer: 0
+    },
+    'colonialismo-dados': {
+        name: 'Colonialismo de Dados',
+        description: 'Extração de dados do Sul por corporações do Norte (Couldry & Mejias)',
+        connections: ['extrativismo-dados', 'imperialismo-digital', 'mais-valia-dados', 'geopolitica'],
+        color: '#22c55e',
+        layer: 0
+    },
+    'extrativismo-dados': {
+        name: 'Extrativismo de Dados',
+        description: 'Dados como matéria-prima extraída sem compensação (paralelo colonial)',
+        connections: ['colonialismo-dados', 'capitalismo-vigilancia', 'mais-valia-dados', 'deterioracao-termos-troca'],
+        color: '#22c55e',
+        layer: 0
+    },
+    'cosmotecnica': {
+        name: 'Cosmotécnica',
+        description: 'Formas culturalmente específicas de relacionar cosmos e técnica (Yuk Hui)',
+        connections: ['pos-colonialismo', 'dependencia-tecnologica', 'nhandereko', 'fanon'],
+        color: '#22c55e',
+        layer: 1 // Futuro (alternativas ao eurocentrismo)
+    },
+    'yuk-hui': {
+        name: 'Yuk Hui',
+        description: 'Filósofo chinês - crítica da cosmotécnica europeia como única válida',
+        connections: ['cosmotecnica', 'pos-colonialismo', 'dependencia-tecnologica'],
+        color: '#22c55e',
+        layer: 1
     },
 
     // ========================================
