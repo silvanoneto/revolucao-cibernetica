@@ -24,7 +24,11 @@
     <title>A Revolução Cibernética: Teoria, Manifesto e Conceito Nhandereko</title>
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
 
+    <!-- Loading Overlay - DEVE CARREGAR PRIMEIRO -->
+    <script src="./assets/scripts/loading-overlay.js"></script>
+
     <!-- Critical CSS -->
+    <link rel="stylesheet" href="./assets/css/loading-overlay.css">
     <link rel="stylesheet" href="./assets/css/styles.css">
     <link rel="stylesheet" href="./assets/css/download.css">
     <link rel="stylesheet" href="./assets/css/index-ternary.css">
@@ -753,6 +757,135 @@
                         � Ler Manifesto →
                     </a>
                 </p>
+            </div>
+
+            <!-- NOVA SEÇÃO: Guia Interativo de Navegação -->
+            <div
+                style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%); border-radius: 16px; padding: 2rem; margin: 3rem 0; border: 2px solid rgba(139, 92, 246, 0.3);">
+                <h2 style="text-align: center; color: #8b5cf6; margin-bottom: 2rem; font-size: 1.8rem;">
+                    🎮 Ferramentas de Navegação Interativa
+                </h2>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                    <!-- Ferramenta 1: Fita de Möbius -->
+                    <div style="background: rgba(59, 130, 246, 0.1); padding: 1.5rem; border-radius: 12px; border: 2px solid rgba(59, 130, 246, 0.3);">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem; text-align: center;">🌀</div>
+                        <h3 style="color: #3b82f6; margin: 0 0 1rem 0; text-align: center;">Fita de Möbius</h3>
+                        <p style="margin: 0 0 1rem 0; line-height: 1.6; font-size: 0.95rem;">
+                            Visualiza os 35 pontos do livro em um loop infinito. <strong>Clique simples</strong> para navegar, 
+                            <strong>clique duplo</strong> para explorar conceitos no Rizoma.
+                        </p>
+                        <ul style="font-size: 0.9rem; line-height: 1.7; color: var(--muted-foreground);">
+                            <li>🔴 <strong>Passado</strong>: Caps 0-10 (fundamentos)</li>
+                            <li>🟢 <strong>Presente</strong>: Caps 11-21 (diagnóstico)</li>
+                            <li>🔵 <strong>Futuro</strong>: Caps 22-32 + Manifesto</li>
+                        </ul>
+                        <div style="margin-top: 1rem; padding: 0.75rem; background: rgba(0, 0, 0, 0.2); border-radius: 8px; font-size: 0.85rem;">
+                            💡 <strong>Dica:</strong> Passe o mouse para ver tempo de leitura e dificuldade
+                        </div>
+                    </div>
+
+                    <!-- Ferramenta 2: Navegação Rizomática -->
+                    <div style="background: rgba(236, 72, 153, 0.1); padding: 1.5rem; border-radius: 12px; border: 2px solid rgba(236, 72, 153, 0.3);">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem; text-align: center;">🕸️</div>
+                        <h3 style="color: #ec4899; margin: 0 0 1rem 0; text-align: center;">Rizoma de Conceitos</h3>
+                        <p style="margin: 0 0 1rem 0; line-height: 1.6; font-size: 0.95rem;">
+                            Grafo não-hierárquico de +100 conceitos interligados. Explore conexões entre ideias sem estrutura linear.
+                        </p>
+                        <ul style="font-size: 0.9rem; line-height: 1.7; color: var(--muted-foreground);">
+                            <li>🎹 <strong>Tecla R</strong>: Abrir/fechar Rizoma</li>
+                            <li>🔍 Buscar conceitos por nome</li>
+                            <li>🎨 Filtrar por camada temporal</li>
+                            <li>🌐 Alternar entre grade e grafo</li>
+                        </ul>
+                        <div style="margin-top: 1rem; padding: 0.75rem; background: rgba(0, 0, 0, 0.2); border-radius: 8px; font-size: 0.85rem;">
+                            💡 <strong>Dica:</strong> Clique duplo na Möbius abre conceitos relacionados
+                        </div>
+                    </div>
+
+                    <!-- Ferramenta 3: Indicador de Posição -->
+                    <div style="background: rgba(16, 185, 129, 0.1); padding: 1.5rem; border-radius: 12px; border: 2px solid rgba(16, 185, 129, 0.3);">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem; text-align: center;">📍</div>
+                        <h3 style="color: #10b981; margin: 0 0 1rem 0; text-align: center;">Indicador de Posição</h3>
+                        <p style="margin: 0 0 1rem 0; line-height: 1.6; font-size: 0.95rem;">
+                            Badge flutuante que mostra onde você está na jornada. Atualiza automaticamente ao rolar a página.
+                        </p>
+                        <ul style="font-size: 0.9rem; line-height: 1.7; color: var(--muted-foreground);">
+                            <li>📖 Capítulo atual + emoji da camada</li>
+                            <li>📊 % do livro completo</li>
+                            <li>🖱️ Clique para voltar ao topo do cap</li>
+                            <li>👁️ Aparece após rolar 300px</li>
+                        </ul>
+                        <div style="margin-top: 1rem; padding: 0.75rem; background: rgba(0, 0, 0, 0.2); border-radius: 8px; font-size: 0.85rem;">
+                            💡 <strong>Dica:</strong> Funciona em desktop e mobile
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Atalhos de Teclado -->
+                <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(0, 0, 0, 0.3); border-radius: 12px; border-left: 4px solid #f59e0b;">
+                    <h4 style="color: #f59e0b; margin: 0 0 1rem 0; display: flex; align-items: center; gap: 0.5rem;">
+                        <span>⌨️</span>
+                        <span>Atalhos de Teclado</span>
+                    </h4>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; font-size: 0.9rem;">
+                        <div>
+                            <kbd style="background: rgba(255, 255, 255, 0.1); padding: 0.25rem 0.5rem; border-radius: 4px; font-family: monospace;">R</kbd> 
+                            → Abrir Rizoma
+                        </div>
+                        <div>
+                            <kbd style="background: rgba(255, 255, 255, 0.1); padding: 0.25rem 0.5rem; border-radius: 4px; font-family: monospace;">ESC</kbd> 
+                            → Fechar Rizoma
+                        </div>
+                        <div>
+                            <kbd style="background: rgba(255, 255, 255, 0.1); padding: 0.25rem 0.5rem; border-radius: 4px; font-family: monospace;">↑</kbd> 
+                            → Voltar ao topo
+                        </div>
+                        <div>
+                            <kbd style="background: rgba(255, 255, 255, 0.1); padding: 0.25rem 0.5rem; border-radius: 4px; font-family: monospace;">Tab</kbd> 
+                            → Navegar elementos
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Workflow Sugerido -->
+                <div style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%); border-radius: 12px;">
+                    <h4 style="color: #8b5cf6; margin: 0 0 1rem 0; text-align: center; font-size: 1.2rem;">
+                        🎯 Workflow Sugerido
+                    </h4>
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div style="display: flex; align-items: start; gap: 1rem;">
+                            <div style="background: #8b5cf6; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">1</div>
+                            <div style="flex: 1;">
+                                <strong>Escolha sua entrada</strong> na Fita de Möbius (clique simples em um ponto)
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: start; gap: 1rem;">
+                            <div style="background: #ec4899; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">2</div>
+                            <div style="flex: 1;">
+                                <strong>Leia o capítulo</strong> — observe conceitos sublinhados (tags do Rizoma)
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: start; gap: 1rem;">
+                            <div style="background: #10b981; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">3</div>
+                            <div style="flex: 1;">
+                                <strong>Explore conexões</strong> clicando em conceitos ou dando clique duplo na Möbius
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: start; gap: 1rem;">
+                            <div style="background: #f59e0b; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">4</div>
+                            <div style="flex: 1;">
+                                <strong>Salte para outro conceito</strong> no Rizoma — siga a curiosidade, não a ordem
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: start; gap: 1rem;">
+                            <div style="background: #ef4444; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">5</div>
+                            <div style="flex: 1;">
+                                <strong>Monitore progresso</strong> com o indicador 📍 e retorne quando quiser
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
 
@@ -27408,6 +27541,12 @@ ANÁLISE FINAL → ANÁLISE APROFUNDADA → ANÁLISE DE COERÊNCIA
 
     <!-- Fita de Möbius do Index -->
     <script src="assets/scripts/index-mobius.js" defer></script>
+
+    <!-- Integração Möbius ↔ Rizoma -->
+    <script src="assets/scripts/mobius-rizoma-bridge.js" defer></script>
+
+    <!-- Indicador de Posição -->
+    <script src="assets/scripts/position-indicator.js" defer></script>
 
     <!-- Três Loops Nhandereko -->
     <script src="assets/scripts/tres-loops.js" defer></script>

@@ -539,6 +539,43 @@ button:focus-visible {
     box-shadow: 0 12px 40px 0 rgba(37, 99, 235, 0.5);
 }
 
+/* Responsive tweaks for the floating position indicator (checkpoint)
+   We use !important here because the indicator currently sets inline styles
+   from JavaScript. These media queries keep the indicator usable on small
+   screens and avoid overlap with the #back-to-top button. */
+#position-indicator {
+    /* Provide a fallback base (most positioning comes from inline styles)
+       but keep these as non-positioning defaults to avoid surprises. */
+    transition: all 0.18s ease;
+}
+
+@media (max-width: 640px) {
+    /* Smaller screens: reduce size and padding, nudge closer to the edge */
+    #position-indicator {
+        bottom: 1rem !important;
+        left: 1rem !important;
+        right: auto !important;
+        max-width: 220px !important;
+        font-size: 0.85rem !important;
+        padding: 0.8rem 1rem !important;
+        z-index: 1003 !important; /* above #back-to-top (1000) */
+    }
+}
+
+@media (max-width: 420px) {
+    /* Very small screens / phones: place indicator at top-left to avoid
+       on-screen controls at the bottom (and notch areas). */
+    #position-indicator {
+        top: 1rem !important;
+        bottom: auto !important;
+        left: 1rem !important;
+        transform: none !important;
+        max-width: calc(100% - 2rem) !important;
+        font-size: 0.82rem !important;
+        z-index: 1004 !important;
+    }
+}
+
 /* Print styles */
 @media print {
     .menu-toggle,

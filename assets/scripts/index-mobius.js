@@ -19,8 +19,10 @@ class IndexMobius {
         }
         
         this.ctx = this.canvas.getContext('2d');
+        const initialParent = this.canvas.parentElement || document.body;
+        const initialParentWidth = initialParent.clientWidth || window.innerWidth;
         this.options = {
-            width: options.width || Math.min(window.innerWidth - 40, 1200),
+            width: options.width || Math.min(initialParentWidth, 1200),
             height: options.height || 600,
             segments: options.segments || 120,
             radius: options.radius || 180,
@@ -167,27 +169,84 @@ class IndexMobius {
     }
     
     resize() {
+    // Atualizar tamanho responsivo baseado no elemento pai (evita subtrair largura por sidebar)
+    const parent = this.canvas.parentElement || document.body;
+    const parentWidth = parent.clientWidth || window.innerWidth;
+    this.options.width = Math.min(parentWidth, 1200);
+
+    // Altura calculada a partir do pai se disponível, fallback para janela
+    const parentHeight = parent.clientHeight || window.innerHeight;
+    this.options.height = Math.min(600, Math.max(300, Math.floor(parentHeight * 0.45)));
+
         const dpr = window.devicePixelRatio || 1;
-        this.canvas.width = this.options.width * dpr;
-        this.canvas.height = this.options.height * dpr;
+        // Definir tamanho físico do canvas (pixels reais)
+        this.canvas.width = Math.round(this.options.width * dpr);
+        this.canvas.height = Math.round(this.options.height * dpr);
+        // Definir tamanho lógico via CSS
         this.canvas.style.width = this.options.width + 'px';
         this.canvas.style.height = this.options.height + 'px';
-        this.ctx.scale(dpr, dpr);
+
+        // Use setTransform para evitar escalonamento acumulado em redimensionamentos
+        if (typeof this.ctx.setTransform === 'function') {
+            this.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        } else if (typeof this.ctx.resetTransform === 'function') {
+            // Fallback - reset e aplicar scale
+            this.ctx.resetTransform();
+            this.ctx.scale(dpr, dpr);
+        } else {
+            // Último recurso: aplicar scale (pode acumular em navegadores antigos)
+            this.ctx.scale(dpr, dpr);
+        }
+    }
+
+    // Retorna o bounding rect atual do canvas (em pixels CSS/logical)
+    getCanvasRect() {
+        return this.canvas.getBoundingClientRect();
+    }
+
+    // Centro lógico do canvas usado para desenhar e detecção
+    getCenter() {
+        const rect = this.getCanvasRect();
+        return {
+            centerX: rect.width / 2,
+            centerY: rect.height / 2,
+            width: rect.width,
+            height: rect.height
+        };
     }
     
     setupEventListeners() {
-        this.canvas.addEventListener('mousemove', (e) => {
+        // Prevent default touch scrolling on the canvas so pointer events work smoothly
+        try {
+            this.canvas.style.touchAction = 'none';
+            this.canvas.style.userSelect = 'none';
+        } catch (e) {}
+        // Handler para mousemove - recalcula rect a cada movimento
+        // Pointer events unificam mouse + touch
+        this.canvas.addEventListener('pointermove', (e) => {
             const rect = this.canvas.getBoundingClientRect();
             this.mouseX = e.clientX - rect.left;
             this.mouseY = e.clientY - rect.top;
-            
-            this.hoveredPoint = this.getPointAtMouse(this.mouseX, this.mouseY);
-            this.canvas.style.cursor = this.hoveredPoint ? 'pointer' : 'default';
-        });
+
+            const hoveredPoint = this.getPointAtMouse(this.mouseX, this.mouseY);
+
+            if (hoveredPoint) {
+                this.canvas.style.cursor = 'pointer';
+                this.hoveredPoint = hoveredPoint;
+            } else {
+                this.canvas.style.cursor = 'default';
+                this.hoveredPoint = null;
+            }
+        }, { passive: true });
         
+        // Handler para click - recalcula rect no clique (caso o mouse não tenha se movido antes)
         this.canvas.addEventListener('click', (e) => {
-            if (this.hoveredPoint) {
-                this.navigateToSection(this.hoveredPoint.id);
+            const rect = this.canvas.getBoundingClientRect();
+            const cx = e.clientX - rect.left;
+            const cy = e.clientY - rect.top;
+            const clickedPoint = this.getPointAtMouse(cx, cy);
+            if (clickedPoint) {
+                this.navigateToSection(clickedPoint.id);
             }
         });
         
@@ -200,31 +259,51 @@ class IndexMobius {
             this.hoveredPoint = null;
         });
         
-        // Touch support
-        let touchStartX = 0;
-        this.canvas.addEventListener('touchstart', (e) => {
-            touchStartX = e.touches[0].clientX;
+        // Unified pointer event support (better for mobile + desktop)
+        let pointerStartX = 0;
+        let pointerDownPointId = null;
+
+        this.canvas.addEventListener('pointerdown', (e) => {
+            const rect = this.canvas.getBoundingClientRect();
+            pointerStartX = e.clientX;
             this.autoRotate = false;
+
+            const px = e.clientX - rect.left;
+            const py = e.clientY - rect.top;
+            const p = this.getPointAtMouse(px, py);
+            pointerDownPointId = p ? p.id : null;
         });
-        
-        this.canvas.addEventListener('touchmove', (e) => {
-            e.preventDefault();
-            const touchX = e.touches[0].clientX;
-            const delta = touchX - touchStartX;
-            this.rotation += delta * 0.01;
-            touchStartX = touchX;
-        }, { passive: false });
-        
-        this.canvas.addEventListener('touchend', () => {
+
+        // pointermove was already attached above for hover; use pointermove press handling to drag
+        this.canvas.addEventListener('pointermove', (e) => {
+            if (e.pressure && e.pressure > 0) {
+                const delta = e.clientX - pointerStartX;
+                this.rotation += delta * 0.01;
+                pointerStartX = e.clientX;
+            }
+        });
+
+        this.canvas.addEventListener('pointerup', (e) => {
+            const rect = this.canvas.getBoundingClientRect();
+            const px = e.clientX - rect.left;
+            const py = e.clientY - rect.top;
+            const p = this.getPointAtMouse(px, py);
+            if (p && pointerDownPointId && p.id === pointerDownPointId) {
+                this.navigateToSection(p.id);
+            }
+            pointerDownPointId = null;
+
             setTimeout(() => {
                 this.autoRotate = true;
-            }, 2000);
+            }, 800);
         });
     }
     
     getPointAtMouse(mx, my) {
-        const centerX = this.options.width / 2;
-        const centerY = this.options.height / 2;
+        const { centerX, centerY } = this.getCenter();
+        
+        // Aumentar área de detecção e adicionar debug
+        const detectionRadius = 25; // Aumentado de 20 para 25
         
         for (const point of this.navigationPoints) {
             const angle = point.angle + this.rotation;
@@ -232,7 +311,8 @@ class IndexMobius {
             const y = centerY + Math.sin(angle) * this.options.radius;
             
             const distance = Math.sqrt((mx - x) ** 2 + (my - y) ** 2);
-            if (distance < 20) {
+            
+            if (distance < detectionRadius) {
                 return point;
             }
         }
@@ -283,12 +363,19 @@ class IndexMobius {
             this.drawHoverTooltip();
         }
         
+        // Debug: desenhar cursor (remover depois de testar)
+        if (this.options.debug && this.mouseX && this.mouseY) {
+            this.ctx.beginPath();
+            this.ctx.arc(this.mouseX, this.mouseY, 5, 0, Math.PI * 2);
+            this.ctx.fillStyle = 'rgba(255, 0, 0, 0.5)';
+            this.ctx.fill();
+        }
+        
         requestAnimationFrame(() => this.animate());
     }
     
     drawMobius() {
-        const centerX = this.options.width / 2;
-        const centerY = this.options.height / 2;
+        const { centerX, centerY } = this.getCenter();
         const { segments, radius, stripWidth } = this.options;
         
         for (let i = 0; i < segments; i++) {
@@ -340,8 +427,7 @@ class IndexMobius {
     }
     
     drawNavigationPoints() {
-        const centerX = this.options.width / 2;
-        const centerY = this.options.height / 2;
+        const { centerX, centerY } = this.getCenter();
         
         for (const point of this.navigationPoints) {
             const angle = point.angle + this.rotation;
@@ -350,7 +436,15 @@ class IndexMobius {
             
             const colors = this.layerColors[point.layer];
             const isHovered = this.hoveredPoint === point;
-            const pointSize = isHovered ? 12 : 6;
+            const pointSize = isHovered ? 12 : 7; // Aumentado de 6 para 7
+            
+            // Área de detecção visual (círculo maior transparente quando hover)
+            if (isHovered) {
+                this.ctx.beginPath();
+                this.ctx.arc(x, y, 25, 0, Math.PI * 2);
+                this.ctx.fillStyle = `${colors.primary}22`; // Muito transparente
+                this.ctx.fill();
+            }
             
             // Glow
             if (isHovered) {
@@ -382,8 +476,7 @@ class IndexMobius {
     drawLayerLabels() {
         if (!this.options.showLabels) return;
         
-        const centerX = this.options.width / 2;
-        const centerY = this.options.height / 2;
+        const { centerX, centerY, width, height } = this.getCenter();
         const labelRadius = this.options.radius + 100;
         
         const layers = [
@@ -413,8 +506,7 @@ class IndexMobius {
     }
     
     drawCenterInfo() {
-        const centerX = this.options.width / 2;
-        const centerY = this.options.height / 2;
+        const { centerX, centerY } = this.getCenter();
         
         this.ctx.textAlign = 'center';
         
@@ -443,8 +535,8 @@ class IndexMobius {
         const boxWidth = metrics.width + padding * 2;
         const boxHeight = 35;
         
-        const x = this.mouseX + 20;
-        const y = this.mouseY - 20;
+    const x = this.mouseX + 20;
+    const y = this.mouseY - 20;
         
         const colors = this.layerColors[this.hoveredPoint.layer];
         
