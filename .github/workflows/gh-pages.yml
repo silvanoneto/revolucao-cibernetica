@@ -5,6 +5,7 @@ on:
     branches:
       - master
       - main
+  pull_request:
 
 permissions:
   contents: write
@@ -12,9 +13,43 @@ permissions:
   id-token: write
 
 jobs:
+  validate-generated:
+    name: Validate generated files are up-to-date
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies (if present)
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f scripts/requirements.txt ]; then
+            pip install -r scripts/requirements.txt
+          fi
+
+      - name: Run exporter
+        run: python3 scripts/export_file.py all
+
+      - name: Fail if generated files changed
+        run: |
+          if ! git diff --quiet --exit-code; then
+            echo "\nGenerated files are out of date. Run 'python3 scripts/export_file.py all' locally and commit the changes.\n"
+            git --no-pager status --porcelain
+            git --no-pager diff --name-only
+            exit 1
+          fi
+
   deploy:
     runs-on: ubuntu-latest
     name: Build and publish to gh-pages
+    needs: validate-generated
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
