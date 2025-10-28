@@ -476,7 +476,7 @@ const conceptGraph = {
     'genero-computacao': {
         name: 'Gênero e Computação',
         description: 'Padrão histórico: trabalho feminizado → masculinizado quando valorizado',
-        connections: ['eniac-six', 'ada-lovelace', 'divisao-sexual-trabalho', 'trabalho-invisivel'],
+        connections: ['eniac-six', 'ada-lovelace', 'divisao-sexual-trabalho', 'trabalho-invisivel', 'cyborg-feminism', 'tecnofeminismo'],
         color: '#ec4899',
         layer: 0
     },
@@ -497,7 +497,7 @@ const conceptGraph = {
     'feedback-positivo': {
         name: 'Feedback Positivo',
         description: 'Amplificador - crescimento exponencial ou colapso (microfonia, vício)',
-        connections: ['feedback', 'vicio-digital', 'viralizacao', 'necropolitica-digital'],
+        connections: ['feedback', 'vicio-digital', 'viralizacao', 'necropolitica-digital', 'terra-luna-collapse'],
         color: '#f97316', // Laranja para atenção
         layer: 0
     },
@@ -819,7 +819,7 @@ const conceptGraph = {
     'resistencia': {
         name: 'Resistência em Código',
         description: 'Técnicas práticas de contra-automação',
-        connections: ['captcha', 'opacidade', 'honeypots', 'critica-performativa'],
+        connections: ['captcha', 'opacidade', 'honeypots', 'critica-performativa', 'hackfeministas', 'coding-rights-brasil', 'marialab', 'signal-app', 'tor-browser', 'low-tech'],
         color: '#10b981',
         layer: 0
     },
@@ -917,7 +917,7 @@ const conceptGraph = {
     'trabalho-afetivo': {
         name: 'Trabalho Afetivo',
         description: 'Trabalho que produz ou manipula afetos, emoções e relações sociais',
-        connections: ['trabalho-imaterial', 'trabalho-cuidado', 'emotional-labor', 'trabalho-sociabilidade', 'influencers', 'moderadores-conteudo', 'bioproducao', 'lazzarato', 'hardt', 'feminizacao-trabalho'],
+        connections: ['trabalho-imaterial', 'trabalho-cuidado', 'emotional-labor', 'trabalho-sociabilidade', 'influencers', 'moderadores-conteudo', 'bioproducao', 'lazzarato', 'hardt', 'feminizacao-trabalho', 'cyborg-feminism', 'hackfeministas'],
         color: '#ef4444',
         layer: 0
     },
@@ -1485,7 +1485,7 @@ const conceptGraph = {
     'capital-ficticio': {
         name: 'Capital Fictício',
         description: 'Riqueza que parece real mas não tem substância de valor - dívidas, bolhas, derivativos',
-        connections: ['colapso-modernizacao', 'financeirizacao', 'bolhas-especulativas', 'criptomoedas-capital-ficticio'],
+        connections: ['colapso-modernizacao', 'financeirizacao', 'bolhas-especulativas', 'criptomoedas-capital-ficticio', 'daos-plutocracia', 'ftx-collapse', 'terra-luna-collapse', 'el-salvador-bitcoin'],
         color: '#dc2626',
         layer: 0
     },
@@ -1590,7 +1590,7 @@ const conceptGraph = {
     'criptomoedas-capital-ficticio': {
         name: 'Criptomoedas como Capital Fictício',
         description: 'Bitcoin não é pós-capitalista - é capital fictício descentralizado (especulação pura)',
-        connections: ['capital-ficticio', 'bolhas-especulativas', 'cripto-consumo-energetico'],
+        connections: ['capital-ficticio', 'bolhas-especulativas', 'cripto-consumo-energetico', 'daos-plutocracia', 'web3-critique', 'ftx-collapse', 'terra-luna-collapse', 'el-salvador-bitcoin'],
         color: '#dc2626',
         layer: 1
     },
@@ -2032,7 +2032,7 @@ const conceptGraph = {
     'plataformizacao': {
         name: 'Plataformização',
         description: 'Monopolização da infraestrutura digital via efeitos de rede',
-        connections: ['capitalismo-vigilancia', 'uberizacao', 'resistencia', 'magalu', 'capital', 'fetichismo-digital', 'monopolio', 'efeito-rede', 'plataforma-lean', 'plataforma-publicidade'],
+        connections: ['capitalismo-vigilancia', 'uberizacao', 'resistencia', 'magalu', 'capital', 'fetichismo-digital', 'monopolio', 'efeito-rede', 'plataforma-lean', 'plataforma-publicidade', 'technofeudalism-varoufakis'],
         color: '#ef4444',
         layer: 0
     },
@@ -2088,7 +2088,7 @@ const conceptGraph = {
     'decolonial': {
         name: 'Pensamento Decolonial',
         description: 'Crítica à colonialidade do saber e do poder',
-        connections: ['epistemologia-guarani', 'ubuntu', 'cosmotecnica'],
+        connections: ['epistemologia-guarani', 'ubuntu', 'cosmotecnica', 'afrofuturismo', 'dubois-dupla-consciencia', 'cosmotecnica-yuk-hui'],
         color: '#8b5cf6',
         layer: -1
     },
@@ -2174,6 +2174,535 @@ const conceptGraph = {
         description: 'Desordem produtiva, não-entrópica',
         connections: ['canvas-background', 'captcha', 'sistema-ternario'],
         color: '#10b981',
+        layer: 0
+    },
+
+    // ========================================
+    // CAPÍTULO 12: INTERSECCIONALIDADE DIGITAL
+    // ========================================
+    'ciborgue': {
+        name: 'Figura do Ciborgue',
+        description: 'Híbrido humano-máquina que dissolve dualismos',
+        connections: ['donna-haraway', 'manifesto-ciborgue', 'pos-humanismo', 'corpo-informacional'],
+        color: '#ec4899',
+        layer: 0
+    },
+    'donna-haraway': {
+        name: 'Donna Haraway',
+        description: 'Teórica do ciborgue, feminismo pós-humanista',
+        connections: ['ciborgue', 'manifesto-ciborgue', 'conhecimento-situado', 'cyborg-feminism'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'manifesto-ciborgue': {
+        name: 'Manifesto Ciborgue (1985)',
+        description: 'Dissolução de fronteiras natureza/cultura, humano/máquina',
+        connections: ['donna-haraway', 'ciborgue', 'xenofeminismo', 'glitch-feminism'],
+        color: '#a855f7',
+        layer: -1
+    },
+    'cyborg-feminism': {
+        name: 'Ciberfeminismo',
+        description: 'Tecnologia como espaço de luta feminista e reconfiguração',
+        connections: ['donna-haraway', 'xenofeminismo', 'glitch-feminism', 'tecnofeminismo', 'hackfeministas'],
+        color: '#ec4899',
+        layer: 0
+    },
+    'xenofeminismo': {
+        name: 'Xenofeminismo',
+        description: 'Tecnologia para abolir gênero naturalizado (Laboria Cuboniks)',
+        connections: ['cyborg-feminism', 'laboria-cuboniks', 'aceleracionismo', 'tecnofeminismo'],
+        color: '#a855f7',
+        layer: 1
+    },
+    'laboria-cuboniks': {
+        name: 'Laboria Cuboniks',
+        description: 'Coletivo autor do Manifesto Xenofeminista (2015)',
+        connections: ['xenofeminismo', 'cyborg-feminism', 'aceleracionismo'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'glitch-feminism': {
+        name: 'Glitch Feminism',
+        description: 'Erro como resistência, corpo digital recusado (Legacy Russell)',
+        connections: ['cyborg-feminism', 'legacy-russell', 'manifesto-ciborgue', 'resistencia'],
+        color: '#ec4899',
+        layer: 0
+    },
+    'legacy-russell': {
+        name: 'Legacy Russell',
+        description: 'Teórica do glitch feminism, erro como potência',
+        connections: ['glitch-feminism', 'cyborg-feminism', 'avatar'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'tecnofeminismo': {
+        name: 'Tecnofeminismo',
+        description: 'Tecnologia nem neutra nem determinista (Judy Wajcman)',
+        connections: ['cyborg-feminism', 'judy-wajcman', 'xenofeminismo', 'genero-computacao'],
+        color: '#a855f7',
+        layer: 0
+    },
+    'judy-wajcman': {
+        name: 'Judy Wajcman',
+        description: 'Socióloga, autora de TechnoFeminism (2004)',
+        connections: ['tecnofeminismo', 'cyborg-feminism', 'divisao-sexual-trabalho'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'coding-rights-brasil': {
+        name: 'Coding Rights',
+        description: 'Organização brasileira de direitos digitais feminista',
+        connections: ['cyborg-feminism', 'hackfeministas', 'marialab', 'resistencia'],
+        color: '#22c55e',
+        layer: 0
+    },
+    'marialab': {
+        name: 'MariaLab',
+        description: 'Hacklab feminista de São Paulo (2017-presente)',
+        connections: ['coding-rights-brasil', 'hackfeministas', 'criptografia-popular', 'resistencia'],
+        color: '#22c55e',
+        layer: 0
+    },
+    'think-olga': {
+        name: 'Think Olga',
+        description: 'ONG contra assédio online e violência de gênero digital',
+        connections: ['cyborg-feminism', 'resistencia', 'violencia-digital'],
+        color: '#22c55e',
+        layer: 0
+    },
+    'hackfeministas': {
+        name: 'Hackfeministas',
+        description: 'Prática tecnológica feminista (criptografia, anonimato)',
+        connections: ['cyborg-feminism', 'coding-rights-brasil', 'marialab', 'criptografia-popular', 'signal-app'],
+        color: '#ec4899',
+        layer: 0
+    },
+    'signal-app': {
+        name: 'Signal',
+        description: 'App de mensagens criptografadas end-to-end',
+        connections: ['hackfeministas', 'criptografia-popular', 'tor-browser', 'resistencia'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'tor-browser': {
+        name: 'Tor Browser',
+        description: 'Navegação anônima via rede cebola',
+        connections: ['hackfeministas', 'signal-app', 'resistencia', 'criptografia-popular'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'afrofuturismo': {
+        name: 'Afrofuturismo',
+        description: 'Estética que reimagina passado/futuro negro via ficção científica',
+        connections: ['sun-ra', 'octavia-butler', 'kodwo-eshun', 'dubois-dupla-consciencia', 'decolonial'],
+        color: '#a855f7',
+        layer: 0
+    },
+    'sun-ra': {
+        name: 'Sun Ra',
+        description: 'Músico afrofuturista (Space is the Place, 1974)',
+        connections: ['afrofuturismo', 'sonic-fiction', 'mythos-tecnologico'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'octavia-butler': {
+        name: 'Octavia Butler',
+        description: 'Autora de ficção científica (Kindred, Xenogenesis)',
+        connections: ['afrofuturismo', 'samuel-delany', 'cyborg-feminism', 'corpo-informacional'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'samuel-delany': {
+        name: 'Samuel Delany',
+        description: 'Pioneiro afro-queer da FC (Babel-17, Dhalgren)',
+        connections: ['afrofuturismo', 'octavia-butler', 'corpo-informacional'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'dubois-dupla-consciencia': {
+        name: 'Dupla Consciência (Du Bois)',
+        description: 'Ver-se pelos olhos do opressor (The Souls of Black Folk, 1903)',
+        connections: ['afrofuturismo', 'decolonial', 'feedback-opressao'],
+        color: '#a855f7',
+        layer: -1
+    },
+    'kodwo-eshun': {
+        name: 'Kodwo Eshun',
+        description: 'Teórico da sonic fiction e do afrofuturismo',
+        connections: ['afrofuturismo', 'sonic-fiction', 'sun-ra', 'temporalidade'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'sonic-fiction': {
+        name: 'Sonic Fiction',
+        description: 'Ficção sonora, música como veículo afrofuturista',
+        connections: ['kodwo-eshun', 'sun-ra', 'afrofuturismo', 'mythos-tecnologico'],
+        color: '#a855f7',
+        layer: 0
+    },
+    'cosmotecnica-yuk-hui': {
+        name: 'Cosmotécnicas (Yuk Hui)',
+        description: 'Técnicas enraizadas em cosmologias não-ocidentais',
+        connections: ['cosmotecnica', 'decolonial', 'afrofuturismo', 'epistemologia-guarani'],
+        color: '#a855f7',
+        layer: 0
+    },
+    'emicida-amarelo': {
+        name: 'Emicida (Amarelo)',
+        description: 'Álbum afrofuturista brasileiro (2019)',
+        connections: ['afrofuturismo', 'bia-ferreira', 'resistencia'],
+        color: '#22c55e',
+        layer: 0
+    },
+    'bia-ferreira': {
+        name: 'Bia Ferreira',
+        description: 'Cantora afrofuturista, ciberpunk periférico brasileiro',
+        connections: ['afrofuturismo', 'emicida-amarelo', 'resistencia'],
+        color: '#22c55e',
+        layer: 0
+    },
+    'neurodiversidade': {
+        name: 'Neurodiversidade',
+        description: 'Cérebros diversos como variação, não patologia',
+        connections: ['crip-theory', 'assistive-tech', 'design-universal', 'corpo-informacional'],
+        color: '#a855f7',
+        layer: 0
+    },
+    'crip-theory': {
+        name: 'Crip Theory',
+        description: 'Deficiência como construção social opressiva',
+        connections: ['neurodiversidade', 'robert-mcruer', 'alison-kafer', 'corpo-informacional'],
+        color: '#a855f7',
+        layer: 0
+    },
+    'robert-mcruer': {
+        name: 'Robert McRuer',
+        description: 'Teórico queer-crip (Crip Theory, 2006)',
+        connections: ['crip-theory', 'neurodiversidade', 'corpo-informacional'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'alison-kafer': {
+        name: 'Alison Kafer',
+        description: 'Teórica feminist crip (Feminist, Queer, Crip, 2013)',
+        connections: ['crip-theory', 'neurodiversidade', 'futuro-acessivel'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'assistive-tech': {
+        name: 'Tecnologias Assistivas',
+        description: 'Dupla face: libertação ou controle capacitista',
+        connections: ['neurodiversidade', 'design-universal', 'eugenia-digital', 'corpo-informacional'],
+        color: '#f59e0b',
+        layer: 0
+    },
+    'design-universal': {
+        name: 'Design Universal',
+        description: 'Acessibilidade como design para todos desde o início',
+        connections: ['assistive-tech', 'neurodiversidade', 'resistencia'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'exclusao-digital-brasil': {
+        name: 'Exclusão Digital no Brasil',
+        description: '45 milhões sem internet, capacitismo estrutural',
+        connections: ['neurodiversidade', 'assistive-tech', 'desigualdade', 'infraestrutura'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'eugenia-digital': {
+        name: 'Eugenia Digital',
+        description: 'Seleção genética via CRISPR e testes pré-natais',
+        connections: ['assistive-tech', 'crispr-etica', 'crip-theory', 'corpo-informacional'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'crispr-etica': {
+        name: 'CRISPR e Ética',
+        description: 'Edição genética: cura ou eliminação da diferença?',
+        connections: ['eugenia-digital', 'neurodiversidade', 'transumanismo'],
+        color: '#f59e0b',
+        layer: 0
+    },
+    'futuro-acessivel': {
+        name: 'Futuro Acessível',
+        description: 'Tecnologia para todos os corpos, não normalização',
+        connections: ['alison-kafer', 'design-universal', 'assistive-tech', 'utopia-concreta'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'andreas-malm': {
+        name: 'Andreas Malm',
+        description: 'Teórico do Capitaloceno e Fossil Capital',
+        connections: ['capitaloceno', 'fossil-capital', 'crise-ecologica', 'ecosocialismo'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'capitaloceno': {
+        name: 'Capitaloceno',
+        description: 'Crise ecológica como produto do capitalismo, não da humanidade',
+        connections: ['andreas-malm', 'crise-ecologica', 'fossil-capital', 'jason-moore'],
+        color: '#a855f7',
+        layer: 0
+    },
+    'fossil-capital': {
+        name: 'Fossil Capital',
+        description: 'Capitalismo forjado no carvão e petróleo (Malm, 2016)',
+        connections: ['andreas-malm', 'capitaloceno', 'crise-ecologica', 'extracao-dados'],
+        color: '#ef4444',
+        layer: -1
+    },
+    'jason-moore': {
+        name: 'Jason W. Moore',
+        description: 'Teórico da world-ecology, capitalismo como web of life',
+        connections: ['capitaloceno', 'andreas-malm', 'crise-ecologica', 'ecosocialismo'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'web-of-life': {
+        name: 'Web of Life',
+        description: 'Capitalismo como ecologia-mundo, não sistema econômico isolado',
+        connections: ['jason-moore', 'capitaloceno', 'crise-ecologica', 'infraestrutura'],
+        color: '#a855f7',
+        layer: 0
+    },
+    'kohei-saito': {
+        name: 'Kohei Saito',
+        description: 'Marxista ecológico japonês (Degrowth Communism, 2020)',
+        connections: ['ecosocialismo', 'degrowth-communism', 'decrescimento-digital', 'marx-ecologico'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'degrowth-communism': {
+        name: 'Degrowth Communism',
+        description: 'Comunismo do decrescimento: abundância via suficiência',
+        connections: ['kohei-saito', 'ecosocialismo', 'decrescimento-digital', 'utopia-concreta'],
+        color: '#a855f7',
+        layer: 1
+    },
+    'decrescimento-digital': {
+        name: 'Decrescimento Digital',
+        description: 'Menos dispositivos, mais durabilidade, suficiência tecnológica',
+        connections: ['degrowth-communism', 'kohei-saito', 'low-tech', 'e-waste-brasil', 'ecosocialismo'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'low-tech': {
+        name: 'Low-Tech',
+        description: 'Tecnologia simples, reparável, de baixo impacto',
+        connections: ['decrescimento-digital', 'reparo', 'obsolescencia-programada', 'resistencia'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'e-waste-brasil': {
+        name: 'E-waste no Brasil',
+        description: '2,4 milhões de toneladas/ano, apenas 3% reciclado',
+        connections: ['decrescimento-digital', 'crise-ecologica', 'mineracao-amazonia', 'necropolitica-digital'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'mineracao-amazonia': {
+        name: 'Mineração na Amazônia',
+        description: 'Extração de coltan, ouro, lítio para dispositivos digitais',
+        connections: ['e-waste-brasil', 'crise-ecologica', 'extracao-dados', 'capitaloceno'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'green-new-deal-limites': {
+        name: 'Limites do Green New Deal',
+        description: 'Crescimento verde impossível: extração continua',
+        connections: ['ecosocialismo', 'degrowth-communism', 'crise-ecologica', 'capitaloceno'],
+        color: '#f59e0b',
+        layer: 0
+    },
+    'daos-plutocracia': {
+        name: 'DAOs como Plutocracia',
+        description: 'Organizações autônomas descentralizadas = 1 token = 1 voto',
+        connections: ['blockchain', 'web3-critique', 'capital-fictico', 'criptomoeda'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'web3-critique': {
+        name: 'Crítica ao Web3',
+        description: 'Descentralização ilusória, recentralização via capital',
+        connections: ['daos-plutocracia', 'molly-white', 'blockchain', 'criptomoeda', 'nft'],
+        color: '#f59e0b',
+        layer: 0
+    },
+    'molly-white': {
+        name: 'Molly White',
+        description: 'Crítica do Web3 (Web3 is Going Just Great)',
+        connections: ['web3-critique', 'ftx-collapse', 'criptomoeda'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'ftx-collapse': {
+        name: 'Colapso da FTX',
+        description: 'Exchange fraudulenta, US$ 8 bilhões desviados (2022)',
+        connections: ['molly-white', 'web3-critique', 'criptomoeda', 'capital-fictico', 'terra-luna-collapse'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'terra-luna-collapse': {
+        name: 'Colapso Terra/Luna',
+        description: 'Stablecoin algorítmica: espiral da morte de US$ 40 bilhões (2022)',
+        connections: ['ftx-collapse', 'criptomoeda', 'capital-fictico', 'feedback-positivo'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'el-salvador-bitcoin': {
+        name: 'El Salvador Bitcoin',
+        description: 'Experimento autoritário falho: imposição de BTC como moeda legal',
+        connections: ['criptomoeda', 'ftx-collapse', 'capital-fictico', 'technofeudalism'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'technofeudalism-varoufakis': {
+        name: 'Tecnofeudalismo (Varoufakis)',
+        description: 'Plataformas como novos feudos, renda substituindo lucro',
+        connections: ['el-salvador-bitcoin', 'plataformizacao', 'extracao-renda', 'capitalismo-vigilancia'],
+        color: '#a855f7',
+        layer: 0
+    },
+    'ecosocialismo': {
+        name: 'Ecossocialismo Digital',
+        description: 'Convergência entre crise ecológica e tecnologia: decrescimento, reparo, suficiência',
+        connections: ['andreas-malm', 'jason-moore', 'kohei-saito', 'degrowth-communism', 'decrescimento-digital', 'green-new-deal-limites'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'criptografia-popular': {
+        name: 'Criptografia Popular',
+        description: 'Uso de criptografia end-to-end como ferramenta de resistência',
+        connections: ['hackfeministas', 'signal-app', 'tor-browser', 'resistencia', 'coding-rights-brasil'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'conhecimento-situado': {
+        name: 'Conhecimento Situado',
+        description: 'Epistemologia feminista: todo conhecimento é localizado, corporificado (Haraway)',
+        connections: ['donna-haraway', 'cyborg-feminism', 'decolonial'],
+        color: '#a855f7',
+        layer: 0
+    },
+    'violencia-digital': {
+        name: 'Violência Digital de Gênero',
+        description: 'Assédio, doxing, revenge porn - extensão digital da violência patriarcal',
+        connections: ['think-olga', 'cyborg-feminism', 'necropolitica-digital'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'mythos-tecnologico': {
+        name: 'Mythos Tecnológico',
+        description: 'Narrativas míticas na ficção científica afrofuturista',
+        connections: ['afrofuturismo', 'sun-ra', 'sonic-fiction'],
+        color: '#a855f7',
+        layer: 0
+    },
+    'feedback-opressao': {
+        name: 'Feedback de Opressão',
+        description: 'Ciclos auto-reforçadores de desigualdade algorítmica',
+        connections: ['dubois-dupla-consciencia', 'feedback-positivo', 'necropolitica-digital'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'avatar': {
+        name: 'Avatar Digital',
+        description: 'Representação digital corporificada, potencial de refúgio e reconfiguração',
+        connections: ['legacy-russell', 'glitch-feminism', 'ciborgue'],
+        color: '#10b981',
+        layer: 0
+    },
+    'reparo': {
+        name: 'Direito ao Reparo',
+        description: 'Movimento contra obsolescência programada, reparo como resistência',
+        connections: ['low-tech', 'obsolescencia-programada', 'decrescimento-digital'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'obsolescencia-programada': {
+        name: 'Obsolescência Programada',
+        description: 'Produtos projetados para quebrar, criando lixo eletrônico',
+        connections: ['e-waste-brasil', 'reparo', 'low-tech'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'marx-ecologico': {
+        name: 'Marx Ecológico',
+        description: 'Leitura ecológica de Marx: metabolic rift, relação sociedade-natureza',
+        connections: ['kohei-saito', 'ecosocialismo', 'capitaloceno'],
+        color: '#a855f7',
+        layer: 0
+    },
+    'extracao-renda': {
+        name: 'Extração de Renda Digital',
+        description: 'Plataformas extraem renda como novos rentistas feudais',
+        connections: ['technofeudalism-varoufakis', 'plataformizacao', 'capitalismo-vigilancia'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'criptomoeda': {
+        name: 'Criptomoedas',
+        description: 'Moedas digitais descentralizadas: promessa libertária, realidade especulativa',
+        connections: ['criptomoedas-capital-ficticio', 'bitcoin-sujeito-automatico', 'daos-plutocracia', 'web3-critique', 'ftx-collapse', 'terra-luna-collapse', 'el-salvador-bitcoin'],
+        color: '#f59e0b',
+        layer: 0
+    },
+    'nft': {
+        name: 'NFTs',
+        description: 'Non-fungible tokens: propriedade digital via blockchain, especulação artística',
+        connections: ['web3-critique', 'criptomoeda', 'capital-fictico'],
+        color: '#f59e0b',
+        layer: 0
+    },
+    'transumanismo': {
+        name: 'Transumanismo',
+        description: 'Ideologia de superação do corpo via tecnologia (crítica: eugenia tech)',
+        connections: ['crispr-etica', 'eugenia-digital', 'pos-humanismo'],
+        color: '#f59e0b',
+        layer: 0
+    },
+    'utopia-concreta': {
+        name: 'Utopia Concreta',
+        description: 'Futuros prefigurados no presente via práxis (Ernst Bloch)',
+        connections: ['futuro-acessivel', 'degrowth-communism', 'resistencia'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'desigualdade': {
+        name: 'Desigualdade Digital',
+        description: 'Exclusão estrutural via acesso desigual à tecnologia',
+        connections: ['exclusao-digital-brasil', 'divisao-sexual-trabalho', 'necropolitica-digital'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'infraestrutura': {
+        name: 'Infraestrutura Material',
+        description: 'Base física da internet: cabos, servidores, mineração, energia',
+        connections: ['web-of-life', 'fossil-capital', 'mineracao-amazonia', 'exclusao-digital-brasil'],
+        color: '#f59e0b',
+        layer: 0
+    },
+    'aceleracionismo': {
+        name: 'Aceleracionismo',
+        description: 'Corrente que propõe acelerar contradições do capitalismo (Nick Land vs Left Acc)',
+        connections: ['xenofeminismo', 'laboria-cuboniks', 'colapso-modernizacao'],
+        color: '#a855f7',
+        layer: 0
+    },
+    'pos-humanismo': {
+        name: 'Pós-Humanismo',
+        description: 'Crítica ao humanismo universalista, abertura a outras formas de vida',
+        connections: ['ciborgue', 'donna-haraway', 'transumanismo', 'neurodiversidade'],
+        color: '#a855f7',
+        layer: 0
+    },
+    'corpo-informacional': {
+        name: 'Corpo Informacional',
+        description: 'Corpo como interface, dados, código - nem puramente biológico nem digital',
+        connections: ['ciborgue', 'octavia-butler', 'neurodiversidade', 'crip-theory', 'assistive-tech', 'eugenia-digital'],
+        color: '#a855f7',
         layer: 0
     },
 
