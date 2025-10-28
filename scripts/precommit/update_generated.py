@@ -9,6 +9,7 @@ Behavior:
 
 This pattern prevents commits from proceeding when generated files are stale.
 """
+
 from __future__ import annotations
 
 import subprocess

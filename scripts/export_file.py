@@ -427,7 +427,7 @@ def create_epub():
 
                     reduction = (original_size - compressed_size) / original_size * 100
                     print(
-                        f"✓ {img_file} ({original_size/1024:.1f}KB → {compressed_size/1024:.1f}KB, -{reduction:.0f}%)"
+                        f"✓ {img_file} ({original_size / 1024:.1f}KB → {compressed_size / 1024:.1f}KB, -{reduction:.0f}%)"
                     )
                 except Exception as e:
                     print(f"✗ Erro ao processar {img_file}: {e}")
@@ -460,8 +460,10 @@ def create_epub():
     print("=" * 60)
     print(f"📚 Capítulos: {len(chapters)}")
     print(f"🖼️  Imagens processadas: {image_count}")
-    print(f"� Tamanho original das imagens: {total_original_size / (1024*1024):.1f} MB")
-    print(f"� Tamanho comprimido: {total_compressed_size / (1024*1024):.1f} MB")
+    print(
+        f"� Tamanho original das imagens: {total_original_size / (1024 * 1024):.1f} MB"
+    )
+    print(f"� Tamanho comprimido: {total_compressed_size / (1024 * 1024):.1f} MB")
     print(
         f"💾 Redução: {((total_original_size - total_compressed_size) / total_original_size * 100):.0f}%"
     )
@@ -954,16 +956,16 @@ def create_xml(minify: bool = False) -> str:
     # Metadados
     metadata = ET.SubElement(root, "metadata")
     ET.SubElement(metadata, "title").text = "A Revolução Cibernética"
-    ET.SubElement(metadata, "subtitle").text = (
-        "Uma Ontologia Relacional para a Era da Informação"
-    )
+    ET.SubElement(
+        metadata, "subtitle"
+    ).text = "Uma Ontologia Relacional para a Era da Informação"
     ET.SubElement(metadata, "author").text = "O Besta Fera"
     ET.SubElement(metadata, "language").text = "pt-BR"
     ET.SubElement(metadata, "license").text = "Creative Commons BY-SA 4.0"
     ET.SubElement(metadata, "url").text = "https://obestafera.com"
-    ET.SubElement(metadata, "description").text = (
-        "Ensaio filosófico sobre cibernética, ontologia relacional e a transformação da subjetividade na era digital."
-    )
+    ET.SubElement(
+        metadata, "description"
+    ).text = "Ensaio filosófico sobre cibernética, ontologia relacional e a transformação da subjetividade na era digital."
 
     # Tags para categorização
     tags_elem = ET.SubElement(metadata, "tags")

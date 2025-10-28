@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<revolucao_cibernetica version="1.0" format="ai_structured" generated="2025-10-28T00:12:27.202368">
+<revolucao_cibernetica version="1.0" format="ai_structured" generated="2025-10-28T00:59:17.480195">
   <metadata>
     <title>A Revolução Cibernética</title>
     <subtitle>Uma Ontologia Relacional para a Era da Informação</subtitle>
@@ -65,8 +65,11 @@
       <title>🔄 Da Teoria à Práxis</title>
       <lists>
         <list type="unordered" index="0">
-          <item index="0">Explorar:use o rizoma para encontrar conexões; quando um nó exigir mais contexto, siga o link para o capítulo correspondente.</item>
-          <item index="1">Focar:prefira um modo de leitura — linear (estudo), temático (problema) ou rizomático (descoberta) — e limite saltos para evitar duplicação conceitual.</item>
+          <item index="0">Explorar:use o rizoma para encontrar conexões; quando um nó exigir
+                                    mais contexto, siga o link para o capítulo correspondente.</item>
+          <item index="1">Focar:prefira um modo de leitura — linear (estudo), temático
+                                    (problema) ou rizomático (descoberta) — e limite saltos para evitar duplicação
+                                    conceitual.</item>
         </list>
       </lists>
       <images>
@@ -91,7 +94,8 @@
         <concept>Rápido:</concept>
         <concept>Explorar:</concept>
         <concept>Focar:</concept>
-        <concept>&quot;Lei Universal da Dialética Informacional Homem-Máquina&quot;</concept>
+        <concept>&quot;Lei Universal da
+                                    Dialética Informacional Homem-Máquina&quot;</concept>
       </key_concepts>
     </section>
     <section id="teoria_3" level="2">
@@ -117,14 +121,22 @@
     <section id="teoria_4" level="1">
       <title>Rizoma — Ponto de Envio/Resposta</title>
       <content>
-        <paragraph index="0">Rápido:o rizoma é um mapa não-linear de conceitos. Entre por qualquer nó, siga conexões, volte. O site oferece ferramentas (Möbius, grafo, filtros) para navegar; aqui explicamos apenas o que importa.</paragraph>
-        <paragraph index="1">Legenda rápida — 🔴 Passado: fundamentos; 🟢 Presente: diagnóstico; 🔵 Futuro: propostas e prática.</paragraph>
-        <paragraph index="2">Nota: este capítulo é um ponto-de-entrada. Para leitura profunda, siga os links dos conceitos. Se quiser, podemos iterar uma versão ainda mais enxuta ou uma variação para leitores técnicos.</paragraph>
+        <paragraph index="0">Rápido:o rizoma é um mapa não-linear de conceitos. Entre por qualquer nó,
+                            siga conexões, volte. O site oferece ferramentas (Möbius, grafo, filtros) para navegar; aqui
+                            explicamos apenas o que importa.</paragraph>
+        <paragraph index="1">Legenda rápida — 🔴 Passado: fundamentos; 🟢 Presente:
+                            diagnóstico; 🔵 Futuro: propostas e prática.</paragraph>
+        <paragraph index="2">Nota: este
+                            capítulo é um ponto-de-entrada. Para leitura profunda, siga os links dos conceitos. Se
+                            quiser, podemos iterar uma versão ainda mais enxuta ou uma variação para leitores técnicos.</paragraph>
       </content>
       <lists>
         <list type="unordered" index="0">
-          <item index="0">Explorar:use o rizoma para encontrar conexões; quando um nó exigir mais contexto, siga o link para o capítulo correspondente.</item>
-          <item index="1">Focar:prefira um modo de leitura — linear (estudo), temático (problema) ou rizomático (descoberta) — e limite saltos para evitar duplicação conceitual.</item>
+          <item index="0">Explorar:use o rizoma para encontrar conexões; quando um nó exigir
+                                    mais contexto, siga o link para o capítulo correspondente.</item>
+          <item index="1">Focar:prefira um modo de leitura — linear (estudo), temático
+                                    (problema) ou rizomático (descoberta) — e limite saltos para evitar duplicação
+                                    conceitual.</item>
         </list>
       </lists>
       <images>
@@ -134,7 +146,8 @@
         <concept>Rápido:</concept>
         <concept>Explorar:</concept>
         <concept>Focar:</concept>
-        <concept>&quot;Lei Universal da Dialética Informacional Homem-Máquina&quot;</concept>
+        <concept>&quot;Lei Universal da
+                                    Dialética Informacional Homem-Máquina&quot;</concept>
       </key_concepts>
     </section>
   </document>
