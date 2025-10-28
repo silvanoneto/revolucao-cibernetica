@@ -32,10 +32,13 @@ const chapterConceptsMap = {
         description: 'Como o capitalismo se reorganiza no digital'
     },
     'cap-4': {
-        concepts: ['economia-politica', 'valor', 'capital'],
-        readingTime: '10 min',
+        concepts: ['economia-politica', 'centro-periferia', 'dependencia', 'superexploracao', 
+                   'cepal', 'furtado', 'marini', 'cybersyn', 'ogas', 'calculo-socialista',
+                   'hayek', 'glushkov', 'planejamento-cibernetico', 'soberania-tecnologica',
+                   'neocolonialismo-digital', 'extrativismo-dados'],
+        readingTime: '20 min',
         difficulty: 'intermediário',
-        description: 'Relações entre economia e poder'
+        description: 'Teoria da Dependência, planejamento cibernético e neocolonialismo digital'
     },
     'cap-5': {
         concepts: ['critica-capital', 'dialética', 'materialismo'],

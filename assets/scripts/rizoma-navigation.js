@@ -11,6 +11,16 @@
  * - Sem estrutura arbórea
  * 
  * CHANGELOG:
+ * - 2025-10-28 (v4): Expansão massiva do Capítulo 4 (Economia Política & Dependência)
+ *   + 45+ novos conceitos: CEPAL, Prebisch, Furtado, Marini, dependência, superexploração
+ *   + Debate cálculo socialista: Mises, Hayek, Lange, conhecimento disperso
+ *   + Planejamento cibernético: OGAS (Glushkov), Cybersyn (Beer), VSM
+ *   + Dependência digital: neocolonialismo, extrativismo de dados, deterioração termos troca digital
+ *   + Soberania tecnológica: software livre, plataformas cooperativas, China, BRICS
+ *   + Casos: Zona Franca Manaus, moderação Filipinas, Barcelona, greve caminhoneiros 1972
+ *   + Ferramentas: blockchain/DAOs, orçamento participativo, IoT, XAI
+ *   Total: ~200 conceitos mapeados
+ * 
  * - 2025-10-28 (v3): Expansão massiva do Capítulo 3 (Capitalismo Digital)
  *   + 35+ novos conceitos: Zuboff, excedente comportamental, produtos de previsão
  *   + Plataformas: efeito de rede, lock-in, tipos (Srnicek), guerra Rappi/iFood
@@ -1105,6 +1115,307 @@ const conceptGraph = {
         description: 'ARPANET militar → www civil (mas vigilância permanece)',
         connections: ['darpa', 'geopolitica', 'capitalismo-vigilancia'],
         color: '#6366f1',
+        layer: 0
+    },
+
+    // ========================================
+    // CAPÍTULO 4: ECONOMIA POLÍTICA E DEPENDÊNCIA
+    // ========================================
+    'centro-periferia': {
+        name: 'Modelo Centro-Periferia',
+        description: 'CEPAL/Prebisch: economia mundial dividida estruturalmente',
+        connections: ['cepal', 'prebisch', 'dependencia', 'deterioracao-termos-troca', 'neocolonialismo-digital'],
+        color: '#f59e0b',
+        layer: -1 // Passado (teoria anos 1950)
+    },
+    'cepal': {
+        name: 'CEPAL',
+        description: 'Comissão Econômica para América Latina - estruturalismo latino-americano',
+        connections: ['centro-periferia', 'prebisch', 'furtado', 'desenvolvimentismo'],
+        color: '#f59e0b',
+        layer: -1
+    },
+    'prebisch': {
+        name: 'Raúl Prebisch',
+        description: 'Economista argentino, fundador da CEPAL e teoria centro-periferia',
+        connections: ['cepal', 'centro-periferia', 'deterioracao-termos-troca'],
+        color: '#f59e0b',
+        layer: -1
+    },
+    'deterioracao-termos-troca': {
+        name: 'Deterioração dos Termos de Troca',
+        description: 'Preços de commodities caem vs manufaturados - transferência de valor',
+        connections: ['centro-periferia', 'prebisch', 'extrativismo', 'extrativismo-dados'],
+        color: '#f59e0b',
+        layer: 0
+    },
+    'dependencia': {
+        name: 'Teoria da Dependência',
+        description: 'Subdesenvolvimento não é etapa, é estrutura (Marini, Dos Santos)',
+        connections: ['centro-periferia', 'furtado', 'marini', 'superexploracao', 'dependencia-tecnologica'],
+        color: '#f59e0b',
+        layer: -1
+    },
+    'furtado': {
+        name: 'Celso Furtado',
+        description: 'Economista brasileiro - subdesenvolvimento como estrutura, não atraso',
+        connections: ['cepal', 'dependencia', 'desenvolvimentismo', 'zona-franca-manaus'],
+        color: '#f59e0b',
+        layer: -1
+    },
+    'marini': {
+        name: 'Ruy Mauro Marini',
+        description: 'Teórico marxista da dependência - conceito de superexploração',
+        connections: ['dependencia', 'superexploracao', 'uberizacao', 'mais-valia-absoluta'],
+        color: '#f59e0b',
+        layer: -1
+    },
+    'superexploracao': {
+        name: 'Superexploração do Trabalho',
+        description: 'Jornadas longas + ritmo intenso + salários abaixo subsistência',
+        connections: ['marini', 'dependencia', 'uberizacao', 'mais-valia-absoluta', 'moderacao-conteudo'],
+        color: '#ef4444',
+        layer: 0 // Presente (conceito ativo hoje)
+    },
+    'desenvolvimentismo': {
+        name: 'Desenvolvimentismo',
+        description: 'Projeto de industrialização nacional via Estado (CEPAL anos 50-60)',
+        connections: ['cepal', 'furtado', 'zona-franca-manaus', 'soberania-tecnologica'],
+        color: '#f59e0b',
+        layer: -1
+    },
+    'zona-franca-manaus': {
+        name: 'Zona Franca de Manaus',
+        description: 'Monta Samsung/LG mas não projeta - dependência tecnológica concreta',
+        connections: ['furtado', 'desenvolvimentismo', 'dependencia-tecnologica', 'subsuncao-real'],
+        color: '#f59e0b',
+        layer: 0
+    },
+    
+    // Debate do Cálculo Socialista
+    'calculo-socialista': {
+        name: 'Debate do Cálculo Socialista',
+        description: 'Mises vs Lange: é possível planejar economia sem mercado?',
+        connections: ['mises', 'hayek', 'lange', 'planejamento-cibernetico', 'cybersyn', 'ogas'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'mises': {
+        name: 'Ludwig von Mises',
+        description: 'Economista austríaco - argumentou impossibilidade do cálculo socialista',
+        connections: ['calculo-socialista', 'hayek', 'mercado'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'hayek': {
+        name: 'Friedrich Hayek',
+        description: '"Conhecimento disperso" (1945) - mercado como sistema de informação',
+        connections: ['mises', 'calculo-socialista', 'glushkov', 'planejamento-cibernetico'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'lange': {
+        name: 'Oskar Lange',
+        description: 'Economista polonês - propôs "socialismo de mercado" (equações)',
+        connections: ['calculo-socialista', 'hayek', 'planejamento-cibernetico'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'mercado': {
+        name: 'Mercado',
+        description: 'Sistema de coordenação via preços (Hayek: processa info dispersa)',
+        connections: ['hayek', 'mises', 'planejamento-cibernetico', 'algoritmos'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    
+    // Planejamento Cibernético
+    'planejamento-cibernetico': {
+        name: 'Planejamento Cibernético',
+        description: 'Cibernética resolve "problema do cálculo" via feedback em tempo real',
+        connections: ['calculo-socialista', 'hayek', 'ogas', 'cybersyn', 'glushkov', 'beer'],
+        color: '#22c55e',
+        layer: 0
+    },
+    'ogas': {
+        name: 'OGAS (СССР)',
+        description: 'Rede soviética proposta por Glushkov (1962) - nunca implementada',
+        connections: ['glushkov', 'planejamento-cibernetico', 'cybersyn', 'feedback'],
+        color: '#22c55e',
+        layer: -1
+    },
+    'glushkov': {
+        name: 'Viktor Glushkov',
+        description: 'Ciberneticista soviético - propôs OGAS (bloqueado por burocracia)',
+        connections: ['ogas', 'planejamento-cibernetico', 'hayek', 'cibernetica'],
+        color: '#22c55e',
+        layer: -1
+    },
+    'beer': {
+        name: 'Stafford Beer',
+        description: 'Ciberneticista britânico - criou Cybersyn no Chile (VSM)',
+        connections: ['cybersyn', 'planejamento-cibernetico', 'wiener', 'vsm'],
+        color: '#22c55e',
+        layer: -1
+    },
+    'vsm': {
+        name: 'Viable System Model (VSM)',
+        description: 'Modelo de Beer: autonomia local + coordenação global',
+        connections: ['beer', 'cybersyn', 'feedback-negativo', 'autopoiese'],
+        color: '#22c55e',
+        layer: -1
+    },
+    'greve-caminhoneiros-1972': {
+        name: 'Greve dos Caminhoneiros (Chile, 1972)',
+        description: 'Cybersyn reorganizou logística em 24h - prova de conceito',
+        connections: ['cybersyn', 'beer', 'planejamento-cibernetico', 'feedback'],
+        color: '#22c55e',
+        layer: -1
+    },
+    'golpe-pinochet': {
+        name: 'Golpe de Pinochet (1973)',
+        description: 'Destruiu Cybersyn - mas não sua viabilidade técnica',
+        connections: ['cybersyn', 'necropolitica-digital', 'duplo-uso-militar'],
+        color: '#dc2626',
+        layer: -1
+    },
+    
+    // Dependência Digital (atualização 2025)
+    'dependencia-tecnologica': {
+        name: 'Dependência Tecnológica',
+        description: 'Periferia importa tech/IA, exporta dados brutos - nova colonialidade',
+        connections: ['dependencia', 'neocolonialismo-digital', 'soberania-tecnologica', 'extrativismo-dados'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'neocolonialismo-digital': {
+        name: 'Neocolonialismo Digital',
+        description: 'Centro-periferia atualizado: infraestrutura, algoritmos, dados',
+        connections: ['centro-periferia', 'dependencia-tecnologica', 'extrativismo-dados', 'geopolitica'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'extrativismo-dados': {
+        name: 'Extrativismo de Dados',
+        description: 'Dados = novo café/ouro/minério - extraídos da periferia de graça',
+        connections: ['neocolonialismo-digital', 'mais-valia-dados', 'deterioracao-termos-troca', 'capitalismo-vigilancia'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'soberania-tecnologica': {
+        name: 'Soberania Tecnológica',
+        description: 'Controle popular sobre infraestrutura, software, dados, algoritmos',
+        connections: ['dependencia-tecnologica', 'software-livre', 'plataformas-cooperativas', 'china-tech'],
+        color: '#10b981',
+        layer: 1 // Futuro (proposta)
+    },
+    'software-livre': {
+        name: 'Software Livre',
+        description: 'Código aberto, auditável, modificável - soberania via transparência',
+        connections: ['soberania-tecnologica', 'resistencia', 'gnu-linux', 'commons-digitais'],
+        color: '#10b981',
+        layer: 1
+    },
+    'gnu-linux': {
+        name: 'GNU/Linux',
+        description: 'Sistema operacional livre - base técnica da soberania',
+        connections: ['software-livre', 'soberania-tecnologica', 'stallman'],
+        color: '#10b981',
+        layer: 0
+    },
+    'stallman': {
+        name: 'Richard Stallman',
+        description: 'Fundador do movimento software livre (GNU, 1983)',
+        connections: ['gnu-linux', 'software-livre', 'commons-digitais'],
+        color: '#10b981',
+        layer: -1
+    },
+    'commons-digitais': {
+        name: 'Commons Digitais',
+        description: 'Bens comuns digitais - conhecimento não-mercantilizado',
+        connections: ['software-livre', 'general-intellect', 'resistencia', 'plataformas-cooperativas'],
+        color: '#10b981',
+        layer: 1
+    },
+    'plataformas-cooperativas': {
+        name: 'Plataformas Cooperativas',
+        description: 'Uber/iFood de propriedade dos trabalhadores',
+        connections: ['soberania-tecnologica', 'resistencia', 'nhandereko', 'commons-digitais'],
+        color: '#10b981',
+        layer: 1
+    },
+    'china-tech': {
+        name: 'Soberania Tech Chinesa',
+        description: 'Baidu/Alibaba/Huawei - rompeu dependência, mas criou nova periferia',
+        connections: ['soberania-tecnologica', 'geopolitica', 'neocolonialismo-digital', 'brics'],
+        color: '#f59e0b',
+        layer: 0
+    },
+    'brics': {
+        name: 'BRICS Pay',
+        description: 'Sistema de pagamentos Sul-Sul - escapa SWIFT/dólar',
+        connections: ['soberania-tecnologica', 'china-tech', 'geopolitica'],
+        color: '#10b981',
+        layer: 1
+    },
+    
+    // Ferramentas Digitais para Planejamento
+    'blockchain-dao': {
+        name: 'Blockchain/DAOs',
+        description: 'Registros transparentes de decisões coletivas sem autoridade central',
+        connections: ['planejamento-cibernetico', 'soberania-tecnologica', 'democracia-algoritmicica'],
+        color: '#6366f1',
+        layer: 1
+    },
+    'orcamento-participativo-digital': {
+        name: 'Orçamento Participativo Digital',
+        description: 'Plataformas como Decidim (Barcelona) - cidadãos votam prioridades',
+        connections: ['planejamento-participativo', 'democracia-algoritmicica', 'barcelona-tech'],
+        color: '#10b981',
+        layer: 1
+    },
+    'barcelona-tech': {
+        name: 'Barcelona Tech Soberana',
+        description: 'Software livre na administração, Decidim, migração de Microsoft',
+        connections: ['soberania-tecnologica', 'orcamento-participativo-digital', 'software-livre'],
+        color: '#10b981',
+        layer: 0
+    },
+    'modelagem-sistemas-dinamicos': {
+        name: 'Modelagem de Sistemas Dinâmicos',
+        description: 'Stella/Vensim - simula impactos de políticas antes de implementar',
+        connections: ['planejamento-cibernetico', 'feedback', 'cybersyn'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'iot-sensores': {
+        name: 'Redes de Sensores IoT',
+        description: 'Agricultura urbana, microgrids energéticas peer-to-peer',
+        connections: ['planejamento-cibernetico', 'soberania-tecnologica', 'ecologia-digital'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'xai': {
+        name: 'IA Explicável (XAI)',
+        description: 'Algoritmos que mostram POR QUÊ decidiram - auditoria democrática',
+        connections: ['transparencia-algoritmica', 'democracia-algoritmicica', 'tres-perguntas-algoritmo'],
+        color: '#6366f1',
+        layer: 1
+    },
+    
+    // Casos de Superexploração Digital
+    'moderacao-filipinas': {
+        name: 'Moderação nas Filipinas',
+        description: 'Superexploração racial+colonial - trabalho mais violento, menor salário',
+        connections: ['superexploracao', 'moderacao-conteudo', 'neocolonialismo-digital', 'necropolitica-digital'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'subsuncao-real': {
+        name: 'Subsunção Real',
+        description: 'Capital reorganiza processo de trabalho (linha de montagem, algoritmo)',
+        connections: ['zona-franca-manaus', 'gerenciamento-algoritmico', 'uberizacao'],
+        color: '#ef4444',
         layer: 0
     }
 };
