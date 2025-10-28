@@ -30,14 +30,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pip-
 
-      - name: Cache apt archives
-        uses: actions/cache@v4
-        continue-on-error: true
-        with:
-          path: /var/cache/apt/archives
-          key: ${{ runner.os }}-apt-${{ hashFiles('scripts/requirements.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-apt-
+      # (removed) Cache apt archives step: caching system apt archives can fail
+      # on runners due to permissions and causes '/usr/bin/tar' failures. Removed
+      # to ensure CI stability. If caching is desired, implement a copy-then-cache
+      # approach that runs under the runner user.
 
       - name: Set up Python
         uses: actions/setup-python@v4
