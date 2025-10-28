@@ -78,7 +78,9 @@ class ManifestoMobius {
     }
     
     setupEventListeners() {
+        // Handler para mousemove - recalcula rect a cada movimento
         this.canvas.addEventListener('mousemove', (e) => {
+            // IMPORTANTE: Recalcular rect a cada evento para suportar resize da janela
             const rect = this.canvas.getBoundingClientRect();
             this.mouseX = e.clientX - rect.left;
             this.mouseY = e.clientY - rect.top;
@@ -88,6 +90,7 @@ class ManifestoMobius {
             this.canvas.style.cursor = this.hoveredPoint ? 'pointer' : 'default';
         });
         
+        // Handler para click - também recalcula rect
         this.canvas.addEventListener('click', (e) => {
             if (this.hoveredPoint) {
                 this.navigateToSection(this.hoveredPoint.id);
@@ -109,13 +112,16 @@ class ManifestoMobius {
         const centerX = this.options.width / 2;
         const centerY = this.options.height / 2;
         
+        // Raio de detecção aumentado para melhor UX
+        const detectionRadius = 25;
+        
         for (const point of this.navigationPoints) {
             const angle = point.angle + this.rotation;
             const x = centerX + Math.cos(angle) * this.options.radius;
             const y = centerY + Math.sin(angle) * this.options.radius;
             
             const distance = Math.sqrt((mx - x) ** 2 + (my - y) ** 2);
-            if (distance < 15) {
+            if (distance < detectionRadius) {
                 return point;
             }
         }
@@ -216,7 +222,15 @@ class ManifestoMobius {
             
             const colors = this.phaseColors[point.phase];
             const isHovered = this.hoveredPoint === point;
-            const pointSize = isHovered ? 10 : 6;
+            const pointSize = isHovered ? 12 : 7; // Aumentado de 10:6 para 12:7
+            
+            // Área de hover visual (círculo transparente)
+            if (isHovered) {
+                this.ctx.beginPath();
+                this.ctx.arc(x, y, 25, 0, Math.PI * 2);
+                this.ctx.fillStyle = `${colors.primary}22`; // Transparente
+                this.ctx.fill();
+            }
             
             // Glow effect
             if (isHovered) {

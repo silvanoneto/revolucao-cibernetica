@@ -24,7 +24,11 @@
     <title>A Revolução Cibernética: Teoria, Manifesto e Conceito Nhandereko</title>
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
 
+    <!-- Loading Overlay - DEVE CARREGAR PRIMEIRO -->
+    <script src="./assets/scripts/loading-overlay.js"></script>
+
     <!-- Critical CSS -->
+    <link rel="stylesheet" href="./assets/css/loading-overlay.css">
     <link rel="stylesheet" href="./assets/css/styles.css">
     <link rel="stylesheet" href="./assets/css/download.css">
     <link rel="stylesheet" href="./assets/css/index-ternary.css">
@@ -755,6 +759,135 @@
                 </p>
             </div>
 
+            <!-- NOVA SEÇÃO: Guia Interativo de Navegação -->
+            <div
+                style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%); border-radius: 16px; padding: 2rem; margin: 3rem 0; border: 2px solid rgba(139, 92, 246, 0.3);">
+                <h2 style="text-align: center; color: #8b5cf6; margin-bottom: 2rem; font-size: 1.8rem;">
+                    🎮 Ferramentas de Navegação Interativa
+                </h2>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                    <!-- Ferramenta 1: Fita de Möbius -->
+                    <div style="background: rgba(59, 130, 246, 0.1); padding: 1.5rem; border-radius: 12px; border: 2px solid rgba(59, 130, 246, 0.3);">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem; text-align: center;">🌀</div>
+                        <h3 style="color: #3b82f6; margin: 0 0 1rem 0; text-align: center;">Fita de Möbius</h3>
+                        <p style="margin: 0 0 1rem 0; line-height: 1.6; font-size: 0.95rem;">
+                            Visualiza os 35 pontos do livro em um loop infinito. <strong>Clique simples</strong> para navegar, 
+                            <strong>clique duplo</strong> para explorar conceitos no Rizoma.
+                        </p>
+                        <ul style="font-size: 0.9rem; line-height: 1.7; color: var(--muted-foreground);">
+                            <li>🔴 <strong>Passado</strong>: Caps 0-10 (fundamentos)</li>
+                            <li>🟢 <strong>Presente</strong>: Caps 11-21 (diagnóstico)</li>
+                            <li>🔵 <strong>Futuro</strong>: Caps 22-32 + Manifesto</li>
+                        </ul>
+                        <div style="margin-top: 1rem; padding: 0.75rem; background: rgba(0, 0, 0, 0.2); border-radius: 8px; font-size: 0.85rem;">
+                            💡 <strong>Dica:</strong> Passe o mouse para ver tempo de leitura e dificuldade
+                        </div>
+                    </div>
+
+                    <!-- Ferramenta 2: Navegação Rizomática -->
+                    <div style="background: rgba(236, 72, 153, 0.1); padding: 1.5rem; border-radius: 12px; border: 2px solid rgba(236, 72, 153, 0.3);">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem; text-align: center;">🕸️</div>
+                        <h3 style="color: #ec4899; margin: 0 0 1rem 0; text-align: center;">Rizoma de Conceitos</h3>
+                        <p style="margin: 0 0 1rem 0; line-height: 1.6; font-size: 0.95rem;">
+                            Grafo não-hierárquico de +100 conceitos interligados. Explore conexões entre ideias sem estrutura linear.
+                        </p>
+                        <ul style="font-size: 0.9rem; line-height: 1.7; color: var(--muted-foreground);">
+                            <li>🎹 <strong>Tecla R</strong>: Abrir/fechar Rizoma</li>
+                            <li>🔍 Buscar conceitos por nome</li>
+                            <li>🎨 Filtrar por camada temporal</li>
+                            <li>🌐 Alternar entre grade e grafo</li>
+                        </ul>
+                        <div style="margin-top: 1rem; padding: 0.75rem; background: rgba(0, 0, 0, 0.2); border-radius: 8px; font-size: 0.85rem;">
+                            💡 <strong>Dica:</strong> Clique duplo na Möbius abre conceitos relacionados
+                        </div>
+                    </div>
+
+                    <!-- Ferramenta 3: Indicador de Posição -->
+                    <div style="background: rgba(16, 185, 129, 0.1); padding: 1.5rem; border-radius: 12px; border: 2px solid rgba(16, 185, 129, 0.3);">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem; text-align: center;">📍</div>
+                        <h3 style="color: #10b981; margin: 0 0 1rem 0; text-align: center;">Indicador de Posição</h3>
+                        <p style="margin: 0 0 1rem 0; line-height: 1.6; font-size: 0.95rem;">
+                            Badge flutuante que mostra onde você está na jornada. Atualiza automaticamente ao rolar a página.
+                        </p>
+                        <ul style="font-size: 0.9rem; line-height: 1.7; color: var(--muted-foreground);">
+                            <li>📖 Capítulo atual + emoji da camada</li>
+                            <li>📊 % do livro completo</li>
+                            <li>🖱️ Clique para voltar ao topo do cap</li>
+                            <li>👁️ Aparece após rolar 300px</li>
+                        </ul>
+                        <div style="margin-top: 1rem; padding: 0.75rem; background: rgba(0, 0, 0, 0.2); border-radius: 8px; font-size: 0.85rem;">
+                            💡 <strong>Dica:</strong> Funciona em desktop e mobile
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Atalhos de Teclado -->
+                <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(0, 0, 0, 0.3); border-radius: 12px; border-left: 4px solid #f59e0b;">
+                    <h4 style="color: #f59e0b; margin: 0 0 1rem 0; display: flex; align-items: center; gap: 0.5rem;">
+                        <span>⌨️</span>
+                        <span>Atalhos de Teclado</span>
+                    </h4>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; font-size: 0.9rem;">
+                        <div>
+                            <kbd style="background: rgba(255, 255, 255, 0.1); padding: 0.25rem 0.5rem; border-radius: 4px; font-family: monospace;">R</kbd> 
+                            → Abrir Rizoma
+                        </div>
+                        <div>
+                            <kbd style="background: rgba(255, 255, 255, 0.1); padding: 0.25rem 0.5rem; border-radius: 4px; font-family: monospace;">ESC</kbd> 
+                            → Fechar Rizoma
+                        </div>
+                        <div>
+                            <kbd style="background: rgba(255, 255, 255, 0.1); padding: 0.25rem 0.5rem; border-radius: 4px; font-family: monospace;">↑</kbd> 
+                            → Voltar ao topo
+                        </div>
+                        <div>
+                            <kbd style="background: rgba(255, 255, 255, 0.1); padding: 0.25rem 0.5rem; border-radius: 4px; font-family: monospace;">Tab</kbd> 
+                            → Navegar elementos
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Workflow Sugerido -->
+                <div style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%); border-radius: 12px;">
+                    <h4 style="color: #8b5cf6; margin: 0 0 1rem 0; text-align: center; font-size: 1.2rem;">
+                        🎯 Workflow Sugerido
+                    </h4>
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div style="display: flex; align-items: start; gap: 1rem;">
+                            <div style="background: #8b5cf6; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">1</div>
+                            <div style="flex: 1;">
+                                <strong>Escolha sua entrada</strong> na Fita de Möbius (clique simples em um ponto)
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: start; gap: 1rem;">
+                            <div style="background: #ec4899; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">2</div>
+                            <div style="flex: 1;">
+                                <strong>Leia o capítulo</strong> — observe conceitos sublinhados (tags do Rizoma)
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: start; gap: 1rem;">
+                            <div style="background: #10b981; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">3</div>
+                            <div style="flex: 1;">
+                                <strong>Explore conexões</strong> clicando em conceitos ou dando clique duplo na Möbius
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: start; gap: 1rem;">
+                            <div style="background: #f59e0b; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">4</div>
+                            <div style="flex: 1;">
+                                <strong>Salte para outro conceito</strong> no Rizoma — siga a curiosidade, não a ordem
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: start; gap: 1rem;">
+                            <div style="background: #ef4444; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">5</div>
+                            <div style="flex: 1;">
+                                <strong>Monitore progresso</strong> com o indicador 📍 e retorne quando quiser
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
             <!-- FITA DE MÖBIUS: Navegação Visual do Livro Completo -->
             <section id="index-mobius-section"
@@ -1020,6 +1153,20 @@
                     métodos antigos e mais lentos.</p>
                 <p>Assim, a troca de mercadorias é, na verdade, uma troca de quantidades de tempo de trabalho
                     socialmente necessário cristalizadas em produtos.</p>
+                
+                <h2>1.5 O Valor e Suas Metamorfoses</h2>
+                <p>Antes de adentrarmos na questão do lucro, precisamos entender um ponto crucial: o <strong>valor</strong> não é estático. Ele muda conforme a sociedade desenvolve novas tecnologias e métodos de produção. Se uma inovação permite produzir a mesma mercadoria em metade do tempo, o valor de todas as mercadorias daquele tipo cai pela metade — mesmo que trabalhadores individuais continuem usando métodos antigos.</p>
+                
+                <p>Essa dinâmica cria uma <strong>contradição permanente</strong>: cada capitalista busca aumentar sua produtividade para produzir mais barato que seus concorrentes e lucrar mais. Mas quando todos fazem isso, o valor médio cai, e a vantagem desaparece. É uma corrida sem fim, onde inovar é necessário apenas para não ficar para trás. Essa é uma das forças que impulsiona a transformação tecnológica constante do capitalismo — não por amor ao progresso, mas por necessidade de sobrevivência competitiva.</p>
+
+                <div class="info-box" style="background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(147,197,253,0.12) 100%); border-left: 5px solid #3b82f6; padding: 20px; margin: 24px 0; border-radius: 8px;">
+                    <h4 style="margin-top: 0; color: #2563eb; display: flex; align-items: center; gap: 10px;">
+                        <span style="font-size: 1.5rem;">💡</span> Insight — Preço ≠ Valor
+                    </h4>
+                    <p>É importante distinguir: o <strong>valor</strong> (determinado pelo tempo de trabalho socialmente necessário) não é o mesmo que o <strong>preço</strong> (o que você paga na loja). O preço oscila em torno do valor devido à oferta e demanda, monopólios, marketing, e outros fatores.</p>
+                    <p>No capitalismo digital, essa distinção se torna ainda mais opaca: o "preço" do Facebook é zero (para usuários), mas ele extrai valor massivo através de seus dados. Voltaremos a isso no <a href="#cap-3" style="color: #2563eb; text-decoration: underline;">Capítulo 3</a>.</p>
+                </div>
+
                 <h2>1.6 Mais-Valia: A Fonte do Lucro</h2>
                 <p>Se as mercadorias são trocadas por seus valores equivalentes (quantidades iguais de tempo de
                     trabalho), de onde vem o lucro? Se todos trocassem de forma justa, ninguém lucraria. Aqui reside o
@@ -1063,6 +1210,141 @@
                 <p>A exploração capitalista, para Marx, não é um roubo ou uma fraude. Ela ocorre mesmo quando as
                     mercadorias, incluindo a força de trabalho, são pagas por seu valor justo. A exploração está
                     embutida na própria estrutura da relação de trabalho assalariado.</p>
+
+                <h2>1.6A Duas Formas de Extração: Mais-Valia Absoluta e Relativa</h2>
+                <p>O capitalista pode aumentar a mais-valia (e seu lucro) de duas formas distintas:</p>
+
+                <p><strong>1. Mais-Valia Absoluta:</strong> Aumentar a jornada de trabalho ou a intensidade do trabalho sem aumentar o salário. Se antes o trabalhador trabalhava 8 horas, agora trabalha 10. Ou se antes tinha pausas e um ritmo humano, agora trabalha sem parar. É a forma mais brutal e visível de exploração.</p>
+
+                <p><strong>Exemplo contemporâneo:</strong> Motoristas de Uber e entregadores de iFood trabalhando 12-14 horas por dia, sem folgas, para atingir metas de rendimento. Ou trabalhadores em call centers com pausas cronometradas e scripts rígidos que eliminam qualquer "tempo morto".</p>
+
+                <p><strong>2. Mais-Valia Relativa:</strong> Aumentar a produtividade através de novas tecnologias ou métodos organizacionais. Se antes um trabalhador produzia 10 unidades em 8 horas, agora produz 20 no mesmo tempo. O salário permanece o mesmo, mas o valor criado por hora aumenta. A parcela que vai para o salário (trabalho necessário) diminui relativamente, e a mais-valia aumenta.</p>
+
+                <p><strong>Exemplo contemporâneo:</strong> Algoritmos que otimizam rotas de entrega em tempo real, reduzindo o tempo de cada corrida. Ou sistemas de automação parcial em armazéns da Amazon, onde trabalhadores se movem mais rápido para "acompanhar" robôs. O trabalhador produz mais valor no mesmo tempo, mas seu salário não acompanha esse ganho de produtividade.</p>
+
+                <div class="table-wrapper">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Tipo</th>
+                                <th>Como Funciona</th>
+                                <th>Exemplo Industrial Clássico</th>
+                                <th>Exemplo Digital Contemporâneo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Mais-Valia Absoluta</strong></td>
+                                <td>↑ Jornada de trabalho ou ↑ Intensidade</td>
+                                <td>Jornadas de 12-16h na Revolução Industrial</td>
+                                <td>Entregadores de app sem limite de horas, gamificação de metas</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Mais-Valia Relativa</strong></td>
+                                <td>↑ Produtividade via tecnologia</td>
+                                <td>Linha de montagem fordista</td>
+                                <td>Algoritmos de otimização de rotas, automação de warehouses</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="info-box" style="background: linear-gradient(135deg, rgba(239,68,68,0.08) 0%, rgba(252,165,165,0.12) 100%); border-left: 5px solid #ef4444; padding: 20px; margin: 24px 0; border-radius: 8px;">
+                    <h4 style="margin-top: 0; color: #dc2626; display: flex; align-items: center; gap: 10px;">
+                        <span style="font-size: 1.5rem;">🇧🇷</span> Contexto Brasileiro — A Reforma Trabalhista de 2017
+                    </h4>
+                    <p>A <strong>Lei 13.467/2017</strong> exemplifica perfeitamente a lógica da mais-valia absoluta aplicada legislativamente. Ao permitir jornadas intermitentes, banco de horas individual, e negociação direta entre patrão e empregado (mesmo contra a CLT), a reforma legalizou:</p>
+                    <ul style="margin: 0.5rem 0 0.5rem 1.5rem;">
+                        <li>📉 Extensão da jornada sem proporcionalidade salarial</li>
+                        <li>💼 Pejotização forçada (transformar empregados em "pessoas jurídicas" para fugir de direitos)</li>
+                        <li>⏰ Flexibilização que, na prática, significa disponibilidade 24/7 sem garantias</li>
+                    </ul>
+                    <p style="margin-top: 0.5rem;">Segundo dados do DIEESE (2019), nos dois primeiros anos pós-reforma, houve crescimento de 40% na contratação intermitente — trabalhadores que ganham apenas pelas horas "chamados", mas devem estar sempre disponíveis. É a uberização aplicada formalmente ao mercado de trabalho.</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">
+                        → Ver <strong>Capítulo 20</strong> para análise completa da inserção subordinada do Brasil na economia digital global.
+                    </p>
+                </div>
+
+                <p>A distinção é importante porque o capitalismo moderno combina ambas, mas a <strong>mais-valia relativa</strong> se torna dominante em economias avançadas. É por isso que a inovação tecnológica é tão central: não é "progresso" altruísta, mas uma necessidade de aumentar a taxa de exploração de forma menos visível e politicamente menos explosiva que simplesmente aumentar a jornada de trabalho.</p>
+
+                <h2>1.6B Trabalho Reprodutivo e Acumulação Digital</h2>
+
+                <p>Uma das ausências mais persistentes na teoria clássica do capital é a do <strong>trabalho
+                    reprodutivo</strong> — o conjunto de atividades que reproduz a força de trabalho: cuidado infantil,
+                    cuidados de saúde, tarefas domésticas, manutenção emocional e social. Essas atividades não são
+                    meramente complementares; são condições de possibilidade da própria produção. Sem refeições,
+                    sono, cuidados e suporte afetivo, a força de trabalho não existiria.</p>
+
+                <p>Silvia Federici argumenta que a acumulação primitiva e a formação do capitalismo estiveram
+                    historicamente dependentes da subordinação das mulheres e da transformação de corpos e tempos
+                    reprodutivos em recursos socialmente explotáveis. No contexto contemporâneo, essa dinâmica se
+                    reconfigura: a digitalização torna o trabalho reprodutivo mais invisível — e, paradoxalmente,
+                    mais facilmente apropriável pelas formas modernas de extração.</p>
+
+                <div class="info-box" style="margin: 1.5rem 0; background: rgba(239, 68, 68, 0.04); border-left: 4px solid #ef4444;">
+                    <div style="font-weight:700; color:#dc2626; margin-bottom:0.25rem;">📌 Por que importa</div>
+                    <p style="margin:0;">Porque sem compreender o trabalho que sustenta a vida não conseguimos medir corretamente a
+                        <strong>taxa real de exploração</strong>. Muito do que hoje aparece como "economia informal",
+                        "empoderamento empreendedor" ou "criação de conteúdo" é, na prática, trabalho reprodutivo não
+                        remunerado que subsidia lucros alheios.</p>
+                </div>
+
+                <p>No capitalismo digital, o trabalho reprodutivo ganha formas novas e sutis:</p>
+                <ul>
+                    <li><strong>Trabalho afetivo nas redes:</strong> curtir, comentar, moderar, responder mensagens —
+                        atividades que mantêm a plataforma "viva" e atraente.</li>
+                    <li><strong>Microwork e care platforms:</strong> serviços on-demand (TaskRabbit, plataformas de
+                        cuidadores) que terceirizam cuidado sem garantir direitos.</li>
+                    <li><strong>Trabalho de moderação:</strong> moderadores de conteúdo (muitos terceirizados), cujo
+                        esforço emocional e cognitivo é invisibilizado e mal pago.</li>
+                </ul>
+
+                <p>Essas formas conectam-se diretamente com as categorias já discutidas: a mais-valia absoluta quando a
+                    disponibilidade é estendida sem contrapartida; a mais-valia relativa quando tecnologias e
+                    plataformas aumentam a produtividade (ou a captura de atenção) sem compensação; e o fetichismo do
+                    dado quando a aparência de "parceria" mascara extração de excedente comportamental.</p>
+
+                <div class="info-box" style="background: linear-gradient(135deg, rgba(59,130,246,0.04) 0%, rgba(147,197,253,0.06) 100%); border-left: 4px solid #3b82f6;">
+                    <div style="font-weight:700; color:#2563eb; margin-bottom:0.25rem;">📚 Leitura Rápida</div>
+                    <p style="margin:0;">Federici — <em>Calibã e a Bruxa</em>; Bhattacharya — trabalhos sobre "social reproduction";
+                        Arruza, Bhattacharya & Fraser — <em>Feminismo para os 99%</em>. Ver também <strong>Apêndice G §G.7.1</strong>
+                        para análise aprofundada e bibliografia complementar em português.</p>
+                </div>
+
+                <h3>Estudo de caso: Plataformas de cuidado e a mercantilização do afeto</h3>
+                <p>Considere plataformas que anunciam "economia do cuidado" como oportunidade. Atrás da linguagem
+                    heroica há um padrão: trabalhadores informalizados (frequentemente mulheres), taxas de comissão,
+                    avaliação por estrelas e ausência de proteções trabalhistas. A plataforma vende segurança e
+                    agilidade ao cliente, enquanto captura dados de comportamento, define preços e extrai uma
+                    comissão permanente. O resultado é uma dupla invisibilidade: o trabalho de cuidado permanece
+                    sub-remunerado e a apropriação do excedente aparece como "taxa de serviço".</p>
+
+                <p>Em suma, a presença do trabalho reprodutivo na análise da mais-valia altera tanto a medida quanto a
+                    política: políticas públicas que ignoram cuidado e reprodução social tendem a subestimar a real
+                    dimensão da exploração. Reconhecer essa dimensão é um passo necessário para propostas de
+                    redistribuição, renda básica e regulamentação de plataformas.</p>
+
+                <div class="info-box destaque" style="margin: 1.5rem 0; background: rgba(251, 191, 36, 0.06); border-left: 4px solid #f59e0b;">
+                    <div class="info-title">Prática — Pequena investigação local</div>
+                    <ol style="margin:0.5rem 0 0 1rem;">
+                        <li>Escolha um serviço de plataforma local (entregas, cuidadores, microtarefas).</li>
+                        <li>Mapeie quem assume o risco (trabalhadores, terceirizados) e quem captura a renda (plataforma).</li>
+                        <li>Calcule, de forma aproximada, a diferença entre o valor pelo qual o serviço é vendido e o que os
+                            trabalhadores recebem (inclua custos: transporte, tempo ocioso, equipamentos).</li>
+                        <li>Registre: quantos dos trabalhadores são contratados como PJ, quantos têm carteira assinada.
+                        </li>
+                    </ol>
+                    <p style="margin-top:0.5rem; font-size:0.9rem; opacity:0.85;">Esse exercício simples revela a loteria de riscos transferidos para quem cuida e como a
+                        acumulação depende continuamente de trabalho invisível.</p>
+                </div>
+
+                <p>Para não relegar o tema a um apêndice, propomos que o leitor volte sempre a esta subseção ao longo
+                    dos capítulos que tratam de plataformas, IA e autonomização: o cuidado é, em última instância, o
+                    meio pelo qual a força de trabalho continua existindo e se reproduz. Sem sua análise, qualquer
+                    diagnóstico do capitalismo digital ficará pela metade.</p>
+
+                <p style="font-size:0.9rem; opacity:0.85;">→ Para análise aprofundada e bibliografia completa: <strong>Apêndice G §G.7.1</strong>.</p>
+
                 <h2>1.7 Capital e Fetichismo</h2>
                 <p>O que é, então, o <strong>capital</strong>? Não é simplesmente dinheiro ou máquinas. O capital é um
                     <strong>processo</strong>, uma relação social que busca incessantemente se expandir. O objetivo do
@@ -1072,6 +1354,49 @@
                     ao serem vendidas, resultam em mais Dinheiro (D'). Essa busca infinita por valorização é a força
                     motriz do sistema.
                 </p>
+
+                <div class="diagram-content">
+                    <div class="diagram-title">O Circuito do Capital</div>
+                    <div style="background: rgba(139, 92, 246, 0.05); border: 2px solid #8b5cf6; border-radius: 8px; padding: 2rem; margin: 2rem auto; max-width: 700px; font-family: 'JetBrains Mono', monospace;">
+                        <div style="text-align: center; font-size: 1.5rem; font-weight: 600; color: #8b5cf6; margin-bottom: 1.5rem;">
+                            D → M → P → M' → D'
+                        </div>
+                        <div style="display: grid; gap: 1rem; font-size: 0.95rem; line-height: 1.6;">
+                            <div style="background: rgba(34, 197, 94, 0.1); padding: 1rem; border-radius: 6px; border-left: 4px solid #22c55e;">
+                                <strong style="color: #16a34a;">D (Dinheiro inicial)</strong><br>
+                                Capital investido pelo capitalista
+                            </div>
+                            <div style="text-align: center; font-size: 1.2rem; color: #8b5cf6;">↓</div>
+                            <div style="background: rgba(59, 130, 246, 0.1); padding: 1rem; border-radius: 6px; border-left: 4px solid #3b82f6;">
+                                <strong style="color: #2563eb;">M (Mercadorias compradas)</strong><br>
+                                Meios de produção (máquinas, matéria-prima) + Força de trabalho
+                            </div>
+                            <div style="text-align: center; font-size: 1.2rem; color: #8b5cf6;">↓</div>
+                            <div style="background: rgba(245, 158, 11, 0.1); padding: 1rem; border-radius: 6px; border-left: 4px solid #f59e0b;">
+                                <strong style="color: #d97706;">P (Produção)</strong><br>
+                                Processo de trabalho — onde a mais-valia é criada
+                            </div>
+                            <div style="text-align: center; font-size: 1.2rem; color: #8b5cf6;">↓</div>
+                            <div style="background: rgba(168, 85, 247, 0.1); padding: 1rem; border-radius: 6px; border-left: 4px solid #a855f7;">
+                                <strong style="color: #9333ea;">M' (Mercadorias produzidas)</strong><br>
+                                Produtos finais (com valor > M original)
+                            </div>
+                            <div style="text-align: center; font-size: 1.2rem; color: #8b5cf6;">↓</div>
+                            <div style="background: rgba(239, 68, 68, 0.1); padding: 1rem; border-radius: 6px; border-left: 4px solid #ef4444;">
+                                <strong style="color: #dc2626;">D' (Dinheiro expandido)</strong><br>
+                                D + Mais-valia realizada (D' > D)
+                            </div>
+                        </div>
+                        <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(139, 92, 246, 0.1); border-radius: 6px; text-align: center; font-weight: 600; color: #7c3aed;">
+                            ∞ O ciclo recomeça com D' → M → P → M'' → D'' ...
+                        </div>
+                    </div>
+                    <p style="text-align: center; font-style: italic; color: #6b7280; margin-top: 1rem;">
+                        O capital não é uma coisa, mas um processo de <strong>autovalorização infinita</strong>. 
+                        O dinheiro que não se multiplica não é capital — é apenas dinheiro.
+                    </p>
+                </div>
+
                 <p>Se a exploração é tão central, por que ela não é óbvia para todos? Marx explica isso com o conceito
                     de <strong>fetichismo da mercadoria</strong>. Em uma sociedade de mercado, as relações sociais entre
                     as pessoas (a exploração do trabalho) são mascaradas e aparecem como se fossem relações entre coisas
@@ -1081,6 +1406,36 @@
                 <p>O fetichismo é uma inversão que faz com que o mundo social pareça governado por leis naturais e
                     impessoais (as "leis do mercado"), ocultando as relações de poder e exploração que realmente o
                     estruturam. Desvendar esse fetiche é o primeiro passo para uma crítica radical do capitalismo.</p>
+
+                <h2>1.7A Do Fetichismo da Mercadoria ao Fetichismo do Dado</h2>
+                <p>Se no século XIX as relações sociais apareciam como relações entre coisas (mercadorias), no século XXI elas aparecem como relações entre <strong>dados</strong> e <strong>algoritmos</strong>. O fetichismo se aprofunda e se torna ainda mais opaco.</p>
+
+                <p>Considere o Magazine Luiza, maior plataforma de e-commerce brasileiro. Para o consumidor, a "Magalu" é apenas um app conveniente. Mas o que realmente está acontecendo?</p>
+
+                <ul style="margin: 1rem 0 1rem 1.5rem; line-height: 1.8;">
+                    <li>🛒 <strong>Vendedores terceirizados</strong> assumem todos os riscos (estoque, envio, atendimento), mas a Magalu captura 10-20% de comissão sobre cada venda.</li>
+                    <li>📦 <strong>Entregadores precarizados</strong> (via Loggi, parceira do Magalu) trabalham por corrida, sem garantias trabalhistas, mantendo a estrutura "leve".</li>
+                    <li>💻 <strong>Desenvolvedores e moderadores</strong> (muitos via PJ ou terceirizados) mantêm o sistema rodando, mas não aparecem como "empregados".</li>
+                    <li>📊 <strong>Dados de comportamento</strong> de milhões de usuários são coletados, processados e transformados em "produtos de inteligência de mercado" vendidos para fornecedores.</li>
+                </ul>
+
+                <p>A Magalu <strong>não produz nada</strong>, não possui estoque significativo, não emprega a maioria de quem trabalha para ela. Mas controla o <strong>circuito de valorização</strong> através da plataforma. O trabalho é disperso, invisibilizado, pulverizado em "microempreendedores". A mais-valia é extraída, mas aparece como "taxa de serviço". A exploração é mascarada como "parceria win-win".</p>
+
+                <div class="info-box" style="background: linear-gradient(135deg, rgba(168,85,247,0.08) 0%, rgba(192,132,252,0.12) 100%); border-left: 5px solid #a855f7; padding: 20px; margin: 24px 0; border-radius: 8px;">
+                    <h4 style="margin-top: 0; color: #9333ea; display: flex; align-items: center; gap: 10px;">
+                        <span style="font-size: 1.5rem;">🛠️</span> Práxis — Desvendando o Fetichismo Digital
+                    </h4>
+                    <p><strong>Exercício prático:</strong> Pegue qualquer app que você usa diariamente (Instagram, Uber, iFood, TikTok). Tente mapear:</p>
+                    <ol style="margin: 0.5rem 0 0.5rem 1.5rem; line-height: 1.8;">
+                        <li>Quem está <strong>trabalhando</strong> para que ele funcione? (criadores de conteúdo, motoristas, entregadores, moderadores, desenvolvedores...)</li>
+                        <li>Quantos desses trabalhadores são <strong>reconhecidos como empregados</strong>? Quantos são "parceiros"?</li>
+                        <li>Onde está sendo <strong>criado o valor</strong>? (posts, corridas, entregas, dados comportamentais...)</li>
+                        <li>Quem está <strong>capturando</strong> esse valor? Como aparece (comissão, anúncios, venda de dados...)?</li>
+                    </ol>
+                    <p style="margin-top: 1rem;">Esse exercício revela a <strong>cadeia oculta de exploração</strong> que o design da interface deliberadamente esconde. Desfetichizar é tornar visível o trabalho invisível.</p>
+                </div>
+
+                <p>O fetichismo digital não é apenas econômico — ele é <strong>arquitetural</strong>. O design das plataformas, a linguagem que usam ("parceiros", "colaboradores", "criadores"), a gamificação, tudo isso constrói ativamente uma realidade onde a exploração aparece como oportunidade. Como essa arquitetura comunicacional opera, veremos em profundidade no <a href="#cap-29" style="color: #9333ea; text-decoration: underline;">Capítulo 29</a>.</p>
 
                 <div class="info-box"
                     style="background: linear-gradient(135deg, rgba(245,158,11,0.08) 0%, rgba(251,191,36,0.12) 100%); border-left: 5px solid #f59e0b; padding: 20px; margin: 24px 0; border-radius: 8px;">
@@ -1137,67 +1492,44 @@
                     para pagar seus próprios salários e quanto tempo eles trabalham "de graça" para o dono? O que
                     dificulta fazer esse cálculo com precisão?</p>
                 <h3>📚 Leituras Complementares</h3>
-                <p>- <strong>Nível Iniciante:</strong></p>
-                <p> - Huberman, L. (1936). <em>História da Riqueza do Homem</em>. (Um clássico que explica a história do
-                    capitalismo de forma muito acessível).</p>
+                
+                <h4>📖 Em Português (Acessíveis)</h4>
+                <p><strong>- Nível Iniciante:</strong></p>
+                <p> - Huberman, L. (1936). <em>História da Riqueza do Homem</em>. Ed. LTC. (Clássico didático sobre a história do capitalismo).</p>
+                <p> - Antunes, R. (2018). <em>O Privilégio da Servidão</em>. Boitempo. (Análise contemporânea da uberização e precarização no Brasil).</p>
+                <p> - Abílio, L. C. (2019). <em>Uberização: do empreendedorismo para a autogestão subordinada</em>. In: Psicoperspectivas, 18(3). [Acesso livre online]</p>
+                
+                <p><strong>- Nível Intermediário:</strong></p>
+                <p> - Marx, K. (1867). <em>O Capital, Livro I</em>. Boitempo, 2013. (Especialmente Capítulo 1: A Mercadoria). (A fonte original, tradução de Rubens Enderle).</p>
+                <p> - Harvey, D. (2013). <em>Para Entender O Capital</em>. Boitempo. (Guia de leitura acessível do Livro I de Marx).</p>
+                <p> - Alves, G. (2011). <em>Trabalho e Subjetividade: O Espírito do Toyotismo na Era do Capitalismo Manipulatório</em>. Boitempo.</p>
+                
+                <p><strong>- Nível Avançado:</strong></p>
+                <p> - Rubin, I. I. (1928). <em>A Teoria Marxista do Valor</em>. Polis/Brasiliense, 1987. (Interpretação rigorosa da teoria do valor).</p>
+                <p> - Marini, R. M. (1973). <em>Dialética da Dependência</em>. In: Transpadano & Stédile (orgs.). Boitempo, 2000. (Teoria da superexploração na periferia capitalista).</p>
+                
+                <h4>🌐 Recursos Online Gratuitos</h4>
+                <p> - <strong>Marxists Internet Archive (seção Brasil)</strong>: <a href="https://www.marxists.org/portugues/index.htm" target="_blank" rel="noopener" style="color: #8b5cf6;">marxists.org/portugues</a> — Textos clássicos completos</p>
+                <p> - <strong>Editora Boitempo (Blog da Boitempo)</strong>: <a href="https://blogdaboitempo.com.br" target="_blank" rel="noopener" style="color: #8b5cf6;">blogdaboitempo.com.br</a> — Artigos sobre marxismo contemporâneo</p>
+                <p> - <strong>Passa Palavra</strong>: <a href="https://passapalavra.info" target="_blank" rel="noopener" style="color: #8b5cf6;">passapalavra.info</a> — Análises sobre trabalho e luta de classes no Brasil</p>
+                <p> - <strong>Breque dos Apps</strong>: <a href="https://twitter.com/brequedosapps" target="_blank" rel="noopener" style="color: #8b5cf6;">@brequedosapps</a> — Movimento de entregadores antifascistas</p>
+                
+                <h4>🎧 Audiovisual</h4>
+                <p> - <strong>Podcast "Revolushow"</strong> (episódios sobre O Capital) — Análise didática por Jones Manoel</p>
+                <p> - <strong>Canal "Tese Onze"</strong> (YouTube) — Vídeos sobre teoria marxista aplicada ao Brasil</p>
+                <p> - <strong>Documentário "Trabalho Intermitente" (2020)</strong> — Impactos da reforma trabalhista brasileira</p>
+
+                <h4>🌍 Bibliografia Internacional</h4>
+                <p><strong>- Nível Iniciante:</strong></p>
                 <p> - Singer, P. (2001). <em>Marx: A Very Short Introduction</em>. (Uma introdução concisa e clara ao
                     pensamento de Marx).</p>
-                <p>- <strong>Nível Intermediário:</strong></p>
-                <p> - Marx, K. (1867). <em>O Capital, Livro I</em>. (Capítulo 1: A Mercadoria). (A fonte original. É
-                    denso, mas a leitura do primeiro capítulo é fundamental).</p>
+                <p><strong>- Nível Intermediário:</strong></p>
                 <p> - Mandel, E. (1967). <em>Tratado de Economia Marxista</em>. (Um manual abrangente e sistemático da
                     teoria econômica marxista).</p>
-                <p>- <strong>Nível Avançado:</strong></p>
-                <p> - Rubin, I. I. (1928). <em>Ensaios sobre a Teoria do Valor de Marx</em>. (Uma das mais importantes e
-                    rigorosas interpretações da teoria do valor de Marx, com foco no conceito de trabalho abstrato).</p>
+                <p><strong>- Nível Avançado:</strong></p>
                 <p> - Postone, M. (1993). <em>Time, Labor, and Social Domination: A Reinterpretation of Marx's Critical
                         Theory</em>. (Uma releitura radical e influente de Marx, que será discutida em detalhes no
                     Capítulo 10).</p>
-
-
-                Inserir após seção sobre mais-valia
-
-                <div class="info-box destaque"
-                    style="margin: 2rem 0; background: rgba(251, 191, 36, 0.1); border-left: 4px solid #f59e0b;">
-                    <div class="info-icon">⚠️</div>
-                    <div class="info-content">
-                        <div class="info-title">Ausência Reconhecida: Trabalho Reprodutivo e Acumulação Digital</div>
-                        <p style="margin-top: 0.5rem;">
-                            Esta análise de mais-valia está incompleta sem considerar o <strong>trabalho reprodutivo não
-                                remunerado</strong>
-                            que subsidia todo o sistema de acumulação. Enquanto Marx analisa a extração de valor no
-                            local de produção,
-                            o trabalho doméstico, o cuidado de crianças e idosos, e a manutenção emocional da força de
-                            trabalho
-                            permanecem invisibilizados — mas são condições de possibilidade da própria produção
-                            capitalista.
-                        </p>
-                        <p style="margin-top: 0.5rem;">
-                            <strong>Silvia Federici</strong> demonstra em <em>Calibã e a Bruxa</em> (2004) como a
-                            acumulação primitiva
-                            dependeu da subordinação das mulheres e da transformação de seus corpos em máquinas de
-                            reprodução.
-                            No capitalismo digital, essa lógica persiste: plataformas como TaskRabbit, Care.com e Uber
-                            extrativizam
-                            trabalho de cuidado tradicionalmente feminino, mantendo-o precarizado e mal remunerado. O
-                            trabalho afetivo
-                            nas redes sociais — curtir, comentar, moderar conflitos — é trabalho reprodutivo
-                            digitalizado e não pago.
-                        </p>
-                        <p style="margin-top: 0.5rem;">
-                            <strong>Para preencher esta lacuna:</strong> Leia Federici (<em>Calibã e a Bruxa</em>, 2004;
-                            <em>O Ponto Zero da Revolução</em>, 2012);
-                            Arruza, Bhattacharya & Fraser (<em>Feminismo para os 99%</em>, 2019); Weeks (<em>The Problem
-                                with Work</em>, 2011).
-                            Conecte a análise de mais-valia com a dimensão generificada do trabalho digital.
-                        </p>
-                        <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">
-                            → Ver <strong>Apêndice G §G.7.1</strong> para análise completa desta ausência |
-                            <strong>Apêndice D</strong> para bibliografia sobre feminismos cibernéticos |
-                            <strong>Apêndice E</strong> para recursos de coletivos ciberfeministas
-                        </p>
-                    </div>
-                </div>
 
 
 
@@ -1490,6 +1822,41 @@
                             automação e desemprego tecnológico que Marx desenvolveria décadas depois.</span>
                     </div>
                 </div></code>
+
+                <div class="info-box contexto"
+                    style="margin: 2rem 0; padding: 1.5rem; background: linear-gradient(135deg, rgba(34, 197, 94, 0.08) 0%, rgba(22, 163, 74, 0.12) 100%); border-left: 5px solid #22c55e; border-radius: 0.5rem;">
+                    <h4 style="margin-top: 0; color: #16a34a; display: flex; align-items: center; gap: 10px;">
+                        <span style="font-size: 1.5rem;">🌱</span> Materialidade e Ecologia: Computação Nunca Foi Imaterial
+                    </h4>
+                    <p><strong>A Máquina Analítica de Babbage seria GIGANTESCA:</strong> Estimativas sugerem 15 toneladas de bronze e aço, 25 mil peças mecânicas, 3 metros de altura. <strong>E seria movida a vapor.</strong> Queimaria carvão para calcular. Isso não é acidente — é metáfora material do capitalismo industrial.</p>
+                    
+                    <p><strong>Primeiros computadores (1940s-50s):</strong></p>
+                    <ul style="margin: 0.5rem 0; padding-left: 1.5rem; line-height: 1.7;">
+                        <li><strong>ENIAC (1945):</strong> 30 toneladas, 18 mil válvulas termiônicas, consumia 150 kW (suficiente para 150 casas). Aquecia tanto que queimava válvulas constantemente.</li>
+                        <li><strong>UNIVAC I (1951):</strong> 13 toneladas, necessitava sistema de ar-condicionado industrial.</li>
+                        <li><strong>IBM 701 (1952):</strong> Consumia 150 kW, gerava tanto calor que exigia sala refrigerada 24/7.</li>
+                    </ul>
+                    
+                    <p><strong>Computação sempre teve custo ecológico:</strong></p>
+                    <p>• <strong>Extração:</strong> Cobre para fios (Babbage), silício para chips (hoje), terras raras para eletrônicos. <em>Mineração = devastação ambiental + trabalho análogo à escravidão.</em></p>
+                    <p>• <strong>Energia:</strong> De vapor (Babbage) a carvão/nuclear (data centers hoje). <strong>Bitcoin consome mais eletricidade que a Argentina.</strong> IA generativa = novo salto no consumo.</p>
+                    <p>• <strong>Descarte:</strong> E-waste = maior corrente de lixo tóxico do mundo. Vai para Gana, Índia, onde crianças queimam placas para extrair metais, inalando chumbo/mercúrio.</p>
+                    
+                    <div style="margin: 1.5rem 0; padding: 1rem; background: rgba(34, 197, 94, 0.1); border-left: 3px solid #22c55e; border-radius: 0.25rem;">
+                        <p style="margin: 0;"><strong>Ironia histórica:</strong> Babbage não completou a Máquina Analítica porque era caro DEMAIS fabricar 25 mil peças de precisão. Hoje, fabricamos bilhões de transistores (cada chip tem bilhões), mas o custo ecológico está invisibilizado — pago por populações do Sul Global.</p>
+                    </div>
+                    
+                    <p style="margin: 1rem 0; padding: 1rem; background: rgba(34, 197, 94, 0.1); border-radius: 0.25rem;">
+                        💡 <strong>Conexões:</strong><br>
+                        • <a href="#cap-3" style="color: #16a34a; text-decoration: underline;">Cap 3</a>: Fetichismo digital — interface limpa esconde extração suja<br>
+                        • <a href="#cap-21" style="color: #16a34a; text-decoration: underline;">Cap 21</a>: Brasil como fornecedor de matérias-primas digitais (nióbio, etc.)<br>
+                        • <a href="#cap-22" style="color: #16a34a; text-decoration: underline;">Cap 22</a>: Necropolítica — e-waste como genocídio lento<br>
+                        • <a href="#cap-24" style="color: #16a34a; text-decoration: underline;">Cap 24</a>: Alternativas — computação de baixo consumo, hardware livre, economia circular
+                    </p>
+                    
+                    <p><strong>Por que isso importa:</strong> Discursos sobre "desmaterialização" da economia (virar tudo app/nuvem) são <strong>ideologia</strong>. Não há nuvem — há data centers consumindo rios para refrigeração. Não há IA sem mineração. Não há "revolução digital" sem custos ecológicos reais. <em>Cibernética emancipatória precisa ser cibernética sustentável.</em></p>
+                </div>
+
                 <p>A genialidade da Máquina Analítica estava em sua programabilidade. As instruções poderiam ser
                     fornecidas através de cartões perfurados, uma tecnologia emprestada dos teares da época. Isso
                     significava que a mesma máquina poderia ser usada para executar diferentes tipos de cálculo,
@@ -1525,6 +1892,29 @@
                             estava um século à frente de seu tempo.</span>
                     </div>
                 </div></code>
+
+                <div class="info-box atencao"
+                    style="margin: 2rem 0; padding: 1.5rem; background: linear-gradient(135deg, rgba(236, 72, 153, 0.08) 0%, rgba(219, 39, 119, 0.12) 100%); border-left: 5px solid #ec4899; border-radius: 0.5rem;">
+                    <h4 style="margin-top: 0; color: #db2777; display: flex; align-items: center; gap: 10px;">
+                        <span style="font-size: 1.5rem;">🚺</span> Gênero e Computação: O Apagamento das Pioneiras
+                    </h4>
+                    <p><strong>Ada Lovelace não foi exceção — foi padrão invisibilizado.</strong> A história oficial da computação esqueceu sistematicamente as mulheres que a construíram:</p>
+                    
+                    <p><strong>As "ENIAC Six" (1945-1946):</strong> Kay McNulty, Betty Jennings, Betty Snyder, Marlyn Wescoff, Fran Bilas e Ruth Lichterman foram as <em>primeiras programadoras do mundo</em>. Programaram o ENIAC (primeiro computador eletrônico de propósito geral) <strong>sem manuais, sem linguagens de programação, conectando fisicamente milhares de cabos e switches</strong>. Na inauguração pública do ENIAC (1946), foram excluídas das fotos oficiais. Consideradas "meras operadoras", não engenheiras.</p>
+                    
+                    <p><strong>Grace Hopper (1906-1992):</strong> Inventou o primeiro compilador (A-0, 1952) e co-criou COBOL. Contra-almirante da Marinha dos EUA. Chamada de "Amazing Grace", mas academicamente subvalorizada em vida.</p>
+                    
+                    <p><strong>Hedy Lamarr (1914-2000):</strong> Atriz de Hollywood E inventora. Patenteou (1942) o sistema de <em>frequency hopping</em> — base do Wi-Fi, Bluetooth e GPS modernos. Patente ignorada por décadas por ser "apenas uma atriz".</p>
+                    
+                    <p><strong>Padrão histórico:</strong> Quando computação era "trabalho clerical" (1940s-60s), era feminizado e mal pago. Quando virou engenharia prestigiada (1970s+), foi masculinizado. <strong>As mulheres não saíram — foram expulsas.</strong></p>
+                    
+                    <p style="margin: 1rem 0; padding: 1rem; background: rgba(236, 72, 153, 0.1); border-radius: 0.25rem;">
+                        💡 <strong>Conexão ao <a href="#cap-15" style="color: #db2777; text-decoration: underline;">Capítulo 15</a>:</strong> A divisão sexual do trabalho digital contemporâneo (moderadoras de conteúdo, trabalhadoras de dados) reproduz esse padrão: <em>trabalho técnico invisível e desvalorizado é feminizado</em>. A história de Ada e das ENIAC Six não é passado — é estrutura que persiste.
+                    </p>
+                    
+                    <p><strong>Por que isso importa para a cibernética?</strong> Porque <em>quem projeta sistemas determina seus valores</em>. Uma cibernética construída apenas por homens brancos (como foram as Conferências Macy) carrega esses pontos cegos. Uma cibernética emancipatória precisa reconhecer e reparar esse apagamento.</p>
+                </div>
+
                 <h2>2.3 A Máquina Universal: Os Limites da Computação</h2>
                 <p>As ideias de Babbage e Lovelace ficaram adormecidas por quase um século. Foi somente na década de
                     1930 que a questão da computação foi retomada, não por um engenheiro, mas por um lógico matemático
@@ -1561,6 +1951,39 @@
                     governar todas as outras. Esta é a ideia fundamental por trás do computador moderno, que pode
                     executar qualquer programa (um navegador, um editor de texto, um jogo) sem precisar mudar seu
                     hardware.</p>
+
+                <p>Mas Turing também descobriu algo fundamental: <strong>nem tudo é computável</strong>. Ele provou que existem problemas matemáticos bem definidos que nenhum algoritmo pode resolver. O mais famoso é o <strong>Problema da Parada (Halting Problem)</strong>: é impossível construir um algoritmo que, dado um programa qualquer e seus dados de entrada, determine se esse programa vai terminar sua execução ou rodar para sempre.</p>
+
+                <p>Isso não é limitação tecnológica — é limitação lógica fundamental. Não importa quão poderoso seja o computador do futuro, ele não poderá resolver o Problema da Parada. <strong>Existem verdades matemáticas que não podem ser provadas por algoritmo.</strong> Existem perguntas que computadores, por definição, nunca responderão.</p>
+
+                <div class="info-box contexto"
+                    style="margin: 2rem 0; padding: 1.5rem; background: linear-gradient(135deg, rgba(139, 92, 246, 0.08) 0%, rgba(109, 40, 217, 0.12) 100%); border-left: 5px solid #8b5cf6; border-radius: 0.5rem;">
+                    <h4 style="margin-top: 0; color: #7c3aed; display: flex; align-items: center; gap: 10px;">
+                        <span style="font-size: 1.5rem;">🤔</span> Consequências Filosóficas e Políticas dos Limites da Computação
+                    </h4>
+                    <p><strong>Se nem tudo é computável, nem tudo pode ser "resolvido com tecnologia".</strong> Isso tem implicações profundas:</p>
+                    
+                    <p><strong>1. Contra o determinismo tecnológico:</strong> A promessa de que algoritmos resolverão pobreza, desigualdade, mudança climática esbarra em limites matemáticos. <em>Problemas sociais complexos não são computáveis</em> — exigem deliberação política, valores, ética. Não há "algoritmo ótimo" para justiça.</p>
+                    
+                    <p><strong>2. Contra a IA como solução universal:</strong> Se Problema da Parada é indecidível, sistemas de IA (que rodam em Máquinas de Turing) têm limites intrínsecos. <em>Haverá sempre questões que exigem julgamento humano</em>, não apenas porque IA "ainda não está pronta", mas porque há verdades não algoritmizáveis.</p>
+                    
+                    <p><strong>3. Contra planejamento total:</strong> Tanto capitalismo de plataforma (Cap 3) quanto alguns modelos de planejamento socialista ingênuo assumem computabilidade total da economia/sociedade. <strong>Turing prova: impossível.</strong> Economia é sistema complexo com feedback imprevisível. Pode ser melhorada com cibernética (Cap 18: Cybersyn), mas nunca "resolvida" definitivamente.</p>
+                    
+                    <div style="margin: 1.5rem 0; padding: 1rem; background: rgba(139, 92, 246, 0.1); border-left: 3px solid #8b5cf6; border-radius: 0.25rem;">
+                        <p style="margin: 0;"><strong>Paradoxo político:</strong> Limites da computação são <em>argumento a favor da democracia</em>. Se não há algoritmo "correto" para organizar sociedade (porque questão não é computável), então organização social deve ser <strong>processo participativo contínuo</strong>, não cálculo tecnocrático de cima para baixo. <em>Indecidibilidade matemática exige decisão política.</em></p>
+                    </div>
+                    
+                    <p style="margin: 1rem 0; padding: 1rem; background: rgba(139, 92, 246, 0.1); border-radius: 0.25rem;">
+                        💡 <strong>Conexões:</strong><br>
+                        • <a href="#cap-17" style="color: #7c3aed; text-decoration: underline;">Cap 17</a>: OGAS — por que planejamento total cibernético falhou (não era só burocracia)<br>
+                        • <a href="#cap-18" style="color: #7c3aed; text-decoration: underline;">Cap 18</a>: Cybersyn — sucesso porque era participativo, não determinístico<br>
+                        • <a href="#cap-19" style="color: #7c3aed; text-decoration: underline;">Cap 19</a>: Cibernética socialista como <em>ferramenta</em>, não oráculo<br>
+                        • <a href="#cap-28" style="color: #7c3aed; text-decoration: underline;">Cap 28</a>: Democracia algorítmica — limites e possibilidades
+                    </p>
+                    
+                    <p><strong>Lição central:</strong> Cibernética é ferramenta poderosa para <em>apoiar</em> decisões humanas (feedback, modelagem, simulação), mas não para <em>substituí-las</em>. Turing nos salvou da ilusão tecnocrática total. <strong>O não-computável é o espaço da política, da ética, da liberdade.</strong></p>
+                </div>
+
                 <p>Turing não apenas estabeleceu os fundamentos teóricos da ciência da computação, mas também abriu o
                     caminho para a inteligência artificial com sua famosa pergunta: "As máquinas podem pensar?".</p>
                 <div
@@ -1680,6 +2103,42 @@
                     levando a um crescimento exponencial ou a um colapso. O exemplo mais comum é a microfonia, quando um
                     microfone capta o som de seu próprio alto-falante, o amplifica, e o ciclo se repete cada vez mais
                     alto.</p>
+
+                <div class="info-box atencao"
+                    style="margin: 2rem 0; padding: 1.5rem; background: linear-gradient(135deg, rgba(249, 115, 22, 0.08) 0%, rgba(234, 88, 12, 0.12) 100%); border-left: 5px solid #f97316; border-radius: 0.5rem;">
+                    <h4 style="margin-top: 0; color: #ea580c; display: flex; align-items: center; gap: 10px;">
+                        <span style="font-size: 1.5rem;">🎰</span> Feedback Positivo e Vício Digital: Wiener nos Apps
+                    </h4>
+                    <p><strong>Aplicativos modernos são máquinas de Wiener otimizadas para feedback positivo amplificador.</strong> Não é acidente — é design deliberado baseado em neurociência + cibernética.</p>
+                    
+                    <p><strong>O Loop do Vício (aplicando Wiener 1:1):</strong></p>
+                    <ol style="margin: 0.5rem 0; padding-left: 1.5rem; line-height: 1.8;">
+                        <li><strong>Ação:</strong> Você rola o feed (scroll)</li>
+                        <li><strong>Resultado:</strong> Vê conteúdo envolvente (meme, notícia chocante, vídeo curto)</li>
+                        <li><strong>Sensor biológico:</strong> Cérebro libera dopamina (prazer)</li>
+                        <li><strong>Feedback positivo:</strong> Dopamina reforça comportamento → você rola MAIS</li>
+                        <li><strong>Amplificação:</strong> Algoritmo detecta engajamento → mostra conteúdo AINDA MAIS viciante</li>
+                        <li><strong>Loop infinito:</strong> Cada ciclo amplifica o anterior (como microfonia), até você perder 3 horas sem perceber</li>
+                    </ol>
+                    
+                    <p><strong>Técnicas cibernéticas de engenharia do vício:</strong></p>
+                    <p>• <strong>Recompensa variável:</strong> Você não sabe se próximo scroll trará conteúdo bom (como slot machine). Incerteza = dopamina máxima. Wiener chamaria isso de "maximização da variância do sinal de feedback".</p>
+                    <p>• <strong>Notificações push:</strong> Interrompem homeostase (seu equilíbrio) para reiniciar loop. Vermelhinho no ícone = sinal de erro artificial ("você está perdendo algo") que exige correção (abrir app).</p>
+                    <p>• <strong>Infinite scroll:</strong> Remove ponto de parada natural. Feedback positivo sem válvula de escape = crescimento exponencial do tempo de uso.</p>
+                    
+                    <div style="margin: 1.5rem 0; padding: 1rem; background: rgba(249, 115, 22, 0.1); border-left: 3px solid #f97316; border-radius: 0.25rem;">
+                        <p style="margin: 0;"><strong>Ironia histórica:</strong> Wiener alertou em 1950 sobre perigos da automação mal usada. Escreveu que feedback positivo descontrolado em sistemas sociais levaria a "colapso catastrófico". <em>Apps de redes sociais são exatamente isso</em> — feedback positivo social (viralização) + individual (dopamina) criando colapsos: saúde mental, polarização, desinformação.</p>
+                    </div>
+                    
+                    <p><strong>Por que é tão eficaz?</strong> Porque cibernética de Wiener era ciência universal — funciona em termostatos E em cérebros. Facebook/TikTok/Instagram não "descobriram" vício por acaso — <em>aplicaram princípios cibernéticos de 1948 ao design de experiência</em>. São literalmente sistemas de controle (no sentido de Wiener) onde VOCÊ é o sistema sendo controlado.</p>
+                    
+                    <p style="margin: 1rem 0; padding: 1rem; background: rgba(249, 115, 22, 0.1); border-radius: 0.25rem;">
+                        💡 <strong>Conexão direta ao <a href="#cap-14" style="color: #ea580c; text-decoration: underline;">Capítulo 14</a>:</strong> Cap 14 disseca detalhadamente a <em>economia política do vício digital</em> — como plataformas monetizam atenção via feedback positivo weaponizado. <strong>Cap 2 dá o manual de instruções (Wiener), Cap 14 mostra o crime (capitalismo de vigilância usando esse manual).</strong>
+                    </p>
+                    
+                    <p><strong>Contradição fundamental:</strong> Mesma cibernética que poderia criar <em>feedback negativo saudável</em> (apps que ajudam equilíbrio, bem-estar, aprendizado) é deliberadamente configurada para <em>feedback positivo patológico</em> (maximizar tempo de tela = maximizar receita de ads). <strong>Não é a tecnologia — é quem controla o controlador.</strong></p>
+                </div>
+
                 <p>Em 1948, Wiener publicou seu livro "Cybernetics: Or Control and Communication in the Animal and the
                     Machine", definindo formalmente a <strong>cibernética</strong> como "a ciência do controle e da
                     comunicação no animal e na máquina". A palavra vem do grego <em>kybernetes</em>, que significa
@@ -1711,6 +2170,41 @@
                             permanece relevante na era da inteligência artificial.</span>
                     </div>
                 </div></code>
+
+                <div class="info-box atencao"
+                    style="margin: 2rem 0; padding: 1.5rem; background: linear-gradient(135deg, rgba(239, 68, 68, 0.08) 0%, rgba(220, 38, 38, 0.12) 100%); border-left: 5px solid #ef4444; border-radius: 0.5rem;">
+                    <h4 style="margin-top: 0; color: #dc2626; display: flex; align-items: center; gap: 10px;">
+                        <span style="font-size: 1.5rem;">⚔️</span> O Duplo Uso da Cibernética: Entre Guerra e Paz
+                    </h4>
+                    <p><strong>Todas as tecnologias fundacionais da cibernética nasceram da guerra.</strong> Não é coincidência — é estrutura:</p>
+                    
+                    <p><strong>• Turing (1939-1945):</strong> Quebrou o código Enigma nazista em Bletchley Park. Salvou milhões de vidas, encurtou a guerra em anos. Mas essa vitória estabeleceu criptografia como arma estratégica permanente.</p>
+                    
+                    <p><strong>• Wiener (1940-1945):</strong> Desenvolveu sistemas de controle de fogo antiaéreo. Percebeu que prever trajetória de aviões inimigos = problema de feedback. A cibernética nasceu literalmente de tentar derrubar bombardeiros.</p>
+                    
+                    <p><strong>• Shannon (Bell Labs, 1940s):</strong> Teoria da Informação financiada por militares interessados em comunicação segura. Codificação/decodificação = criptografia militar antes de ser compressão ZIP.</p>
+                    
+                    <p><strong>• ENIAC (1945):</strong> Primeiro computador eletrônico construído para calcular tabelas de artilharia (trajetórias balísticas). Programado pelas ENIAC Six para guerra, depois adaptado para ciência.</p>
+                    
+                    <p><strong>• Internet (1969):</strong> ARPANET = projeto da DARPA (Defense Advanced Research Projects Agency). Rede distribuída para sobreviver a ataque nuclear soviético. Só depois virou www.</p>
+                    
+                    <div style="margin: 1.5rem 0; padding: 1rem; background: rgba(239, 68, 68, 0.1); border-left: 3px solid #ef4444; border-radius: 0.25rem;">
+                        <p style="margin: 0;"><strong>O Dilema de Wiener:</strong> Após Hiroshima/Nagasaki (1945), Wiener teve crise ética profunda. Recusou trabalhar para militares pelo resto da vida. Em <em>"The Human Use of Human Beings"</em> (1950), alertou: <em>"A automação descontrolada e o uso militar da ciência são as duas grandes ameaças à humanidade"</em>. Defendeu que cientistas devem se responsabilizar por usos sociais de suas criações.</p>
+                    </div>
+                    
+                    <p><strong>Consequência política:</strong> Cibernética carrega DNA militar. Isso NÃO significa que é intrinsecamente bélica — significa que <em>controle, comunicação e informação sempre foram questões estratégicas de poder</em>. O mesmo feedback que mira mísseis pode equilibrar economia socialista (Cap 18: Cybersyn). A mesma criptografia que protegia nazistas pode proteger ativistas.</p>
+                    
+                    <p style="margin: 1rem 0; padding: 1rem; background: rgba(239, 68, 68, 0.1); border-radius: 0.25rem;">
+                        💡 <strong>Conexões:</strong><br>
+                        • <a href="#cap-20" style="color: #dc2626; text-decoration: underline;">Cap 20</a>: Internet como arma geopolítica (DARPA → vigilância NSA)<br>
+                        • <a href="#cap-22" style="color: #dc2626; text-decoration: underline;">Cap 22</a>: Algoritmos militarizados (drones, reconhecimento facial)<br>
+                        • <a href="#cap-23" style="color: #dc2626; text-decoration: underline;">Cap 23</a>: Bifurcação histórica — mesma tecnologia, usos opostos<br>
+                        • <a href="#cap-25" style="color: #dc2626; text-decoration: underline;">Cap 25</a>: Cibernética chinesa como controle social total
+                    </p>
+                    
+                    <p><strong>A questão central do livro:</strong> Se cibernética nasceu da guerra, pode servir à paz? Se foi criada para controle, pode servir à libertação? <strong>Resposta: Depende de quem controla os controladores.</strong> Tecnologia não é neutra — é campo de batalha política. O Cap 2 mostra as ferramentas; os próximos 29 capítulos mostram a guerra pelo seu uso.</p>
+                </div>
+
                 ---
                 <h3>🔑 Mini-Glossário do Capítulo</h3>
                 <p>- <strong>Algoritmo:</strong> Um conjunto finito de regras ou instruções passo a passo para resolver
@@ -27047,6 +27541,12 @@ ANÁLISE FINAL → ANÁLISE APROFUNDADA → ANÁLISE DE COERÊNCIA
 
     <!-- Fita de Möbius do Index -->
     <script src="assets/scripts/index-mobius.js" defer></script>
+
+    <!-- Integração Möbius ↔ Rizoma -->
+    <script src="assets/scripts/mobius-rizoma-bridge.js" defer></script>
+
+    <!-- Indicador de Posição -->
+    <script src="assets/scripts/position-indicator.js" defer></script>
 
     <!-- Três Loops Nhandereko -->
     <script src="assets/scripts/tres-loops.js" defer></script>

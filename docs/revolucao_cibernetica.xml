@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<revolucao_cibernetica version="1.0" format="ai_structured" generated="2025-10-27T19:41:45.758347">
+<revolucao_cibernetica version="1.0" format="ai_structured" generated="2025-10-27T21:21:24.488988">
   <metadata>
     <title>A Revolução Cibernética</title>
     <subtitle>Uma Ontologia Relacional para a Era da Informação</subtitle>
@@ -255,99 +255,185 @@
                     métodos antigos e mais lentos.</paragraph>
         <paragraph index="22">Assim, a troca de mercadorias é, na verdade, uma troca de quantidades de tempo de trabalho
                     socialmente necessário cristalizadas em produtos.</paragraph>
-        <paragraph index="23">Se as mercadorias são trocadas por seus valores equivalentes (quantidades iguais de tempo de
+        <paragraph index="23">Antes de adentrarmos na questão do lucro, precisamos entender um ponto crucial: ovalornão é estático. Ele muda conforme a sociedade desenvolve novas tecnologias e métodos de produção. Se uma inovação permite produzir a mesma mercadoria em metade do tempo, o valor de todas as mercadorias daquele tipo cai pela metade — mesmo que trabalhadores individuais continuem usando métodos antigos.</paragraph>
+        <paragraph index="24">Essa dinâmica cria umacontradição permanente: cada capitalista busca aumentar sua produtividade para produzir mais barato que seus concorrentes e lucrar mais. Mas quando todos fazem isso, o valor médio cai, e a vantagem desaparece. É uma corrida sem fim, onde inovar é necessário apenas para não ficar para trás. Essa é uma das forças que impulsiona a transformação tecnológica constante do capitalismo — não por amor ao progresso, mas por necessidade de sobrevivência competitiva.</paragraph>
+        <paragraph index="25">Se as mercadorias são trocadas por seus valores equivalentes (quantidades iguais de tempo de
                     trabalho), de onde vem o lucro? Se todos trocassem de forma justa, ninguém lucraria. Aqui reside o
                     núcleo da crítica de Marx à exploração capitalista.</paragraph>
-        <paragraph index="24">A resposta está em uma mercadoria muito especial: aforça de trabalho. No
+        <paragraph index="26">A resposta está em uma mercadoria muito especial: aforça de trabalho. No
                     capitalismo, a maioria das pessoas não possui os meios de produção (fábricas, terras, máquinas).
                     Para sobreviver, elas precisam vender a única mercadoria que possuem: sua capacidade de trabalhar,
                     sua força de trabalho.</paragraph>
-        <paragraph index="25">Como toda mercadoria, a força de trabalho tem um valor: o custo para mantê-la. Osalárioé o valor da força de trabalho, e corresponde ao tempo de trabalho
+        <paragraph index="27">Como toda mercadoria, a força de trabalho tem um valor: o custo para mantê-la. Osalárioé o valor da força de trabalho, e corresponde ao tempo de trabalho
                     socialmente necessário para produzir os meios de subsistência do trabalhador e sua família (comida,
                     moradia, roupas, etc.).</paragraph>
-        <paragraph index="26">O segredo, no entanto, é que a força de trabalho é uma mercadoria quecria mais valor do que
+        <paragraph index="28">O segredo, no entanto, é que a força de trabalho é uma mercadoria quecria mais valor do que
                         ela mesma custa. O capitalista compra a força de trabalho por seu valor (o salário),
                     mas a utiliza durante toda uma jornada de trabalho. Em uma parte dessa jornada, o trabalhador produz
                     o valor equivalente ao seu próprio salário. Marx chama isso detrabalho necessário.
                     Mas a jornada não para aí. No tempo restante, o trabalhador continua a produzir valor. Esse valor
                     adicional, produzido para além do necessário para cobrir seu salário, é otrabalho
                         excedente.</paragraph>
-        <paragraph index="27">Essa quantidade de valor criada pelo trabalho excedente é o que Marx chama demais-valia. É um valor pelo qual o capitalista não pagou, e é a fonte de todo o
+        <paragraph index="29">Essa quantidade de valor criada pelo trabalho excedente é o que Marx chama demais-valia. É um valor pelo qual o capitalista não pagou, e é a fonte de todo o
                     lucro, juros e renda no sistema capitalista.</paragraph>
-        <paragraph index="28">- Um trabalhador é contratado por 8 horas e recebe R$ 80,00 de salário.</paragraph>
-        <paragraph index="29">- Em 4 horas, ele produz mercadorias no valor de R$ 80,00, cobrindo o custo do seu salário.</paragraph>
-        <paragraph index="30">- Nas 4 horas restantes, ele produz mais R$ 80,00 em mercadorias.</paragraph>
-        <paragraph index="31">- Esses R$ 80,00 adicionais são a mais-valia, a fonte do lucro do empregador.</paragraph>
-        <paragraph index="32">A exploração capitalista, para Marx, não é um roubo ou uma fraude. Ela ocorre mesmo quando as
+        <paragraph index="30">- Um trabalhador é contratado por 8 horas e recebe R$ 80,00 de salário.</paragraph>
+        <paragraph index="31">- Em 4 horas, ele produz mercadorias no valor de R$ 80,00, cobrindo o custo do seu salário.</paragraph>
+        <paragraph index="32">- Nas 4 horas restantes, ele produz mais R$ 80,00 em mercadorias.</paragraph>
+        <paragraph index="33">- Esses R$ 80,00 adicionais são a mais-valia, a fonte do lucro do empregador.</paragraph>
+        <paragraph index="34">A exploração capitalista, para Marx, não é um roubo ou uma fraude. Ela ocorre mesmo quando as
                     mercadorias, incluindo a força de trabalho, são pagas por seu valor justo. A exploração está
                     embutida na própria estrutura da relação de trabalho assalariado.</paragraph>
-        <paragraph index="33">O que é, então, ocapital? Não é simplesmente dinheiro ou máquinas. O capital é umprocesso, uma relação social que busca incessantemente se expandir. O objetivo do
+        <paragraph index="35">O capitalista pode aumentar a mais-valia (e seu lucro) de duas formas distintas:</paragraph>
+        <paragraph index="36">1. Mais-Valia Absoluta:Aumentar a jornada de trabalho ou a intensidade do trabalho sem aumentar o salário. Se antes o trabalhador trabalhava 8 horas, agora trabalha 10. Ou se antes tinha pausas e um ritmo humano, agora trabalha sem parar. É a forma mais brutal e visível de exploração.</paragraph>
+        <paragraph index="37">Exemplo contemporâneo:Motoristas de Uber e entregadores de iFood trabalhando 12-14 horas por dia, sem folgas, para atingir metas de rendimento. Ou trabalhadores em call centers com pausas cronometradas e scripts rígidos que eliminam qualquer &quot;tempo morto&quot;.</paragraph>
+        <paragraph index="38">2. Mais-Valia Relativa:Aumentar a produtividade através de novas tecnologias ou métodos organizacionais. Se antes um trabalhador produzia 10 unidades em 8 horas, agora produz 20 no mesmo tempo. O salário permanece o mesmo, mas o valor criado por hora aumenta. A parcela que vai para o salário (trabalho necessário) diminui relativamente, e a mais-valia aumenta.</paragraph>
+        <paragraph index="39">Exemplo contemporâneo:Algoritmos que otimizam rotas de entrega em tempo real, reduzindo o tempo de cada corrida. Ou sistemas de automação parcial em armazéns da Amazon, onde trabalhadores se movem mais rápido para &quot;acompanhar&quot; robôs. O trabalhador produz mais valor no mesmo tempo, mas seu salário não acompanha esse ganho de produtividade.</paragraph>
+        <paragraph index="40">A distinção é importante porque o capitalismo moderno combina ambas, mas amais-valia relativase torna dominante em economias avançadas. É por isso que a inovação tecnológica é tão central: não é &quot;progresso&quot; altruísta, mas uma necessidade de aumentar a taxa de exploração de forma menos visível e politicamente menos explosiva que simplesmente aumentar a jornada de trabalho.</paragraph>
+        <paragraph index="41">Uma das ausências mais persistentes na teoria clássica do capital é a dotrabalho
+                    reprodutivo— o conjunto de atividades que reproduz a força de trabalho: cuidado infantil,
+                    cuidados de saúde, tarefas domésticas, manutenção emocional e social. Essas atividades não são
+                    meramente complementares; são condições de possibilidade da própria produção. Sem refeições,
+                    sono, cuidados e suporte afetivo, a força de trabalho não existiria.</paragraph>
+        <paragraph index="42">Silvia Federici argumenta que a acumulação primitiva e a formação do capitalismo estiveram
+                    historicamente dependentes da subordinação das mulheres e da transformação de corpos e tempos
+                    reprodutivos em recursos socialmente explotáveis. No contexto contemporâneo, essa dinâmica se
+                    reconfigura: a digitalização torna o trabalho reprodutivo mais invisível — e, paradoxalmente,
+                    mais facilmente apropriável pelas formas modernas de extração.</paragraph>
+        <paragraph index="43">No capitalismo digital, o trabalho reprodutivo ganha formas novas e sutis:</paragraph>
+        <paragraph index="44">Essas formas conectam-se diretamente com as categorias já discutidas: a mais-valia absoluta quando a
+                    disponibilidade é estendida sem contrapartida; a mais-valia relativa quando tecnologias e
+                    plataformas aumentam a produtividade (ou a captura de atenção) sem compensação; e o fetichismo do
+                    dado quando a aparência de &quot;parceria&quot; mascara extração de excedente comportamental.</paragraph>
+        <paragraph index="45">Considere plataformas que anunciam &quot;economia do cuidado&quot; como oportunidade. Atrás da linguagem
+                    heroica há um padrão: trabalhadores informalizados (frequentemente mulheres), taxas de comissão,
+                    avaliação por estrelas e ausência de proteções trabalhistas. A plataforma vende segurança e
+                    agilidade ao cliente, enquanto captura dados de comportamento, define preços e extrai uma
+                    comissão permanente. O resultado é uma dupla invisibilidade: o trabalho de cuidado permanece
+                    sub-remunerado e a apropriação do excedente aparece como &quot;taxa de serviço&quot;.</paragraph>
+        <paragraph index="46">Em suma, a presença do trabalho reprodutivo na análise da mais-valia altera tanto a medida quanto a
+                    política: políticas públicas que ignoram cuidado e reprodução social tendem a subestimar a real
+                    dimensão da exploração. Reconhecer essa dimensão é um passo necessário para propostas de
+                    redistribuição, renda básica e regulamentação de plataformas.</paragraph>
+        <paragraph index="47">Para não relegar o tema a um apêndice, propomos que o leitor volte sempre a esta subseção ao longo
+                    dos capítulos que tratam de plataformas, IA e autonomização: o cuidado é, em última instância, o
+                    meio pelo qual a força de trabalho continua existindo e se reproduz. Sem sua análise, qualquer
+                    diagnóstico do capitalismo digital ficará pela metade.</paragraph>
+        <paragraph index="48">→ Para análise aprofundada e bibliografia completa:Apêndice G §G.7.1.</paragraph>
+        <paragraph index="49">O que é, então, ocapital? Não é simplesmente dinheiro ou máquinas. O capital é umprocesso, uma relação social que busca incessantemente se expandir. O objetivo do
                     capitalista não é apenas satisfazer suas necessidades, mas reinvestir a mais-valia para gerar ainda
                     mais mais-valia. O circuito éD-M-D': Dinheiro (D) é usado para comprar Mercadorias
                     (M) — meios de produção e força de trabalho — que são usadas para produzir novas mercadorias, que,
                     ao serem vendidas, resultam em mais Dinheiro (D'). Essa busca infinita por valorização é a força
                     motriz do sistema.</paragraph>
-        <paragraph index="34">Se a exploração é tão central, por que ela não é óbvia para todos? Marx explica isso com o conceito
+        <paragraph index="50">Se a exploração é tão central, por que ela não é óbvia para todos? Marx explica isso com o conceito
                     defetichismo da mercadoria. Em uma sociedade de mercado, as relações sociais entre
                     as pessoas (a exploração do trabalho) são mascaradas e aparecem como se fossem relações entre coisas
                     (dinheiro, preços, produtos). O valor, que é uma criação social, parece ser uma propriedade natural
                     e intrínseca das mercadorias. O lucro parece surgir do &quot;investimento inteligente&quot; ou do &quot;risco&quot; do
                     capitalista, e não do trabalho não pago.</paragraph>
-        <paragraph index="35">O fetichismo é uma inversão que faz com que o mundo social pareça governado por leis naturais e
+        <paragraph index="51">O fetichismo é uma inversão que faz com que o mundo social pareça governado por leis naturais e
                     impessoais (as &quot;leis do mercado&quot;), ocultando as relações de poder e exploração que realmente o
                     estruturam. Desvendar esse fetiche é o primeiro passo para uma crítica radical do capitalismo.</paragraph>
-        <paragraph index="36">-Capital:Valor (geralmente na forma de dinheiro) que é investido com o objetivo de
+        <paragraph index="52">Se no século XIX as relações sociais apareciam como relações entre coisas (mercadorias), no século XXI elas aparecem como relações entredadosealgoritmos. O fetichismo se aprofunda e se torna ainda mais opaco.</paragraph>
+        <paragraph index="53">Considere o Magazine Luiza, maior plataforma de e-commerce brasileiro. Para o consumidor, a &quot;Magalu&quot; é apenas um app conveniente. Mas o que realmente está acontecendo?</paragraph>
+        <paragraph index="54">A Magalunão produz nada, não possui estoque significativo, não emprega a maioria de quem trabalha para ela. Mas controla ocircuito de valorizaçãoatravés da plataforma. O trabalho é disperso, invisibilizado, pulverizado em &quot;microempreendedores&quot;. A mais-valia é extraída, mas aparece como &quot;taxa de serviço&quot;. A exploração é mascarada como &quot;parceria win-win&quot;.</paragraph>
+        <paragraph index="55">O fetichismo digital não é apenas econômico — ele éarquitetural. O design das plataformas, a linguagem que usam (&quot;parceiros&quot;, &quot;colaboradores&quot;, &quot;criadores&quot;), a gamificação, tudo isso constrói ativamente uma realidade onde a exploração aparece como oportunidade. Como essa arquitetura comunicacional opera, veremos em profundidade noCapítulo 29.</paragraph>
+        <paragraph index="56">-Capital:Valor (geralmente na forma de dinheiro) que é investido com o objetivo de
                     se valorizar, ou seja, gerar mais valor (lucro). É uma relação social de exploração, não apenas um
                     conjunto de coisas.</paragraph>
-        <paragraph index="37">-Forças Produtivas:O conjunto de ferramentas, tecnologias, conhecimentos e
+        <paragraph index="57">-Forças Produtivas:O conjunto de ferramentas, tecnologias, conhecimentos e
                     habilidades que uma sociedade utiliza para produzir.</paragraph>
-        <paragraph index="38">-Fetichismo da Mercadoria:O fenômeno social no capitalismo onde as relações entre
+        <paragraph index="58">-Fetichismo da Mercadoria:O fenômeno social no capitalismo onde as relações entre
                     pessoas assumem a aparência de relações entre coisas (mercadorias). O valor, que é social, parece
                     uma propriedade natural dos produtos.</paragraph>
-        <paragraph index="39">-Mais-Valia:O valor criado pelo trabalhador para além do valor de sua própria
+        <paragraph index="59">-Mais-Valia:O valor criado pelo trabalhador para além do valor de sua própria
                     força de trabalho (salário). É a fonte do lucro capitalista.</paragraph>
-        <paragraph index="40">-Mercadoria:Um produto do trabalho humano destinado não ao uso próprio, mas à
+        <paragraph index="60">-Mercadoria:Um produto do trabalho humano destinado não ao uso próprio, mas à
                     troca no mercado.</paragraph>
-        <paragraph index="41">-Prévia-ideação:A capacidade humana de conceber um plano ou ideia na mente antes
+        <paragraph index="61">-Prévia-ideação:A capacidade humana de conceber um plano ou ideia na mente antes
                     de realizá-lo materialmente através do trabalho.</paragraph>
-        <paragraph index="42">-Relações de Produção:As relações sociais que as pessoas estabelecem para produzir
+        <paragraph index="62">-Relações de Produção:As relações sociais que as pessoas estabelecem para produzir
                     e distribuir bens (ex: escravismo, servidão, trabalho assalariado).</paragraph>
-        <paragraph index="43">-Trabalho Abstrato:O trabalho humano reduzido a um dispêndio de tempo,
+        <paragraph index="63">-Trabalho Abstrato:O trabalho humano reduzido a um dispêndio de tempo,
                     desconsiderando sua utilidade específica. É a substância do valor de troca.</paragraph>
-        <paragraph index="44">-Valor de Troca:O valor quantitativo de uma mercadoria, que permite que ela seja
+        <paragraph index="64">-Valor de Troca:O valor quantitativo de uma mercadoria, que permite que ela seja
                     trocada por outras mercadorias em certas proporções.</paragraph>
-        <paragraph index="45">-Valor de Uso:A utilidade de um objeto, sua capacidade de satisfazer uma
+        <paragraph index="65">-Valor de Uso:A utilidade de um objeto, sua capacidade de satisfazer uma
                     necessidade humana.</paragraph>
-        <paragraph index="46">1.O Trabalho em sua Vida:Pense no seu trabalho atual (ou em um trabalho que você
+        <paragraph index="66">1.O Trabalho em sua Vida:Pense no seu trabalho atual (ou em um trabalho que você
                     já teve). Ele se assemelha mais a um processo de prévia-ideação e objetivação livre, ou mais a uma
                     tarefa repetitiva e alienante? Você se sente realizado(a) com o que produz?</paragraph>
-        <paragraph index="47">2.O Fetichismo ao seu Redor:Escolha um produto que você usa todos os dias (seu
+        <paragraph index="67">2.O Fetichismo ao seu Redor:Escolha um produto que você usa todos os dias (seu
                     celular, seu tênis, sua caneca de café). Tente imaginar a cadeia de trabalho humano necessária para
                     que ele chegasse até você. Quantas pessoas, em quantos países, estiveram envolvidas? Por que essa
                     cadeia de trabalho é invisível no produto final?</paragraph>
-        <paragraph index="48">3.Calculando a Mais-Valia:Tente fazer uma estimativa grosseira da mais-valia em um
+        <paragraph index="68">3.Calculando a Mais-Valia:Tente fazer uma estimativa grosseira da mais-valia em um
                     negócio que você conhece (uma cafeteria, uma loja, etc.). Quanto tempo os funcionários trabalham
                     para pagar seus próprios salários e quanto tempo eles trabalham &quot;de graça&quot; para o dono? O que
                     dificulta fazer esse cálculo com precisão?</paragraph>
-        <paragraph index="49">-Nível Iniciante:</paragraph>
-        <paragraph index="50">- Huberman, L. (1936).História da Riqueza do Homem. (Um clássico que explica a história do
-                    capitalismo de forma muito acessível).</paragraph>
-        <paragraph index="51">- Singer, P. (2001).Marx: A Very Short Introduction. (Uma introdução concisa e clara ao
+        <paragraph index="69">- Nível Iniciante:</paragraph>
+        <paragraph index="70">- Huberman, L. (1936).História da Riqueza do Homem. Ed. LTC. (Clássico didático sobre a história do capitalismo).</paragraph>
+        <paragraph index="71">- Antunes, R. (2018).O Privilégio da Servidão. Boitempo. (Análise contemporânea da uberização e precarização no Brasil).</paragraph>
+        <paragraph index="72">- Abílio, L. C. (2019).Uberização: do empreendedorismo para a autogestão subordinada. In: Psicoperspectivas, 18(3). [Acesso livre online]</paragraph>
+        <paragraph index="73">- Nível Intermediário:</paragraph>
+        <paragraph index="74">- Marx, K. (1867).O Capital, Livro I. Boitempo, 2013. (Especialmente Capítulo 1: A Mercadoria). (A fonte original, tradução de Rubens Enderle).</paragraph>
+        <paragraph index="75">- Harvey, D. (2013).Para Entender O Capital. Boitempo. (Guia de leitura acessível do Livro I de Marx).</paragraph>
+        <paragraph index="76">- Alves, G. (2011).Trabalho e Subjetividade: O Espírito do Toyotismo na Era do Capitalismo Manipulatório. Boitempo.</paragraph>
+        <paragraph index="77">- Nível Avançado:</paragraph>
+        <paragraph index="78">- Rubin, I. I. (1928).A Teoria Marxista do Valor. Polis/Brasiliense, 1987. (Interpretação rigorosa da teoria do valor).</paragraph>
+        <paragraph index="79">- Marini, R. M. (1973).Dialética da Dependência. In: Transpadano &amp; Stédile (orgs.). Boitempo, 2000. (Teoria da superexploração na periferia capitalista).</paragraph>
+        <paragraph index="80">-Marxists Internet Archive (seção Brasil):marxists.org/portugues— Textos clássicos completos</paragraph>
+        <paragraph index="81">-Editora Boitempo (Blog da Boitempo):blogdaboitempo.com.br— Artigos sobre marxismo contemporâneo</paragraph>
+        <paragraph index="82">-Passa Palavra:passapalavra.info— Análises sobre trabalho e luta de classes no Brasil</paragraph>
+        <paragraph index="83">-Breque dos Apps:@brequedosapps— Movimento de entregadores antifascistas</paragraph>
+        <paragraph index="84">-Podcast &quot;Revolushow&quot;(episódios sobre O Capital) — Análise didática por Jones Manoel</paragraph>
+        <paragraph index="85">-Canal &quot;Tese Onze&quot;(YouTube) — Vídeos sobre teoria marxista aplicada ao Brasil</paragraph>
+        <paragraph index="86">-Documentário &quot;Trabalho Intermitente&quot; (2020)— Impactos da reforma trabalhista brasileira</paragraph>
+        <paragraph index="87">- Nível Iniciante:</paragraph>
+        <paragraph index="88">- Singer, P. (2001).Marx: A Very Short Introduction. (Uma introdução concisa e clara ao
                     pensamento de Marx).</paragraph>
-        <paragraph index="52">-Nível Intermediário:</paragraph>
-        <paragraph index="53">- Marx, K. (1867).O Capital, Livro I. (Capítulo 1: A Mercadoria). (A fonte original. É
-                    denso, mas a leitura do primeiro capítulo é fundamental).</paragraph>
-        <paragraph index="54">- Mandel, E. (1967).Tratado de Economia Marxista. (Um manual abrangente e sistemático da
+        <paragraph index="89">- Nível Intermediário:</paragraph>
+        <paragraph index="90">- Mandel, E. (1967).Tratado de Economia Marxista. (Um manual abrangente e sistemático da
                     teoria econômica marxista).</paragraph>
-        <paragraph index="55">-Nível Avançado:</paragraph>
-        <paragraph index="56">- Rubin, I. I. (1928).Ensaios sobre a Teoria do Valor de Marx. (Uma das mais importantes e
-                    rigorosas interpretações da teoria do valor de Marx, com foco no conceito de trabalho abstrato).</paragraph>
-        <paragraph index="57">- Postone, M. (1993).Time, Labor, and Social Domination: A Reinterpretation of Marx's Critical
+        <paragraph index="91">- Nível Avançado:</paragraph>
+        <paragraph index="92">- Postone, M. (1993).Time, Labor, and Social Domination: A Reinterpretation of Marx's Critical
                         Theory. (Uma releitura radical e influente de Marx, que será discutida em detalhes no
                     Capítulo 10).</paragraph>
       </content>
       <lists>
         <list type="unordered" index="0">
+          <item index="0">📉 Extensão da jornada sem proporcionalidade salarial</item>
+          <item index="1">💼 Pejotização forçada (transformar empregados em &quot;pessoas jurídicas&quot; para fugir de direitos)</item>
+          <item index="2">⏰ Flexibilização que, na prática, significa disponibilidade 24/7 sem garantias</item>
+        </list>
+        <list type="unordered" index="1">
+          <item index="0">Trabalho afetivo nas redes:curtir, comentar, moderar, responder mensagens —
+                        atividades que mantêm a plataforma &quot;viva&quot; e atraente.</item>
+          <item index="1">Microwork e care platforms:serviços on-demand (TaskRabbit, plataformas de
+                        cuidadores) que terceirizam cuidado sem garantir direitos.</item>
+          <item index="2">Trabalho de moderação:moderadores de conteúdo (muitos terceirizados), cujo
+                        esforço emocional e cognitivo é invisibilizado e mal pago.</item>
+        </list>
+        <list type="ordered" index="2">
+          <item index="0">Escolha um serviço de plataforma local (entregas, cuidadores, microtarefas).</item>
+          <item index="1">Mapeie quem assume o risco (trabalhadores, terceirizados) e quem captura a renda (plataforma).</item>
+          <item index="2">Calcule, de forma aproximada, a diferença entre o valor pelo qual o serviço é vendido e o que os
+                            trabalhadores recebem (inclua custos: transporte, tempo ocioso, equipamentos).</item>
+          <item index="3">Registre: quantos dos trabalhadores são contratados como PJ, quantos têm carteira assinada.</item>
+        </list>
+        <list type="unordered" index="3">
+          <item index="0">🛒Vendedores terceirizadosassumem todos os riscos (estoque, envio, atendimento), mas a Magalu captura 10-20% de comissão sobre cada venda.</item>
+          <item index="1">📦Entregadores precarizados(via Loggi, parceira do Magalu) trabalham por corrida, sem garantias trabalhistas, mantendo a estrutura &quot;leve&quot;.</item>
+          <item index="2">💻Desenvolvedores e moderadores(muitos via PJ ou terceirizados) mantêm o sistema rodando, mas não aparecem como &quot;empregados&quot;.</item>
+          <item index="3">📊Dados de comportamentode milhões de usuários são coletados, processados e transformados em &quot;produtos de inteligência de mercado&quot; vendidos para fornecedores.</item>
+        </list>
+        <list type="ordered" index="4">
+          <item index="0">Quem estátrabalhandopara que ele funcione? (criadores de conteúdo, motoristas, entregadores, moderadores, desenvolvedores...)</item>
+          <item index="1">Quantos desses trabalhadores sãoreconhecidos como empregados? Quantos são &quot;parceiros&quot;?</item>
+          <item index="2">Onde está sendocriado o valor? (posts, corridas, entregas, dados comportamentais...)</item>
+          <item index="3">Quem estácapturandoesse valor? Como aparece (comissão, anúncios, venda de dados...)?</item>
+        </list>
+        <list type="unordered" index="5">
           <item index="0">Cap
                                             3(Plataformas):Uber cobra 25-30% de cada corrida = extração
                                     direta de mais-valia. Motorista trabalha X horas para pagar combustível/manutenção,
@@ -367,7 +453,7 @@
                                             21(Brasil):Mineração de dados brasileiros = extrativismo
                                     digital. Mais-valia extraída de usuários Sul Global para lucro Norte Global.</item>
         </list>
-        <list type="unordered" index="1">
+        <list type="unordered" index="6">
           <item index="0">Cap
                                             3-14(Plataformas/Apps):Uber diz &quot;você é parceiro&quot; (fetiche), realidade =
                                     você é empregado precarizado. Facebook diz &quot;serviço gratuito&quot; (fetiche), realidade =
@@ -385,7 +471,7 @@
                                             25(China):&quot;Crédito social promove harmonia&quot; = fetiche
                                     estatal. Realidade = controle totalitário via cibernética.</item>
         </list>
-        <list type="unordered" index="2">
+        <list type="unordered" index="7">
           <item index="0">Capital É um sistema cibernético:D' (lucro) retroalimenta D
                                     (investimento) para gerar D'' (mais lucro). Loop infinito = feedback positivo.</item>
           <item index="1">Mercado = mecanismo de feedback:Preço ↑ → Produção ↑ → Preço ↓ →
@@ -393,7 +479,7 @@
           <item index="2">Algoritmos automatizam D-M-D':Trading de alta frequência = capital
                                     operando em milissegundos. Máquina executa valorização sem humano intermediário.</item>
         </list>
-        <list type="unordered" index="3">
+        <list type="unordered" index="8">
           <item index="0">Cap
                                             5(Subsunção Real):Prévia-ideação do trabalhador é roubada e
                                     incorporada na máquina. Ferreiro sabia temperar ferro → algoritmo controla
@@ -406,7 +492,7 @@
                                     ajusta produção/distribuição automaticamente.Socialismo cibernético =
                                         prévia-ideação coletiva codificada.</item>
         </list>
-        <list type="unordered" index="4">
+        <list type="unordered" index="9">
           <item index="0">Cap
                                             3(Dados):Sua localização, cliques, gostos = mercadoria
                                     vendida a anunciantes.Você não usa dados — dados te usam.</item>
@@ -425,7 +511,7 @@
                                     legal para ricos, criminalizada para pobres.Valor não é químico — é
                                         social/racial.</item>
         </list>
-        <list type="unordered" index="5">
+        <list type="unordered" index="10">
           <item index="0">→Ap. A (Glossário):Define &quot;mais-valia&quot;,
                                 &quot;fetichismo&quot;, &quot;trabalho abstrato&quot; aqui introduzidos</item>
           <item index="1">→Ap. B (Biografias):Contexto biográfico de
@@ -467,6 +553,8 @@
         <concept>Trabalho Abstrato:</concept>
         <concept>valor</concept>
         <concept>tempo de trabalho socialmente necessário</concept>
+        <concept>contradição permanente</concept>
+        <concept>preço</concept>
         <concept>força de trabalho</concept>
         <concept>salário</concept>
         <concept>cria mais valor do que
@@ -476,10 +564,48 @@
                         excedente</concept>
         <concept>mais-valia</concept>
         <concept>Exemplo simples:</concept>
+        <concept>1. Mais-Valia Absoluta:</concept>
+        <concept>Exemplo contemporâneo:</concept>
+        <concept>2. Mais-Valia Relativa:</concept>
+        <concept>Mais-Valia Absoluta</concept>
+        <concept>Mais-Valia Relativa</concept>
+        <concept>Lei 13.467/2017</concept>
+        <concept>Capítulo 20</concept>
+        <concept>mais-valia relativa</concept>
+        <concept>trabalho
+                    reprodutivo</concept>
+        <concept>taxa real de exploração</concept>
+        <concept>Trabalho afetivo nas redes:</concept>
+        <concept>Microwork e care platforms:</concept>
+        <concept>Trabalho de moderação:</concept>
+        <concept>Calibã e a Bruxa</concept>
+        <concept>Feminismo para os 99%</concept>
+        <concept>Apêndice G §G.7.1</concept>
         <concept>capital</concept>
         <concept>processo</concept>
         <concept>D-M-D'</concept>
+        <concept>D (Dinheiro inicial)</concept>
+        <concept>M (Mercadorias compradas)</concept>
+        <concept>P (Produção)</concept>
+        <concept>M' (Mercadorias produzidas)</concept>
+        <concept>D' (Dinheiro expandido)</concept>
+        <concept>autovalorização infinita</concept>
         <concept>fetichismo da mercadoria</concept>
+        <concept>dados</concept>
+        <concept>algoritmos</concept>
+        <concept>Vendedores terceirizados</concept>
+        <concept>Entregadores precarizados</concept>
+        <concept>Desenvolvedores e moderadores</concept>
+        <concept>Dados de comportamento</concept>
+        <concept>não produz nada</concept>
+        <concept>circuito de valorização</concept>
+        <concept>Exercício prático:</concept>
+        <concept>trabalhando</concept>
+        <concept>reconhecidos como empregados</concept>
+        <concept>criado o valor</concept>
+        <concept>capturando</concept>
+        <concept>cadeia oculta de exploração</concept>
+        <concept>arquitetural</concept>
         <concept>O fetichismo não é apenas econômico — é estrutural.</concept>
         <concept>comunicação social</concept>
         <concept>Conexão aoCapítulo 29:</concept>
@@ -493,28 +619,28 @@
         <concept>O Trabalho em sua Vida:</concept>
         <concept>O Fetichismo ao seu Redor:</concept>
         <concept>Calculando a Mais-Valia:</concept>
-        <concept>Nível Iniciante:</concept>
+        <concept>- Nível Iniciante:</concept>
         <concept>História da Riqueza do Homem</concept>
-        <concept>Marx: A Very Short Introduction</concept>
-        <concept>Nível Intermediário:</concept>
+        <concept>O Privilégio da Servidão</concept>
+        <concept>Uberização: do empreendedorismo para a autogestão subordinada</concept>
+        <concept>- Nível Intermediário:</concept>
         <concept>O Capital, Livro I</concept>
+        <concept>Para Entender O Capital</concept>
+        <concept>Trabalho e Subjetividade: O Espírito do Toyotismo na Era do Capitalismo Manipulatório</concept>
+        <concept>- Nível Avançado:</concept>
+        <concept>A Teoria Marxista do Valor</concept>
+        <concept>Dialética da Dependência</concept>
+        <concept>Marxists Internet Archive (seção Brasil)</concept>
+        <concept>Editora Boitempo (Blog da Boitempo)</concept>
+        <concept>Passa Palavra</concept>
+        <concept>Breque dos Apps</concept>
+        <concept>Podcast &quot;Revolushow&quot;</concept>
+        <concept>Canal &quot;Tese Onze&quot;</concept>
+        <concept>Documentário &quot;Trabalho Intermitente&quot; (2020)</concept>
+        <concept>Marx: A Very Short Introduction</concept>
         <concept>Tratado de Economia Marxista</concept>
-        <concept>Nível Avançado:</concept>
-        <concept>Ensaios sobre a Teoria do Valor de Marx</concept>
         <concept>Time, Labor, and Social Domination: A Reinterpretation of Marx's Critical
                         Theory</concept>
-        <concept>trabalho reprodutivo não
-                                remunerado</concept>
-        <concept>Silvia Federici</concept>
-        <concept>Calibã e a Bruxa</concept>
-        <concept>Para preencher esta lacuna:</concept>
-        <concept>O Ponto Zero da Revolução</concept>
-        <concept>Feminismo para os 99%</concept>
-        <concept>The Problem
-                                with Work</concept>
-        <concept>Apêndice G §G.7.1</concept>
-        <concept>Apêndice D</concept>
-        <concept>Apêndice E</concept>
         <concept>Este capítulo ensina o conceito-chave:</concept>
         <concept>É o oxigênio do
                                     capitalismo — sem ela, sistema morre.</concept>
@@ -678,105 +804,120 @@
                     governar todas as outras. Esta é a ideia fundamental por trás do computador moderno, que pode
                     executar qualquer programa (um navegador, um editor de texto, um jogo) sem precisar mudar seu
                     hardware.</paragraph>
-        <paragraph index="22">Turing não apenas estabeleceu os fundamentos teóricos da ciência da computação, mas também abriu o
+        <paragraph index="22">Mas Turing também descobriu algo fundamental:nem tudo é computável. Ele provou que existem problemas matemáticos bem definidos que nenhum algoritmo pode resolver. O mais famoso é oProblema da Parada (Halting Problem): é impossível construir um algoritmo que, dado um programa qualquer e seus dados de entrada, determine se esse programa vai terminar sua execução ou rodar para sempre.</paragraph>
+        <paragraph index="23">Isso não é limitação tecnológica — é limitação lógica fundamental. Não importa quão poderoso seja o computador do futuro, ele não poderá resolver o Problema da Parada.Existem verdades matemáticas que não podem ser provadas por algoritmo.Existem perguntas que computadores, por definição, nunca responderão.</paragraph>
+        <paragraph index="24">Turing não apenas estabeleceu os fundamentos teóricos da ciência da computação, mas também abriu o
                     caminho para a inteligência artificial com sua famosa pergunta: &quot;As máquinas podem pensar?&quot;.</paragraph>
-        <paragraph index="23">Enquanto Turing explorava os limites lógicos da computação, um engenheiro americano chamadoClaude Shannonestava resolvendo um problema muito mais prático: como podemos nos
+        <paragraph index="25">Enquanto Turing explorava os limites lógicos da computação, um engenheiro americano chamadoClaude Shannonestava resolvendo um problema muito mais prático: como podemos nos
                     comunicar de forma eficiente e confiável?</paragraph>
-        <paragraph index="24">Trabalhando nos Bell Labs, Shannon estava preocupado com a transmissão de sinais através de linhas
+        <paragraph index="26">Trabalhando nos Bell Labs, Shannon estava preocupado com a transmissão de sinais através de linhas
                     telefônicas e telegráficas, que eram frequentemente afetadas por ruído e degradação. Para resolver
                     isso, ele precisava de uma maneira de medir a própriainformação.</paragraph>
-        <paragraph index="25">Em seu artigo seminal de 1948, &quot;A Mathematical Theory of Communication&quot;, Shannon propôs uma definição
+        <paragraph index="27">Em seu artigo seminal de 1948, &quot;A Mathematical Theory of Communication&quot;, Shannon propôs uma definição
                     revolucionária. Ele separou a informação de seu significado e a tratou como uma quantidade
                     matemática mensurável. A unidade fundamental dessa medida é obit(uma contração debinary digit).</paragraph>
-        <paragraph index="26">Um bit representa a resolução de uma incerteza entre duas alternativas possíveis. Um &quot;sim&quot; ou &quot;não&quot;,
+        <paragraph index="28">Um bit representa a resolução de uma incerteza entre duas alternativas possíveis. Um &quot;sim&quot; ou &quot;não&quot;,
                     um &quot;ligado&quot; ou &quot;desligado&quot;, um 0 ou 1. Se você joga uma moeda, o resultado (cara ou coroa) contém um
                     bit de informação. Se você joga um dado de oito lados, o resultado contém três bits de informação
                     (porque 2³ = 8).</paragraph>
-        <paragraph index="27">Shannon também introduziu o conceito deentropiana teoria da informação. Similar à
+        <paragraph index="29">Shannon também introduziu o conceito deentropiana teoria da informação. Similar à
                     entropia na termodinâmica, ela é uma medida de desordem, mas aqui, ela mede aincertezaou a imprevisibilidade de uma fonte de informação. Uma mensagem
                     perfeitamente previsível (&quot;AAAAA...&quot;) tem entropia zero. Uma mensagem aleatória (&quot;XGZ?%K...&quot;) tem
                     entropia máxima.</paragraph>
-        <paragraph index="28">Seu famoso modelo de comunicação descreve qualquer processo de comunicação da seguinte forma:</paragraph>
-        <paragraph index="29">Ao quantificar a informação, Shannon tornou possível projetar sistemas de codificação (como os que
+        <paragraph index="30">Seu famoso modelo de comunicação descreve qualquer processo de comunicação da seguinte forma:</paragraph>
+        <paragraph index="31">Ao quantificar a informação, Shannon tornou possível projetar sistemas de codificação (como os que
                     usamos hoje em zips, JPEGs e MP3s) que podem comprimir dados e corrigir erros de transmissão. Sua
                     obra forneceu a base matemática para toda a revolução digital.</paragraph>
-        <paragraph index="30">As peças do quebra-cabeça estavam espalhadas: a ideia de comportamento orientado a um objetivo dos
+        <paragraph index="32">As peças do quebra-cabeça estavam espalhadas: a ideia de comportamento orientado a um objetivo dos
                     autômatos, a computação programável de Babbage e Lovelace, a teoria da computabilidade de Turing e a
                     medida da informação de Shannon. Faltava alguém para juntar tudo isso em um campo unificado. Essa
                     pessoa foiNorbert Wiener.</paragraph>
-        <paragraph index="31">Wiener era um matemático prodígio que, durante a Segunda Guerra Mundial, foi encarregado de um
+        <paragraph index="33">Wiener era um matemático prodígio que, durante a Segunda Guerra Mundial, foi encarregado de um
                     problema militar: como projetar sistemas de artilharia antiaérea que pudessem derrubar os rápidos e
                     erráticos aviões bombardeiros alemães. Para fazer isso, o sistema precisava prever a trajetória
                     futura do avião, mirar, disparar e, crucialmente, observar onde o projétil foi parar para corrigir o
                     próximo tiro.</paragraph>
-        <paragraph index="32">Wiener percebeu que o problema central era o mesmo, quer estivéssemos falando de um artilheiro
+        <paragraph index="34">Wiener percebeu que o problema central era o mesmo, quer estivéssemos falando de um artilheiro
                     tentando acertar um alvo, de um biólogo estudando como um animal persegue sua presa, ou de um
                     engenheiro construindo um sistema de automação. O problema era decontrole e
                         comunicação.</paragraph>
-        <paragraph index="33">A ideia-chave que unificou tudo foi ofeedback (retroalimentação). Feedback é o
+        <paragraph index="35">A ideia-chave que unificou tudo foi ofeedback (retroalimentação). Feedback é o
                     processo pelo qual um sistema utiliza a informação sobre os resultados de suas próprias ações
                     passadas para ajustar seu comportamento futuro. É um laço de informação que permite que um sistema
                     se autorregule e se adapte a um ambiente em mudança.</paragraph>
-        <paragraph index="34">Wiener identificou dois tipos principais de feedback:</paragraph>
-        <paragraph index="35">-Feedback Negativo:É estabilizador. Ele busca reduzir o erro e manter o sistema em
+        <paragraph index="36">Wiener identificou dois tipos principais de feedback:</paragraph>
+        <paragraph index="37">-Feedback Negativo:É estabilizador. Ele busca reduzir o erro e manter o sistema em
                     um estado de equilíbrio (homeostase). O termostato é o exemplo clássico. Seu corpo mantendo uma
                     temperatura constante de 36.5°C é outro.</paragraph>
-        <paragraph index="36">-Feedback Positivo:É amplificador e desestabilizador. Ele amplifica o erro,
+        <paragraph index="38">-Feedback Positivo:É amplificador e desestabilizador. Ele amplifica o erro,
                     levando a um crescimento exponencial ou a um colapso. O exemplo mais comum é a microfonia, quando um
                     microfone capta o som de seu próprio alto-falante, o amplifica, e o ciclo se repete cada vez mais
                     alto.</paragraph>
-        <paragraph index="37">Em 1948, Wiener publicou seu livro &quot;Cybernetics: Or Control and Communication in the Animal and the
+        <paragraph index="39">Em 1948, Wiener publicou seu livro &quot;Cybernetics: Or Control and Communication in the Animal and the
                     Machine&quot;, definindo formalmente acibernéticacomo &quot;a ciência do controle e da
                     comunicação no animal e na máquina&quot;. A palavra vem do gregokybernetes, que significa
                     &quot;timoneiro&quot; ou &quot;governador&quot;, a mesma raiz da palavra &quot;governo&quot;.</paragraph>
-        <paragraph index="38">Entre 1946 e 1953, as famosasConferências Macyreuniram Wiener, Shannon e outros
+        <paragraph index="40">Entre 1946 e 1953, as famosasConferências Macyreuniram Wiener, Shannon e outros
                     grandes pensadores de diversas áreas — como a antropóloga Margaret Mead e o neurocientista Warren
                     McCulloch — para forjar essa nova ciência interdisciplinar. Eles acreditavam ter descoberto as leis
                     universais que governavam todos os sistemas complexos e auto-organizados, da célula ao cérebro, da
                     máquina à sociedade.</paragraph>
-        <paragraph index="39">-Algoritmo:Um conjunto finito de regras ou instruções passo a passo para resolver
+        <paragraph index="41">-Algoritmo:Um conjunto finito de regras ou instruções passo a passo para resolver
                     um problema ou executar uma tarefa.</paragraph>
-        <paragraph index="40">-Autômato:Uma máquina autônoma projetada para seguir uma sequência predeterminada
+        <paragraph index="42">-Autômato:Uma máquina autônoma projetada para seguir uma sequência predeterminada
                     de operações ou imitar as ações de seres humanos ou animais.</paragraph>
-        <paragraph index="41">-Bit:A unidade mais básica de informação, representando um de dois estados
+        <paragraph index="43">-Bit:A unidade mais básica de informação, representando um de dois estados
                     possíveis (0 ou 1, ligado/desligado, verdadeiro/falso).</paragraph>
-        <paragraph index="42">-Cibernética:A ciência do controle e da comunicação em sistemas complexos, sejam
+        <paragraph index="44">-Cibernética:A ciência do controle e da comunicação em sistemas complexos, sejam
                     eles animais, máquinas ou organizações sociais. Seu conceito central é o feedback.</paragraph>
-        <paragraph index="43">-Computabilidade:A propriedade de um problema poder ser resolvido por um processo
+        <paragraph index="45">-Computabilidade:A propriedade de um problema poder ser resolvido por um processo
                     algorítmico, ou seja, por uma Máquina de Turing.</paragraph>
-        <paragraph index="44">-Entropia (Informacional):Uma medida da incerteza, aleatoriedade ou
+        <paragraph index="46">-Entropia (Informacional):Uma medida da incerteza, aleatoriedade ou
                     imprevisibilidade em uma fonte de informação.</paragraph>
-        <paragraph index="45">-Feedback (Retroalimentação):O processo em que a informação sobre o resultado de
+        <paragraph index="47">-Feedback (Retroalimentação):O processo em que a informação sobre o resultado de
                     uma ação é usada para modificar ações futuras. Pode ser negativo (estabilizador) ou positivo
                     (amplificador).</paragraph>
-        <paragraph index="46">-Homeostase:A tendência de um sistema de manter seu ambiente interno estável e
+        <paragraph index="48">-Homeostase:A tendência de um sistema de manter seu ambiente interno estável e
                     relativamente constante, geralmente através de loops de feedback negativo.</paragraph>
-        <paragraph index="47">-Máquina Universal:Um modelo teórico (como a Máquina de Turing Universal) capaz de
+        <paragraph index="49">-Máquina Universal:Um modelo teórico (como a Máquina de Turing Universal) capaz de
                     simular qualquer outro computador ou máquina de computação.</paragraph>
-        <paragraph index="48">1.Feedback no seu Dia:Identifique três exemplos de loops de feedback em sua vida
+        <paragraph index="50">1.Feedback no seu Dia:Identifique três exemplos de loops de feedback em sua vida
                     cotidiana. Um pode ser tecnológico (o GPS do seu celular recalculando a rota quando você erra o
                     caminho), um biológico (sentir sede e beber água) e um social (receber um elogio por um trabalho e
                     se sentir motivado a continuar). Classifique cada um como feedback positivo ou negativo.</paragraph>
-        <paragraph index="49">2.A Receita como Algoritmo:Pegue uma receita de bolo simples. Analise-a como um
+        <paragraph index="51">2.A Receita como Algoritmo:Pegue uma receita de bolo simples. Analise-a como um
                     algoritmo. Quais são as &quot;entradas&quot; (ingredientes)? Quais são as &quot;instruções&quot; passo a passo? Qual é a
                     &quot;saída&quot; (o bolo)? O que aconteceria se uma instrução fosse ambígua ou estivesse faltando?</paragraph>
-        <paragraph index="50">3.Medindo a Informação:Imagine que você tem que adivinhar um número entre 1 e 100.
+        <paragraph index="52">3.Medindo a Informação:Imagine que você tem que adivinhar um número entre 1 e 100.
                     Alguém lhe diz: &quot;O número é par&quot;. Quantos &quot;bits&quot; de informação você recebeu? (Dica: A incerteza foi
                     reduzida pela metade). E se a pessoa dissesse: &quot;O número é 73&quot;? Quantos bits de informação essa
                     resposta contém?</paragraph>
-        <paragraph index="51">-Nível Iniciante:</paragraph>
-        <paragraph index="52">- Gleick, J. (2011).The Information: A History, a Theory, a Flood. (Uma história narrativa
+        <paragraph index="53">-Nível Iniciante:</paragraph>
+        <paragraph index="54">- Gleick, J. (2011).The Information: A History, a Theory, a Flood. (Uma história narrativa
                     brilhante sobre a teoria da informação e seus protagonistas).</paragraph>
-        <paragraph index="53">- Dyson, G. (2012).Turing's Cathedral: The Origins of the Digital Universe. (Foca no
+        <paragraph index="55">- Dyson, G. (2012).Turing's Cathedral: The Origins of the Digital Universe. (Foca no
                     desenvolvimento do computador em Princeton após a Segunda Guerra).</paragraph>
-        <paragraph index="54">-Nível Intermediário:</paragraph>
-        <paragraph index="55">- Wiener, N. (1950).The Human Use of Human Beings: Cybernetics and Society. (A própria
+        <paragraph index="56">-Nível Intermediário:</paragraph>
+        <paragraph index="57">- Wiener, N. (1950).The Human Use of Human Beings: Cybernetics and Society. (A própria
                     introdução de Wiener às implicações sociais da cibernética, mais acessível que sua obra de 1948).</paragraph>
-        <paragraph index="56">- Ashby, W. R. (1956).An Introduction to Cybernetics. (Um texto clássico, mais técnico,
+        <paragraph index="58">- Ashby, W. R. (1956).An Introduction to Cybernetics. (Um texto clássico, mais técnico,
                     mas fundamental para entender os conceitos de controle e variedade).</paragraph>
       </content>
       <lists>
         <list type="unordered" index="0">
+          <item index="0">ENIAC (1945):30 toneladas, 18 mil válvulas termiônicas, consumia 150 kW (suficiente para 150 casas). Aquecia tanto que queimava válvulas constantemente.</item>
+          <item index="1">UNIVAC I (1951):13 toneladas, necessitava sistema de ar-condicionado industrial.</item>
+          <item index="2">IBM 701 (1952):Consumia 150 kW, gerava tanto calor que exigia sala refrigerada 24/7.</item>
+        </list>
+        <list type="ordered" index="1">
+          <item index="0">Ação:Você rola o feed (scroll)</item>
+          <item index="1">Resultado:Vê conteúdo envolvente (meme, notícia chocante, vídeo curto)</item>
+          <item index="2">Sensor biológico:Cérebro libera dopamina (prazer)</item>
+          <item index="3">Feedback positivo:Dopamina reforça comportamento → você rola MAIS</item>
+          <item index="4">Amplificação:Algoritmo detecta engajamento → mostra conteúdo AINDA MAIS viciante</item>
+          <item index="5">Loop infinito:Cada ciclo amplifica o anterior (como microfonia), até você perder 3 horas sem perceber</item>
+        </list>
+        <list type="unordered" index="2">
           <item index="0">Cap
                                             3(Plataformas Digitais):Efeito de rede = feedback positivo
                                     (mais usuários → mais atração → mais usuários). Algoritmos de recomendação =
@@ -796,7 +937,7 @@
                                             25(China):Crédito social = cibernética de 2ª ordem (sistema
                                     modela você modelando você mesmo via feedback constante).</item>
         </list>
-        <list type="unordered" index="1">
+        <list type="unordered" index="3">
           <item index="0">Cap
                                             8(Trabalho Imaterial):Se Shannon está certo (informação
                                     mensurável), então conhecimento/afetos podem ser mercadoria → trabalho imaterial é
@@ -812,7 +953,7 @@
                                             13(Moderação de Conteúdo):Moderadores transmitem informação
                                     (Shannon) para treinar Máquina Universal (Turing) que os substituirá.Trabalho morto digital.</item>
         </list>
-        <list type="unordered" index="2">
+        <list type="unordered" index="4">
           <item index="0">Marx descreve subsunção real:Conhecimento do ferreiro é
                                     incorporado na máquina → trabalhador vira apêndice.</item>
           <item index="1">Babbage/Lovelace mostram COMO:Conhecimento vira algoritmo (cartões
@@ -821,7 +962,7 @@
           <item index="2">Cap 5 + Cap 2 = chave do livro:Capitalismo (Cap 5) + Computação
                                     (Cap 2) = Capitalismo Digital (Caps 3-28).</item>
         </list>
-        <list type="unordered" index="3">
+        <list type="unordered" index="5">
           <item index="0">Cap
                                             17(OGAS):URSS tentou aplicar cibernética ao planejamento
                                     econômico. Fracassou por burocracia estalinista, não por cibernética estar errada.</item>
@@ -850,9 +991,39 @@
         <concept>&quot;Moinho&quot; (Mill)</concept>
         <concept>&quot;Memória&quot; (Store)</concept>
         <concept>Charles Babbage (1791-1871)</concept>
+        <concept>A Máquina Analítica de Babbage seria GIGANTESCA:</concept>
+        <concept>E seria movida a vapor.</concept>
+        <concept>Primeiros computadores (1940s-50s):</concept>
+        <concept>ENIAC (1945):</concept>
+        <concept>UNIVAC I (1951):</concept>
+        <concept>IBM 701 (1952):</concept>
+        <concept>Computação sempre teve custo ecológico:</concept>
+        <concept>Extração:</concept>
+        <concept>Mineração = devastação ambiental + trabalho análogo à escravidão.</concept>
+        <concept>Energia:</concept>
+        <concept>Bitcoin consome mais eletricidade que a Argentina.</concept>
+        <concept>Descarte:</concept>
+        <concept>Ironia histórica:</concept>
+        <concept>Conexões:</concept>
+        <concept>Por que isso importa:</concept>
+        <concept>ideologia</concept>
+        <concept>Cibernética emancipatória precisa ser cibernética sustentável.</concept>
         <concept>Ada Lovelace</concept>
         <concept>algoritmo</concept>
         <concept>Ada Lovelace (1815-1852)</concept>
+        <concept>Ada Lovelace não foi exceção — foi padrão invisibilizado.</concept>
+        <concept>As &quot;ENIAC Six&quot; (1945-1946):</concept>
+        <concept>primeiras programadoras do mundo</concept>
+        <concept>sem manuais, sem linguagens de programação, conectando fisicamente milhares de cabos e switches</concept>
+        <concept>Grace Hopper (1906-1992):</concept>
+        <concept>Hedy Lamarr (1914-2000):</concept>
+        <concept>frequency hopping</concept>
+        <concept>Padrão histórico:</concept>
+        <concept>As mulheres não saíram — foram expulsas.</concept>
+        <concept>Conexão aoCapítulo 15:</concept>
+        <concept>trabalho técnico invisível e desvalorizado é feminizado</concept>
+        <concept>Por que isso importa para a cibernética?</concept>
+        <concept>quem projeta sistemas determina seus valores</concept>
         <concept>Alan Turing</concept>
         <concept>Entscheidungsproblem</concept>
         <concept>Máquina de
@@ -862,6 +1033,25 @@
         <concept>conjunto de regras (um programa)</concept>
         <concept>Computabilidade:</concept>
         <concept>A Máquina de Turing Universal:</concept>
+        <concept>nem tudo é computável</concept>
+        <concept>Problema da Parada (Halting Problem)</concept>
+        <concept>Existem verdades matemáticas que não podem ser provadas por algoritmo.</concept>
+        <concept>Se nem tudo é computável, nem tudo pode ser &quot;resolvido com tecnologia&quot;.</concept>
+        <concept>1. Contra o determinismo tecnológico:</concept>
+        <concept>Problemas sociais complexos não são computáveis</concept>
+        <concept>2. Contra a IA como solução universal:</concept>
+        <concept>Haverá sempre questões que exigem julgamento humano</concept>
+        <concept>3. Contra planejamento total:</concept>
+        <concept>Turing prova: impossível.</concept>
+        <concept>Paradoxo político:</concept>
+        <concept>argumento a favor da democracia</concept>
+        <concept>processo participativo contínuo</concept>
+        <concept>Indecidibilidade matemática exige decisão política.</concept>
+        <concept>ferramenta</concept>
+        <concept>Lição central:</concept>
+        <concept>apoiar</concept>
+        <concept>substituí-las</concept>
+        <concept>O não-computável é o espaço da política, da ética, da liberdade.</concept>
         <concept>Alan Turing (1912-1954)</concept>
         <concept>Claude Shannon</concept>
         <concept>informação</concept>
@@ -875,10 +1065,45 @@
         <concept>feedback (retroalimentação)</concept>
         <concept>Feedback Negativo:</concept>
         <concept>Feedback Positivo:</concept>
+        <concept>Aplicativos modernos são máquinas de Wiener otimizadas para feedback positivo amplificador.</concept>
+        <concept>O Loop do Vício (aplicando Wiener 1:1):</concept>
+        <concept>Ação:</concept>
+        <concept>Resultado:</concept>
+        <concept>Sensor biológico:</concept>
+        <concept>Feedback positivo:</concept>
+        <concept>Amplificação:</concept>
+        <concept>Loop infinito:</concept>
+        <concept>Técnicas cibernéticas de engenharia do vício:</concept>
+        <concept>Recompensa variável:</concept>
+        <concept>Notificações push:</concept>
+        <concept>Infinite scroll:</concept>
+        <concept>Apps de redes sociais são exatamente isso</concept>
+        <concept>Por que é tão eficaz?</concept>
+        <concept>aplicaram princípios cibernéticos de 1948 ao design de experiência</concept>
+        <concept>Conexão direta aoCapítulo 14:</concept>
+        <concept>economia política do vício digital</concept>
+        <concept>Cap 2 dá o manual de instruções (Wiener), Cap 14 mostra o crime (capitalismo de vigilância usando esse manual).</concept>
+        <concept>Contradição fundamental:</concept>
+        <concept>feedback negativo saudável</concept>
+        <concept>feedback positivo patológico</concept>
+        <concept>Não é a tecnologia — é quem controla o controlador.</concept>
         <concept>cibernética</concept>
         <concept>kybernetes</concept>
         <concept>Conferências Macy</concept>
         <concept>Norbert Wiener (1894-1964)</concept>
+        <concept>Todas as tecnologias fundacionais da cibernética nasceram da guerra.</concept>
+        <concept>• Turing (1939-1945):</concept>
+        <concept>• Wiener (1940-1945):</concept>
+        <concept>• Shannon (Bell Labs, 1940s):</concept>
+        <concept>• ENIAC (1945):</concept>
+        <concept>• Internet (1969):</concept>
+        <concept>O Dilema de Wiener:</concept>
+        <concept>&quot;The Human Use of Human Beings&quot;</concept>
+        <concept>&quot;A automação descontrolada e o uso militar da ciência são as duas grandes ameaças à humanidade&quot;</concept>
+        <concept>Consequência política:</concept>
+        <concept>controle, comunicação e informação sempre foram questões estratégicas de poder</concept>
+        <concept>A questão central do livro:</concept>
+        <concept>Resposta: Depende de quem controla os controladores.</concept>
         <concept>Algoritmo:</concept>
         <concept>Autômato:</concept>
         <concept>Bit:</concept>
@@ -947,7 +1172,6 @@
         <concept>Subsunção real é
                                         algoritmização do saber.</concept>
         <concept>Cap 5 + Cap 2 = chave do livro:</concept>
-        <concept>Ironia histórica:</concept>
         <concept>O que foram:</concept>
         <concept>Objetivo:</concept>
         <concept>Sonho original:</concept>

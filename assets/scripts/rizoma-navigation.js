@@ -9,23 +9,446 @@
  * - Multiplicidade de entradas
  * - Conexões heterogêneas
  * - Sem estrutura arbórea
+ * 
+ * CHANGELOG:
+ * - 2025-10-27 (v2): Expansão massiva do Capítulo 2 (Cibernética)
+ *   + 40 novos conceitos: Wiener, Turing, Shannon, Babbage, Ada Lovelace
+ *   + ENIAC Six e gênero na computação (invisibilização histórica)
+ *   + Duplo uso militar: Enigma, DARPA, guerra → paz
+ *   + Materialidade/ecologia: e-waste, data centers, extrativismo
+ *   + Vício digital: feedback positivo, dopamina, infinite scroll
+ *   + Limites da computação: Problema da Parada, democracia algorítmica
+ *   + Conceitos adicionais: Cybersyn, necropolítica digital, etc.
+ *   Total: ~120 conceitos mapeados
+ * 
+ * - 2025-10-27 (v1): Expansão massiva do Capítulo 1 (Marxismo)
+ *   + 32 novos conceitos: mercadoria, valor, mais-valia, fetichismo, etc.
+ *   + Casos brasileiros: Magalu, Reforma Trabalhista 2017
+ *   + Conexões reforçadas: capitalismo → cibernética → resistência
+ *   Total: ~80 conceitos mapeados
  */
 
 // Grafo de conceitos (nós do rizoma)
 const conceptGraph = {
+    // ========================================
+    // CAPÍTULO 1: MARXISMO BÁSICO
+    // ========================================
+    'mercadoria': {
+        name: 'Mercadoria',
+        description: 'Produto do trabalho destinado à troca no mercado',
+        connections: ['valor-uso', 'valor-troca', 'fetichismo', 'trabalho-abstrato'],
+        color: '#ef4444',
+        layer: -1 // Passado (conceito fundacional)
+    },
+    'valor-uso': {
+        name: 'Valor de Uso',
+        description: 'Utilidade concreta de uma mercadoria',
+        connections: ['mercadoria', 'valor-troca', 'trabalho-concreto'],
+        color: '#ef4444',
+        layer: -1
+    },
+    'valor-troca': {
+        name: 'Valor de Troca',
+        description: 'Relação quantitativa de troca entre mercadorias',
+        connections: ['mercadoria', 'valor-uso', 'trabalho-abstrato', 'preco-valor'],
+        color: '#ef4444',
+        layer: -1
+    },
+    'trabalho-concreto': {
+        name: 'Trabalho Concreto',
+        description: 'Atividade específica que cria valor de uso particular',
+        connections: ['valor-uso', 'trabalho-abstrato', 'previa-ideacao'],
+        color: '#ef4444',
+        layer: -1
+    },
+    'trabalho-abstrato': {
+        name: 'Trabalho Abstrato',
+        description: 'Trabalho humano reduzido a dispêndio de tempo',
+        connections: ['mercadoria', 'valor-troca', 'trabalho-concreto', 'tsn'],
+        color: '#ef4444',
+        layer: -1
+    },
+    'tsn': {
+        name: 'Tempo de Trabalho Socialmente Necessário',
+        description: 'Tempo médio para produzir mercadoria no nível tecnológico da sociedade',
+        connections: ['trabalho-abstrato', 'valor-troca', 'forcas-produtivas'],
+        color: '#ef4444',
+        layer: -1
+    },
+    'previa-ideacao': {
+        name: 'Prévia-Ideação',
+        description: 'Capacidade humana de planejar mentalmente antes de executar',
+        connections: ['trabalho-concreto', 'objetivacao', 'forcas-produtivas'],
+        color: '#ef4444',
+        layer: -1
+    },
+    'objetivacao': {
+        name: 'Objetivação',
+        description: 'Materialização da ideia no mundo através do trabalho',
+        connections: ['previa-ideacao', 'trabalho-concreto', 'alienacao'],
+        color: '#ef4444',
+        layer: -1
+    },
+    'forcas-produtivas': {
+        name: 'Forças Produtivas',
+        description: 'Ferramentas, tecnologias, conhecimentos para transformar natureza',
+        connections: ['tsn', 'relacoes-producao', 'automacao', 'ia'],
+        color: '#ef4444',
+        layer: -1
+    },
+    'relacoes-producao': {
+        name: 'Relações de Produção',
+        description: 'Relações sociais estabelecidas para produzir e distribuir bens',
+        connections: ['forcas-produtivas', 'mais-valia', 'capital', 'uberizacao'],
+        color: '#ef4444',
+        layer: -1
+    },
+    'mais-valia': {
+        name: 'Mais-Valia',
+        description: 'Valor criado pelo trabalhador além do seu salário',
+        connections: ['mais-valia-absoluta', 'mais-valia-relativa', 'capital', 'exploracao'],
+        color: '#ef4444',
+        layer: 0 // Presente (conceito ativo)
+    },
+    'mais-valia-absoluta': {
+        name: 'Mais-Valia Absoluta',
+        description: 'Extração via aumento de jornada ou intensidade do trabalho',
+        connections: ['mais-valia', 'mais-valia-relativa', 'uberizacao', 'reforma-trabalhista'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'mais-valia-relativa': {
+        name: 'Mais-Valia Relativa',
+        description: 'Extração via aumento de produtividade (tecnologia)',
+        connections: ['mais-valia', 'mais-valia-absoluta', 'automacao', 'algoritmos'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'capital': {
+        name: 'Capital',
+        description: 'Processo de autovalorização: D-M-P-M\'-D\'',
+        connections: ['mais-valia', 'circuito-capital', 'acumulacao', 'plataformizacao'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'circuito-capital': {
+        name: 'Circuito do Capital (D-M-D\')',
+        description: 'Dinheiro → Mercadorias → Produção → Mais Dinheiro',
+        connections: ['capital', 'mais-valia', 'acumulacao'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'fetichismo': {
+        name: 'Fetichismo da Mercadoria',
+        description: 'Relações sociais aparecem como relações entre coisas',
+        connections: ['mercadoria', 'fetichismo-digital', 'ideologia', 'alienacao'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'fetichismo-digital': {
+        name: 'Fetichismo do Dado',
+        description: 'Exploração mascarada como "parceria" e "oportunidade"',
+        connections: ['fetichismo', 'mais-valia-dados', 'plataformizacao', 'magalu'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'preco-valor': {
+        name: 'Preço ≠ Valor',
+        description: 'Preço oscila em torno do valor, mas não é o valor',
+        connections: ['valor-troca', 'fetichismo', 'capitalismo-vigilancia'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'reforma-trabalhista': {
+        name: 'Reforma Trabalhista 2017 (Brasil)',
+        description: 'Lei 13.467 - legalização da mais-valia absoluta',
+        connections: ['mais-valia-absoluta', 'uberizacao', 'pejotizacao', 'intermitente'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'pejotizacao': {
+        name: 'Pejotização',
+        description: 'Transformar empregados em "pessoas jurídicas" para fugir de direitos',
+        connections: ['reforma-trabalhista', 'uberizacao', 'precarizacao'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'intermitente': {
+        name: 'Trabalho Intermitente',
+        description: 'Disponibilidade 24/7, pagamento apenas por horas chamadas',
+        connections: ['reforma-trabalhista', 'uberizacao', 'mais-valia-absoluta'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'magalu': {
+        name: 'Magazine Luiza (Caso)',
+        description: 'Plataformização brasileira - controle sem propriedade',
+        connections: ['fetichismo-digital', 'plataformizacao', 'mais-valia-dados', 'terceirizacao'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'terceirizacao': {
+        name: 'Terceirização',
+        description: 'Transferência de riscos e custos para trabalhadores',
+        connections: ['magalu', 'uberizacao', 'precarizacao'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'exploracao': {
+        name: 'Exploração Capitalista',
+        description: 'Apropriação do trabalho excedente não-pago',
+        connections: ['mais-valia', 'alienacao', 'resistencia'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'alienacao': {
+        name: 'Alienação',
+        description: 'Estranhamento do trabalhador em relação ao produto e ao processo',
+        connections: ['objetivacao', 'fetichismo', 'exploracao'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'precarizacao': {
+        name: 'Precarização',
+        description: 'Degradação das condições de trabalho e direitos',
+        connections: ['uberizacao', 'pejotizacao', 'terceirizacao', 'intermitente'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'acumulacao': {
+        name: 'Acumulação de Capital',
+        description: 'Reinvestimento da mais-valia para gerar mais mais-valia',
+        connections: ['capital', 'circuito-capital', 'monopolio'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'algoritmos': {
+        name: 'Algoritmos de Controle',
+        description: 'Gerenciamento algorítmico automatizado do trabalho',
+        connections: ['mais-valia-relativa', 'uberizacao', 'ia', 'vigilancia'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'automacao': {
+        name: 'Automação',
+        description: 'Substituição de trabalho humano por máquinas',
+        connections: ['forcas-produtivas', 'mais-valia-relativa', 'ia', 'desemprego'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'ia': {
+        name: 'Inteligência Artificial',
+        description: 'Machine learning aplicado à extração de mais-valia',
+        connections: ['automacao', 'algoritmos', 'mais-valia-dados', 'vigilancia'],
+        color: '#ef4444',
+        layer: 0
+    },
+    
+    // ========================================
+    // CAPÍTULO 2: CIBERNÉTICA E FUNDAMENTOS
+    // ========================================
     'cibernetica': {
         name: 'Cibernética',
-        description: 'Ciência do controle e comunicação',
-        connections: ['feedback', 'autopoiese', 'segunda-ordem'],
+        description: 'Ciência do controle e comunicação (Wiener, 1948)',
+        connections: ['feedback', 'wiener', 'turing', 'shannon', 'segunda-ordem', 'automacao'],
         color: '#8b5cf6',
         layer: -1 // Passado
     },
+    'wiener': {
+        name: 'Norbert Wiener',
+        description: 'Fundador da cibernética (1948) - alertou sobre automação descontrolada',
+        connections: ['cibernetica', 'feedback', 'duplo-uso-militar', 'vicio-digital'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'turing': {
+        name: 'Alan Turing',
+        description: 'Máquina Universal + Problema da Parada - fundador da computação',
+        connections: ['computabilidade', 'problema-parada', 'enigma', 'duplo-uso-militar'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'shannon': {
+        name: 'Claude Shannon',
+        description: 'Teoria da Informação (1948) - informação como bits mensuráveis',
+        connections: ['teoria-informacao', 'entropia', 'trabalho-imaterial', 'duplo-uso-militar'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'babbage': {
+        name: 'Charles Babbage',
+        description: 'Máquina Analítica (1837) - primeiro computador programável (mecânico)',
+        connections: ['ada-lovelace', 'algoritmo', 'automacao', 'materialidade-computacao'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'ada-lovelace': {
+        name: 'Ada Lovelace',
+        description: 'Primeira programadora (1843) - viu computação além de números',
+        connections: ['babbage', 'algoritmo', 'eniac-six', 'genero-computacao'],
+        color: '#ec4899', // Rosa para destacar gênero
+        layer: -1
+    },
+    'eniac-six': {
+        name: 'ENIAC Six',
+        description: 'Primeiras programadoras (1945) - invisibilizadas pela história',
+        connections: ['ada-lovelace', 'genero-computacao', 'trabalho-invisivel'],
+        color: '#ec4899',
+        layer: -1
+    },
+    'genero-computacao': {
+        name: 'Gênero e Computação',
+        description: 'Padrão histórico: trabalho feminizado → masculinizado quando valorizado',
+        connections: ['eniac-six', 'ada-lovelace', 'divisao-sexual-trabalho', 'trabalho-invisivel'],
+        color: '#ec4899',
+        layer: 0
+    },
     'feedback': {
         name: 'Feedback Loop',
-        description: 'Ciclo de retorno que modifica o sistema',
-        connections: ['cibernetica', 'autopoiese', 'temporalidade'],
+        description: 'Ciclo de retorno que modifica o sistema (negativo=estabiliza, positivo=amplifica)',
+        connections: ['cibernetica', 'wiener', 'autopoiese', 'temporalidade', 'vicio-digital'],
         color: '#10b981',
         layer: 0 // Presente
+    },
+    'feedback-negativo': {
+        name: 'Feedback Negativo',
+        description: 'Estabilizador - busca equilíbrio (termostato, homeostase)',
+        connections: ['feedback', 'homeostase', 'cybersyn'],
+        color: '#10b981',
+        layer: 0
+    },
+    'feedback-positivo': {
+        name: 'Feedback Positivo',
+        description: 'Amplificador - crescimento exponencial ou colapso (microfonia, vício)',
+        connections: ['feedback', 'vicio-digital', 'viralizacao', 'necropolitica-digital'],
+        color: '#f97316', // Laranja para atenção
+        layer: 0
+    },
+    'vicio-digital': {
+        name: 'Vício Digital',
+        description: 'Apps como máquinas de Wiener: feedback positivo dopamina → mais scroll',
+        connections: ['feedback-positivo', 'wiener', 'dopamina', 'infinite-scroll', 'capitalismo-vigilancia'],
+        color: '#f97316',
+        layer: 0
+    },
+    'dopamina': {
+        name: 'Dopamina Digital',
+        description: 'Sensor biológico usado como loop de feedback viciante',
+        connections: ['vicio-digital', 'feedback-positivo', 'recompensa-variavel'],
+        color: '#f97316',
+        layer: 0
+    },
+    'recompensa-variavel': {
+        name: 'Recompensa Variável',
+        description: 'Incerteza maximiza dopamina (slot machine = próximo scroll)',
+        connections: ['dopamina', 'vicio-digital', 'gamificacao'],
+        color: '#f97316',
+        layer: 0
+    },
+    'infinite-scroll': {
+        name: 'Infinite Scroll',
+        description: 'Remove ponto de parada - feedback positivo sem válvula de escape',
+        connections: ['vicio-digital', 'feedback-positivo'],
+        color: '#f97316',
+        layer: 0
+    },
+    'algoritmo': {
+        name: 'Algoritmo',
+        description: 'Conjunto finito de instruções para resolver problema',
+        connections: ['ada-lovelace', 'turing', 'computabilidade', 'automacao'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'computabilidade': {
+        name: 'Computabilidade',
+        description: 'O que pode ser resolvido por algoritmo (Máquina de Turing)',
+        connections: ['turing', 'algoritmo', 'problema-parada'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'problema-parada': {
+        name: 'Problema da Parada',
+        description: 'Prova: nem tudo é computável - limites matemáticos da tecnologia',
+        connections: ['turing', 'computabilidade', 'limites-tecnologia', 'democracia-algoritmicica'],
+        color: '#7c3aed', // Roxo para conceito filosófico
+        layer: 0
+    },
+    'limites-tecnologia': {
+        name: 'Limites da Tecnologia',
+        description: 'Nem tudo pode ser "resolvido com tecnologia" - exige política',
+        connections: ['problema-parada', 'determinismo-tecnologico', 'democracia-algoritmicica'],
+        color: '#7c3aed',
+        layer: 0
+    },
+    'teoria-informacao': {
+        name: 'Teoria da Informação',
+        description: 'Informação mensurável em bits, separada de significado (Shannon)',
+        connections: ['shannon', 'bit', 'entropia', 'trabalho-imaterial'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'bit': {
+        name: 'Bit',
+        description: 'Unidade básica de informação (0 ou 1) - permite digitalização de tudo',
+        connections: ['teoria-informacao', 'shannon', 'digitalizacao'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'entropia': {
+        name: 'Entropia Informacional',
+        description: 'Medida de incerteza/imprevisibilidade (Shannon = Boltzmann)',
+        connections: ['teoria-informacao', 'shannon', 'materialidade-computacao'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'duplo-uso-militar': {
+        name: 'Duplo Uso Militar',
+        description: 'Todas tecnologias fundacionais nasceram da guerra (Enigma, ENIAC, Internet)',
+        connections: ['turing', 'wiener', 'shannon', 'enigma', 'darpa', 'geopolitica'],
+        color: '#dc2626', // Vermelho para militar
+        layer: -1
+    },
+    'enigma': {
+        name: 'Enigma',
+        description: 'Código nazista quebrado por Turing - cibernética contra fascismo',
+        connections: ['turing', 'duplo-uso-militar', 'necropolitica-digital'],
+        color: '#dc2626',
+        layer: -1
+    },
+    'darpa': {
+        name: 'DARPA',
+        description: 'ARPANET → Internet - rede militar virou www',
+        connections: ['duplo-uso-militar', 'internet', 'geopolitica', 'vigilancia'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'materialidade-computacao': {
+        name: 'Materialidade da Computação',
+        description: 'Não há "desmaterialização" - há mineração, energia, e-waste',
+        connections: ['babbage', 'entropia', 'extrativismo', 'ecologia-digital', 'data-centers'],
+        color: '#22c55e', // Verde para ecologia
+        layer: 0
+    },
+    'ecologia-digital': {
+        name: 'Ecologia Digital',
+        description: 'Custos ambientais invisibilizados: mineração → energia → e-waste',
+        connections: ['materialidade-computacao', 'extrativismo', 'e-waste', 'data-centers'],
+        color: '#22c55e',
+        layer: 0
+    },
+    'e-waste': {
+        name: 'E-Waste',
+        description: 'Lixo eletrônico = genocídio lento (crianças em Gana queimando placas)',
+        connections: ['ecologia-digital', 'necropolitica-digital', 'extrativismo'],
+        color: '#22c55e',
+        layer: 0
+    },
+    'data-centers': {
+        name: 'Data Centers',
+        description: 'Não há nuvem - há data centers consumindo rios para refrigeração',
+        connections: ['materialidade-computacao', 'ecologia-digital', 'fetichismo-digital'],
+        color: '#22c55e',
+        layer: 0
     },
     'autopoiese': {
         name: 'Autopoiese',
@@ -58,14 +481,42 @@ const conceptGraph = {
     'capitalismo-vigilancia': {
         name: 'Capitalismo de Vigilância',
         description: 'Extração de dados comportamentais (Zuboff)',
-        connections: ['mais-valia-dados', 'plataformizacao', 'resistencia'],
+        connections: ['mais-valia-dados', 'plataformizacao', 'resistencia', 'preco-valor', 'vigilancia'],
         color: '#ef4444',
         layer: 0
     },
     'mais-valia-dados': {
         name: 'Mais-Valia de Dados',
         description: 'Valor extraído do trabalho digital não-pago',
-        connections: ['capitalismo-vigilancia', 'uberizacao', 'trabalho-imaterial'],
+        connections: ['capitalismo-vigilancia', 'uberizacao', 'trabalho-imaterial', 'fetichismo-digital', 'magalu', 'ia'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'vigilancia': {
+        name: 'Vigilância Digital',
+        description: 'Monitoramento contínuo de comportamento para extração de valor',
+        connections: ['capitalismo-vigilancia', 'algoritmos', 'ia', 'resistencia'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'monopolio': {
+        name: 'Monopólio de Plataforma',
+        description: 'Concentração de poder via efeitos de rede',
+        connections: ['plataformizacao', 'acumulacao', 'capitalismo-vigilancia'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'ideologia': {
+        name: 'Ideologia',
+        description: 'Sistema de representações que mascara contradições reais',
+        connections: ['fetichismo', 'fetichismo-digital', 'alienacao'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'desemprego': {
+        name: 'Desemprego Estrutural',
+        description: 'Excedente de população trabalhadora devido à automação',
+        connections: ['automacao', 'precarizacao', 'uberizacao'],
         color: '#ef4444',
         layer: 0
     },
@@ -156,21 +607,42 @@ const conceptGraph = {
     'uberizacao': {
         name: 'Uberização',
         description: 'Precarização do trabalho via plataformas digitais',
-        connections: ['mais-valia-dados', 'plataformizacao', 'trabalho-imaterial'],
+        connections: ['mais-valia-dados', 'plataformizacao', 'trabalho-imaterial', 'mais-valia-absoluta', 'mais-valia-relativa', 'reforma-trabalhista', 'intermitente', 'algoritmos', 'magalu', 'precarizacao', 'relacoes-producao'],
         color: '#ef4444',
         layer: 0
     },
     'trabalho-imaterial': {
         name: 'Trabalho Imaterial',
         description: 'Trabalho cognitivo, afetivo e comunicacional não-pago',
-        connections: ['mais-valia-dados', 'uberizacao', 'capitalismo-vigilancia'],
+        connections: ['mais-valia-dados', 'uberizacao', 'capitalismo-vigilancia', 'trabalho-reprodutivo'],
         color: '#ef4444',
+        layer: 0
+    },
+    'trabalho-reprodutivo': {
+        name: 'Trabalho Reprodutivo',
+        description: 'Trabalho de cuidado e manutenção da vida, historicamente invisibilizado',
+        connections: ['trabalho-imaterial', 'ciberfeminismo', 'federici'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'federici': {
+        name: 'Silvia Federici',
+        description: 'Teórica do trabalho reprodutivo e acumulação primitiva',
+        connections: ['trabalho-reprodutivo', 'ciberfeminismo'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'ciberfeminismo': {
+        name: 'Ciberfeminismo',
+        description: 'Análise feminista da tecnologia e do trabalho digital',
+        connections: ['trabalho-reprodutivo', 'federici', 'resistencia'],
+        color: '#8b5cf6',
         layer: 0
     },
     'plataformizacao': {
         name: 'Plataformização',
         description: 'Monopolização da infraestrutura digital',
-        connections: ['capitalismo-vigilancia', 'uberizacao', 'resistencia'],
+        connections: ['capitalismo-vigilancia', 'uberizacao', 'resistencia', 'magalu', 'capital', 'fetichismo-digital', 'monopolio'],
         color: '#ef4444',
         layer: 0
     },
@@ -264,6 +736,122 @@ const conceptGraph = {
         connections: ['canvas-background', 'captcha', 'sistema-ternario'],
         color: '#10b981',
         layer: 0
+    },
+    
+    // ========================================
+    // CONCEITOS ADICIONAIS (CAPS 14-28)
+    // ========================================
+    'trabalho-invisivel': {
+        name: 'Trabalho Invisível',
+        description: 'Trabalho técnico desvalorizado e não-reconhecido',
+        connections: ['eniac-six', 'genero-computacao', 'trabalho-reprodutivo', 'moderacao-conteudo'],
+        color: '#ec4899',
+        layer: 0
+    },
+    'divisao-sexual-trabalho': {
+        name: 'Divisão Sexual do Trabalho',
+        description: 'Segregação de gênero no trabalho digital',
+        connections: ['genero-computacao', 'trabalho-invisivel', 'uberizacao'],
+        color: '#ec4899',
+        layer: 0
+    },
+    'moderacao-conteudo': {
+        name: 'Moderação de Conteúdo',
+        description: 'Trabalho traumático invisibilizado nas plataformas',
+        connections: ['trabalho-invisivel', 'capitalismo-vigilancia', 'necropolitica-digital'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'necropolitica-digital': {
+        name: 'Necropolítica Digital',
+        description: 'Algoritmos que decidem quem vive e quem morre (Mbembe)',
+        connections: ['feedback-positivo', 'enigma', 'e-waste', 'moderacao-conteudo', 'gabinete-odio'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'gabinete-odio': {
+        name: 'Gabinete do Ódio',
+        description: 'Feedback positivo amplificando genocídio via algoritmos',
+        connections: ['necropolitica-digital', 'feedback-positivo', 'viralizacao'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'viralizacao': {
+        name: 'Viralização',
+        description: 'Feedback positivo social (engajamento exponencial)',
+        connections: ['feedback-positivo', 'gabinete-odio', 'dopamina'],
+        color: '#f97316',
+        layer: 0
+    },
+    'gamificacao': {
+        name: 'Gamificação',
+        description: 'Mecânicas de jogo aplicadas para maximizar engajamento',
+        connections: ['recompensa-variavel', 'vicio-digital', 'uberizacao'],
+        color: '#f97316',
+        layer: 0
+    },
+    'cybersyn': {
+        name: 'Proyecto Cybersyn',
+        description: 'Cibernética socialista no Chile de Allende (1971-73)',
+        connections: ['feedback-negativo', 'cibernetica', 'wiener', 'planejamento-participativo'],
+        color: '#22c55e',
+        layer: -1
+    },
+    'planejamento-participativo': {
+        name: 'Planejamento Participativo',
+        description: 'Cibernética como ferramenta democrática, não tecnocrática',
+        connections: ['cybersyn', 'democracia-algoritmicica', 'resistencia'],
+        color: '#22c55e',
+        layer: 0
+    },
+    'democracia-algoritmicica': {
+        name: 'Democracia Algorítmica',
+        description: 'Limites e possibilidades de tecnologia na democracia',
+        connections: ['problema-parada', 'limites-tecnologia', 'planejamento-participativo'],
+        color: '#7c3aed',
+        layer: 0
+    },
+    'determinismo-tecnologico': {
+        name: 'Determinismo Tecnológico',
+        description: 'Crença falsa de que tecnologia resolve tudo',
+        connections: ['limites-tecnologia', 'problema-parada', 'fetichismo-digital'],
+        color: '#7c3aed',
+        layer: 0
+    },
+    'homeostase': {
+        name: 'Homeostase',
+        description: 'Equilíbrio dinâmico via feedback negativo',
+        connections: ['feedback-negativo', 'cybersyn', 'autopoiese'],
+        color: '#10b981',
+        layer: 0
+    },
+    'digitalizacao': {
+        name: 'Digitalização',
+        description: 'Conversão de tudo em bits - base da mercantilização digital',
+        connections: ['bit', 'teoria-informacao', 'mais-valia-dados', 'fetichismo-digital'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'extrativismo': {
+        name: 'Extrativismo Digital',
+        description: 'Mineração de dados + mineração literal (terras raras)',
+        connections: ['materialidade-computacao', 'ecologia-digital', 'e-waste', 'mais-valia-dados'],
+        color: '#22c55e',
+        layer: 0
+    },
+    'geopolitica': {
+        name: 'Geopolítica Digital',
+        description: 'Guerra das redes, soberania tecnológica, BRICS vs OTAN',
+        connections: ['darpa', 'duplo-uso-militar', 'vigilancia', 'internet'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'internet': {
+        name: 'Internet',
+        description: 'ARPANET militar → www civil (mas vigilância permanece)',
+        connections: ['darpa', 'geopolitica', 'capitalismo-vigilancia'],
+        color: '#6366f1',
+        layer: 0
     }
 };
 
@@ -274,6 +862,7 @@ let selectedConcept = null;
 let searchFilter = '';
 let layerFilter = 'all'; // 'all', -1, 0, 1
 let viewMode = 'grid'; // 'grid' ou 'graph'
+let searchDebounceTimer = null;
 
 /**
  * Inicializar sistema de navegação rizomática
@@ -320,6 +909,35 @@ function initializeRizoma() {
     `;
     closeBtn.onclick = closeRizoma;
     rizomaOverlay.appendChild(closeBtn);
+    
+    // Adicionar botão de exportar
+    const exportBtn = document.createElement('button');
+    exportBtn.innerHTML = '📥 Exportar Rizoma';
+    exportBtn.style.cssText = `
+        position: fixed;
+        top: 2rem;
+        right: 14rem;
+        background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+        color: white;
+        border: none;
+        padding: 0.75rem 1.5rem;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 600;
+        z-index: 10000;
+        transition: all 0.3s ease;
+    `;
+    exportBtn.onmouseover = () => {
+        exportBtn.style.transform = 'translateY(-2px)';
+        exportBtn.style.boxShadow = '0 8px 16px rgba(139, 92, 246, 0.4)';
+    };
+    exportBtn.onmouseout = () => {
+        exportBtn.style.transform = 'translateY(0)';
+        exportBtn.style.boxShadow = 'none';
+    };
+    exportBtn.onclick = exportRizoma;
+    rizomaOverlay.appendChild(exportBtn);
     
     console.log('✅ Navegação rizomática inicializada');
 }
@@ -371,6 +989,412 @@ function openRizoma(startConcept = null) {
 }
 
 /**
+ * Exportar rizoma em diferentes formatos
+ */
+function exportRizoma() {
+    console.log('📥 Exportando rizoma...');
+    
+    // Criar menu de opções
+    const menu = document.createElement('div');
+    menu.style.cssText = `
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: linear-gradient(135deg, rgba(20, 20, 30, 0.98), rgba(10, 10, 20, 0.98));
+        border: 2px solid rgba(139, 92, 246, 0.5);
+        border-radius: 16px;
+        padding: 2rem;
+        z-index: 10001;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+        min-width: 400px;
+    `;
+    
+    menu.innerHTML = `
+        <h3 style="margin: 0 0 1.5rem 0; color: #8b5cf6; font-size: 1.5rem; text-align: center;">
+            📥 Exportar Rizoma
+        </h3>
+        <p style="color: #94a3b8; margin-bottom: 1.5rem; text-align: center; font-size: 0.9rem;">
+            Escolha o formato de exportação:
+        </p>
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+            <button id="export-json" style="
+                background: linear-gradient(135deg, #3b82f6, #2563eb);
+                color: white;
+                border: none;
+                padding: 1rem;
+                border-radius: 8px;
+                cursor: pointer;
+                font-size: 1rem;
+                font-weight: 600;
+                transition: all 0.3s ease;
+            ">
+                📄 JSON (para visualizadores externos)
+            </button>
+            <button id="export-graphml" style="
+                background: linear-gradient(135deg, #10b981, #059669);
+                color: white;
+                border: none;
+                padding: 1rem;
+                border-radius: 8px;
+                cursor: pointer;
+                font-size: 1rem;
+                font-weight: 600;
+                transition: all 0.3s ease;
+            ">
+                🌐 GraphML (para Gephi, Cytoscape)
+            </button>
+            <button id="export-csv" style="
+                background: linear-gradient(135deg, #f59e0b, #d97706);
+                color: white;
+                border: none;
+                padding: 1rem;
+                border-radius: 8px;
+                cursor: pointer;
+                font-size: 1rem;
+                font-weight: 600;
+                transition: all 0.3s ease;
+            ">
+                📊 CSV (nós e arestas)
+            </button>
+            <button id="export-markdown" style="
+                background: linear-gradient(135deg, #ec4899, #db2777);
+                color: white;
+                border: none;
+                padding: 1rem;
+                border-radius: 8px;
+                cursor: pointer;
+                font-size: 1rem;
+                font-weight: 600;
+                transition: all 0.3s ease;
+            ">
+                📝 Markdown (documentação)
+            </button>
+            <button id="export-cancel" style="
+                background: linear-gradient(135deg, #64748b, #475569);
+                color: white;
+                border: none;
+                padding: 1rem;
+                border-radius: 8px;
+                cursor: pointer;
+                font-size: 1rem;
+                font-weight: 600;
+                transition: all 0.3s ease;
+            ">
+                ✕ Cancelar
+            </button>
+        </div>
+    `;
+    
+    rizomaOverlay.appendChild(menu);
+    
+    // Event listeners
+    menu.querySelector('#export-json').onclick = () => {
+        exportAsJSON();
+        menu.remove();
+    };
+    
+    menu.querySelector('#export-graphml').onclick = () => {
+        exportAsGraphML();
+        menu.remove();
+    };
+    
+    menu.querySelector('#export-csv').onclick = () => {
+        exportAsCSV();
+        menu.remove();
+    };
+    
+    menu.querySelector('#export-markdown').onclick = () => {
+        exportAsMarkdown();
+        menu.remove();
+    };
+    
+    menu.querySelector('#export-cancel').onclick = () => {
+        menu.remove();
+    };
+    
+    // Hover effects
+    menu.querySelectorAll('button').forEach(btn => {
+        btn.onmouseover = () => {
+            btn.style.transform = 'translateY(-2px)';
+            btn.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.3)';
+        };
+        btn.onmouseout = () => {
+            btn.style.transform = 'translateY(0)';
+            btn.style.boxShadow = 'none';
+        };
+    });
+}
+
+/**
+ * Exportar como JSON
+ */
+function exportAsJSON() {
+    const data = {
+        meta: {
+            title: 'A Revolução Cibernética - Rizoma de Conceitos',
+            version: '2.0',
+            date: new Date().toISOString(),
+            totalConcepts: Object.keys(conceptGraph).length,
+            changelog: [
+                '2025-10-27 (v2): Cap 2 - Cibernética (40 conceitos)',
+                '2025-10-27 (v1): Cap 1 - Marxismo (32 conceitos)'
+            ]
+        },
+        nodes: Object.entries(conceptGraph).map(([id, concept]) => ({
+            id,
+            name: concept.name,
+            description: concept.description,
+            color: concept.color,
+            layer: concept.layer,
+            connections: concept.connections
+        })),
+        edges: []
+    };
+    
+    // Gerar arestas
+    Object.entries(conceptGraph).forEach(([sourceId, concept]) => {
+        concept.connections.forEach(targetId => {
+            data.edges.push({
+                source: sourceId,
+                target: targetId,
+                type: 'relates_to'
+            });
+        });
+    });
+    
+    downloadFile('rizoma-revolucao-cibernetica.json', JSON.stringify(data, null, 2), 'application/json');
+    console.log('✅ Exportado como JSON');
+}
+
+/**
+ * Exportar como GraphML (para Gephi, Cytoscape)
+ */
+function exportAsGraphML() {
+    let xml = `<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+         http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="name" for="node" attr.name="name" attr.type="string"/>
+  <key id="description" for="node" attr.name="description" attr.type="string"/>
+  <key id="color" for="node" attr.name="color" attr.type="string"/>
+  <key id="layer" for="node" attr.name="layer" attr.type="int"/>
+  <graph id="Rizoma" edgedefault="undirected">
+`;
+    
+    // Adicionar nós
+    Object.entries(conceptGraph).forEach(([id, concept]) => {
+        xml += `    <node id="${id}">
+      <data key="name">${escapeXML(concept.name)}</data>
+      <data key="description">${escapeXML(concept.description)}</data>
+      <data key="color">${concept.color}</data>
+      <data key="layer">${concept.layer}</data>
+    </node>
+`;
+    });
+    
+    // Adicionar arestas (sem duplicatas)
+    const edgesAdded = new Set();
+    Object.entries(conceptGraph).forEach(([sourceId, concept]) => {
+        concept.connections.forEach(targetId => {
+            const edgeKey = [sourceId, targetId].sort().join('|');
+            if (!edgesAdded.has(edgeKey)) {
+                xml += `    <edge source="${sourceId}" target="${targetId}"/>\n`;
+                edgesAdded.add(edgeKey);
+            }
+        });
+    });
+    
+    xml += `  </graph>
+</graphml>`;
+    
+    downloadFile('rizoma-revolucao-cibernetica.graphml', xml, 'application/xml');
+    console.log('✅ Exportado como GraphML');
+}
+
+/**
+ * Exportar como CSV (nós e arestas separados)
+ */
+function exportAsCSV() {
+    // CSV de nós
+    let nodesCSV = 'id,name,description,color,layer,connections_count\n';
+    Object.entries(conceptGraph).forEach(([id, concept]) => {
+        nodesCSV += `"${id}","${escapeCSV(concept.name)}","${escapeCSV(concept.description)}","${concept.color}",${concept.layer},${concept.connections.length}\n`;
+    });
+    
+    // CSV de arestas
+    let edgesCSV = 'source,target\n';
+    const edgesAdded = new Set();
+    Object.entries(conceptGraph).forEach(([sourceId, concept]) => {
+        concept.connections.forEach(targetId => {
+            const edgeKey = [sourceId, targetId].sort().join('|');
+            if (!edgesAdded.has(edgeKey)) {
+                edgesCSV += `"${sourceId}","${targetId}"\n`;
+                edgesAdded.add(edgeKey);
+            }
+        });
+    });
+    
+    // Download como ZIP (simulado com dois arquivos)
+    downloadFile('rizoma-nodes.csv', nodesCSV, 'text/csv');
+    setTimeout(() => {
+        downloadFile('rizoma-edges.csv', edgesCSV, 'text/csv');
+    }, 500);
+    
+    console.log('✅ Exportado como CSV (nós + arestas)');
+}
+
+/**
+ * Exportar como Markdown (documentação)
+ */
+function exportAsMarkdown() {
+    let md = `# A Revolução Cibernética - Rizoma de Conceitos
+
+**Versão:** 2.0  
+**Data:** ${new Date().toLocaleDateString('pt-BR')}  
+**Total de Conceitos:** ${Object.keys(conceptGraph).length}
+
+## 📊 Estatísticas
+
+- **Conceitos Marxistas (Cap 1):** ${Object.values(conceptGraph).filter(c => c.color === '#ef4444').length}
+- **Conceitos Cibernéticos (Cap 2):** ${Object.values(conceptGraph).filter(c => c.color === '#8b5cf6').length}
+- **Conceitos de Gênero:** ${Object.values(conceptGraph).filter(c => c.color === '#ec4899').length}
+- **Conceitos Ecológicos:** ${Object.values(conceptGraph).filter(c => c.color === '#22c55e').length}
+- **Conceitos Militares:** ${Object.values(conceptGraph).filter(c => c.color === '#dc2626').length}
+
+## 🗂️ Conceitos por Camada Temporal
+
+### Camada -1: Passado (Fundamentos Históricos)
+
+`;
+    
+    Object.entries(conceptGraph)
+        .filter(([_, c]) => c.layer === -1)
+        .sort((a, b) => a[1].name.localeCompare(b[1].name))
+        .forEach(([id, concept]) => {
+            md += `#### ${concept.name} (\`${id}\`)\n\n`;
+            md += `${concept.description}\n\n`;
+            md += `**Conexões:** ${concept.connections.map(c => `\`${c}\``).join(', ')}\n\n`;
+            md += `---\n\n`;
+        });
+    
+    md += `### Camada 0: Presente (Análise Contemporânea)
+
+`;
+    
+    Object.entries(conceptGraph)
+        .filter(([_, c]) => c.layer === 0)
+        .sort((a, b) => a[1].name.localeCompare(b[1].name))
+        .forEach(([id, concept]) => {
+            md += `#### ${concept.name} (\`${id}\`)\n\n`;
+            md += `${concept.description}\n\n`;
+            md += `**Conexões:** ${concept.connections.map(c => `\`${c}\``).join(', ')}\n\n`;
+            md += `---\n\n`;
+        });
+    
+    md += `### Camada 1: Futuro (Horizontes de Transformação)
+
+`;
+    
+    Object.entries(conceptGraph)
+        .filter(([_, c]) => c.layer === 1)
+        .sort((a, b) => a[1].name.localeCompare(b[1].name))
+        .forEach(([id, concept]) => {
+            md += `#### ${concept.name} (\`${id}\`)\n\n`;
+            md += `${concept.description}\n\n`;
+            md += `**Conexões:** ${concept.connections.map(c => `\`${c}\``).join(', ')}\n\n`;
+            md += `---\n\n`;
+        });
+    
+    md += `## 📝 Como Usar
+
+Este documento pode ser usado para:
+
+1. **Estudo:** Navegar pelos conceitos de forma não-linear
+2. **Pesquisa:** Encontrar conexões entre ideias
+3. **Ensino:** Material didático para cursos
+4. **Desenvolvimento:** Base para aplicações de visualização de grafos
+
+## 🔗 Importar em Ferramentas
+
+- **Obsidian:** Cada conceito pode virar uma nota
+- **Roam Research:** Importar como blocos interligados
+- **Notion:** Criar database com relações
+- **Anki:** Flashcards com as conexões
+
+---
+
+*Gerado automaticamente pela Navegação Rizomática*  
+*A Revolução Cibernética © 2025*
+`;
+    
+    downloadFile('rizoma-revolucao-cibernetica.md', md, 'text/markdown');
+    console.log('✅ Exportado como Markdown');
+}
+
+/**
+ * Funções auxiliares de escape
+ */
+function escapeXML(str) {
+    return str.replace(/&/g, '&amp;')
+              .replace(/</g, '&lt;')
+              .replace(/>/g, '&gt;')
+              .replace(/"/g, '&quot;')
+              .replace(/'/g, '&apos;');
+}
+
+function escapeCSV(str) {
+    return str.replace(/"/g, '""');
+}
+
+/**
+ * Download de arquivo
+ */
+function downloadFile(filename, content, mimeType) {
+    const blob = new Blob([content], { type: mimeType });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    
+    // Mostrar notificação
+    showExportNotification(filename);
+}
+
+/**
+ * Mostrar notificação de exportação
+ */
+function showExportNotification(filename) {
+    const notification = document.createElement('div');
+    notification.style.cssText = `
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        background: linear-gradient(135deg, #10b981, #059669);
+        color: white;
+        padding: 1rem 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        z-index: 10002;
+        font-weight: 600;
+        animation: slideIn 0.3s ease;
+    `;
+    notification.innerHTML = `✅ ${filename} baixado com sucesso!`;
+    
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+        notification.style.animation = 'slideOut 0.3s ease';
+        setTimeout(() => notification.remove(), 300);
+    }, 3000);
+}
+
+/**
  * Fechar visualização do rizoma
  */
 function closeRizoma() {
@@ -397,10 +1421,12 @@ function closeRizoma() {
 function renderRizomaGraph() {
     if (!rizomaOverlay) return;
     
-    // Limpar conteúdo anterior (exceto botão de fechar)
-    const closeBtn = rizomaOverlay.querySelector('button');
+    // Limpar conteúdo anterior (exceto botões de controle)
+    const closeBtn = rizomaOverlay.querySelector('button:nth-of-type(1)');
+    const exportBtn = rizomaOverlay.querySelector('button:nth-of-type(2)');
     rizomaOverlay.innerHTML = '';
-    rizomaOverlay.appendChild(closeBtn);
+    if (closeBtn) rizomaOverlay.appendChild(closeBtn);
+    if (exportBtn) rizomaOverlay.appendChild(exportBtn);
     
     // Container principal
     const container = document.createElement('div');
@@ -413,7 +1439,7 @@ function renderRizomaGraph() {
     
     // Título
     const title = document.createElement('h2');
-    title.textContent = '🌀 Navegação Rizomática';
+    container.id = 'rizoma-main-container';
     title.style.cssText = `
         text-align: center;
         color: #ec4899;
@@ -469,11 +1495,13 @@ function renderRizomaGraph() {
         searchInput.style.boxShadow = 'none';
     });
     searchInput.addEventListener('input', (e) => {
+        // Debounced update to avoid rebuilding the entire overlay on each keystroke
         searchFilter = e.target.value.toLowerCase();
-        renderRizomaGraph();
+        clearTimeout(searchDebounceTimer);
+        searchDebounceTimer = setTimeout(() => {
+            updateRizomaResults();
+        }, 120);
     });
-    
-    // Filtro de camada temporal
     const layerSelect = document.createElement('select');
     layerSelect.style.cssText = `
         background: rgba(26, 26, 46, 0.8);
@@ -486,6 +1514,7 @@ function renderRizomaGraph() {
         outline: none;
         transition: all 0.3s ease;
     `;
+
     layerSelect.innerHTML = `
         <option value="all">📅 Todas as camadas</option>
         <option value="-1">🕰️ Passado (-1)</option>
@@ -494,8 +1523,8 @@ function renderRizomaGraph() {
     `;
     layerSelect.value = layerFilter;
     layerSelect.addEventListener('change', (e) => {
-        layerFilter = e.target.value === 'all' ? 'all' : parseInt(e.target.value);
-        renderRizomaGraph();
+    layerFilter = e.target.value === 'all' ? 'all' : parseInt(e.target.value);
+    updateRizomaResults();
     });
     
     // Botão limpar filtros
@@ -513,9 +1542,9 @@ function renderRizomaGraph() {
         font-weight: 600;
     `;
     clearBtn.addEventListener('click', () => {
-        searchFilter = '';
-        layerFilter = 'all';
-        renderRizomaGraph();
+    searchFilter = '';
+    layerFilter = 'all';
+    updateRizomaResults();
     });
     clearBtn.addEventListener('mouseenter', () => {
         clearBtn.style.background = 'rgba(239, 68, 68, 0.3)';
@@ -546,7 +1575,7 @@ function renderRizomaGraph() {
     `;
     toggleViewBtn.addEventListener('click', () => {
         viewMode = viewMode === 'grid' ? 'graph' : 'grid';
-        renderRizomaGraph();
+        updateRizomaResults();
     });
     toggleViewBtn.addEventListener('mouseenter', () => {
         toggleViewBtn.style.background = 'rgba(99, 102, 241, 0.3)';
@@ -562,6 +1591,7 @@ function renderRizomaGraph() {
     
     // Estatísticas do rizoma
     const stats = document.createElement('div');
+    stats.id = 'rizoma-stats';
     const allConcepts = Object.entries(conceptGraph);
     
     // Aplicar filtros
@@ -581,11 +1611,18 @@ function renderRizomaGraph() {
     const totalConcepts = Object.keys(conceptGraph).length;
     const visibleConcepts = filteredConcepts.length;
     const totalConnections = Object.values(conceptGraph).reduce((sum, c) => sum + c.connections.length, 0);
+    const avgConnections = (totalConnections / totalConcepts).toFixed(1);
+    
+    // Log de diagnóstico
+    console.log(`🌀 Rizoma renderizado: ${totalConcepts} conceitos, ${totalConnections} conexões, média ${avgConnections}/nó`);
     
     stats.innerHTML = `
         <div style="text-align: center; margin-bottom: 2rem; color: #9ca3af;">
             📊 <strong>${visibleConcepts}</strong> conceitos ${visibleConcepts < totalConcepts ? `(${totalConcepts} total)` : ''} • 
             🔗 <strong>${totalConnections}</strong> conexões • 
+            ⚡ <strong>${avgConnections}</strong> conexões/conceito médio
+        </div>
+        <div style="text-align: center; color: #9ca3af;">
             🌊 <strong>Estrutura rizomática</strong>
         </div>
     `;
@@ -726,6 +1763,7 @@ function renderGraphView(container, filteredConcepts) {
  */
 function createLegend() {
     const legend = document.createElement('div');
+    legend.id = 'rizoma-legend';
     legend.style.cssText = `
         display: flex;
         justify-content: center;
@@ -757,6 +1795,75 @@ function createLegend() {
     `;
     
     return legend;
+}
+
+/**
+ * Retorna a lista de conceitos filtrados segundo `searchFilter` e `layerFilter`.
+ */
+function getFilteredConcepts() {
+    const allConcepts = Object.entries(conceptGraph);
+    return allConcepts.filter(([key, concept]) => {
+        const matchesSearch = !searchFilter ||
+            concept.name.toLowerCase().includes(searchFilter) ||
+            concept.description.toLowerCase().includes(searchFilter) ||
+            key.toLowerCase().includes(searchFilter);
+        const matchesLayer = layerFilter === 'all' || concept.layer === layerFilter;
+        return matchesSearch && matchesLayer;
+    });
+}
+
+/**
+ * Atualiza somente a área de resultados (grid ou grafo) e estatísticas sem recriar o overlay,
+ * preservando foco e posição do caret no campo de busca.
+ */
+function updateRizomaResults() {
+    const container = document.getElementById('rizoma-main-container');
+    if (!container) return;
+
+    // Atualizar estatísticas
+    const filteredConcepts = getFilteredConcepts();
+    const totalConcepts = Object.keys(conceptGraph).length;
+    const visibleConcepts = filteredConcepts.length;
+    const totalConnections = Object.values(conceptGraph).reduce((sum, c) => sum + c.connections.length, 0);
+    const avgConnections = (totalConnections / totalConcepts).toFixed(1);
+
+    const stats = document.getElementById('rizoma-stats');
+    if (stats) {
+        stats.innerHTML = `
+            <div style="text-align: center; margin-bottom: 2rem; color: #9ca3af;">
+                📊 <strong>${visibleConcepts}</strong> conceitos ${visibleConcepts < totalConcepts ? `(${totalConcepts} total)` : ''} • 
+                🔗 <strong>${totalConnections}</strong> conexões • 
+                ⚡ <strong>${avgConnections}</strong> conexões/conceito médio
+            </div>
+            <div style="text-align: center; color: #9ca3af;">
+                🌊 <strong>Estrutura rizomática</strong>
+            </div>
+        `;
+    }
+
+    // Remover visão anterior
+    const oldGrid = container.querySelector('#concepts-grid');
+    if (oldGrid) oldGrid.remove();
+    const oldGraph = container.querySelector('#graph-view');
+    if (oldGraph) oldGraph.remove();
+
+    // Remover legenda antiga e adicionar uma nova (simpler)
+    const oldLegend = document.getElementById('rizoma-legend');
+    if (oldLegend) oldLegend.remove();
+
+    // Renderizar a vista atual com os conceitos filtrados
+    if (viewMode === 'graph') {
+        renderGraphView(container, filteredConcepts);
+    } else {
+        renderGridView(container, filteredConcepts);
+    }
+
+    // Se um conceito estiver selecionado, redesenhar conexões
+    setTimeout(() => {
+        if (selectedConcept && viewMode === 'grid') {
+            drawConnections();
+        }
+    }, 50);
 }
 
 /**
@@ -1539,3 +2646,32 @@ document.addEventListener('keydown', (e) => {
         closeRizoma();
     }
 });
+
+// ========================================
+// ESTILOS CSS PARA ANIMAÇÕES
+// ========================================
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes slideIn {
+        from {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+    
+    @keyframes slideOut {
+        from {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        to {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+    }
+`;
+document.head.appendChild(style);
