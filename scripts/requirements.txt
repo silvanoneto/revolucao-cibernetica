@@ -13,3 +13,6 @@ xhtml2pdf
 
 # Image compression
 Pillow
+
+# Code quality and formatting
+pre-commit

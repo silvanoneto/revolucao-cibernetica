@@ -1,0 +1,117 @@
+id,name,description,color,layer,connections_count
+"mercadoria","Mercadoria","Produto do trabalho destinado à troca no mercado","#ef4444",-1,4
+"valor-uso","Valor de Uso","Utilidade concreta de uma mercadoria","#ef4444",-1,3
+"valor-troca","Valor de Troca","Relação quantitativa de troca entre mercadorias","#ef4444",-1,4
+"trabalho-concreto","Trabalho Concreto","Atividade específica que cria valor de uso particular","#ef4444",-1,3
+"trabalho-abstrato","Trabalho Abstrato","Trabalho humano reduzido a dispêndio de tempo","#ef4444",-1,4
+"tsn","Tempo de Trabalho Socialmente Necessário","Tempo médio para produzir mercadoria no nível tecnológico da sociedade","#ef4444",-1,3
+"previa-ideacao","Prévia-Ideação","Capacidade humana de planejar mentalmente antes de executar","#ef4444",-1,3
+"objetivacao","Objetivação","Materialização da ideia no mundo através do trabalho","#ef4444",-1,3
+"forcas-produtivas","Forças Produtivas","Ferramentas, tecnologias, conhecimentos para transformar natureza","#ef4444",-1,4
+"relacoes-producao","Relações de Produção","Relações sociais estabelecidas para produzir e distribuir bens","#ef4444",-1,4
+"mais-valia","Mais-Valia","Valor criado pelo trabalhador além do seu salário","#ef4444",0,4
+"mais-valia-absoluta","Mais-Valia Absoluta","Extração via aumento de jornada ou intensidade do trabalho","#ef4444",0,4
+"mais-valia-relativa","Mais-Valia Relativa","Extração via aumento de produtividade (tecnologia)","#ef4444",0,4
+"capital","Capital","Processo de autovalorização: D-M-P-M'-D'","#ef4444",0,4
+"circuito-capital","Circuito do Capital (D-M-D')","Dinheiro → Mercadorias → Produção → Mais Dinheiro","#ef4444",0,3
+"fetichismo","Fetichismo da Mercadoria","Relações sociais aparecem como relações entre coisas","#ef4444",0,4
+"fetichismo-digital","Fetichismo do Dado","Exploração mascarada como ""parceria"" e ""oportunidade""","#ef4444",0,4
+"preco-valor","Preço ≠ Valor","Preço oscila em torno do valor, mas não é o valor","#ef4444",0,3
+"reforma-trabalhista","Reforma Trabalhista 2017 (Brasil)","Lei 13.467 - legalização da mais-valia absoluta","#ef4444",0,4
+"pejotizacao","Pejotização","Transformar empregados em ""pessoas jurídicas"" para fugir de direitos","#ef4444",0,3
+"intermitente","Trabalho Intermitente","Disponibilidade 24/7, pagamento apenas por horas chamadas","#ef4444",0,3
+"magalu","Magazine Luiza (Caso)","Plataformização brasileira - controle sem propriedade","#ef4444",0,4
+"terceirizacao","Terceirização","Transferência de riscos e custos para trabalhadores","#ef4444",0,3
+"exploracao","Exploração Capitalista","Apropriação do trabalho excedente não-pago","#ef4444",0,3
+"alienacao","Alienação","Estranhamento do trabalhador em relação ao produto e ao processo","#ef4444",0,3
+"precarizacao","Precarização","Degradação das condições de trabalho e direitos","#ef4444",0,4
+"acumulacao","Acumulação de Capital","Reinvestimento da mais-valia para gerar mais mais-valia","#ef4444",0,3
+"algoritmos","Algoritmos de Controle","Gerenciamento algorítmico automatizado do trabalho","#ef4444",0,4
+"automacao","Automação","Substituição de trabalho humano por máquinas","#ef4444",0,4
+"ia","Inteligência Artificial","Machine learning aplicado à extração de mais-valia","#ef4444",0,4
+"cibernetica","Cibernética","Ciência do controle e comunicação (Wiener, 1948)","#8b5cf6",-1,6
+"wiener","Norbert Wiener","Fundador da cibernética (1948) - alertou sobre automação descontrolada","#8b5cf6",-1,4
+"turing","Alan Turing","Máquina Universal + Problema da Parada - fundador da computação","#8b5cf6",-1,4
+"shannon","Claude Shannon","Teoria da Informação (1948) - informação como bits mensuráveis","#8b5cf6",-1,4
+"babbage","Charles Babbage","Máquina Analítica (1837) - primeiro computador programável (mecânico)","#8b5cf6",-1,4
+"ada-lovelace","Ada Lovelace","Primeira programadora (1843) - viu computação além de números","#ec4899",-1,4
+"eniac-six","ENIAC Six","Primeiras programadoras (1945) - invisibilizadas pela história","#ec4899",-1,3
+"genero-computacao","Gênero e Computação","Padrão histórico: trabalho feminizado → masculinizado quando valorizado","#ec4899",0,4
+"feedback","Feedback Loop","Ciclo de retorno que modifica o sistema (negativo=estabiliza, positivo=amplifica)","#10b981",0,5
+"feedback-negativo","Feedback Negativo","Estabilizador - busca equilíbrio (termostato, homeostase)","#10b981",0,3
+"feedback-positivo","Feedback Positivo","Amplificador - crescimento exponencial ou colapso (microfonia, vício)","#f97316",0,4
+"vicio-digital","Vício Digital","Apps como máquinas de Wiener: feedback positivo dopamina → mais scroll","#f97316",0,5
+"dopamina","Dopamina Digital","Sensor biológico usado como loop de feedback viciante","#f97316",0,3
+"recompensa-variavel","Recompensa Variável","Incerteza maximiza dopamina (slot machine = próximo scroll)","#f97316",0,3
+"infinite-scroll","Infinite Scroll","Remove ponto de parada - feedback positivo sem válvula de escape","#f97316",0,2
+"algoritmo","Algoritmo","Conjunto finito de instruções para resolver problema","#8b5cf6",-1,4
+"computabilidade","Computabilidade","O que pode ser resolvido por algoritmo (Máquina de Turing)","#8b5cf6",-1,3
+"problema-parada","Problema da Parada","Prova: nem tudo é computável - limites matemáticos da tecnologia","#7c3aed",0,4
+"limites-tecnologia","Limites da Tecnologia","Nem tudo pode ser ""resolvido com tecnologia"" - exige política","#7c3aed",0,3
+"teoria-informacao","Teoria da Informação","Informação mensurável em bits, separada de significado (Shannon)","#8b5cf6",-1,4
+"bit","Bit","Unidade básica de informação (0 ou 1) - permite digitalização de tudo","#8b5cf6",-1,3
+"entropia","Entropia Informacional","Medida de incerteza/imprevisibilidade (Shannon = Boltzmann)","#8b5cf6",-1,3
+"duplo-uso-militar","Duplo Uso Militar","Todas tecnologias fundacionais nasceram da guerra (Enigma, ENIAC, Internet)","#dc2626",-1,6
+"enigma","Enigma","Código nazista quebrado por Turing - cibernética contra fascismo","#dc2626",-1,3
+"darpa","DARPA","ARPANET → Internet - rede militar virou www","#dc2626",0,4
+"materialidade-computacao","Materialidade da Computação","Não há ""desmaterialização"" - há mineração, energia, e-waste","#22c55e",0,5
+"ecologia-digital","Ecologia Digital","Custos ambientais invisibilizados: mineração → energia → e-waste","#22c55e",0,4
+"e-waste","E-Waste","Lixo eletrônico = genocídio lento (crianças em Gana queimando placas)","#22c55e",0,3
+"data-centers","Data Centers","Não há nuvem - há data centers consumindo rios para refrigeração","#22c55e",0,3
+"autopoiese","Autopoiese","Sistemas que se auto-criam (Maturana & Varela)","#8b5cf6",-1,3
+"segunda-ordem","Cibernética de Segunda Ordem","Observador incluído no sistema observado","#10b981",0,3
+"rizoma","Rizoma","Estrutura não-hierárquica (Deleuze & Guattari)","#8b5cf6",-1,3
+"multiplicidade","Multiplicidade","Não é uno nem múltiplo - é multiplicidade","#8b5cf6",-1,3
+"capitalismo-vigilancia","Capitalismo de Vigilância","Extração de dados comportamentais (Zuboff)","#ef4444",0,5
+"mais-valia-dados","Mais-Valia de Dados","Valor extraído do trabalho digital não-pago","#ef4444",0,6
+"vigilancia","Vigilância Digital","Monitoramento contínuo de comportamento para extração de valor","#ef4444",0,4
+"monopolio","Monopólio de Plataforma","Concentração de poder via efeitos de rede","#ef4444",0,3
+"ideologia","Ideologia","Sistema de representações que mascara contradições reais","#ef4444",0,3
+"desemprego","Desemprego Estrutural","Excedente de população trabalhadora devido à automação","#ef4444",0,3
+"ontologia-executavel","Ontologia Executável","Filosofia que se performa em código","#10b981",0,3
+"critica-performativa","Crítica Performativa","Sistema que executa sua própria crítica","#10b981",0,3
+"captcha","CAPTCHA Anti-Algorítmico","Humanos passam, bots falham","#10b981",0,3
+"sistema-ternario","Sistema Ternário (-1, 0, +1)","Base 3 balanceada para representar temporalidade","#10b981",0,3
+"temporalidade","Temporalidade Ternária","Presente como tensão entre passado e futuro","#10b981",0,3
+"nhandereko","Nhandereko","Orquestrador de conhecimento autopoiético","#6366f1",1,3
+"epistemologia-guarani","Epistemologias Guarani","Conhecimento relacional indígena","#8b5cf6",-1,3
+"navegacao-rizomatica","Navegação Rizomática","Este sistema que você está usando agora","#6366f1",1,3
+"modo-colaborativo","Modo Colaborativo","Interação síncrona entre usuários (planejado)","#6366f1",1,3
+"resistencia","Resistência em Código","Técnicas práticas de contra-automação","#10b981",0,4
+"devir","Devir","Processo de tornar-se, transformação contínua sem destino fixo","#8b5cf6",-1,3
+"ontologia-relacional","Ontologia Relacional","Ser é relação, não substância isolada","#8b5cf6",-1,4
+"uberizacao","Uberização","Precarização do trabalho via plataformas digitais","#ef4444",0,11
+"trabalho-imaterial","Trabalho Imaterial","Trabalho cognitivo, afetivo e comunicacional não-pago","#ef4444",0,4
+"trabalho-reprodutivo","Trabalho Reprodutivo","Trabalho de cuidado e manutenção da vida, historicamente invisibilizado","#ef4444",0,3
+"federici","Silvia Federici","Teórica do trabalho reprodutivo e acumulação primitiva","#8b5cf6",-1,2
+"ciberfeminismo","Ciberfeminismo","Análise feminista da tecnologia e do trabalho digital","#8b5cf6",0,3
+"plataformizacao","Plataformização","Monopolização da infraestrutura digital","#ef4444",0,7
+"decolonial","Pensamento Decolonial","Crítica à colonialidade do saber e do poder","#8b5cf6",-1,3
+"ubuntu","Ubuntu","Filosofia africana: ""Eu sou porque nós somos""","#8b5cf6",-1,3
+"cosmotecnica","Cosmotécnica","Técnicas enraizadas em cosmologias locais (Yuk Hui)","#8b5cf6",-1,3
+"guaiamum","Guaiamum Lateral","Movimento diagonal, não-linear, caranguejo","#10b981",0,3
+"backfeed","Backfeed","Retorno do futuro para o presente (antecipação)","#10b981",0,4
+"opacidade","Opacidade Estratégica","Resistir via não-transparência (Édouard Glissant)","#10b981",0,3
+"honeypots","Honeypots","Armadilhas para capturar bots invasores","#10b981",0,3
+"ironia-politica","Ironia Política","Crítica através da performance contraditória","#10b981",0,3
+"grafo-conceitos","Grafo de Conceitos","Estrutura de dados que representa o rizoma","#6366f1",1,3
+"websocket","WebSocket","Comunicação bidirecional em tempo real","#6366f1",1,3
+"meta-observacao","Meta-Observação","Observar o ato de observar (segunda ordem)","#10b981",0,3
+"canvas-background","Canvas Background","Sistema de arte generativa que performa a filosofia","#10b981",0,3
+"caos","Caos Criativo","Desordem produtiva, não-entrópica","#10b981",0,3
+"trabalho-invisivel","Trabalho Invisível","Trabalho técnico desvalorizado e não-reconhecido","#ec4899",0,4
+"divisao-sexual-trabalho","Divisão Sexual do Trabalho","Segregação de gênero no trabalho digital","#ec4899",0,3
+"moderacao-conteudo","Moderação de Conteúdo","Trabalho traumático invisibilizado nas plataformas","#ef4444",0,3
+"necropolitica-digital","Necropolítica Digital","Algoritmos que decidem quem vive e quem morre (Mbembe)","#dc2626",0,5
+"gabinete-odio","Gabinete do Ódio","Feedback positivo amplificando genocídio via algoritmos","#dc2626",0,3
+"viralizacao","Viralização","Feedback positivo social (engajamento exponencial)","#f97316",0,3
+"gamificacao","Gamificação","Mecânicas de jogo aplicadas para maximizar engajamento","#f97316",0,3
+"cybersyn","Proyecto Cybersyn","Cibernética socialista no Chile de Allende (1971-73)","#22c55e",-1,4
+"planejamento-participativo","Planejamento Participativo","Cibernética como ferramenta democrática, não tecnocrática","#22c55e",0,3
+"democracia-algoritmicica","Democracia Algorítmica","Limites e possibilidades de tecnologia na democracia","#7c3aed",0,3
+"determinismo-tecnologico","Determinismo Tecnológico","Crença falsa de que tecnologia resolve tudo","#7c3aed",0,3
+"homeostase","Homeostase","Equilíbrio dinâmico via feedback negativo","#10b981",0,3
+"digitalizacao","Digitalização","Conversão de tudo em bits - base da mercantilização digital","#8b5cf6",0,4
+"extrativismo","Extrativismo Digital","Mineração de dados + mineração literal (terras raras)","#22c55e",0,4
+"geopolitica","Geopolítica Digital","Guerra das redes, soberania tecnológica, BRICS vs OTAN","#dc2626",0,4
+"internet","Internet","ARPANET militar → www civil (mas vigilância permanece)","#6366f1",0,3

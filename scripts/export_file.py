@@ -8,7 +8,7 @@ import sys
 import warnings
 import xml.etree.ElementTree as ET
 from xml.dom import minidom
-from datetime import datetime
+from datetime import datetime, timezone
 from ebooklib import epub  # type: ignore
 from bs4 import BeautifulSoup
 from xhtml2pdf import pisa  # type: ignore
@@ -1402,6 +1402,170 @@ def create_jsonl():
     return output_file
 
 
+def create_rizoma_exports():
+    """
+    Gera/atualiza os arquivos do rizoma em `docs/` a partir do JSON existente em `docs/rizoma-revolucao-cibernetica.json`.
+
+    Produz:
+    - docs/rizoma-revolucao-cibernetica.json (copiado/atualizado)
+    - docs/rizoma-revolucao-cibernetica.graphml
+    - docs/rizoma-revolucao-cibernetica.md
+    - docs/rizoma-nodes.csv
+    - docs/rizoma-edges.csv
+    """
+
+    import json
+
+    os.makedirs("docs", exist_ok=True)
+
+    src_json = "docs/rizoma-revolucao-cibernetica.json"
+    if not os.path.exists(src_json):
+        print(f"⚠ Arquivo do rizoma não encontrado: {src_json}")
+        print("⚠ Se o rizoma for gerado apenas pelo client-side, gere/cole o JSON em docs/ primeiro.")
+        return None
+
+    print(f"Carregando rizoma existente: {src_json}")
+    with open(src_json, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    # Atualizar timestamp
+    if "meta" in data:
+        # Use timezone-aware UTC timestamp
+        data["meta"]["exported_at"] = datetime.now(timezone.utc).isoformat()
+
+    # Re-escrever JSON (formatado) para garantir consistência
+    out_json = "docs/rizoma-revolucao-cibernetica.json"
+    with open(out_json, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+
+    print(f"✓ JSON do rizoma salvo: {out_json}")
+
+    # Gerar GraphML
+    try:
+        graphml_header = (
+            '<?xml version="1.0" encoding="UTF-8"?>\n'
+            '<graphml xmlns="http://graphml.graphdrawing.org/xmlns"\n'
+            '         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"\n'
+            '         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns\n'
+            '         http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">\n'
+        )
+
+        keys = (
+            '  <key id="name" for="node" attr.name="name" attr.type="string"/>\n'
+            '  <key id="description" for="node" attr.name="description" attr.type="string"/>\n'
+            '  <key id="color" for="node" attr.name="color" attr.type="string"/>\n'
+            '  <key id="layer" for="node" attr.name="layer" attr.type="int"/>\n'
+        )
+
+        xml = graphml_header + keys + '  <graph id="Rizoma" edgedefault="undirected">\n'
+
+        # Nós
+        for node in data.get("nodes", []):
+            node_id = node.get("id")
+            name = escape_xml = (str(node.get("name", "")).replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;'))
+            description = (str(node.get("description", "")).replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;'))
+            color = node.get("color", "")
+            layer = node.get("layer", "")
+
+            xml += f'    <node id="{node_id}">\n'
+            xml += f'      <data key="name">{name}</data>\n'
+            xml += f'      <data key="description">{description}</data>\n'
+            xml += f'      <data key="color">{color}</data>\n'
+            xml += f'      <data key="layer">{layer}</data>\n'
+            xml += '    </node>\n'
+
+        # Arestas (sem duplicatas)
+        edges_added = set()
+        for node in data.get("nodes", []):
+            src = node.get("id")
+            for tgt in node.get("connections", []) or []:
+                key = "|".join(sorted([src, tgt]))
+                if key in edges_added:
+                    continue
+                xml += f'    <edge source="{src}" target="{tgt}"/>\n'
+                edges_added.add(key)
+
+        xml += '  </graph>\n</graphml>'
+
+        out_graphml = "docs/rizoma-revolucao-cibernetica.graphml"
+        with open(out_graphml, "w", encoding="utf-8") as f:
+            f.write(xml)
+
+        print(f"✓ GraphML gerado: {out_graphml}")
+    except Exception as e:
+        print(f"✗ Erro ao gerar GraphML: {e}")
+
+    # Gerar Markdown
+    try:
+        md = []
+        md.append(f"# {data.get('meta', {}).get('title', 'Rizoma')}\n")
+        md.append(f"**Versão:** {data.get('meta', {}).get('version', '')}  \n")
+        md.append(f"**Data:** {data.get('meta', {}).get('date', '')}  \n")
+        md.append(f"**Total de Conceitos:** {len(data.get('nodes', []))}\n\n")
+
+        md.append("## 📊 Estatísticas\n\n")
+        colors = {n.get('color') for n in data.get('nodes', [])}
+        md.append(f"- **Cores usadas:** {len(colors)}\n\n")
+
+        # Por camada
+        for layer_label, layer_name in [(-1, 'Passado (-1)'), (0, 'Presente (0)'), (1, 'Futuro (+1)')]:
+            md.append(f"### Camada {layer_label}: {layer_name}\n\n")
+            nodes_in_layer = [n for n in data.get('nodes', []) if n.get('layer') == layer_label]
+            nodes_in_layer = sorted(nodes_in_layer, key=lambda x: x.get('name', ''))
+            for n in nodes_in_layer:
+                md.append(f"#### {n.get('name')} (`{n.get('id')}`)\n\n")
+                md.append(f"{n.get('description')}\n\n")
+                md.append(f"**Conexões:** {', '.join([f'`{c}`' for c in n.get('connections', [])])}\n\n")
+                md.append('---\n\n')
+
+        md.append('\n*Gerado automaticamente pelo export_file.py*')
+
+        out_md = "docs/rizoma-revolucao-cibernetica.md"
+        with open(out_md, "w", encoding="utf-8") as f:
+            f.write("".join(md))
+
+        print(f"✓ Markdown gerado: {out_md}")
+    except Exception as e:
+        print(f"✗ Erro ao gerar Markdown: {e}")
+
+    # Gerar CSVs de nós e arestas
+    try:
+        nodes_csv = "id,name,description,color,layer,connections_count\n"
+        for n in data.get('nodes', []):
+            nodes_csv += '"{}","{}","{}","{}",{},{}\n'.format(
+                n.get('id', ''),
+                n.get('name', '').replace('"', '""'),
+                n.get('description', '').replace('"', '""'),
+                n.get('color', ''),
+                n.get('layer', ''),
+                len(n.get('connections', [])),
+            )
+
+        edges_csv = 'source,target\n'
+        edges_added = set()
+        for n in data.get('nodes', []):
+            src = n.get('id')
+            for tgt in n.get('connections', []) or []:
+                key = "|".join(sorted([src, tgt]))
+                if key in edges_added:
+                    continue
+                edges_csv += f'"{src}","{tgt}"\n'
+                edges_added.add(key)
+
+        out_nodes = "docs/rizoma-nodes.csv"
+        out_edges = "docs/rizoma-edges.csv"
+        with open(out_nodes, "w", encoding="utf-8") as f:
+            f.write(nodes_csv)
+        with open(out_edges, "w", encoding="utf-8") as f:
+            f.write(edges_csv)
+
+        print(f"✓ CSVs gerados: {out_nodes}, {out_edges}")
+    except Exception as e:
+        print(f"✗ Erro ao gerar CSVs: {e}")
+
+    return [out_json, out_graphml, out_md, out_nodes, out_edges]
+
+
 if __name__ == "__main__":
     print("=" * 60)
     print("Exportador - A Revolução Cibernética")
@@ -1413,9 +1577,9 @@ if __name__ == "__main__":
     if len(sys.argv) > 1:
         formato = sys.argv[1].lower()
 
-    if formato not in ["epub", "pdf", "xml", "xml-min", "jsonl", "all"]:
+    if formato not in ["epub", "pdf", "xml", "xml-min", "jsonl", "rizoma", "all"]:
         print("❌ Formato inválido!")
-        print("Uso: python export_file.py [epub|pdf|xml|xml-min|jsonl|all]")
+        print("Uso: python export_file.py [epub|pdf|xml|xml-min|jsonl|rizoma|all]")
         print()
         print("Formatos disponíveis:")
         print("  epub    - Livro eletrônico (EPUB 3.0)")
@@ -1424,6 +1588,7 @@ if __name__ == "__main__":
         print("  xml-min - XML minificado (compacto, sem espaços)")
         print("  jsonl   - JSON Lines (otimizado para LLMs, streaming, RAG)")
         print("  all     - Exportar todos os formatos")
+        print("  rizoma  - Gerar/exportar arquivos do Rizoma (JSON/GraphML/MD/CSV)")
         sys.exit(1)
 
     try:
@@ -1450,6 +1615,12 @@ if __name__ == "__main__":
             print("📋 Exportando JSONL...")
             outputs.append(create_jsonl())
             print("✅ JSONL concluído!\n")
+
+            print("🌀 Exportando Rizoma (JSON/GraphML/MD/CSV)...")
+            rizoma_outs = create_rizoma_exports()
+            if rizoma_outs:
+                outputs.extend(rizoma_outs)
+            print("✅ Rizoma concluído!\n")
 
             print()
             print("=" * 60)
@@ -1491,6 +1662,18 @@ if __name__ == "__main__":
             print("✅ Exportação concluída!")
             print(f"📦 Arquivo: {output}")
             print("=" * 60)
+        elif formato == "rizoma":
+            print("Formato selecionado: RIZOMA (JSON/GraphML/MD/CSV)\n")
+            outputs = create_rizoma_exports()
+            print()
+            print("=" * 60)
+            print("✅ Exportação do Rizoma concluída!")
+            if outputs:
+                print("📦 Arquivos gerados:")
+                for out in outputs:
+                    print(f"   - {out}")
+            print("=" * 60)
+            sys.exit(0)
         else:
             print("Formato selecionado: PDF\n")
             output = create_pdf()
