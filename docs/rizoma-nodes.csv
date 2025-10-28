@@ -123,3 +123,51 @@ id,name,description,color,layer,connections_count
 "extrativismo","Extrativismo Digital","Mineração de dados + mineração literal (terras raras)","#22c55e",0,4
 "geopolitica","Geopolítica Digital","Guerra das redes, soberania tecnológica, BRICS vs OTAN","#dc2626",0,4
 "internet","Internet","ARPANET militar → www civil (mas vigilância permanece)","#6366f1",0,3
+"salto-dialetico","Salto Dialético","Processo pelo qual filosofia abstrata se transforma em ciência concreta que recria o mundo","#8b5cf6",1,4
+"tese-antitese-sintese","Tese-Antítese-Síntese","Movimento dialético hegeliano: contradição gera superação qualitativa","#8b5cf6",1,3
+"filosofia-ciencia","Filosofia → Ciência","Transformação de abstração em ferramentas materiais testáveis","#8b5cf6",1,4
+"aristoteles-newton","Aristóteles → Newton","Primeiro salto: filosofia natural → física matemática experimental","#ef4444",-1,4
+"crise-abstracao","Crise da Abstração","Fase 1: quando filosofia encontra contradições empíricas insolúveis","#8b5cf6",1,3
+"anomalias-empiricas","Anomalias Empíricas","Observações que teoria vigente não consegue explicar (Kuhn)","#8b5cf6",1,3
+"telescopio-galileu","Telescópio de Galileu","Instrumento material que força crise teórica: luas de Júpiter contradizem geocentrismo","#ef4444",-1,3
+"ponte-metodologica","Ponte Metodológica","Fase 2: ferramentas materiais que operacionalizam conceitos filosóficos","#8b5cf6",1,4
+"instrumentos-cientificos","Instrumentos Científicos","Ferramentas que estendem sentidos e permitem testar teoria","#8b5cf6",1,4
+"matematizacao","Matematização","Expressão de fenômenos naturais em linguagem matemática (F=ma)","#8b5cf6",1,3
+"metodo-experimental","Método Experimental","Isolar variáveis, criar condições controladas, replicar observações","#8b5cf6",1,3
+"recriacao-real","Recriação do Real","Fase 3: nova ciência gera tecnologias que transformam mundo material","#8b5cf6",1,4
+"revolucao-industrial","Revolução Industrial","Física newtoniana materializada em máquinas a vapor, ferrovias, fábricas","#ef4444",0,4
+"alquimia-quimica","Alquimia → Química","Segundo salto: proto-ciência hermética → ciência quantitativa dos elementos","#ef4444",-1,4
+"balanca-lavoisier","Balança Analítica de Lavoisier","Instrumento que quantifica massa, provando conservação e destruindo alquimia","#ef4444",-1,3
+"conservacao-massa","Lei da Conservação da Massa","Nada se cria, nada se perde — massa total é constante em reações químicas","#ef4444",-1,3
+"nomenclatura-sistematica","Nomenclatura Química Sistemática","Abandono de símbolos herméticos, criação de linguagem descritiva (H₂O)","#ef4444",-1,2
+"industria-quimica","Indústria Química","Química materializada: fertilizantes, corantes, plásticos, medicamentos sintéticos","#10b981",0,4
+"sintese-ureia","Síntese da Ureia (Wöhler 1828)","Primeira substância orgânica sintetizada artificialmente — quebra barreira vivo/não-vivo","#10b981",0,2
+"logica-computacao","Lógica → Computação","Terceiro salto: cálculo formal do pensamento → máquinas universais de silício","#6366f1",0,4
+"maquina-turing","Máquina de Turing","Experimento mental (1936): qualquer computação redutível a operações simples","#6366f1",0,4
+"circuitos-logicos","Circuitos Lógicos","Claude Shannon: operações booleanas (AND/OR/NOT) implementáveis em eletrônica","#6366f1",0,3
+"arquitetura-von-neumann","Arquitetura de von Neumann","Modelo de computador de programa armazenado — base de todos computadores modernos","#6366f1",0,3
+"era-digital","Era Digital","Lógica materializada: ciberespaço, algoritmos constituindo sujeitos, internet","#6366f1",0,4
+"condicoes-materiais-salto","Condições Materiais do Salto","Saltos exigem infraestrutura, relações sociais e hegemonia cultural adequadas","#8b5cf6",1,4
+"infraestrutura-tecnologica","Infraestrutura Tecnológica","Base material prévia necessária (vidro para telescópio, silício para chips)","#8b5cf6",1,3
+"hegemonia-cultural","Hegemonia Cultural","Consenso ativo sobre racionalidade (Gramsci) — saltos precisam ser aceitos culturalmente","#8b5cf6",1,4
+"iluminismo","Iluminismo","Projeto cultural: razão universal, progresso linear, instrumentalização da natureza","#8b5cf6",1,4
+"sapere-aude","Sapere Aude (Kant)","""Ouse saber"" — lema iluminista da razão liberada de superstição","#8b5cf6",1,2
+"dessacralizacao-natureza","Dessacralização da Natureza","Natureza deixa de ser sagrada, torna-se recurso quantificável e explorável","#8b5cf6",1,4
+"saltos-abortados","Saltos Abortados","Transformações impedidas por repressão, cooptação ou limitação epistêmica","#ef4444",0,4
+"repressao-direta","Repressão Direta","Destruição física de infraestrutura revolucionária (Cybersyn queimado, Panteras mortos)","#ef4444",0,4
+"golpe-chile","Golpe no Chile (1973)","Pinochet destrói Cybersyn, mata/exila técnicos — assassinato de possibilidade","#ef4444",0,3
+"cooptacao-capitalista","Cooptação Capitalista","Capital metaboliza críticas, despolitiza via mercantilização (contracultura→publicidade)","#10b981",0,4
+"neutralizar-conteudo","Neutralizar Conteúdo, Manter Forma","Padrão: aceitar forma radical mas esvaziar conteúdo revolucionário","#10b981",0,4
+"feminismo-girlboss","Feminismo → Girl Boss","Movimento anticapitalista reduzido a empoderamento individual no mercado (Lean In)","#10b981",0,2
+"opensource-bigtech","Open Source → Big Tech","Software livre capturado: Google/Facebook usam Linux/Apache gratuitamente, lucram bilhões","#10b981",0,3
+"colonizacao-imaginacao","Colonização da Imaginação","Incapacidade de conceber alternativas — realismo capitalista (Mark Fisher)","#ef4444",0,4
+"realismo-capitalista","Realismo Capitalista","""Mais fácil imaginar fim do mundo que fim do capitalismo"" (Mark Fisher)","#ef4444",0,3
+"tina","TINA (There Is No Alternative)","Slogan thatcherista: neoliberalismo como única racionalidade possível","#ef4444",0,3
+"salto-livro","O Salto Que Este Livro Tenta","Meta-reflexão: livro como Fases 1-2 do salto, leitor completa Fase 3 com prática","#8b5cf6",1,4
+"leitor-construtor","De Leitor a Construtor","Fase 3 pendente: organizar cooperativas, implementar protocolos, construir redes mesh","#8b5cf6",1,5
+"espiral-dialetica","Espiral Dialética","Conhecimento não linear nem circular — espiral ascendente acumulando complexidade","#8b5cf6",1,3
+"humildade-epistemologica","Humildade Epistemológica","Toda síntese é provisória — novas crises gerarão novos saltos (inclusive deste livro)","#8b5cf6",1,3
+"urgencia-etica","Urgência Ética","Saltos atuais (IA, quântica, bio) exigem direcionamento consciente — tempo é limitado","#ef4444",0,3
+"ia-salto-andamento","IA como Salto em Andamento","De lógica determinística (Turing) → sistemas probabilísticos (redes neurais) — quem controla?","#6366f1",0,4
+"crise-paradigma-booleano","Crise do Paradigma Booleano","Lógica True/False inadequada para ambiguidade — redes neurais são caixa-preta probabilística","#6366f1",0,3
+"democracia-aumentada-vs-totalitarismo","Democracia Aumentada vs Totalitarismo","Bifurcação: IA pode gerar Cybersyn 2.0 OU Social Credit System global","#6366f1",0,4

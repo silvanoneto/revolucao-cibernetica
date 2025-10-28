@@ -559,43 +559,44 @@ button:focus-visible {
     box-shadow: 0 12px 40px 0 rgba(37, 99, 235, 0.5);
 }
 
-/* Responsive tweaks for the floating position indicator (checkpoint)
-   We use !important here because the indicator currently sets inline styles
-   from JavaScript. These media queries keep the indicator usable on small
-   screens and avoid overlap with the #back-to-top button. */
+/* Checkpoint box (position indicator)
+   Always positioned at top-left corner for consistency across all screen sizes.
+   We use !important here because the indicator sets inline styles from JavaScript. */
 #position-indicator {
-    /* Provide a fallback base (most positioning comes from inline styles)
-       but keep these as non-positioning defaults to avoid surprises. */
+    /* Force top-left positioning on all screen sizes */
+    top: 1rem !important;
+    left: 1rem !important;
+    bottom: auto !important;
+    right: auto !important;
+    transform: none !important;
     transition: all 0.18s ease;
+    z-index: 1004 !important;
+    max-width: 280px !important;
+}
+
+@media (max-width: 768px) {
+    /* Tablets: slightly smaller */
+    #position-indicator {
+        max-width: 240px !important;
+        font-size: 0.9rem !important;
+        padding: 0.9rem 1rem !important;
+    }
 }
 
 @media (max-width: 640px) {
-
-    /* Smaller screens: reduce size and padding, nudge closer to the edge */
+    /* Smaller screens: reduce size and padding */
     #position-indicator {
-        bottom: 1rem !important;
-        left: 1rem !important;
-        right: auto !important;
         max-width: 220px !important;
         font-size: 0.85rem !important;
         padding: 0.8rem 1rem !important;
-        z-index: 1003 !important;
-        /* above #back-to-top (1000) */
     }
 }
 
 @media (max-width: 420px) {
-
-    /* Very small screens / phones: place indicator at top-left to avoid
-       on-screen controls at the bottom (and notch areas). */
+    /* Very small screens: responsive width */
     #position-indicator {
-        top: 1rem !important;
-        bottom: auto !important;
-        left: 1rem !important;
-        transform: none !important;
         max-width: calc(100% - 2rem) !important;
         font-size: 0.82rem !important;
-        z-index: 1004 !important;
     }
 }
 
@@ -2560,3 +2561,81 @@ html:not(.dark) .nota-final {
         padding: 2rem 0;
     }
 }
+
+/* ====================================== */
+/* EDGE WRAP OVERLAY (atravessar topo/rodapé) */
+/* Exibe um fundo desfocado com contador de 1.5s antes de pular para o outro extremo da página */
+/* Visual minimalista, alto z-index para cobrir a interface */
+#edge-wrap-overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 200ms ease;
+    z-index: 99999;
+}
+
+#edge-wrap-overlay.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#edge-wrap-overlay .edge-wrap-inner {
+    background: linear-gradient(180deg, rgba(17,24,39,0.6), rgba(255,255,255,0.03));
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    min-width: 10rem;
+    box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+}
+
+#edge-wrap-overlay .edge-wrap-count {
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+#edge-wrap-overlay .edge-wrap-hint {
+    font-size: 0.95rem;
+    opacity: 0.95;
+}
+
+/* Clique para cancelar */
+#edge-wrap-overlay { cursor: pointer; }
+
+/* Estilos do indicador circular e toggle */
+#edge-wrap-overlay .edge-wrap-svg { display: block; }
+#edge-wrap-overlay .edge-wrap-track { stroke: rgba(255,255,255,0.12); }
+#edge-wrap-overlay .edge-wrap-progress { stroke: var(--verde-claro, #34d399); transform: rotate(-90deg); transform-origin: 32px 32px; transition: stroke-dashoffset 100ms linear; }
+#edge-wrap-overlay .edge-wrap-hint { color: #fff; margin-top: 0.5rem; font-size: 0.95rem; }
+
+/* Toggle UI (botão) -- posicionado fixo, discreto */
+.edge-wrap-toggle {
+    position: fixed;
+    left: 0.75rem;
+    bottom: 0.75rem;
+    z-index: 100000;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.06);
+    padding: 0.45rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(2,6,23,0.45);
+}
+
+.edge-wrap-toggle[aria-pressed="true"] { background: linear-gradient(90deg, var(--verde), var(--azul)); }
+.edge-wrap-toggle[aria-pressed="false"] { opacity: 0.85; }

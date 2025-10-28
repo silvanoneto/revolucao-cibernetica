@@ -1,10 +1,13 @@
 {
   "meta": {
     "title": "A Revolução Cibernética - Rizoma de Conceitos",
-    "version": "2.0",
+    "version": "2.1",
     "date": "2025-10-28T02:09:26.064Z",
-    "totalConcepts": 116,
+    "totalConcepts": 166,
     "changelog": [
+      "2025-10-28 (v2.1): Cap 30 - Salto Dialético (50 conceitos)",
+      "2025-10-28 (v2): Cap 29 - Arquitetura Comunicação (50 conceitos)",
+      "2025-10-28 (v2): Cap 28 - Cosmotécnicas Plurais (60 conceitos)",
       "2025-10-27 (v2): Cap 2 - Cibernética (40 conceitos)",
       "2025-10-27 (v1): Cap 1 - Marxismo (32 conceitos)"
     ],
@@ -1582,6 +1585,604 @@
         "darpa",
         "geopolitica",
         "capitalismo-vigilancia"
+      ]
+    },
+    {
+      "id": "salto-dialetico",
+      "name": "Salto Dialético",
+      "description": "Processo pelo qual filosofia abstrata se transforma em ciência concreta que recria o mundo",
+      "color": "#8b5cf6",
+      "layer": 1,
+      "connections": [
+        "tese-antitese-sintese",
+        "filosofia-ciencia",
+        "materialismo-dialetico",
+        "praxis"
+      ]
+    },
+    {
+      "id": "tese-antitese-sintese",
+      "name": "Tese-Antítese-Síntese",
+      "description": "Movimento dialético hegeliano: contradição gera superação qualitativa",
+      "color": "#8b5cf6",
+      "layer": 1,
+      "connections": [
+        "salto-dialetico",
+        "negacao-negacao",
+        "espiral-dialetica"
+      ]
+    },
+    {
+      "id": "filosofia-ciencia",
+      "name": "Filosofia → Ciência",
+      "description": "Transformação de abstração em ferramentas materiais testáveis",
+      "color": "#8b5cf6",
+      "layer": 1,
+      "connections": [
+        "salto-dialetico",
+        "aristoteles-newton",
+        "alquimia-quimica",
+        "logica-computacao"
+      ]
+    },
+    {
+      "id": "aristoteles-newton",
+      "name": "Aristóteles → Newton",
+      "description": "Primeiro salto: filosofia natural → física matemática experimental",
+      "color": "#ef4444",
+      "layer": -1,
+      "connections": [
+        "filosofia-ciencia",
+        "telescopio-galileu",
+        "metodo-cientifico",
+        "revolucao-industrial"
+      ]
+    },
+    {
+      "id": "crise-abstracao",
+      "name": "Crise da Abstração",
+      "description": "Fase 1: quando filosofia encontra contradições empíricas insolúveis",
+      "color": "#8b5cf6",
+      "layer": 1,
+      "connections": [
+        "salto-dialetico",
+        "anomalias-empiricas",
+        "limites-paradigma"
+      ]
+    },
+    {
+      "id": "anomalias-empiricas",
+      "name": "Anomalias Empíricas",
+      "description": "Observações que teoria vigente não consegue explicar (Kuhn)",
+      "color": "#8b5cf6",
+      "layer": 1,
+      "connections": [
+        "crise-abstracao",
+        "tycho-brahe",
+        "mudanca-paradigma"
+      ]
+    },
+    {
+      "id": "telescopio-galileu",
+      "name": "Telescópio de Galileu",
+      "description": "Instrumento material que força crise teórica: luas de Júpiter contradizem geocentrismo",
+      "color": "#ef4444",
+      "layer": -1,
+      "connections": [
+        "aristoteles-newton",
+        "ponte-metodologica",
+        "instrumentos-cientificos"
+      ]
+    },
+    {
+      "id": "ponte-metodologica",
+      "name": "Ponte Metodológica",
+      "description": "Fase 2: ferramentas materiais que operacionalizam conceitos filosóficos",
+      "color": "#8b5cf6",
+      "layer": 1,
+      "connections": [
+        "salto-dialetico",
+        "instrumentos-cientificos",
+        "matematizacao",
+        "metodo-experimental"
+      ]
+    },
+    {
+      "id": "instrumentos-cientificos",
+      "name": "Instrumentos Científicos",
+      "description": "Ferramentas que estendem sentidos e permitem testar teoria",
+      "color": "#8b5cf6",
+      "layer": 1,
+      "connections": [
+        "ponte-metodologica",
+        "telescopio-galileu",
+        "balanca-lavoisier",
+        "maquina-turing"
+      ]
+    },
+    {
+      "id": "matematizacao",
+      "name": "Matematização",
+      "description": "Expressão de fenômenos naturais em linguagem matemática (F=ma)",
+      "color": "#8b5cf6",
+      "layer": 1,
+      "connections": [
+        "ponte-metodologica",
+        "newton-principia",
+        "linguagem-operacional"
+      ]
+    },
+    {
+      "id": "metodo-experimental",
+      "name": "Método Experimental",
+      "description": "Isolar variáveis, criar condições controladas, replicar observações",
+      "color": "#8b5cf6",
+      "layer": 1,
+      "connections": [
+        "ponte-metodologica",
+        "plano-inclinado-galileu",
+        "reproducibilidade"
+      ]
+    },
+    {
+      "id": "recriacao-real",
+      "name": "Recriação do Real",
+      "description": "Fase 3: nova ciência gera tecnologias que transformam mundo material",
+      "color": "#8b5cf6",
+      "layer": 1,
+      "connections": [
+        "salto-dialetico",
+        "revolucao-industrial",
+        "industria-quimica",
+        "era-digital"
+      ]
+    },
+    {
+      "id": "revolucao-industrial",
+      "name": "Revolução Industrial",
+      "description": "Física newtoniana materializada em máquinas a vapor, ferrovias, fábricas",
+      "color": "#ef4444",
+      "layer": 0,
+      "connections": [
+        "aristoteles-newton",
+        "recriacao-real",
+        "forcas-produtivas",
+        "capitalismo"
+      ]
+    },
+    {
+      "id": "alquimia-quimica",
+      "name": "Alquimia → Química",
+      "description": "Segundo salto: proto-ciência hermética → ciência quantitativa dos elementos",
+      "color": "#ef4444",
+      "layer": -1,
+      "connections": [
+        "filosofia-ciencia",
+        "balanca-lavoisier",
+        "conservacao-massa",
+        "industria-quimica"
+      ]
+    },
+    {
+      "id": "balanca-lavoisier",
+      "name": "Balança Analítica de Lavoisier",
+      "description": "Instrumento que quantifica massa, provando conservação e destruindo alquimia",
+      "color": "#ef4444",
+      "layer": -1,
+      "connections": [
+        "alquimia-quimica",
+        "instrumentos-cientificos",
+        "conservacao-massa"
+      ]
+    },
+    {
+      "id": "conservacao-massa",
+      "name": "Lei da Conservação da Massa",
+      "description": "Nada se cria, nada se perde — massa total é constante em reações químicas",
+      "color": "#ef4444",
+      "layer": -1,
+      "connections": [
+        "balanca-lavoisier",
+        "nomenclatura-sistematica",
+        "materialismo-cientifico"
+      ]
+    },
+    {
+      "id": "nomenclatura-sistematica",
+      "name": "Nomenclatura Química Sistemática",
+      "description": "Abandono de símbolos herméticos, criação de linguagem descritiva (H₂O)",
+      "color": "#ef4444",
+      "layer": -1,
+      "connections": [
+        "alquimia-quimica",
+        "linguagem-operacional"
+      ]
+    },
+    {
+      "id": "industria-quimica",
+      "name": "Indústria Química",
+      "description": "Química materializada: fertilizantes, corantes, plásticos, medicamentos sintéticos",
+      "color": "#10b981",
+      "layer": 0,
+      "connections": [
+        "alquimia-quimica",
+        "recriacao-real",
+        "sintese-ureia",
+        "materialidade-computacao"
+      ]
+    },
+    {
+      "id": "sintese-ureia",
+      "name": "Síntese da Ureia (Wöhler 1828)",
+      "description": "Primeira substância orgânica sintetizada artificialmente — quebra barreira vivo/não-vivo",
+      "color": "#10b981",
+      "layer": 0,
+      "connections": [
+        "industria-quimica",
+        "materialismo-cientifico"
+      ]
+    },
+    {
+      "id": "logica-computacao",
+      "name": "Lógica → Computação",
+      "description": "Terceiro salto: cálculo formal do pensamento → máquinas universais de silício",
+      "color": "#6366f1",
+      "layer": 0,
+      "connections": [
+        "filosofia-ciencia",
+        "maquina-turing",
+        "circuitos-logicos",
+        "era-digital"
+      ]
+    },
+    {
+      "id": "maquina-turing",
+      "name": "Máquina de Turing",
+      "description": "Experimento mental (1936): qualquer computação redutível a operações simples",
+      "color": "#6366f1",
+      "layer": 0,
+      "connections": [
+        "logica-computacao",
+        "instrumentos-cientificos",
+        "arquitetura-von-neumann",
+        "teoria-computabilidade"
+      ]
+    },
+    {
+      "id": "circuitos-logicos",
+      "name": "Circuitos Lógicos",
+      "description": "Claude Shannon: operações booleanas (AND/OR/NOT) implementáveis em eletrônica",
+      "color": "#6366f1",
+      "layer": 0,
+      "connections": [
+        "logica-computacao",
+        "portas-logicas",
+        "shannon"
+      ]
+    },
+    {
+      "id": "arquitetura-von-neumann",
+      "name": "Arquitetura de von Neumann",
+      "description": "Modelo de computador de programa armazenado — base de todos computadores modernos",
+      "color": "#6366f1",
+      "layer": 0,
+      "connections": [
+        "maquina-turing",
+        "computador-universal",
+        "cibernetica"
+      ]
+    },
+    {
+      "id": "era-digital",
+      "name": "Era Digital",
+      "description": "Lógica materializada: ciberespaço, algoritmos constituindo sujeitos, internet",
+      "color": "#6366f1",
+      "layer": 0,
+      "connections": [
+        "logica-computacao",
+        "recriacao-real",
+        "capitalismo-plataforma",
+        "sujeito-automatico"
+      ]
+    },
+    {
+      "id": "condicoes-materiais-salto",
+      "name": "Condições Materiais do Salto",
+      "description": "Saltos exigem infraestrutura, relações sociais e hegemonia cultural adequadas",
+      "color": "#8b5cf6",
+      "layer": 1,
+      "connections": [
+        "salto-dialetico",
+        "infraestrutura-tecnologica",
+        "relacoes-producao",
+        "hegemonia-cultural"
+      ]
+    },
+    {
+      "id": "infraestrutura-tecnologica",
+      "name": "Infraestrutura Tecnológica",
+      "description": "Base material prévia necessária (vidro para telescópio, silício para chips)",
+      "color": "#8b5cf6",
+      "layer": 1,
+      "connections": [
+        "condicoes-materiais-salto",
+        "dependencia-tecnologica",
+        "cadeia-suprimentos"
+      ]
+    },
+    {
+      "id": "hegemonia-cultural",
+      "name": "Hegemonia Cultural",
+      "description": "Consenso ativo sobre racionalidade (Gramsci) — saltos precisam ser aceitos culturalmente",
+      "color": "#8b5cf6",
+      "layer": 1,
+      "connections": [
+        "condicoes-materiais-salto",
+        "iluminismo",
+        "dessacralizacao-natureza",
+        "cosmotecnica"
+      ]
+    },
+    {
+      "id": "iluminismo",
+      "name": "Iluminismo",
+      "description": "Projeto cultural: razão universal, progresso linear, instrumentalização da natureza",
+      "color": "#8b5cf6",
+      "layer": 1,
+      "connections": [
+        "hegemonia-cultural",
+        "sapere-aude",
+        "universalismo-racionalista",
+        "ultrarracionalismo"
+      ]
+    },
+    {
+      "id": "sapere-aude",
+      "name": "Sapere Aude (Kant)",
+      "description": "\"Ouse saber\" — lema iluminista da razão liberada de superstição",
+      "color": "#8b5cf6",
+      "layer": 1,
+      "connections": [
+        "iluminismo",
+        "emancipacao-racional"
+      ]
+    },
+    {
+      "id": "dessacralizacao-natureza",
+      "name": "Dessacralização da Natureza",
+      "description": "Natureza deixa de ser sagrada, torna-se recurso quantificável e explorável",
+      "color": "#8b5cf6",
+      "layer": 1,
+      "connections": [
+        "hegemonia-cultural",
+        "matematizacao",
+        "extrativismo",
+        "cosmotecnica"
+      ]
+    },
+    {
+      "id": "saltos-abortados",
+      "name": "Saltos Abortados",
+      "description": "Transformações impedidas por repressão, cooptação ou limitação epistêmica",
+      "color": "#ef4444",
+      "layer": 0,
+      "connections": [
+        "salto-dialetico",
+        "repressao-direta",
+        "cooptacao-capitalista",
+        "colonizacao-imaginacao"
+      ]
+    },
+    {
+      "id": "repressao-direta",
+      "name": "Repressão Direta",
+      "description": "Destruição física de infraestrutura revolucionária (Cybersyn queimado, Panteras mortos)",
+      "color": "#ef4444",
+      "layer": 0,
+      "connections": [
+        "saltos-abortados",
+        "golpe-chile",
+        "cointelpro",
+        "terrorismo-estado"
+      ]
+    },
+    {
+      "id": "golpe-chile",
+      "name": "Golpe no Chile (1973)",
+      "description": "Pinochet destrói Cybersyn, mata/exila técnicos — assassinato de possibilidade",
+      "color": "#ef4444",
+      "layer": 0,
+      "connections": [
+        "repressao-direta",
+        "cybersyn",
+        "allende"
+      ]
+    },
+    {
+      "id": "cooptacao-capitalista",
+      "name": "Cooptação Capitalista",
+      "description": "Capital metaboliza críticas, despolitiza via mercantilização (contracultura→publicidade)",
+      "color": "#10b981",
+      "layer": 0,
+      "connections": [
+        "saltos-abortados",
+        "neutralizar-conteudo",
+        "feminismo-girlboss",
+        "opensource-bigtech"
+      ]
+    },
+    {
+      "id": "neutralizar-conteudo",
+      "name": "Neutralizar Conteúdo, Manter Forma",
+      "description": "Padrão: aceitar forma radical mas esvaziar conteúdo revolucionário",
+      "color": "#10b981",
+      "layer": 0,
+      "connections": [
+        "cooptacao-capitalista",
+        "cooperativas-uber",
+        "blockchain-especulativo",
+        "greenwashing"
+      ]
+    },
+    {
+      "id": "feminismo-girlboss",
+      "name": "Feminismo → Girl Boss",
+      "description": "Movimento anticapitalista reduzido a empoderamento individual no mercado (Lean In)",
+      "color": "#10b981",
+      "layer": 0,
+      "connections": [
+        "cooptacao-capitalista",
+        "neoliberalismo-progressista"
+      ]
+    },
+    {
+      "id": "opensource-bigtech",
+      "name": "Open Source → Big Tech",
+      "description": "Software livre capturado: Google/Facebook usam Linux/Apache gratuitamente, lucram bilhões",
+      "color": "#10b981",
+      "layer": 0,
+      "connections": [
+        "cooptacao-capitalista",
+        "commons-digital",
+        "extracao-valor"
+      ]
+    },
+    {
+      "id": "colonizacao-imaginacao",
+      "name": "Colonização da Imaginação",
+      "description": "Incapacidade de conceber alternativas — realismo capitalista (Mark Fisher)",
+      "color": "#ef4444",
+      "layer": 0,
+      "connections": [
+        "saltos-abortados",
+        "realismo-capitalista",
+        "tina",
+        "cosmotecnica"
+      ]
+    },
+    {
+      "id": "realismo-capitalista",
+      "name": "Realismo Capitalista",
+      "description": "\"Mais fácil imaginar fim do mundo que fim do capitalismo\" (Mark Fisher)",
+      "color": "#ef4444",
+      "layer": 0,
+      "connections": [
+        "colonizacao-imaginacao",
+        "hegemonia",
+        "naturalizacao-capitalismo"
+      ]
+    },
+    {
+      "id": "tina",
+      "name": "TINA (There Is No Alternative)",
+      "description": "Slogan thatcherista: neoliberalismo como única racionalidade possível",
+      "color": "#ef4444",
+      "layer": 0,
+      "connections": [
+        "realismo-capitalista",
+        "hegemonia",
+        "cosmotecnica"
+      ]
+    },
+    {
+      "id": "salto-livro",
+      "name": "O Salto Que Este Livro Tenta",
+      "description": "Meta-reflexão: livro como Fases 1-2 do salto, leitor completa Fase 3 com prática",
+      "color": "#8b5cf6",
+      "layer": 1,
+      "connections": [
+        "salto-dialetico",
+        "teoria-pratica",
+        "leitor-construtor",
+        "praxis"
+      ]
+    },
+    {
+      "id": "leitor-construtor",
+      "name": "De Leitor a Construtor",
+      "description": "Fase 3 pendente: organizar cooperativas, implementar protocolos, construir redes mesh",
+      "color": "#8b5cf6",
+      "layer": 1,
+      "connections": [
+        "salto-livro",
+        "cooperativas-plataforma",
+        "protocolos-federados",
+        "redes-mesh",
+        "politicas-publicas"
+      ]
+    },
+    {
+      "id": "espiral-dialetica",
+      "name": "Espiral Dialética",
+      "description": "Conhecimento não linear nem circular — espiral ascendente acumulando complexidade",
+      "color": "#8b5cf6",
+      "layer": 1,
+      "connections": [
+        "tese-antitese-sintese",
+        "progresso-nao-linear",
+        "acumulacao-conhecimento"
+      ]
+    },
+    {
+      "id": "humildade-epistemologica",
+      "name": "Humildade Epistemológica",
+      "description": "Toda síntese é provisória — novas crises gerarão novos saltos (inclusive deste livro)",
+      "color": "#8b5cf6",
+      "layer": 1,
+      "connections": [
+        "espiral-dialetica",
+        "falibilismo",
+        "conhecimento-processo"
+      ]
+    },
+    {
+      "id": "urgencia-etica",
+      "name": "Urgência Ética",
+      "description": "Saltos atuais (IA, quântica, bio) exigem direcionamento consciente — tempo é limitado",
+      "color": "#ef4444",
+      "layer": 0,
+      "connections": [
+        "salto-dialetico",
+        "ia-salto-andamento",
+        "responsabilidade-coletiva"
+      ]
+    },
+    {
+      "id": "ia-salto-andamento",
+      "name": "IA como Salto em Andamento",
+      "description": "De lógica determinística (Turing) → sistemas probabilísticos (redes neurais) — quem controla?",
+      "color": "#6366f1",
+      "layer": 0,
+      "connections": [
+        "urgencia-etica",
+        "ia",
+        "crise-paradigma-booleano",
+        "democracia-aumentada-vs-totalitarismo"
+      ]
+    },
+    {
+      "id": "crise-paradigma-booleano",
+      "name": "Crise do Paradigma Booleano",
+      "description": "Lógica True/False inadequada para ambiguidade — redes neurais são caixa-preta probabilística",
+      "color": "#6366f1",
+      "layer": 0,
+      "connections": [
+        "ia-salto-andamento",
+        "logica-computacao",
+        "emergencia"
+      ]
+    },
+    {
+      "id": "democracia-aumentada-vs-totalitarismo",
+      "name": "Democracia Aumentada vs Totalitarismo",
+      "description": "Bifurcação: IA pode gerar Cybersyn 2.0 OU Social Credit System global",
+      "color": "#6366f1",
+      "layer": 0,
+      "connections": [
+        "ia-salto-andamento",
+        "cybersyn",
+        "soberania-digital",
+        "vigilancia"
       ]
     }
   ],

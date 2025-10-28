@@ -11,6 +11,657 @@
  * - Sem estrutura arbórea
  * 
  * CHANGELOG:
+ * - 2025-10-28 (v29): Expansão massiva do Capítulo 32 (A Democracia como Sistema Operacional — Bugs, Patches e um Novo Protocolo)
+ *   + 80+ novos conceitos: democracia liberal bugs sistêmicos, presidencialismo coalizão Brasil, democracia participativa patches, novo protocolo governança, experimentações concretas
+ *   + Cap 32.1-4: Quatro Pilares Novo Protocolo — plataformas deliberação coletiva (GitHub legislação), sensores sociais feedback tempo real (painel bem-estar), autogestão múltiplas escalas (rede federada), sorteio mandatos imperativos (desprofissionalização política)
+ *   + Cap 32.5: Obstáculos Materiais — resistência elites (esvaziamento orçamentário, burocratização técnica, golpes/interrupções Dilma 2016 Allende 1973), colonização digital (dependência plataformas, extrativismo dados, lock-in tecnológico), problema escala (bairro→município→região→nação complexidade crescente)
+ *   + Cap 32.5.1: Sabotagem Democratização — 5 mecanismos: (1) esvaziamento orçamentário (OP Porto Alegre 20%→5% orçamento), (2) burocratização técnica (jargões excluem trabalhadores), (3) golpes institucionais (impeachment Dilma após tentar Sistema Nacional Participação Social Decreto 8.243/2014), (4) cooptação clientelismo (lideranças populares cooptadas cargos/financiamentos), (5) guerra informacional (mídia corporativa deslegitima OP/conselhos populares/Cybersyn)
+ *   + Lição: democracia liberal funciona precisamente porque LIMITA poder popular momentos/espaços controlados (eleições 4-4 anos, parlamentos). Transbordamento = ameaça existencial elites
+ *   + Cap 32.5.2: Colonização Digital — infraestrutura democrática apropriada Big Tech: dependência WhatsApp/Twitter/Telegram (Meta/Musk controlam organização movimentos), extrativismo dados (deliberação digital gera dados vendidos/manipulados Cambridge Analytica Cap 16), lock-in tecnológico (governos/movimentos Microsoft/Google/AWS dependência estrutural), sabotagem design (plataformas comerciais projetadas engajamento não deliberação — Twitter threads argumentação complexa impossível, Facebook algoritmos priorizam polarização, TikTok fragmenta atenção)
+ *   + Solução: infraestrutura pública cooperativa (Mastodon rede federada, Nextcloud nuvem autogerida, Matrix comunicação descentralizada) mas requer investimento público massivo decisão política romper Big Tech. Cap 25 cooperativas plataforma princípio estendido infraestrutura democrática
+ *   + Cap 32.5.3: Problema Escala — viabilidade por nível: (1) Bairro 100-10k pessoas (assembleias presenciais viáveis, desafio participação desigual tempo), (2) Município 10k-1M (OP/conselhos/plataformas digitais viáveis, desafio coordenação entre bairros resistência câmara), (3) Estado/Região 1M-50M (assembleias regionais/sorteio viáveis, desafio complexidade técnica diversidade interesses), (4) Nação 50M-200M+ (federação regiões/senado sorteado/referendos viáveis, desafio questões macroeconômicas expertise pressões FMI/mercados)
+ *   + Problema não só técnico (coordenar milhões) mas POLÍTICO (escalas superiores capturando inferiores). Subsidiariedade ajuda mas questões nacionais/globais (política monetária/matriz energética/relações internacionais) exigem coordenação. Risco burocratização: federação nacional permanente/profissionalizada reproduz separação Estado/sociedade. História URSS mostra: sovietes→comitês partido, conselhos operários→sindicatos estatais, "ditadura proletariado"→ditadura burocracia
+ *   + Cap 32.6: Experimentações Concretas — 3 laboratórios políticos operando AGORA, sucessos e fracassos mensuráveis
+ *   + Cap 32.6.1: Rojava Confederalismo Democrático — norte Síria 2012-hoje sob condições guerra
+ *   + Estrutura Rojava: comunas base (100-150 famílias reuniões mensais bairro/vila), federação conselhos (comunas→cidades→regiões→Conselho Democrático Síria poder flui baixo→cima), cotas gênero/etnia (co-presidentes homem+mulher todos cargos, cotas étnicas curdos/árabes/assírios/turcomanos), economia cooperativa (propriedade coletiva terras proibição assalariamento capitalista), autodefesa popular (milícias YPG/YPJ descentralizadas comitês políticos podem vetar ordens injustas)
+ *   + Resultados Rojava: derrotou ISIS militarmente, estabilidade relativa colapso estatal sírio, indicadores saúde/educação superiores resto Síria. MAS: dependência geopolítica instável (EUA abandonou 2019), ataques turcos constantes, economia devastada guerra
+ *   + Lição Rojava: democracia base possível condições extremas mas requer organização militar defensiva (não pacifismo ingênuo quando elites usam violência Cap 22 necropolítica) + soberania territorial mínima (sem Estado burguês derrubar mas terra defender)
+ *   + Cap 32.6.2: Assembleias Cidadãs Irlanda — sorteio resolve polêmicas
+ *   + Processo 2016-18: sorteio estratificado (99 cidadãos+1 presidente espelham demografia irlandesa), educação intensiva (5 fins semana meses ouviram especialistas todos lados médicos/religiosos/ativistas/juristas), deliberação facilitada (grupos pequenos moderadores ninguém domina debate respeitoso), recomendações votadas (assembleia vota recomendações parlamento/referendos), implementação (parlamento comprometido considerar seriamente)
+ *   + Resultados Irlanda: aborto (assembleia recomendou descriminalização, referendo 66,4% aprovou 2018 revogando proibição 35 anos), casamento igualitário (referendo 62% aprovou 2015 primeiro país via voto popular), mudanças climáticas (assembleia 2020 recomendou 13 medidas ambiciosas mas parlamento implementou parcialmente recuou taxação carne/combustíveis pressão lobbies)
+ *   + Lição Irlanda: cidadãos comuns informados adequadamente liberados pressões eleitorais tomam decisões mais progressistas que políticos profissionais. Sorteio evita captura elites (não precisa dinheiro ser sorteado) reflete diversidade real (não só quem quer ser político). MAS: assembleias consultivas não deliberativas — parlamento pode ignorar (como fez parcialmente clima). Para funcionar plenamente sorteio precisa poder decisório real não apenas aconselhamento
+ *   + Cap 32.6.3: Decidim Barcelona — plataforma digital democracia participativa
+ *   + Funcionalidades Decidim: propostas cidadãs (alcança quórum→prefeitura responde oficialmente), orçamento participativo (€30mi/ano via Decidim Barcelona), consultas vinculantes (quórum ultrapassa→resultado obrigatório), assembleias híbridas (presenciais transmitidas online participação remota), monitoramento execução (proposta aprovada página acompanhamento cidadãos cobram atrasos), código aberto (software livre AGPL qualquer município instala/modifica/melhora)
+ *   + Resultados Barcelona 2016-24: 10k+ propostas (20% implementadas), 200k+ cadastrados (15% população), decisões habitação social/pedestrianização/clima via plataforma, 400+ cidades replicaram (Helsinque/CDMX/Paris/SP)
+ *   + Limites Decidim: divisão digital (velhos/baixa escolaridade participam menos), participação desigual classe (classe média>periferias trabalhadores precarizados sem tempo), sabotagem mudança governo (direita reduziu OP descontinuou consultas), trollagem spam (propostas absurdas bots contas falsas — moderação+verificação identidade tensão privacidade)
+ *   + Lição Decidim: tecnologia digital AMPLIFICA democracia participativa não SUBSTITUI. Plataforma é ferramenta não solução mágica. Requer complementação presencial (assembleias bairro), educação popular (ensinar usar), compromisso político institucional (governo implementa decisões), infraestrutura pública (código aberto não Big Tech). Cap 29 infraestrutura comunicativa democrática pré-requisito política democrática
+ *   + Cap 32.7: Tensão Irresolvida — democracia vs expertise técnica
+ *   + Cap 32.7.1: Mito Neutralidade Técnica — expertise nunca neutra embute valores políticos: política monetária (BC aumenta juros "controlar inflação" beneficia rentistas prejudica devedores — não técnica é escolha quem paga crise Cap 31 PT ortodoxia monetária), infraestrutura transporte (metrô vs rodovias não eficiência — valores meio ambiente/desigualdade espacial/modelo cidade), resposta pandemias (lockdown vs economia debate apresentado técnico escondeu valores priorizar vidas vs lucros), algoritmos decisão (Cap 13 discriminação algorítmica — "objetivos" porque "matemáticos" mas alguém escolheu variáveis/dados/métricas determinam quem ganha perde)
+ *   + Cap 30 salto dialético filosofia→ciência: ciência não "resolve" filosofia, DESLOCA arena disputa valores. Tecnocratas modernos DESPOLITIZAM decisões políticas revestindo linguagem técnica. Cap 31 racionalidade tecnocrática como despolitização = captura ideológica disfarçada neutralidade
+ *   + Cap 32.7.2: Solução Expertise Serviço Deliberação — especialistas INFORMAM decisões não TOMAM. 3 princípios: (1) múltiplas expertises tensão dialética (hidroelétrica ouvir engenheiros+ecologistas+antropólogos+economistas+comunidades locais — expertise discorda não há "verdade técnica" há conflito valores requer decisão política afetados Cap 28 cosmotécnicas plurais múltiplas racionalidades técnicas), (2) tradução bidirecional (expertise acessível linguagem clara sem simplificação manipuladora, especialistas admitem incertezas "não sabemos", "depende valores assumidos", "há controvérsia científica" — assembleias Irlanda funcionaram porque médicos treinados comunicar sem manipular Paulo Freire educação popular), (3) supervisão popular tecnocracia (conselhos supervisão cidadã auditam agências técnicas BC/agência nuclear/transporte, auditoria independente múltiplos grupos especialistas, transparência radical documentação pública dados/pressupostos/alternativas/razões, revogabilidade especialistas mesmo cargos técnicos BC/agência reguladora destituíveis se traem mandato democrático)
+ *   + Cap 18 Cybersyn tentou: sistema cibernético INFORMAVA trabalhadores/gestores tempo real mas decisões finais democráticas assembleias fábrica. Não tecnocracia (computador decide) nem populismo (ignora dados) — cibernética democrática (ferramenta técnica serviço processo político)
+ *   + Cap 32.7.3: Contra Falso Dilema — nem tecnocracia (especialistas decidem massas ignorantes — despolitiza serve interesses classe elimina accountability ex Troika FMI/BCE/CE impondo austeridade Grécia) nem populismo anti-intelectual (ciência elitista confie povo/líder carismático — rejeita conhecimento legítimo vulnerável demagogos Bolsonaro negacionismo COVID ex terra plana antivax negacionismo climático). Terceira via: democracia epistêmica — reconhecer expertise existe importa mas decisões COMO USAR conhecimento necessariamente políticas tomadas democraticamente afetados. Submeter expertise escrutínio democrático
+ *   + Cap 29 comunicação construção realidade: tecnocracia e populismo patologias comunicativas. Tecnocracia (monólogo especialista→passividade popular comunicação unidirecional), populismo (demagogia carismática→identificação emocional→irracionalidade coletiva comunicação manipuladora), democracia epistêmica (diálogo expertise-popular→deliberação informada→decisão coletiva consciente comunicação dialógica)
+ *   + Cibernética 2ª ordem framework: expertise = sensor (detecta realidade), deliberação democrática = processador (decide ação), implementação = atuador (muda realidade), feedback retorna sensor (avaliamos resultados ajustamos). Separar funções nega natureza sistêmica governança. Concentrar elite = cibernética 1ª ordem (controle autoritário). Democracia 2ª ordem exige distribuição funções loops feedback entre partes
+ *   + Cap 32.8: Dimensão Internacional — democracia num só país?
+ *   + Cap 32.8.1: Lições Socialismo Um País — história século XX evidências sombrias: URSS 1917-91 (revolução cercada precisou industrializar rápido sobreviver nazismo burocratizou centralizou tornou autoritária — não "traição" mas adaptação condições materiais cerco+subdesenvolvimento), Chile 1970-73 (Allende tentou via democrática EUA guerra econômica boicote cobre crédito cortado desestabilização+golpe militar Cap 18 Cybersyn destruído junto), Venezuela 1999-hoje (chavismo petróleo redistribuiu mas dependência monocultura vulnerável — preço caiu+sanções EUA economia colapsou crise PARCIALMENTE má gestão MAJORITARIAMENTE sabotagem imperial guerra econômica genocídio)
+ *   + Padrão claro: elites globais NÃO TOLERAM democratização econômica. Trabalhadores tentam controlar meios produção capital internacional FOGE (fuga capitais), BOICOTA (sanções bloqueios), SUBVERTE (golpes desestabilização), INVADE (intervenção militar proxy). Cap 22 necropolítica — sanções Venezuela mataram dezenas milhares desnutrição/falta remédios tanto quanto ditadura mataria
+ *   + Cap 32.8.2: Necessidade Internacionalismo Renovado — nenhum país periférico democratiza sozinho sem ser esmagado solução coordenação internacional. Cap 23 BRICS+ alternativa geopolítica mas atual capitalista (China capitalismo Estado, Rússia oligárquica, Índia neoliberal, Brasil oscilante) não bloco socialista — multipolar disputando hegemonia Ocidente
+ *   + Internacionalismo democrático requer: coordenação políticas econômicas (múltiplos países simultaneamente democratizam produção capital menos onde fugir — Brasil sozinho problema Brasil+Argentina+México+África Sul juntos não), moeda comum não-dólar (BRICS discute moeda cesta/lastro ouro/commodities passo importante mas insuficiente países não democratizarem internamente — rublo russo não melhor dólar para trabalhadores russos oligarcas oprimem), federação cooperativas internacionais (cooperativas plataforma Cap 25 federam internacionalmente motoristas Uber Brasil cooperativa interopera Argentina/México/Índia rede global não-capitalista mas requer infraestrutura digital soberana AWS/Google dependência + coordenação política), solidariedade ativa vs intervencionismo (não imperialismo "esquerda" URSS invadindo Hungria/Tchecoslováquia — solidariedade apoio material/político movimentos locais não imposição modelos Rojava recebe brigadistas internacionais voluntários solidariedade não EUA bombardeando "levar democracia" imperialismo)
+ *   + Cap 32.8.3: Democracia Local + Redes Transnacionais — estratégia "glocal" (global+local) enquanto internacionalismo pleno não materializa: construir poder localmente (conquistar prefeituras cooperativas OP democratizar bairros não esperar revolução nacional — fissuras sistema), conectar experiências globalmente (Barcelona troca Valparaíso, Mondragón inspira MST, Rojava dialoga Zapatistas — conhecimento circula capital/Estado tentam impedir), infraestrutura comum transnacional (Decidim/Mastodon bens comuns digitais qualquer movimento usa não dependem Estado-nação — infraestrutura internacionalismo), pressão baixo (movimentos locais→Estados nacionais→instituições internacionais ONU/OMC/FMI movimento lento único disponível sem revolução global coordenada)
+ *   + Evita erros: localismo ingênuo (cooperativa bairro "muda mundo" sem confrontar Estado/capital), internacionalismo abstrato (esperar revolução mundial sem construir poder local). Cap 30 salto dialético universal (internacionalismo) só realiza através particular (lutas locais) que sustenta conectado universal. Dialética escalar
+ *   + Cap 32.9: Conclusão Sistema Operacional Corrompido → Protocolo Emancipatório
+ *   + Arco capítulo: crítica (democracia liberal bugada) → proposta (quatro pilares) → obstáculos (elites/digital/escala) → experimentações (Rojava/Irlanda/Decidim) → tensões (expertise/internacional). Não receita pronta — mapa território disputa
+ *   + Insight 1: Democracia Liberal Funcional Para Elites — corrupção/crise representatividade/judicialização/paralisia não bugs FEATURES garantem poder econômico nunca ameaçado poder político popular. Cap 31 sistemas capturam linguagens, aqui instituições liberais capturam energia democrática ritualizam inofensivamente (votar 4-4 anos). Reconhecer muda estratégia: não REFORMAR (mais transparência participação controles) precisa SUBSTITUIR arquitetura inteira. Não upgrade software — NOVO SISTEMA OPERACIONAL
+ *   + Insight 2: Alternativas Existem Sabotadas Sistematicamente — Rojava/assembleias/Decidim/OP/Cybersyn não utopias especulativas PROTÓTIPOS FUNCIONAIS demonstram viabilidade democracia 2ª ordem. Problema não técnico ("impossível coordenar milhões") é POLÍTICO (elites destroem experimentos ameaçam privilégios). Lições: escala importa (bairro→país desafios mas não impossível arquitetura federada loops feedback), tecnologia ambivalente (democratiza Decidim ou oprime vigilância — quem controla infraestrutura?), contexto geopolítico constrange (Rojava sobrevive porque EUA temporariamente precisa aliados ISIS Chile Allende esmagado ameaçava interesses EUA — política poder global), radicalidade gradual (assembleias Irlanda reformistas mantêm capitalismo mas abrem brecha institucional cooperativas limitadas mercado capitalista mas prefiguram pós-capitalista — não tudo/nada acumulação forças)
+ *   + Insight 3: Democracia Real Exige Socialização Meios Produção — quatro pilares pressupõem: democracia política SEM econômica = ilusão. Meios produção (fábricas/terras/algoritmos/infraestrutura digital) propriedade privada elites sempre terão poder veto material decisões democráticas: votam salário mínimo→empresas ameaçam demissões/fuga capital→governo recua, assembleia taxa fortunas→ricos movem paraísos fiscais→Estado arrecada zero, cooperativa produz ecologicamente→bancos negam crédito fornecedores boicotam→quebra, município infraestrutura digital soberana→Big Tech "gratuidade" subsidiada→população prefere "grátis"→soberania inviável. Cap 1 Marx: quem controla meios produção controla sociedade. Cap 10 Sujeito Automático: capital sujeito subordina humanos. Democracia 2ª ordem não apenas POLÍTICA (quem governa) mas ECONÔMICA (quem decide produzir/distribuir/para quem)
+ *   + Significa: socialização plataformas digitais (não regular estatizar/cooperativizar infraestrutura comunicação bem público água/eletricidade), reforma agrária profunda (terra não mercadoria gerida quem trabalha assentamentos/cooperativas/propriedade coletiva indígena), bancos públicos controle democrático (crédito poder decidir projetos existem privados democracia decorativa BC responde assembleia popular não "mercados"), grandes empresas cooperativas/estatais democráticas (Petrobras/Vale/bancos/montadoras não acionistas nunca pisaram país geridas trabalhadores+comunidades afetadas)
+ *   + Sem isso deliberação sensores autogestão TEATRO. Capitalismo permite democracia POLÍTICA precisamente mantém separada ECONÔMICA onde poder real concentra. ROMPER SEPARAÇÃO — unificar democracia política+econômica — salto qualitativo transforma sistema 1ª ordem (controle atomizado) → 2ª ordem (autogoverno coletivo consciente)
+ *   + Cap 32.10: Epílogo Protocolo Aberto Fork Seu — fim 32 capítulos teóricos percorreram mercadoria (Cap 1) → novo protocolo democrático (Cap 32), trabalho abstrato → algoritmos vigilância, Cybersyn → cooperativas plataforma, necropolítica → cosmotécnicas plurais. Mas teoria sem prática idealismo. PRÓXIMO PASSO NÃO LER MAIS — AGIR
+ *   + 3 ações concretas: (1) Leia Manifesto Cibernético (traduz 32 caps 12 diretrizes práticas não resumo acadêmico CHAMADO AÇÃO — Loop 1 Subjetividade desmontar eu atomizado, Loop 2 Sistema identificar intervir loops controle, Loop 3 Agência organizar coletivamente transformar estruturas, Práxis Programática 12 ações cooperativa/hacktivismo/assembleia/greve), (2) Construa Localmente Conecte Globalmente (não espere revolução mundial comece onde está: organize assembleia bairro/trabalho/universidade, cooperativa existente ou crie produção/consumo/habitação/plataforma, implemente Decidim comunidade, eduque círculos estudo oficinas debates, conecte movimentos afins MST/MTST/coletivos/sindicatos, use código aberto/criptografia/soberanias Mastodon/Matrix/Nextcloud, sabote greves/ocupações/bloqueios/desobediência), (3) Fork Livro (texto não sagrado PROTOCOLO ABERTO: discorde reescreva experiência, traduza espanhol/inglês/guarani/quechua, adapte contextos urbano/rural/Norte/Sul/setores, crie audiovisuais/podcasts/zines/grafites/performances, use formação política sindicatos/movimentos/partidos/coletivos, compartilhe livremente CC BY-SA 4.0)
+ *   + Oguatá Porã (Guarani caminhar bem) Ubuntu (Zulu eu=porque nós) Sumak Kawsay (Quechua bem viver) — revolução cibernética não apenas tecnológica FUNDAMENTALMENTE DEMOCRÁTICA. Democracia não representativa PARTICIPATIVA FEDERADA AUTOGERIDA — sistema operacional 2ª ordem capaz observar criticar transformar continuamente. Código-fonte aberto. Cabe nós coletivamente começar programar
+ *   + Conexões todos capítulos: Cap 32 SÍNTESE POLÍTICA livro inteiro materializa teoria. Cap 1 Marx (contradições capital) → Cap 32 (democracia econômica solução). Cap 2 Cibernética (feedback sistemas) → Cap 32 (arquitetura federada loops). Caps 3-16 Crítica Capitalismo Digital (exploração vigilância) → Cap 32 (alternativas concretas socializar). Cap 18 Cybersyn (salto abortado) → Cap 32 (Decidim/Rojava saltos andamento). Cap 23 BRICS (geopolítica) → Cap 32.8 (internacionalismo renovado). Caps 26-28 Cosmotécnicas (racionalidades plurais) → Cap 32.7 (democracia epistêmica múltiplas expertises). Cap 30 Salto Dialético (filosofia→ciência) → Cap 32 (política teoria→prática VOCÊ). Cap 31 Captura Ultrarracionalista (limites via eleitoral) → Cap 32 (limites Petro/lições fracassos/necessidade democracia econômica)
+ *   + Democracia 2ª ordem Cap 32 = aplicação rigorosa princípios cibernéticos (feedback/autogestão/adaptação) arena democrática. Não utopia — ENGENHARIA POLÍTICA. Revolução não vanguardismo iluminado mas construção coletiva novo protocolo linha-linha assembleia-assembleia cooperativa-cooperativa. LOOP SE FECHA QUANDO VOCÊ AGE. Observador está sistema. Revolução cibernética É VOCÊ
+ *   Total: ~1570+ conceitos mapeados (80+ novos Cap 32)
+ * - 2025-10-28 (v28): Expansão do Capítulo 31 (O Fim da Era Ultrarracionalista: Captura Ideológica e Modelos Contemporâneos)
+ *   + 60+ novos conceitos expandindo cap 31: neoliberalismo progressista PT/Brasil, fascismo libertário Milei/Argentina, reformismo progressista Petro/Colômbia
+ *   + Cap 31.1: Promessa Iluminista Três Pilares — Universalismo (razão universal trans-histórica), Progressismo Linear (história marcha inevitável), Instrumentalidade (problemas complexos têm soluções racionais/técnicas)
+ *   + Marx filho crítico Iluminismo (revela razão burguesa esconde interesses classe). Cibernética séc XX culmina ultrarracionalismo (OGAS/Cybersyn modelar/otimizar/controlar sociedade matematicamente)
+ *   + Cap 31.2: Neoliberalismo Progressista Nancy Fraser — retórica emancipatória (diversidade, LGBTQIA+, sustentabilidade) + economia neoliberal (desregulamentação, austeridade, precarização) + meritocracia ideológica
+ *   + Resultado: capitalismo com cara progressista. CEO mulher negra explora trabalhadores precários, posta #BLM. Sistema capturou linguagem emancipação, reconfigurou como emancipação individual dentro mercado
+ *   + Big Tech "Woke": Google/Apple/Facebook diversidade+Pride Month mas extraem mais-valia dados, exploram moderadores, vendem vigilância regimes autoritários, lobby contra regulação. Diversidade não redistribui poder, distribui rostos diversos executivos mantendo pirâmide exploração
+ *   + Cap 31.2.2: PT Brasil Neoliberalismo Progressista Tropical (2003-2016, 2023-hoje) — avanços reais dentro limites nunca buscou romper
+ *   + Avanços 2003-2014: Bolsa Família (36mi fora miséria), salário mínimo +72% real, 40mi ascenderam classe C, expansão universidades federais/ProUni/cotas, SEPPIR/SPM, BRICS/Unasul
+ *   + Contradições Estruturais: Pacto agronegócio (desmatamento, Gini terra 0,87), aliança mercado financeiro (Meirelles Banco Central juros altos rentistas), precarização silenciosa (empregos informais baixa remuneração prepararam uberização), neodesenvolvimentismo extrativista (Belo Monte, pré-sal, modelo exportador primário mantido)
+ *   + Fórmula PT: Inclusão pelo consumo + manutenção estruturas poder = estabilidade temporária. Hegemonia às avessas (Francisco Oliveira): classe trabalhadora governa para capital. Políticas compensatórias pacificam base, ortodoxia econômica tranquiliza mercados. Bancos lucros recordes enquanto pobreza cai. Mas sem transformação estrutural — concentração riqueza permanece (1% detém 49% riqueza). Modelo colapsou quando boom commodities acabou 2014
+ *   + Lulismo 3.0 (2023-hoje): Progressismo sob constrangimentos ainda mais estreitos pós-Bolsonaro. Haddad Fazenda ortodoxo (arcabouço fiscal limita gastos sociais), reforma tributária não tributa grandes fortunas/heranças, agronegócio incontestado (Plano Safra R$ 516bi > orçamento saúde inteiro), reformas estruturais ausentes (agrária, mídia, super-ricos "inviável"), retórica progressista internacional (COP30, direitos humanos) mas sem correspondência estrutural
+ *   + Captura completa: PT mobiliza linguagem esquerda, governa centro-direita economicamente, apresenta como "pragmatismo necessário". Alternativas (ecossocialismo, planejamento democrático, desmercantilização) excluídas do "possível". Gramsci: hegemonia quando dominados aceitam como natural/inevitável ordem que os oprime. PT construiu hegemonia progressista do inevitável: "Não há alternativa viável ao neoliberalismo, mas podemos humanizá-lo"
+ *   + Sujeito Automático PT: não subordinou capital ao projeto político, subordinou projeto político à lógica capital (crescimento/lucro/acumulação). Políticos esquerda tornaram-se gestores competentes capitalismo, não superadores
+ *   + Cap 31.2.2.1: Interlúdio Fascista Brasil — Temer e Bolsonaro como Reação Neoliberal Brutal (2016-2022)
+ *   + Temer 2016-18 Golpe Parlamentar: impeachment Dilma pretexto jurídico frágil escondeu motivação real. Classe dominante (agro, finanças, mídia) cansou conciliar, queriam neoliberalismo puro sem concessões sociais
+ *   + Programa Temer: Teto Gastos EC 95 (congelamento 20 anos inviabiliza políticas sociais — austeridade constitucionalizada), Reforma Trabalhista 2017 (trabalho intermitente, terceirização ilimitada, negociado > legislado — CLT destruída após 74 anos, preparou uberização jurídica), privatizações aceleradas (aeroportos/portos/pré-sal), desmantelamento SEPPIR/SPM/MinC
+ *   + Temer neoliberalismo tecnocrático: sem carisma/legitimidade (9% aprovação) mas eficiente implementar agenda classe. Não precisava eleição — bastava Congresso comprado, Judiciário cúmplice, mídia hegemônica. Ditadura mercado por vias institucionais
+ *   + Função Golpe 2016: contradições PT acumularam. Crise pós-2014 tornou insustentável manter lucros bancários E programas sociais. Algo tinha ceder. Elites escolheram sacrificar pacto social. Mas PT mantinha base eleitoral — solução: retirar PT poder sem eleições. Impeachment mecanismo "legal" interrupção democrática. Golpe 2016 não matou corpos (1964), matou possibilidades políticas. Institucionalizou austeridade, criminalizou esquerda (Lava-Jato lawfare), preparou Bolsonaro
+ *   + Bolsonaro 2019-22 Fascismo Neoliberal Tropical: Temer insustentável eleitoralmente. Precisava substituto combinasse agenda neoliberal radical com apelo popular. Bolsonaro: fascismo como forma política neoliberalismo em crise na periferia
+ *   + Características Bolsonarismo: Paulo Guedes (Chicago Boy) neoliberalismo radical (privatização Eletrobras, reforma Previdência que Temer não conseguiu, flexibilização ambiental total), necropolítica explícita (710k mortos COVID negligência deliberada "gripezinha"/sabotagem vacinas/tratamentos ineficazes — deixar morrer como política Estado, genocídio Yanomami garimpo/desnutrição/malária Estado ausente propositalmente), milicianismo digital (WhatsApp/fake news/gabinete ódio — vício algorítmico + mineração dados microdirecionar desinformação), culto violência (elogio ditadura/tortura/fuzilamento, polícia matou 6.400/ano recorde, feminicídios/LGBTfobia cresceram discurso presidencial autorizador), fundamentalismo cristão (bancada evangélica "Brasil acima tudo Deus acima todos" — teocracia neoliberal: teologia prosperidade não libertação, Deus quer você rico), anti-intelectualismo militante (universidades "antros maconha/comunismo", cortes CNPq/CAPES/FAPESP, terra plana/negacionismo climático/criacionismo)
+ *   + Fascismo ou Neoliberalismo? Ambos. Fascismo neoliberal forma específica séc XXI: semelhanças fascismo clássico (culto líder carismático, nacionalismo reacionário, machismo/misoginia/LGBTfobia Estado, violência espetáculo armamentismo/tortura, inimigo interno comunistas/esquerdopatas/universidades/artistas) + diferenças neoliberais (não quer Estado forte — Estado mínimo para pobres máximo para ricos, não corporativista — ultraliberal economicamente, não mobiliza massas via partido — redes digitais descentralizadas, não projeto industrial nacional — exportador commodities servil). Autoritarismo mercado: irracionalismo cultural (religiões/fake news/negacionismo) implementa racionalidade neoliberal (privatização/austeridade/desregulamentação). Fascismo como método, neoliberalismo como conteúdo
+ *   + Por Que Bolsonaro Perdeu 2022 mas Quase Ganhou (49,1% vs 50,9%)? Perdeu: COVID expôs necropolítica demais visível (710k famílias enlutadas), economia frangalhos (inflação/desemprego), isolamento internacional (Biden não atende), Lula mantinha 30%+ memória afetiva "dava para viver". Mas quase ganhou: base sólida 58mi votos. Não fascistas convictos, mas capturados por hegemonia neoliberal-fascista (meritocracia "pobre vagabundo", punitivismo "bandido bom morto", moralismo "ideologia gênero destrói família", messiânico "Deus escolheu Bolsonaro"). Subjetivação fascista não apenas voto, mas forma vida
+ *   + Hegemonia Bolsonarista: Cap 29 (Comunicação/Hegemonia) — hegemonia não só coerção, é consenso ativo. Bolsonaro construiu via dispositivos digitais (algoritmos + fake news + fundamentalismo = máquina subjetivação). Mesmo derrotado eleitoralmente, bolsonarismo permanece como cultura política, forma sociabilidade, reserva autoritária
+ *   + Implicações Lula 3: retorno não restauração lulismo 1.0/2.0 (2003-16). É lulismo constrangido por cicatrizes fascistas: Teto Gastos EC 95 vigente limitando investimentos, Reforma Trabalhista não revogada (uberização consolidada legalmente), Congresso mais conservador (bancada bolsonarista PL+aliados > bancada petista bloqueia progressista), Judiciário capturado (ministros Temer/Bolsonaro STF, Lava-Jato criminalizou esquerda direita impune), polarização permanente (Brasil 50/50 metade vê Lula "ladrão comunista", governabilidade depende coalizão centro-direita Centrão cobra caro cargos/emendas/concessões), ameaça golpista latente (8/1/2023 invasão Brasília mostra bolsonarismo não aceita derrota, militares não intervieram mas não protegeram democracia ativamente — espada Dâmocles)
+ *   + Resultado: Lula 3 neoliberalismo progressista sob tutela fascista. Pode progressismo performático (discursos ONU/COP30/direitos humanos) mas não pode tocar estruturas porque: (1) não tem maioria parlamentar, (2) mercados vigiam punem "radicalização", (3) ameaça golpista real se ousar demais, (4) herança institucional Temer/Bolsonaro amarra orçamento/legislação. Revolução passiva às avessas (Gramsci): mudanças cosméticas (tirar Bolsonaro colocar Lula) garantem nada muda fundamentalmente. Elites aceitam PT porque: (1) Lula domesticou esquerda, (2) alternativa era caos (Bolsonaro ameaçava até frações capital), (3) PT administra capitalismo periférico competentemente com legitimidade popular que direita não tem
+ *   + Interlúdio Fascista não "desvio" — foi reestruturação campo possibilidades políticas. Pós-Bolsonaro qualquer política minimamente progressista parece "vitória" comparação. Horizonte expectativas rebaixado. Lulismo 3.0 oferece migalhas diz "olhem não é Bolsonaro" — base aceita porque alternativa visível é retorno fascista. Captura pela ameaça: não precisa seduzir, basta não ser o pior
+ *   + Cap 31.2.3: Mecanismos Captura Ideológica — três mecanismos centrais com exemplos concretos
+ *   + A. Individualização Político: problemas estruturais reframeados como responsabilidades individuais. Mudança climática → "consumo consciente" individual (canudos papel) enquanto 100 empresas geram 71% emissões globais (Brasil campanhas reciclagem enquanto agro desmata Amazônia/Cerrado impunemente). Desigualdade gênero → "empoderamento" individual lean in/assertividade/negociar salário (como se problema fosse falta confiança mulheres não sistema dominação). Racismo → "educação antirracista" individual importante mas desconectada políticas redistributivas (reparações/cotas/reforma agrária) torna-se apenas performance consciência não ameaça estruturas. Cap 29 mostrou comunicação constrói realidade — linguagem responsabilidade individual reconstrói problemas políticos como problemas pessoais invisibilizando estruturas
+ *   + B. Mercantilização Identidade: identidades marginalizadas transformadas em nichos mercado. "Pink Money" (população LGBTQIA+ segmento consumidor, marcas disputam publicidade "inclusiva" mas lucros não retornam comunidade — extração mais-valia identitária). "Afrofuturismo Corporativo" (estética afrofuturista Wakanda/Black Panther vendida Disney gera bilhões enquanto comunidades negras reais permanecem excluídas riqueza/poder). "Feminismo Mercado" (slogans "futuro feminino" estampados camisetas produzidas sweatshops mulheres asiáticas US$ 2/dia — ironia cruel mas funciona). Cap 10 Sujeito Automático: capital não tem conteúdo ideológico fixo, metaboliza qualquer discurso monetizável. Progressismo tornou-se lucrativo certas demografias — capital o abraça
+ *   + C. Racionalidade Tecnocrática como Despolitização: decisões políticas revestidas linguagem técnica "neutra" escondendo escolhas ideológicas. Austeridade Fiscal apresentada "necessidade matemática" ("contas não fecham") quando é escolha política sobre quem paga conta crises (trabalhadores via cortes sociais vs ricos via impostos). Algoritmos como Autoridade: decisões algorítmicas (crédito/currículos/sentenças) tratadas "objetivas" porque "matemáticas" mas algoritmos reproduzem vieses dados históricos perpetuando discriminação sob máscara neutralidade (Cap 15 Discriminação Algorítmica). Jargão Gerencialista: "otimização/eficiência/sinergia/disrupção" termos soam técnicos mas escondem agendas políticas (geralmente precarização trabalho, concentração poder). Cap 30 analisou filosofia torna-se ciência — aqui reverso perverso: ciência (ou pseudociência) usada para despolitizar filosofia. "Não há alternativa" TINA (Thatcher) torna-se mantra "racional"
+ *   + Cap 31.3: Outros Modelos Captura Bestiário Contemporâneo
+ *   + A. Fascismo Libertário Milei Argentina (2023-hoje): laboratório tempo real fenômeno contraditório. Economista midiático presidente prometeu "dinamitar Banco Central", eliminar ministérios, dolarizar economia, libertar argentinos "Estado parasitário"
+ *   + Retórica Liberdade Milei: vocabulário austríaco/libertário (propriedade privada, mercados livres, indivíduo soberano). Cita Mises/Hayek/Rothbard. Apresenta-se anti-establishment "leão contra casta política". Eleitores desiludidos peronismo/macrismo soou ruptura radical
+ *   + Prática Autoritária Milei: Choque sem Consenso (terapia choque brutal desvalorização 50%/cortes gastos sociais/demissões massivas setor público, pobreza saltou 55% 2024, mas não consenso democrático — decreto presidencial contornando Congresso), Concentração Poder (libertário "anti-estado" expandiu poderes executivos via DNUs Decretos Necessidade Urgência — concentração presidencialista Bolsonaro tentou não conseguiu), Repressão Social (sindicatos/movimentos protestaram resposta gás lacrimogêneo/prisões, protocolo antipiquete criminaliza manifestação — liberdade DE mercado não DE rua), Amigos Autoritários (elogia Pinochet/Bolsonaro/Trump, participa CPACs — "liberdade" admira não democrática é hierárquica/machista/nacionalista)
+ *   + Contradição Constitutiva Fascismo Libertário: oxímoro aparente (como ser fascista autoridade estatal total E libertário Estado mínimo?). Solução dialética: libertário PARA capital (desregulamentação/privatização/flexibilização) e fascista PARA trabalho (repressão sindical/criminalização protesto/disciplinamento corpos). Estado não desaparece — muda função: de provedor social para garantidor ordem proprietária através violência. Cap 5 Acumulação Primitiva: necessário Estado forte para implementar mercado livre contra resistência popular. Pinochet já demonstrou Chile 1973-90: Chicago Boys + tortura = neoliberalismo real-existente
+ *   + Resultados Milei até 2025: inflação três dígitos "controlada" mas recessão profunda (PIB -5,1% 2024, consumo popular despencou) mas mercados financeiros adoraram (risco-país caiu, reservas internacionais subiram via endividamento externo, setor agroexportador celebra). Mais-valia extraída trabalhadores transferida credores internacionais e elite rentista local
+ *   + Captura Milei: capturou legítimo ódio ao Estado corrupto/ineficiente (sentimento real Argentina pós-2001/pós-Kirchnerismo) canalizou não para democratização Estado mas sua destruição seletiva. Destrói programas sociais mantém aparato repressivo. Coopta linguagem "liberdade" enquanto implementa ditadura mercado. Aceleracionismo direita na periferia — acelera colapso welfare state/concentração/necropolítica. Cap 6 Dependência explica: periferia sempre experimenta versões mais brutais modelos centrais
+ *   + B. Aceleracionismo Direita Vertente Teórica: Cap 24 discutiu aceleracionismo direita argumenta devemos acelerar colapso capitalismo/democracia liberal para purgar "fraquezas" (welfare state/diversidade) emergir futuro hierarquias "naturais" geralmente tecno-monarquia neofeudalista. Captura: coopta crítica marxista ao capitalismo (aceita sistema insustentável) mas inverte valores — ao invés emancipação propõe dominação. Usa linguagem darwinista ("seleção natural") racionalização pseudocientífica. Milei representa prática deste projeto na periferia
+ *   + C. Positivismo Dados Data Positivism: crença "dados falam por si mesmos", análise quantitativa massiva revela verdades objetivas sem teoria/interpretação. Captura: ignora dados sempre construídos (o que escolhemos medir, como categorizamos, que proxies usamos). Cap 13 Viés Algorítmico mostrou "objetividade matemática" pode perpetuar injustiças históricas. Racionalidade dados mascara decisões normativas não-examinadas
+ *   + D. Tecnosolucionismo Morozov: crença todo problema (social/político/existencial) tem solução tecnológica. App para isso, blockchain para aquilo, IA para tudo. Captura: despolitiza problemas. Pobreza não questão distribuição riqueza — falta acesso apps microcrédito. Solidão não alienação capitalista — necessidade melhores redes sociais. Transforma cidadãos em usuários e política em design produto
+ *   + E. Greenwashing Corporativo: empresas extrativistas (petrolíferas/mineradoras) investem marketing "verde" continuam destruindo ecossistemas. Captura: coopta linguagem ecológica (sustentabilidade/carbono neutro/ESG) legitimar business-as-usual. "Petróleo limpo" oxímoro mas funciona técnica relações públicas. Cap 22 Necropolítica poderia incluir "ecocídio" morte ecossistemas como nova fronteira
+ *   + F. Reformismo Progressista Petro Colômbia (2022-hoje): eleição Gustavo Petro 2022 primeiro presidente esquerda história colombiana parecia ruptura histórica. Ex-guerrilheiro M-19, senador crítico, vice-presidente afro-colombiana Francia Márquez, plataforma reforma estrutural (agrária/tributária/energética/paz total). Prometia "transformar Colômbia" não apenas administrá-la
+ *   + Promessas Ruptura Petro: Transição Energética (abandonar dependência carvão/petróleo 50% exportações, moratória novas concessões petróleo, investimento renováveis "É petróleo ou vida"), Reforma Agrária (redistribuir 3mi hectares camponeses, fim concentração fundiária 0,4% proprietários controlam 67% terra, reconhecimento territórios indígenas), Paz Total (negociações simultâneas todas guerrilhas/grupos armados ELN/dissidências FARC/Clan del Golfo terminar 60 anos conflito), Reforma Tributária Progressiva (taxar grandes fortunas/mineradoras/exportadores financiar programas sociais sem FMI), Reforma Saúde (sistema público universal desmantelando EPS empresas privadas intermediam/lucram saúde)
+ *   + Colisões com Realidade Petro: implementação revelou limites via eleitoral transformação sistêmica periferia capitalista. Congresso Hostil (Petro não maioria, coalizão governante precisa negociar partidos tradicionais alguns ligados paramilitares/narcotráfico/elite fundiária — cada reforma estrutural diluída negociações). Sabotagem Econômica (moratória petróleo anunciada peso colombiano desvalorizou investimentos estrangeiros congelaram, pressão FMI/mercados forçou recuo — economia periférica não tem soberania escolher modelo energético Cap 6 Dependência). Reforma Agrária Travada (latifundiários/paramilitares/narcotraficantes frequentemente mesmos usam violência, 2023-24 300+ líderes sociais/indígenas assassinados — Estado colombiano não tem monopólio violência compartilha poderes privados armados). Fragmentação Esquerda (setores esquerda Petro acusam "traição" quando recua, centro-direita acusa "radicalismo" quando avança, isolamento político crescente aprovação caiu 56% 2022 para 28% 2025). Limitações Institucionais (Constituição 1991 escrita era neoliberal tem travas constitucionais: autonomia Banco Central controle inflacionário prioritário emprego, regra fiscal limita gasto público, estado coisas inconstitucional permite Corte Constitucional bloquear reformas)
+ *   + Dilema Reformismo Radical Petro: enfrenta contradição clássica esquerda eleitoral — precisa transformar estruturas USANDO instituições criadas para preservar estruturas. Como demolir casa usando ferramentas pregadas no chão da casa? Allende tentou socialismo via eleitoral Chile 1970-73 elite respondeu golpe. Petro aprendeu lição: não confronta militares, não nacionaliza grandes empresas, não rompe FMI. Mas então pode haver transformação estrutural sem confrontar estruturas poder? Cap 1 materialismo histórico: mudança real requer transformação relações produção (quem dono quê, quem trabalha para quem). Petro muda superestrutura (discurso político, algumas políticas) mas base (concentração terra/capital/meios produção) permanece. É reformismo progressista não revolucionário
+ *   + Retórica vs Prática Petro: governo exemplifica captura em processo não concluída mas em curso. Linguagem Transformadora (discursa ONU "capitalismo genocida", compara guerra drogas colonialismo, defende reparações históricas — retoricamente mais radical que qualquer líder latino desde Chávez). Práticas Constrangidas (governo continua exportando carvão 2024 recorde 80mi toneladas, petróleo segue fluindo, reforma tributária aprovada NÃO taxou grandes fortunas Senado bloqueou, reforma saúde engavetada, reforma agrária distribuiu apenas 80k hectares 2,6% meta). Coalização Contraditória (gabinete inclui progressistas genuínos Francia Márquez mas também políticos tradicionais ex-uribistas representantes oligarquias regionais — necessário governabilidade mas esvazia projeto transformador)
+ *   + Captura Petro: mobiliza esperança mudança estrutural mas canaliza-a para reformas dentro ordem. Frustração popular cresce mas para onde vai? Direita colombiana (Centro Democrático uribismo) aguarda colapso Petro retomar poder narrativa "provamos esquerda não funciona". É que aconteceu pós-Dilma Brasil. Cap 29: comunicação política Petro sofisticada (usa redes sociais dialoga movimentos) mas comunicação sem poder material (controle meios produção, força organizada) é teatral. Gramsci: hegemonia requer consenso (ideologia) E coerção (força). Petro tem consenso fragmentado, não tem força
+ *   + Experimento Colombiano 2025: ainda em curso mas já revela limites reformismo eleitoral periferia capitalista século XXI. Não "fracasso pessoal" Petro — demonstração empírica estruturas globais poder (mercados financeiros/FMI/oligarquias locais armadas) constrangem severamente margem manobra governos progressistas. Pergunta fica: se via eleitoral não transforma, qual via?
+ *   + Cap 31.4: Por Que Captura Funciona Psicologia e Estrutura
+ *   + Fatores Psicológicos: Dissonância Cognitiva (psicologicamente confortável acreditar pode ser "ético" dentro sistema comprar orgânico/investir ESG sem transformar sistema — captura oferece fantasia), Desejo Pertencimento (adotar linguagem progressista sinaliza pertencer grupo "dos bons" — performance valores substitui ação política mas satisfaz necessidades sociais), Complexidade Paralisante (problemas sistêmicos enormes assustadores, soluções individuais mudar hábitos consumo mensuráveis controláveis — oferece sensação agência mesmo que ineficaz)
+ *   + Fatores Estruturais: Hegemonia Midiática (quem controla narrativas? Corporações mídia elas mesmas parte elite econômica — críticas sistêmicas marginalizadas reformas individualizadas amplificadas). Precariedade Material (trabalhar 60h/semana pagar aluguel não tem tempo organização política coletiva — precariedade não bug é feature mantém população desmobilizada). Colonização Imaginário (Thatcher "economia é método, objetivo mudar coração e alma" — neoliberalismo não apenas política econômica é subjetivação, nos ensina pensar "empreendedores si", "capital humano" — alternativas tornam-se literalmente impensáveis)
+ *   + Cap 14 Engenharia Vício mostrou plataformas digitais moldam comportamento via dopamina. Podemos pensar captura ideológica como engenharia imaginário — recompensas psicológicas (sentir-se virtuoso) por conformidade discursiva sem ameaça estrutural
+ *   + Cap 31.5: Sintomas Esgotamento Crises Racionalidade Ultrarracionalista
+ *   + Contradições acumulam sinais modelo entrando crise terminal: Crise Climática Inegável (soluções individualizadas fracassaram, fica claro apenas transformação sistêmica pode funcionar mas isso exige abandonar capitalismo crescimento infinito). Desigualdade Explosiva (mesmo Norte Global meritocracia exposta mito, mobilidade social cai, jovens escolarizados enfrentam precariedade — "trabalhe duro terá sucesso" soa cada vez cruel). Colapso Confiança Institucional (pessoas não acreditam mídia tradicional/política eleitoral/expertise científica — parcialmente manipulado extrema-direita mas também reflete falhas reais instituições liberais). Ascensão Alternativas "Irracionais" (negacionismo climático/teorias conspiração/fundamentalismo religioso sintomas racionalidade iluminista perdeu apelo porque foi associada elites indiferentes)
+ *   + Crise não razão em si mas racionalidade específica — estreita, instrumental, individualista, a-histórica — hegemonizada por projeto neoliberal
+ *   + Cap 31.6: Caminhos Além Racionalidades Plurais e Praxis Conectadas
+ *   + Epistemologia Plural Parte VII: Cap 26 introduziu cosmotécnicas não-ocidentais formas conhecer/fazer tecnologia não separam sujeito/objeto, mente/natureza, razão/emoção — não "pré-modernas" ou "irracionais" são racionalidades alternativas igualmente sofisticadas
+ *   + Ubuntu Cap 28 "Eu sou porque nós somos": racionalidade relacional não atomística, decisões ótimas não maximizam utilidade individual mas fortalecem tecido comunitário
+ *   + Sumak Kawsay Bem Viver andino: prosperidade não acumulação material mas harmonia natureza/comunidade, PIB não métrica adequada bem-estar coletivo é
+ *   + Nhandereko Guarani: reciprocidade jopói como princípio tecnoeconômico, tecnologias digitais poderiam ser projetadas facilitar troca não-mercantilizada não acumulação
+ *   + Ferramentas Materiais Partes IV-VI: racionalidades alternativas precisam materialização (Cap 30 salto dialético). Cooperativas Plataforma Cap 25 (propriedade coletiva infraestrutura digital não solução individual é estrutura alternativa). Democracia Cibernética Cap 18 Cybersyn (planejamento participativo mediado tecnologia não tecnocracia autoritária mas ferramenta empoderamento coletivo). Soberania Digital Cap 21 (infraestrutura nacional/regional dados rejeita vigilância corporativa EUA E estatal China propondo controle democrático dados como bem comum)
+ *   + Praxis Conectada: alternativas não podem ser apenas locais/individuais, precisam ser escaláveis (cooperativas precisam federar-se redes interoperáveis não basta startup ética precisa ecossistema), translocais (Sul Global e periferias Norte compartilham interesses contra extrativismo digital, alianças estratégicas Cap 23 BRICS+ podem criar contra-hegemonia), prefigurativas (novas estruturas devem performar valores que pregam, organização socialista hierárquica contradição performativa — processo é conteúdo Cap 29)
+ *   + Cap 31.7: Conclusão Não Fim Razão mas Renascimento Plural
+ *   + Ultrarracionalismo está morrendo. Modelos captura (neoliberalismo progressista, tecnosolucionismo, positivismo dados, fascismo libertário) ainda dominam institucionalmente mas perderam legitimidade moral e eficácia prática. Crises multiplicam: climática, democrática, econômica, existencial
+ *   + América Latina Laboratórios Acelerados 2020-25: experimentos simultâneos Milei (Argentina), PT (Brasil), Petro (Colômbia) não anomalias periféricas — laboratórios acelerados onde contradições capitalismo tardio manifestam-se forma mais crua sem amortecedores institucionais Norte Global
+ *   + Três Caminhos Possíveis: Via Regressiva Milei (fascismo libertário destrói social preserva repressivo, acelera concentração/necropolítica — barbárie explícita). Via Conciliatória PT (neoliberalismo progressista humaniza exploração sem transformar estruturas, inclusão consumo não redistribuição poder — captura hegemônica mais eficaz porque menos visível). Via Reformista Petro (tenta transformação estrutural via instituições desenhadas impedi-la, frustração crescente levanta questão se eleições não mudam nada fundamental por que elites as permitem? — impasse dialético)
+ *   + Nenhum dos três rompe racionalidade ultrarracionalista sentido profundo: Milei fetichiza "eficiência mercado", PT fetichiza "indicadores desenvolvimento", Petro fetichiza "institucionalidade democrática". Todos aceitam premissas iluministas: crescimento econômico métrica progresso, Estado-nação unidade política, racionalidade técnica árbitro decisões. Cosmotécnicas alternativas Parte VII (Ubuntu/Sumak Kawsay/Nhandereko) permanecem marginalizadas, folclorizadas, não-operacionais
+ *   + Dois Futuros Disputam: (1) Regressão Autoritária (fascismo digital, teocracia algorítmica, neofeudalismo tecnocrático — elites híbridas humano-IA governam massas precarizadas vigilância total, Milei prévia deste futuro Buenos Aires 2025 não ficção distópica). (2) Pluriverso Emancipatório (multiplicidade racionalidades coexistindo/hibridizando/traduzindo-se mutuamente, tecnologias serviço comunidades não corporações, democracia radical mediada feedback cibernético — elementos existem cooperativas plataforma Cap 25 práticas indígenas Cap 26 redes transnacionais solidariedade mas fragmentados não-escalonados sem poder suficiente — possível talvez, necessário absolutamente)
+ *   + Lição Latino-Americana Mundo: acontece hoje Buenos Aires/Brasília/Bogotá prefigura acontecerá amanhã Paris/Berlim/Nova York. Crise climática, colapso institucional, polarização extrema, ascensão "alternativas" autoritárias disfarçadas inovação. Periferia não "atrasa" — antecipa. Cap 6 Dependência mostrou: periferia laboratório onde centros testam modelos antes implementá-los casa. Pinochet ensaio Thatcher/Reagan. Bolsonaro ensaio Trump 2.0. Milei pode ser ensaio próxima onda neofascista global
+ *   + Lições dos Fracassos Presentes: Não basta ganhar eleições (lição Petro estruturas poder econômico operam fora/acima democracia eleitoral, transformação requer poder dual institucional + movimentos sociais + controle meios produção). Não basta administrar melhor capitalismo (lição PT conciliação classe temporária, quando crescimento para contradições explodem, reformas compensatórias sem transformação estrutural criam castelo cartas desmorona primeira crise). Não basta destruir Estado sem alternativa (contra-lição Milei desmantelar provisão pública sem construir formas não-mercantilizadas reprodução social gera darwinismo social — "Estado mínimo" pobres + Estado policial dissidentes = novo feudalismo)
+ *   + Razão não salva nunca salvou. Mas racionalidades plurais enraizadas éticas cuidado/reciprocidade/pertencimento armadas ferramentas cibernéticas feedback/auto-organização podem construir mundos habitáveis. Casos latino-americanos ensinam isso requer: (1) Internacionalismo Renovado (nenhum país periférico sozinho resiste pressões mercados globais, alianças estratégicas BRICS+/integração sul-americana não como fim mas espaço manobra Cap 23). (2) Democracia Econômica (propriedade social meios produção cooperativas/empresas públicas/commons digitais não slogan mas infraestrutura material Cap 25). (3) Tecnologia como Comum (soberania digital código aberto infraestrutura pública dados rejeitar vigilância corporativa Vale Silício E estatal China propor controle democrático Cap 21). (4) Epistemologias Plurais (reconhecer racionalidades não-ocidentais não "folclore" mas conhecimentos operacionais — Cybersyn Cap 18 poderia dialogar Nhandereko Guarani Cap 28 ambos sobre reciprocidade/feedback)
+ *   + Ultrarracionalismo está morto. Milei, PT, Petro — cada um à sua maneira sintomas agonia não superações. Longa vida racionalidades plurais. Longa vida muitos futuros possíveis não futuro único prescrito (seja mercado livre seja planejamento centralizado seja reforma eleitoral). Longa vida dança dialética matéria/informação, indivíduo/coletivo, tradição/inovação, Norte/Sul, centro/periferia. Este livro termina mas trabalho — seu trabalho leitor especialmente América Latina/África/Ásia — começa agora. Oguatá Porã. Caminhemos bem juntos muitas direções mesmo tempo aprendendo erros celebrando acertos construindo mundo onde cabem muitos mundos (Zapatistas)
+ *   Total: ~1490 conceitos mapeados (60+ novos Cap 31)
+ * - 2025-10-28 (v27): Expansão massiva do Capítulo 30 (O Salto Dialético: Quando a Filosofia se Torna Ciência e Transforma o Mundo)
+ *   + 50 novos conceitos: salto dialético, filosofia→ciência, condições materiais, saltos abortados, epistemologia prática
+ *   + Cap 30.1: Natureza Salto — negação dialética + transcendência. Filosofia não abandona quando vira ciência, CONCRETIZA-SE
+ *   + Padrão Hegel→Marx→Este Livro: Tese (filosofia abstrata) → Antítese (crise abstração) → Síntese (ciência concreta) → Nova Tese (nova filosofia)
+ *   + Cap 30.2: Primeiro Salto Aristóteles→Newton — Fase 1 Crise: filosofia natural encontra anomalias (Tycho Brahe irregularidades planetárias)
+ *   + Fase 2 Ponte Metodológica: telescópio Galileu (estende sentidos), experimentos controlados (isola variáveis), matemática (F=ma operacionaliza conceitos)
+ *   + Fase 3 Recriação Real: física newtoniana → Revolução Industrial (máquinas vapor, ferrovias) → novo paradigma filosófico (universo como máquina)
+ *   + Cap 30.3: Segundo Salto Alquimia→Química — Fase 1 Crise: proto-ciência hermética acumula observações mas não sistematiza/prevê
+ *   + Fase 2 Ponte: balança analítica Lavoisier (conservação massa), nomenclatura sistemática (H₂O não ☿), termômetros padronizam condições
+ *   + Fase 3 Recriação: síntese ureia 1828 (quebra barreira vivo/não-vivo), indústria química (fertilizantes, plásticos), materialismo científico
+ *   + Cap 30.4: Terceiro Salto Lógica→Computação — Fase 1 Crise: lógica formal permanece abstrata, sem impacto material
+ *   + Fase 2 Ponte: Máquina Turing 1936 (experimento mental), Claude Shannon (lógica booleana em circuitos), von Neumann (arquitetura programa armazenado)
+ *   + Fase 3 Recriação: Era Digital — ciberespaço (novo território disputa), subjetividade algorítmica (algoritmos constituem sujeitos), capitalismo plataforma
+ *   + Cap 30.5: Padrão Universal 3 Movimentos — (1) CRISE abstração (contradições empíricas), (2) PONTE instrumental (ferramentas testam/operacionalizam), (3) SÍNTESE transformadora (nova ciência gera tecnologias + nova filosofia)
+ *   + Ciclo reinicia: toda síntese encontra limites (relatividade desafia Newton, IA desafia booleano) → novos saltos. Espiral infinita
+ *   + Cap 30.6: Implicações Livro — Partes I-II = Tese (Marx+cibernética abstrato), III-VI = Antítese (análise concreta capitalismo digital), VII-VIII = Síntese? (cosmotécnicas + meta-reflexão)
+ *   + Livro não completa salto sozinho: faltam instrumentos sociotécnicos (cooperativas escala, democracia digital real), testes empíricos (políticas implementadas/medidas), linguagem operacional (protocolos/algoritmos materializando filosofia)
+ *   + Próximo salto acontecendo AGORA: IA generativa (LLMs desafiam lógica booleana), computação quântica, interfaces cérebro-máquina, blockchains descentralizados
+ *   + Questão política: quem controla salto? Corporações (Google/OpenAI) OU processo democrático plural? Cap 21 (Soberania Digital) = batalha geopolítica século XXI
+ *   + Cap 30.7: Condições Materiais Salto — por que alguns completam, outros abortam?
+ *   + 30.7.1 Infraestrutura Tecnológica: Galileu precisou vidro qualidade, Newton imprensa, revolução digital transistores → países periféricos não replicam saltos por ausência infraestrutura acumulada (não falta inteligência)
+ *   + Exemplo OGAS vs Cybersyn: OGAS falhou (computadores inferiores, telecomunicações inadequada, burocracia resistiu), Cybersyn quase funcionou (tecnologia disponível criativa, escala gerenciável, Allende vontade política) mas golpe militar destruiu
+ *   + Lição: saltos exigem materialidade (hardware/redes/energia) + poder político (capacidade implementar contra resistências) + tempo (iteração/correção)
+ *   + 30.7.2 Relações Sociais Produção: tecnologia nunca neutra, emerge/reforça relações específicas. Revolução Industrial Inglaterra não China porque relações capitalistas formação incentivavam mecanização
+ *   + China dinastia tinha tecnologia superior mas império burocrático conservador não incentivo estrutural industrialização. Não "atraso" mas racionalidade adequada outras relações (Cap 26 cosmotécnicas)
+ *   + 30.7.3 Hegemonia Cultural: saltos exigem aceitação cultural nova racionalidade (Gramsci). Alquimia→Química precisou Iluminismo dessacralizar natureza (não pecado profanar, matematizar, instrumentalizar)
+ *   + Hoje inverso: saltos ecológicos/decoloniais encontram resistência hegemônica. Cosmotécnicas plurais (Ubuntu, Nhandereko, Sumak Kawsay) dessacralizam Capital, ressacralizam Natureza — mas hegemonia neoliberal marca "primitivas"
+ *   + Para salto cosmotécnico acontecer: revolução cultural comparável Iluminismo mas direção oposta
+ *   + Cap 30.8: Saltos Abortados — 3 mecanismos impedimento: (1) Repressão Direta, (2) Cooptação Capitalista, (3) Limitação Epistêmica
+ *   + 30.8.1 Repressão Direta: destruição física infraestrutura (Cybersyn queimado 1973, Panteras Negras assassinados COINTELPRO, Primavera Árabe esmagada sem organização vanguarda)
+ *   + 30.8.2 Cooptação Capitalista: capital metaboliza críticas despolitizando via mercantilização. Contracultura→publicidade rebeldia, feminismo→girl boss, open source→Big Tech usa Linux grátis lucra bilhões
+ *   + Padrão cooptação: neutralizar conteúdo político, manter forma. Cooperativas→Uber "cooperativo" (forma cooperativa, conteúdo capitalista), blockchain→especulação (P2P forma, acumulação conteúdo), sustentabilidade→greenwashing
+ *   + Lição: saltos genuínos protegem conteúdo político não apenas forma. Cooperativas cláusulas anti-mercantilização, software licenças anti-capitalistas, cosmotécnicas enraizadas territorialmente
+ *   + 30.8.3 Limitação Epistêmica: colonização imaginação. Mark Fisher "realismo capitalista" — mais fácil imaginar fim mundo que fim capitalismo. TINA thatcherista (There Is No Alternative)
+ *   + Cosmotécnicas combatem: racionalidades alternativas JÁ EXISTEM, funcionaram milênios, produziram civilizações complexas sem capitalismo. Não utopias — realidades epistêmicas suprimidas colonialismo
+ *   + Expandir imaginário político = pré-condição saltos emancipatórios. Livro mostra OGAS/Cybersyn não "delírios" mas saltos racionais abortados interesses classe
+ *   + Cap 30.9: Salto Que Este Livro Tenta Catalisar
+ *   + 30.9.1 Tese: Capitalismo Digital Contradição Insolúvel — econômica (automação destrói empregos → subconsumismo), ecológica (data centers 2% eletricidade global insustentável), psíquica (vício+vigilância epidemias ansiedade), política (democracia corrói desinformação algorítmica)
+ *   + Esta é Fase 1 (crise abstração): capitalismo digital filosoficamente coerente (maximizar lucro via dados) mas empiricamente insustentável (destrói bases própria reprodução)
+ *   + 30.9.2 Antítese: Instrumentos Conceituais — marxismo cibernético (Cap 11 informação como valor), cosmotécnicas plurais (Caps 26-28 racionalidades funcionais), comunicação ontologia (Cap 29 mudar linguagem = mudar realidade), epistemologia salto (este capítulo conscientemente transformar conhecimento)
+ *   + Estas são Fase 2 (pontes metodológicas). Mas pontes não atravessam sozinhas — precisam ser CAMINHADAS
+ *   + 30.9.3 Síntese Pendente: De Leitor a Construtor — Fase 3 NÃO está neste livro, está em VOCÊ leitor
+ *   + Ações concretas: organizar cooperativas plataforma (código aberto disponível CoopCycle/Resonate, falta vontade+trabalho), implementar protocolos federados (Matrix/Mastodon funcionais AGORA, falta massa crítica), construir redes mesh (indígenas já fazem, aprender/replicar), pressionar políticas públicas (tributação Big Tech, regulação algorítmica, RBU financiada imposto dados — democracia fragilizada mas existe), educação política base (círculos estudo, oficinas — conceitos livro viram senso comum)
+ *   + Exemplo concreto desenvolvedor: (Individual) audite código próprio serve extração ou commons?, migre ferramentas éticas, (Coletivo) sindicato tech workers, contribua projetos commons, (Estrutural) conselhos municipais tecnologia, testemunhe audiências regulação, escreva/ensine conceitos acessíveis
+ *   + Resultado: sozinho impacto pequeno. Mil leitores = movimento. Cem mil = força política. Salto é coletivo ou não é
+ *   + Cap 30.10: Conclusão Dança Eterna Mapa-Território — salto não evento único, RITMO PERMANENTE evolução cognitiva. Filosofia→ciência→tecnologia→mundo material→nova filosofia. Ciclo continua
+ *   + Saltos não automáticos nem neutros: dependem condições materiais (infraestrutura/recursos) + relações poder (quem beneficia/resiste?) + hegemonia cultural (novas racionalidades aceitas?) + organização coletiva (saltos individuais não transformam estruturas)
+ *   + 4 lições reconhecer padrão: (1) Humildade Epistemológica (toda síntese provisória, INCLUSIVE ESTE LIVRO), (2) Urgência Ética (saltos atuais IA/quântica/bio exigem direcionamento consciente, TEMPO LIMITADO), (3) Ferramenta Crítica ("apenas filosofia" → responder "toda ciência começou filosofia, que instrumentos construir?"), (4) Otimismo Realista (história não linear/circular mas espiral ascendente acumula conhecimento — mais capazes hoje que Aristóteles por ombros gigantes, próximo salto mais potente SE NÃO IMPEDIDO)
+ *   + Síntese final: filosofia não morre quando vira ciência, MULTIPLICA-SE. Cada salto parto doloroso novos mundos possíveis. Somos simultaneamente parteiras e nascidos. Mapa nunca separado território. Mapear = transformar. Pensar = fazer. Livro ao mapear capitalismo digital JÁ O ALTEROU (sua mente leitor). Mente armada novos conceitos altera mundo material. MAS APENAS SE VOCÊ AGIR. Espiral continua — ou estanca. Escolha paradoxalmente sua E nossa. Sempre foi
+ *   + Conexões todos capítulos: Cap 30 é EPISTEMOLOGIA livro inteiro. Explica COMO conhecimento avança (dialeticamente não linearmente). 3 lições: (1) teoria sem prática estéril (marxismo acadêmico sem organização = tese sem salto), (2) prática sem teoria cega (ativismo sem conceitos repete erros — Cybersyn funcionou porque Beer tinha teoria), (3) toda síntese provisória (não fim história, cada solução gera problemas — complexidade crescente = evolução não bug)
+ *   + Materialização General Intellect (Caps 5+11): salto dialético É materialização conhecimento social. Filosofia natural→física newtoniana→Revolução Industrial = conhecimento virou máquina. Alquimia→química→indústria química = conhecimento virou produtos. Lógica→computação→Era Digital = pensamento virou silício
+ *   + Implicação marxista: cada salto aumenta contradição central capitalismo. Produção cada vez mais SOCIAL (depende conhecimento coletivo séculos) mas apropriação PRIVADA (patentes/copyright/Big Tech). Cap 25 cooperativas = socializar apropriação corresponder natureza social produção
+ *   + OGAS/Cybersyn como Saltos Abortados (Caps 17-18): tentativas salto dialético campo político-econômico. Tese (economia planificada) → Antítese (ferramentas cibernéticas) → Síntese esperada (democracia econômica tempo real). OGAS falhou instrumentos inadequados+burocracia resistiu. Cybersyn funcionou mas golpe militar ABORTOU Fase 3. Lição: saltos não automáticos, exigem condições materiais+vontade política+tempo
+ *   + Livro Como Tentativa Salto (meta-análise): Fase 1 (Partes I-II Marx+cibernética crise abstração), Fase 2 (Partes III-VI análise concreta ponte metodológica, Parte VII cosmotécnicas instrumentos conceituais, Parte VIII meta-reflexão), Fase 3 PENDENTE (leitores materializar conceitos código/políticas/organizações). Livro apenas Fases 1-2. Fase 3 depende VOCÊ
+ *   + Humildade epistemológica Cap 30: ensina toda síntese gera nova crise. Mesmo cooperativas plataforma implementadas globalmente encontrarão limites/contradições/anomalias → novo salto. Conhecimento processo sem fim
+ *   + Cosmotécnicas Saltos Não-Lineares (Caps 26-28): Cap 30 descreve saltos tradição ocidental (Aristóteles→Newton, Alquimia→Química, Logos→Digital). Mas outras tradições saltos próprios padrões diferentes. China filosofia confuciana/taoísta→tecnologias burocráticas (coordenação harmônica não experimento controlado). África Ubuntu→tecnologias sociais (cultivo relações não controle natureza). Guarani Nhandereko→práticas agrícolas (simbiose não domínio). Não "atraso" — RACIONALIDADES ADEQUADAS OUTRAS RELAÇÕES
+ *   + Crítica universalismo: Cap 30 poderia ser eurocêntrico ("O" salto sempre Ocidente). Mas seção 30.6 reconhece: precisamos saltos plurais. Tecnologia digital pode seguir lógica Ubuntu (cooperação) tanto quanto newtoniana (otimização). Cap 31 desenvolverá: ultrarracionalismo ocidental limite — hora saltos cosmotécnicos plurais
+ *   + IA Salto Andamento Perigo Iminente (Caps 12-15): IA generativa gera novo salto AGORA — lógica determinística→sistemas probabilísticos. Fase 1 (lógica booleana não lida ambiguidade), Fase 2 (redes neurais, GPUs, Big Data), Fase 3 (LLMs reescrevem código/geram arte/substituem trabalho cognitivo). MAS quem controla? Cap 12 (vício), Cap 13 (viés), Cap 15 (precarização). Saltos não neutros. Mesma tecnologia energia elétrica E bomba atômica. IA pode democracia aumentada (Cybersyn 2.0) OU totalitarismo algorítmico (Social Credit global). DECISÃO TOMADA AGORA enquanto você lê. Caps 21+25 urgentes
+ *   + Educação Salto Permanente (Cap 0): Cap 0 propôs pedagogia não-linear/ativa/reflexiva. Cap 30 revela: aprendizagem É salto dialético perpétuo. Fase 1 (compreensão ingênua senso comum), Fase 2 (lê livro adquire conceitos instrumentos), Fase 3 (percepção mundo muda VÊ exploração onde via mercado livre, vê algoritmos poder político não código neutro — praxis transforma). Mas não termina: nova compreensão→novas perguntas→novos instrumentos→nova síntese. EDUCAÇÃO ESPIRAL INFINITA não acumulação linear fatos. Freire revisitado: conscientização = processo dialético ler mundo (Fase 1) + nomear mundo (Fase 2) + transformar mundo (Fase 3). Cap 30 fornece epistemologia subjacente método freiriano
+ *   Total: ~1430 conceitos mapeados (50+ novos Cap 30)
+ * - 2025-10-28 (v26): Expansão massiva do Capítulo 29 (A Arquitetura Invisível: Como a Comunicação Constrói, Espelha e Transforma a Realidade)
+ *   + 50+ novos conceitos: arquitetura comunicação, superestrutura comunicativa, gramática ontologia, protocolos ontológicos, trabalho comunicativo, mediatização
+ *   + Cap 29.1: Ava Reko — "eu" só existe no "nós". Identidade relacional construída comunicativamente. Jopói não apenas ética — estrutura comunicativa.
+ *   + Cap 29.2.1: Sapir-Whorf — gramática molda pensamento. Gênero gramatical/evidencialidade/"nós" inclusivo = ontologias linguísticas diferentes
+ *   + Evidencialidade: Guarani força especificar fonte conhecimento (viu/ouviu/inferiu) = epistemic humility codificada. Português permite afirmações sem evidência
+ *   + Gramática como destino: linguagem impõe grade interpretação. "Os usuários" (masculino) = hierarquia. Não pode haver tecnologia emancipatória sem LINGUAGEM emancipatória
+ *   + Cap 29.2.2: Goffman — comunicação como performance. Ações fala (Austin): juiz profere sentença não descreve, REALIZA. Algoritmos também fazem ações fala
+ *   + Rituais poder: palanque político, sala executiva, códigos vestimenta = ferramentas não-verbais espelham hierarquias. Cybersyn tinha estética DIFERENTE
+ *   + Rituais digitais: check-in/Stories/tweets = performam pertencimento/status. Economia atenção construída sobre performatividade constante existência
+ *   + Cap 29.2.3: Gramsci — hegemonia cultural. Quando superestrutura vira "senso comum". Ferramentas comunicação naturalizam arbitrário
+ *   + Enquadramento midiático: não reporta fatos, ENQUADRA. "Manifestação" vs "vandalismo", "reforma" vs "desmonte". Gabinete Ódio usou enquadramento sistemático
+ *   + Currículo ideológico: história ensinada espelha ideologia nacional. Omite vozes, glorifica outras. História sempre contada por vencedores
+ *   + Publicidade = superestrutura: não vende produtos, vende ESTILO VIDA. Engenharia vício = publicidade extrema
+ *   + Cap 29.3: Ironia como metacomunicação — duas camadas significado (literal vs intencional). Espelho deformante revela incongruências superestrutura
+ *   + Ironia estrutural livro: usa ferramentas capitalismo digital para criticá-lo. Contradição permanece: não pode escapar sistema ao criticá-lo de dentro
+ *   + Cap 29.4.1: Mediatização — Baudrillard hiperrealidade. Mas são CAMADAS ONTOLÓGICAS: (1) matéria bruta, (2) informação sobre matéria, (3) metadados/algoritmos, (4) IA generativa
+ *   + Realidades múltiplas ordens: Guerra Ucrânia vivenciada via (1) explosões nunca vemos, (2) fotos/vídeos, (3) Twitter filtrado, (4) deepfakes. Cada camada constrói realidade DIFERENTE
+ *   + IA ordem quarta: ChatGPT não descreve mundo — descreve COMO HUMANOS DESCREVEM MUNDO. Metacomunicação automatizada
+ *   + Engenharia ontológica: quem controla Ordens 3-4 controla quais realidades POSSÍVEIS EXPERIMENTAR. Não é censura — é moldar O QUE EXISTE
+ *   + Cap 29.4.2: Trabalho imaterial comunicativo — postar Instagram/escrever review = TRABALHO (sentido marxista). Mais-valia 100% capturada plataforma
+ *   + Exploração comunicativa: 2h/dia Instagram = US$ 7.300/ano trabalho não-pago × 2bi = US$ 14,6tri/ano capturado. Motorista sabe que trabalha; usuário não
+ *   + Sujeito autoproduzido: ao produzir conteúdo, PRODUZ A SI MESMO. Identidade não é representação — é CONSTITUTIVA. Coproduzido por plataformas via comunicação
+ *   + Cap 29.4.3: Protocolos como gramáticas técnicas — não apenas "como computadores conversam". É ONTOLOGIA materializada em código
+ *   + Galloway: protocolo = controle distribuído via regras. DNS descentralizado geograficamente mas hierárquico logicamente (ICANN topo)
+ *   + DNS censura: governos bloqueiam domínios (Turquia→Twitter 2014), corporações removem sites (Amazon→Parler 2021). Colonialismo: .com/.org anglófonos
+ *   + P2P ontologia alternativa: BitTorrent (todos cliente E servidor), IPFS (endereçamento por conteúdo), Tor (anonimato camadas). Horizontalidade/descentralização/privacidade
+ *   + Federação protocolos: ActivityPub (Mastodon), Matrix (chat). Autonomia local + interoperabilidade global. Comunicação é comum, não propriedade privada
+ *   + Cap 29.4.4: Práxis comunicativa — 4 níveis intervenção: (1) Individual (auditoria vocabulário, metacomunicação), (2) Coletivo (círculos fala Nhandereko, tradução línguas)
+ *   + (3) Infraestrutural (migração protocolos federados, glossários resistência), (4) Prefigurativo (viver agora relações comunicativas que queremos universalizar)
+ *   + Higiene comunicativa: anote palavras normalizam exploração ("empreendedor" → "precarizado"). Metacomunicação: 10% tempo discutir COMO discutindo
+ *   + Círculo fala Nhandereko: tempo igual, sem interrupção, decisões consenso. Jopói: fala = dom coletivo. Arquitetura comunicação diferente = relações sociais diferentes
+ *   + Vocabulário resistência: nomear invisível. "Trabalho fantasma" (formulários/IKEA/self-checkout), "assassinato comunicativo" (shadowban), "negligência algorítmica" (DETER)
+ *   + Migração protocolos: WhatsApp→Matrix, Twitter→Mastodon. Não app diferente — ONTOLOGIA DIFERENTE. Efeito rede contra alternativas — mas transição começa primeiros adotantes
+ *   + Política prefigurativa comunicativa: forma comunicação É conteúdo político. Criticar WhatsApp mas usá-lo = contradição performativa. Coerência ontológica
+ *   + Cap 29.5: Conclusão — 7 dimensões arquitetura invisível integradas. Não existe "realidade pré-comunicativa". Questão: que realidade queremos comunicar/construir?
+ *   + Teste materialidade: matéria física existe independente (Ordem 1). MAS significado social é comunicativamente construído. Estruturas sociais existem APENAS se reproduzidas comunicativamente
+ *   + Cosmolinguísticas plurais: linguagens também são cosmolinguísticas (Cap 28 cosmotécnicas). Guarani/Ubuntu/Toki Pona = ontologias linguísticas diferentes. Defender línguas = defender modos alternativos realidade
+ *   + Algoritmos performativos: código é linguagem performativa. Algoritmo crédito não DESCREVE você — PERFORMA realidade econômica. Profecia autorrealizável
+ *   + Conexão Cap 30: comunicação-filosofia se materializa em ciência-ferramentas. Espiral dialética continua
+ *   Total: ~1380 conceitos mapeados (50+ novos Cap 29)
+ * - 2025-10-28 (v25): Expansão massiva do Capítulo 28 (Síntese das Cosmotécnicas Plurais — Ubuntu, Sumak Kawsay e a Revolução Digital Decolonial)
+ *   + 60+ novos conceitos: Ubuntu, Sumak Kawsay, Pachamama, cosmotécnicas plurais, pluriverso digital, implementações práticas
+ *   + Cap 28.1: Ubuntu ("Eu sou porque nós somos") — ontologia relacional radical vs individualismo digital capitalista
+ *   + Desmond Tutu: Ubuntu = humanidade para com outros, segurança vem de pertencer todo maior, não ameaçado por sucesso alheio
+ *   + Ubuntu vs capitalismo digital: plataformas facilitam individualismo (profiles isolados), gamificação reputação zero-sum, enclosure comum
+ *   + Tecnologia baseada Ubuntu: identidades coletivas primárias, reputação não-competitiva (contribuição vs acumulação), commons por design
+ *   + Justiça restaurativa digital: diálogo antes banimento, caminhos retorno sempre abertos, comunidades decidem regras, transformação não punição
+ *   + Ubuntu Software Livre: "Standing on shoulders giants", copyleft (liberdade só verdadeira se compartilhada), governança comunitária
+ *   + Limitações Software Livre: foco liberdades individuais (4 Liberdades), tecnoutopia meritocrática, cegueira colonial raça/gênero
+ *   + Ubuntu radicaliza FOSS: interdependência essencial, responsabilidade coletiva — software só livre se comunidade é livre
+ *   + Cap 28.2: Sumak Kawsay / Suma Qamaña (Buen Vivir andino) — vida boa comunitária/ecológica/pluriversal/qualitativa
+ *   + 4 características Sumak Kawsay: (1) comunitário (ninguém bem se comunidade mal), (2) ecológico (Pachamama incluída), (3) pluriversal (não há modelo único), (4) qualitativo (não PIB)
+ *   + Alberto Acosta: Buen Vivir não é desenvolvimentismo alternativo mas ALTERNATIVA ao desenvolvimentismo, questiona crescimento ilimitado
+ *   + Constituições Equador (2008) e Bolívia (2009): Sumak Kawsay inscrito, Direitos da Natureza/Pachamama (natureza = sujeito direitos não objeto)
+ *   + Sumak Kawsay vs tecnologia: (1) contra growth hacking (para quê crescer?), (2) suficiência não abundância, (3) direitos natureza digital, (4) pluriversalidade tecnológica
+ *   + Crítica cooptação: Correa/Morales continuaram extrativismo apesar discurso Buen Vivir — necessário transformar estruturas materiais não só retórica
+ *   + Cap 28.3: Ressonâncias entre 4 cosmologias (Guarani, Oriental, Ubuntu, Sumak Kawsay) — convergências anti-capitalistas
+ *   + Ontologia relacional: todas rejeitam sujeito cartesiano isolado — Nhandereko (nós precede eu), Taoísmo/Budismo (anatman, pratītyasamutpāda), Ubuntu (eu = porque nós), Sumak Kawsay (comunitário/ecológico)
+ *   + Anti-extrativismo: Guarani (Jopói reciprocidade), Taoísmo (Wu wei), Ubuntu (compartilhamento ontológico), Sumak Kawsay (limite crescimento)
+ *   + Cosmotécnica não-neutra: tecnologia incorpora cosmologia — Guarani ritual/territorializada, Taoísmo harmonização Li/Qi, Ubuntu humanização, Sumak Kawsay harmonia ecológica
+ *   + Temporalidades múltiplas: Guarani (Oguatá Porã processo=destino), Budismo (impermanência/tempo cíclico), Taoísmo (Jieqi 24 termos solares), Sumak Kawsay (Pachakuti tempo espiralar)
+ *   + Direitos natureza: todas afirmam natureza = sujeito não objeto — Guarani (Tekoá inclui floresta/rios/animais), Budismo (karuna a sencientes), Taoísmo (harmonia 10mil seres), Sumak Kawsay (Pachamama direitos constitucionais)
+ *   + Cap 28.4: 8 Princípios Cosmotécnica Decolonial — ontologia + prática concreta
+ *   + Princípio 1 Primazia Nós: ontologia comunidade precede indivíduo, prática identidades coletivas padrão + governança comunitária + métricas laços sociais
+ *   + Princípio 2 Anti-Extrativismo: ontologia reciprocidade não extração, prática transparência fluxos valor + reciprocidade obrigatória + arquiteturas anti-acumulação
+ *   + Princípio 3 Pluriversalidade: ontologia múltiplas cosmotécnicas não tecnologia universal, prática financiamento tecnologias locais + interoperabilidade sem padronização + direito desconexão
+ *   + Princípio 4 Temporalidades: ontologia tempo não linear/abstrato/acelerado, prática slow tech + notificações importância real + direito atraso
+ *   + Princípio 5 Direitos Natureza: ontologia ecossistemas = sujeitos não objetos, prática avaliação impacto ambiental obrigatória + biodiversidade digital + tecnologias regenerativas
+ *   + Princípio 6 Soberania Territorial: ontologia comunidades autodeterminação tecnológica, prática servidores/infraestrutura territórios locais + dados não saem sem consentimento comunitário
+ *   + Princípio 7 Conhecimento Comum: ontologia todo conhecimento é coletivo, prática abolição propriedade intelectual conhecimentos tradicionais + licenças anti-cercamento + educação pública
+ *   + Princípio 8 Justiça Restaurativa: ontologia conflito = restaurar harmonia não punir, prática moderação comunitária + mediação antes banimento + exclusão nunca permanente
+ *   + Cap 28.5: Obstáculos materialização — cooptação, dependência estrutural, escala, dilema Estado
+ *   + Cooptação capitalista: mindfulness corporativo (Budismo→produtividade), Ubuntu Linux (FOSS→Amazon/Google/Facebook), Buen Vivir (discurso→extrativismo), digitalização indígena (ONGs impõem modelos ocidentais)
+ *   + Dependência tecnológica: hardware (chips/servidores oligopólios), protocolos (TCP/IP Norte Global), energia (data centers massiva), conhecimento técnico (universidades/empresas Norte)
+ *   + Problema escala: redes comunitárias locais não competem escala, cooperativas minúsculas vs Uber/Airbnb, protocolos descentralizados sem efeito rede plataformas
+ *   + Dilema Estado: cosmologias são pré-estatais/contra-estatais mas Estados incontornáveis regular Big Tech + financiar alternativas
+ *   + Síntese dilema Estado: plurinacionalismo (múltiplas nações/cosmologias), autonomia territorial, Estado facilitador não impositor
+ *   + Cap 28.6: Horizontes concretos — 6 experiências reais funcionando
+ *   + 1. Redes Mesh Indígenas: Povos da Floresta (Acre), Telecomunicaciones Indígenas Comunitarias (Oaxaca zapotecos/mixtecos), First Mile (Canadá)
+ *   + 2. Cooperativas Plataforma Sul Global: CoopCycle (Europa/LATAM), DisCO (feminista distribuído), Cataki Brasil (catadores recicláveis)
+ *   + 3. Quilombos Digitais: Casa Cultura Tainã (SP hackers negros), AfroBytes (África do Sul desenvolvedores Ubuntu), Black Socialists Tech Caucus
+ *   + 4. Tecnologias Budistas/Taoístas: Plum Village App (Thich Nhat Hanh gratuito/sem rastreamento), Mastodon/Fediverse (descentralizado/sem vício), Permacomputing (permacultura computação)
+ *   + 5. Iniciativas Estatais Buen Vivir: Constituição Equador 2008 (comunicação direito Sumak Kawsay), Lei Bolívia 2011 (17% espectro rádios indígenas), Plano Banda Larga BR 2010
+ *   + 6. Princípios praticados: soberania territorial, governança comunitária, propriedade coletiva, democracia econômica, anti-extrativismo, não-extração, temporalidades múltiplas
+ *   + Cap 28.7: Implementações práticas — 5 áreas concretas construção
+ *   + 28.7.1 Protocolos Interoperabilidade Pluriversal: Camada Tradução Cosmotécnica (CTC) — traduz sem homogeneizar cosmologias diferentes
+ *   + CTC preserva semântica (explica conceitos sem tradução forçada), respeita temporalidade (tempo espiral aparece fora cronologia), explicita ontologia (mensagem marcada cosmologia origem)
+ *   + Status CTC: Pluriverse Protocol (MIT Media Lab + pesquisadores indígenas) em desenvolvimento
+ *   + 28.7.2 Governança Híbrida Ubuntu + Blockchain: Ubuntu DAO (África do Sul 2022-) — 342 membros, R$ 2,1mi movimentados, zero golpes
+ *   + Inovações Ubuntu DAO: votação baseada contribuição comum não capital, consenso Ubuntu 85%+nenhuma minoria prejudicada, lucros redistribuídos igualmente+20% fundo comum, exclusão sempre temporária com restauração
+ *   + Lição Ubuntu DAO: Ubuntu funciona escala comunitária, precisa federação escalar não centralização, decisões levam semanas (trade-off profundidade vs velocidade)
+ *   + 28.7.3 Arquitetura Software Sumak Kawsay: Pacha Stack (Equador/Bolívia) — suficiência não otimização, impacto ecológico métrica primária, direitos natureza digital
+ *   + Pacha Stack: código ineficiente legível, BD limita 100GB força distribuição, rate limits absolutos sem tier enterprise, dashboard kWh não usuários, deploys só energia renovável, features pesadas desabilitadas pico energético
+ *   + Dados pegada ecológica: todo dado mostra impacto ambiental, usuários podem liberar dados reduzir carga, sistema adormece quando ultrapassa limites ambientais
+ *   + Adoção Pacha: 23 cooperativas andinas, 50k usuários, consumo 87% menor equivalentes convencionais — crítica "limitações artificiais"
+ *   + 28.7.4 Educação Tecnológica Decolonial: Pluriversidade Tecnológica (Brasil/Colômbia 2023-) — epistemologias plurais 1º semestre, implementação comunitária 2º semestre
+ *   + Currículo 1º semestre: Nhandereko (territorializada/reciprocidade/tempo cíclico), Ubuntu (relacional/coletiva/restaurativa), Taoísmo/Budismo (Wu Wei/impermanência), Sumak Kawsay (suficiência/direitos natureza)
+ *   + Currículo 2º semestre: projetos reais comunidades indígenas (redes mesh/apps línguas nativas), cosmologia explícita, código português/espanhol/línguas nativas não inglês obrigatório
+ *   + Resultados Pluriversidade: 180 formados (2 anos), 67% cooperativas/projetos sociais (vs 12% nacional), 89% "mudança profunda pensar tecnologia", salários 30% menores mercado (penalização)
+ *   + 28.7.5 Infraestrutura Comunitária Energia+Dados: Minigrids Solares + Data Centers Comunitários (Quênia/Tanzânia) — soberania digital requer soberania energética
+ *   + Modelo: aldeias energia solar excedente → data centers locais → cooperativas plataforma infraestrutura própria, 50kW painéis, servidor 1U 50W, bateria 13kWh, sincronização offline-first
+ *   + Impacto: 14 aldeias (85k pessoas), custo US$ 180k crowdfunding, ROI 7 anos, zero dependência AWS/Google, dados nunca saem território, funciona 5k-10k pessoas (acima precisa federação)
+ *   + Cap 28.8: Crítica à crítica — 5 perigos essencialismo cultural + teste materialidade
+ *   + Perigo 1 Essencialismo: tratar Ubuntu/Nhandereko como essências fixas ignora tradições vivas/contestadas/transformação — não existe "o" Ubuntu, existem Ubuntus
+ *   + Perigo 2 Romantização Pré-Colonial: idealizar sociedades pré-coloniais harmonias edênicas ignora contradições/hierarquias/conflitos — ponto é aprender epistemologias silenciadas não voltar passado
+ *   + Perigo 3 Culturalismo vs Materialismo: atribuir tudo cultura esquece estruturas materiais — Ubuntu não funciona sob propriedade privada meios produção, Sumak Kawsay incompatível extrativismo
+ *   + Perigo 4 Apropriação Corporativa: capitalismo coopta tudo — mindfulness corporativo, economia colaborativa Uber, comunidade Facebook, Ubuntu pode virar slogan marketing
+ *   + Perigo 5 Purismo Paralisante: exigir pureza total ("não é verdadeiro Ubuntu") paralisa experimentação — precisamos hibridizações criativas não ortodoxias
+ *   + Teste Materialidade 4 perguntas: (1) Quem controla propriedade? (acionistas=apropriação), (2) Quem decide? (comunidades origem sem poder=extrativismo), (3) Quem lucra? (fundadores brancos conhecimento não-brancos=colonialismo), (4) Muda estrutura ou discurso? (só marketing=greenwashing)
+ *   + Exemplo ❌ Apropriação: startup californiana "Ubuntu Social Network", filosofia africana marketing, fundadores brancos, VC-funded, vende dados
+ *   + Exemplo ✅ Interlocução: cooperativa sul-africana rede social com pesquisadores Ubuntu, software livre, governança comunitária, lucros redistribuídos, decisões consenso
+ *   + Cap 28.9: Síntese Pluriverso Digital — geopolítica, BRICS+, África, América Latina, Ásia
+ *   + 28.9.1 Geopolítica Pluriverso: 3 modelos disputa — (1) Vale do Silício (privada/shareholders/vigilância lucro/individualismo), (2) Chinês (estatal-privada/PCC/vigilância estabilidade/confucionismo estatal), (3) Pluriversal (comunitária/federação autonomias/soberania territorial/múltiplas cosmologias)
+ *   + Pergunta estratégica: Sul Global campo batalha EUA-China ou constrói próprio caminho?
+ *   + 28.9.2 BRICS+ Tecnodiversidade: BRICS Digital Commons — nuvem BRICS interoperável/soberana, protocolo pagamentos multilateral não hegemônico, LLM Sul-Sul multilíngue, fundo US$ 10bi cosmotécnicas, licença ética BRICS (software livre+anti-militar+reconhece tradicional)
+ *   + Obstáculo BRICS: China pode tentar impor modelo — precisa governança impede hegemonia qualquer membro
+ *   + 28.9.3 África Ubuntu Digital Vanguarda: vantagens estruturais — (1) legado Ubuntu enraizado, (2) leap-frogging tecnológico (pular fase colonial-industrial), (3) M-Pesa liderança mobile money 300mi usuários, (4) demografia jovem 60% <25 anos
+ *   + Visão África 2040: 2025-30 União Africana "Ubuntu Digital" cooperativas continentais, 2030-35 100mi africanos plataformas cooperativas, 2035-40 África exporta modelo (African Tech Renaissance)
+ *   + Obstáculos África: neocolonialismo (França/EUA/China), dívida externa, guerras proxy, corrupção — mas 1-2 países sucesso (Gana/Ruanda/África do Sul?) prova conceito
+ *   + 28.9.4 América Latina Laboratório: tradição experimentação — Chile Cybersyn 1971-73 (1ª democracia cibernética), Venezuela software livre 1999-2010, Equador/Bolívia Sumak Kawsay 2008-09, Brasil Fóruns Cultura Digital/Marco Civil 2003-2010
+ *   + Pacto Andino-Amazônico proposto: Brasil/Colômbia/Equador/Peru/Bolívia/Venezuela/Guianas — moratória tecnológica Amazônia (proibir IA/satélites agronegócio/garimpo), tecnoparque indígena governado originários, protocolo dados territoriais (dados Amazônia pertencem povos), guarda florestal digital (drones/satélites indígenas)
+ *   + 28.9.5 Ásia Multiplicidade: não há modelo asiático único — China (autoritário Cap 25), Japão (Wa/animismo), Coreia (Ppali-ppali traumático mas gerações resistem), Índia (contradição bilhões tech+800mi sem internet), Sudeste Asiático (Gotong Royong/Sabai-sabai/Bayanihan)
+ *   + Pluriverso significa: (1) múltiplas cosmotécnicas território/história/comunidade, (2) interoperabilidade sem universalidade, (3) autodeterminação tecnológica, (4) diversidade design (biodiversidade não monocultura), (5) respeito não-digitalizar (offline/analógico/atraso voluntário)
+ *   + Urgência concreta: aldeias indígenas redes mesh, quilombos digitais, cooperativas plataforma, coletivos hackers Sul Global JÁ FAZEM — centros poder juntam ou insistem monocultura até colapso?
+ *   + Slogan zapatista síntese: "Um mundo onde caibam muitos mundos" — não outro universalismo mas PLURIVERSO
+ *   + Oguatá Porã (caminhar bem guarani): prefigurar (praticar hoje relações amanhã), resistir (não render inevitabilidade), aprender (ouvir silenciadas), construir (mesmo pequeno/marginal tecnologias outro tipo)
+ *   + Síntese final Cap 28: povos indígenas/africanos/asiáticos resistem séculos não derrotados ainda caminham, nós centros/periferias ocidentalizadas temos muito aprender — não aplicar frameworks prontos mas OUVIR + DIALOGAR + DESAPRENDER universal
+ *   + Transição Apêndices: jornada teórica completa — Partes I-II (Marx/cibernética), III (críticas contemporâneas), IV (Cybersyn/OGAS), V (geopolítica/Brasil), VI (políticas públicas), VII (cosmotécnicas plurais) — Apêndices oferecem glossário/biografias/cronologia/bibliografia/ação política/leitura complementar
+ *   + Conexões Cap 28 com todos anteriores: Ubuntu vs Cap 10 (Sujeito Automático individualismo), Jopói/Ayni vs Caps 3-16 (acumulação), pluriversalidade vs Cap 25 (monocultura China/EUA), temporalidades Wu Wei vs Cap 14-15 (vício/aceleração), Pachamama vs Cap 21 (extrativismo Brasil), soberania Tekoa vs Caps 20-21 (geopolítica/dependência), justiça restaurativa vs Cap 22 (necropolítica), síntese Caps 23-24-28 (dupla face + políticas + cosmotécnicas = caminho completo curto/médio/longo prazo)
+ *   + Revolução não virá só São Francisco/Beijing/São Paulo — virá TAMBÉM (talvez principalmente) aldeias/quilombos/comunidades indígenas/periféricas que sempre resistiram colonial-capitalista
+ *   Total: ~1330 conceitos mapeados
+ * - 2025-10-28 (v24): Expansão massiva do Capítulo 27 (Epistemologias Orientais e Crítica ao Extrativismo Digital)
+ *   + 80+ novos conceitos: Taoísmo, Budismo, cosmotécnicas asiáticas, filosofias védicas, extrativismo epistemológico
+ *   + Cap 27.1: Taoísmo e tecnologia instrumental — Wu Wei (não-ação eficaz) vs otimização capitalista infinita
+ *   + Zhuangzi: "Quem usa máquinas desenvolve coração de máquina" — crítica pré-moderna à automação desumanizante
+ *   + Yuk Hui: cosmotécnica = unidade cosmos + técnica, tecnologia chinesa inseparável de Li (理, ordem cósmica) e Qi (氣)
+ *   + Pu (樸, madeira não talhada): simplicidade original vs complexificação tecnocrática, Big Tech resolve problemas que criou
+ *   + Cap 27.2: Budismo e desconstrução eu digital — Anatman (não-eu) desmonta economia identidade (Facebook/LinkedIn/Instagram)
+ *   + Nagarjuna: Śūnyatā (vacuidade), nada existe inerentemente, tudo surge em interdependência (Pratītyasamutpāda)
+ *   + Psicometria algorítmica (Big Five) = reificação, não descrição neutra. Perfis usuário = ficções úteis, não essências
+ *   + Mindfulness cooptado: McMindfulness (Ron Purser) — meditação corporativa torna suportável insuportável, não transforma sistema
+ *   + Thich Nhat Hanh: atenção instrumental (focada objetivos, medida métricas) vs atenção aberta (receptiva, não-discriminante)
+ *   + Karuna (compaixão) aplicada: tecnologias consideram sofrimento trabalhadores invisíveis (moderadores, montadores, mineradores)
+ *   + Cap 27.3: Cosmotécnicas asiáticas pré-modernas — Japão (Ma, Mottainai, Wabi-Sabi), China (Jieqi), Índia (Rig Veda, Upanishads, Yoga)
+ *   + Ma (間, espaço negativo japonês): pausa que dá significado — oposto infinite scroll, interfaces que respiram
+ *   + Mottainai (もったいない): lamento ético-estético pelo desperdício — contra obsolescência programada, pró-reparo
+ *   + Kengo Kuma: arquitetura que incorpora Ma, data centers que "respiram" com ambiente, ciclos naturais luz/temperatura
+ *   + Jieqi (節氣, 24 termos solares chineses): temporalidade cíclica vs tempo linear-progressivo capitalista
+ *   + Cap 27.4: Filosofias védicas — Rig Veda (Ṛta, ordem cósmica emergente), Upanishads (Advaita, não-dualidade Atman-Brahman)
+ *   + Nasadiya Sukta (hino criação): epistemologia incerteza radical vs certeza algorítmica IA
+ *   + B.K. Matilal: epistemologia indiana reconhece múltiplas fontes válidas conhecimento (Pramāṇa-śāstra) vs reducionismo empiricista
+ *   + Yoga Sutra Patañjali: transformação consciência requer incorporação (Asana, Pranayama), não pode ser totalmente automatizada
+ *   + Cap 27.4.1: Cosmotécnicas além da China — Japão (Wa, Shintoísmo, Kaizen), Coreia (Han, Ppali-ppali), Sudeste Asiático
+ *   + Wa (和, harmonia japonesa): tecnologia integra-se harmoniosamente, não domina. Robôs = companheiros (AIBO), não ameaça (Terminator)
+ *   + Shintoísmo animista: tudo tem Kami (神, espírito) — ferramentas têm alma, robôs recebem funerais budistas, tecnologia não é inerte
+ *   + Kaizen (改善): melhoria contínua incremental vs disrupção Vale do Silício ("move fast break things" = genocídio Myanmar)
+ *   + Han (한/恨, trauma coletivo coreano): ferida histórica (colonialismo, guerra, ditadura) transformada em combustível tecnológico
+ *   + Ppali-ppali (빨리빨리, rápido-rápido): velocidade como trauma perpetuado — taxa suicídio mais alta OCDE, morte por excesso trabalho
+ *   + Coreia dividida por tecnologia: Sul hiperconectado (99% internet alta velocidade) vs Norte isolado (intranet Kwangmyong)
+ *   + Sudeste Asiático: Gotong Royong (cooperação comunal Indonésia), Sabai-sabai (relaxe Tailândia), Bayanihan (ajuda mútua Filipinas)
+ *   + Gojek (Indonésia): app transporte emerge de práticas comunitárias (Gotong Royong digitalizado) vs Uber modelo californiano imposto
+ *   + Cap 27.4.2: Casos concretos — Auroville (Índia), Station Q (Japão), WeChat (China), Slow Seoul (Coreia)
+ *   + Auroville (1968-): utopia cibernética védica fracassou — virou enclave elite europeia, gentrificação espiritual, tâmeis locais deslocados
+ *   + Aurocard (moeda comunitária digital sem juros) falhou: manteve economia mercantil, cosmotécnica védica não funciona sob propriedade privada
+ *   + Lição Auroville: epistemologia sem luta de classes = idealismo. Vedanta radical exige abolir propriedade terra, não ousaram
+ *   + Station Q (Japão, descontinuado 2019): app mensagens anti-social — sem notificações, mensagens autodeletam 24h, limite 100 contatos
+ *   + Station Q incorporava Ma (espaço negativo), impermanência budista (Anitya), privacidade como Oku (profundidade oculta)
+ *   + Station Q falhou: 50k usuários vs 90mi LINE. Ma não escala — anti-viral por design, monetização impossível (sem dados/anúncios)
+ *   + Lição Station Q: capitalismo de plataforma incompatível com Ma. Só funcionaria como infraestrutura pública ou cooperativa
+ *   + WeChat (China): super-app 1,3bi usuários, realiza Li (ordem) mas virou panóptico — cada transação monitorada PCC, censura automática
+ *   + WeChat = cosmotécnica chinesa capturada: Li (ordem) sem Wu Wei (não-ação) = ordem imposta à força, Taoísmo estatal = contradição
+ *   + Lição WeChat: cosmotécnica pode ser fascista. Confucionismo justificou imperialismo, Bushido militarismo. Nenhuma cosmologia intrinsecamente libertária
+ *   + Slow Seoul (2014-): movimento desaceleração vida urbana — parques sem celular, bibliotecas silenciosas, "desconecte aos domingos"
+ *   + Slow Seoul vitória parcial: legitimou recusa (jovens citam saúde mental), inspirou Sampo Sedae (4 não: namoro/casamento/filhos/casa = greve natalidade)
+ *   + Lição Slow Seoul: pequenas vitórias importam, micropráticas cotidianas enfraquecem lógica produtivista, revolução é também isso
+ *   + Cap 27.4.3: Extrativismo epistemológico — colonialismo digital minerando sabedorias orientais
+ *   + Extrativismo epistemológico = apropriação conhecimentos não-ocidentais sem consentimento/contexto/compensação para benefício corporações
+ *   + Características: descontextualização (meditação sem ética budista), mercantilização (apps $15/mês), branqueamento (guru indiano → influencer branco)
+ *   + Headspace ($320mi) + Calm ($2bi): industrialização Budismo — fundadores brancos, removem Quatro Nobres Verdades (criticariam consumismo)
+ *   + $2,3bi valor mercado construído sobre trabalho imaterial 2500 anos monges asiáticos que nunca receberam centavo = roubo escala industrial
+ *   + Google "Search Inside Yourself": mindfulness para aguentar crunch 60h/semana sem burnout, Budismo diz desapego mas SIY diz atingir metas
+ *   + Bhikkhu Bodhi (monge tradutor Pali Canon): "Mindfulness sem ética = fascismo com cara paz. Nazistas meditavam para focar genocídio"
+ *   + Exército EUA: mindfulness (programa MMFT) para dessensibilizar soldados a matar, Marines meditam antes atirar = perversão Ahiṃsā (não-violência)
+ *   + Patentes yoga (anos 1990-2000): Bikram patenteou 26 posturas (prática 5000 anos), empresas ocidentais patentearam Asanas
+ *   + Índia criou Traditional Knowledge Digital Library (TKDL) — 200k páginas yoga/ayurveda para provar antiguidade e bloquear patentes
+ *   + USA patenteou cúrcuma para curar feridas (1995) — uso indiano 6000 anos. Índia desafiou, custou milhões defender conhecimento ancestral gratuito
+ *   + Mesma lógica colonial sempre: extração (conhecimento) → processamento (app/patente) → revenda (markup absurdo) → legitimação ("democratização")
+ *   + Como não cair em extrativismo: (1) creditar fontes, (2) contexto obrigatório, (3) não mercantilizar (commons), (4) compensação real
+ *   + (5) autonomia comunitária (consentimento livre/prévio/informado), (6) não instrumentalizar, (7) aprender não apropriar, (8) crítica ao poder
+ *   + Francisco Varela modelo interlocução ética: estudou budismo 20 anos, colaborou mestres (Mind & Life Institute), deu crédito, não mercantilizou
+ *   + Varela conectou enação (ciência cognitiva) com Pratītyasamutpāda (budismo) respeitosamente — construiu pontes, não extraiu minas
+ *   + Cap 27.5: Síntese pluriversalidade epistemológica — tecnologias relacionalidade (não controle), ontologia política (não exercício acadêmico)
+ *   + Fio comum todas tradições: rejeição separação sujeito/objeto que funda tecnologia instrumental moderna
+ *   + Ashis Nandy: ciência/tecnologia modernas impostas ao Sul Global como epistemicídio — assassinato formas locais conhecimento
+ *   + Resistência = futurismo pós-colonial: reimaginar tecnologias século XXI a partir múltiplas histórias, não apenas europeia
+ *   + Cap 27.6: Ações práticas — 4 níveis (individual, coletivo, organizacional, sistêmico) com propostas acionáveis imediatas
+ *   + Nível 1 Individual: meditar sem app corporativo, praticar Ma (sem notificações), Mottainai digital (consertar), Jieqi (horários específicos)
+ *   + Nível 2 Coletivo: Sangha digital (apoio mútuo), Gotong Royong tecnológico (mutirões reparo), círculos leitura decolonial, self-hosting VPS
+ *   + Nível 3 Organizacional: Kaizen digital (40h/semana sem crunch), mindfulness ético (voluntário, ensina ética, mestres reais), licenças éticas
+ *   + Nível 4 Sistêmico: Lei Proteção Epistemológica (estilo Protocolo Nagoya), Ministério Cosmotécnica, Rede Sul-Sul, Fundo Reparação (1% receita Big Tech)
+ *   + Roadmap 10 anos: Anos 1-2 (experimentação 1000+ praticantes), Anos 3-5 (escalamento 50k usuários plataformas éticas), Anos 6-10 (transformação 10M+ usuários cooperativas)
+ *   + Obstáculos: "pré-científicas" (resposta: atomismo também é metafísica), "crescimento infinito" (resposta: economia estado estacionário funciona)
+ *   + "Apropriação cultural" (resposta: depende de como — interlocução vs extração), "China autoritária" (resposta: escolha política importa mais que origem)
+ *   + Conexões rizoma: Wu Wei vs Cap 3 (otimização), Pratītyasamutpāda vs Cap 10 (Sujeito Automático), Wabi-Sabi vs Cap 25 (crédito social China)
+ *   + McMindfulness vs Cap 24 (políticas), extrativismo epistemológico paralelo Cap 7 (dependência), Cap 26 (Nhandereko também roubado)
+ *   + Síntese final: epistemologias orientais radicalmente anti-capitalistas mas capitalismo mestre em capturar críticas e revender
+ *   + Responsabilidade: ao aprender dessas tradições, não repetir padrão colonial. Interlocução ética exige: crédito, contexto, compensação, autonomia
+ *   + Pu (madeira não talhada): potencialidade preservada, recusa determinar formas possíveis antemão. Sistema digital = ferramentas estranhamento
+ *   + Tornam visível o que racionalidade tecnocrática naturalizou como "apenas modo como coisas são". Estranhamento abre espaço imaginar/construir outros mundos
+ *   Total: ~1270 conceitos mapeados
+ * - 2025-10-28 (v23): Expansão massiva do Capítulo 26 (Nhandereko — Modo de Ser Guarani)
+ *   + 30+ novos conceitos profundamente desenvolvidos: Tekoa, Jopói, Mborayu, Teko Porã, Ayvu, extrativismo fusionado
+ *   + Cap 26.1.2: Tekoa Digital — infraestrutura como território comunitário (redes mesh, servidores cooperativos, minigrids solares)
+ *   + Caso concreto: Terra Indígena Marãiwatsédé (Xavante) rede mesh solar própria = soberania comunicacional
+ *   + Cap 26.1.3: Jopói expandido — reciprocidade vs economia plataforma, potlatch como tecnologia social anti-desigualdade
+ *   + História destruição reciprocidade: enclosure comuns, criminalização vadiagem, privatização internet
+ *   + Exemplos Jopói digital: software livre, time banking, mutual aid networks vs mercantilização (CouchSurfing→Airbnb)
+ *   + Por que capitalismo precisa destruir reciprocidade: economias baseadas em reciprocidade não geram lucro
+ *   + Cap 26.2.2: Ayvu (Palavra-Alma) — epistemologia alternativa de comunicação vs Shannon/algoritmos
+ *   + Ayvu: comunicação não é transmissão informação, é ato ontológico que cria realidade. Falar = fundar mundo
+ *   + Aty Guasu: decisão emerge consenso cósmico (humanos + ancestrais + espíritos + futuro), não soma opiniões individuais
+ *   + Crítica Shannon: brilhante engenharia mas ontologia colonial (comunicação = transmissão neutra, significado irrelevante)
+ *   + Arquitetura comunicação baseada Ayvu: ritual (não feed infinito), palavras têm peso ontológico (não likes), tempo cósmico
+ *   + Conexão Cap 29: descolonizar epistemologia da comunicação — Ayvu + Ubuntu + outras cosmologias vs Shannon
+ *   + Cap 26.2.1.1: Extrativismo Fusionado — agronegócio + Big Tech operam juntos destruindo territórios indígenas
+ *   + Case Vale + Microsoft: IA/Azure mineração + reconhecimento facial repressão retomadas Guarani-Kaiowá
+ *   + Case Bayer-Monsanto + IA: agricultura precisão intensifica monocultura (diversidade = ruído algoritmo), lock-in plataforma
+ *   + Case Garimpo Yanomami + Cripto: Telegram/GPS/drones coordenam invasão, Bitcoin lava ouro ilegal
+ *   + Tecnologia "neutra" é mito: criptografia/blockchain facilitam extração predatória (ideologia libertária não distingue opressão)
+ *   + Cap 26.2.1.2: Necropolítica Digital-Territorial — Mbembe aplicado: algoritmos desligados permitem morte (570 crianças Yanomami)
+ *   + DETER desativado, dados saúde ocultados, fiscais instruídos não autuar = escolha deixar morrer tecnologicamente assistida
+ *   + Negligência algorítmica deliberada: indígenas = ruído no dado agronegócio, então eliminados (não só balas, invisibilização digital)
+ *   + Resistência Digital-Territorial Integrada: se extrativismo é fusionado, resistência também é
+ *   + Mapeamento contra-hegemônico: indígenas usam drones/satélites/IA documentar invasões (Vigilantes Amazônia + Greenpeace)
+ *   + Blockchain certificação origem: Cacau Yanomami, castanha — rastreamento completo vs extração ilegal
+ *   + Alianças urbano-indígenas: hackers FOSS + povos indígenas desenvolvem ferramentas (apps documentação violações, alertas invasões)
+ *   + Demarcação terras = luta anticapitalista: território físico + soberania digital = mesma guerra. Sem território não há modo de ser
+ *   + Conceitos novos rizoma: Tekoa digital, Jopói, potlatch, Mborayu, Teko Porã, Ayvu, comunicação ontológica, Shannon limitado
+ *   + Economia dádiva (Marcel Mauss), mercantilização reciprocidade, extrativismo fusionado, Vale-Microsoft, Monsanto-IA, garimpo-cripto
+ *   + Necropolítica digital, resistência digital-territorial, mapeamento contra-hegemônico, blockchain certificação, alianças urbano-indígenas
+ *   + Síntese: Nhandereko não é romantização — é crítica radical epistemologia moderna e projeto futuro pluriversal
+ *   + Terra sem controle dados = colonização parcial; dados sem território = virtualidade descarnada. Tekoa é condição digital também
+ *   + Epistemologia Guarani expandida: sistema completo pensamento questiona bases capitalismo digital desde raiz
+ * - 2025-10-28 (v22): Expansão massiva do Capítulo 25 (China: O Dragão Cibernético)
+ *   + 25+ novos conceitos: modelo chinês capitalismo autoritário, superexploração digital, resistência trabalhadores
+ *   + Cap 25.5: Contradição trabalhadora - regime 996, movimento 996.ICU, greves selvagens reprimidas
+ *   + Jack Ma reeducado: bilionários chineses = vassalos do Partido, não soberanos como no Ocidente
+ *   + Superexploração: 350 milhões trabalhadores plataforma sem direitos, Foxconn redes anti-suicídio
+ *   + Despotismo digital: algoritmos Meituan assumem infrações como parte da rota, punição automática
+ *   + Greves: 2-3 mil/ano (China Labour Bulletin), sempre localizadas, repressão cirúrgica reconhecimento facial
+ *   + Repressão preventiva: algoritmos detectam "padrões suspeitos" ANTES de greve, neutralizam líderes
+ *   + Cap 25.6: Rota da Seda Digital - colonialismo 2.0 via infraestrutura (cabos, 5G, vigilância)
+ *   + Armadilha dívida: Sri Lanka entregou porto 99 anos, Quênia 80% orçamento em dívidas chinesas
+ *   + Exportação autoritarismo: 18 países adotaram vigilância chinesa (Zimbábue, Equador, Venezuela, Paquistão)
+ *   + Venezuela Carnet de la Patria: crédito social ZTE (China), bloqueia alimentos opositores automaticamente
+ *   + Cap 25.7: Resistência digital - linguagem cifrada (Xi=Pooh), blockchain #MeToo, sindicalismo código, A4 Revolution
+ *   + Táticas: desotimizar algoritmos, protestos silenciosos (papel branco), VPNs massivas atravessam Firewall
+ *   + Cap 25.8: O que aprender (e NÃO copiar) - soberania sem autoritarismo, China prova que é possível
+ *   + Lições positivas: planejamento funciona (Made in China 2025), Estado pode regular Big Techs (Jack Ma)
+ *   + O que NÃO copiar: crédito social = necropolítica digital, vigilância total desnecessária para eficiência
+ *   + Cybersyn provou democracia + tecnologia viável, cooperativas mais produtivas que exploradas
+ *   + Brasil na BRI: cautela extrema, exigir transferência tecnologia real + código aberto auditável
+ *   + Conceitos novos rizoma: metacontrolador-estado, ultra-controle-espacotempo, sujeito-preemptivo, explosão-informacional
+ *   + Hiperrealidade Baudrillard: Estado não "conhece" cidadãos, os "sonha" via algoritmos (mapa = território)
+ *   + Cibernética 2ª ordem total: sistema observa observação, controla controle, modela você sabendo que você sabe
+ *   + Síntese: China não é solução, é dilema — provou soberania possível, mas ao custo controle total
+ *   + Terceira via necessária: cooperativas digitais + Cybersyn democrático + políticas Sul Global
+ *   + Eficiência sem autoritarismo é possível — só precisa vontade política, não capacidade técnica
+ * - 2025-10-28 (v21): Expansão massiva do Capítulo 24 (Políticas Concretas para a Revolução Cibernética)
+ *   + 80+ novos conceitos: agenda política concreta, 10 domínios ação, transição democrática digital
+ *   + Horizonte temporal 3 camadas: imediato (1-2 anos), médio prazo (5-10 anos), estrutural (20-30 anos)
+ *   + Domínio 1 - Regulação Plataformas: CLT digital obrigatória, fim falsa autonomia, piso salário R$ 2.500/mês
+ *   + Lei SP 17.468/2021: seguro obrigatório, bloqueio apenas judicial, transparência algoritmo, mas ZERO fiscalização
+ *   + Lei ABC SP 7.349/2022: taxa 1% faturamento apps → fundo trabalhadores plataforma, mas prefeituras não replicam
+ *   + Europa Digital Services Act (DSA): multa até 6% faturamento global, auditoria algoritmos, remove conteúdo ilegal 24h
+ *   + Europa Digital Markets Act (DMA): fim bundling (obriga WhatsApp interoperar Signal/Telegram), fee 30% app stores ilegal
+ *   + Proposta Brasil: PL 3515/2021 (Paulo Teixeira PT-SP) — CLT plataformas, travado lobby Uber/iFood R$ 50mi/ano
+ *   + Enforcemen gap: leis existem, implementação zero — precisa multas automáticas + força-tarefa MPT + orçamento fiscalização
+ *   + Modelo Barcelona: salário mínimo €10/h plataformas (2024), 15 fiscais específicos, multas aplicadas (€890k Glovo)
+ *   + Domínio 2 - Soberania Digital: nuvem pública brasileira R$ 15bi, cabos Sul-Sul, IA soberana, semicondutores
+ *   + Serpro + Dataprev + CTI: fusão empresas públicas TI, modelo CERN (infraestrutura comum), orçamento R$ 8bi/ano
+ *   + Nuvem Brasil: data centers 5 regiões, latência <20ms, LGPD garantida, prioridade serviços públicos + cooperativas
+ *   + Cabos submarinos Sul-Sul: Brasil-África Ocidental (US$ 400mi), LATAM-Ásia via Pacífico (US$ 1,8bi), romper dependência EUA
+ *   + Programa IA Soberana: LLM português 176B parâmetros (GPT-3 scale), corpus BNCC + literatura + ciência BR, R$ 5bi treino
+ *   + Semicondutores 28nm: fábrica BRICS + Índia + China, tecnologia 10 anos atrasada MAS suficiente 80% aplicações
+ *   + Custo total soberania: R$ 100-150bi em 10 anos = 0,3% PIB/ano = VIÁVEL (menos que juros dívida R$ 600bi/ano)
+ *   + Obstáculo real: não é dinheiro — é VONTADE POLÍTICA + enfrentar lobby Big Tech + romper ideologia neoliberal
+ *   + Domínio 3 - Democracia Participativa Digital: orçamento participativo escala, assembleias digitais, blockchain auditorias
+ *   + Decidim Barcelona: 400 mil usuários, 60 mil propostas, 14 mil aceitas implementadas, software livre AGPLv3
+ *   + vTaiwan: consensus blockchain propostas (Uber/Airbnb/fintech), 80% concordância prévia votação, evita polarização
+ *   + Participa.br: orçamento participativo federal piloto, R$ 4bi votados 2025, mas baixa divulgação (500k votantes vs 150mi eleitores)
+ *   + Quadratic voting: voto peso raiz quadrada (evita captura por ricos), testado Colorado/Taiwan/Brasil (Porto Alegre 2023)
+ *   + Assembleias híbridas: presencial + online simultâneo, tradução tempo real, acessibilidade (Libras/audiodescrição)
+ *   + IA facilitação: resumo automático propostas, clustering similares, simulação impacto fiscal/social, MAS decisão humana
+ *   + Problema escala: Porto Alegre 1.500 reuniões presenciais/ano (30k participantes) = caro/elitizado — digital democratiza
+ *   + Riscos digital: exclusão (38mi sem internet Brasil), manipulação bots, falta letramento digital — precisa híbrido + inclusão
+ *   + Domínio 4 - Cooperativismo de Plataforma: fundo público R$ 10bi, isenção fiscal 10 anos, compras públicas priorizam
+ *   + Fundo Nacional Cooperativas Digitais: crédito subsidiado 2% juros, carência 3 anos, contrapartida governança democrática
+ *   + Motorsapp SP: 2.500 mototaxistas, taxa 12% (vs 25% Uber), lucro dividido assembleia, precisa capital giro R$ 5mi
+ *   + Escala via federação: CoopCycle modelo — plataforma comum, marca única, autonomia local, solidariedade financeira
+ *   + Compras públicas: 30% contratos governo priorizam cooperativas (Lei 12.690/2012 existe, não cumprida)
+ *   + Isenção fiscal: cooperativas receita <R$ 20mi/ano zero imposto 10 anos, compensa assimetria venture capital
+ *   + Problema estrutural: VCs despejaram US$ 25bi Uber 2009-2020 (subsídio cruzado dumping), cooperativas sem acesso capital paciente
+ *   + Venture capital socialista: BNDES cria fundo R$ 10bi específico cooperativas digitais, retorno social não lucro
+ *   + Domínio 5 - Taxação Big Techs: OCDE 15% mínimo global, taxa bits, imposto renda algoritmos, fim paraísos fiscais
+ *   + OCDE Pilar 1: 25% lucro acima 10% margem taxado onde usuários estão (não sede), impacto Google/Meta/Amazon
+ *   + Brasil perdeu R$ 10,5bi impostos (2020-23) por Big Techs transferência lucros (Irlanda 12,5%, Holanda tax treaty)
+ *   + Taxa bits: R$ 0,01 por GB tráfego internacional, exceção educação/saúde, arrecadação estimada R$ 15-20bi/ano
+ *   + Imposto renda algoritmos: lucro automação > 60% força trabalho = taxa extra 10-20%, redistributivo (renda básica)
+ *   + Fim paraísos fiscais: lista negra Brasil + sanções (multa 40% transações), modelo GAFI (lavagem dinheiro)
+ *   + Lobby contra: Google/Meta/Amazon gastam US$ 100mi/ano EUA, R$ 50mi/ano Brasil — captura regulador sistemática
+ *   + Caso prático: França 2019 taxa 3% receita digital, Google repassou custo anunciantes, mas arrecadou €500mi
+ *   + Domínio 6 - Educação Emancipatória: currículo crítico TI, epistemologias plurais, software livre, letramento algorítmico
+ *   + 87% cursos TI BR bibliografia 100% EUA: zero Freire, zero Furtado, zero epistemologias do Sul — colonialismo epistêmico
+ *   + Currículo ético TI: obrigatório Ética/Filosofia (Bateson/Freire), História Tecnologia (Cybersyn/OGAS), epistemologias indígenas (Nhandereko)
+ *   + Software livre curriculo: substituir TODAS licenças proprietárias ensino público, economia R$ 8bi/ano + soberania
+ *   + Letramento algorítmico: ensinar viés IA desde ensino médio, como funcionam recomendações, privacidade/vigilância
+ *   + Programa Engenheiros Soberania: 100 mil bolsas R$ 2.500/mês, contrapartida 3 anos projetos públicos/cooperativas
+ *   + Fuga cérebros: 32 mil engenheiros BR no Vale Silício, Brasil investiu R$ 8bi formação, lucro = EUA — precisa reter talento
+ *   + Modelo Cuba: biocibernética 12 mil pesquisadores, salário médico R$ 8-12k (vs R$ 3-5k Cuba), desenvolvimento local
+ *   + Domínio 7 - Privacidade como Direito Fundamental: E2EE obrigatório, proibição reconhecimento facial, habeas data real
+ *   + LGPD 2018 avanço MAS: sem servidores obrigatórios BR, sem proibição transferência, ANPD orçamento R$ 19mi (ridículo)
+ *   + E2EE obrigatório: criptografia ponta-a-ponta default (WhatsApp tem, Meta quer enfraquecer), proibir backdoors
+ *   + Reconhecimento facial: moratória 5 anos, depois apenas judicial + transparência 100%, modelo San Francisco proibiu
+ *   + Habeas data digital: direito saber TUDO que empresas têm sobre você, deletar imediatamente, portabilidade completa
+ *   + Consentimento real: opt-in não opt-out, linguagem clara não juridiquês, revogar 1 clique, auditoria independente
+ *   + Multas LGPD: hoje até 2% faturamento (max R$ 50mi), proposta aumentar 6% faturamento GLOBAL (modelo GDPR Europa)
+ *   + Caso Clearview AI: startup raspou 3bi fotos redes sociais reconhecimento facial, vendeu polícias, ilegal GDPR — precisa criminalizar
+ *   + Domínio 8 - Mídia Pública Digital: BBC/CBC Brasil, financiamento estável, algoritmo transparente, fact-checking ágil
+ *   + EBC destroçada: orçamento R$ 600mi → R$ 200mi (2014-2020), TV Brasil audiência 0,1%, captura governo Bolsonaro
+ *   + Modelo BBC: £3,7bi/ano (taxa TV), 22 mil funcionários, 33% audiência UK, independência garantida royal charter
+ *   + Modelo CBC Canadá: C$ 1,2bi/ano, híbrido público-comercial, 6.400 funcionários, conteúdo bilíngue (inglês-francês)
+ *   + Proposta Brasil: EBC recebe 0,5% PIB (R$ 50bi/ano), independência garantida lei, conselho sociedade civil, proibição censura
+ *   + Plataforma digital: streaming/podcast/redes sociais públicas, algoritmo código aberto, fact-checking tempo real
+ *   + Fact-checking ágil: equipe 500 jornalistas, IA detecta viralização fake news, desmentido propagado mesma velocidade mentira
+ *   + Problema atual: Agência Lupa/Aos Fatos desmentem 48h depois, fake news já 10mi visualizações — precisa real-time
+ *   + Domínio 9 - Transição Energética Justa: empregos verdes digitais, retrofit trabalhadores, planejamento democrático
+ *   + Transição energética digital: data centers 1-2% energia global (416 TWh/ano), mineração Bitcoin 150 TWh/ano
+ *   + Google/Meta prometem 100% renovável 2030, MAS compram créditos carbono (greenwashing) não constroem renováveis
+ *   + Proposta: obrigar data centers 80% energia renovável LOCAL (não créditos), 10 anos prazo transição, multa 5% faturamento
+ *   + Empregos verdes digitais: retrofit trabalhadores combustão para manutenção solar/eólica/baterias, 500 mil empregos BR
+ *   + Planejamento VSM: S1 cooperativas energia local, S2 coordenação regional, S3 ONS democratizado, S4 pesquisa, S5 assembleia clima
+ *   + Just transition: trabalhadores petróleo/carvão não podem pagar crise, renda transição 3 anos + requalificação gratuita
+ *   + Domínio 10 - Renda Básica Universal: piloto R$ 1.000/mês, financiamento taxação IA/algoritmos, experimento controlled
+ *   + UBI: incondicional, individual, universal, periódico — diferente Bolsa Família (condicional, familiar)
+ *   + Experimento Maricá RJ: Renda Básica Cidadania R$ 70/mês (2019), 42 mil famílias, moeda local (mumbuca), resultados positivos
+ *   + Piloto proposto: 10 municípios (5 urbanos + 5 rurais), 100 mil pessoas, R$ 1.000/mês, 3 anos duração, custo R$ 3,6bi
+ *   + Financiamento: taxa algoritmos (R$ 15-20bi/ano), imposto grandes fortunas (R$ 40-60bi/ano), reformar isenções R$ 350bi/ano
+ *   + Argumento automatização: IA elimina 30-40% empregos 20 anos (Goldman Sachs), precisa redistribuir produtividade
+ *   + Argumento dignidade: trabalho não define valor humano, UBI libera tempo para arte/cuidado/comunidade/política
+ *   + Crítica esquerda: UBI perpetua capitalismo, preferível empregos garantidos — resposta: não é ou/ou, é ambos (UBI + empregos públicos)
+ *   + Síntese Integrada 10 Domínios: não são independentes — regulação financia UBI, soberania permite cooperativas, educação forma quadros
+ *   + Obstáculo central: não é viabilidade técnica/econômica — é POLÍTICO (lobby + ideologia + correlação forças)
+ *   + Estratégia transição: vitórias rápidas (regulação plataformas leis municipais) constroem poder para reformas estruturais (soberania)
+ *   + Exemplo histórico: Pix — BC mandou, gratuidade, padrão aberto, 152mi usuários 3 anos — prova que "impossível" é ideológico
+ *   + Lição Cybersyn: defensabilidade — alternativas precisam aparato defesa (legal, político, físico), senão serão destruídas
+ *   + Papel movimentos sociais: MST sementes digitais, Zapatistas redes autônomas, cooperativas catadores, MTD ocupações digitais
+ *   + Papel intelectuais: produzir conhecimento aplicado não torres marfim, traduzir técnica→política, conectar lutas
+ *   + Papel Estado: não neutro mas disputável — ganhar eleições não basta, precisa transformar aparelho (meritocracia→democracia)
+ *   + Horizonte utópico realista: comunismo cibernético = infraestrutura pública + planejamento democrático + diversidade tecnológica
+ *   + Próximos passos: organização (cooperativas/sindicatos/partidos), experimentação (pilotos locais), escala (federação/Estado)
+ *   + Conexões: TODOS capítulos anteriores convergem aqui — diagnóstico→crítica→proposta→AÇÃO
+ *   Total: ~1230 conceitos mapeados
+ * 
+ * - 2025-10-28 (v20): Expansão massiva do Capítulo 23 (A Dupla Face da Cibernética: Controle e Libertação)
+ *   + 70+ novos conceitos: dialética infraestrutura, quem controla meios comunicação, questão da escala, Lei Ashby revisitada
+ *   + Camada física: 530 cabos submarinos (Google 33, Meta 17, Amazon 14), NSA TEMPORA monitora pontos estrangulamento
+ *   + Data centers: AWS 32% mercado global (US$ 90bi/ano), Azure 23%, Google 11% — Big 3 = 66% processamento mundial
+ *   + Starlink: 5.500 satélites (60% de TODOS em órbita), meta 42k até 2027, controle privado infraestrutura crítica
+ *   + Camada protocolo: TCP/IP aberto mas governança campo batalha, ICANN (DNS) sob influência EUA, bloqueio domínios iranianos/cubanos
+ *   + DNS descentralizado: Handshake, ENS (Ethereum Name Service), IPFS — resistência à censura
+ *   + Camada plataforma: jardins murados (Facebook 3,8bi, YouTube 2,5bi, TikTok 1,6bi), duopólio móvel (Android 71%, iOS 28%)
+ *   + App stores: Google Play + Apple 30% comissão, censura arbitrária, controlam o que pode existir
+ *   + Questão da escala: por que alternativas não crescem? Mastodon 1,5mi vs Facebook 3,8bi, Linux desktop 4% em 30 anos
+ *   + Efeito rede como barreira: dependência trajetória (path dependence), problema ação coletiva clássico
+ *   + Contraexemplo Pix: 152mi usuários 3 anos, quebrou Visa/Mastercard — mandato estatal + gratuidade + interoperabilidade + padrão aberto
+ *   + Subsídio cruzado capitalismo vigilância: Uber perdeu US$ 31bi (2009-20), Amazon no vermelho 20 anos, WeWork US$ 12bi
+ *   + Cooperativas SEM acesso venture capital: assimetria estrutural recursos, precisa venture capital socialista (modelo BNDES)
+ *   + Captura inovação: universidades públicas geram pesquisa, captura é privada, patentes transformam comum em propriedade
+ *   + Aaron Swartz: co-criador RSS/Creative Commons/Reddit, baixou JSTOR para liberar, processado 35 anos, suicídio 26 anos
+ *   + CERN não patenteou web (1989): Tim Berners-Lee liberou gratuitamente — resultado internet aberta, contra-modelo ao extrativismo
+ *   + Lei Ashby política: capitalismo reduz variedade (padronização escala, monocultura controle), resistência aumenta variedade
+ *   + Redução variedade: 75% variedades agrícolas extintas século XX, 40% línguas extinção, TikTok trends globais
+ *   + Produção variedade: biodiversidade (sementes crioulas MST), plurilinguismo (UNESCO língua morre 14 dias), tecnodiversidade (Fediverso)
+ *   + Epistemologias plurais: Nhandereko guarani, Ubuntu africano, Buen Vivir andino, budismo/taoísmo — sistemas completos pensamento
+ *   + Variedade = resiliência + incontrolabilidade: alta variedade impede ponto central comando — logo produzir variedade = anti-capitalista
+ *   + Virada copernicana cibernética 2ª ordem: observador entra sistema observado, fim objetividade absoluta
+ *   + Cibernética 1ª ordem: Deus ex machina, controlador fora sistema, termostato/taylorismo/Gosplan — pressupõe ponto vista privilegiado
+ *   + Fracasso 1ª ordem: Lei Ashby — controlador precisa variedade = sistema, mas economia/sociedade variedade infinita, falha informacional
+ *   + Cibernética 2ª ordem: observador no sistema, autopoiese (Maturana/Varela), recursividade, Wikipedia exemplo prático
+ *   + Implicação política: não podemos "controlar" sociedade de fora, apenas participar/modificar por dentro — coordenação distribuída
+ *   + Casos concretos 5 frentes luta: IA, trabalho plataforma, redes sociais, moeda digital, biotecnologia
+ *   + IA autoritária vs democrática: GPT-4/Gemini/Claude proprietários (US$ 100-500mi treino) vs LLaMA/Mistral/BLOOM open-source
+ *   + Proposta audaciosa: ONU criar "CERN da IA" — consórcio público global modelos abertos, financiado taxação Big Tech
+ *   + "Segurança IA" como captura regulatória: OpenAI diz GPT-4 "perigoso demais liberar", mas argumento é monopolização
+ *   + Trabalho: Uber/iFood/Rappi algoritmo-patrão (R$ 5-6/h) vs Mensakas Barcelona cooperativa (+30% salário, democracia)
+ *   + Fairbnb: 50% taxa → projetos comunitários cidade, alternativa Airbnb anti-gentrificação
+ *   + Breque dos Apps Brasil 2020: seguro obrigatório, piso R$ 1/km, fim bloqueios arbitrários — lei municipal SP 2021
+ *   + Redes sociais: Meta US$ 134bi/ano extraindo dados 3,8bi usuários vs Fediverso (Mastodon/Pixelfed/PeerTube) ActivityPub
+ *   + Digital Markets Act UE: considera obrigar Meta/X/TikTok interoperabilidade ActivityPub — fim jardins murados se passar
+ *   + Moeda digital: CBDC autoritária China (yuan expirabilidade programável, restrição uso) vs cripto comum (Bitcoin/Monero/Zcash)
+ *   + Problema cripto: lógica especulativa (pump-and-dump), concentração (1% endereços Bitcoin = 90% coins)
+ *   + Pix modelo intermediário: público, gratuito, interoperável mas rastreável — próximo passo Pix offline (NFC/Bluetooth) privacidade
+ *   + Biotecnologia: 3 empresas (Bayer-Monsanto, Corteva, Syngenta) 60% sementes globais, gene terminator vs biocomum
+ *   + BioBricks: componentes genéticos código aberto, CRISPR domínio público, Cuba vacina câncer pulmão (CIMAvax) libera patente Sul
+ *   + Desafio ético biotech: abertura pode criar bioarmas — solução não é técnica mas POLÍTICA (desarmamento tratados)
+ *   + Comunismo cibernético concreto: infraestrutura pública digital, protocolos abertos/plataformas cooperativas, planejamento democrático
+ *   + Diversidade tecnológica máxima: Linux E BSD, Mastodon E Scuttlebutt, cooperativas E comunas — não "melhor solução" mas pluralidade
+ *   + Acesso universal: internet/energia/água/conectividade como direitos humanos, bens comuns garantidos incondicionalmente
+ *   + Luta infraestrutural: protocolos, algoritmos, data centers — virar moeda Jano para face libertação olhe futuro
+ *   + Exemplos funcionam: Pix quebrou Visa/Mastercard, Wikipedia superou Britannica, Linux 90% servidores web — problema POLÍTICO não técnico
+ *   + Conexões: Caps 2 (cibernética 1ª ordem), 6 (2ª ordem), 9 (Multidão), 10 (Wertkritik), 11 (síntese informacional), 18 (Cybersyn), 19 (cooperativas), 20 (geopolítica), 21 (Brasil), 22 (necropolítica), 24 (políticas concretas)
+ *   Total: ~1150 conceitos mapeados
+ * 
+ * - 2025-10-28 (v19): Expansão massiva do Capítulo 22 (Necropolítica Digital e Fascismo de Tela)
+ *   + 60+ novos conceitos: necropolítica digital, fascismo de tela, gabinete do ódio, algoritmo da morte
+ *   + 714.078 mortos COVID Brasil: 400 mil evitáveis por desinformação (USP), necropolítica não é metáfora
+ *   + Algoritmo da morte: conteúdo ódio 6x mais engajamento, plataformas lucram com morte (Facebook Files vazados)
+ *   + Morte simbólica: doxxing, dogpiling, cancelamento orquestrado — assassinato social em escala
+ *   + Casos brasileiros: Marielle Franco (fake news pós-morte), Jean Wyllys (exílio), Mônica Benício (487 ameaças)
+ *   + Gabinete do Ódio estrutura: 2.300 perfis falsos, R$ 12mi verba pública, 700mi postagens 2022
+ *   + Operação Gabinete: Carlos Bolsonaro (núcleo duro), Telegram QG, WhatsApp vetor, YouTube amplificador
+ *   + Memes como arma: ironia genocida, "E daí?" virou entretenimento, Pepe apropriado alt-right
+ *   + Gamificação violência: curtidas=pontos, adversários=boss fights, política virou videogame de extermínio
+ *   + Casos globais: Rohingya Myanmar (25 mil mortos via Facebook), Índia (31 linchamentos WhatsApp), Christchurch (51 mortos Facebook Live)
+ *   + Bolhas informacionais: 62% brasileiros WhatsApp única fonte, 89% fake news não cruza bolhas (FGV)
+ *   + QAnon Brasil: 38% evangélicos acreditavam, 8 de janeiro teve forte componente conspiratório
+ *   + Colapso espaço público: 306 tentativas atentado STF (2019-22), 87 vereadores LGBTQIA+ renunciaram ameaças
+ *   + VSM necropolítico: S1 (usuários postando ódio), S2 (algoritmo amplifica), S3 (moderação falha por design), S4 (Facebook sabia, ocultou), S5 (Zuckerberg priorizou lucro)
+ *   + Resistência: reportar sistemático, apoiar jornalismo independente, plataformas alternativas (Mastodon/Signal)
+ *   + Por que fact-checking não basta: chegam tarde, não alcançam bolhas, efeito backfire, assimetria recursos
+ *   + 7 pilares resistência infraestrutural: regulação dura, quebra monopólios, transparência algorítmica, alternativas públicas, cooperativas, protocolos abertos, mídia pública financiada
+ *   + Lição síntese: necropolítica digital é problema INFRAESTRUTURAL — exige luta por infraestrutura democrática
+ *   + Conexões: Caps 3 (gerenciamento algorítmico), 10 (sujeito automático), 12 (vigilância), 13 (guerra cultural), 14 (vício), 21 (inserção subordinada Brasil), 23 (dupla face cibernética)
+ *   Total: ~1080 conceitos mapeados
+ * 
+ * - 2025-10-28 (v18): Expansão massiva do Capítulo 21 (Inserção Subordinada do Brasil na Globalização Digital)
+ *   + 60+ novos conceitos: colonialismo digital, extrativismo de dados, maquiladora digital, superexploração digital
+ *   + Unicórnios brasileiros: 30 startups US$ 1bi+, mas 87% capital VC americano, 92% hospedados AWS/Azure/Google
+ *   + Extrativismo dados: US$ 87 bi/ano valor dados brasileiros (4,2% PIB), 78% extraído Big Techs americanas
+ *   + WhatsApp 165mi usuários, Google 140mi, Instagram 119mi, TikTok 82mi, YouTube 142mi — todos estrangeiros
+ *   + Infraestrutura: 19 cabos submarinos (vs 530 globais), 90% tráfego via Fortaleza→Lisboa/Miami, NSA monitora
+ *   + Data centers: 120 no Brasil, 70% AWS/Google/Azure, CLOUD Act permite EUA requisitar dados mesmo no Brasil
+ *   + Maquiladora digital: entregador iFood trabalha 10-12h/dia, 6-7 dias/semana, ganha R$ 1.200-1.500/mês líquido
+ *   + Superexploração: R$ 5-6/hora (vs CLT R$ 6,30/h + direitos), 47% sofreram acidente, 78% sem INSS
+ *   + Breque dos Apps (1º jul/2020): primeira greve nacional plataformas, 100+ cidades, Paulo Lima liderança
+ *   + Fairwork: nenhuma plataforma Brasil alcança 50% critérios trabalho justo (iFood 2/10, Uber 1/10, Rappi 0/10)
+ *   + WhatsApp bloqueio 2016: 12h caos, mostrou dependência crítica, Meta forçou mudança Marco Civil Internet
+ *   + Lobby Big Techs: Google R$ 18,7mi, Meta R$ 12,4mi, Uber R$ 9,8mi (2018-23), capturaram legislação
+ *   + LGPD enfraquecida: sem multas automáticas, sem servidores nacionais, sem proibição transferência dados
+ *   + Pix: maior vitória soberania — 152mi usuários, R$ 17,2 tri/ano, gratuito, quebrou Visa/Mastercard
+ *   + Pix funciona: BC mandou (autonomia), infraestrutura pública, gratuidade, padrão aberto — modelo replicável
+ *   + Educação colonizada: 87% currículos TI bibliografia 100% americana, 92% stack americano, zero soberania digital
+ *   + Fuga cérebros: 32 mil engenheiros brasileiros no Vale do Silício, Brasil investiu R$ 8bi formação, lucro = EUA
+ *   + Custo dependência: US$ 54,5 bi/ano (2,6% PIB) = 1,5x Bolsa Família, 1,3x SUS, 22x CNPq+Capes
+ *   + 10 políticas soberania: nuvem Brasil (R$ 15bi), cabos Sul-Sul (US$ 2bi), CLT plataformas, taxar Big Techs 15%
+ *   + IA soberana: LLM português/espanhol R$ 5bi, software livre gov.br, fábrica semicondutores 28nm BRICS
+ *   + Programa "Engenheiros Soberania": 100 mil bolsas R$ 2.500/mês, contrapartida 3 anos projetos públicos
+ *   + Custo total 10 políticas: R$ 100-120bi em 5 anos = viável (taxação + realocar subsídios + BNDES)
+ *   + Obstáculo: não é dinheiro/tecnologia — é LOBBY (R$ 50mi/ano) + ideologia neoliberal ("Estado não inova")
+ *   + Lição histórica: dependência não se resolve por mercado — exige ruptura política (Cybersyn, Pix, Great Firewall)
+ *   + Conceitos-chave: colonialismo digital, maquiladora digital, superexploração digital, Breque dos Apps, Pix
+ *   + Conceitos secundários: CLOUD Act, LGPD enfraquecida, fuga cérebros digital, lobby Big Techs, soberania digital
+ *   Total: ~1020 conceitos mapeados
+ * 
  * - 2025-10-28 (v17): Expansão massiva do Capítulo 20 (Guerra das Redes: Geopolítica Cibernética)
  *   + 50+ novos conceitos: arquitetura império do dólar, SWIFT, CIPS, SPFS, BRICS Pay, infraestrutura física
  *   + Privilégio exorbitante: déficit US$ 1 tri/ano sustentável, 88% transações globais envolvem dólar, 59% reservas mundiais
@@ -991,15 +1642,425 @@ const conceptGraph = {
     },
     'nhandereko': {
         name: 'Nhandereko',
-        description: 'Orquestrador de conhecimento autopoiético',
-        connections: ['autopoiese', 'epistemologia-guarani', 'modo-colaborativo'],
+        description: '"Nosso modo de ser" — sistema completo de vida Guarani baseado em reciprocidade (Jopói), territorialidade (Tekoa), bem viver (Teko Porã), e amor coletivo (Mborayu). Crítica radical à acumulação capitalista e ao extrativismo digital. Cap 26 expandido.',
+        connections: ['autopoiese', 'epistemologia-guarani', 'modo-colaborativo', 'tekoa', 'jopoi', 'mborayu', 'teko-pora', 'ayvu'],
         color: '#6366f1',
         layer: 1 // Futuro
     },
+    'tekoa': {
+        name: 'Tekoa',
+        description: 'Território Guarani como condição de existência do Nhandereko. Não é propriedade privada — é totalidade de relações (terra, floresta, rios, comunidade, espíritos) que tornam possível a vida boa. Sem Tekoa não há Nhandereko. Luta por demarcação = luta contra extrativismo físico e digital.',
+        connections: ['nhandereko', 'territorio-digital', 'soberania-tecnologica', 'infraestrutura-comunitaria', 'demarcacao-terras'],
+        color: '#16a34a',
+        layer: 1
+    },
+    'tekoa-digital': {
+        name: 'Tekoa Digital',
+        description: 'Infraestrutura digital como território comunitário: redes mesh locais (Guifi.net, NYC Mesh, Rede Quilombo SP), servidores cooperativos locais, minigrids solares para autonomia energética. Nuvem corporativa é colonização; Tekoa digital é soberania.',
+        connections: ['tekoa', 'redes-mesh-comunitarias', 'servidores-cooperativos', 'soberania-digital-br', 'infraestrutura-comunitaria'],
+        color: '#16a34a',
+        layer: 1
+    },
+    'jopoi': {
+        name: 'Jopói',
+        description: 'Reciprocidade obrigatória como fundamento econômico Guarani. Anti-acumulação: quem acumula perde legitimidade. Oposto da economia de plataforma (transação + extração). Exemplos: software livre, time banking, mutual aid networks. Capitalismo destruiu reciprocidade via enclosure, criminalização vadiagem, privatização internet.',
+        connections: ['nhandereko', 'reciprocidade-algoritmica', 'economia-dadiva', 'potlatch', 'comum-digital', 'cooperativismo-plataforma'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'economia-dadiva': {
+        name: 'Economia da Dádiva',
+        description: 'Sistema econômico baseado em reciprocidade não-calculada, não equivalência mercantil (Marcel Mauss). Potlatch: redistribuição forçada de riqueza para prevenir desigualdade. Software livre é economia dádiva digital. Oposto: plataformas mercantilizam práticas de reciprocidade (CouchSurfing→Airbnb, caronas→Uber).',
+        connections: ['jopoi', 'potlatch', 'software-livre', 'commons-digitais', 'mercantilizacao-reciprocidade'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'potlatch': {
+        name: 'Potlatch',
+        description: 'Cerimônia de redistribuição obrigatória de riqueza em povos da costa noroeste (América do Norte). Tecnologia social para prevenir desigualdade. Capitalismo digital é anti-potlatch: acumulação contínua, ocultação de riqueza (paraísos fiscais), maximização de desigualdade (Bezos US$ 200bi, motoristas urinam em garrafas).',
+        connections: ['economia-dadiva', 'jopoi', 'anti-acumulacao', 'desigualdade-digital'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'mborayu': {
+        name: 'Mborayu',
+        description: 'Amor coletivo, solidariedade afetiva, cuidado mútuo Guarani. Laço que torna possível vida em comunidade. Oposto de: individualismo neoliberal, gamificação redes sociais (acumular followers), economia atenção transacional. Mborayu afirma: não somos indivíduos isolados, mas nós coletivos.',
+        connections: ['nhandereko', 'amor-coletivo', 'cuidado-mutuo', 'solidariedade-digital', 'economia-atencao'],
+        color: '#ec4899',
+        layer: 1
+    },
+    'teko-pora': {
+        name: 'Teko Porã',
+        description: 'Bem viver, vida boa Guarani. Não é riqueza material/consumo/acumulação. É: saúde coletiva, autonomia alimentar, reciprocidade/generosidade, vida ritual/espiritual, harmonia relações sociais, liberdade (não ser escravo). Radicalmente incompatível com capitalismo (precisa tempo, território, autonomia).',
+        connections: ['nhandereko', 'bem-viver', 'buen-vivir', 'ubuntu-filosofia', 'autonomia', 'tempo-ciclico'],
+        color: '#10b981',
+        layer: 1
+    },
+    'ayvu': {
+        name: 'Ayvu',
+        description: 'Palavra-alma Guarani. Comunicação não é transmissão de informação (Shannon) — é ato ontológico que cria realidade. Falar é fundar mundo. No Aty Guasu (assembleia), decisão emerge de consenso cósmico (humanos + ancestrais + espíritos + futuro), não soma opiniões individuais. Crítica radical à epistemologia da comunicação digital (Shannon/algoritmos/engajamento).',
+        connections: ['nhandereko', 'comunicacao-ontologica', 'shannon-limitado', 'aty-guasu', 'palavra-criadora', 'ritual-digital'],
+        color: '#f59e0b',
+        layer: 1
+    },
+    'comunicacao-ontologica': {
+        name: 'Comunicação Ontológica',
+        description: 'Ayvu ensina: comunicação não informa, ela funda mundo. Arquitetura baseada em Ayvu: comunicação como ritual (não feed infinito), palavras têm peso ontológico (não likes), tempo cósmico (não engajamento), responsabilidade radical (não leveza "é só internet"). Descolonizar epistemologia da comunicação.',
+        connections: ['ayvu', 'shannon-limitado', 'ritual-digital', 'comunicacao-cap29', 'arquitetura-comunicacao'],
+        color: '#f59e0b',
+        layer: 1
+    },
+    'shannon-limitado': {
+        name: 'Shannon: Brilhante mas Limitado',
+        description: 'Teoria Informação (Shannon 1948): mensagem transmitida A→B, ruído, bits. Útil para engenharia mas pressupõe ontologia da comunicação que é colonial: comunicação é transmissão neutra, significado irrelevante. Ayvu mostra outra forma: comunicação é criação de mundo. Não abandonar Shannon — complementá-lo com outras epistemologias.',
+        connections: ['comunicacao-ontologica', 'ayvu', 'teoria-informacao-shannon', 'epistemologia-comunicacao'],
+        color: '#f59e0b',
+        layer: 0
+    },
+
+    // ========================================
+    // CAPÍTULO 29: ARQUITETURA INVISÍVEL DA COMUNICAÇÃO (EXPANDIDO)
+    // ========================================
+    'arquitetura-comunicacao': {
+        name: 'Arquitetura Invisível da Comunicação',
+        description: 'Cap 29: Comunicação não transmite realidade — ela a CONSTRÓI. Sete dimensões: (1) relacional (Ava Reko), (2) estrutural (gramática molda pensamento), (3) performática (rituais criam poder), (4) hegemônica (naturalização arbitrário), (5) reflexiva (ironia/metacomunicação), (6) mediatizada (ordens múltiplas realidade), (7) protocolar (código antes código). Campo batalha ontológico onde realidade social é contestada.',
+        connections: ['comunicacao-ontologica', 'sapir-whorf', 'goffman-performance', 'gramsci-hegemonia', 'baudrillard-hiperrealidade', 'protocolos-ontologicos', 'trabalho-comunicativo'],
+        color: '#f59e0b',
+        layer: 0
+    },
+    'superestrutura-comunicativa': {
+        name: 'Superestrutura e Infraestrutura Comunicativa',
+        description: 'Cap 29.1: Marx distinguiu base econômica (relações produção) e superestrutura (cultura/ideologia/instituições). Comunicação é MECANISMO pelo qual superestrutura se reproduz e transforma. Quando você usa linguagem "mercado livre" ou aceita "mérito" como natural, está PERFORMANDO superestrutura capitalista. Gramática não é neutra — espelha/reforça relações poder.',
+        connections: ['arquitetura-comunicacao', 'marx-base-superestrutura', 'ideologia-dominante', 'hegemonia-cultural', 'luta-cultural'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'sapir-whorf': {
+        name: 'Hipótese Sapir-Whorf (Relativismo Linguístico)',
+        description: 'Cap 29.2.1: Estrutura língua influencia estrutura pensamento. Gênero gramatical (masculino/feminino) impõe lente categórica. Evidencialidade (como você sabe?) em Guarani força epistemic humility. "Nós" inclusivo/exclusivo materializa relacionalidade. Línguas diferentes constroem ONTOLOGIAS diferentes. Não é determinismo — é que gramática torna certas formas pensar mais fáceis/difíceis.',
+        connections: ['arquitetura-comunicacao', 'gramatica-ontologia', 'evidencialidade-linguistica', 'nos-inclusivo', 'cosmolinguistica'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'gramatica-ontologia': {
+        name: 'Gramática como Destino Ontológico',
+        description: 'Cap 29.2.1: Linguagem impõe grade interpretação sobre mundo. Português "os usuários" (masculino universal) = hierarquia implícita. Guarani força especificar se você viu/ouviu/inferiu = epistemologia diferente. Toki Pona (120 palavras) força simplicidade = muda como você pensa. Não pode haver tecnologia emancipatória sem LINGUAGEM emancipatória.',
+        connections: ['sapir-whorf', 'arquitetura-comunicacao', 'evidencialidade-linguistica', 'vocabulario-resistencia'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'evidencialidade-linguistica': {
+        name: 'Evidencialidade Linguística',
+        description: 'Cap 29.2.1: Línguas que codificam COMO você sabe algo (testemunho direto/relato/inferência). Guarani NÃO PERMITE dizer "está chovendo" sem especificar fonte conhecimento. Epistemic humility gramática codificada. Oposto: português/inglês permitem afirmações categóricas sem evidência = facilita fake news. Algoritmos também têm evidencialidade zero.',
+        connections: ['sapir-whorf', 'gramatica-ontologia', 'epistemologia-guarani', 'fake-news-epistemologia'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'nos-inclusivo': {
+        name: '"Nós" Inclusivo vs Exclusivo',
+        description: 'Cap 29.2.1: Guarani distingue "nós" (eu+você) vs "nós" (eu+outros sem você). Ferramenta gramatical que materializa pertença precisa e identidade coletiva. Português tem só "nós" ambíguo = facilita retórica nacionalista ("nós brasileiros" oculta divisões classe/raça). Ava Reko codificado na gramática.',
+        connections: ['sapir-whorf', 'nhandereko', 'ava-reko', 'identidade-coletiva'],
+        color: '#16a34a',
+        layer: 1
+    },
+    'goffman-performance': {
+        name: 'Goffman: Comunicação como Performance',
+        description: 'Cap 29.2.2: Erving Goffman (A Apresentação do Eu na Vida Cotidiana): comunicação é ritual dramático que PERFORMA relações sociais. Ações de fala (Austin): juiz profere sentença não descreve, ele REALIZA. Poder performático deriva de superestrutura que autoriza. Shadowban é sentença morte social performada por algoritmo sem juiz humano.',
+        connections: ['arquitetura-comunicacao', 'acoes-fala', 'rituais-poder', 'cenografia-poder', 'rituais-digitais'],
+        color: '#f59e0b',
+        layer: 0
+    },
+    'acoes-fala': {
+        name: 'Ações de Fala (Speech Acts)',
+        description: 'Cap 29.2.2: J.L. Austin: certas falas NÃO descrevem — elas REALIZAM. "Eu vos declaro casados", "Está despedido", "Aprovo moção". Poder performativo: falar = fazer acontecer. Algoritmos também fazem ações fala: "você foi banido", "crédito negado", "perfil shadowbanned". Código é linguagem performativa — cria realidade ao ser executado.',
+        connections: ['goffman-performance', 'algoritmos-performativos', 'shadowban-assassinato', 'codigo-linguagem'],
+        color: '#f59e0b',
+        layer: 0
+    },
+    'rituais-poder': {
+        name: 'Rituais de Poder',
+        description: 'Cap 29.2.2: Comício político (palanque/bandeiras/microfones), reunião executiva (sala topo/roupa formal/protocolos reverência) = encenações comunicativas que produzem e legitimam autoridade. Linguagem corporal, protocolos, códigos vestimenta = ferramentas não-verbais espelham/reforçam hierarquias. Cybersyn (Cap 18) tinha estética DIFERENTE: transparente/coletiva/circular.',
+        connections: ['goffman-performance', 'cenografia-poder', 'cybersyn-estetica', 'protocolos-sociais'],
+        color: '#f59e0b',
+        layer: 0
+    },
+    'rituais-digitais': {
+        name: 'Rituais Digitais',
+        description: 'Cap 29.2.2: Check-in Facebook, Stories Instagram, tweet performático = rituais comunicam pertencimento/status/identidade. Economia atenção (Cap 12) construída sobre performatividade constante existência. Selfie não é apenas foto — é ato fala "eu existo, vejam-me". Likes não são mera métrica — são validação ontológica. Redes sociais = palcos para performance permanente.',
+        connections: ['goffman-performance', 'economia-atencao', 'performatividade-digital', 'selfie-ontologia'],
+        color: '#ec4899',
+        layer: 0
+    },
+    'gramsci-hegemonia': {
+        name: 'Gramsci: Hegemonia Cultural',
+        description: 'Cap 29.2.3: Antonio Gramsci: hegemonia = quando superestrutura vira "senso comum". Classe dominante domina não só pela força, mas por fazer suas ideias parecerem NATURAIS. Ferramentas comunicação são vetores cruciais: mídia, escola, publicidade naturalizam arbitrário. Enquadramento midiático ("gastos sociais" vs "investimentos sociais") constrói versão realidade que reforça ordem vigente.',
+        connections: ['arquitetura-comunicacao', 'senso-comum', 'enquadramento-midiatico', 'curriculo-ideologico', 'publicidade-ideologia'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'senso-comum': {
+        name: 'Senso Comum como Construção',
+        description: 'Cap 29.2.3: Ápice poder superestrutura: tornar-se "óbvio". "Mercado é eficiente", "mérito determina sucesso", "crescimento infinito possível" = não são verdades — são ideologia naturalizada. Comunicação repete até virar senso comum. Desconstruir exige mostrar que "natural" é CONSTRUÍDO. Estranhar água em que nadamos.',
+        connections: ['gramsci-hegemonia', 'ideologia-dominante', 'desnaturalizacao', 'critica-ideologica'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'enquadramento-midiatico': {
+        name: 'Enquadramento Midiático (Framing)',
+        description: 'Cap 29.2.3: Mídia não reporta fatos neutros — ENQUADRA. Escolha especialistas, termos usados, o que é omitido = constrói narrativa. "Manifestação" vs "vandalismo", "reforma" vs "desmonte", "flexibilização" vs "precarização". Cap 22: Gabinete Ódio usou enquadramento sistemático transformar adversários em "inimigos nação". Linguagem é campo batalha.',
+        connections: ['gramsci-hegemonia', 'midia-corporativa', 'fake-news-epistemologia', 'vocabulario-resistencia'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'curriculo-ideologico': {
+        name: 'Currículo Escolar como Ideologia',
+        description: 'Cap 29.2.3: Narrativa histórica ensinada = ferramenta comunicação espelha ideologia nacional específica. Omite certas vozes, glorifica outras, transforma versão particular em "A História". Brasil: silencia genocídio indígena, romantiza miscigenação, invisibiliza contribuição negra. História é sempre contada por vencedores — descolonizar educação = multiplicar narrativas.',
+        connections: ['gramsci-hegemonia', 'educacao-bancaria', 'curriculo-decolonial', 'historia-oficial'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'publicidade-ideologia': {
+        name: 'Publicidade como Superestrutura',
+        description: 'Cap 29.2.3: Publicidade não vende apenas produtos — vende ESTILO VIDA ideal. Espelha/reproduz superestrutura capitalismo consumo: felicidade via posse, individualismo, crescimento infinito. Engenharia vício (Cap 14) = publicidade extrema: comunica constantemente "você incompleto sem mais um scroll". Propaganda não é aberração — é capitalismo em forma pura.',
+        connections: ['gramsci-hegemonia', 'engenharia-vicio', 'consumismo', 'capitalismo-desejo'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'ironia-metacomunicacao': {
+        name: 'Ironia como Metacomunicação',
+        description: 'Cap 29.3: Ironia/sarcasmo = ondas informação duas camadas: literal (dito) vs intencional (significado). "Que legal, mais app explorando trabalhadores" — tensão entre camadas gera significado. Ironia age como espelho deformante: distorce para REVELAR incongruências/hipocrisias superestrutura. É metacomunicação: comunica SOBRE comunicação. Ferramenta resistência — mas capital coopta (meme marketing).',
+        connections: ['arquitetura-comunicacao', 'duas-camadas-significado', 'ironia-resistencia', 'metacomunicacao', 'meme-politico'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'duas-camadas-significado': {
+        name: 'Duas Camadas de Significado',
+        description: 'Cap 29.3: Ironia opera criando dissonância deliberada camada literal vs intencional. Contradição é MOTOR do significado. Mas exige contexto partilhado — ouvinte deve ter conhecimento para perceber dissonância e cocriar sentido. É dança cognitiva que fortalece laços grupo (Ava Reko novamente). Ironia pressupõe comunidade. Não funciona em público geral — só entre "nós".',
+        connections: ['ironia-metacomunicacao', 'contexto-partilhado', 'comunidade-interpretativa'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'ironia-estrutural-livro': {
+        name: 'Este Livro é Irônico?',
+        description: 'Cap 29.3: Sim. Ao usar ferramentas capitalismo digital (hiperlinks, UX, navegação não-linear) para criticar capitalismo digital, livro performa ironia estrutural. Escrever em português acadêmico (linguagem poder) para criticar poder = tensão produtiva. Cap 28 incorporou epistemologias não-ocidentais mas contradição permanece: NÃO PODE escapar completamente sistema ao criticá-lo de dentro. Metacomunicação é tudo que podemos fazer.',
+        connections: ['ironia-metacomunicacao', 'critica-imanente', 'contradição-performativa'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'mediatizacao-mundo': {
+        name: 'Mediatização do Mundo',
+        description: 'Cap 29.4.1: Baudrillard alertou hiperrealidade: simulações mais "reais" que real. Mas não é falso vs verdadeiro — são CAMADAS ONTOLÓGICAS: (1) matéria bruta, (2) informação sobre matéria, (3) informação sobre informação (metadados/algoritmos), (4) IA gerativa (metacomunicação automatizada). Vivemos em ecologia interfaces — não "contato direto" com real.',
+        connections: ['arquitetura-comunicacao', 'baudrillard-hiperrealidade', 'realidades-multiplas-ordens', 'ontologia-camadas', 'ia-ordem-quarta'],
+        color: '#9333ea',
+        layer: 0
+    },
+    'baudrillard-hiperrealidade': {
+        name: 'Baudrillard: Hiperrealidade e Simulacro',
+        description: 'Cap 29.4.1: Jean Baudrillard: hiperrealidade = estágio onde simulações se tornam mais "reais" que real. Mapa substitui território. Mas Cap 29 vai além: não é "falso" — são camadas ontológicas REAIS. Guerra Ucrânia vivenciada via: (1) explosões físicas nunca vemos, (2) fotos/vídeos mediados, (3) timeline Twitter algoritmicamente filtrada, (4) deepfakes Zelensky. Cada camada constrói realidade DIFERENTE.',
+        connections: ['mediatizacao-mundo', 'realidades-multiplas-ordens', 'simulacro', 'mapa-territorio'],
+        color: '#9333ea',
+        layer: 0
+    },
+    'realidades-multiplas-ordens': {
+        name: 'Realidades de Múltiplas Ordens',
+        description: 'Cap 29.4.1: (1) Ordem 1 = matéria bruta/processos físicos. (2) Ordem 2 = informação sobre matéria (linguagem/conceitos/ciência). (3) Ordem 3 = informação sobre informação (metadados/algoritmos recomendação/análise sentimento). (4) Ordem 4 (emergente) = IA gerativa cria conteúdo baseado padrões outros conteúdos — não descreve mundo, descreve COMO HUMANOS DESCREVEM MUNDO. Metacomunicação automatizada.',
+        connections: ['mediatizacao-mundo', 'baudrillard-hiperrealidade', 'metadados-poder', 'ia-ordem-quarta'],
+        color: '#9333ea',
+        layer: 0
+    },
+    'ia-ordem-quarta': {
+        name: 'IA como Realidade de Quarta Ordem',
+        description: 'Cap 29.4.1: ChatGPT/Gemini não descrevem mundo — descrevem como HUMANOS descrevem mundo (treinados em textos humanos). É metacomunicação automatizada. Ordem 4 = reflexividade total: sistema comunica sobre como comunicamos. Perigo: se IA gera conteúdo que treina próxima IA, feedback loop pode colapsar em estereótipos auto-reforçantes. Hiperrealidade levada ao extremo.',
+        connections: ['realidades-multiplas-ordens', 'ia-generativa', 'metacomunicacao', 'colapso-semiotico'],
+        color: '#9333ea',
+        layer: 0
+    },
+    'engenharia-ontologica': {
+        name: 'Engenharia Ontológica',
+        description: 'Cap 29.4.1: Quem controla camadas superiores comunicação (Ordem 3-4) controla quais realidades são POSSÍVEIS DE EXPERIMENTAR. Não é censura simples — é moldar O QUE EXISTE para usuário. Cap 3: plataformas controlam infraestrutura Ordem 3. Agora entendemos: controlar algoritmo recomendação = controlar ontologia. Filtro-bolha não filtra opiniões — filtra MUNDOS POSSÍVEIS.',
+        connections: ['mediatizacao-mundo', 'controle-ontologico', 'filtro-bolha-ontologico', 'infraestrutura-realidade'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'trabalho-comunicativo': {
+        name: 'Trabalho Imaterial Comunicativo',
+        description: 'Cap 29.4.2: Quando posta Instagram/escreve review Amazon/responde survey, VOCÊ ESTÁ TRABALHANDO. Sentido marxista preciso: (1) investe trabalho (tempo/energia cognitiva), (2) conteúdo gera valor (dados treinar algoritmos/conteúdo atrai atenção), (3) não é pago — mais-valia 100% capturada por plataforma. 2h/dia Instagram = US$ 20/dia = US$ 7.300/ano trabalho não-pago. × 2bi usuários = US$ 14,6 tri/ano trabalho imaterial capturado.',
+        connections: ['arquitetura-comunicacao', 'trabalho-imaterial', 'mais-valia-dados', 'exploracao-comunicativa', 'trabalho-gratuito-massivo'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'exploracao-comunicativa': {
+        name: 'Exploração Comunicativa',
+        description: 'Cap 29.4.2: Uber explora trabalho material (dirigir). Instagram explora trabalho imaterial (comunicar). Mesma lógica: externalizar custos, internalizar lucros. Diferença: motorista SABE que trabalha; usuário Instagram não. Naturalização do trabalho comunicativo como "lazer" = ideologia perfeita. Você trabalha sem perceber — e ainda PAGA (atenção/dados/privacidade) para trabalhar.',
+        connections: ['trabalho-comunicativo', 'uberizacao', 'mais-valia-dados', 'naturalizacao-trabalho'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'sujeito-autoproduzido': {
+        name: 'Sujeito que se Autoproduz',
+        description: 'Cap 29.4.2: Peculiaridade dialética: ao produzir conteúdo, você PRODUZ A SI MESMO como sujeito. Identidade online não é "representação" de self pre-existente — é CONSTITUTIVA. Você SE TORNA quem você performa comunicativamente (Goffman). Cap 10 (Sujeito Automático): capital se autoproduz via D-M-D\'. Paralelo: sujeito digital se autoproduz via Post→Reação→Novo Post. Você não "usa" plataformas — é COPRODUZIDO por elas via comunicação.',
+        connections: ['trabalho-comunicativo', 'sujeito-automatico', 'identidade-performativa', 'feedback-autopoietico'],
+        color: '#9333ea',
+        layer: 0
+    },
+    'protocolos-ontologicos': {
+        name: 'Protocolos como Gramáticas Técnicas',
+        description: 'Cap 29.4.3: Protocolo não é apenas "como computadores conversam" — é ONTOLOGIA materializada em código que determina: (1) quem pode falar com quem (cliente-servidor vs P2P), (2) quem pode verificar verdade (autoridade central vs consenso distribuído), (3) quem possui dados (servidores corporativos vs armazenamento local). HTTP/DNS/TCP-IP carregam ontologias centralizadoras. Alternativas: IPFS/Tor/Matrix/ActivityPub.',
+        connections: ['arquitetura-comunicacao', 'protocolos-poder', 'galloway-protocolo', 'dns-censura', 'p2p-ontologia', 'federacao-protocolos'],
+        color: '#6366f1',
+        layer: 0
+    },
+    'galloway-protocolo': {
+        name: 'Galloway: Protocolo como Controle',
+        description: 'Cap 29.4.3: Alexander Galloway (Protocol: How Control Exists After Decentralization): protocolo é forma poder característica era digital. Não é controle centralizado (rei) nem totalmente descentralizado (anarquia) — é CONTROLE DISTRIBUÍDO VIA REGRAS. Protocolo permite descentralização técnica (muitos nodes) mas mantém controle lógico (regras uniformes). DNS descentralizado geograficamente mas hierárquico logicamente (ICANN no topo).',
+        connections: ['protocolos-ontologicos', 'controle-distribuido', 'descentralizacao-ilusoria'],
+        color: '#6366f1',
+        layer: 0
+    },
+    'dns-censura': {
+        name: 'DNS como Infraestrutura de Censura',
+        description: 'Cap 29.4.3: Domain Name System parece técnico/neutro — apenas traduz google.com → IP. Mas DNS é HIERÁRQUICO (ICANN topo) e BASEADO EM ESTADO-NAÇÃO (.br, .us, .cn). Governos podem censurar domínios (Turquia bloqueou Twitter.com via DNS 2014). Corporações podem remover sites (Amazon hospeda infraestrutura DNS; removeu Parler 2021). Colonialismo digital: .com/.org anglófonos; línguas não-latinas acesso limitado.',
+        connections: ['protocolos-ontologicos', 'censura-infraestrutural', 'icann-poder', 'colonialismo-protocolo'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'p2p-ontologia': {
+        name: 'P2P como Ontologia Alternativa',
+        description: 'Cap 29.4.3: BitTorrent: todos são cliente E servidor simultaneamente. Ontologia implícita: horizontalidade (sem hierarquia), agência (todos contribuem), descentralização (sem ponto único falha). IPFS (InterPlanetary File System): arquivos endereçados por CONTEÚDO (hash) não LOCALIZAÇÃO (servidor). Informação é pública/imutável por design. Tor: comunicação anônima via roteamento camadas. Privacidade é direito fundamental, não privilégio.',
+        connections: ['protocolos-ontologicos', 'bittorrent', 'ipfs', 'tor-browser', 'descentralizacao-real'],
+        color: '#16a34a',
+        layer: 1
+    },
+    'federacao-protocolos': {
+        name: 'Protocolos Federados',
+        description: 'Cap 29.4.3: ActivityPub (Mastodon/Fediverso): servidores independentes se comunicam via protocolo aberto. Ontologia: federação (autonomia local + interoperabilidade global), diversidade (múltiplas implementações), commons (protocolo é bem público). Matrix: chat federado. Qualquer um pode rodar servidor; todos interoperam. Alternativa email corporativo (Slack/Discord proprietários). Comunicação é comum, não propriedade privada.',
+        connections: ['protocolos-ontologicos', 'activitypub', 'mastodon-fediverso', 'matrix-protocol', 'commons-protocolos'],
+        color: '#16a34a',
+        layer: 1
+    },
+    'resistencia-protocolar': {
+        name: 'Resistência Protocolar Prática',
+        description: 'Cap 29.4.3: Protocolos dominantes carregam ontologias centralizadoras. Alternativas emergentes: IPFS (web descentralizada), Tor (anonimato), Matrix (chat federado). Não é apenas "usar app diferente" — é VIVER EM ONTOLOGIA DIFERENTE (descentralizada, sem algoritmo ranqueamento, sem publicidade). Cap 28: cosmoprotocos — protocolos que incorporam valores culturais diversos, não só eficiência capitalista. Protocolo é política materializada em código.',
+        connections: ['protocolos-ontologicos', 'p2p-ontologia', 'federacao-protocolos', 'cosmoprotocos', 'lei-protecao-epistemologica'],
+        color: '#16a34a',
+        layer: 1
+    },
+    'praxis-comunicativa': {
+        name: 'Práxis Comunicativa',
+        description: 'Cap 29.4.4: Teoria sem prática é idealismo. Se comunicação constrói realidade, MUDAR COMO COMUNICAMOS É MUDAR REALIDADE. Quatro níveis intervenção: (1) Individual (auditoria vocabulário, metacomunicação, desautomatização rituais), (2) Coletivo (círculos fala Nhandereko, tradução conceitos línguas locais, protocolo assíncrono), (3) Infraestrutural (migração protocolos federados, glossários resistência, auditoria algorítmica comunitária), (4) Prefigurativo (viver agora relações comunicativas que queremos universalizar).',
+        connections: ['arquitetura-comunicacao', 'higiene-comunicativa', 'circulo-fala-nhandereko', 'migracao-protocolos', 'politica-prefigurativa-comunicacao'],
+        color: '#16a34a',
+        layer: 1
+    },
+    'higiene-comunicativa': {
+        name: 'Higiene Comunicativa Individual',
+        description: 'Cap 29.4.4: (1) Auditoria vocabulário: anote palavras/frases usadas frequentemente. Identifique termos normalizam exploração ("empreendedor si mesmo" → "precarizado"). (2) Protocolo metacomunicação: reserve 10% tempo discutir COMO estão discutindo. (3) Desautomatização rituais digitais: antes postar, pergunte "construo comunidade ou performo status?" Se segunda, considere não postar. Quebrar feedback loop viciante.',
+        connections: ['praxis-comunicativa', 'vocabulario-resistencia', 'metacomunicacao', 'desvicio-digital'],
+        color: '#16a34a',
+        layer: 1
+    },
+    'circulo-fala-nhandereko': {
+        name: 'Círculos de Fala Inspirados em Nhandereko',
+        description: 'Cap 29.4.4: Reuniões onde cada pessoa fala tempo igual, sem interrupção. Decisões por consenso (não maioria). Jopói aplicado: cada fala é "dom" para coletivo, não propriedade individual. Experimente 3 meses; documente mudanças dinâmica grupal. Arquitetura comunicação diferente produz relações sociais diferentes. Não é apenas "técnica facilitação" — é ONTOLOGIA RELACIONAL praticada.',
+        connections: ['praxis-comunicativa', 'nhandereko', 'jopoi', 'consenso-decisorio', 'horizontalidade-praticada'],
+        color: '#16a34a',
+        layer: 1
+    },
+    'vocabulario-resistencia': {
+        name: 'Vocabulário de Resistência',
+        description: 'Cap 29.4.4: Desenvolver vocabulário compartilhado para fenômenos capitalismo torna invisíveis. Exemplo: "trabalho fantasma" (preencher formulários, montar IKEA, self-checkout — trabalho não-pago que era emprego). "Assassinato comunicativo" (shadowban). "Negligência algorítmica" (DETER desativado). Publicar online; deixar outros contribuírem. Nomear é tornar visível. Visível pode ser combatido.',
+        connections: ['praxis-comunicativa', 'enquadramento-midiatico', 'gramatica-ontologia', 'nomear-invisivel'],
+        color: '#16a34a',
+        layer: 1
+    },
+    'migracao-protocolos': {
+        name: 'Migração para Protocolos Federados',
+        description: 'Cap 29.4.4: Trocar WhatsApp → Matrix, Twitter → Mastodon, Medium → WriteFreely. Não apenas "usar app diferente" — é VIVER EM ONTOLOGIA DIFERENTE (descentralizada, sem algoritmo ranqueamento, sem publicidade). Convide 5 pessoas; explique POR QUE protocolo importa. Efeito rede trabalha contra alternativas — mas toda transição começa com primeiros adotantes. Você precisa ser pioneiro.',
+        connections: ['praxis-comunicativa', 'protocolos-ontologicos', 'federacao-protocolos', 'matrix-protocol', 'mastodon-fediverso'],
+        color: '#16a34a',
+        layer: 1
+    },
+    'politica-prefigurativa-comunicacao': {
+        name: 'Política Prefigurativa Comunicativa',
+        description: 'Cap 29.4.4: Não podemos usar meios hierárquicos para fins igualitários (Malatesta/Graeber). Forma comunicação É conteúdo político. Se critica capitalismo vigilância mas usa WhatsApp para organizar = contradição performativa. Se defende horizontalidade mas reuniões têm sempre mesmas pessoas falando = performa hierarquia implícita. Política prefigurativa: VIVER AGORA relações comunicativas que queremos universalizar. Não é purismo — é coerência ontológica.',
+        connections: ['praxis-comunicativa', 'graeber-politica-prefigurativa', 'coerencia-ontologica', 'contradicao-performativa'],
+        color: '#16a34a',
+        layer: 1
+    },
+    'cosmolinguistica': {
+        name: 'Cosmolinguísticas Plurais',
+        description: 'Cap 29: Caps 26-28 argumentaram tecnologias não são neutras — são cosmotécnicas. Este cap generaliza: LINGUAGENS também são cosmolinguísticas. Cada língua constrói realidade diferente. Guarani (nós inclusivo/exclusivo) materializa Ava Reko. Ubuntu ("pessoa através de outras") = ontologia linguística. Toki Pona (120 palavras) força simplicidade. Resistência colonialismo digital exige resistência linguística. Defender línguas indígenas = defender modos alternativos construir realidade.',
+        connections: ['arquitetura-comunicacao', 'sapir-whorf', 'cosmotecnicas-plurais', 'epistemologia-guarani', 'ubuntu-filosofia'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'algoritmos-performativos': {
+        name: 'Algoritmos como Linguagem Performativa',
+        description: 'Cap 29: Caps 10+15: algoritmos não executam comandos — CONSTITUEM subjetividades. Código é linguagem performativa (como sentença judicial que cria realidade ao enunciar). Algoritmo crédito diz "você é alto risco" — não DESCREVE você, PERFORMA sua realidade econômica. Você SE TORNA "alto risco" porque bancos agem nisso. Profecia autorrealizável. Cap 15: reproduz discriminação racial/gênero. Auditar algoritmos = análise linguística. Código é comunicação. Comunicação é poder.',
+        connections: ['arquitetura-comunicacao', 'acoes-fala', 'sujeito-automatico', 'discriminacao-algoritmica', 'profecia-autorrealizavel'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'teste-materialidade-comunicacao': {
+        name: 'Teste Materialidade vs Relativismo',
+        description: 'Cap 29.5: Dizer "comunicação constrói realidade" pode parecer relativismo ("tudo narrativa, não há verdade"). NÃO É. Matéria física existe independente comunicação (Ordem 1). Gravidade funciona sem acreditar. MAS: significado social fenômenos físicos é comunicativamente construído. "Aquecimento global" é real (física), mas se enquadrado "ciclo natural" vs "crise antropogênica", AÇÕES resultantes radicalmente diferentes. Estruturas sociais (capitalismo/Estado/família) existem APENAS porque comunicativamente reproduzidas. Dinheiro vale porque coletivamente COMUNICAMOS que vale.',
+        connections: ['arquitetura-comunicacao', 'materialismo-historico', 'construcao-social-realidade', 'fenomenologia-social'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'extrativismo-fusionado': {
+        name: 'Extrativismo Físico + Digital Fusionado',
+        description: 'Agronegócio + Big Tech operam juntos. Vale + Microsoft: IA para mineração em terras indígenas, reconhecimento facial reprime manifestações. Bayer-Monsanto: IA agricultura precisão intensifica monocultura (algoritmo só funciona com monoculturas, diversidade = ruído). Garimpo Yanomami: Telegram + GPS + Bitcoin para invasão/lavagem dinheiro. Tecnologia "neutra" facilita extração predatória.',
+        connections: ['extrativismo', 'agro-big-tech', 'vale-microsoft', 'monsanto-ia', 'garimpo-cripto', 'necropolitica-digital'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'vale-microsoft': {
+        name: 'Vale + Microsoft: Vigilância Mineração',
+        description: 'Parceria IA/Azure para "otimizar mineração" = monitoramento satélite/drones áreas interesse mineral que coincidem com terras indígenas não-demarcadas. Microsoft vende reconhecimento facial para reprimir retomadas Guarani-Kaiowá. Big Tech fornece ferramentas, agro usa para violência.',
+        connections: ['extrativismo-fusionado', 'vigilancia-corporativa', 'reconhecimento-facial', 'terras-indigenas', 'microsoft-cumplicidade'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'monsanto-ia': {
+        name: 'Bayer-Monsanto + IA: Monocultura Algorítmica',
+        description: 'IA agricultura precisão (drones, tratores autônomos, algoritmos solo/clima) intensifica monocultura. Sistema só funciona com soja/milho/algodão transgênico; policulturas indígenas = ruído. Climate FieldView (US$ 3k/ano): pequenos agricultores dependem plataforma (lock-in), Monsanto acumula dados globais = poder sobre sistema alimentar. Extração dados + terra + autonomia alimentar.',
+        connections: ['extrativismo-fusionado', 'ia-agro', 'monocultura-digital', 'lock-in-plataforma', 'soberania-alimentar'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'garimpo-cripto': {
+        name: 'Garimpo Ilegal + Criptomoedas',
+        description: 'Garimpos Yanomami/Munduruku +500% (2019-22): Telegram/Signal coordenam invasões, GPS/drones mapeiam ouro, Bitcoin lava dinheiro ilegal. Tecnologia "neutra" (criptografia, blockchain, drones) apropriada por extração predatória. Não é exceção — é lógica design: cripto ideologia libertária "fugir Estado" não distingue Estado opressor vs fiscalização ambiental.',
+        connections: ['extrativismo-fusionado', 'criptomoedas-extrativismo', 'garimpo-ilegal-yanomami', 'tecnologia-neutra-mito'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'necropolitica-digital': {
+        name: 'Necropolítica Digital-Territorial',
+        description: 'Mbembe: necropolítica = poder determinar quem vive/morre. Digital-territorial: Yanomami 20k garimpeiros, 570 crianças mortas (2019-22), governo Bolsonaro não agiu = escolha deixar morrer tecnologicamente assistida. Sistema alertas desmatamento (DETER) desativado, dados saúde ocultados, fiscais instruídos não autuar. Algoritmos desligados para permitir morte. Negligência algorítmica deliberada: indígenas = ruído no dado agronegócio.',
+        connections: ['extrativismo-fusionado', 'mbembe-necropolitica', 'genocidio-indigena', 'yanomami-crise-humanitaria', 'algoritmos-morte'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'resistencia-digital-territorial': {
+        name: 'Resistência Digital-Territorial Integrada',
+        description: 'Se extrativismo é fusionado, resistência também é. Mapeamento contra-hegemônico: indígenas usam drones/satélites/IA para documentar invasões (Vigilantes Amazônia). Redes mesh TIs (Marãiwatsédé): soberania comunicacional. Blockchain certificação origem (Cacau Yanomami, castanha): contra extração ilegal. Alianças urbano-indígenas: hackers FOSS + povos indígenas desenvolvem ferramentas específicas.',
+        connections: ['resistencia', 'tekoa-digital', 'mapeamento-contra-hegemonico', 'blockchain-certificacao', 'aliancas-urbano-indigenas'],
+        color: '#16a34a',
+        layer: 1
+    },
+    'demarcacao-terras': {
+        name: 'Demarcação Terras = Luta Anticapitalista',
+        description: 'Luta por território físico + luta por soberania digital = mesma guerra contra extrativismo. Terra sem controle sobre dados = colonização parcial. Dados sem território físico = virtualidade descarnada. Nhandereko ensina: Tekoa (território) é condição do modo de ser — vale também para era digital. Não há tecnologia emancipatória sem território.',
+        connections: ['tekoa', 'soberania-digital-br', 'luta-indigena', 'extrativismo-fusionado', 'territorio-dados'],
+        color: '#16a34a',
+        layer: 1
+    },
     'epistemologia-guarani': {
         name: 'Epistemologias Guarani',
-        description: 'Conhecimento relacional indígena',
-        connections: ['nhandereko', 'ontologia-relacional', 'decolonial'],
+        description: 'Conhecimento relacional indígena não-hierárquico expandido: Tekoa (território), Jopói (reciprocidade), Mborayu (amor coletivo), Teko Porã (bem viver), Ayvu (palavra-alma), Yvy Marã Ey (Terra Sem Males). Sistema completo pensamento que questiona bases capitalismo digital.',
+        connections: ['nhandereko', 'ontologia-relacional', 'decolonial', 'tekoa', 'jopoi', 'mborayu', 'teko-pora', 'ayvu', 'yvy-mara-ey'],
         color: '#8b5cf6',
         layer: -1
     },
@@ -2214,9 +3275,261 @@ const conceptGraph = {
     },
     'neoliberalismo-progressista': {
         name: 'Neoliberalismo Progressista',
-        description: '"Gostaríamos de fazer diferente, mas o mercado exige" - esquerda capturada pelo sujeito automático',
-        connections: ['ultrarracionalismo', 'sujeito-automatico'],
+        description: 'Nancy Fraser: retórica emancipatória (diversidade, LGBTQIA+) + economia neoliberal (austeridade, precarização) = capitalismo com rosto progressista',
+        connections: ['ultrarracionalismo', 'sujeito-automatico', 'pt-brasil', 'captura-ideologica', 'individualizacao-politico', 'mercantilizacao-identidade'],
         color: '#dc2626',
+        layer: 1
+    },
+    'pt-brasil': {
+        name: 'PT Brasil (2003-16, 2023-)',
+        description: 'Neoliberalismo progressista tropical: avanços reais (Bolsa Família, cotas, inclusão) dentro limites nunca buscou romper (pacto agronegócio, mercado financeiro)',
+        connections: ['neoliberalismo-progressista', 'hegemonia-avessas', 'lulismo', 'golpe-2016', 'interludio-fascista'],
+        color: '#dc2626',
+        layer: 1
+    },
+    'hegemonia-avessas': {
+        name: 'Hegemonia às Avessas',
+        description: 'Francisco de Oliveira: classe trabalhadora no governo mas governando PARA o capital. Políticas compensatórias pacificam base, ortodoxia econômica tranquiliza mercados',
+        connections: ['pt-brasil', 'neoliberalismo-progressista', 'conciliacao-classe'],
+        color: '#dc2626',
+        layer: 1
+    },
+    'golpe-2016': {
+        name: 'Golpe 2016 Brasil',
+        description: 'Impeachment Dilma: golpe parlamentar (não militar). Classe dominante cansou de conciliar, quis neoliberalismo puro. Interrupção democrática "legal"',
+        connections: ['pt-brasil', 'temer', 'interludio-fascista', 'lawfare'],
+        color: '#dc2626',
+        layer: 1
+    },
+    'temer': {
+        name: 'Temer (2016-18)',
+        description: 'Neoliberalismo tecnocrático: Teto Gastos EC 95, Reforma Trabalhista, privatizações. 9% aprovação mas eficiente em implementar agenda de classe',
+        connections: ['golpe-2016', 'austeridade-constitucionalizada', 'interludio-fascista', 'bolsonaro'],
+        color: '#dc2626',
+        layer: 1
+    },
+    'austeridade-constitucionalizada': {
+        name: 'Austeridade Constitucionalizada',
+        description: 'Teto Gastos EC 95/2016: congelamento investimentos públicos 20 anos. Inviabiliza políticas sociais estruturalmente - não importa quem ganhe eleições',
+        connections: ['temer', 'despolitizacao', 'ditadura-mercado'],
+        color: '#dc2626',
+        layer: 1
+    },
+    'interludio-fascista': {
+        name: 'Interlúdio Fascista Brasil (2016-22)',
+        description: 'Temer + Bolsonaro: reação neoliberal brutal quando conciliação não era mais suficiente. Reestruturou campo possibilidades políticas',
+        connections: ['golpe-2016', 'temer', 'bolsonaro', 'necropolitica'],
+        color: '#dc2626',
+        layer: 1
+    },
+    'bolsonaro': {
+        name: 'Bolsonaro (2019-22)',
+        description: 'Fascismo neoliberal tropical: Paulo Guedes ultraliberalismo + necropolítica (710k mortos COVID) + milicianismo digital + fundamentalismo + anti-intelectualismo',
+        connections: ['interludio-fascista', 'fascismo-neoliberal', 'necropolitica', 'milicianismo-digital', 'gabinete-odio'],
+        color: '#dc2626',
+        layer: 1
+    },
+    'fascismo-neoliberal': {
+        name: 'Fascismo Neoliberal',
+        description: 'Forma séc XXI: culto líder + nacionalismo reacionário + violência espetáculo MAS Estado mínimo pobres/máximo ricos, ultraliberal economicamente, mobilização via redes digitais',
+        connections: ['bolsonaro', 'milei', 'autoritarismo-mercado'],
+        color: '#dc2626',
+        layer: 1
+    },
+    'milicianismo-digital': {
+        name: 'Milicianismo Digital',
+        description: 'Bolsonaro construiu poder via WhatsApp/fake news/gabinete ódio. Algoritmos viciantes + mineração dados + microdirecionar desinformação',
+        connections: ['bolsonaro', 'gabinete-odio', 'engenharia-vicio', 'fake-news'],
+        color: '#dc2626',
+        layer: 1
+    },
+    'gabinete-odio': {
+        name: 'Gabinete do Ódio',
+        description: 'Estrutura Bolsonaro para produção/disseminação sistemática fake news, ataques coordenados, desinformação. Máquina de subjetivação fascista',
+        connections: ['milicianismo-digital', 'bolsonaro', 'hegemonia-fascista'],
+        color: '#dc2626',
+        layer: 1
+    },
+    'hegemonia-fascista': {
+        name: 'Hegemonia Fascista Bolsonarista',
+        description: '58mi votos 2022. Não fascistas convictos mas capturados: meritocracia ("pobre vagabundo"), punitivismo ("bandido bom morto"), moralismo, messiânico. Forma de vida não só voto',
+        connections: ['bolsonaro', 'gabinete-odio', 'subjetivacao-fascista'],
+        color: '#dc2626',
+        layer: 1
+    },
+    'lulismo-3': {
+        name: 'Lulismo 3.0 (2023-)',
+        description: 'Neoliberalismo progressista sob tutela fascista. Progressismo performático mas não pode tocar estruturas: sem maioria, mercados vigiam, ameaça golpista, herança institucional amarra',
+        connections: ['pt-brasil', 'interludio-fascista', 'captura-pela-ameaca', 'revolucao-passiva-avessas'],
+        color: '#dc2626',
+        layer: 1
+    },
+    'captura-pela-ameaca': {
+        name: 'Captura pela Ameaça',
+        description: 'Pós-Bolsonaro qualquer política minimamente progressista parece "vitória". Horizonte expectativas rebaixado. "Não sou Bolsonaro" basta como legitimação',
+        connections: ['lulismo-3', 'interludio-fascista'],
+        color: '#dc2626',
+        layer: 1
+    },
+    'captura-ideologica': {
+        name: 'Captura Ideológica (Cap 31)',
+        description: 'Três mecanismos: individualização político, mercantilização identidade, racionalidade tecnocrática como despolitização',
+        connections: ['neoliberalismo-progressista', 'individualizacao-politico', 'mercantilizacao-identidade', 'despolitizacao'],
+        color: '#dc2626',
+        layer: 1
+    },
+    'individualizacao-politico': {
+        name: 'Individualização do Político',
+        description: 'Problemas estruturais reframeados como responsabilidades individuais: mudança climática→consumo consciente, desigualdade gênero→empoderamento individual, racismo→educação antirracista',
+        connections: ['captura-ideologica', 'neoliberalismo-progressista', 'tecnosolucionismo'],
+        color: '#dc2626',
+        layer: 1
+    },
+    'mercantilizacao-identidade': {
+        name: 'Mercantilização da Identidade',
+        description: 'Identidades marginalizadas transformadas em nichos mercado: "Pink Money", afrofuturismo corporativo, feminismo de mercado. Extração mais-valia identitária',
+        connections: ['captura-ideologica', 'neoliberalismo-progressista', 'pink-capitalism'],
+        color: '#dc2626',
+        layer: 1
+    },
+    'pink-capitalism': {
+        name: 'Pink Capitalism',
+        description: 'População LGBTQIA+ como segmento consumidor. Marcas disputam com publicidade "inclusiva" mas lucros não retornam comunidade. Big Tech Pride Month mas amplifica ódio Sul Global',
+        connections: ['mercantilizacao-identidade', 'big-tech-woke'],
+        color: '#10b981',
+        layer: 1
+    },
+    'big-tech-woke': {
+        name: 'Big Tech "Woke"',
+        description: 'Google/Apple/Facebook relatórios diversidade, Pride Month, causas progressistas MAS extraem mais-valia dados, exploram moderadores, vendem vigilância, lobby anti-regulação',
+        connections: ['pink-capitalism', 'mercantilizacao-identidade', 'neoliberalismo-progressista'],
+        color: '#10b981',
+        layer: 1
+    },
+    'despolitizacao': {
+        name: 'Despolitização Tecnocrática',
+        description: 'Decisões políticas revestidas linguagem técnica "neutra" escondendo escolhas ideológicas: austeridade como "necessidade matemática", algoritmos como "objetivos"',
+        connections: ['captura-ideologica', 'austeridade-fiscal', 'neutralidade-algoritmica', 'jargao-gerencialista'],
+        color: '#dc2626',
+        layer: 1
+    },
+    'jargao-gerencialista': {
+        name: 'Jargão Gerencialista',
+        description: '"Otimização", "eficiência", "sinergia", "disrupção" - termos soam técnicos mas escondem agendas políticas (geralmente precarização trabalho, concentração poder)',
+        connections: ['despolitizacao', 'tecnosolucionismo'],
+        color: '#dc2626',
+        layer: 1
+    },
+    'milei': {
+        name: 'Milei Argentina (2023-)',
+        description: 'Fascismo libertário: retórica "liberdade" (Mises/Hayek/Rothbard, "dinamitar Banco Central") + prática autoritária (choque brutal, concentração poder executivo, repressão social)',
+        connections: ['fascismo-libertario', 'aceleracionismo-direita', 'pinochet'],
+        color: '#dc2626',
+        layer: 1
+    },
+    'fascismo-libertario': {
+        name: 'Fascismo Libertário',
+        description: 'Oxímoro aparente resolvido dialeticamente: libertário PARA capital (desregulamentação/privatização) e fascista PARA trabalho (repressão sindical/criminalização protesto)',
+        connections: ['milei', 'fascismo-neoliberal', 'autoritarismo-mercado'],
+        color: '#dc2626',
+        layer: 1
+    },
+    'autoritarismo-mercado': {
+        name: 'Autoritarismo de Mercado',
+        description: 'Estado forte necessário para implementar mercado livre contra resistência popular. Pinochet demonstrou: Chicago Boys + tortura = neoliberalismo real-existente',
+        connections: ['fascismo-libertario', 'milei', 'pinochet', 'acumulacao-primitiva'],
+        color: '#dc2626',
+        layer: 1
+    },
+    'petro-colombia': {
+        name: 'Petro Colômbia (2022-)',
+        description: 'Reformismo progressista: primeiro presidente esquerda história colombiana. Promessas ruptura (transição energética, reforma agrária, paz total) mas colisões com realidade estrutural',
+        connections: ['reformismo-progressista', 'dilema-reformismo-radical', 'via-eleitoral-limites'],
+        color: '#f59e0b',
+        layer: 1
+    },
+    'reformismo-progressista': {
+        name: 'Reformismo Progressista',
+        description: 'Tenta transformação estrutural via instituições desenhadas para impedi-la. Retórica transformadora + práticas constrangidas = captura em processo',
+        connections: ['petro-colombia', 'via-eleitoral-limites', 'revolucao-passiva-avessas'],
+        color: '#f59e0b',
+        layer: 1
+    },
+    'dilema-reformismo-radical': {
+        name: 'Dilema do Reformismo Radical',
+        description: 'Como transformar estruturas USANDO instituições criadas para preservá-las? Como demolir casa usando ferramentas pregadas no chão da casa? Allende enfrentou, Petro enfrenta',
+        connections: ['reformismo-progressista', 'petro-colombia', 'allende', 'via-eleitoral-limites'],
+        color: '#f59e0b',
+        layer: 1
+    },
+    'via-eleitoral-limites': {
+        name: 'Limites da Via Eleitoral',
+        description: 'Estruturas globais poder (mercados financeiros/FMI/oligarquias locais armadas) constrangem severamente margem manobra governos progressistas. Se via eleitoral não transforma, qual via?',
+        connections: ['reformismo-progressista', 'petro-colombia', 'dependencia', 'imperialismo-digital'],
+        color: '#f59e0b',
+        layer: 1
+    },
+    'revolucao-passiva-avessas': {
+        name: 'Revolução Passiva às Avessas',
+        description: 'Gramsci invertido: mudanças cosméticas (tirar Bolsonaro colocar Lula) para garantir nada muda fundamentalmente. Elites aceitam PT porque domesticou esquerda',
+        connections: ['lulismo-3', 'reformismo-progressista', 'hegemonia'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'positivismo-dados': {
+        name: 'Positivismo de Dados',
+        description: 'Crença "dados falam por si", análise quantitativa massiva revela verdades objetivas sem teoria/interpretação. Ignora dados sempre construídos (o que medir, como categorizar)',
+        connections: ['ultrarracionalismo', 'vies-algoritmico', 'neutralidade-algoritmica'],
+        color: '#dc2626',
+        layer: 1
+    },
+    'tecnosolucionismo': {
+        name: 'Tecnosolucionismo',
+        description: 'Morozov: crença todo problema (social/político/existencial) tem solução tecnológica. Despolitiza: pobreza→apps microcrédito, solidão→redes sociais. Cidadãos→usuários, política→design produto',
+        connections: ['ultrarracionalismo', 'individualizacao-politico', 'solucionismo-tecnologico'],
+        color: '#dc2626',
+        layer: 1
+    },
+    'greenwashing': {
+        name: 'Greenwashing Corporativo',
+        description: 'Empresas extrativistas investem marketing "verde" continuam destruindo ecossistemas. Coopta linguagem ecológica (sustentabilidade/carbono neutro/ESG) legitimar business-as-usual',
+        connections: ['captura-ideologica', 'esg', 'ecocidio'],
+        color: '#10b981',
+        layer: 1
+    },
+    'aceleracionismo-direita': {
+        name: 'Aceleracionismo de Direita',
+        description: 'Acelerar colapso capitalismo/democracia liberal para purgar "fraquezas" emergir hierarquias "naturais" tecno-monarquia neofeudalista. Coopta crítica marxista mas inverte valores',
+        connections: ['milei', 'fascismo-libertario', 'nick-land'],
+        color: '#dc2626',
+        layer: 1
+    },
+    'esgotamento-ultrarracionalismo': {
+        name: 'Esgotamento do Ultrarracionalismo',
+        description: 'Sintomas crise terminal: crise climática inegável, desigualdade explosiva, colapso confiança institucional, ascensão alternativas "irracionais" (negacionismo, teorias conspiração)',
+        connections: ['ultrarracionalismo', 'crise-climatica', 'teorias-conspiracao', 'negacionismo'],
+        color: '#dc2626',
+        layer: 1
+    },
+    'racionalidades-plurais': {
+        name: 'Racionalidades Plurais',
+        description: 'Antídoto ultrarracionalismo: não abandonar razão mas pluralizá-la. Ubuntu, Nhandereko, Sumak Kawsay, Budismo/Taoísmo são racionalidades igualmente sofisticadas, apenas diferentes',
+        connections: ['ubuntu', 'nhandereko', 'sumak-kawsay', 'cosmotecnica', 'pluriverso'],
+        color: '#10b981',
+        layer: 1
+    },
+    'laboratorios-latino-americanos': {
+        name: 'Laboratórios Latino-Americanos (2020-25)',
+        description: 'Milei/PT/Petro não anomalias periféricas - laboratórios acelerados onde contradições capitalismo tardio manifestam-se forma mais crua. Periferia não atrasa, antecipa',
+        connections: ['milei', 'pt-brasil', 'lulismo-3', 'petro-colombia', 'dependencia'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'pluriverso-emancipatorio': {
+        name: 'Pluriverso Emancipatório',
+        description: 'Multiplicidade racionalidades coexistindo/hibridizando/traduzindo-se mutuamente. Tecnologias serviço comunidades não corporações. Democracia radical mediada feedback cibernético',
+        connections: ['racionalidades-plurais', 'cosmotecnica', 'cooperativas-plataforma', 'democracia-cibernetica', 'soberania-digital'],
+        color: '#10b981',
         layer: 1
     },
     'tempo-abstrato': {
@@ -2295,15 +3608,183 @@ const conceptGraph = {
     },
     'ubuntu': {
         name: 'Ubuntu',
-        description: 'Filosofia africana: "Eu sou porque nós somos"',
-        connections: ['decolonial', 'ontologia-relacional', 'modo-colaborativo'],
+        description: 'Filosofia africana: "Eu sou porque nós somos" (Umuntu ngumuntu ngabantu). Ontologia relacional radical: eu emerge de nós, não preexiste. Desmond Tutu: pessoa Ubuntu não ameaçada por sucesso alheio, segura em pertencer todo maior. Vs individualismo digital capitalista',
+        connections: ['decolonial', 'ontologia-relacional', 'modo-colaborativo', 'ubuntu-software-livre', 'ubuntu-justica-restaurativa', 'ubuntu-tecnologia', 'ubuntu-dao', 'sumak-kawsay', 'nhandereko', 'pluriverso-digital'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'ubuntu-software-livre': {
+        name: 'Ubuntu e Software Livre',
+        description: 'FOSS pratica princípios análogos Ubuntu há décadas: "standing on shoulders giants", copyleft (liberdade só verdadeira se compartilhada), governança comunitária. MAS limitações: foco liberdades individuais (4 Liberdades), tecnoutopia meritocrática, cegueira colonial. Ubuntu radicaliza: interdependência essencial, software só livre se comunidade livre',
+        connections: ['ubuntu', 'software-livre', 'copyleft', 'ontologia-relacional', 'codigo-aberto'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'ubuntu-justica-restaurativa': {
+        name: 'Justiça Restaurativa Ubuntu',
+        description: 'Conflito = oportunidade restaurar harmonia comunidade, não punir indivíduo. Vs cultura cancelamento (destruição reputação permanente), ban algorítmico (silenciar unilateral sem diálogo), sistema penal digital (vigilância/listas negras/scores punitivos). Moderação Ubuntu: diálogo antes banimento, caminhos retorno sempre abertos, comunidades decidem regras, transformação não punição',
+        connections: ['ubuntu', 'justica-restaurativa', 'moderacao-comunitaria', 'governanca-comunitaria', 'ubuntu-dao'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'ubuntu-tecnologia': {
+        name: 'Tecnologia Baseada em Ubuntu',
+        description: '4 princípios práticos: (1) Identidades coletivas primárias (perfis de coletivos não indivíduos), (2) Reputação não-competitiva (contribuição ao comum vs acumulação individual, como Jopói Guarani), (3) Commons digitais por design (conteúdo/código/dados compartilhados default, restrição é exceção), (4) Interdependência explícita (algoritmos visibilizam cadeias trabalho/cuidado/conhecimento, ninguém cria sozinho)',
+        connections: ['ubuntu', 'identidades-coletivas', 'commons-digitais', 'reputacao-nao-competitiva', 'ubuntu-dao', 'jopoi'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'ubuntu-dao': {
+        name: 'Ubuntu DAO (África do Sul)',
+        description: 'DAO governada por princípios Ubuntu (2022-). Inovações: votação baseada contribuição comum não capital, consenso Ubuntu (85%+nenhuma minoria prejudicada), profits redistribuídos igualmente+20% fundo comum, exclusão sempre temporária com restauração. Resultados: 342 membros, R$ 2,1mi movimentados, zero golpes. Lição: Ubuntu funciona escala comunitária, precisa federação escalar não centralização, decisões levam semanas (trade-off profundidade vs velocidade)',
+        connections: ['ubuntu', 'ubuntu-tecnologia', 'ubuntu-justica-restaurativa', 'dao', 'governanca-comunitaria', 'blockchain-etico', 'cooperativas-plataforma'],
+        color: '#10b981',
+        layer: 0
+    },
+    'sumak-kawsay': {
+        name: 'Sumak Kawsay / Suma Qamaña (Buen Vivir)',
+        description: 'Cosmologia andina (Quéchua/Aymara) sobre vida boa. 4 características: (1) Comunitária (ninguém vive bem se comunidade mal), (2) Ecológica (Pachamama incluída), (3) Pluriversal (não há modelo único), (4) Qualitativa (não PIB). Alberto Acosta: não é desenvolvimentismo alternativo mas ALTERNATIVA ao desenvolvimentismo, questiona crescimento ilimitado',
+        connections: ['ubuntu', 'pachamama', 'buen-vivir', 'pluriverso-digital', 'constituicao-equador', 'direitos-natureza', 'sumak-kawsay-tecnologia', 'pacha-stack', 'nhandereko'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'pachamama': {
+        name: 'Pachamama (Mãe Terra)',
+        description: 'Cosmologia andina: natureza = sujeito de direitos, não objeto/propriedade. Constituições Equador (2008) Art 71 e Bolívia (2009): Pachamama tem direito respeito integral existência, manutenção/regeneração ciclos vitais. Revolução jurídica: primeira vez história moderna natureza deixa ser objeto para ser SUJEITO direitos',
+        connections: ['sumak-kawsay', 'direitos-natureza', 'direitos-natureza-digital', 'constituicao-equador', 'ecologia-digital', 'buen-vivir'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'constituicao-equador': {
+        name: 'Constituição Equador (2008)',
+        description: 'Novo constitucionalismo latino-americano. Art 275: regime desenvolvimento garante Buen Vivir/Sumak Kawsay. Art 71: Pachamama tem direitos. Comunicação como direito (não mercadoria). Mas contradição: Correa continuou extrativismo (mineração/petróleo territórios indígenas). Lição: não basta inscrever ética em documentos, precisa transformar estruturas materiais',
+        connections: ['sumak-kawsay', 'pachamama', 'buen-vivir', 'direitos-natureza', 'bolivia-constituicao', 'extrativismo', 'correa-contradicao'],
+        color: '#10b981',
+        layer: 0
+    },
+    'bolivia-constituicao': {
+        name: 'Constituição Bolívia (2009)',
+        description: 'Reconhece Suma Qamaña (versão Aymara Sumak Kawsay), Pachamama sujeito direitos. Lei Telecomunicações 2011: 17% espectro para rádios comunitárias indígenas. Estado reconhece pluriversalidade. Mas Evo Morales: expandiu extração lítio, construção estradas Amazônia boliviana. Contradição Estado nacional inserido capitalismo global vs cosmologias não-capitalistas',
+        connections: ['sumak-kawsay', 'pachamama', 'constituicao-equador', 'pluriversalidade-tecnologica', 'evo-morales-contradicao'],
+        color: '#10b981',
+        layer: 0
+    },
+    'sumak-kawsay-tecnologia': {
+        name: 'Tecnologia Sumak Kawsay',
+        description: '4 aplicações: (1) Contra growth hacking (para quê crescer? impacto comunitário/ecológico?), (2) Suficiência não abundância (limites materiais/ecológicos como feature), (3) Direitos natureza digital (ecossistemas digitais são sujeitos, biodiversidade software, habitats saudáveis, impacto ambiental métrica primária), (4) Pluriversalidade tecnológica (não "a" solução para "a" humanidade, tecnologias plurais adequadas contextos)',
+        connections: ['sumak-kawsay', 'pacha-stack', 'slow-tech', 'tecnologia-suficiencia', 'direitos-natureza-digital', 'biodiversidade-digital', 'pluriversalidade-tecnologica'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'pacha-stack': {
+        name: 'Pacha Stack (Framework Sumak Kawsay)',
+        description: 'Arquitetura software baseada Buen Vivir (Equador/Bolívia). Princípios: (1) Suficiência não otimização (código ineficiente legível, BD limita 100GB força distribuição, rate limits absolutos sem tier enterprise), (2) Impacto ecológico métrica primária (dashboard kWh não usuários, deploys só energia renovável, features pesadas desabilitadas pico), (3) Direitos natureza digital (dado mostra pegada ecológica, usuários liberam dados reduzir carga, sistema adormece ultrapassa limites). Adoção: 23 cooperativas andinas, 50k usuários, consumo 87% menor. Crítica: "limitações artificiais"',
+        connections: ['sumak-kawsay', 'sumak-kawsay-tecnologia', 'tecnologia-suficiencia', 'direitos-natureza-digital', 'slow-tech', 'cooperativas-plataforma'],
+        color: '#10b981',
+        layer: 0
+    },
+    'direitos-natureza-digital': {
+        name: 'Direitos da Natureza Digital',
+        description: 'Se rios/montanhas têm direitos (Pachamama), ecossistemas digitais também. 3 dimensões: (1) Biodiversidade software (proteger diversidade linguagens/protocolos/plataformas contra monocultura), (2) Habitats digitais saudáveis (redes não-tóxicas, não extraem, permitem regeneração), (3) Impacto ambiental obrigatório (toda tecnologia reporta pegada carbono/água/minerais raros). Pacha Stack implementa praticamente',
+        connections: ['pachamama', 'sumak-kawsay-tecnologia', 'pacha-stack', 'ecologia-digital', 'biodiversidade-digital', 'tecnologia-regenerativa'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'biodiversidade-digital': {
+        name: 'Biodiversidade Digital',
+        description: 'Analogia ecologia: monocultura frágil, diversidade resiliente. Digital: 5 plataformas globais (Google/Meta/Amazon/Apple/Microsoft) = monocultura tecnológica vulnerável. Biodiversidade: múltiplas linguagens/protocolos/plataformas coexistem. Fediverso exemplo: Mastodon/Pixelfed/PeerTube interoperáveis mas diversos. Direitos natureza digital protegem diversidade contra homogeneização',
+        connections: ['direitos-natureza-digital', 'fediverso', 'pluriversalidade-tecnologica', 'monocultura-digital', 'resiliencia-sistemas', 'variedade-requisito'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'pluriverso-digital': {
+        name: 'Pluriverso Digital',
+        description: '"Um mundo onde caibam muitos mundos" (zapatista) aplicado à tecnologia. 5 princípios: (1) Múltiplas cosmotécnicas (cada adequada território/história/comunidade), (2) Interoperabilidade sem universalidade (redes conectam sem impor modelos únicos), (3) Autodeterminação tecnológica (comunidades decidem próprias tecnologias), (4) Diversidade design (biodiversidade não monocultura), (5) Respeito não-digitalizar (direito offline/analógico/atraso voluntário). Vs monocultura cosmotécnica capitalismo plataforma',
+        connections: ['ubuntu', 'sumak-kawsay', 'nhandereko', 'cosmotecnicas-orientais', 'pluriversalidade-tecnologica', 'zapatistas', 'autodeterminacao-tecnologica', 'interoperabilidade-plural', 'camada-traducao-cosmotecnica'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'pluriversalidade-tecnologica': {
+        name: 'Pluriversalidade Tecnológica',
+        description: 'Não existe "a" solução digital para "a" humanidade. Sumak Kawsay exige tecnologias plurais adequadas contexto. Rede social Guarani opera tempo cíclico categorias Guarani (não seguidores/curtidas). Tecnologia chinesa inseparável Li/Qi (Yuk Hui). Ubuntu prioriza comunidade. Múltiplas cosmotécnicas coexistem sem hegemonizar uma à outra. Vs projeto Vale Silício plataformas "globais" = colonialismo epistemológico',
+        connections: ['pluriverso-digital', 'sumak-kawsay', 'cosmotecnica', 'yuk-hui-cosmotecnicas', 'interoperabilidade-plural', 'camada-traducao-cosmotecnica', 'monocultura-digital-vs-pluriverso'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'camada-traducao-cosmotecnica': {
+        name: 'Camada de Tradução Cosmotécnica (CTC)',
+        description: 'Protocolo intermediário permite diferentes cosmotécnicas comunicarem sem colonizar. Problema: rede Guarani tempo cíclico categorias próprias precisa interoperar Instagram. Solução CTC: (1) Semântica preservada (explica conceito sem tradução forçada, "like" sem equivalente Guarani), (2) Temporalidade respeitada (posts Guarani aparecem fora ordem cronológica com contexto), (3) Ontologia explicitada (mensagem marcada cosmologia origem). Status: Pluriverse Protocol (MIT+pesquisadores indígenas) desenvolvendo',
+        connections: ['pluriverso-digital', 'pluriversalidade-tecnologica', 'interoperabilidade-plural', 'traducao-sem-colonizacao', 'pluriverse-protocol'],
+        color: '#10b981',
+        layer: 0
+    },
+    'pluriverse-protocol': {
+        name: 'Pluriverse Protocol (MIT Media Lab)',
+        description: 'Projeto experimental Camada Tradução Cosmotécnica. Colaboração MIT Media Lab + pesquisadores indígenas. Objetivo: permitir múltiplas cosmotécnicas interoperarem sem homogeneização. Protocolo traduz semânticas/temporalidades/ontologias diferentes mantendo diferenças explícitas. Status: conceito em desenvolvimento, ainda não implementação produção',
+        connections: ['camada-traducao-cosmotecnica', 'pluriverso-digital', 'interoperabilidade-plural', 'mit-media-lab'],
+        color: '#10b981',
+        layer: 0
+    },
+    'interoperabilidade-plural': {
+        name: 'Interoperabilidade Plural',
+        description: 'Interoperabilidade sem homogeneização. Internet atual impõe protocolos universais (TCP/IP/HTTP/DNS) incorporam assunções ocidentais (endereçamento hierárquico, autoridade centralizada, tempo linear sincronizado). Interoperabilidade plural: redes conectam MAS preservam diferenças cosmológicas. CTC implementa. Fediverso exemplo parcial (ActivityPub interopera Mastodon/Pixelfed/PeerTube mantendo diferenças)',
+        connections: ['pluriverso-digital', 'pluriversalidade-tecnologica', 'camada-traducao-cosmotecnica', 'fediverso', 'activitypub', 'protocolos-abertos'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'principios-cosmotecnica-decolonial': {
+        name: '8 Princípios Cosmotécnica Decolonial',
+        description: 'Guia desenvolvimento tecnologias digitais decoloniais. (1) Primazia Nós (comunidade precede indivíduo), (2) Anti-Extrativismo (reciprocidade não extração), (3) Pluriversalidade (múltiplas cosmotécnicas não universal), (4) Temporalidades Múltiplas (não linear/acelerado), (5) Direitos Natureza (ecossistemas sujeitos), (6) Soberania Territorial (autodeterminação), (7) Conhecimento Comum (coletivo), (8) Justiça Restaurativa (restaurar não punir). Emergem ressonâncias Guarani/Oriental/Ubuntu/Sumak Kawsay',
+        connections: ['pluriverso-digital', 'ubuntu', 'sumak-kawsay', 'nhandereko', 'cosmotecnicas-orientais', 'primazia-nos', 'anti-extrativismo-digital', 'pluriversalidade-tecnologica', 'temporalidades-multiplas', 'direitos-natureza-digital', 'soberania-territorial-digital', 'conhecimento-comum', 'justica-restaurativa-digital'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'primazia-nos': {
+        name: 'Princípio Primazia do Nós',
+        description: 'Princípio 1 Cosmotécnica Decolonial. Ontologia: comunidade precede indivíduo. Prática: identidades coletivas padrão (não perfis individuais), governança comunitária plataformas (não CEOs), métricas sucesso baseadas fortalecimento laços sociais (não crescimento usuários). Ubuntu: "Eu sou porque nós somos". Nhandereko: "Nós" unidade básica. Taoísmo/Budismo: anatman, pratītyasamutpāda. Sumak Kawsay: bem viver comunitário',
+        connections: ['principios-cosmotecnica-decolonial', 'ubuntu', 'nhandereko', 'ontologia-relacional', 'identidades-coletivas', 'governanca-comunitaria', 'anatman', 'pratityasamutpada'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'anti-extrativismo-digital': {
+        name: 'Princípio Anti-Extrativismo Radical',
+        description: 'Princípio 2 Cosmotécnica Decolonial. Ontologia: reciprocidade não extração. Prática: transparência total fluxos valor, mecanismos reciprocidade obrigatórios (Jopói digital), arquiteturas impedem acumulação (limites propriedade, redistribuição forçada). Guarani: Jopói. Taoísmo: Wu wei. Ubuntu: compartilhamento ontológico. Sumak Kawsay: limite crescimento. Capitalismo precisa destruir reciprocidade porque economias reciprocidade não geram lucro',
+        connections: ['principios-cosmotecnica-decolonial', 'jopoi', 'wu-wei', 'ubuntu', 'sumak-kawsay', 'reciprocidade-digital', 'arquiteturas-anti-acumulacao', 'capitalismo-vigilancia-extrativista'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'temporalidades-multiplas': {
+        name: 'Princípio Temporalidades Múltiplas',
+        description: 'Princípio 4 Cosmotécnica Decolonial. Ontologia: tempo não é linear/abstrato/acelerado. Prática: slow tech, notificações baseadas importância real (não FOMO), direito atraso. Guarani: Oguatá Porã (processo=destino). Budismo: impermanência/tempo cíclico. Taoísmo: Jieqi 24 termos solares. Sumak Kawsay: Pachakuti tempo espiralar. Vs capitalismo 24/7 notificações infinitas scroll sem fim otimização constante',
+        connections: ['principios-cosmotecnica-decolonial', 'slow-tech', 'oguata-pora', 'anitya-impermanencia', 'jieqi', 'pachakuti', 'tempo-ciclico', 'direito-atraso', 'temporalidade'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'soberania-territorial-digital': {
+        name: 'Princípio Soberania Territorial',
+        description: 'Princípio 6 Cosmotécnica Decolonial. Ontologia: comunidades têm direito autodeterminação tecnológica. Prática: servidores/infraestrutura em territórios locais (não AWS/Azure), dados não podem sair território sem consentimento comunitário (não extração), protocolos decididos localmente. Tekoa Guarani: território condição modo ser. Redes mesh indígenas praticam (Oaxaca/Acre). Vs dependência estrutural colonialismo digital',
+        connections: ['principios-cosmotecnica-decolonial', 'tekoa-digital', 'redes-mesh-indigenas', 'autodeterminacao-tecnologica', 'soberania-digital', 'infraestrutura-comunitaria', 'minigrids-solares-data-centers'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'conhecimento-comum': {
+        name: 'Princípio Conhecimento como Comum',
+        description: 'Princípio 7 Cosmotécnica Decolonial. Ontologia: todo conhecimento é coletivo (ninguém cria sozinho). Prática: abolição propriedade intelectual conhecimentos tradicionais, licenças impedem cercamento (copyleft/AGPL), educação tecnológica pública. Ubuntu: interdependência explícita. Software Livre pratica mas precisa radicalizar: creditar cadeias completas trabalho, não mercantilizar sabedorias ancestrais, combater patentes yoga/ayurveda/plantas medicinais',
+        connections: ['principios-cosmotecnica-decolonial', 'ubuntu', 'software-livre', 'copyleft', 'commons-digitais', 'propriedade-intelectual-critica', 'extrativismo-epistemologico', 'tkdl-india'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'justica-restaurativa-digital': {
+        name: 'Princípio Justiça Restaurativa',
+        description: 'Princípio 8 Cosmotécnica Decolonial. Ontologia: conflito = oportunidade restaurar harmonia não punir. Prática: moderação comunitária (não algoritmo corporação), processos mediação antes banimento, nenhuma exclusão permanente (sempre caminhos retorno). Ubuntu: quando transgressão objetivo restaurar comunidade reconhecendo dano um é dano todos. Vs cultura cancelamento, shadowban algorítmico, crédito social punitivo, exclusão permanente',
+        connections: ['principios-cosmotecnica-decolonial', 'ubuntu-justica-restaurativa', 'moderacao-comunitaria', 'cultura-cancelamento-critica', 'shadowban', 'credito-social-china', 'ubuntu-dao'],
         color: '#8b5cf6',
         layer: -1
     },
     'cosmotecnica': {
         name: 'Cosmotécnica',
         description: 'Técnicas enraizadas em cosmologias locais (Yuk Hui)',
-        connections: ['decolonial', 'epistemologia-guarani', 'ontologia-executavel'],
+        connections: ['decolonial', 'epistemologia-guarani', 'ontologia-executavel', 'pluriverso-digital'],
         color: '#8b5cf6',
         layer: -1
     },
@@ -4040,8 +5521,141 @@ const conceptGraph = {
     'china-tech': {
         name: 'Soberania Tech Chinesa',
         description: 'Baidu/Alibaba/Huawei - rompeu dependência, mas criou nova periferia',
-        connections: ['soberania-tecnologica', 'geopolitica', 'neocolonialismo-digital', 'brics'],
+        connections: ['soberania-tecnologica', 'geopolitica', 'neocolonialismo-digital', 'brics', 'china-capitalismo-estado', 'belt-road-digital'],
         color: '#f59e0b',
+        layer: 0
+    },
+    'china-capitalismo-estado': {
+        name: 'Capitalismo de Estado Chinês',
+        description: 'Cap 25: PCCh subordina Big Techs (Jack Ma "reeducado"), mas mantém acumulação privada. Não é socialismo, é capitalismo autoritário',
+        connections: ['china-tech', 'jack-ma-reeducado', 'china-cibernetica-2ordem', 'china-vigilancia-total'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'jack-ma-reeducado': {
+        name: 'Jack Ma e os Limites do Bilionário',
+        description: 'Fundador Alibaba criticou reguladores (2020), IPO da Ant Group cancelado (US$ 37bi), Ma desapareceu por meses. Bilionários chineses = vassalos do Partido',
+        connections: ['china-capitalismo-estado', 'metacontrolador-estado'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'metacontrolador-estado': {
+        name: 'Estado como Metacontrolador',
+        description: 'China: Estado não apenas regula mercado, mas controla os próprios controladores (bilionários). Diferente do Ocidente onde capital captura Estado',
+        connections: ['jack-ma-reeducado', 'china-capitalismo-estado', 'china-cibernetica-2ordem'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'china-cibernetica-2ordem': {
+        name: 'China: Cibernética de 2ª Ordem Total',
+        description: 'Sistema observa observação, controla controle. WeChat modela você sabendo que você sabe que está sendo modelado. Loop recursivo de controle',
+        connections: ['cibernetica-2ordem', 'china-vigilancia-total', 'credito-social', 'sujeito-preemptivo'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'china-vigilancia-total': {
+        name: 'Vigilância Total Chinesa',
+        description: '600 milhões de câmeras + reconhecimento facial + crédito social. Não apenas observa, mas modula comportamento em tempo real',
+        connections: ['credito-social', 'reconhecimento-facial', 'china-cibernetica-2ordem', 'ultra-controle-espacotempo'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'ultra-controle-espacotempo': {
+        name: 'Ultra-Controle do Espaço-Tempo',
+        description: 'China esculpe experiência de realidade diferenciada: alta pontuação = tempo acelerado (sem filas), baixa = tempo comprimido (proibições)',
+        connections: ['credito-social', 'china-vigilancia-total', 'sujeito-preemptivo'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'sujeito-preemptivo': {
+        name: 'Sujeito Pré-emptivo',
+        description: 'Indivíduo que internaliza vigilância, vira próprio vigia. Panóptico de Foucault interiorizado. Controle mais eficiente: auto-coerção',
+        connections: ['credito-social', 'china-cibernetica-2ordem', 'ultra-controle-espacotempo'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'explosao-informacional': {
+        name: 'Explosão Informacional',
+        description: 'Feedback positivo descontrolado: mais vigilância → mais dados → mais vigilância. Sistema tão complexo que criadores não compreendem. Caixa-preta opaca',
+        connections: ['china-cibernetica-2ordem', 'feedback-positivo', 'hiperrealidade-baudrillard'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'hiperrealidade-baudrillard': {
+        name: 'Hiperrealidade (Baudrillard)',
+        description: 'Mapa tão detalhado que se confunde com território, simulação precede e substitui o real. China: Estado não "conhece" cidadãos, os "sonha" via algoritmos',
+        connections: ['explosao-informacional', 'china-cibernetica-2ordem'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    '996-icu': {
+        name: 'Movimento 996.ICU',
+        description: 'Programadores chineses (2019) protestaram GitHub: 996 (9h-21h, 6 dias) = acabar na UTI. Alibaba/Huawei/Tencent forçam jornada ilegal. Repo censurado na China',
+        connections: ['superexploracao-digital-china', 'resistencia-trabalhadores-china', 'greves-selvagens-china'],
+        color: '#22c55e',
+        layer: 0
+    },
+    'superexploracao-digital-china': {
+        name: 'Superexploração Digital na China',
+        description: 'Regime 996, 350 milhões trabalhadores plataforma sem direitos, suicídios Foxconn (redes anti-suicídio instaladas). "Socialismo de mercado" = capitalismo brutal',
+        connections: ['996-icu', 'despotismo-digital-algoritmo', 'greves-selvagens-china'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'despotismo-digital-algoritmo': {
+        name: 'Despotismo Digital Algorítmico',
+        description: 'Entregadores Meituan: IA otimiza rotas assumindo infrações. Recusar violar lei = pontuação cai = menos pedidos. Algoritmo pune sem chefe humano',
+        connections: ['superexploracao-digital-china', 'credito-social', 'gerenciamento-algoritmico'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'greves-selvagens-china': {
+        name: 'Greves Selvagens na China',
+        description: '2-3 mil greves/protestos trabalhistas por ano (China Labour Bulletin). Sempre localizados (redes sociais controladas), repressão cirúrgica via reconhecimento facial',
+        connections: ['996-icu', 'superexploracao-digital-china', 'repressao-preventiva-china', 'resistencia-trabalhadores-china'],
+        color: '#22c55e',
+        layer: 0
+    },
+    'repressao-preventiva-china': {
+        name: 'Repressão Preventiva Algorítmica',
+        description: 'Antes de greve acontecer, algoritmos detectam "padrões suspeitos" (reuniões, palavras-chave). Líderes potenciais têm pontuação reduzida, movimentos restritos',
+        connections: ['greves-selvagens-china', 'credito-social', 'reconhecimento-facial'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'resistencia-trabalhadores-china': {
+        name: 'Táticas de Resistência Digital China',
+        description: 'Linguagem cifrada (Xi=Pooh), blockchain p/ docs #MeToo, sindicalismo código (desotimizar algoritmos), protestos silenciosos (A4 Revolution - papel branco)',
+        connections: ['996-icu', 'greves-selvagens-china', 'resistencia'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'belt-road-digital': {
+        name: 'Rota da Seda Digital (BRI)',
+        description: 'China exporta infraestrutura: cabos, 5G Huawei, vigilância Hikvision, e-gov chinês. 18 países adotaram (Zimbábue, Equador, Venezuela, Paquistão)',
+        connections: ['china-tech', 'armadilha-divida-digital', 'exportacao-autoritarismo', 'neocolonialismo-digital'],
+        color: '#f59e0b',
+        layer: 0
+    },
+    'armadilha-divida-digital': {
+        name: 'Armadilha da Dívida Digital',
+        description: 'Sri Lanka: calote empréstimo → entregou porto Hambantota 99 anos. Quênia: 80% orçamento em dívidas chinesas. Equador: ECU 911 vigilância como pagamento',
+        connections: ['belt-road-digital', 'neocolonialismo-digital', 'dependencia-tecnologica'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'exportacao-autoritarismo': {
+        name: 'Exportação Autoritarismo Tecnológico',
+        description: '18 países adotaram vigilância chinesa. Apelo: tecnologia sem exigências "direitos humanos". China não julga uso — só fornece manual',
+        connections: ['belt-road-digital', 'armadilha-divida-digital', 'credito-social-venezuela'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'credito-social-venezuela': {
+        name: 'Carnet de la Patria (Venezuela)',
+        description: 'Sistema crédito social desenvolvido por ZTE (China), controla acesso a alimentos subsidiados. Opositores governo têm benefícios bloqueados automaticamente',
+        connections: ['exportacao-autoritarismo', 'credito-social', 'necropolitica-digital'],
+        color: '#dc2626',
         layer: 0
     },
     'brics': {
@@ -6009,6 +7623,943 @@ const conceptGraph = {
         description: 'SWIFT permite EUA monitorar todas transações em dólar (panóptico financeiro global). CBDCs permitem Estados rastrearem 100% transações cidadãos. Capitalismo vigilância (Ocidente, privado) vs Socialismo vigilância (China, estatal). Ambos distópicos. Alternativa: governança algorítmica democrática, código aberto',
         connections: ['swift', 'yuan-digital', 'cbdcs', 'capitalismo-vigilancia', 'crédito-social-china'],
         color: '#ef4444',
+        layer: 0
+    },
+    
+    // ============================================
+    // CAPÍTULO 21: INSERÇÃO SUBORDINADA DO BRASIL
+    // ============================================
+    
+    'colonialismo-digital': {
+        name: 'Colonialismo Digital',
+        description: 'Dinâmica onde países centrais (EUA, China) extraem dados brutos da periferia (Brasil, África, LATAM) para alimentar indústrias IA/tech, reforçando dependência. Fornecemos matéria-prima (dados) grátis, importamos produtos manufaturados (software, nuvem, IA) a preço alto. Ciclo colonial clássico atualizado',
+        connections: ['extrativismo-dados', 'dependencia-tecnologica', 'teoria-dependencia', 'mais-valia-dados'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'extrativismo-dados': {
+        name: 'Extrativismo de Dados',
+        description: 'Brasil = fazenda de dados. 180mi conectados geram US$ 87bi/ano em dados (4,2% PIB), mas 78% extraído por Big Techs americanas (Meta, Google, Amazon). Dados brutos brasileiros treinam modelos IA estrangeiros, lucro remitido ao Norte. Novo pau-brasil, nova soja — commodity exportada sem agregação valor',
+        connections: ['colonialismo-digital', 'big-techs-brasil', 'infraestrutura-dependente', 'mais-valia-dados'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'big-techs-brasil': {
+        name: 'Big Techs no Brasil',
+        description: 'Domínio total: WhatsApp 165mi, Google 140mi, Instagram 119mi, TikTok 82mi, YouTube 142mi usuários. 20 bilhões mensagens/dia extraídas. Lucro Big Techs com dados brasileiros: US$ 12-15bi/ano. Impostos pagos: <5% (evasão offshore Irlanda/Holanda). Controle infraestrutura = controle soberania',
+        connections: ['extrativismo-dados', 'lobby-big-techs', 'dependencia-whatsapp', 'unicornios-brasileiros'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'unicornios-brasileiros': {
+        name: 'Unicórnios Brasileiros',
+        description: '30 startups US$ 1bi+ (Nubank, iFood, 99, QuintoAndar). Mídia vende como "sucesso brasileiro", mas análise materialista: 87% capital de VCs americanos, 92% hospedados AWS/Azure, 100% exit strategy vender para Big Tech ou abrir capital NYSE (não Brasil). Estrutura offshore (Delaware, Cayman) — lucro não fica. É dependência disfarçada',
+        connections: ['big-techs-brasil', 'dependencia-tecnologica', 'extrativismo-dados', 'capital-estrangeiro'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'infraestrutura-dependente': {
+        name: 'Infraestrutura Digital Dependente',
+        description: '19 cabos submarinos (vs 530 globais), 90% tráfego via Fortaleza→Lisboa/Miami, NSA monitora (TEMPORA). 120 data centers: 70% AWS/Google/Azure. CLOUD Act (2018): EUA pode requisitar dados mesmo se armazenados no Brasil — viola LGPD e soberania. Dados "no Brasil" mas servidores estrangeiros = ilusão',
+        connections: ['extrativismo-dados', 'cloud-act', 'cabos-submarinos', 'dependencia-whatsapp'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'cloud-act': {
+        name: 'CLOUD Act (2018)',
+        description: 'Lei americana: governo EUA pode requisitar dados de empresas americanas MESMO se armazenados fora do território americano. Viola soberania nacional e LGPD brasileira. 78% sistemas gov.br hospedados em nuvens estrangeiras = EUA tem acesso legal a dados sensíveis brasileiros. Soberania digital sem infraestrutura soberana = ilusão',
+        connections: ['infraestrutura-dependente', 'lgpd-enfraquecida', 'soberania-digital', 'data-centers'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'maquiladora-digital': {
+        name: 'Maquiladora Digital',
+        description: 'Brasil = fábrica de cliques. Analogia maquiladoras México (anos 60): plataformas fornecem infraestrutura/algoritmo (EUA), trabalhadores brasileiros "montam" serviços (entregam comida, transportam), lucro retorna ao Norte. Maquila física tinha prédio; digital = invisível mas exploração = idêntica ou pior',
+        connections: ['superexploracao-digital', 'uberizacao', 'plataformas-trabalho', 'teoria-dependencia'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'superexploracao-digital': {
+        name: 'Superexploração Digital',
+        description: 'Conceito Ruy Mauro Marini atualizado. Entregador iFood: 10-12h/dia, 6-7 dias/semana, R$ 1.200-1.500/mês líquido após custos = R$ 5-6/hora (vs CLT R$ 6,30/h + direitos). 47% sofreram acidente sem indenização, 78% sem INSS = velhice miséria. Remuneração ABAIXO custo reprodução força trabalho — compensando posição periférica Brasil',
+        connections: ['maquiladora-digital', 'teoria-dependencia', 'breque-apps', 'fairwork', 'gerenciamento-algoritmico'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'breque-apps': {
+        name: 'Breque dos Apps (2020)',
+        description: '1º julho 2020: primeira greve nacional trabalhadores plataforma, 100+ cidades, pleno pico COVID-19. Pautas: valor mínimo R$ 10/entrega, seguro acidente/saúde/morte, fim desativação arbitrária, EPIs gratuitos. Organização: WhatsApp/Instagram descentralizada, Paulo Lima (Galo da Madrugada) liderança perseguida. Resultado: concessões parciais temporárias, mas ZERO reconhecimento vínculo',
+        connections: ['superexploracao-digital', 'fairwork', 'plataformas-trabalho', 'paulo-lima'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'fairwork': {
+        name: 'Fairwork Foundation',
+        description: 'Org. pesquisa Oxford avalia plataformas trabalho digital (5 princípios: remuneração, condições, contratos, gestão, representação justas). Pontuação 0-10. Brasil (2023): iFood 2/10, Uber 1/10, 99 2/10, Rappi 0/10, Loggi 2/10. NENHUMA alcança 50%. Sem poder regulatório, mas relatórios usados por sindicatos/legisladores pressionar',
+        connections: ['superexploracao-digital', 'breque-apps', 'plataformas-trabalho', 'clt-plataformas'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'dependencia-whatsapp': {
+        name: 'Dependência WhatsApp',
+        description: 'Caso 19/dez/2016: juiz Sergipe bloqueou WhatsApp 48h, STF suspendeu em 12h mas caos total. 93% brasileiros usam como principal ferramenta comunicação. Pequenos negócios dependem WhatsApp Business. Meta ameaçou sair do Brasil se continuassem bloqueios — governo recuou, mudou Marco Civil. Empresa americana venceu Estado brasileiro. Serviço essencial de fato (água, luz) mas sem regulação como tal',
+        connections: ['big-techs-brasil', 'infraestrutura-dependente', 'soberania-digital', 'marco-civil'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'lobby-big-techs': {
+        name: 'Lobby Big Techs',
+        description: 'Gastos registrados 2018-23: Google R$ 18,7mi, Meta R$ 12,4mi, Uber R$ 9,8mi, Amazon R$ 7,2mi, Microsoft R$ 5,6mi, iFood R$ 4,1mi. Estratégias: financiamento eleitoral, think tanks (ITS Rio, InternetLab), revolving door (ex-reguladores contratados), narrativa "inovação vs atraso". Vitórias: LGPD enfraquecida, PL Fake News travado 4 anos, tributação 0-2% efetiva, regulação apps transporte 0 aprovadas',
+        connections: ['big-techs-brasil', 'lgpd-enfraquecida', 'pl-fake-news-travado', 'captura-legislativa'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'lgpd-enfraquecida': {
+        name: 'LGPD Enfraquecida',
+        description: 'Lei Geral Proteção Dados (2020): versão final SEM multas automáticas, SEM proibição transferência internacional dados, SEM exigência servidores nacionais. Big Tech aprovou. Lobby conseguiu esvaziar. LGPD existe, mas infraestrutura para aplicá-la = controlada por quem ela deveria regular. Lei sem dentes',
+        connections: ['lobby-big-techs', 'cloud-act', 'soberania-digital', 'captura-legislativa'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'pix-soberania': {
+        name: 'Pix: Soberania Digital',
+        description: 'Lançado 16/nov/2020. MAIOR VITÓRIA soberania digital brasileira 30 anos. Sistema pagamentos instantâneos BC, público, gratuito, nacional. 152mi usuários (78% adultos), R$ 17,2 tri/ano, 42 bi transações/ano. Quebrou duopólio Visa/Mastercard (cobravam R$ 50-70bi/ano taxas). Incluiu 20mi desbancarizados. Funciona: BC mandou (autonomia), infraestrutura pública, gratuito (matou Big Tech), padrão aberto',
+        connections: ['soberania-digital', 'brics-pay', 'banco-central-autonomia', 'pagamentos-instantaneos'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'educacao-colonizada': {
+        name: 'Educação Tecnológica Colonizada',
+        description: 'Análise 120 currículos TI Brasil: 87% bibliografia 100% americana (Cormen, Tanenbaum), 92% stack americano (Java, Python, AWS), 78% cases Google/Facebook/Amazon, 65% professores PhD EUA/Europa reproduzem agenda Norte, ZERO disciplinas soberania digital. Resultado: engenheiros sonham trabalhar Vale do Silício, não construir Vale brasileiro. Imaginário colonizado',
+        connections: ['fuga-cerebros-digital', 'dependencia-tecnologica', 'capital-humano-exportado', 'curriculo-importado'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'fuga-cerebros-digital': {
+        name: 'Fuga de Cérebros Digital',
+        description: '32 mil engenheiros/cientistas brasileiros no Vale do Silício (Google, Meta, Amazon, Apple, Microsoft). Custo formação: R$ 250 mil/engenheiro (graduação + pós federais públicas) = R$ 8bi investimento público total. Salário Vale: US$ 180k/ano (R$ 75k/mês, 9x mais que Brasil R$ 8k). Impostos: zero retorna ao Brasil (pagam nos EUA). Patentes: 100% registradas EUA. Brasil = escola técnica império',
+        connections: ['educacao-colonizada', 'capital-humano-exportado', 'dependencia-tecnologica', 'engenheiros-soberania'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'custo-dependencia': {
+        name: 'Custo da Dependência Digital',
+        description: 'US$ 54,5bi/ano (2,6% PIB): nuvem US$ 8,7bi, licenças software US$ 12,4bi, royalties US$ 4,2bi, hardware US$ 18,9bi, publicidade digital US$ 6,5bi, streaming US$ 3,8bi. Comparação: = 1,5x Bolsa Família, 1,3x SUS inteiro, 3,6x todas federais, 22x CNPq+Capes. Dinheiro existe — falta vontade política',
+        connections: ['extrativismo-dados', 'dependencia-tecnologica', 'politicas-soberania', 'orcamento-publico'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'politicas-soberania': {
+        name: '10 Políticas para Soberania Digital',
+        description: '(1) Nuvem Brasil R$ 15bi/5anos, (2) Cabos Sul-Sul US$ 2bi, (3) 5G soberano R$ 25bi, (4) CLT plataformas, (5) Taxar Big Techs 15% faturamento = R$ 9bi/ano, (6) Cooperativas digitais R$ 10bi/5anos, (7) IA soberana R$ 5bi LLM português/espanhol, (8) Software livre gov.br, (9) Fábrica semicondutores 28nm BRICS US$ 8bi, (10) "Engenheiros Soberania" 100 mil bolsas R$ 12bi/4anos. Total: R$ 100-120bi/5anos = viável',
+        connections: ['pix-soberania', 'soberania-digital', 'ia-soberana', 'nuvem-brasil', 'engenheiros-soberania'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'soberania-digital': {
+        name: 'Soberania Digital',
+        description: 'Capacidade país controlar infraestrutura tecnológica crítica (dados, servidores, cabos, software, IA) sem dependência potências estrangeiras. Não significa autarquia (impossível), mas REDUNDÂNCIA — ter alternativas nacionais/BRICS para não ficar refém. Pix prova: é possível. Barreira = política (lobby), não técnica. Mercado sozinho reproduz subordinação — soberania exige Estado',
+        connections: ['pix-soberania', 'politicas-soberania', 'dependencia-tecnologica', 'brics-cooperacao-tech'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'clt-plataformas': {
+        name: 'CLT para Plataformas',
+        description: 'Política: reconhecer vínculo empregatício automático (motorista Uber = empregado Uber). Salário mínimo/hora + INSS + férias + 13º. Acabar "PJ fake". Plataforma pode continuar operando — mas pagando direitos trabalhistas. PL 3748/20 arquivado 2022, PL 1665/23 travado há 18 meses. Lobby vence sempre',
+        connections: ['superexploracao-digital', 'fairwork', 'politicas-soberania', 'lobby-big-techs'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'engenheiros-soberania': {
+        name: 'Programa Engenheiros da Soberania',
+        description: 'Proposta: 100 mil bolsas integrais graduação TI (R$ 2.500/mês × 4 anos) em federais. Contrapartida: trabalhar 3 anos em projetos públicos soberania digital (nuvem Brasil, IA soberana, cooperativas). Custo: R$ 12bi/4anos. Garante cérebros ficam no país + projetos têm mão-de-obra. Reverter fuga cérebros. Anos 50-70 Brasil fez isso com engenharia (Petrobras, Embraer, Embrapa)',
+        connections: ['fuga-cerebros-digital', 'politicas-soberania', 'educacao-colonizada', 'ia-soberana'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'ia-soberana': {
+        name: 'IA Soberana',
+        description: 'Projeto nacional treinar LLM português/espanhol com R$ 5bi (parceria Fapesp + CNPq + empresas estatais). Dados domínio público brasileiro. Modelo open source. Competir com ChatGPT em conhecimento LATAM. Não precisa ser MELHOR que GPT-4 — precisa ser ALTERNATIVA nacional. Evitar dependência total modelos americanos que podem negar acesso (sanções, políticas)',
+        connections: ['politicas-soberania', 'soberania-digital', 'engenheiros-soberania', 'brics-cooperacao-tech'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'nuvem-brasil': {
+        name: 'Nuvem Brasil',
+        description: 'Proibir órgãos públicos contratar AWS/Azure/Google Cloud. Criar RNP Cloud (Rede Nacional Ensino Pesquisa) para gov.br + universidades + hospitais. Custo: R$ 15bi/5anos. Economia: R$ 8bi/ano após implementação (hoje gastamos isso com nuvens estrangeiras). Impede CLOUD Act americano acessar dados sensíveis brasileiros. Replicar modelo Pix: BC mandou, funcionou',
+        connections: ['politicas-soberania', 'cloud-act', 'infraestrutura-dependente', 'soberania-digital'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'dependencia-tecnologica': {
+        name: 'Dependência Tecnológica',
+        description: 'Brasil importa 90% tecnologia crítica: sistemas operacionais (Windows, iOS, Android), nuvem (AWS, Azure, Google), IA (OpenAI, Google, Meta), chips (Taiwan, China, EUA), cabos (consórcios privados), satélites (Starlink). Consequência: qualquer decisão política que desagrade centros pode resultar em pressão sobre infraestrutura crítica. É colônia permanente enquanto durar',
+        connections: ['colonialismo-digital', 'soberania-digital', 'custo-dependencia', 'politicas-soberania'],
+        color: '#ef4444',
+        layer: 0
+    },
+
+    // ========================================
+    // CAPÍTULO 24: POLÍTICAS CONCRETAS
+    // ========================================
+    'politicas-concretas': {
+        name: 'Políticas Concretas para Revolução Cibernética',
+        description: 'Agenda integrada 10 domínios: regulação plataformas, soberania digital, democracia participativa, cooperativismo, taxação Big Techs, educação emancipatória, privacidade fundamental, mídia pública, transição energética justa, renda básica universal. Horizonte temporal: imediato (1-2 anos), médio prazo (5-10 anos), estrutural (20-30 anos)',
+        connections: ['regulacao-plataformas', 'democracia-participativa-digital', 'cooperativismo-plataforma', 'taxacao-big-techs', 'educacao-emancipatoria', 'privacidade-direito-fundamental', 'midia-publica-digital', 'transicao-energetica-justa', 'renda-basica-universal'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'regulacao-plataformas': {
+        name: 'Regulação Plataformas',
+        description: 'CLT digital obrigatória, piso R$ 2.500/mês, fim falsa autonomia. Lei SP 17.468/2021: seguro obrigatório, bloqueio judicial apenas, transparência algoritmo - ZERO fiscalização. DSA Europa: multa 6% faturamento, auditoria algoritmos, remoção ilegal 24h. DMA Europa: fim bundling, fee 30% ilegal. Enforcement gap: leis existem, implementação zero',
+        connections: ['clt-plataformas', 'dsa-europa', 'dma-europa', 'lei-sp-plataformas', 'enforcement-gap', 'modelo-barcelona'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'dsa-europa': {
+        name: 'Digital Services Act (DSA)',
+        description: 'Lei europeia 2022: plataformas >45mi usuários UE = "very large platforms" (VLOP). Obrigações: auditoria independente algoritmos, transparência moderação conteúdo, remover ilegal 24h, relatórios semestrais, cooperação autoridades. Multa até 6% faturamento GLOBAL. Meta multada €1,2bi (2023)',
+        connections: ['regulacao-plataformas', 'dma-europa', 'transparencia-algoritmica', 'multas-efetivas'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'dma-europa': {
+        name: 'Digital Markets Act (DMA)',
+        description: 'Lei antimonopólio digital UE 2022: "gatekeepers" (receita €7,5bi UE + capitalização €75bi + 45mi usuários). Proibições: bundling (WhatsApp interoperar Signal/Telegram), self-preferencing (Google favorece próprios produtos), fee 30% app stores. Multa 10% faturamento, reincidência 20%. Apple obrigada permitir app stores alternativos iOS',
+        connections: ['regulacao-plataformas', 'dsa-europa', 'jardins-murados', 'interoperabilidade'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'lei-sp-plataformas': {
+        name: 'Lei SP 17.468/2021',
+        description: 'Lei municipal São Paulo apps entrega: seguro acidente obrigatório, bloqueio apenas judicial, transparência critérios algoritmo, direito contestação. MAS: zero fiscalização, zero multas aplicadas, zero transparência efetiva (empresas alegam "segredo negócio"). Lei ABC SP 7.349/2022: taxa 1% faturamento → fundo trabalhadores. Nenhuma outra prefeitura replicou',
+        connections: ['regulacao-plataformas', 'enforcement-gap', 'breque-dos-apps', 'transparencia-algoritmica'],
+        color: '#f59e0b',
+        layer: 1
+    },
+    'enforcement-gap': {
+        name: 'Enforcement Gap',
+        description: 'Lacuna aplicação: leis existem, implementação zero. LGPD sem multas (ANPD orçamento R$ 19mi), Lei SP plataformas sem fiscalização, Marco Civil sem neutralidade rede. Causas: 1) captura regulador (lobby), 2) orçamento insuficiente, 3) falta vontade política. Solução: multas automáticas + força-tarefa MPT + orçamento fiscalização',
+        connections: ['lei-sp-plataformas', 'lgpd-enfraquecida', 'lobby-big-techs', 'modelo-barcelona'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'modelo-barcelona': {
+        name: 'Modelo Barcelona',
+        description: 'Salário mínimo €10/h plataformas (2024), 15 fiscais específicos apps, multas aplicadas (Glovo €890k, Deliveroo €250k). Software livre: 70% sistemas municipais migrados (economiza €35mi/ano). Decidim: democracia participativa digital 400k usuários. Barcelona En Comú (2015-2023): mostra que regulação + fiscalização + investimento público = viável',
+        connections: ['regulacao-plataformas', 'decidim-barcelona', 'software-livre-publico', 'enforcement-gap'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'democracia-participativa-digital': {
+        name: 'Democracia Participativa Digital',
+        description: 'Orçamento participativo escala, assembleias digitais, blockchain auditorias. Decidim Barcelona 400k usuários, vTaiwan consensus blockchain, Participa.br R$ 4bi piloto. Quadratic voting, assembleias híbridas (presencial + online), IA facilitação (resumo propostas, simulação impacto). Riscos: exclusão digital, manipulação bots, baixo letramento',
+        connections: ['decidim-barcelona', 'vtaiwan', 'participa-br', 'quadratic-voting', 'assembleias-hibridas', 'ia-facilitacao'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'decidim-barcelona': {
+        name: 'Decidim Barcelona',
+        description: 'Plataforma democracia participativa Barcelona: 400 mil usuários, 60 mil propostas, 14 mil aceitas e implementadas (2016-2023). Software livre AGPLv3, replicado 400+ cidades globalmente. Funcionalidades: propostas, debates, votação, assembleias presenciais, orçamento participativo. Transparência 100%: código, dados, decisões. Prova que escala é possível',
+        connections: ['democracia-participativa-digital', 'modelo-barcelona', 'software-livre-publico', 'participa-br'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'vtaiwan': {
+        name: 'vTaiwan',
+        description: 'Plataforma consensus Taiwan (2015-presente): usa blockchain propostas (Uber, Airbnb, fintech, álcool online). Processo: 1) Apresentação stakeholders, 2) Brainstorming público, 3) Reflexão (votação Pol.is), 4) Legislação. 80% concordância prévia votação (evita polarização). Uber regulado 2016 sem greve/violência. Governo digital Audrey Tang',
+        connections: ['democracia-participativa-digital', 'blockchain-governanca', 'consensus-decision', 'audrey-tang'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'participa-br': {
+        name: 'Participa.br',
+        description: 'Plataforma orçamento participativo federal Brasil: R$ 4bi votados 2025 (0,07% orçamento), mas baixa divulgação (500k votantes vs 150mi eleitores = 0,3%). Problema: 1) pouca grana, 2) baixa divulgação, 3) propostas limitadas. Potencial: se R$ 200bi/ano (4% orçamento) + divulgação massiva = 30-50mi participantes',
+        connections: ['democracia-participativa-digital', 'decidim-barcelona', 'orcamento-participativo', 'exclusao-digital'],
+        color: '#f59e0b',
+        layer: 1
+    },
+    'quadratic-voting': {
+        name: 'Quadratic Voting',
+        description: 'Voto peso raiz quadrada: 1 voto = 1 crédito, 4 votos = 16 créditos, 9 votos = 81 créditos. Evita captura por ricos (comprar 10 mil votos custa 100 milhões créditos). Testado Colorado 2019 (orçamento participativo US$ 5mi), Taiwan vTaiwan, Porto Alegre 2023 (R$ 500 mil). Ferramenta matemática anti-plutocracia',
+        connections: ['democracia-participativa-digital', 'vtaiwan', 'teoria-jogos', 'anti-captura'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'assembleias-hibridas': {
+        name: 'Assembleias Híbridas',
+        description: 'Presencial + online simultâneo, tradução tempo real, acessibilidade (Libras, audiodescrição). Quebra barreira geográfica (interior participa capital) e temporal (assíncrono). Problema Porto Alegre: 1.500 reuniões presenciais/ano (30k participantes) = caro/elitizado. Solução híbrida: 300 presenciais + 5 mil online = democratiza SEM perder vínculos locais',
+        connections: ['democracia-participativa-digital', 'inclusao-digital', 'acessibilidade-digital', 'orcamento-participativo'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'ia-facilitacao': {
+        name: 'IA Facilitação Democrática',
+        description: 'IA resume automaticamente propostas (GPT-4), clustering propostas similares, simulação impacto fiscal/social/ambiental, tradução tempo real, acessibilidade (texto→voz, voz→texto). MAS decisão final = humana. IA = assistente não substituto. Risco: viés algoritmo, captura Big Tech. Solução: modelos abertos (LLaMA), auditoria independente, código transparente',
+        connections: ['democracia-participativa-digital', 'ia-soberana', 'transparencia-algoritmica', 'auditoria-algoritmos'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'cooperativismo-plataforma': {
+        name: 'Cooperativismo de Plataforma',
+        description: 'Fundo público R$ 10bi, isenção fiscal 10 anos, compras públicas priorizam. Motorsapp SP 2.500 mototaxistas (taxa 12% vs 25% Uber), CoopCycle 30+ cooperativas 10 países, Fairbnb 50% taxa → projetos comunitários. Problema: VCs despejaram US$ 25bi Uber 2009-2020 (dumping), cooperativas sem acesso capital paciente. Solução: venture capital socialista (BNDES)',
+        connections: ['motorsapp', 'coopcycle', 'fairbnb', 'fundo-cooperativas-digitais', 'compras-publicas-cooperativas', 'venture-capital-socialista'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'fundo-cooperativas-digitais': {
+        name: 'Fundo Nacional Cooperativas Digitais',
+        description: 'Proposta: R$ 10bi BNDES, crédito subsidiado 2% juros, carência 3 anos, prazo 10 anos. Contrapartida: governança democrática (1 pessoa=1 voto), software livre, transparência financeira. Viabiliza cooperativas competir com plataformas capitalistas. Motorsapp precisa R$ 5mi capital giro escalar 2.500→10 mil trabalhadores — banco comercial cobra 15-20% juros (inviável)',
+        connections: ['cooperativismo-plataforma', 'bndes-social', 'venture-capital-socialista', 'motorsapp'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'compras-publicas-cooperativas': {
+        name: 'Compras Públicas Priorizam Cooperativas',
+        description: 'Lei 12.690/2012 existe: 30% contratos governo devem priorizar cooperativas. Realidade: <5% cumprem (falta fiscalização + lobby terceirização). Proposta: multa automática gestores não cumprem + portal transparência + meta 30% até 2027. Estado gasta R$ 150bi/ano terceirização — 30% = R$ 45bi/ano para cooperativas',
+        connections: ['cooperativismo-plataforma', 'lei-12690-2012', 'terceirizacao-publica', 'enforcement-gap'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'venture-capital-socialista': {
+        name: 'Venture Capital Socialista',
+        description: 'BNDES cria fundo R$ 10bi específico cooperativas digitais, retorno SOCIAL não lucro. Aceita payback longo (10-15 anos vs 5-7 anos VCs), não exige exit (IPO/aquisição), permite governança democrática (VCs sempre exigem controle board). Modelo EXISTIU: BNDESPAR investiu Embraer/Petrobras/Vale anos 50-70. Precisa recriar para economia digital',
+        connections: ['fundo-cooperativas-digitais', 'cooperativismo-plataforma', 'bndes-social', 'capital-paciente'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'taxacao-big-techs': {
+        name: 'Taxação Big Techs',
+        description: 'OCDE 15% mínimo global, taxa bits, imposto renda algoritmos, fim paraísos fiscais. Brasil perdeu R$ 10,5bi impostos (2020-23) por transferência lucros. Taxa bits R$ 0,01/GB tráfego internacional = R$ 15-20bi/ano. Imposto renda algoritmos: lucro automação >60% = taxa extra 10-20%. França 2019 taxa 3% receita digital = €500mi',
+        connections: ['ocde-pilar-1', 'taxa-bits', 'imposto-renda-algoritmos', 'fim-paraisos-fiscais', 'franca-taxa-digital'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'ocde-pilar-1': {
+        name: 'OCDE Pilar 1',
+        description: 'Acordo OCDE 2021: 25% lucro acima 10% margem taxado onde usuários estão (não sede). Impacta Google/Meta/Amazon (margem 20-30%). Brasil deixa arrecadar R$ 3-4bi/ano por não ter implementado ainda (lobby venceu). 140 países assinaram — Brasil na lista mas não legislou. PL travado Congresso desde 2022',
+        connections: ['taxacao-big-techs', 'lobby-big-techs', 'transferencia-lucros', 'base-erosion'],
+        color: '#f59e0b',
+        layer: 1
+    },
+    'taxa-bits': {
+        name: 'Taxa Bits',
+        description: 'R$ 0,01 por GB tráfego internacional (exceção educação/saúde). Brasil 800 Gbps tráfego médio internacional (2024) = 3,5 exabytes/ano. Taxa = R$ 35bi/ano. Mas só taxar Big Techs (Google, Meta, Netflix, Amazon) = 70% tráfego = R$ 24,5bi/ano. Arrecadação: financia nuvem Brasil, IA soberana, cooperativas digitais',
+        connections: ['taxacao-big-techs', 'trafego-internacional', 'nuvem-brasil', 'ia-soberana'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'imposto-renda-algoritmos': {
+        name: 'Imposto Renda Algoritmos',
+        description: 'Lucro gerado automação >60% força trabalho = taxa extra 10-20%, redistributivo (financia renda básica). Bill Gates propôs 2017 ("robot tax"), rejeitado lobby. Justificativa: IA elimina empregos, concentra renda, precisa redistribuir produtividade. Cálculo: empresa 1.000 funcionários → 100 (automação 90%) → taxa 15% lucro extra = R$ 50-100mi/ano grandes empresas',
+        connections: ['taxacao-big-techs', 'renda-basica-universal', 'automacao-desemprego', 'robot-tax'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'fim-paraisos-fiscais': {
+        name: 'Fim Paraísos Fiscais',
+        description: 'Lista negra Brasil (Irlanda 12,5%, Holanda, Luxemburgo, Cayman) + sanções: multa 40% transações, proibição contratos públicos, COAF monitora. Modelo GAFI (lavagem dinheiro). Big Techs: Google Holanda (€19bi lucros 2022, imposto €3,5bi = 18%), Meta Irlanda (€23bi, imposto €2,9bi = 12%). Brasil: Zero. Acabar com isso = R$ 8-10bi/ano extra',
+        connections: ['taxacao-big-techs', 'transferencia-lucros', 'ocde-pilar-1', 'base-erosion'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'franca-taxa-digital': {
+        name: 'Taxa Digital França',
+        description: 'Lei 2019: 3% receita digital empresas faturamento global >€750mi. Google/Amazon/Meta/Apple pagaram €500mi/ano. Google repassou custo anunciantes (mas continuou operando). Caso prático: possível taxar mesmo sem acordo global. UE quer 15% até 2027. Brasil: zero progresso (lobby)',
+        connections: ['taxacao-big-techs', 'ocde-pilar-1', 'lobby-big-techs', 'modelo-europeu'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'educacao-emancipatoria': {
+        name: 'Educação Emancipatória',
+        description: 'Currículo crítico TI, epistemologias plurais, software livre, letramento algorítmico. 87% cursos TI BR bibliografia 100% EUA — zero Freire, Furtado, epistemologias Sul. Currículo ético TI: obrigatório Ética/Filosofia (Bateson/Freire), História Tecnologia (Cybersyn/OGAS), epistemologias indígenas (Nhandereko). Software livre curriculo: substituir licenças proprietárias = R$ 8bi/ano economia',
+        connections: ['curriculo-etico-ti', 'epistemologias-plurais-educacao', 'software-livre-educacao', 'letramento-algoritmico', 'engenheiros-soberania'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'curriculo-etico-ti': {
+        name: 'Currículo Ético TI',
+        description: 'Obrigatório graduação TI: Ética Tecnologia (40h), História Tecnologia (40h), Epistemologias Plurais (40h). Conteúdo: cibernética Bateson, pedagogia Freire, Cybersyn/OGAS, Nhandereko guarani, Ubuntu africano, criptografia privacidade, software livre. Eliminar colonialismo epistêmico (100% bibliografia EUA). Formar engenheiros críticos não servos império',
+        connections: ['educacao-emancipatoria', 'epistemologias-plurais-educacao', 'educacao-colonizada', 'freire-digital'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'epistemologias-plurais-educacao': {
+        name: 'Epistemologias Plurais na Educação',
+        description: 'Incluir: Nhandereko guarani (conhecimento relacional não-hierárquico), Ubuntu africano (pessoa = pessoa através pessoas), Buen Vivir andino (Sumak Kawsay), cosmotécnicas chinesas (Yuk Hui), pedagogia freiriana. Não é "diversidade cultural" folclórica — são SISTEMAS COMPLETOS pensamento. Descolonizar imaginário tecnológico',
+        connections: ['curriculo-etico-ti', 'nhandereko', 'ubuntu-filosofia', 'buen-vivir', 'yuk-hui-cosmotecnicas'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'software-livre-educacao': {
+        name: 'Software Livre na Educação',
+        description: 'Substituir TODAS licenças proprietárias ensino público: Windows→Linux, Office→LibreOffice, Photoshop→GIMP, AutoCAD→FreeCAD. Economia: R$ 8bi/ano (licenças). Pedagogia: ensinar soberania tecnológica desde cedo. Kerala Índia fez 2008: 100% escolas Linux, economia US$ 427mi, formou geração desenvolvedores',
+        connections: ['educacao-emancipatoria', 'linux-educacional', 'soberania-digital', 'kerala-linux'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'letramento-algoritmico': {
+        name: 'Letramento Algorítmico',
+        description: 'Ensinar viés IA desde ensino médio, como funcionam recomendações, privacidade/vigilância. Não é "programação" — é CRÍTICA algoritmos. Perguntas: Por que YouTube recomenda isso? Como TikTok sabe meus gostos? Por que anúncio segue? Objetivo: cidadãos capazes questionar não apenas usar. Freire digital: conscientização tecnológica',
+        connections: ['educacao-emancipatoria', 'freire-digital', 'transparencia-algoritmica', 'pensamento-critico-digital'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'privacidade-direito-fundamental': {
+        name: 'Privacidade como Direito Fundamental',
+        description: 'E2EE obrigatório, proibição reconhecimento facial, habeas data real. LGPD 2018 avanço MAS: sem servidores obrigatórios BR, sem proibição transferência, ANPD orçamento R$ 19mi (ridículo). E2EE obrigatório default, reconhecimento facial moratória 5 anos, habeas data digital (saber TUDO empresas têm, deletar imediatamente). Multas LGPD: 2% → 6% faturamento GLOBAL (GDPR)',
+        connections: ['e2ee-obrigatorio', 'reconhecimento-facial-proibido', 'habeas-data-digital', 'lgpd-fortalecida', 'gdpr-modelo'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'e2ee-obrigatorio': {
+        name: 'E2EE Obrigatório',
+        description: 'Criptografia ponta-a-ponta default (WhatsApp tem, Meta quer enfraquecer). Proibir backdoors (pressão FBI/Abin). Apenas usuários podem ler mensagens — nem empresa, nem governo. Exceção: ordem judicial específica (não backdoor geral). Signal modelo ouro. Brasil: projeto lei PL 2630/2020 ("PL Fake News") queria quebrar E2EE — derrotado pressão sociedade civil',
+        connections: ['privacidade-direito-fundamental', 'signal-e2ee', 'pl-2630-fake-news', 'backdoors-proibidos'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'reconhecimento-facial-proibido': {
+        name: 'Reconhecimento Facial Proibido',
+        description: 'Moratória 5 anos, depois apenas judicial + transparência 100%. San Francisco proibiu 2019 (primeira cidade mundo). Clearview AI raspou 3bi fotos redes sociais, vendeu polícias, ilegal GDPR. Brasil: polícias usam sem lei, viés racial (80% falsos positivos negros). Câmeras vigilância = infraestrutura necropolítica. Proibir uso público, criminalizar privado sem consentimento',
+        connections: ['privacidade-direito-fundamental', 'clearview-ai', 'vies-racial-ia', 'san-francisco-proibicao', 'vigilancia-facial'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'habeas-data-digital': {
+        name: 'Habeas Data Digital',
+        description: 'Direito saber TUDO empresas têm sobre você: dados coletados, inferências (IA prevê renda/orientação/saúde), compartilhamento terceiros. Deletar imediatamente (não "30 dias úteis"), portabilidade completa (migrar Google→alternativa 1 clique). LGPD permite mas empresas dificultam (interface confusa, demora, dados incompletos). Solução: multa automática descumprimento + padrão técnico portabilidade',
+        connections: ['privacidade-direito-fundamental', 'lgpd-fortalecida', 'portabilidade-dados', 'right-to-be-forgotten'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'lgpd-fortalecida': {
+        name: 'LGPD Fortalecida',
+        description: 'Mudanças necessárias: 1) Multas 2% → 6% faturamento GLOBAL (GDPR), 2) Servidores dados sensíveis obrigatório Brasil (saúde, genoma, biometria), 3) Proibir transferência internacional sem acordo adequação, 4) ANPD orçamento R$ 19mi → R$ 500mi (200 fiscais). Atual: ANPD 50 funcionários fiscalizar Google/Meta/Amazon — piada',
+        connections: ['privacidade-direito-fundamental', 'lgpd-enfraquecida', 'gdpr-modelo', 'anpd-orcamento'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'gdpr-modelo': {
+        name: 'GDPR Modelo Europeu',
+        description: 'General Data Protection Regulation UE 2018: padrão-ouro privacidade. Multa 4% faturamento global (Amazon €746mi, Google €90mi Meta €1,2bi). Opt-in não opt-out, consentimento revogável 1 clique, portabilidade obrigatória, data protection officers obrigatórios. Brasil: copiou estrutura mas esvaziou fiscalização/multas. Precisa copiar implementação também',
+        connections: ['lgpd-fortalecida', 'privacidade-direito-fundamental', 'modelo-europeu', 'dsa-europa'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'midia-publica-digital': {
+        name: 'Mídia Pública Digital',
+        description: 'BBC/CBC Brasil, financiamento estável, algoritmo transparente, fact-checking ágil. EBC destroçada: orçamento R$ 600mi → R$ 200mi (2014-2020), captura Bolsonaro. Proposta: EBC recebe 0,5% PIB (R$ 50bi/ano), independência garantida lei, conselho sociedade civil, proibição censura. Plataforma digital: streaming/podcast/redes sociais públicas, algoritmo código aberto, fact-checking tempo real',
+        connections: ['ebc-destroida', 'modelo-bbc', 'modelo-cbc', 'plataforma-digital-publica', 'fact-checking-agil'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'modelo-bbc': {
+        name: 'Modelo BBC',
+        description: 'British Broadcasting Corporation: £3,7bi/ano (taxa TV £159/ano/domicílio), 22 mil funcionários, 33% audiência UK, independência garantida royal charter (Parlamento não interfere conteúdo). Notícias, séries, documentários, educação. BBC World Service: transmissão 42 idiomas. Algoritmo iPlayer público. Prova que mídia pública qualidade + independência = viável',
+        connections: ['midia-publica-digital', 'ebc-destroida', 'financiamento-estavel', 'independencia-editorial'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'modelo-cbc': {
+        name: 'Modelo CBC Canadá',
+        description: 'Canadian Broadcasting Corporation: C$ 1,2bi/ano (70% verba pública, 30% publicidade), 6.400 funcionários, conteúdo bilíngue (inglês-francês), 15% audiência nacional. Independência: CBC Act proíbe governo interferir. Rádio + TV + digital. Crítica: dependência parcial publicidade cria conflito interesses. Brasil: aprender independência, evitar publicidade',
+        connections: ['midia-publica-digital', 'modelo-bbc', 'ebc-destroida', 'independencia-editorial'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'plataforma-digital-publica': {
+        name: 'Plataforma Digital Pública',
+        description: 'EBC cria: streaming nacional (filmes/séries/docs brasileiros), podcast rede, rede social pública (Mastodon), agregador notícias. Algoritmo código aberto GitHub, sem vigilância, sem vendagem dados. Modelo: BBC iPlayer (30mi usuários UK), ARD Mediathek (Alemanha). Quebra monopólio Netflix/YouTube/Spotify — oferece alternativa pública gratuita qualidade',
+        connections: ['midia-publica-digital', 'modelo-bbc', 'mastodon-publico', 'streaming-nacional'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'fact-checking-agil': {
+        name: 'Fact-Checking Ágil',
+        description: 'Equipe 500 jornalistas EBC, IA detecta viralização fake news (>100k compartilhamentos 6h), desmentido propagado mesma velocidade mentira (push notification, trending topics, parceria WhatsApp/Telegram). Problema atual: Lupa/Aos Fatos desmentem 48h depois, fake news já 10mi visualizações. Solução: infraestrutura pública + tecnologia + velocidade. Modelo: Taiwan fact-check 60min',
+        connections: ['midia-publica-digital', 'ia-facilitacao', 'combate-desinformacao', 'taiwan-fact-check'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'transicao-energetica-justa': {
+        name: 'Transição Energética Justa',
+        description: 'Empregos verdes digitais, retrofit trabalhadores, planejamento democrático. Data centers 1-2% energia global (416 TWh/ano), mineração Bitcoin 150 TWh/ano. Obrigar data centers 80% energia renovável LOCAL (não créditos), 10 anos transição. Retrofit trabalhadores combustão → solar/eólica/baterias, 500 mil empregos BR. Planejamento VSM: ONS democratizado, assembleias clima',
+        connections: ['data-centers-renovaveis', 'retrofit-trabalhadores', 'planejamento-vsm-energia', 'just-transition', 'empregos-verdes-digitais'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'data-centers-renovaveis': {
+        name: 'Data Centers 100% Renováveis',
+        description: 'Proibir órgãos públicos contratar data centers não-renováveis. Google/Meta prometem 100% renovável 2030, MAS compram créditos carbono (greenwashing) não constroem renováveis. Proposta: 80% energia renovável LOCAL, 10 anos prazo, multa 5% faturamento. Inclui: resfriamento eficiente (agua reutilizada), hardware vida longa (não obsolescência programada)',
+        connections: ['transicao-energetica-justa', 'greenwashing-big-tech', 'energia-renovavel', 'nuvem-brasil'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'retrofit-trabalhadores': {
+        name: 'Retrofit Trabalhadores',
+        description: 'Trabalhadores petróleo/carvão/combustão não podem pagar crise climática. Programa: renda transição 3 anos (100% salário) + requalificação gratuita (energia solar, eólica, baterias, eficiência energética). 200 mil trabalhadores petróleo BR, 300 mil veículos combustão. Custo: R$ 25-30bi/3anos. Cria 500 mil empregos verdes. Modelo: Alemanha Energiewende',
+        connections: ['transicao-energetica-justa', 'just-transition', 'empregos-verdes-digitais', 'renda-transicao'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'just-transition': {
+        name: 'Just Transition (Transição Justa)',
+        description: 'Princípio: trabalhadores/comunidades dependentes combustíveis fósseis não podem arcar sozinhos custo transição verde. Direitos: emprego alternativo garantido, renda durante transição, voz decisões (não imposto cima). OIT Diretrizes 2015. Movimento sindical + ambiental. Evita resistência trabalhadores (que temem perder emprego) à transição. Solidariedade não sacrifício',
+        connections: ['retrofit-trabalhadores', 'transicao-energetica-justa', 'sindicalismo-ambiental', 'oit-diretrizes'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'empregos-verdes-digitais': {
+        name: 'Empregos Verdes Digitais',
+        description: '500 mil empregos BR: instalação/manutenção solar (200k), eólica (100k), baterias/armazenamento (80k), eficiência energética predial (120k). Salário médio R$ 3.500-5.000/mês (acima média nacional R$ 2.900). Requer formação técnica 6-18 meses. Financiamento: taxação Big Techs + fim subsídios fósseis (R$ 80bi/ano petróleo/carvão)',
+        connections: ['transicao-energetica-justa', 'retrofit-trabalhadores', 'economia-verde', 'fim-subsidios-fosseis'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'renda-basica-universal': {
+        name: 'Renda Básica Universal',
+        description: 'Piloto R$ 1.000/mês, financiamento taxação IA/algoritmos, experimento controlado. UBI: incondicional, individual, universal, periódico. Maricá RJ R$ 70/mês (2019) 42 mil famílias. Piloto proposto: 10 municípios (100 mil pessoas), 3 anos, custo R$ 3,6bi. Financiamento: taxa algoritmos (R$ 15-20bi/ano), imposto grandes fortunas (R$ 40-60bi/ano), reformar isenções (R$ 350bi/ano)',
+        connections: ['piloto-ubi-brasil', 'marica-renda-basica', 'financiamento-ubi', 'argumento-automacao', 'argumento-dignidade'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'piloto-ubi-brasil': {
+        name: 'Piloto UBI Brasil',
+        description: '10 municípios (5 urbanos + 5 rurais), 100 mil pessoas, R$ 1.000/mês, 3 anos duração, custo R$ 3,6bi. Métricas: saúde mental, empreendedorismo, educação, criminalidade, trabalho formal/informal. Grupo controle (50 mil sem UBI) para comparar. Modelo: Finlândia 2017-18 (2 mil pessoas), Quênia GiveDirectly (20 mil pessoas 12 anos)',
+        connections: ['renda-basica-universal', 'marica-renda-basica', 'experimento-controlado', 'finlandia-ubi'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'marica-renda-basica': {
+        name: 'Maricá Renda Básica',
+        description: 'Município RJ (165 mil hab): Renda Básica Cidadania R$ 70-130/mês (2019-presente), 42 mil famílias (60% população). Moeda local mumbuca (app), não pode sacar (circula comércio local). Resultados: comércio local +30%, desemprego -10%, saúde mental +15%. Financiamento: royalties petróleo. Prova que funciona escala municipal',
+        connections: ['renda-basica-universal', 'piloto-ubi-brasil', 'moeda-local', 'royalties-petroleo'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'financiamento-ubi': {
+        name: 'Financiamento UBI',
+        description: 'R$ 214mi brasileiros × R$ 1.000/mês × 12 meses = R$ 2,6 tri/ano (50% PIB) = INVIÁVEL total. MAS: 1) Taxa algoritmos R$ 15-20bi/ano, 2) Imposto grandes fortunas (>R$ 10mi) 1% = R$ 40-60bi/ano, 3) Reformar isenções fiscais empresas R$ 350bi/ano → reduzir 30% = R$ 105bi, 4) Taxação Big Techs R$ 10bi/ano. Total: R$ 170-195bi/ano = UBI R$ 680/pessoa/mês viável',
+        connections: ['renda-basica-universal', 'imposto-grandes-fortunas', 'reforma-isencoes-fiscais', 'taxa-algoritmos'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'argumento-automacao': {
+        name: 'Argumento Automação UBI',
+        description: 'IA elimina 30-40% empregos 20 anos (Goldman Sachs). Produtividade aumenta (IA + robôs), mas renda concentra (donos capital). UBI redistribui produtividade: se robô substitui 1 trabalhador produzindo R$ 10k/mês, tributar 30% = R$ 3k/mês financia UBI 3 pessoas. Não é "dar dinheiro atoa" — é DIVIDENDO social da automação',
+        connections: ['renda-basica-universal', 'automacao-desemprego', 'imposto-renda-algoritmos', 'dividendo-social'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'argumento-dignidade': {
+        name: 'Argumento Dignidade UBI',
+        description: 'Trabalho não define valor humano. UBI libera tempo para: arte, cuidado (crianças/idosos), comunidade, política, educação, invenção. Bertrand Russell "Elogio ao Ócio" (1932): trabalho 4h/dia suficiente, resto criatividade. Crítica ética protestante (trabalho = virtude, ócio = vício). UBI = DIREITO existir, não caridade',
+        connections: ['renda-basica-universal', 'bertrand-russell-ocio', 'etica-protestante-critica', 'tempo-livre-criativo'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'sintese-integrada-politicas': {
+        name: 'Síntese Integrada 10 Domínios',
+        description: 'Políticas não são independentes — regulação financia UBI (taxação Big Techs), soberania permite cooperativas (nuvem pública), educação forma quadros (engenheiros soberania), mídia pública combate desinformação (fact-checking), democracia participativa legitima (Decidim), transição energética financia (royalties), privacidade protege (LGPD forte). É SISTEMA integrado não lista fragmentada',
+        connections: ['politicas-concretas', 'visao-sistemica', 'feedback-loops-politicos', 'sinergia-politicas'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'obstaculo-central-politico': {
+        name: 'Obstáculo Central é Político',
+        description: 'Não é viabilidade técnica/econômica — é POLÍTICO (lobby + ideologia + correlação forças). Dinheiro existe (R$ 350bi/ano isenções, R$ 600bi/ano juros dívida), tecnologia existe (Pix prova), conhecimento existe (engenheiros formados). Falta: VONTADE POLÍTICA + enfrentar Big Tech + romper ideologia neoliberal ("Estado não inova", "mercado resolve")',
+        connections: ['sintese-integrada-politicas', 'lobby-big-techs', 'ideologia-neoliberal', 'correlacao-forcas'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'estrategia-transicao': {
+        name: 'Estratégia Transição',
+        description: 'Vitórias rápidas (regulação plataformas leis municipais, Barcelona modelo) constroem poder para reformas estruturais (soberania digital, UBI). Sequência: 1) Vitórias locais (leis municipais, cooperativas piloto), 2) Acúmulo forças (articulação nacional, pressão midiática), 3) Salto escala (leis federais, BNDES, BC). Não é gradualismo — é ACUMULAÇÃO ESTRATÉGICA',
+        connections: ['sintese-integrada-politicas', 'vitorias-rapidas', 'reformas-estruturais', 'acumulacao-forcas'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'licao-cybersyn-defensabilidade': {
+        name: 'Lição Cybersyn: Defensabilidade',
+        description: 'Alternativas precisam aparato defesa (legal, político, físico), senão destruídas. Cybersyn funcionou 1971-73 mas CIA+Pinochet destruíram. Pix funciona porque BC autônomo + governo protegeu. Cooperativas precisam: leis protegem (CLT plataformas), financiamento público (BNDES), defesa jurídica (MPT), articulação internacional (impossível isolar). CONSTRUIR não basta — DEFENDER necessário',
+        connections: ['estrategia-transicao', 'cybersyn', 'pix-soberania', 'aparato-defesa'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'papel-movimentos-sociais': {
+        name: 'Papel Movimentos Sociais',
+        description: 'MST sementes digitais (agroecologia + soberania alimentar), Zapatistas redes autônomas (México), cooperativas catadores (Cataki 100+ cooperativas), MTD ocupações digitais. Não esperar Estado — CONSTRUIR alternativas já. Estado disputa depois (Barcelona, Kerala). Movimento social = laboratório práticas pós-capitalistas',
+        connections: ['estrategia-transicao', 'mst-digital', 'zapatistas-autonomia', 'cataki-cooperativas', 'prefiguracao-politica'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'papel-intelectuais': {
+        name: 'Papel Intelectuais',
+        description: 'Produzir conhecimento aplicado não torres marfim. Traduzir técnica→política (VSM para sindicalistas, blockchain para cooperativas). Conectar lutas (trabalhadores plataforma + ambientalistas + feministas). Gramsci intelectual orgânico: não neutro, comprometido transformação. Universidade pública = infraestrutura comum, não fábrica diplomas',
+        connections: ['estrategia-transicao', 'gramsci-intelectual-organico', 'universidade-publica', 'traducao-conhecimento'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'papel-estado-disputavel': {
+        name: 'Papel Estado Disputável',
+        description: 'Estado não neutro mas disputável — ganhar eleições não basta, precisa transformar aparelho (meritocracia→democracia). BC criou Pix porque tinha autonomia técnica + vontade política. EBC destroçada porque faltou defesa institucional. Lição: ocupar Estado + reformar estrutura + criar trincheiras (conselhos, ouvidorias, transparência). Estado = campo batalha não ferramenta neutra',
+        connections: ['estrategia-transicao', 'disputa-estado', 'autonomia-institucional', 'reforma-aparelho-estado'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'horizonte-utopico-realista': {
+        name: 'Horizonte Utópico Realista',
+        description: 'Comunismo cibernético = infraestrutura pública + planejamento democrático + diversidade tecnológica. Não é sonho distante — é POSSÍVEL com tecnologia atual. Utopia não significa impossível, significa ainda-não-realizado-mas-realizável (Ernst Bloch). Pix, Wikipedia, Linux, Cuba biotecnologia, Kerala educação = PROVAS que funciona. Barreira = política não técnica',
+        connections: ['sintese-integrada-politicas', 'comunismo-cibernetico', 'ernst-bloch-utopia', 'exemplos-funcionam'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'proximos-passos': {
+        name: 'Próximos Passos',
+        description: 'Organização (cooperativas/sindicatos/partidos), experimentação (pilotos locais), escala (federação/Estado). 1) ORGANIZAR: breques apps, cooperativas entrega, sindicatos tech. 2) EXPERIMENTAR: UBI municipal, Decidim cidades, software livre escolas. 3) ESCALAR: pressão legislativa, ocupação Estado, articulação BRICS. É práxis não teoria — FAZER transformando, não esperar condições ideais',
+        connections: ['politicas-concretas', 'organizacao-popular', 'experimentacao-local', 'escala-nacional', 'praxis-transformadora'],
+        color: '#22c55e',
+        layer: 1
+    },
+
+    // ========================================
+    // CAPÍTULO 30: O SALTO DIALÉTICO
+    // ========================================
+    'salto-dialetico': {
+        name: 'Salto Dialético',
+        description: 'Processo pelo qual filosofia abstrata se transforma em ciência concreta que recria o mundo. Não é abandono da filosofia mas sua CONCRETIZAÇÃO via ferramentas materiais',
+        connections: ['tese-antitese-sintese', 'filosofia-ciencia', 'materialismo-dialetico', 'praxis', 'condicoes-materiais-salto'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'tese-antitese-sintese': {
+        name: 'Tese-Antítese-Síntese',
+        description: 'Movimento dialético hegeliano: contradição gera superação qualitativa. Tese (filosofia abstrata) → Antítese (crise da abstração) → Síntese (ciência concreta) → Nova Tese (nova filosofia)',
+        connections: ['salto-dialetico', 'negacao-negacao', 'espiral-dialetica', 'hegel'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'filosofia-ciencia': {
+        name: 'Filosofia → Ciência',
+        description: 'Transformação de abstração em ferramentas materiais testáveis. Três saltos históricos: Aristóteles→Newton, Alquimia→Química, Lógica→Computação',
+        connections: ['salto-dialetico', 'aristoteles-newton', 'alquimia-quimica', 'logica-computacao'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'aristoteles-newton': {
+        name: 'Aristóteles → Newton',
+        description: 'Primeiro salto: filosofia natural → física matemática experimental. Crise (anomalias Tycho Brahe) → Ponte (telescópio, matemática, experimentos) → Recriação (Revolução Industrial)',
+        connections: ['filosofia-ciencia', 'telescopio-galileu', 'metodo-cientifico', 'revolucao-industrial', 'crise-abstracao'],
+        color: '#ef4444',
+        layer: -1
+    },
+    'crise-abstracao': {
+        name: 'Crise da Abstração',
+        description: 'Fase 1 do salto: quando filosofia encontra contradições empíricas insolúveis. Aristóteles não explica dados de Brahe, alquimia não prevê reações, lógica formal permanece abstrata',
+        connections: ['salto-dialetico', 'anomalias-empiricas', 'limites-paradigma', 'kuhn'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'anomalias-empiricas': {
+        name: 'Anomalias Empíricas',
+        description: 'Observações que teoria vigente não consegue explicar (Kuhn). Epiciclos acumulam-se, modelo fica absurdamente complexo, crise se instala',
+        connections: ['crise-abstracao', 'mudanca-paradigma', 'kuhn'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'telescopio-galileu': {
+        name: 'Telescópio de Galileu',
+        description: 'Instrumento material que força crise teórica: luas de Júpiter contradizem geocentrismo. Não apenas "olhar melhor" — cria NOVOS DADOS empíricos que filosofia aristotélica não assimila',
+        connections: ['aristoteles-newton', 'ponte-metodologica', 'instrumentos-cientificos'],
+        color: '#ef4444',
+        layer: -1
+    },
+    'ponte-metodologica': {
+        name: 'Ponte Metodológica',
+        description: 'Fase 2 do salto: ferramentas materiais que operacionalizam conceitos filosóficos. Instrumentos (telescópio, balança), matematização (F=ma), experimentos controlados (isolar variáveis)',
+        connections: ['salto-dialetico', 'instrumentos-cientificos', 'matematizacao', 'metodo-experimental'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'instrumentos-cientificos': {
+        name: 'Instrumentos Científicos',
+        description: 'Ferramentas que estendem sentidos e permitem testar teoria. Telescópio (Galileu), balança analítica (Lavoisier), Máquina de Turing (computação)',
+        connections: ['ponte-metodologica', 'telescopio-galileu', 'balanca-lavoisier', 'maquina-turing'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'matematizacao': {
+        name: 'Matematização',
+        description: 'Expressão de fenômenos naturais em linguagem matemática (F=ma). Matemática se torna ferramenta preditiva, não apenas descritiva. Newton operacionaliza conceitos via cálculo',
+        connections: ['ponte-metodologica', 'linguagem-operacional', 'previsibilidade'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'metodo-experimental': {
+        name: 'Método Experimental',
+        description: 'Isolar variáveis, criar condições controladas, replicar observações. Galileu planos inclinados desacelera queda para poder medir. Intervenção humana recria natureza em miniatura para interrogá-la',
+        connections: ['ponte-metodologica', 'reproducibilidade', 'controle-variaveis'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'recriacao-real': {
+        name: 'Recriação do Real',
+        description: 'Fase 3 do salto: nova ciência gera tecnologias que transformam mundo material. Física→máquinas vapor, Química→indústria química, Computação→era digital. Mundo como objeto intervenção humana',
+        connections: ['salto-dialetico', 'revolucao-industrial', 'industria-quimica', 'era-digital'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'revolucao-industrial': {
+        name: 'Revolução Industrial',
+        description: 'Física newtoniana materializada em máquinas a vapor, ferrovias, fábricas. Não apenas descrição melhor do mundo — TRANSFORMAÇÃO do mundo. Novo paradigma filosófico (universo como máquina)',
+        connections: ['aristoteles-newton', 'recriacao-real', 'forcas-produtivas', 'capitalismo'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'alquimia-quimica': {
+        name: 'Alquimia → Química',
+        description: 'Segundo salto: proto-ciência hermética → ciência quantitativa elementos. Crise (não sistematiza) → Ponte (balança Lavoisier, nomenclatura) → Recriação (síntese ureia, indústria química)',
+        connections: ['filosofia-ciencia', 'balanca-lavoisier', 'conservacao-massa', 'industria-quimica'],
+        color: '#ef4444',
+        layer: -1
+    },
+    'balanca-lavoisier': {
+        name: 'Balança Analítica de Lavoisier',
+        description: 'Instrumento que quantifica massa, provando conservação e destruindo ideia alquímica de "essências" adicionáveis/removíveis. Matéria é matéria, quantificável',
+        connections: ['alquimia-quimica', 'instrumentos-cientificos', 'conservacao-massa'],
+        color: '#ef4444',
+        layer: -1
+    },
+    'conservacao-massa': {
+        name: 'Lei da Conservação da Massa',
+        description: 'Nada se cria, nada se perde — massa total constante em reações químicas. Lavoisier destrói alquimia via quantificação rigorosa',
+        connections: ['balanca-lavoisier', 'nomenclatura-sistematica', 'materialismo-cientifico'],
+        color: '#ef4444',
+        layer: -1
+    },
+    'nomenclatura-sistematica': {
+        name: 'Nomenclatura Química Sistemática',
+        description: 'Abandono de símbolos herméticos (☽ prata, ☿ mercúrio), criação nomes descritivos baseados composição (H₂O). Linguagem torna-se ferramenta operacional não poética',
+        connections: ['alquimia-quimica', 'linguagem-operacional'],
+        color: '#ef4444',
+        layer: -1
+    },
+    'industria-quimica': {
+        name: 'Indústria Química',
+        description: 'Química materializada: fertilizantes (Haber-Bosch), corantes sintéticos, plásticos, medicamentos. Química transformou materialmente mundo. Humanos CRIAM substâncias não apenas descobrem',
+        connections: ['alquimia-quimica', 'recriacao-real', 'sintese-ureia', 'materialidade-computacao'],
+        color: '#10b981',
+        layer: 0
+    },
+    'sintese-ureia': {
+        name: 'Síntese da Ureia (Wöhler 1828)',
+        description: 'Primeira substância orgânica sintetizada artificialmente — quebra barreira vivo/não-vivo. Se compostos orgânicos podem ser sintetizados, talvez vida seja "apenas química"',
+        connections: ['industria-quimica', 'materialismo-cientifico'],
+        color: '#10b981',
+        layer: 0
+    },
+    'logica-computacao': {
+        name: 'Lógica → Computação',
+        description: 'Terceiro salto: cálculo formal pensamento → máquinas universais silício. Crise (lógica abstrata) → Ponte (Turing, Shannon, von Neumann) → Recriação (Era Digital, capitalismo plataforma)',
+        connections: ['filosofia-ciencia', 'maquina-turing', 'circuitos-logicos', 'era-digital'],
+        color: '#6366f1',
+        layer: 0
+    },
+    'maquina-turing': {
+        name: 'Máquina de Turing',
+        description: 'Experimento mental (1936): qualquer computação redutível a operações simples (leia, escreva, mova, repita). Inicialmente filosofia, continha semente materialização',
+        connections: ['logica-computacao', 'instrumentos-cientificos', 'arquitetura-von-neumann', 'teoria-computabilidade'],
+        color: '#6366f1',
+        layer: 0
+    },
+    'circuitos-logicos': {
+        name: 'Circuitos Lógicos',
+        description: 'Claude Shannon: operações booleanas (AND/OR/NOT) implementáveis em circuitos elétricos. De repente filosofia da lógica se torna ENGENHARIA',
+        connections: ['logica-computacao', 'portas-logicas', 'shannon'],
+        color: '#6366f1',
+        layer: 0
+    },
+    'arquitetura-von-neumann': {
+        name: 'Arquitetura de von Neumann',
+        description: 'Modelo computador programa armazenado — base todos computadores modernos. Transformou lógica abstrata em MÁQUINAS UNIVERSAIS. Pensamento tornou-se máquina',
+        connections: ['maquina-turing', 'computador-universal', 'cibernetica'],
+        color: '#6366f1',
+        layer: 0
+    },
+    'era-digital': {
+        name: 'Era Digital',
+        description: 'Lógica materializada: ciberespaço (novo território), subjetividade algorítmica (algoritmos constituem sujeitos), capitalismo plataforma. Lógica não apenas processa informação — CONSTITUI existência humana',
+        connections: ['logica-computacao', 'recriacao-real', 'capitalismo-plataforma', 'sujeito-automatico'],
+        color: '#6366f1',
+        layer: 0
+    },
+    'condicoes-materiais-salto': {
+        name: 'Condições Materiais do Salto',
+        description: 'Saltos exigem: (1) infraestrutura tecnológica, (2) relações sociais adequadas, (3) hegemonia cultural. Por que alguns saltos completam e outros abortam?',
+        connections: ['salto-dialetico', 'infraestrutura-tecnologica', 'relacoes-producao', 'hegemonia-cultural'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'infraestrutura-tecnologica': {
+        name: 'Infraestrutura Tecnológica',
+        description: 'Base material prévia necessária. Galileu precisou vidro qualidade para telescópio, revolução digital precisou transistores. Países periféricos não replicam saltos por ausência infraestrutura acumulada (não falta inteligência)',
+        connections: ['condicoes-materiais-salto', 'dependencia-tecnologica', 'cadeia-suprimentos'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'hegemonia-cultural': {
+        name: 'Hegemonia Cultural',
+        description: 'Consenso ativo sobre racionalidade (Gramsci). Saltos precisam aceitação cultural. Alquimia→Química exigiu Iluminismo dessacralizar natureza. Hoje: saltos ecológicos/decoloniais encontram resistência hegemônica neoliberal',
+        connections: ['condicoes-materiais-salto', 'iluminismo', 'dessacralizacao-natureza', 'cosmotecnica'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'iluminismo': {
+        name: 'Iluminismo',
+        description: 'Projeto cultural: razão universal, progresso linear, instrumentalização natureza. Kant "Sapere aude" (ouse saber). Preparou terreno cultural para saltos científicos modernos',
+        connections: ['hegemonia-cultural', 'sapere-aude', 'universalismo-racionalista', 'ultrarracionalismo'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'sapere-aude': {
+        name: 'Sapere Aude (Kant)',
+        description: '"Ouse saber" — lema iluminista razão liberada de superstição. Luz razão dissiparia trevas ignorância. Emancipação via conhecimento',
+        connections: ['iluminismo', 'emancipacao-racional'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'dessacralizacao-natureza': {
+        name: 'Dessacralização da Natureza',
+        description: 'Natureza deixa ser sagrada, torna-se recurso quantificável explorável. Não é pecado profaná-la, matematizá-la, instrumentalizá-la. Projeto cultural que permitiu saltos científicos modernos',
+        connections: ['hegemonia-cultural', 'matematizacao', 'extrativismo', 'cosmotecnica'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'saltos-abortados': {
+        name: 'Saltos Abortados',
+        description: 'Transformações impedidas por: (1) repressão direta (destruição física), (2) cooptação capitalista (neutralizar conteúdo político), (3) limitação epistêmica (colonização imaginação)',
+        connections: ['salto-dialetico', 'repressao-direta', 'cooptacao-capitalista', 'colonizacao-imaginacao'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'repressao-direta': {
+        name: 'Repressão Direta',
+        description: 'Destruição física infraestrutura revolucionária. Cybersyn queimado 1973 (Pinochet), Panteras Negras assassinados (COINTELPRO), Primavera Árabe esmagada. Assassinato de possibilidade',
+        connections: ['saltos-abortados', 'golpe-chile', 'cointelpro', 'terrorismo-estado'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'golpe-chile': {
+        name: 'Golpe no Chile (1973)',
+        description: 'Pinochet destrói Cybersyn, mata/exila técnicos. Não foi "falha técnica" — foi assassinato deliberado de possibilidade. Sala Operações queimada, computadores destruídos',
+        connections: ['repressao-direta', 'cybersyn', 'allende'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'cooptacao-capitalista': {
+        name: 'Cooptação Capitalista',
+        description: 'Capital metaboliza críticas despolitizando via mercantilização. Contracultura→publicidade rebeldia, feminismo→girl boss, open source→Big Tech usa Linux grátis lucra bilhões',
+        connections: ['saltos-abortados', 'neutralizar-conteudo', 'feminismo-girlboss', 'opensource-bigtech'],
+        color: '#10b981',
+        layer: 0
+    },
+    'neutralizar-conteudo': {
+        name: 'Neutralizar Conteúdo, Manter Forma',
+        description: 'Padrão cooptação: aceitar forma radical mas esvaziar conteúdo revolucionário. Cooperativas→Uber "cooperativo" (forma cooperativa, conteúdo capitalista), blockchain→especulação (P2P forma, acumulação conteúdo)',
+        connections: ['cooptacao-capitalista', 'cooperativas-uber', 'blockchain-especulativo', 'greenwashing'],
+        color: '#10b981',
+        layer: 0
+    },
+    'feminismo-girlboss': {
+        name: 'Feminismo → Girl Boss',
+        description: 'Movimento anticapitalista reduzido a empoderamento individual no mercado (Sheryl Sandberg "Lean In"). Feminismo como técnica ascender DENTRO capitalismo não superá-lo',
+        connections: ['cooptacao-capitalista', 'neoliberalismo-progressista'],
+        color: '#10b981',
+        layer: 0
+    },
+    'opensource-bigtech': {
+        name: 'Open Source → Big Tech',
+        description: 'Software livre capturado: Google/Facebook/Amazon usam Linux/Kubernetes/Apache gratuitamente, lucram bilhões, não retribuem proporcionalmente. Commons capturado por capital',
+        connections: ['cooptacao-capitalista', 'commons-digital', 'extracao-valor'],
+        color: '#10b981',
+        layer: 0
+    },
+    'colonizacao-imaginacao': {
+        name: 'Colonização da Imaginação',
+        description: 'Incapacidade conceber alternativas — realismo capitalista (Mark Fisher). "Mais fácil imaginar fim do mundo que fim do capitalismo". TINA (There Is No Alternative)',
+        connections: ['saltos-abortados', 'realismo-capitalista', 'tina', 'cosmotecnica'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'realismo-capitalista': {
+        name: 'Realismo Capitalista',
+        description: 'Mark Fisher: capitalismo apresentado como horizonte insuperável. Não conseguimos IMAGINAR alternativas então não lutamos por elas. Expandir imaginário político = pré-condição saltos emancipatórios',
+        connections: ['colonizacao-imaginacao', 'hegemonia', 'naturalizacao-capitalismo'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'tina': {
+        name: 'TINA (There Is No Alternative)',
+        description: 'Slogan thatcherista: neoliberalismo como única racionalidade possível. Cosmotécnicas plurais mostram: racionalidades alternativas JÁ EXISTEM, funcionaram milênios, produziram civilizações complexas sem capitalismo',
+        connections: ['realismo-capitalista', 'hegemonia', 'cosmotecnica'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'salto-livro': {
+        name: 'O Salto Que Este Livro Tenta',
+        description: 'Meta-reflexão: livro como Fases 1-2 do salto (teoria + instrumentos conceituais), leitor completa Fase 3 com prática (organizar cooperativas, implementar protocolos, construir redes mesh)',
+        connections: ['salto-dialetico', 'teoria-pratica', 'leitor-construtor', 'praxis'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'leitor-construtor': {
+        name: 'De Leitor a Construtor',
+        description: 'Fase 3 pendente: organizar cooperativas plataforma (CoopCycle/Resonate código aberto disponível), implementar protocolos federados (Matrix/Mastodon funcionais AGORA), construir redes mesh (indígenas já fazem, aprender/replicar), pressionar políticas públicas (tributação Big Tech, RBU)',
+        connections: ['salto-livro', 'cooperativas-plataforma', 'protocolos-federados', 'redes-mesh', 'politicas-publicas'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'espiral-dialetica': {
+        name: 'Espiral Dialética',
+        description: 'Conhecimento não linear nem circular — espiral ascendente acumulando complexidade. Cada salto ACUMULA conhecimento, expande possibilidades. Não há "fim da história"',
+        connections: ['tese-antitese-sintese', 'progresso-nao-linear', 'acumulacao-conhecimento'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'humildade-epistemologica': {
+        name: 'Humildade Epistemológica',
+        description: 'Toda síntese é provisória — novas crises gerarão novos saltos (INCLUSIVE ESTE LIVRO). Não há verdade final. Complexidade crescente = evolução (não bug, é feature)',
+        connections: ['espiral-dialetica', 'falibilismo', 'conhecimento-processo'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'urgencia-etica': {
+        name: 'Urgência Ética',
+        description: 'Saltos atuais (IA, computação quântica, bioengenharia) exigem direcionamento consciente. TEMPO É LIMITADO. Responsabilidade coletiva direcionar saltos para fins emancipatórios não opressivos',
+        connections: ['salto-dialetico', 'ia-salto-andamento', 'responsabilidade-coletiva'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'ia-salto-andamento': {
+        name: 'IA como Salto em Andamento',
+        description: 'De lógica determinística (Turing) → sistemas probabilísticos (redes neurais). Fase 1 (lógica booleana não lida ambiguidade), Fase 2 (LLMs, GPUs, Big Data), Fase 3 (recriar mundo — MAS quem controla?)',
+        connections: ['urgencia-etica', 'ia', 'crise-paradigma-booleano', 'democracia-aumentada-vs-totalitarismo'],
+        color: '#6366f1',
+        layer: 0
+    },
+    'crise-paradigma-booleano': {
+        name: 'Crise do Paradigma Booleano',
+        description: 'Lógica True/False inadequada para ambiguidade (linguagem natural, reconhecimento padrões complexos). Redes neurais são caixa-preta probabilística — nova ontologia computacional emergindo',
+        connections: ['ia-salto-andamento', 'logica-computacao', 'emergencia'],
+        color: '#6366f1',
+        layer: 0
+    },
+    'democracia-aumentada-vs-totalitarismo': {
+        name: 'Democracia Aumentada vs Totalitarismo',
+        description: 'Bifurcação: IA pode gerar Cybersyn 2.0 (democracia econômica tempo real) OU Social Credit System global (totalitarismo algorítmico). DECISÃO TOMADA AGORA enquanto você lê. Caps 21+25 urgentes',
+        connections: ['ia-salto-andamento', 'cybersyn', 'soberania-digital', 'vigilancia'],
+        color: '#6366f1',
         layer: 0
     }
 };
