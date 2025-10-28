@@ -15,7 +15,6 @@ import subprocess
 import sys
 from pathlib import Path
 from datetime import datetime, timezone
-import os
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -101,10 +100,7 @@ def main() -> int:
         timestamp = datetime.now(timezone.utc).isoformat()
         # Author (from git config) and statistics
         try:
-            author = (
-                subprocess.check_output(["git", "config", "user.name"], cwd=ROOT, text=True)
-                .strip()
-            )
+            author = subprocess.check_output(["git", "config", "user.name"], cwd=ROOT, text=True).strip()
         except subprocess.CalledProcessError:
             author = "unknown"
 

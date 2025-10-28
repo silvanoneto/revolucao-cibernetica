@@ -17,59 +17,59 @@ from io import BytesIO
 import base64
 
 # Suprimir warnings de JSON decode do xhtml2pdf
-warnings.filterwarnings('ignore', message='.*JSON.*')
-warnings.filterwarnings('ignore', category=UserWarning, module='xhtml2pdf')
+warnings.filterwarnings("ignore", message=".*JSON.*")
+warnings.filterwarnings("ignore", category=UserWarning, module="xhtml2pdf")
 
 
 def compress_image(image_data: bytes, max_size_kb: int = 500, quality: int = 75) -> bytes:
     """
     Comprime uma imagem para reduzir o tamanho do arquivo.
-    
+
     Args:
         image_data: Dados binários da imagem original
         max_size_kb: Tamanho máximo desejado em KB (padrão: 500KB)
         quality: Qualidade JPEG (1-100, padrão: 75)
-    
+
     Returns:
         Dados binários da imagem comprimida
     """
     try:
         # Abrir imagem
         img = Image.open(BytesIO(image_data))
-        
+
         # Converter RGBA para RGB se necessário (para salvar como JPEG)
-        if img.mode in ('RGBA', 'LA', 'P'):
-            background = Image.new('RGB', img.size, (255, 255, 255))
-            if img.mode == 'P':
-                img = img.convert('RGBA')
-            background.paste(img, mask=img.split()[-1] if img.mode in ('RGBA', 'LA') else None)
+        if img.mode in ("RGBA", "LA", "P"):
+            background = Image.new("RGB", img.size, (255, 255, 255))
+            if img.mode == "P":
+                img = img.convert("RGBA")
+            background.paste(img, mask=img.split()[-1] if img.mode in ("RGBA", "LA") else None)
             img = background
-        
+
         # Redimensionar se a imagem for muito grande
         max_dimension = 1920
         if max(img.size) > max_dimension:
             ratio = max_dimension / max(img.size)
             new_size = tuple(int(dim * ratio) for dim in img.size)
             img = img.resize(new_size, Image.Resampling.LANCZOS)
-        
+
         # Comprimir imagem
         output = BytesIO()
-        img.save(output, format='JPEG', quality=quality, optimize=True)
+        img.save(output, format="JPEG", quality=quality, optimize=True)
         compressed_data = output.getvalue()
-        
+
         # Se ainda estiver muito grande, reduzir qualidade gradualmente
         current_quality = quality
         while len(compressed_data) > max_size_kb * 1024 and current_quality > 30:
             current_quality -= 10
             output = BytesIO()
-            img.save(output, format='JPEG', quality=current_quality, optimize=True)
+            img.save(output, format="JPEG", quality=current_quality, optimize=True)
             compressed_data = output.getvalue()
-        
+
         # Retornar a versão menor
         if len(compressed_data) < len(image_data):
             return compressed_data
         return image_data
-        
+
     except Exception as e:
         print(f"  ⚠ Erro ao comprimir imagem: {e}")
         return image_data
@@ -78,44 +78,44 @@ def compress_image(image_data: bytes, max_size_kb: int = 500, quality: int = 75)
 def compress_and_embed_images_in_html(html_content: str, quality: int = 60) -> str:
     """
     Processa todas as tags <img> no HTML, comprime as imagens e converte para base64.
-    
+
     Args:
         html_content: HTML com tags <img src="path/to/image.png">
         quality: Qualidade JPEG para compressão (1-100)
-    
+
     Returns:
         HTML com imagens embutidas em base64
     """
     soup = BeautifulSoup(html_content, "html.parser")
-    
+
     for img_tag in soup.find_all("img"):
         src = img_tag.get("src")
         if not src or src.startswith("data:"):
             continue
-        
+
         try:
             # Ler imagem do disco
             img_path = src if os.path.exists(src) else os.path.join("assets/images", os.path.basename(src))
-            
+
             if not os.path.exists(img_path):
                 continue
-            
+
             with open(img_path, "rb") as f:
                 img_data = f.read()
-            
+
             # Comprimir imagem (mais agressivo para PDF)
             compressed_data = compress_image(img_data, max_size_kb=300, quality=quality)
-            
+
             # Converter para base64
             base64_data = base64.b64encode(compressed_data).decode("utf-8")
-            
+
             # Substituir src por data URI
             img_tag["src"] = f"data:image/jpeg;base64,{base64_data}"
-            
+
         except Exception as e:
             print(f"  ⚠ Erro ao processar imagem {src}: {e}")
             continue
-    
+
     return str(soup)
 
 
@@ -124,9 +124,7 @@ def clean_html_content(html_content: str) -> str:
     soup = BeautifulSoup(html_content, "html.parser")
 
     # Remove elementos desnecessários
-    for element in soup(
-        ["script", "style", "nav", "header", "footer", "button", "noscript"]
-    ):
+    for element in soup(["script", "style", "nav", "header", "footer", "button", "noscript"]):
         element.decompose()
 
     # Remove classes e IDs desnecessários (mantém estrutura)
@@ -174,7 +172,7 @@ def create_epub():
     book = epub.EpubBook()
 
     # Metadados
-    book.set_identifier("revolucao-cibernetica-2025") # type: ignore
+    book.set_identifier("revolucao-cibernetica-2025")  # type: ignore
     book.set_title("A Revolução Cibernética: Teoria, Manifesto e Sistema")
     book.set_language("pt-BR")
     book.add_author("O Besta Fera")
@@ -361,12 +359,12 @@ def create_epub():
         if os.path.exists(cover_path):
             with open(cover_path, "rb") as f:
                 cover_image_data = f.read()
-            
+
             # Comprimir imagem de capa
             original_size = len(cover_image_data) / 1024
             cover_image = compress_image(cover_image_data, max_size_kb=800, quality=80)
             compressed_size = len(cover_image) / 1024
-            
+
             book.set_cover("cover.png", cover_image)
             print(f"✓ Capa adicionada ({original_size:.1f}KB → {compressed_size:.1f}KB)")
         else:
@@ -392,10 +390,10 @@ def create_epub():
 
                     with open(img_path, "rb") as f:
                         img_content_original = f.read()
-                    
+
                     original_size = len(img_content_original)
                     total_original_size += original_size
-                    
+
                     # Comprimir imagem (mais agressivo para EPUB)
                     img_content = compress_image(img_content_original, max_size_kb=400, quality=70)
                     compressed_size = len(img_content)
@@ -412,9 +410,11 @@ def create_epub():
                     )
                     book.add_item(img_item)
                     image_count += 1
-                    
-                    reduction = ((original_size - compressed_size) / original_size * 100)
-                    print(f"✓ {img_file} ({original_size/1024:.1f}KB → {compressed_size/1024:.1f}KB, -{reduction:.0f}%)")
+
+                    reduction = (original_size - compressed_size) / original_size * 100
+                    print(
+                        f"✓ {img_file} ({original_size/1024:.1f}KB → {compressed_size/1024:.1f}KB, -{reduction:.0f}%)"
+                    )
                 except Exception as e:
                     print(f"✗ Erro ao processar {img_file}: {e}")
 
@@ -437,7 +437,7 @@ def create_epub():
     print(f"\nGerando arquivo EPUB: {output_file}")
     epub.write_epub(output_file, book, {})
     print(f"✓ EPUB criado com sucesso: {output_file}")
-    
+
     file_size = os.path.getsize(output_file) / (1024 * 1024)  # MB
 
     # Estatísticas finais
@@ -769,9 +769,7 @@ def create_pdf() -> str:
 
         if main_content:
             # Limpar elementos desnecessários
-            for element in main_content.find_all(
-                ["script", "style", "nav", "header", "footer", "button", "noscript"]
-            ):
+            for element in main_content.find_all(["script", "style", "nav", "header", "footer", "button", "noscript"]):
                 element.decompose()
 
             # Remover estilos inline que usam variáveis CSS
@@ -794,11 +792,7 @@ def create_pdf() -> str:
                     "code",
                     "pre",
                 ]:
-                    element.attrs = {
-                        k: v
-                        for k, v in element.attrs.items()
-                        if k in ["href", "src", "alt"]
-                    }
+                    element.attrs = {k: v for k, v in element.attrs.items() if k in ["href", "src", "alt"]}
 
             html_parts.append(str(main_content))
             print("✓ index.html processado")
@@ -819,9 +813,7 @@ def create_pdf() -> str:
 
         if main_content:
             # Limpar elementos desnecessários
-            for element in main_content.find_all(
-                ["script", "style", "nav", "header", "footer", "button", "noscript"]
-            ):
+            for element in main_content.find_all(["script", "style", "nav", "header", "footer", "button", "noscript"]):
                 element.decompose()
 
             # Remover estilos inline que usam variáveis CSS
@@ -844,11 +836,7 @@ def create_pdf() -> str:
                     "code",
                     "pre",
                 ]:
-                    element.attrs = {
-                        k: v
-                        for k, v in element.attrs.items()
-                        if k in ["href", "src", "alt"]
-                    }
+                    element.attrs = {k: v for k, v in element.attrs.items() if k in ["href", "src", "alt"]}
 
             html_parts.append(str(main_content))
             print("✓ manifesto.html processado")
@@ -865,7 +853,7 @@ def create_pdf() -> str:
 
     # Combinar tudo
     intermediate_html = "".join(html_parts)
-    
+
     # Comprimir e embutir imagens (conversão para base64)
     print("\nComprimindo e embutindo imagens...")
     final_html = compress_and_embed_images_in_html(intermediate_html, quality=55)
@@ -877,20 +865,19 @@ def create_pdf() -> str:
     # Usar xhtml2pdf para converter HTML em PDF
     # Suprimir warnings do xhtml2pdf redirecionando stdout e stderr temporariamente
     import io
-    import contextlib
-    
+
     stdout_backup = sys.stdout
     stderr_backup = sys.stderr
     sys.stdout = io.StringIO()
     sys.stderr = io.StringIO()
-    
+
     try:
         with open(output_file, "wb") as pdf_file:
             pisa_status = pisa.CreatePDF(final_html, dest=pdf_file, encoding="utf-8")
-        
+
         sys.stdout = stdout_backup
         sys.stderr = stderr_backup
-        
+
         if pisa_status.err:
             raise Exception(f"Erro ao gerar PDF: {pisa_status.err}")
     except Exception as e:
@@ -939,9 +926,7 @@ def create_xml(minify: bool = False) -> str:
     # Metadados
     metadata = ET.SubElement(root, "metadata")
     ET.SubElement(metadata, "title").text = "A Revolução Cibernética"
-    ET.SubElement(metadata, "subtitle").text = (
-        "Uma Ontologia Relacional para a Era da Informação"
-    )
+    ET.SubElement(metadata, "subtitle").text = "Uma Ontologia Relacional para a Era da Informação"
     ET.SubElement(metadata, "author").text = "O Besta Fera"
     ET.SubElement(metadata, "language").text = "pt-BR"
     ET.SubElement(metadata, "license").text = "Creative Commons BY-SA 4.0"
@@ -1011,11 +996,7 @@ def create_xml(minify: bool = False) -> str:
             ET.SubElement(section_elem, "title").text = title_text
 
             # Extrair nível hierárquico
-            level = (
-                int(title_elem.name[1])
-                if title_elem.name in ["h1", "h2", "h3", "h4", "h5", "h6"]
-                else 1
-            )
+            level = int(title_elem.name[1]) if title_elem.name in ["h1", "h2", "h3", "h4", "h5", "h6"] else 1
             section_elem.set("level", str(level))
 
             # Extrair parágrafos
@@ -1046,9 +1027,7 @@ def create_xml(minify: bool = False) -> str:
                 lists_elem = ET.SubElement(section_elem, "lists")
                 for list_idx, lst in enumerate(lists):
                     list_elem = ET.SubElement(lists_elem, "list")
-                    list_elem.set(
-                        "type", "ordered" if lst.name == "ol" else "unordered"
-                    )
+                    list_elem.set("type", "ordered" if lst.name == "ol" else "unordered")
                     list_elem.set("index", str(list_idx))
 
                     items = lst.find_all("li", recursive=False)
@@ -1091,11 +1070,7 @@ def create_xml(minify: bool = False) -> str:
                 seen_concepts = set()
                 for concept in concepts:
                     concept_text = concept.get_text(strip=True)
-                    if (
-                        concept_text
-                        and concept_text not in seen_concepts
-                        and len(concept_text) > 3
-                    ):
+                    if concept_text and concept_text not in seen_concepts and len(concept_text) > 3:
                         seen_concepts.add(concept_text)
                         concept_elem = ET.SubElement(concepts_elem, "concept")
                         concept_elem.text = concept_text
@@ -1219,7 +1194,7 @@ def create_xml(minify: bool = False) -> str:
     print(f"📄 Arquivo: {output_file}")
     print(f"💾 Tamanho: {file_size:.2f} MB")
     print(f"📦 Formato: {'Minificado' if minify else 'Formatado (legível)'}")
-    print(f"🤖 Otimizado para: LLMs, RAG, Análise Semântica")
+    print("🤖 Otimizado para: LLMs, RAG, Análise Semântica")
     print("=" * 60)
 
     return output_file
@@ -1257,7 +1232,6 @@ def create_jsonl():
     html_files = ["index.html", "manifesto.html"]
 
     with open(output_file, "w", encoding="utf-8") as jsonl_file:
-
         for html_file in html_files:
             print(f"Processando {html_file}...")
 
@@ -1265,9 +1239,7 @@ def create_jsonl():
                 content = f.read()
 
             soup = BeautifulSoup(content, "html.parser")
-            main_content = (
-                soup.find("main") or soup.find("article") or soup.find("body")
-            )
+            main_content = soup.find("main") or soup.find("article") or soup.find("body")
 
             if not main_content:
                 continue
@@ -1282,11 +1254,7 @@ def create_jsonl():
                 # Obter ID e título da seção
                 section_id = section.get("id", "unknown")
                 section_title_elem = section.find(["h1", "h2", "h3"])
-                section_title = (
-                    section_title_elem.get_text(strip=True)
-                    if section_title_elem
-                    else "Sem título"
-                )
+                section_title = section_title_elem.get_text(strip=True) if section_title_elem else "Sem título"
 
                 # Processar parágrafos
                 paragraphs = section.find_all("p")
@@ -1379,9 +1347,9 @@ def create_jsonl():
     print(f"📄 Arquivo: {output_file}")
     print(f"💾 Tamanho: {file_size:.2f} MB")
     print(f"📝 Parágrafos: {paragraph_count:,}")
-    print(f"🤖 Formato: JSON Lines (streaming)")
-    print(f"✨ Otimizado para: Embeddings, RAG, Fine-tuning, LLMs")
-    print(f"⚡ Compatível com: OpenAI, LangChain, Pinecone, Weaviate")
+    print("🤖 Formato: JSON Lines (streaming)")
+    print("✨ Otimizado para: Embeddings, RAG, Fine-tuning, LLMs")
+    print("⚡ Compatível com: OpenAI, LangChain, Pinecone, Weaviate")
     print("=" * 60)
     print()
     print("💡 EXEMPLO DE USO:")
@@ -1462,8 +1430,10 @@ def create_rizoma_exports():
         # Nós
         for node in data.get("nodes", []):
             node_id = node.get("id")
-            name = escape_xml = (str(node.get("name", "")).replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;'))
-            description = (str(node.get("description", "")).replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;'))
+            name = str(node.get("name", "")).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+            description = (
+                str(node.get("description", "")).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+            )
             color = node.get("color", "")
             layer = node.get("layer", "")
 
@@ -1472,7 +1442,7 @@ def create_rizoma_exports():
             xml += f'      <data key="description">{description}</data>\n'
             xml += f'      <data key="color">{color}</data>\n'
             xml += f'      <data key="layer">{layer}</data>\n'
-            xml += '    </node>\n'
+            xml += "    </node>\n"
 
         # Arestas (sem duplicatas)
         edges_added = set()
@@ -1485,7 +1455,7 @@ def create_rizoma_exports():
                 xml += f'    <edge source="{src}" target="{tgt}"/>\n'
                 edges_added.add(key)
 
-        xml += '  </graph>\n</graphml>'
+        xml += "  </graph>\n</graphml>"
 
         out_graphml = "docs/rizoma-revolucao-cibernetica.graphml"
         with open(out_graphml, "w", encoding="utf-8") as f:
@@ -1504,21 +1474,25 @@ def create_rizoma_exports():
         md.append(f"**Total de Conceitos:** {len(data.get('nodes', []))}\n\n")
 
         md.append("## 📊 Estatísticas\n\n")
-        colors = {n.get('color') for n in data.get('nodes', [])}
+        colors = {n.get("color") for n in data.get("nodes", [])}
         md.append(f"- **Cores usadas:** {len(colors)}\n\n")
 
         # Por camada
-        for layer_label, layer_name in [(-1, 'Passado (-1)'), (0, 'Presente (0)'), (1, 'Futuro (+1)')]:
+        for layer_label, layer_name in [
+            (-1, "Passado (-1)"),
+            (0, "Presente (0)"),
+            (1, "Futuro (+1)"),
+        ]:
             md.append(f"### Camada {layer_label}: {layer_name}\n\n")
-            nodes_in_layer = [n for n in data.get('nodes', []) if n.get('layer') == layer_label]
-            nodes_in_layer = sorted(nodes_in_layer, key=lambda x: x.get('name', ''))
+            nodes_in_layer = [n for n in data.get("nodes", []) if n.get("layer") == layer_label]
+            nodes_in_layer = sorted(nodes_in_layer, key=lambda x: x.get("name", ""))
             for n in nodes_in_layer:
                 md.append(f"#### {n.get('name')} (`{n.get('id')}`)\n\n")
                 md.append(f"{n.get('description')}\n\n")
                 md.append(f"**Conexões:** {', '.join([f'`{c}`' for c in n.get('connections', [])])}\n\n")
-                md.append('---\n\n')
+                md.append("---\n\n")
 
-        md.append('\n*Gerado automaticamente pelo export_file.py*')
+        md.append("\n*Gerado automaticamente pelo export_file.py*")
 
         out_md = "docs/rizoma-revolucao-cibernetica.md"
         with open(out_md, "w", encoding="utf-8") as f:
@@ -1531,21 +1505,21 @@ def create_rizoma_exports():
     # Gerar CSVs de nós e arestas
     try:
         nodes_csv = "id,name,description,color,layer,connections_count\n"
-        for n in data.get('nodes', []):
+        for n in data.get("nodes", []):
             nodes_csv += '"{}","{}","{}","{}",{},{}\n'.format(
-                n.get('id', ''),
-                n.get('name', '').replace('"', '""'),
-                n.get('description', '').replace('"', '""'),
-                n.get('color', ''),
-                n.get('layer', ''),
-                len(n.get('connections', [])),
+                n.get("id", ""),
+                n.get("name", "").replace('"', '""'),
+                n.get("description", "").replace('"', '""'),
+                n.get("color", ""),
+                n.get("layer", ""),
+                len(n.get("connections", [])),
             )
 
-        edges_csv = 'source,target\n'
+        edges_csv = "source,target\n"
         edges_added = set()
-        for n in data.get('nodes', []):
-            src = n.get('id')
-            for tgt in n.get('connections', []) or []:
+        for n in data.get("nodes", []):
+            src = n.get("id")
+            for tgt in n.get("connections", []) or []:
                 key = "|".join(sorted([src, tgt]))
                 if key in edges_added:
                     continue
