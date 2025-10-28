@@ -1,9 +1,0 @@
-{
-  "include": [
-    "export_epub.py"
-  ],
-  "reportMissingTypeStubs": "none",
-  "reportUnknownMemberType": "none",
-  "reportUnknownParameterType": "none",
-  "reportUnknownArgumentType": "none"
-}
