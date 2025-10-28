@@ -5,7 +5,7 @@
 - @docs/rizoma-revolucao-cibernetica.json
 - @assets/scripts/rizoma-navigation.js
 
-Vamos expandir o capítulo 20
+Vamos expandir o capítulo 21
 
 ao final, atualizar rizoma em rizoma-navigation.js
 

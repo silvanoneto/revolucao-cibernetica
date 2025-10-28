@@ -11,6 +11,35 @@
  * - Sem estrutura arbórea
  * 
  * CHANGELOG:
+ * - 2025-10-28 (v18): Expansão massiva do Capítulo 21 (Inserção Subordinada do Brasil na Globalização Digital)
+ *   + 60+ novos conceitos: colonialismo digital, extrativismo de dados, maquiladora digital, superexploração digital
+ *   + Unicórnios brasileiros: 30 startups US$ 1bi+, mas 87% capital VC americano, 92% hospedados AWS/Azure/Google
+ *   + Extrativismo dados: US$ 87 bi/ano valor dados brasileiros (4,2% PIB), 78% extraído Big Techs americanas
+ *   + WhatsApp 165mi usuários, Google 140mi, Instagram 119mi, TikTok 82mi, YouTube 142mi — todos estrangeiros
+ *   + Infraestrutura: 19 cabos submarinos (vs 530 globais), 90% tráfego via Fortaleza→Lisboa/Miami, NSA monitora
+ *   + Data centers: 120 no Brasil, 70% AWS/Google/Azure, CLOUD Act permite EUA requisitar dados mesmo no Brasil
+ *   + Maquiladora digital: entregador iFood trabalha 10-12h/dia, 6-7 dias/semana, ganha R$ 1.200-1.500/mês líquido
+ *   + Superexploração: R$ 5-6/hora (vs CLT R$ 6,30/h + direitos), 47% sofreram acidente, 78% sem INSS
+ *   + Breque dos Apps (1º jul/2020): primeira greve nacional plataformas, 100+ cidades, Paulo Lima liderança
+ *   + Fairwork: nenhuma plataforma Brasil alcança 50% critérios trabalho justo (iFood 2/10, Uber 1/10, Rappi 0/10)
+ *   + WhatsApp bloqueio 2016: 12h caos, mostrou dependência crítica, Meta forçou mudança Marco Civil Internet
+ *   + Lobby Big Techs: Google R$ 18,7mi, Meta R$ 12,4mi, Uber R$ 9,8mi (2018-23), capturaram legislação
+ *   + LGPD enfraquecida: sem multas automáticas, sem servidores nacionais, sem proibição transferência dados
+ *   + Pix: maior vitória soberania — 152mi usuários, R$ 17,2 tri/ano, gratuito, quebrou Visa/Mastercard
+ *   + Pix funciona: BC mandou (autonomia), infraestrutura pública, gratuidade, padrão aberto — modelo replicável
+ *   + Educação colonizada: 87% currículos TI bibliografia 100% americana, 92% stack americano, zero soberania digital
+ *   + Fuga cérebros: 32 mil engenheiros brasileiros no Vale do Silício, Brasil investiu R$ 8bi formação, lucro = EUA
+ *   + Custo dependência: US$ 54,5 bi/ano (2,6% PIB) = 1,5x Bolsa Família, 1,3x SUS, 22x CNPq+Capes
+ *   + 10 políticas soberania: nuvem Brasil (R$ 15bi), cabos Sul-Sul (US$ 2bi), CLT plataformas, taxar Big Techs 15%
+ *   + IA soberana: LLM português/espanhol R$ 5bi, software livre gov.br, fábrica semicondutores 28nm BRICS
+ *   + Programa "Engenheiros Soberania": 100 mil bolsas R$ 2.500/mês, contrapartida 3 anos projetos públicos
+ *   + Custo total 10 políticas: R$ 100-120bi em 5 anos = viável (taxação + realocar subsídios + BNDES)
+ *   + Obstáculo: não é dinheiro/tecnologia — é LOBBY (R$ 50mi/ano) + ideologia neoliberal ("Estado não inova")
+ *   + Lição histórica: dependência não se resolve por mercado — exige ruptura política (Cybersyn, Pix, Great Firewall)
+ *   + Conceitos-chave: colonialismo digital, maquiladora digital, superexploração digital, Breque dos Apps, Pix
+ *   + Conceitos secundários: CLOUD Act, LGPD enfraquecida, fuga cérebros digital, lobby Big Techs, soberania digital
+ *   Total: ~1020 conceitos mapeados
+ * 
  * - 2025-10-28 (v17): Expansão massiva do Capítulo 20 (Guerra das Redes: Geopolítica Cibernética)
  *   + 50+ novos conceitos: arquitetura império do dólar, SWIFT, CIPS, SPFS, BRICS Pay, infraestrutura física
  *   + Privilégio exorbitante: déficit US$ 1 tri/ano sustentável, 88% transações globais envolvem dólar, 59% reservas mundiais
@@ -6008,6 +6037,179 @@ const conceptGraph = {
         name: 'Vigilância Financeira',
         description: 'SWIFT permite EUA monitorar todas transações em dólar (panóptico financeiro global). CBDCs permitem Estados rastrearem 100% transações cidadãos. Capitalismo vigilância (Ocidente, privado) vs Socialismo vigilância (China, estatal). Ambos distópicos. Alternativa: governança algorítmica democrática, código aberto',
         connections: ['swift', 'yuan-digital', 'cbdcs', 'capitalismo-vigilancia', 'crédito-social-china'],
+        color: '#ef4444',
+        layer: 0
+    },
+    
+    // ============================================
+    // CAPÍTULO 21: INSERÇÃO SUBORDINADA DO BRASIL
+    // ============================================
+    
+    'colonialismo-digital': {
+        name: 'Colonialismo Digital',
+        description: 'Dinâmica onde países centrais (EUA, China) extraem dados brutos da periferia (Brasil, África, LATAM) para alimentar indústrias IA/tech, reforçando dependência. Fornecemos matéria-prima (dados) grátis, importamos produtos manufaturados (software, nuvem, IA) a preço alto. Ciclo colonial clássico atualizado',
+        connections: ['extrativismo-dados', 'dependencia-tecnologica', 'teoria-dependencia', 'mais-valia-dados'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'extrativismo-dados': {
+        name: 'Extrativismo de Dados',
+        description: 'Brasil = fazenda de dados. 180mi conectados geram US$ 87bi/ano em dados (4,2% PIB), mas 78% extraído por Big Techs americanas (Meta, Google, Amazon). Dados brutos brasileiros treinam modelos IA estrangeiros, lucro remitido ao Norte. Novo pau-brasil, nova soja — commodity exportada sem agregação valor',
+        connections: ['colonialismo-digital', 'big-techs-brasil', 'infraestrutura-dependente', 'mais-valia-dados'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'big-techs-brasil': {
+        name: 'Big Techs no Brasil',
+        description: 'Domínio total: WhatsApp 165mi, Google 140mi, Instagram 119mi, TikTok 82mi, YouTube 142mi usuários. 20 bilhões mensagens/dia extraídas. Lucro Big Techs com dados brasileiros: US$ 12-15bi/ano. Impostos pagos: <5% (evasão offshore Irlanda/Holanda). Controle infraestrutura = controle soberania',
+        connections: ['extrativismo-dados', 'lobby-big-techs', 'dependencia-whatsapp', 'unicornios-brasileiros'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'unicornios-brasileiros': {
+        name: 'Unicórnios Brasileiros',
+        description: '30 startups US$ 1bi+ (Nubank, iFood, 99, QuintoAndar). Mídia vende como "sucesso brasileiro", mas análise materialista: 87% capital de VCs americanos, 92% hospedados AWS/Azure, 100% exit strategy vender para Big Tech ou abrir capital NYSE (não Brasil). Estrutura offshore (Delaware, Cayman) — lucro não fica. É dependência disfarçada',
+        connections: ['big-techs-brasil', 'dependencia-tecnologica', 'extrativismo-dados', 'capital-estrangeiro'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'infraestrutura-dependente': {
+        name: 'Infraestrutura Digital Dependente',
+        description: '19 cabos submarinos (vs 530 globais), 90% tráfego via Fortaleza→Lisboa/Miami, NSA monitora (TEMPORA). 120 data centers: 70% AWS/Google/Azure. CLOUD Act (2018): EUA pode requisitar dados mesmo se armazenados no Brasil — viola LGPD e soberania. Dados "no Brasil" mas servidores estrangeiros = ilusão',
+        connections: ['extrativismo-dados', 'cloud-act', 'cabos-submarinos', 'dependencia-whatsapp'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'cloud-act': {
+        name: 'CLOUD Act (2018)',
+        description: 'Lei americana: governo EUA pode requisitar dados de empresas americanas MESMO se armazenados fora do território americano. Viola soberania nacional e LGPD brasileira. 78% sistemas gov.br hospedados em nuvens estrangeiras = EUA tem acesso legal a dados sensíveis brasileiros. Soberania digital sem infraestrutura soberana = ilusão',
+        connections: ['infraestrutura-dependente', 'lgpd-enfraquecida', 'soberania-digital', 'data-centers'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'maquiladora-digital': {
+        name: 'Maquiladora Digital',
+        description: 'Brasil = fábrica de cliques. Analogia maquiladoras México (anos 60): plataformas fornecem infraestrutura/algoritmo (EUA), trabalhadores brasileiros "montam" serviços (entregam comida, transportam), lucro retorna ao Norte. Maquila física tinha prédio; digital = invisível mas exploração = idêntica ou pior',
+        connections: ['superexploracao-digital', 'uberizacao', 'plataformas-trabalho', 'teoria-dependencia'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'superexploracao-digital': {
+        name: 'Superexploração Digital',
+        description: 'Conceito Ruy Mauro Marini atualizado. Entregador iFood: 10-12h/dia, 6-7 dias/semana, R$ 1.200-1.500/mês líquido após custos = R$ 5-6/hora (vs CLT R$ 6,30/h + direitos). 47% sofreram acidente sem indenização, 78% sem INSS = velhice miséria. Remuneração ABAIXO custo reprodução força trabalho — compensando posição periférica Brasil',
+        connections: ['maquiladora-digital', 'teoria-dependencia', 'breque-apps', 'fairwork', 'gerenciamento-algoritmico'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'breque-apps': {
+        name: 'Breque dos Apps (2020)',
+        description: '1º julho 2020: primeira greve nacional trabalhadores plataforma, 100+ cidades, pleno pico COVID-19. Pautas: valor mínimo R$ 10/entrega, seguro acidente/saúde/morte, fim desativação arbitrária, EPIs gratuitos. Organização: WhatsApp/Instagram descentralizada, Paulo Lima (Galo da Madrugada) liderança perseguida. Resultado: concessões parciais temporárias, mas ZERO reconhecimento vínculo',
+        connections: ['superexploracao-digital', 'fairwork', 'plataformas-trabalho', 'paulo-lima'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'fairwork': {
+        name: 'Fairwork Foundation',
+        description: 'Org. pesquisa Oxford avalia plataformas trabalho digital (5 princípios: remuneração, condições, contratos, gestão, representação justas). Pontuação 0-10. Brasil (2023): iFood 2/10, Uber 1/10, 99 2/10, Rappi 0/10, Loggi 2/10. NENHUMA alcança 50%. Sem poder regulatório, mas relatórios usados por sindicatos/legisladores pressionar',
+        connections: ['superexploracao-digital', 'breque-apps', 'plataformas-trabalho', 'clt-plataformas'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'dependencia-whatsapp': {
+        name: 'Dependência WhatsApp',
+        description: 'Caso 19/dez/2016: juiz Sergipe bloqueou WhatsApp 48h, STF suspendeu em 12h mas caos total. 93% brasileiros usam como principal ferramenta comunicação. Pequenos negócios dependem WhatsApp Business. Meta ameaçou sair do Brasil se continuassem bloqueios — governo recuou, mudou Marco Civil. Empresa americana venceu Estado brasileiro. Serviço essencial de fato (água, luz) mas sem regulação como tal',
+        connections: ['big-techs-brasil', 'infraestrutura-dependente', 'soberania-digital', 'marco-civil'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'lobby-big-techs': {
+        name: 'Lobby Big Techs',
+        description: 'Gastos registrados 2018-23: Google R$ 18,7mi, Meta R$ 12,4mi, Uber R$ 9,8mi, Amazon R$ 7,2mi, Microsoft R$ 5,6mi, iFood R$ 4,1mi. Estratégias: financiamento eleitoral, think tanks (ITS Rio, InternetLab), revolving door (ex-reguladores contratados), narrativa "inovação vs atraso". Vitórias: LGPD enfraquecida, PL Fake News travado 4 anos, tributação 0-2% efetiva, regulação apps transporte 0 aprovadas',
+        connections: ['big-techs-brasil', 'lgpd-enfraquecida', 'pl-fake-news-travado', 'captura-legislativa'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'lgpd-enfraquecida': {
+        name: 'LGPD Enfraquecida',
+        description: 'Lei Geral Proteção Dados (2020): versão final SEM multas automáticas, SEM proibição transferência internacional dados, SEM exigência servidores nacionais. Big Tech aprovou. Lobby conseguiu esvaziar. LGPD existe, mas infraestrutura para aplicá-la = controlada por quem ela deveria regular. Lei sem dentes',
+        connections: ['lobby-big-techs', 'cloud-act', 'soberania-digital', 'captura-legislativa'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'pix-soberania': {
+        name: 'Pix: Soberania Digital',
+        description: 'Lançado 16/nov/2020. MAIOR VITÓRIA soberania digital brasileira 30 anos. Sistema pagamentos instantâneos BC, público, gratuito, nacional. 152mi usuários (78% adultos), R$ 17,2 tri/ano, 42 bi transações/ano. Quebrou duopólio Visa/Mastercard (cobravam R$ 50-70bi/ano taxas). Incluiu 20mi desbancarizados. Funciona: BC mandou (autonomia), infraestrutura pública, gratuito (matou Big Tech), padrão aberto',
+        connections: ['soberania-digital', 'brics-pay', 'banco-central-autonomia', 'pagamentos-instantaneos'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'educacao-colonizada': {
+        name: 'Educação Tecnológica Colonizada',
+        description: 'Análise 120 currículos TI Brasil: 87% bibliografia 100% americana (Cormen, Tanenbaum), 92% stack americano (Java, Python, AWS), 78% cases Google/Facebook/Amazon, 65% professores PhD EUA/Europa reproduzem agenda Norte, ZERO disciplinas soberania digital. Resultado: engenheiros sonham trabalhar Vale do Silício, não construir Vale brasileiro. Imaginário colonizado',
+        connections: ['fuga-cerebros-digital', 'dependencia-tecnologica', 'capital-humano-exportado', 'curriculo-importado'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'fuga-cerebros-digital': {
+        name: 'Fuga de Cérebros Digital',
+        description: '32 mil engenheiros/cientistas brasileiros no Vale do Silício (Google, Meta, Amazon, Apple, Microsoft). Custo formação: R$ 250 mil/engenheiro (graduação + pós federais públicas) = R$ 8bi investimento público total. Salário Vale: US$ 180k/ano (R$ 75k/mês, 9x mais que Brasil R$ 8k). Impostos: zero retorna ao Brasil (pagam nos EUA). Patentes: 100% registradas EUA. Brasil = escola técnica império',
+        connections: ['educacao-colonizada', 'capital-humano-exportado', 'dependencia-tecnologica', 'engenheiros-soberania'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'custo-dependencia': {
+        name: 'Custo da Dependência Digital',
+        description: 'US$ 54,5bi/ano (2,6% PIB): nuvem US$ 8,7bi, licenças software US$ 12,4bi, royalties US$ 4,2bi, hardware US$ 18,9bi, publicidade digital US$ 6,5bi, streaming US$ 3,8bi. Comparação: = 1,5x Bolsa Família, 1,3x SUS inteiro, 3,6x todas federais, 22x CNPq+Capes. Dinheiro existe — falta vontade política',
+        connections: ['extrativismo-dados', 'dependencia-tecnologica', 'politicas-soberania', 'orcamento-publico'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'politicas-soberania': {
+        name: '10 Políticas para Soberania Digital',
+        description: '(1) Nuvem Brasil R$ 15bi/5anos, (2) Cabos Sul-Sul US$ 2bi, (3) 5G soberano R$ 25bi, (4) CLT plataformas, (5) Taxar Big Techs 15% faturamento = R$ 9bi/ano, (6) Cooperativas digitais R$ 10bi/5anos, (7) IA soberana R$ 5bi LLM português/espanhol, (8) Software livre gov.br, (9) Fábrica semicondutores 28nm BRICS US$ 8bi, (10) "Engenheiros Soberania" 100 mil bolsas R$ 12bi/4anos. Total: R$ 100-120bi/5anos = viável',
+        connections: ['pix-soberania', 'soberania-digital', 'ia-soberana', 'nuvem-brasil', 'engenheiros-soberania'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'soberania-digital': {
+        name: 'Soberania Digital',
+        description: 'Capacidade país controlar infraestrutura tecnológica crítica (dados, servidores, cabos, software, IA) sem dependência potências estrangeiras. Não significa autarquia (impossível), mas REDUNDÂNCIA — ter alternativas nacionais/BRICS para não ficar refém. Pix prova: é possível. Barreira = política (lobby), não técnica. Mercado sozinho reproduz subordinação — soberania exige Estado',
+        connections: ['pix-soberania', 'politicas-soberania', 'dependencia-tecnologica', 'brics-cooperacao-tech'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'clt-plataformas': {
+        name: 'CLT para Plataformas',
+        description: 'Política: reconhecer vínculo empregatício automático (motorista Uber = empregado Uber). Salário mínimo/hora + INSS + férias + 13º. Acabar "PJ fake". Plataforma pode continuar operando — mas pagando direitos trabalhistas. PL 3748/20 arquivado 2022, PL 1665/23 travado há 18 meses. Lobby vence sempre',
+        connections: ['superexploracao-digital', 'fairwork', 'politicas-soberania', 'lobby-big-techs'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'engenheiros-soberania': {
+        name: 'Programa Engenheiros da Soberania',
+        description: 'Proposta: 100 mil bolsas integrais graduação TI (R$ 2.500/mês × 4 anos) em federais. Contrapartida: trabalhar 3 anos em projetos públicos soberania digital (nuvem Brasil, IA soberana, cooperativas). Custo: R$ 12bi/4anos. Garante cérebros ficam no país + projetos têm mão-de-obra. Reverter fuga cérebros. Anos 50-70 Brasil fez isso com engenharia (Petrobras, Embraer, Embrapa)',
+        connections: ['fuga-cerebros-digital', 'politicas-soberania', 'educacao-colonizada', 'ia-soberana'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'ia-soberana': {
+        name: 'IA Soberana',
+        description: 'Projeto nacional treinar LLM português/espanhol com R$ 5bi (parceria Fapesp + CNPq + empresas estatais). Dados domínio público brasileiro. Modelo open source. Competir com ChatGPT em conhecimento LATAM. Não precisa ser MELHOR que GPT-4 — precisa ser ALTERNATIVA nacional. Evitar dependência total modelos americanos que podem negar acesso (sanções, políticas)',
+        connections: ['politicas-soberania', 'soberania-digital', 'engenheiros-soberania', 'brics-cooperacao-tech'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'nuvem-brasil': {
+        name: 'Nuvem Brasil',
+        description: 'Proibir órgãos públicos contratar AWS/Azure/Google Cloud. Criar RNP Cloud (Rede Nacional Ensino Pesquisa) para gov.br + universidades + hospitais. Custo: R$ 15bi/5anos. Economia: R$ 8bi/ano após implementação (hoje gastamos isso com nuvens estrangeiras). Impede CLOUD Act americano acessar dados sensíveis brasileiros. Replicar modelo Pix: BC mandou, funcionou',
+        connections: ['politicas-soberania', 'cloud-act', 'infraestrutura-dependente', 'soberania-digital'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'dependencia-tecnologica': {
+        name: 'Dependência Tecnológica',
+        description: 'Brasil importa 90% tecnologia crítica: sistemas operacionais (Windows, iOS, Android), nuvem (AWS, Azure, Google), IA (OpenAI, Google, Meta), chips (Taiwan, China, EUA), cabos (consórcios privados), satélites (Starlink). Consequência: qualquer decisão política que desagrade centros pode resultar em pressão sobre infraestrutura crítica. É colônia permanente enquanto durar',
+        connections: ['colonialismo-digital', 'soberania-digital', 'custo-dependencia', 'politicas-soberania'],
         color: '#ef4444',
         layer: 0
     }
