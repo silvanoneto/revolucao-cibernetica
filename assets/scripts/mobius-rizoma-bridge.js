@@ -32,22 +32,25 @@ const chapterConceptsMap = {
         description: 'Como o capitalismo se reorganiza no digital'
     },
     'cap-4': {
-        concepts: ['economia-politica', 'valor', 'capital'],
-        readingTime: '10 min',
+        concepts: ['economia-politica', 'centro-periferia', 'dependencia', 'superexploracao', 
+                   'cepal', 'furtado', 'marini', 'cybersyn', 'ogas', 'calculo-socialista',
+                   'hayek', 'glushkov', 'planejamento-cibernetico', 'soberania-tecnologica',
+                   'neocolonialismo-digital', 'extrativismo-dados'],
+        readingTime: '20 min',
         difficulty: 'intermediário',
-        description: 'Relações entre economia e poder'
+        description: 'Teoria da Dependência, planejamento cibernético e neocolonialismo digital'
     },
     'cap-5': {
-        concepts: ['critica-capital', 'dialética', 'materialismo'],
-        readingTime: '12 min',
+        concepts: ['subsuncao-formal', 'subsuncao-real', 'composicao-organica-capital', 'queda-taxa-lucro', 'general-intellect', 'capital-constante', 'capital-variavel', 'contratendencias', 'critica-capital', 'dialética', 'materialismo'],
+        readingTime: '18 min',
         difficulty: 'avançado',
-        description: 'Método dialético de análise do capital'
+        description: 'Marx e a crítica da economia política: subsunção do trabalho, composição orgânica do capital, queda tendencial da taxa de lucro e o conceito revolucionário de General Intellect'
     },
     'cap-6': {
-        concepts: ['sistemas-complexos', 'recursividade', 'comunicacao'],
-        readingTime: '10 min',
-        difficulty: 'intermediário',
-        description: 'Cibernética aplicada à sociedade'
+        concepts: ['feedback-positivo', 'feedback-negativo', 'variedade-requisita', 'autopoiese', 'fechamento-operacional', 'cibernetica-primeira-ordem', 'cibernetica-segunda-ordem', 'acoplamento-estrutural', 'recursividade', 'emergencia', 'modelo-sistema-viavel', 'vsm', 'stafford-beer', 'cybersyn', 'escalada-simetrica', 'patologias-ciberneticas', 'bateson', 'maturana', 'varela', 'ashby', 'von-foerster', 'sistemas-complexos', 'comunicacao', 'controle-cibernetico'],
+        readingTime: '25 min',
+        difficulty: 'avançado',
+        description: 'Cibernética aplicada à sociedade: feedback, Lei da Variedade Requisita, autopoiese, acoplamento estrutural, VSM e patologias sistêmicas'
     },
     'cap-7': {
         concepts: ['tecnologia', 'automacao', 'trabalho-digital'],

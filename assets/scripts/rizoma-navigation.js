@@ -11,6 +11,35 @@
  * - Sem estrutura arbórea
  * 
  * CHANGELOG:
+ * - 2025-10-28 (v5): Expansão massiva do Capítulo 7 (Marxismo e Tecnologia - Debates Clássicos)
+ *   + 30+ novos conceitos: Escola Frankfurt, Operaísmo, Pós-Colonialismo
+ *   + Frankfurt: razão instrumental, indústria cultural, Marcuse (homem unidimensional), Adorno
+ *   + Operaísmo: Tronti, Panzieri, composição técnica/política, recusa do trabalho
+ *   + Operário-massa → operário social → fábrica social (aplicado à uberização)
+ *   + Pós-Colonial: Fanon, Quijano, colonialidade, dependência tecnológica
+ *   + Imperialismo digital: colonialismo de dados, extrativismo, cosmotécnicas (Yuk Hui)
+ *   + Conexões: algoritmos como razão instrumental, breque dos apps como recusa do trabalho
+ *   Total: ~230 conceitos mapeados
+ * 
+ * - 2025-10-28 (v4): Expansão massiva do Capítulo 4 (Economia Política & Dependência)
+ *   + 45+ novos conceitos: CEPAL, Prebisch, Furtado, Marini, dependência, superexploração
+ *   + Debate cálculo socialista: Mises, Hayek, Lange, conhecimento disperso
+ *   + Planejamento cibernético: OGAS (Glushkov), Cybersyn (Beer), VSM
+ *   + Dependência digital: neocolonialismo, extrativismo de dados, deterioração termos troca digital
+ *   + Soberania tecnológica: software livre, plataformas cooperativas, China, BRICS
+ *   + Casos: Zona Franca Manaus, moderação Filipinas, Barcelona, greve caminhoneiros 1972
+ *   + Ferramentas: blockchain/DAOs, orçamento participativo, IoT, XAI
+ *   Total: ~200 conceitos mapeados
+ * 
+ * - 2025-10-28 (v3): Expansão massiva do Capítulo 3 (Capitalismo Digital)
+ *   + 35+ novos conceitos: Zuboff, excedente comportamental, produtos de previsão
+ *   + Plataformas: efeito de rede, lock-in, tipos (Srnicek), guerra Rappi/iFood
+ *   + Uberização: gerenciamento algorítmico, Breque dos Apps, transparência
+ *   + IA desmistificada: ghost work, Mechanical Turk, moderadores, ciclo de extração
+ *   + Fetiche do algoritmo: máscaras de poder, discriminação, caso Uber caixa-preta
+ *   + Casos brasileiros: Serasa Score, redlining digital
+ *   Total: ~155 conceitos mapeados
+ * 
  * - 2025-10-27 (v2): Expansão massiva do Capítulo 2 (Cibernética)
  *   + 40 novos conceitos: Wiener, Turing, Shannon, Babbage, Ada Lovelace
  *   + ENIAC Six e gênero na computação (invisibilização histórica)
@@ -148,8 +177,50 @@ const conceptGraph = {
     'fetichismo-digital': {
         name: 'Fetichismo do Dado',
         description: 'Exploração mascarada como "parceria" e "oportunidade"',
-        connections: ['fetichismo', 'mais-valia-dados', 'plataformizacao', 'magalu'],
+        connections: ['fetichismo', 'mais-valia-dados', 'plataformizacao', 'magalu', 'algoritmo-fetiche'],
         color: '#ef4444',
+        layer: 0
+    },
+    'algoritmo-fetiche': {
+        name: 'Fetiche do Algoritmo',
+        description: 'Relações de poder aparecem como decisões técnicas neutras',
+        connections: ['fetichismo-digital', 'gerenciamento-algoritmico', 'alienacao', 'mascara-poder', 'tres-perguntas-algoritmo'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'mascara-poder': {
+        name: 'Algoritmo como Máscara',
+        description: 'Caixa-preta esconde escolhas humanas e interesses econômicos',
+        connections: ['algoritmo-fetiche', 'opacidade', 'caso-uber-caixa-preta'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'caso-uber-caixa-preta': {
+        name: 'Caso Uber: Caixa-Preta (2019)',
+        description: 'Algoritmo "aposentou" motoristas antigos sem avisar',
+        connections: ['mascara-poder', 'gerenciamento-algoritmico', 'uberizacao'],
+        color: '#10b981',
+        layer: 0
+    },
+    'tres-perguntas-algoritmo': {
+        name: 'Três Perguntas para Desmascarar Fetiche',
+        description: '1) Quem programou? 2) Quais dados? 3) Quem se beneficia?',
+        connections: ['algoritmo-fetiche', 'transparencia-algoritmica', 'resistencia'],
+        color: '#10b981',
+        layer: 1
+    },
+    'algoritmo-racismo': {
+        name: 'Algoritmo Reproduz Desigualdade',
+        description: 'IA treinada em sociedade racista = IA racista',
+        connections: ['algoritmo-fetiche', 'serasa-score', 'redlining-digital', 'discriminacao-algoritmica'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'discriminacao-algoritmica': {
+        name: 'Discriminação Algorítmica',
+        description: 'Desigualdades naturalizadas como "análise de risco baseada em dados"',
+        connections: ['algoritmo-racismo', 'algoritmo-fetiche', 'ideologia'],
+        color: '#dc2626',
         layer: 0
     },
     'preco-valor': {
@@ -238,9 +309,58 @@ const conceptGraph = {
     },
     'ia': {
         name: 'Inteligência Artificial',
-        description: 'Machine learning aplicado à extração de mais-valia',
-        connections: ['automacao', 'algoritmos', 'mais-valia-dados', 'vigilancia'],
+        description: 'Machine learning: estatística avançada aplicada a volumes massivos de dados',
+        connections: ['automacao', 'algoritmos', 'mais-valia-dados', 'vigilancia', 'ghost-work', 'ciclo-extracao-ia', 'desmistificacao-ia', 'feedback-loop-ia'],
         color: '#ef4444',
+        layer: 0
+    },
+    'desmistificacao-ia': {
+        name: 'Desmistificando a IA',
+        description: 'IA não é magia: é reconhecimento de padrões em dados',
+        connections: ['ia', 'algoritmos', 'dados'],
+        color: '#10b981',
+        layer: 0
+    },
+    'ciclo-extracao-ia': {
+        name: 'Ciclo de Extração via IA',
+        description: 'Mais dados → IA melhor → serviços viciantes → mais usuários → mais dados',
+        connections: ['ia', 'capitalismo-vigilancia', 'feedback-positivo', 'vicio-digital'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'feedback-loop-ia': {
+        name: 'Feedback Loops na IA',
+        description: 'Cibernética aplicada ao lucro: loops positivos e negativos mantêm engajamento',
+        connections: ['ia', 'feedback', 'feedback-positivo', 'feedback-negativo', 'vicio-digital'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'ghost-work': {
+        name: 'Ghost Work (Trabalho Fantasma)',
+        description: 'Trabalho humano invisível que treina IA: rotulação, moderação',
+        connections: ['ia', 'mais-valia', 'mechanical-turk', 'moderadores-conteudo', 'anotadores-dados'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'mechanical-turk': {
+        name: 'Amazon Mechanical Turk',
+        description: 'Plataforma de microtarefas: US$ 0,01-0,10 por tarefa',
+        connections: ['ghost-work', 'uberizacao', 'mais-valia-absoluta'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'moderadores-conteudo': {
+        name: 'Moderadores de Conteúdo',
+        description: 'Trabalhadores que assistem violência por salário mínimo desenvolvendo PTSD',
+        connections: ['ghost-work', 'trabalho-imaterial', 'necropolitica'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'anotadores-dados': {
+        name: 'Anotadores de Dados',
+        description: 'Rotulam objetos em imagens para treinar carros autônomos',
+        connections: ['ghost-work', 'ia', 'mais-valia'],
+        color: '#dc2626',
         layer: 0
     },
 
@@ -480,9 +600,65 @@ const conceptGraph = {
     },
     'capitalismo-vigilancia': {
         name: 'Capitalismo de Vigilância',
-        description: 'Extração de dados comportamentais (Zuboff)',
-        connections: ['mais-valia-dados', 'plataformizacao', 'resistencia', 'preco-valor', 'vigilancia'],
+        description: 'Extração de dados comportamentais como matéria-prima (Zuboff)',
+        connections: ['mais-valia-dados', 'plataformizacao', 'resistencia', 'preco-valor', 'vigilancia', 'excedente-comportamental', 'produtos-previsao', 'shoshana-zuboff'],
         color: '#ef4444',
+        layer: 0
+    },
+    'shoshana-zuboff': {
+        name: 'Shoshana Zuboff',
+        description: 'Teórica do capitalismo de vigilância - Harvard',
+        connections: ['capitalismo-vigilancia', 'excedente-comportamental', 'produtos-previsao'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'excedente-comportamental': {
+        name: 'Excedente Comportamental',
+        description: 'Dados coletados além do necessário para o serviço funcionar',
+        connections: ['capitalismo-vigilancia', 'produtos-previsao', 'dados', 'google-maps-exemplo'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'produtos-previsao': {
+        name: 'Produtos de Previsão',
+        description: 'Previsões de comportamento futuro vendidas como mercadoria',
+        connections: ['capitalismo-vigilancia', 'excedente-comportamental', 'ia', 'serasa-score'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'dados': {
+        name: 'Dados como Mercadoria',
+        description: 'Nova matéria-prima do capitalismo digital',
+        connections: ['excedente-comportamental', 'mais-valia-dados', 'capitalismo-vigilancia', 'dupla-expropriacao'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'dupla-expropriacao': {
+        name: 'Dupla Expropriação',
+        description: 'Tempo (atenção) + rastro digital convertidos em lucro sem compensação',
+        connections: ['dados', 'capitalismo-vigilancia', 'mais-valia'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'google-maps-exemplo': {
+        name: 'Caso Google Maps',
+        description: 'Exemplo concreto de coleta de excedente comportamental',
+        connections: ['excedente-comportamental', 'vigilancia', 'dados'],
+        color: '#10b981',
+        layer: 0
+    },
+    'serasa-score': {
+        name: 'Serasa Score',
+        description: 'Discriminação algorítmica via score de crédito no Brasil',
+        connections: ['produtos-previsao', 'algoritmo-fetiche', 'redlining-digital', 'necropolitica'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'redlining-digital': {
+        name: 'Redlining Digital',
+        description: 'Discriminação por CEP automatizada via algoritmos',
+        connections: ['serasa-score', 'algoritmo-fetiche', 'necropolitica'],
+        color: '#dc2626',
         layer: 0
     },
     'mais-valia-dados': {
@@ -607,9 +783,58 @@ const conceptGraph = {
     'uberizacao': {
         name: 'Uberização',
         description: 'Precarização do trabalho via plataformas digitais',
-        connections: ['mais-valia-dados', 'plataformizacao', 'trabalho-imaterial', 'mais-valia-absoluta', 'mais-valia-relativa', 'reforma-trabalhista', 'intermitente', 'algoritmos', 'magalu', 'precarizacao', 'relacoes-producao'],
+        connections: ['mais-valia-dados', 'plataformizacao', 'trabalho-imaterial', 'mais-valia-absoluta', 'mais-valia-relativa', 'reforma-trabalhista', 'intermitente', 'algoritmos', 'magalu', 'precarizacao', 'relacoes-producao', 'gerenciamento-algoritmico', 'breque-apps', 'empreendedorismo-si'],
         color: '#ef4444',
         layer: 0
+    },
+    'gerenciamento-algoritmico': {
+        name: 'Gerenciamento Algorítmico',
+        description: 'Controle de trabalhadores via algoritmos sem chefe humano',
+        connections: ['uberizacao', 'algoritmos', 'algoritmo-fetiche', 'tyranny-algorithm'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'tyranny-algorithm': {
+        name: 'Tirania do Algoritmo',
+        description: 'Sistema de controle cibernético para maximizar extração de valor',
+        connections: ['gerenciamento-algoritmico', 'feedback', 'uberizacao'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'empreendedorismo-si': {
+        name: 'Empreendedorismo de Si',
+        description: 'Ideologia neoliberal: trabalhador precarizado como "empresário"',
+        connections: ['uberizacao', 'ideologia', 'neoliberalismo-progressista'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'neoliberalismo-progressista': {
+        name: 'Neoliberalismo Progressista',
+        description: 'Exploração vendida como libertação via linguagem emancipatória',
+        connections: ['empreendedorismo-si', 'ideologia', 'ultrarracionalismo'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'breque-apps': {
+        name: 'Breque dos Apps (2020)',
+        description: 'Primeira greve de algoritmos - entregadores no Brasil',
+        connections: ['uberizacao', 'resistencia', 'gerenciamento-algoritmico', 'transparencia-algoritmica'],
+        color: '#10b981',
+        layer: 0
+    },
+    'transparencia-algoritmica': {
+        name: 'Transparência Algorítmica',
+        description: 'Reivindicação: abrir a caixa-preta do algoritmo',
+        connections: ['breque-apps', 'algoritmo-fetiche', 'auditoria-algoritmica'],
+        color: '#10b981',
+        layer: 1
+    },
+    'auditoria-algoritmica': {
+        name: 'Auditoria Algorítmica',
+        description: 'Proposta de fiscalização de decisões algorítmicas',
+        connections: ['transparencia-algoritmica', 'resistencia'],
+        color: '#6366f1',
+        layer: 1
     },
     'trabalho-imaterial': {
         name: 'Trabalho Imaterial',
@@ -641,9 +866,58 @@ const conceptGraph = {
     },
     'plataformizacao': {
         name: 'Plataformização',
-        description: 'Monopolização da infraestrutura digital',
-        connections: ['capitalismo-vigilancia', 'uberizacao', 'resistencia', 'magalu', 'capital', 'fetichismo-digital', 'monopolio'],
+        description: 'Monopolização da infraestrutura digital via efeitos de rede',
+        connections: ['capitalismo-vigilancia', 'uberizacao', 'resistencia', 'magalu', 'capital', 'fetichismo-digital', 'monopolio', 'efeito-rede', 'plataforma-lean', 'plataforma-publicidade'],
         color: '#ef4444',
+        layer: 0
+    },
+    'efeito-rede': {
+        name: 'Efeito de Rede',
+        description: 'Valor cresce exponencialmente com número de usuários (Lei de Metcalfe)',
+        connections: ['plataformizacao', 'monopolio', 'lock-in', 'guerra-plataformas-brasil'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'lock-in': {
+        name: 'Lock-in Effect',
+        description: 'Aprisionamento do usuário pela massa crítica de uma rede',
+        connections: ['efeito-rede', 'monopolio', 'whatsapp-exemplo'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'whatsapp-exemplo': {
+        name: 'Caso WhatsApp',
+        description: 'Exemplo de lock-in: impossível migrar sem perder toda a rede',
+        connections: ['lock-in', 'efeito-rede'],
+        color: '#10b981',
+        layer: 0
+    },
+    'guerra-plataformas-brasil': {
+        name: 'Guerra Rappi vs iFood (2020-2025)',
+        description: 'Estudo de caso sobre efeitos de rede e imperialismo digital',
+        connections: ['efeito-rede', 'plataformizacao', 'imperialismo-digital'],
+        color: '#10b981',
+        layer: 0
+    },
+    'plataforma-lean': {
+        name: 'Plataforma Lean',
+        description: 'Uber/iFood - intermediação sem ativos físicos (Srnicek)',
+        connections: ['plataformizacao', 'uberizacao', 'srnicek'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'plataforma-publicidade': {
+        name: 'Plataforma de Publicidade',
+        description: 'Google/Facebook - extração de dados para anúncios',
+        connections: ['plataformizacao', 'capitalismo-vigilancia', 'srnicek'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'srnicek': {
+        name: 'Nick Srnicek',
+        description: 'Teórico do capitalismo de plataforma (Platform Capitalism, 2016)',
+        connections: ['plataforma-lean', 'plataforma-publicidade', 'plataformizacao'],
+        color: '#8b5cf6',
         layer: 0
     },
     'decolonial': {
@@ -852,6 +1126,590 @@ const conceptGraph = {
         connections: ['darpa', 'geopolitica', 'capitalismo-vigilancia'],
         color: '#6366f1',
         layer: 0
+    },
+
+    // ========================================
+    // CAPÍTULO 7: MARXISMO E TECNOLOGIA - DEBATES CLÁSSICOS
+    // ========================================
+    'determinismo-tecnologico': {
+        name: 'Determinismo Tecnológico',
+        description: 'Visão de que a tecnologia determina a sociedade ("o moinho a vapor nos deu o capitalista")',
+        connections: ['construtivismo-social', 'forcas-produtivas', 'relacoes-producao'],
+        color: '#ef4444',
+        layer: -1 // Passado (debate clássico)
+    },
+    'construtivismo-social': {
+        name: 'Construtivismo Social da Tecnologia',
+        description: 'A sociedade molda a tecnologia, não o contrário - escolhas políticas definem design',
+        connections: ['determinismo-tecnologico', 'operaismo', 'cosmotecnica'],
+        color: '#ef4444',
+        layer: -1
+    },
+    
+    // Escola de Frankfurt
+    'escola-frankfurt': {
+        name: 'Escola de Frankfurt',
+        description: 'Teoria crítica: Adorno, Horkheimer, Marcuse - crítica da razão instrumental',
+        connections: ['razao-instrumental', 'industria-cultural', 'marcuse', 'adorno'],
+        color: '#dc2626',
+        layer: -1
+    },
+    'razao-instrumental': {
+        name: 'Razão Instrumental',
+        description: 'Razão reduzida a cálculo de meios eficientes, sem questionar os fins',
+        connections: ['escola-frankfurt', 'adorno', 'marcuse', 'algoritmos'],
+        color: '#dc2626',
+        layer: 0 // Presente (crítica aplicável ao digital)
+    },
+    'adorno': {
+        name: 'Theodor Adorno',
+        description: 'Filósofo da Escola de Frankfurt - crítica da indústria cultural',
+        connections: ['escola-frankfurt', 'industria-cultural', 'pseudo-individualizacao', 'horkheimer'],
+        color: '#dc2626',
+        layer: -1
+    },
+    'horkheimer': {
+        name: 'Max Horkheimer',
+        description: 'Filósofo da Escola de Frankfurt - co-autor da Dialética do Esclarecimento',
+        connections: ['escola-frankfurt', 'adorno', 'razao-instrumental'],
+        color: '#dc2626',
+        layer: -1
+    },
+    'marcuse': {
+        name: 'Herbert Marcuse',
+        description: 'O Homem Unidimensional (1964) - tecnologia como controle através do conforto',
+        connections: ['escola-frankfurt', 'homem-unidimensional', 'falsas-necessidades', 'razao-instrumental'],
+        color: '#dc2626',
+        layer: -1
+    },
+    'homem-unidimensional': {
+        name: 'Homem Unidimensional',
+        description: 'Indivíduo cuja capacidade crítica foi suprimida por satisfação de falsas necessidades',
+        connections: ['marcuse', 'falsas-necessidades', 'industria-cultural', 'vicio-digital'],
+        color: '#dc2626',
+        layer: 0 // Presente (crítica ao usuário de redes sociais)
+    },
+    'falsas-necessidades': {
+        name: 'Falsas Necessidades',
+        description: 'Desejos criados pelo sistema para integrar indivíduos à lógica capitalista',
+        connections: ['marcuse', 'homem-unidimensional', 'industria-cultural', 'capitalismo-vigilancia'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'industria-cultural': {
+        name: 'Indústria Cultural',
+        description: 'Produção em massa de cultura padronizada para pacificar e controlar',
+        connections: ['adorno', 'escola-frankfurt', 'pseudo-individualizacao', 'plataformas', 'algoritmos'],
+        color: '#dc2626',
+        layer: 0 // Presente (Netflix, Spotify, TikTok)
+    },
+    'pseudo-individualizacao': {
+        name: 'Pseudo-Individualização',
+        description: 'Ilusão de escolha e personalidade dentro de sistema padronizado',
+        connections: ['industria-cultural', 'adorno', 'algoritmos', 'plataformas'],
+        color: '#dc2626',
+        layer: 0
+    },
+    
+    // Operaísmo Italiano
+    'operaismo': {
+        name: 'Operaísmo Italiano',
+        description: 'Inversão da perspectiva: luta operária como motor da história (Tronti, Panzieri)',
+        connections: ['tronti', 'panzieri', 'recusa-trabalho', 'composicao-tecnica', 'pos-operaismo'],
+        color: '#8b5cf6',
+        layer: -1 // Passado (anos 1960-70)
+    },
+    'tronti': {
+        name: 'Mario Tronti',
+        description: 'Operários e Capital (1966) - capital é REATIVO à luta operária',
+        connections: ['operaismo', 'recusa-trabalho', 'composicao-tecnica', 'composicao-politica'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'panzieri': {
+        name: 'Raniero Panzieri',
+        description: 'Fundador do operaísmo - tecnologia como arma política do capital',
+        connections: ['operaismo', 'tronti', 'composicao-tecnica'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'composicao-tecnica': {
+        name: 'Composição Técnica da Classe',
+        description: 'Organização do trabalho imposta pelo capital (divisão de tarefas, ritmo, hierarquia)',
+        connections: ['operaismo', 'composicao-politica', 'subsuncao-real', 'algoritmos'],
+        color: '#8b5cf6',
+        layer: 0 // Presente (gerenciamento algorítmico)
+    },
+    'composicao-politica': {
+        name: 'Composição Política da Classe',
+        description: 'Capacidade organizativa e consciência coletiva dos trabalhadores',
+        connections: ['operaismo', 'composicao-tecnica', 'recusa-trabalho', 'breque-apps'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'recusa-trabalho': {
+        name: 'Recusa do Trabalho',
+        description: 'Estratégia: trabalhar menos, desvincular renda do trabalho, afirmar necessidades',
+        connections: ['operaismo', 'tronti', 'greve', 'breque-apps', 'pos-operaismo'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'operario-massa': {
+        name: 'Operário-Massa',
+        description: 'Trabalhador fordista desqualificado mas concentrado (poder de bloqueio)',
+        connections: ['operaismo', 'fordismo', 'operario-social', 'composicao-tecnica'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'operario-social': {
+        name: 'Operário Social',
+        description: 'Exploração além da fábrica - cidade inteira como "fábrica social"',
+        connections: ['operario-massa', 'operaismo', 'pos-operaismo', 'uberizacao', 'fabrica-social'],
+        color: '#8b5cf6',
+        layer: 0 // Presente (trabalho de plataforma)
+    },
+    'fabrica-social': {
+        name: 'Fábrica Social',
+        description: 'Toda a sociedade se torna espaço de exploração e luta (não só a fábrica)',
+        connections: ['operario-social', 'pos-operaismo', 'uberizacao', 'breque-apps'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    
+    // Pensamento Pós-Colonial
+    'pos-colonialismo': {
+        name: 'Pensamento Pós-Colonial',
+        description: 'Crítica da modernidade europeia como projeto colonial (Fanon, Césaire, Quijano)',
+        connections: ['fanon', 'quijano', 'colonialidade', 'cosmotecnica', 'dependencia'],
+        color: '#22c55e',
+        layer: -1
+    },
+    'fanon': {
+        name: 'Frantz Fanon',
+        description: 'Os Condenados da Terra - violência colonial e descolonização tecnológica',
+        connections: ['pos-colonialismo', 'colonialidade', 'violencia-colonial', 'cosmotecnica'],
+        color: '#22c55e',
+        layer: -1
+    },
+    'quijano': {
+        name: 'Aníbal Quijano',
+        description: 'Colonialidade do Poder - modernidade inseparável da colonialidade',
+        connections: ['pos-colonialismo', 'colonialidade', 'centro-periferia', 'dependencia'],
+        color: '#22c55e',
+        layer: -1
+    },
+    'colonialidade': {
+        name: 'Colonialidade',
+        description: 'Padrões de poder colonial que sobrevivem ao colonialismo formal',
+        connections: ['quijano', 'pos-colonialismo', 'dependencia-tecnologica', 'extrativismo-dados'],
+        color: '#22c55e',
+        layer: 0 // Presente (colonialismo digital)
+    },
+    'dependencia-tecnologica': {
+        name: 'Dependência Tecnológica',
+        description: 'Sul não participa do design das tecnologias que usa - importa do Norte',
+        connections: ['colonialidade', 'centro-periferia', 'imperialismo-digital', 'cosmotecnica'],
+        color: '#22c55e',
+        layer: 0
+    },
+    'imperialismo-digital': {
+        name: 'Imperialismo Digital',
+        description: 'Continuidade do imperialismo via tecnologia (algoritmos, plataformas, IA)',
+        connections: ['dependencia-tecnologica', 'colonialidade', 'extrativismo-dados', 'geopolitica'],
+        color: '#22c55e',
+        layer: 0
+    },
+    'colonialismo-dados': {
+        name: 'Colonialismo de Dados',
+        description: 'Extração de dados do Sul por corporações do Norte (Couldry & Mejias)',
+        connections: ['extrativismo-dados', 'imperialismo-digital', 'mais-valia-dados', 'geopolitica'],
+        color: '#22c55e',
+        layer: 0
+    },
+    'extrativismo-dados': {
+        name: 'Extrativismo de Dados',
+        description: 'Dados como matéria-prima extraída sem compensação (paralelo colonial)',
+        connections: ['colonialismo-dados', 'capitalismo-vigilancia', 'mais-valia-dados', 'deterioracao-termos-troca'],
+        color: '#22c55e',
+        layer: 0
+    },
+    'cosmotecnica': {
+        name: 'Cosmotécnica',
+        description: 'Formas culturalmente específicas de relacionar cosmos e técnica (Yuk Hui)',
+        connections: ['pos-colonialismo', 'dependencia-tecnologica', 'nhandereko', 'fanon'],
+        color: '#22c55e',
+        layer: 1 // Futuro (alternativas ao eurocentrismo)
+    },
+    'yuk-hui': {
+        name: 'Yuk Hui',
+        description: 'Filósofo chinês - crítica da cosmotécnica europeia como única válida',
+        connections: ['cosmotecnica', 'pos-colonialismo', 'dependencia-tecnologica'],
+        color: '#22c55e',
+        layer: 1
+    },
+
+    // ========================================
+    // CAPÍTULO 4: ECONOMIA POLÍTICA E DEPENDÊNCIA
+    // ========================================
+    'centro-periferia': {
+        name: 'Modelo Centro-Periferia',
+        description: 'CEPAL/Prebisch: economia mundial dividida estruturalmente',
+        connections: ['cepal', 'prebisch', 'dependencia', 'deterioracao-termos-troca', 'neocolonialismo-digital'],
+        color: '#f59e0b',
+        layer: -1 // Passado (teoria anos 1950)
+    },
+    'cepal': {
+        name: 'CEPAL',
+        description: 'Comissão Econômica para América Latina - estruturalismo latino-americano',
+        connections: ['centro-periferia', 'prebisch', 'furtado', 'desenvolvimentismo'],
+        color: '#f59e0b',
+        layer: -1
+    },
+    'prebisch': {
+        name: 'Raúl Prebisch',
+        description: 'Economista argentino, fundador da CEPAL e teoria centro-periferia',
+        connections: ['cepal', 'centro-periferia', 'deterioracao-termos-troca'],
+        color: '#f59e0b',
+        layer: -1
+    },
+    'deterioracao-termos-troca': {
+        name: 'Deterioração dos Termos de Troca',
+        description: 'Preços de commodities caem vs manufaturados - transferência de valor',
+        connections: ['centro-periferia', 'prebisch', 'extrativismo', 'extrativismo-dados'],
+        color: '#f59e0b',
+        layer: 0
+    },
+    'dependencia': {
+        name: 'Teoria da Dependência',
+        description: 'Subdesenvolvimento não é etapa, é estrutura (Marini, Dos Santos)',
+        connections: ['centro-periferia', 'furtado', 'marini', 'superexploracao', 'dependencia-tecnologica'],
+        color: '#f59e0b',
+        layer: -1
+    },
+    'furtado': {
+        name: 'Celso Furtado',
+        description: 'Economista brasileiro - subdesenvolvimento como estrutura, não atraso',
+        connections: ['cepal', 'dependencia', 'desenvolvimentismo', 'zona-franca-manaus'],
+        color: '#f59e0b',
+        layer: -1
+    },
+    'marini': {
+        name: 'Ruy Mauro Marini',
+        description: 'Teórico marxista da dependência - conceito de superexploração',
+        connections: ['dependencia', 'superexploracao', 'uberizacao', 'mais-valia-absoluta'],
+        color: '#f59e0b',
+        layer: -1
+    },
+    'superexploracao': {
+        name: 'Superexploração do Trabalho',
+        description: 'Jornadas longas + ritmo intenso + salários abaixo subsistência',
+        connections: ['marini', 'dependencia', 'uberizacao', 'mais-valia-absoluta', 'moderacao-conteudo'],
+        color: '#ef4444',
+        layer: 0 // Presente (conceito ativo hoje)
+    },
+    'desenvolvimentismo': {
+        name: 'Desenvolvimentismo',
+        description: 'Projeto de industrialização nacional via Estado (CEPAL anos 50-60)',
+        connections: ['cepal', 'furtado', 'zona-franca-manaus', 'soberania-tecnologica'],
+        color: '#f59e0b',
+        layer: -1
+    },
+    'zona-franca-manaus': {
+        name: 'Zona Franca de Manaus',
+        description: 'Monta Samsung/LG mas não projeta - dependência tecnológica concreta',
+        connections: ['furtado', 'desenvolvimentismo', 'dependencia-tecnologica', 'subsuncao-real'],
+        color: '#f59e0b',
+        layer: 0
+    },
+    
+    // Debate do Cálculo Socialista
+    'calculo-socialista': {
+        name: 'Debate do Cálculo Socialista',
+        description: 'Mises vs Lange: é possível planejar economia sem mercado?',
+        connections: ['mises', 'hayek', 'lange', 'planejamento-cibernetico', 'cybersyn', 'ogas'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'mises': {
+        name: 'Ludwig von Mises',
+        description: 'Economista austríaco - argumentou impossibilidade do cálculo socialista',
+        connections: ['calculo-socialista', 'hayek', 'mercado'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'hayek': {
+        name: 'Friedrich Hayek',
+        description: '"Conhecimento disperso" (1945) - mercado como sistema de informação',
+        connections: ['mises', 'calculo-socialista', 'glushkov', 'planejamento-cibernetico'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'lange': {
+        name: 'Oskar Lange',
+        description: 'Economista polonês - propôs "socialismo de mercado" (equações)',
+        connections: ['calculo-socialista', 'hayek', 'planejamento-cibernetico'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'mercado': {
+        name: 'Mercado',
+        description: 'Sistema de coordenação via preços (Hayek: processa info dispersa)',
+        connections: ['hayek', 'mises', 'planejamento-cibernetico', 'algoritmos'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    
+    // Planejamento Cibernético
+    'planejamento-cibernetico': {
+        name: 'Planejamento Cibernético',
+        description: 'Cibernética resolve "problema do cálculo" via feedback em tempo real',
+        connections: ['calculo-socialista', 'hayek', 'ogas', 'cybersyn', 'glushkov', 'beer'],
+        color: '#22c55e',
+        layer: 0
+    },
+    'ogas': {
+        name: 'OGAS (СССР)',
+        description: 'Rede soviética proposta por Glushkov (1962) - nunca implementada',
+        connections: ['glushkov', 'planejamento-cibernetico', 'cybersyn', 'feedback'],
+        color: '#22c55e',
+        layer: -1
+    },
+    'glushkov': {
+        name: 'Viktor Glushkov',
+        description: 'Ciberneticista soviético - propôs OGAS (bloqueado por burocracia)',
+        connections: ['ogas', 'planejamento-cibernetico', 'hayek', 'cibernetica'],
+        color: '#22c55e',
+        layer: -1
+    },
+    'beer': {
+        name: 'Stafford Beer',
+        description: 'Ciberneticista britânico - criou Cybersyn no Chile (VSM)',
+        connections: ['cybersyn', 'planejamento-cibernetico', 'wiener', 'vsm'],
+        color: '#22c55e',
+        layer: -1
+    },
+    'vsm': {
+        name: 'Viable System Model (VSM)',
+        description: 'Modelo de Beer: autonomia local + coordenação global',
+        connections: ['beer', 'cybersyn', 'feedback-negativo', 'autopoiese'],
+        color: '#22c55e',
+        layer: -1
+    },
+    'greve-caminhoneiros-1972': {
+        name: 'Greve dos Caminhoneiros (Chile, 1972)',
+        description: 'Cybersyn reorganizou logística em 24h - prova de conceito',
+        connections: ['cybersyn', 'beer', 'planejamento-cibernetico', 'feedback'],
+        color: '#22c55e',
+        layer: -1
+    },
+    'golpe-pinochet': {
+        name: 'Golpe de Pinochet (1973)',
+        description: 'Destruiu Cybersyn - mas não sua viabilidade técnica',
+        connections: ['cybersyn', 'necropolitica-digital', 'duplo-uso-militar'],
+        color: '#dc2626',
+        layer: -1
+    },
+    
+    // Dependência Digital (atualização 2025)
+    'dependencia-tecnologica': {
+        name: 'Dependência Tecnológica',
+        description: 'Periferia importa tech/IA, exporta dados brutos - nova colonialidade',
+        connections: ['dependencia', 'neocolonialismo-digital', 'soberania-tecnologica', 'extrativismo-dados'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'neocolonialismo-digital': {
+        name: 'Neocolonialismo Digital',
+        description: 'Centro-periferia atualizado: infraestrutura, algoritmos, dados',
+        connections: ['centro-periferia', 'dependencia-tecnologica', 'extrativismo-dados', 'geopolitica'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'extrativismo-dados': {
+        name: 'Extrativismo de Dados',
+        description: 'Dados = novo café/ouro/minério - extraídos da periferia de graça',
+        connections: ['neocolonialismo-digital', 'mais-valia-dados', 'deterioracao-termos-troca', 'capitalismo-vigilancia'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'soberania-tecnologica': {
+        name: 'Soberania Tecnológica',
+        description: 'Controle popular sobre infraestrutura, software, dados, algoritmos',
+        connections: ['dependencia-tecnologica', 'software-livre', 'plataformas-cooperativas', 'china-tech'],
+        color: '#10b981',
+        layer: 1 // Futuro (proposta)
+    },
+    'software-livre': {
+        name: 'Software Livre',
+        description: 'Código aberto, auditável, modificável - soberania via transparência',
+        connections: ['soberania-tecnologica', 'resistencia', 'gnu-linux', 'commons-digitais'],
+        color: '#10b981',
+        layer: 1
+    },
+    'gnu-linux': {
+        name: 'GNU/Linux',
+        description: 'Sistema operacional livre - base técnica da soberania',
+        connections: ['software-livre', 'soberania-tecnologica', 'stallman'],
+        color: '#10b981',
+        layer: 0
+    },
+    'stallman': {
+        name: 'Richard Stallman',
+        description: 'Fundador do movimento software livre (GNU, 1983)',
+        connections: ['gnu-linux', 'software-livre', 'commons-digitais'],
+        color: '#10b981',
+        layer: -1
+    },
+    'commons-digitais': {
+        name: 'Commons Digitais',
+        description: 'Bens comuns digitais - conhecimento não-mercantilizado',
+        connections: ['software-livre', 'general-intellect', 'resistencia', 'plataformas-cooperativas'],
+        color: '#10b981',
+        layer: 1
+    },
+    'plataformas-cooperativas': {
+        name: 'Plataformas Cooperativas',
+        description: 'Uber/iFood de propriedade dos trabalhadores',
+        connections: ['soberania-tecnologica', 'resistencia', 'nhandereko', 'commons-digitais'],
+        color: '#10b981',
+        layer: 1
+    },
+    'china-tech': {
+        name: 'Soberania Tech Chinesa',
+        description: 'Baidu/Alibaba/Huawei - rompeu dependência, mas criou nova periferia',
+        connections: ['soberania-tecnologica', 'geopolitica', 'neocolonialismo-digital', 'brics'],
+        color: '#f59e0b',
+        layer: 0
+    },
+    'brics': {
+        name: 'BRICS Pay',
+        description: 'Sistema de pagamentos Sul-Sul - escapa SWIFT/dólar',
+        connections: ['soberania-tecnologica', 'china-tech', 'geopolitica'],
+        color: '#10b981',
+        layer: 1
+    },
+    
+    // Ferramentas Digitais para Planejamento
+    'blockchain-dao': {
+        name: 'Blockchain/DAOs',
+        description: 'Registros transparentes de decisões coletivas sem autoridade central',
+        connections: ['planejamento-cibernetico', 'soberania-tecnologica', 'democracia-algoritmicica'],
+        color: '#6366f1',
+        layer: 1
+    },
+    'orcamento-participativo-digital': {
+        name: 'Orçamento Participativo Digital',
+        description: 'Plataformas como Decidim (Barcelona) - cidadãos votam prioridades',
+        connections: ['planejamento-participativo', 'democracia-algoritmicica', 'barcelona-tech'],
+        color: '#10b981',
+        layer: 1
+    },
+    'barcelona-tech': {
+        name: 'Barcelona Tech Soberana',
+        description: 'Software livre na administração, Decidim, migração de Microsoft',
+        connections: ['soberania-tecnologica', 'orcamento-participativo-digital', 'software-livre'],
+        color: '#10b981',
+        layer: 0
+    },
+    'modelagem-sistemas-dinamicos': {
+        name: 'Modelagem de Sistemas Dinâmicos',
+        description: 'Stella/Vensim - simula impactos de políticas antes de implementar',
+        connections: ['planejamento-cibernetico', 'feedback', 'cybersyn'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'iot-sensores': {
+        name: 'Redes de Sensores IoT',
+        description: 'Agricultura urbana, microgrids energéticas peer-to-peer',
+        connections: ['planejamento-cibernetico', 'soberania-tecnologica', 'ecologia-digital'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'xai': {
+        name: 'IA Explicável (XAI)',
+        description: 'Algoritmos que mostram POR QUÊ decidiram - auditoria democrática',
+        connections: ['transparencia-algoritmica', 'democracia-algoritmicica', 'tres-perguntas-algoritmo'],
+        color: '#6366f1',
+        layer: 1
+    },
+    
+    // Casos de Superexploração Digital
+    'moderacao-filipinas': {
+        name: 'Moderação nas Filipinas',
+        description: 'Superexploração racial+colonial - trabalho mais violento, menor salário',
+        connections: ['superexploracao', 'moderacao-conteudo', 'neocolonialismo-digital', 'necropolitica-digital'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'subsuncao-real': {
+        name: 'Subsunção Real',
+        description: 'Capital reorganiza processo de trabalho via tecnologia (máquinas incorporam conhecimento do trabalhador)',
+        connections: ['subsuncao-formal', 'zona-franca-manaus', 'gerenciamento-algoritmico', 'uberizacao', 'composicao-organica-capital', 'general-intellect', 'automacao'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'subsuncao-formal': {
+        name: 'Subsunção Formal',
+        description: 'Capital controla trabalho sem alterar processo técnico (artesão vira empregado)',
+        connections: ['subsuncao-real', 'mais-valia', 'extracao-dados'],
+        color: '#f87171',
+        layer: 0
+    },
+    'composicao-organica-capital': {
+        name: 'Composição Orgânica do Capital (COC)',
+        description: 'Razão c/v: capital constante (máquinas) sobre capital variável (trabalho). Alta COC = muita automação',
+        connections: ['capital-constante', 'capital-variavel', 'queda-taxa-lucro', 'automacao', 'general-intellect'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'capital-constante': {
+        name: 'Capital Constante (c)',
+        description: 'Meios de produção (máquinas, matéria-prima) que apenas transferem valor, não criam valor novo',
+        connections: ['composicao-organica-capital', 'capital-variavel', 'automacao'],
+        color: '#a78bfa',
+        layer: 0
+    },
+    'capital-variavel': {
+        name: 'Capital Variável (v)',
+        description: 'Força de trabalho (salários) — única fonte que cria valor novo (mais-valia)',
+        connections: ['composicao-organica-capital', 'capital-constante', 'mais-valia', 'trabalho-vivo'],
+        color: '#c4b5fd',
+        layer: 0
+    },
+    'queda-taxa-lucro': {
+        name: 'Lei da Queda Tendencial da Taxa de Lucro',
+        description: 'COC aumenta (mais máquinas, menos trabalho) → fonte de lucro diminui → taxa de lucro cai',
+        connections: ['composicao-organica-capital', 'contratendencias', 'crise-capitalista', 'automacao', 'financeirizacao'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'contratendencias': {
+        name: 'Contratendências à Queda do Lucro',
+        description: 'Estratégias para compensar queda: superexploração, barateamento de máquinas, imperialismo, crédito, monopólio',
+        connections: ['queda-taxa-lucro', 'superexploracao', 'neocolonialismo-digital', 'financeirizacao', 'big-tech', 'uberizacao'],
+        color: '#f59e0b',
+        layer: 0
+    },
+    'general-intellect': {
+        name: 'General Intellect (Intelecto Geral)',
+        description: 'Conhecimento social acumulado (ciência, tecnologia, cooperação) como principal força produtiva — contradição: conhecimento quer ser livre, capital precisa cercá-lo',
+        connections: ['subsuncao-real', 'trabalho-imaterial', 'composicao-organica-capital', 'software-livre', 'propriedade-intelectual', 'comum-digital', 'ia', 'algoritmos', 'plataformas'],
+        color: '#a855f7',
+        layer: 0
+    },
+    'propriedade-intelectual': {
+        name: 'Propriedade Intelectual',
+        description: 'Copyright, patentes, DRM — cercamento do conhecimento para criar escassez artificial',
+        connections: ['general-intellect', 'comum-digital', 'pirataria', 'software-livre', 'big-tech'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'comum-digital': {
+        name: 'O Comum Digital',
+        description: 'Conhecimento produzido coletivamente que deveria ser apropriado coletivamente (Wikipedia, Linux, ciência aberta)',
+        connections: ['general-intellect', 'software-livre', 'propriedade-intelectual', 'plataformas-cooperativas', 'resistencia'],
+        color: '#10b981',
+        layer: 1
     }
 };
 

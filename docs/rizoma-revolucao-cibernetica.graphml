@@ -374,6 +374,54 @@
       <data key="color">#10b981</data>
       <data key="layer">0</data>
     </node>
+    <node id="acoplamento-estrutural">
+      <data key="name">Acoplamento Estrutural</data>
+      <data key="description">Sistemas autopoiéticos se adaptam mutuamente através de interações recorrentes sem perder autonomia</data>
+      <data key="color">#8b5cf6</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="variedade-requisita">
+      <data key="name">Lei da Variedade Requisita</data>
+      <data key="description">Para controlar um sistema, o regulador precisa ter variedade igual ou maior (Ashby)</data>
+      <data key="color">#8b5cf6</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="vsm">
+      <data key="name">Modelo de Sistema Viável</data>
+      <data key="description">Arquitetura recursiva de governança organizacional (Stafford Beer)</data>
+      <data key="color">#10b981</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="recursividade">
+      <data key="name">Recursividade</data>
+      <data key="description">Processos que se aplicam aos próprios resultados gerando complexidade emergente</data>
+      <data key="color">#8b5cf6</data>
+      <data key="layer">-1</data>
+    </node>
+    <node id="emergencia">
+      <data key="name">Emergência</data>
+      <data key="description">Propriedades qualitativas novas que surgem no sistema mas não existem nos componentes</data>
+      <data key="color">#8b5cf6</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="escalada-simetrica">
+      <data key="name">Escalada Simétrica</data>
+      <data key="description">Feedback positivo descontrolado em interações competitivas (Bateson)</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="fechamento-operacional">
+      <data key="name">Fechamento Operacional</data>
+      <data key="description">Operações do sistema se referem apenas a si mesmas em ciclo recursivo</data>
+      <data key="color">#8b5cf6</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="linguagem-sistema">
+      <data key="name">Linguagem como Sistema</data>
+      <data key="description">Coordenação comportamental através de acoplamento estrutural, não transmissão de informação</data>
+      <data key="color">#10b981</data>
+      <data key="layer">0</data>
+    </node>
     <node id="rizoma">
       <data key="name">Rizoma</data>
       <data key="description">Estrutura não-hierárquica (Deleuze &amp; Guattari)</data>
@@ -779,6 +827,10 @@
     <edge source="cibernetica" target="shannon"/>
     <edge source="cibernetica" target="segunda-ordem"/>
     <edge source="cibernetica" target="automacao"/>
+    <edge source="cibernetica" target="autopoiese"/>
+    <edge source="cibernetica" target="variedade-requisita"/>
+    <edge source="cibernetica" target="vsm"/>
+    <edge source="cibernetica" target="acoplamento-estrutural"/>
     <edge source="wiener" target="feedback"/>
     <edge source="wiener" target="duplo-uso-militar"/>
     <edge source="wiener" target="vicio-digital"/>
@@ -849,10 +901,35 @@
     <edge source="e-waste" target="necropolitica-digital"/>
     <edge source="e-waste" target="extrativismo"/>
     <edge source="data-centers" target="fetichismo-digital"/>
-    <edge source="autopoiese" target="cibernetica"/>
     <edge source="autopoiese" target="nhandereko"/>
+    <edge source="autopoiese" target="fechamento-operacional"/>
+    <edge source="autopoiese" target="acoplamento-estrutural"/>
+    <edge source="autopoiese" target="recursividade"/>
+    <edge source="autopoiese" target="segunda-ordem"/>
     <edge source="segunda-ordem" target="meta-observacao"/>
     <edge source="segunda-ordem" target="ontologia-executavel"/>
+    <edge source="segunda-ordem" target="acoplamento-estrutural"/>
+    <edge source="acoplamento-estrutural" target="comunicacao"/>
+    <edge source="acoplamento-estrutural" target="linguagem-sistema"/>
+    <edge source="variedade-requisita" target="feedback"/>
+    <edge source="variedade-requisita" target="vsm"/>
+    <edge source="variedade-requisita" target="descentralizacao"/>
+    <edge source="vsm" target="cybersyn"/>
+    <edge source="vsm" target="recursividade"/>
+    <edge source="vsm" target="autonomia-coordenacao"/>
+    <edge source="recursividade" target="feedback"/>
+    <edge source="recursividade" target="emergencia"/>
+    <edge source="recursividade" target="fractais"/>
+    <edge source="emergencia" target="sistemas-complexos"/>
+    <edge source="emergencia" target="consciencia"/>
+    <edge source="emergencia" target="sociedade"/>
+    <edge source="escalada-simetrica" target="feedback"/>
+    <edge source="escalada-simetrica" target="patologias-sistemicas"/>
+    <edge source="escalada-simetrica" target="corrida-armamentista"/>
+    <edge source="fechamento-operacional" target="recursividade"/>
+    <edge source="fechamento-operacional" target="perturbacao-ambiente"/>
+    <edge source="linguagem-sistema" target="comunicacao"/>
+    <edge source="linguagem-sistema" target="cibernetica"/>
     <edge source="rizoma" target="multiplicidade"/>
     <edge source="rizoma" target="devir"/>
     <edge source="rizoma" target="navegacao-rizomatica"/>

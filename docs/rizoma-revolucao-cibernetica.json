@@ -400,7 +400,11 @@
         "turing",
         "shannon",
         "segunda-ordem",
-        "automacao"
+        "automacao",
+        "autopoiese",
+        "variedade-requisita",
+        "vsm",
+        "acoplamento-estrutural"
       ]
     },
     {
@@ -768,7 +772,11 @@
       "connections": [
         "cibernetica",
         "feedback",
-        "nhandereko"
+        "nhandereko",
+        "fechamento-operacional",
+        "acoplamento-estrutural",
+        "recursividade",
+        "segunda-ordem"
       ]
     },
     {
@@ -780,7 +788,112 @@
       "connections": [
         "cibernetica",
         "meta-observacao",
-        "ontologia-executavel"
+        "ontologia-executavel",
+        "autopoiese",
+        "acoplamento-estrutural"
+      ]
+    },
+    {
+      "id": "acoplamento-estrutural",
+      "name": "Acoplamento Estrutural",
+      "description": "Sistemas autopoiéticos se adaptam mutuamente através de interações recorrentes sem perder autonomia",
+      "color": "#8b5cf6",
+      "layer": 0,
+      "connections": [
+        "autopoiese",
+        "segunda-ordem",
+        "comunicacao",
+        "linguagem-sistema"
+      ]
+    },
+    {
+      "id": "variedade-requisita",
+      "name": "Lei da Variedade Requisita",
+      "description": "Para controlar um sistema, o regulador precisa ter variedade igual ou maior (Ashby)",
+      "color": "#8b5cf6",
+      "layer": 0,
+      "connections": [
+        "cibernetica",
+        "feedback",
+        "vsm",
+        "descentralizacao"
+      ]
+    },
+    {
+      "id": "vsm",
+      "name": "Modelo de Sistema Viável",
+      "description": "Arquitetura recursiva de governança organizacional (Stafford Beer)",
+      "color": "#10b981",
+      "layer": 0,
+      "connections": [
+        "variedade-requisita",
+        "cybersyn",
+        "cibernetica",
+        "recursividade",
+        "autonomia-coordenacao"
+      ]
+    },
+    {
+      "id": "recursividade",
+      "name": "Recursividade",
+      "description": "Processos que se aplicam aos próprios resultados gerando complexidade emergente",
+      "color": "#8b5cf6",
+      "layer": -1,
+      "connections": [
+        "autopoiese",
+        "feedback",
+        "vsm",
+        "emergencia",
+        "fractais"
+      ]
+    },
+    {
+      "id": "emergencia",
+      "name": "Emergência",
+      "description": "Propriedades qualitativas novas que surgem no sistema mas não existem nos componentes",
+      "color": "#8b5cf6",
+      "layer": 0,
+      "connections": [
+        "recursividade",
+        "sistemas-complexos",
+        "consciencia",
+        "sociedade"
+      ]
+    },
+    {
+      "id": "escalada-simetrica",
+      "name": "Escalada Simétrica",
+      "description": "Feedback positivo descontrolado em interações competitivas (Bateson)",
+      "color": "#ef4444",
+      "layer": 0,
+      "connections": [
+        "feedback",
+        "patologias-sistemicas",
+        "corrida-armamentista"
+      ]
+    },
+    {
+      "id": "fechamento-operacional",
+      "name": "Fechamento Operacional",
+      "description": "Operações do sistema se referem apenas a si mesmas em ciclo recursivo",
+      "color": "#8b5cf6",
+      "layer": 0,
+      "connections": [
+        "autopoiese",
+        "recursividade",
+        "perturbacao-ambiente"
+      ]
+    },
+    {
+      "id": "linguagem-sistema",
+      "name": "Linguagem como Sistema",
+      "description": "Coordenação comportamental através de acoplamento estrutural, não transmissão de informação",
+      "color": "#10b981",
+      "layer": 0,
+      "connections": [
+        "acoplamento-estrutural",
+        "comunicacao",
+        "cibernetica"
       ]
     },
     {
