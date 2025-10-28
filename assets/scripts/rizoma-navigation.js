@@ -11,6 +11,24 @@
  * - Sem estrutura arbórea
  * 
  * CHANGELOG:
+ * - 2025-10-28 (v14): Expansão massiva do Capítulo 17 (OGAS - A Internet Vermelha da URSS)
+ *   + 60+ novos conceitos: planejamento cibernético soviético, resistência burocrática, lições históricas
+ *   + Problema planejamento: Gosplan (12 milhões preços, 50 mil empresas), planos quinquenais (6 meses-2 anos atraso)
+ *   + Ineficiência: 15-25% produção desperdiçada (50-80 bilhões rublos/ano), escassez crônica bens consumo
+ *   + Economia informal: Blat (favores), Tolkach (fixadores) - sistema funcionava via opacidade
+ *   + Debate cálculo socialista: Mises/Hayek vs Lange/Glushkov - cibernética como solução técnica
+ *   + Anatoly Kitov: EASU (1959), primeira rede dual militar-econômica, demitido por generais
+ *   + Viktor Glushkov: OGAS (1962-1970), arquitetura 3 camadas (centro/regional/fábrica), economia sem dinheiro
+ *   + Resistência burocrática: Gosplan (temia obsolescência), ministérios (feudos isolados), Partido (medo tecnocracia)
+ *   + Aliança paradoxal: conservadores + reformistas mercado uniram contra OGAS - esmagaram terceira via
+ *   + Fracasso 1970: Politburo negou financiamento, sistemas fragmentados incompatíveis, desperdício massivo
+ *   + Morte Glushkov 1982: ataque cardíaco aos 58 anos, exausto por luta burocrática
+ *   + 5 lições críticas: 1) Informação=Poder, 2) Tech sem democracia=dominação, 3) Path dependence, 4) Timing, 5) Conhecimento local
+ *   + Contrafactuais: URSS com internet antes EUA?, vigilância total?, fracasso político inevitável?
+ *   + OGAS vs Cybersyn: 1ª ordem (controle cima) vs 2ª ordem (workers no loop) - lição dialética
+ *   + Conexões: Caps 6 (cibernética 2ª ordem), 18 (Cybersyn), 26 (Nhandereko), 30 (dialética)
+ *   Total: ~810 conceitos mapeados
+ * 
  * - 2025-10-28 (v13): Expansão massiva do Capítulo 16 (Farmácia Global e Guerra às Drogas Digital)
  *   + 40+ novos conceitos: farmácia de apartheid, guerra às drogas, policiamento preditivo, complexo industrial-terapêutico
  *   + Guerra às Drogas: Nixon/Ehrlichman, racismo estrutural, encarceramento massa, genocídio juventude negra
@@ -3247,27 +3265,334 @@ const conceptGraph = {
         layer: 0
     },
     
+    // ========================================
+    // CAPÍTULO 17: OGAS - A INTERNET VERMELHA DA URSS
+    // ========================================
+    
     // Planejamento Cibernético
     'planejamento-cibernetico': {
         name: 'Planejamento Cibernético',
         description: 'Cibernética resolve "problema do cálculo" via feedback em tempo real',
-        connections: ['calculo-socialista', 'hayek', 'ogas', 'cybersyn', 'glushkov', 'beer'],
+        connections: ['calculo-socialista', 'hayek', 'ogas', 'cybersyn', 'glushkov', 'beer', 'gosplan'],
         color: '#22c55e',
         layer: 0
     },
+    
+    // Problema do Planejamento Soviético
+    'gosplan': {
+        name: 'Gosplan',
+        description: 'Agência central de planejamento soviético (1921-1991) - coordenava 12 milhões de preços, 50 mil empresas',
+        connections: ['ogas', 'planejamento-cibernetico', 'burocracia-sovietica', 'planos-quinquenais'],
+        color: '#ef4444',
+        layer: -1
+    },
+    'planos-quinquenais': {
+        name: 'Planos Quinquenais',
+        description: 'Planos econômicos de 5 anos (1928-1991) - rígidos, desatualizados (6 meses a 2 anos de atraso)',
+        connections: ['gosplan', 'ogas', 'ineficiencia-burocratica'],
+        color: '#ef4444',
+        layer: -1
+    },
+    'ineficiencia-burocratica': {
+        name: 'Ineficiência Crônica do Planejamento',
+        description: '15-25% da produção soviética desperdiçada (50-80 bilhões rublos/ano)',
+        connections: ['gosplan', 'planos-quinquenais', 'economia-informal-sovietica', 'ogas'],
+        color: '#ef4444',
+        layer: -1
+    },
+    'economia-informal-sovietica': {
+        name: 'Economia Informal Soviética',
+        description: 'Blat (favores) + Tolkach (fixadores) - sistema real funcionava por opacidade',
+        connections: ['ineficiencia-burocratica', 'blat', 'tolkach', 'ogas-ameaca'],
+        color: '#ef4444',
+        layer: -1
+    },
+    'blat': {
+        name: 'Blat',
+        description: 'Sistema de favores/contatos pessoais para contornar ineficiências',
+        connections: ['economia-informal-sovietica', 'tolkach', 'burocracia-sovietica'],
+        color: '#ef4444',
+        layer: -1
+    },
+    'tolkach': {
+        name: 'Tolkach (Fixador)',
+        description: 'Intermediário semi-legal que resolvia gargalos via subornos e trocas',
+        connections: ['economia-informal-sovietica', 'blat', 'corrupcao-sovietica'],
+        color: '#ef4444',
+        layer: -1
+    },
+    
+    // O Projeto OGAS
     'ogas': {
-        name: 'OGAS (СССР)',
-        description: 'Rede soviética proposta por Glushkov (1962) - nunca implementada',
-        connections: ['glushkov', 'planejamento-cibernetico', 'cybersyn', 'feedback'],
+        name: 'OGAS (Система Автоматизированная)',
+        description: 'Sistema Automatizado de Gestão da Economia Nacional (1962) - "internet vermelha" que nunca foi',
+        connections: ['glushkov', 'planejamento-cibernetico', 'cybersyn', 'feedback', 'arquitetura-ogas', 'fracasso-ogas'],
         color: '#22c55e',
         layer: -1
     },
-    'glushkov': {
-        name: 'Viktor Glushkov',
-        description: 'Ciberneticista soviético - propôs OGAS (bloqueado por burocracia)',
-        connections: ['ogas', 'planejamento-cibernetico', 'hayek', 'cibernetica'],
+    'arquitetura-ogas': {
+        name: 'Arquitetura OGAS (3 camadas)',
+        description: '(1) Centro Moscou, (2) 200 centros regionais, (3) 20 mil terminais em fábricas - rede hierárquica',
+        connections: ['ogas', 'glushkov', 'computadores-sovieticos-besm', 'rede-telex'],
         color: '#22c55e',
         layer: -1
+    },
+    'computadores-sovieticos-besm': {
+        name: 'Computadores BESM',
+        description: 'Série soviética (anos 60) - competitiva com IBM 7090, 1 milhão ops/seg',
+        connections: ['arquitetura-ogas', 'ogas', 'tecnologia-sovietica'],
+        color: '#22c55e',
+        layer: -1
+    },
+    'rede-telex': {
+        name: 'Rede de Telex',
+        description: 'Tecnologia de transmissão de dados proposta para OGAS - já existente, baixo custo',
+        connections: ['arquitetura-ogas', 'ogas'],
+        color: '#22c55e',
+        layer: -1
+    },
+    'economia-sem-dinheiro': {
+        name: 'Economia sem Dinheiro (visão Glushkov)',
+        description: 'Abolir rublo - transações via cartões magnéticos rastreáveis eletronicamente',
+        connections: ['ogas', 'glushkov', 'comunismo-automatico', 'vigilancia-total-risco'],
+        color: '#22c55e',
+        layer: -1
+    },
+    'comunismo-automatico': {
+        name: 'Comunismo Automático',
+        description: 'Sonho de Glushkov: sistema auto-regulado via feedback, política obsoleta',
+        connections: ['economia-sem-dinheiro', 'ogas', 'tecnocracia-sovietica', 'erro-glushkov'],
+        color: '#22c55e',
+        layer: -1
+    },
+    'erro-glushkov': {
+        name: 'Erro de Glushkov: Tecnocracia Sem Política',
+        description: 'Assumiu que burocratas aceitariam eficiência - ignorou que eles otimizam sobrevivência própria',
+        connections: ['comunismo-automatico', 'glushkov', 'burocracia-sovietica', 'resistencia-ogas'],
+        color: '#dc2626',
+        layer: -1
+    },
+    
+    // Atores Principais
+    'glushkov': {
+        name: 'Viktor Glushkov (1923-1982)',
+        description: 'Ciberneticista ucraniano, diretor Instituto Cibernética Kiev - arquiteto OGAS, morreu derrotado',
+        connections: ['ogas', 'planejamento-cibernetico', 'hayek', 'cibernetica', 'kitov', 'erro-glushkov'],
+        color: '#22c55e',
+        layer: -1
+    },
+    'kitov': {
+        name: 'Anatoly Kitov (1920-2005)',
+        description: 'Coronel e matemático - propôs EASU (1959), primeira rede dual militar-econômica, demitido em 1960',
+        connections: ['glushkov', 'ogas', 'easu', 'burocracia-militar'],
+        color: '#22c55e',
+        layer: -1
+    },
+    'easu': {
+        name: 'EASU (Sistema Unificado)',
+        description: 'Proposta de Kitov (1959): computadores militares processariam dados econômicos - rejeitada por generais',
+        connections: ['kitov', 'ogas', 'burocracia-militar'],
+        color: '#ef4444',
+        layer: -1
+    },
+    
+    // Resistência Burocrática ao OGAS
+    'resistencia-ogas': {
+        name: 'Resistência Burocrática ao OGAS',
+        description: 'Gosplan + ministérios + Partido + reformistas - aliança contra Glushkov (1962-1970)',
+        connections: ['ogas', 'burocracia-sovietica', 'gosplan-contra-ogas', 'ministerios-contra-ogas', 'partido-contra-ogas'],
+        color: '#dc2626',
+        layer: -1
+    },
+    'gosplan-contra-ogas': {
+        name: 'Gosplan Contra OGAS',
+        description: 'Planejadores temiam obsolescência - OGAS exporia ineficiência e acordos informais',
+        connections: ['resistencia-ogas', 'gosplan', 'ogas-ameaca', 'economia-informal-sovietica'],
+        color: '#dc2626',
+        layer: -1
+    },
+    'ogas-ameaca': {
+        name: 'OGAS como Ameaça Existencial',
+        description: 'Transparência = morte da burocracia - informação descentralizada = poder descentralizado',
+        connections: ['gosplan-contra-ogas', 'economia-informal-sovietica', 'informacao-poder'],
+        color: '#dc2626',
+        layer: -1
+    },
+    'ministerios-contra-ogas': {
+        name: 'Ministérios Contra OGAS',
+        description: 'Cada ministério = feudo isolado - OGAS propunha integração horizontal, ameaçava autonomia',
+        connections: ['resistencia-ogas', 'ogas', 'compartimentalizacao-burocratica'],
+        color: '#dc2626',
+        layer: -1
+    },
+    'compartimentalizacao-burocratica': {
+        name: 'Compartimentalização Burocrática',
+        description: 'Ministérios recusaram compartilhar dados - sabotagem via incompatibilidade',
+        connections: ['ministerios-contra-ogas', 'path-dependence', 'sistemas-incompativeis'],
+        color: '#dc2626',
+        layer: -1
+    },
+    'partido-contra-ogas': {
+        name: 'Partido Comunista Contra OGAS',
+        description: 'Medo de "ditador eletrônico" - e se computador recomendar algo contra linha do Partido?',
+        connections: ['resistencia-ogas', 'ogas', 'brezhnev-desconfia', 'tecnocracia-sovietica'],
+        color: '#dc2626',
+        layer: -1
+    },
+    'brezhnev-desconfia': {
+        name: 'Brezhnev: "Quem Controla Esse Sistema?"',
+        description: 'Liderança não entendia cibernética - desconfiava de "auto-regulação" (1967)',
+        connections: ['partido-contra-ogas', 'ogas', 'burocracia-sovietica'],
+        color: '#dc2626',
+        layer: -1
+    },
+    'reformistas-contra-ogas': {
+        name: 'Reformistas de Mercado Contra OGAS',
+        description: 'Liberman e cia temiam que planejamento eficiente fortalecesse ortodoxia - queriam mercado',
+        connections: ['resistencia-ogas', 'ogas', 'reformas-kosygin', 'alianca-paradoxal'],
+        color: '#dc2626',
+        layer: -1
+    },
+    'reformas-kosygin': {
+        name: 'Reformas Kosygin (1965)',
+        description: 'Tentativa de introduzir mecanismos de mercado - rival ideológico do OGAS',
+        connections: ['reformistas-contra-ogas', 'socialismo-mercado'],
+        color: '#ef4444',
+        layer: -1
+    },
+    'alianca-paradoxal': {
+        name: 'Aliança Paradoxal Contra OGAS',
+        description: 'Conservadores + reformistas, por razões opostas, se uniram contra Glushkov - esmagaram terceira via',
+        connections: ['reformistas-contra-ogas', 'partido-contra-ogas', 'resistencia-ogas'],
+        color: '#dc2626',
+        layer: -1
+    },
+    
+    // Fracasso e Lições
+    'fracasso-ogas': {
+        name: 'Fracasso do OGAS (1970)',
+        description: 'Politburo negou financiamento - optou por sistemas fragmentados incompatíveis',
+        connections: ['ogas', 'resistencia-ogas', 'morte-glushkov', 'sistemas-incompativeis', 'licoes-ogas'],
+        color: '#dc2626',
+        layer: -1
+    },
+    'sistemas-incompativeis': {
+        name: 'Sistemas Incompatíveis (anos 70-80)',
+        description: 'URSS construiu centenas de sistemas locais - nenhum falava com outro, desperdício massivo',
+        connections: ['fracasso-ogas', 'compartimentalizacao-burocratica', 'path-dependence'],
+        color: '#dc2626',
+        layer: -1
+    },
+    'morte-glushkov': {
+        name: 'Morte de Glushkov (1982)',
+        description: 'Ataque cardíaco aos 58 anos - exausto por 20 anos de luta burocrática',
+        connections: ['fracasso-ogas', 'glushkov', 'burocracia-mata-inovacao'],
+        color: '#dc2626',
+        layer: -1
+    },
+    'burocracia-mata-inovacao': {
+        name: 'Burocracia Mata Inovação',
+        description: 'Estruturas de poder preferem ineficiência a mudança que ameaça seu monopólio',
+        connections: ['morte-glushkov', 'fracasso-ogas', 'resistencia-ogas', 'path-dependence'],
+        color: '#dc2626',
+        layer: 0
+    },
+    
+    // Lições Críticas
+    'licoes-ogas': {
+        name: 'Cinco Lições do OGAS',
+        description: '1) Informação=Poder 2) Tech sem democracia=dominação 3) Path dependence 4) Timing crucial 5) Conhecimento local',
+        connections: ['fracasso-ogas', 'informacao-poder', 'tech-sem-democracia', 'path-dependence', 'conhecimento-local-hayek'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'informacao-poder': {
+        name: 'Informação é Poder (Literal)',
+        description: 'Descentralizar informação = descentralizar poder - burocracia não aceitou',
+        connections: ['licoes-ogas', 'ogas-ameaca', 'capitalismo-vigilancia', 'centralizacao-dados'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'tech-sem-democracia': {
+        name: 'Tecnologia sem Democracia = Dominação',
+        description: 'Planejamento para quem? Decidido por quem? OGAS falhou porque URSS não tinha democracia operária',
+        connections: ['licoes-ogas', 'erro-glushkov', 'controle-operario', 'nhandereko'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'path-dependence': {
+        name: 'Path Dependence (Dependência de Trajetória)',
+        description: 'Decisões ruins do passado travam possibilidades futuras - investimentos em tech incompatível',
+        connections: ['licoes-ogas', 'sistemas-incompativeis', 'compartimentalizacao-burocratica', 'combustiveis-fosseis'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'conhecimento-local-hayek': {
+        name: 'Paradoxo do Planejamento Ótimo',
+        description: 'Hayek certo: conhecimento local tácito não transmissível ao centro - mas solução não é mercado, é descentralização democrática',
+        connections: ['licoes-ogas', 'hayek', 'cybersyn-descentralizado', 'planejamento-subsidiario'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'planejamento-subsidiario': {
+        name: 'Planejamento Subsidiário',
+        description: 'Decisões no nível mais baixo possível - coordenação só quando necessário',
+        connections: ['conhecimento-local-hayek', 'cybersyn', 'vsm', 'democracia-direta'],
+        color: '#10b981',
+        layer: 1
+    },
+    
+    // Contrafactuais
+    'contrafactual-ogas': {
+        name: 'E Se OGAS Tivesse Funcionado?',
+        description: '3 cenários: (1) Socialismo high-tech vence, (2) Distopia vigilância total, (3) Eficiência marginal mas colapso político',
+        connections: ['ogas', 'urss-internet-antes-eua', 'vigilancia-total-risco', 'fracasso-inevitavel'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'urss-internet-antes-eua': {
+        name: 'URSS Teria Internet Antes dos EUA',
+        description: 'OGAS online em 1975 vs ARPANET civil em 1983 - mundo digital bilíngue',
+        connections: ['contrafactual-ogas', 'ogas', 'arpanet'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'vigilancia-total-risco': {
+        name: 'Risco de Vigilância Total',
+        description: 'Economia sem dinheiro = toda transação rastreável - KGB integraria rede, Panóptico eletrônico',
+        connections: ['contrafactual-ogas', 'economia-sem-dinheiro', 'capitalismo-vigilancia'],
+        color: '#dc2626',
+        layer: -1
+    },
+    'fracasso-inevitavel': {
+        name: 'Fracasso Político Inevitável',
+        description: 'OGAS compraria 10-20 anos mas sem democracia, sem feedback consumidor, problemas nacionalismo - colapsaria',
+        connections: ['contrafactual-ogas', 'tech-sem-democracia', 'licoes-ogas'],
+        color: '#dc2626',
+        layer: -1
+    },
+    
+    // Conexões Teóricas
+    'burocracia-sovietica': {
+        name: 'Burocracia Soviética',
+        description: 'Estrato social que monopolizava planejamento/aparato estatal - defendia poder, não eficiência',
+        connections: ['gosplan', 'resistencia-ogas', 'blat', 'tolkach', 'burocracia-mata-inovacao'],
+        color: '#ef4444',
+        layer: -1
+    },
+    'tecnocracia-sovietica': {
+        name: 'Tecnocracia Soviética',
+        description: 'Elite científica (Glushkov, Kitov) que acreditava tech resolveria política - erro fatal',
+        connections: ['glushkov', 'kitov', 'erro-glushkov', 'comunismo-automatico'],
+        color: '#ef4444',
+        layer: -1
+    },
+    'ogas-vs-cybersyn': {
+        name: 'OGAS vs Cybersyn: Lição Dialética',
+        description: 'OGAS = 1ª ordem (controle de cima), Cybersyn = 2ª ordem (workers no loop) - por isso um falhou e outro quase funcionou',
+        connections: ['ogas', 'cybersyn', 'cibernetica-primeira-ordem', 'cibernetica-segunda-ordem', 'licoes-ogas'],
+        color: '#8b5cf6',
+        layer: 0
     },
     'beer': {
         name: 'Stafford Beer',
