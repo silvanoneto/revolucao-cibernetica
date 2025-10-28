@@ -162,6 +162,29 @@
             transform: translateY(-2px);
         }
 
+        /* Botão de estatísticas dentro da caixa */
+        .challenge-stats {
+            margin-top: 8px;
+        }
+
+        .challenge-stats button {
+            width: 100%;
+            padding: 8px 12px;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: #10b981;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+        }
+
+        .challenge-stats button:hover {
+            background: rgba(16, 185, 129, 0.2);
+            border-color: #10b981;
+            transform: translateY(-2px);
+        }
+
         /* Feedback de erro */
         .challenge-error {
             margin-top: 8px;
@@ -198,11 +221,12 @@
             }
         }
 
-        /* 🎯 BOTÕES DE AÇÃO - CANTO INFERIOR DIREITO */
+        /* 🎯 BOTÕES DE AÇÃO - CENTRO DO TOPO */
         .action-buttons {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
             display: flex;
             gap: 10px;
             z-index: 100;
@@ -257,6 +281,11 @@
                 font-size: 0.75rem;
             }
 
+            .challenge-stats button {
+                padding: 7px 10px;
+                font-size: 0.75rem;
+            }
+
             .challenge-error {
                 margin-top: 6px;
                 padding: 6px 8px;
@@ -264,8 +293,9 @@
             }
 
             .action-buttons {
-                bottom: 15px;
-                right: 15px;
+                top: 15px;
+                left: 50%;
+                transform: translateX(-50%);
                 gap: 8px;
             }
 
@@ -393,6 +423,11 @@
         <!-- Botão regenerar dentro da caixa -->
         <div class="challenge-regenerate">
             <button onclick="regenerateCaptcha()">🔄 Gerar novo desafio</button>
+        </div>
+
+        <!-- Botão de estatísticas dentro da caixa -->
+        <div class="challenge-stats">
+            <button id="metricsButtonInBox" onclick="toggleMetrics()">📊 Estatísticas</button>
         </div>
     </div>
 

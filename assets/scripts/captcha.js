@@ -360,6 +360,41 @@ function createMetricsButton() {
         return;
     }
 
+    // Se estiver na página entry.html, não criar botão flutuante (já existe na caixa de desafio)
+    const isEntryPage = window.location.pathname.includes('entry.html');
+    if (isEntryPage && document.getElementById('metricsButtonInBox')) {
+        console.log('📊 Usando botão de métricas integrado na caixa de desafio');
+        // Criar painel de métricas mesmo sem o botão flutuante
+        createMetricsPanel();
+        // Criar controles guaiamum
+        if (!document.querySelector('.guaiamum-controls')) {
+            const gu = document.createElement('div');
+            gu.className = 'guaiamum-controls';
+            gu.style.cssText = 'position:fixed; top:20px; left:50%; transform:translateX(-50%); display:flex; gap:6px; z-index:1000;';
+
+            const directions = [
+                { d: 'left', label: '🦞' },
+                { d: 'front', label: '↖' },
+                { d: 'center', label: '•' },
+                { d: 'back', label: '↘' },
+                { d: 'right', label: '🦀' }
+            ];
+
+            directions.forEach(cfg => {
+                const b = document.createElement('button');
+                b.className = `guaiamum-btn guaiamum-${cfg.d}`;
+                b.title = `Guaiamum: ${cfg.d}`;
+                b.innerHTML = cfg.label;
+                b.style.cssText = 'width:36px;height:36px;border-radius:8px;border:1px solid rgba(139,92,246,0.4);background:rgba(0,0,0,0.6);color:#fff;cursor:pointer;';
+                b.addEventListener('click', () => setGuaiamumPerspective(cfg.d));
+                gu.appendChild(b);
+            });
+
+            document.body.appendChild(gu);
+        }
+        return;
+    }
+
     // Verificar se já existe
     if (document.getElementById('metricsButton')) return;
 
@@ -403,12 +438,12 @@ function createMetricsButton() {
     canvasContainer.style.position = 'relative';
     canvasContainer.appendChild(metricsButton);
 
-    // 🦀 Criar controles Guaiamum (perspectivas) próximos ao botão de métricas
+    // 🦀 Criar controles Guaiamum (perspectivas) no centro do topo
     // Apenas criar se não existir
     if (!document.querySelector('.guaiamum-controls')) {
         const gu = document.createElement('div');
         gu.className = 'guaiamum-controls';
-        gu.style.cssText = 'position:absolute; bottom:10px; left:10px; display:flex; gap:6px; z-index:1000;';
+        gu.style.cssText = 'position:fixed; top:20px; left:50%; transform:translateX(-50%); display:flex; gap:6px; z-index:1000;';
 
         const directions = [
             { d: 'left', label: '🦞' },
@@ -436,35 +471,107 @@ function createMetricsButton() {
 }
 
 function createMetricsPanel() {
+    // Criar overlay de fundo escuro
+    const overlay = document.createElement('div');
+    overlay.id = 'metricsOverlay';
+    overlay.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(8px);
+        z-index: 9999;
+        display: none;
+    `;
+    overlay.addEventListener('click', toggleMetrics);
+    document.body.appendChild(overlay);
+
+    // Criar painel de métricas
     metricsPanel = document.createElement('div');
     metricsPanel.id = 'metricsPanel';
     metricsPanel.style.cssText = `
-        position: absolute;
-        bottom: 60px;
-        right: 10px;
-        width: 350px;
-        max-height: 400px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        max-width: 600px;
+        max-height: 80vh;
         background: rgba(0, 0, 0, 0.95);
         border: 2px solid rgba(139, 92, 246, 0.5);
         border-radius: 12px;
-        padding: 15px;
+        padding: 20px;
+        padding-top: 50px;
         font-family: 'Courier New', monospace;
-        font-size: 11px;
+        font-size: 12px;
         color: #10b981;
         overflow-y: auto;
-        z-index: 999;
+        z-index: 10000;
         display: none;
         backdrop-filter: blur(15px);
         transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
     `;
 
-    canvas.parentElement.appendChild(metricsPanel);
+    // Adicionar botão de fechar
+    const closeBtn = document.createElement('button');
+    closeBtn.innerHTML = '✕';
+    closeBtn.style.cssText = `
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 30px;
+        height: 30px;
+        border: none;
+        background: rgba(239, 68, 68, 0.2);
+        color: #ef4444;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    `;
+    closeBtn.addEventListener('mouseenter', () => {
+        closeBtn.style.background = 'rgba(239, 68, 68, 0.4)';
+        closeBtn.style.transform = 'scale(1.1)';
+    });
+    closeBtn.addEventListener('mouseleave', () => {
+        closeBtn.style.background = 'rgba(239, 68, 68, 0.2)';
+        closeBtn.style.transform = 'scale(1)';
+    });
+    closeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleMetrics();
+    });
+    metricsPanel.appendChild(closeBtn);
+
+    document.body.appendChild(metricsPanel);
 }
 
 function toggleMetrics() {
     metricsVisible = !metricsVisible;
+    const overlay = document.getElementById('metricsOverlay');
+    
     metricsPanel.style.display = metricsVisible ? 'block' : 'none';
-    metricsButton.innerHTML = metricsVisible ? '📉' : '📊';
+    if (overlay) {
+        overlay.style.display = metricsVisible ? 'block' : 'none';
+    }
+    
+    // Atualizar botão de métricas se existir
+    if (metricsButton) {
+        metricsButton.innerHTML = metricsVisible ? '📉' : '📊';
+    }
+    
+    // Atualizar botão dentro da caixa se existir
+    const metricsButtonInBox = document.getElementById('metricsButtonInBox');
+    if (metricsButtonInBox) {
+        metricsButtonInBox.innerHTML = metricsVisible ? '📉 Fechar' : '📊 Estatísticas';
+    }
 
     if (metricsVisible) {
         updateMetricsPanel();
