@@ -1413,10 +1413,73 @@ const conceptGraph = {
     },
     'subsuncao-real': {
         name: 'Subsunção Real',
-        description: 'Capital reorganiza processo de trabalho (linha de montagem, algoritmo)',
-        connections: ['zona-franca-manaus', 'gerenciamento-algoritmico', 'uberizacao'],
+        description: 'Capital reorganiza processo de trabalho via tecnologia (máquinas incorporam conhecimento do trabalhador)',
+        connections: ['subsuncao-formal', 'zona-franca-manaus', 'gerenciamento-algoritmico', 'uberizacao', 'composicao-organica-capital', 'general-intellect', 'automacao'],
         color: '#ef4444',
         layer: 0
+    },
+    'subsuncao-formal': {
+        name: 'Subsunção Formal',
+        description: 'Capital controla trabalho sem alterar processo técnico (artesão vira empregado)',
+        connections: ['subsuncao-real', 'mais-valia', 'extracao-dados'],
+        color: '#f87171',
+        layer: 0
+    },
+    'composicao-organica-capital': {
+        name: 'Composição Orgânica do Capital (COC)',
+        description: 'Razão c/v: capital constante (máquinas) sobre capital variável (trabalho). Alta COC = muita automação',
+        connections: ['capital-constante', 'capital-variavel', 'queda-taxa-lucro', 'automacao', 'general-intellect'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'capital-constante': {
+        name: 'Capital Constante (c)',
+        description: 'Meios de produção (máquinas, matéria-prima) que apenas transferem valor, não criam valor novo',
+        connections: ['composicao-organica-capital', 'capital-variavel', 'automacao'],
+        color: '#a78bfa',
+        layer: 0
+    },
+    'capital-variavel': {
+        name: 'Capital Variável (v)',
+        description: 'Força de trabalho (salários) — única fonte que cria valor novo (mais-valia)',
+        connections: ['composicao-organica-capital', 'capital-constante', 'mais-valia', 'trabalho-vivo'],
+        color: '#c4b5fd',
+        layer: 0
+    },
+    'queda-taxa-lucro': {
+        name: 'Lei da Queda Tendencial da Taxa de Lucro',
+        description: 'COC aumenta (mais máquinas, menos trabalho) → fonte de lucro diminui → taxa de lucro cai',
+        connections: ['composicao-organica-capital', 'contratendencias', 'crise-capitalista', 'automacao', 'financeirizacao'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'contratendencias': {
+        name: 'Contratendências à Queda do Lucro',
+        description: 'Estratégias para compensar queda: superexploração, barateamento de máquinas, imperialismo, crédito, monopólio',
+        connections: ['queda-taxa-lucro', 'superexploracao', 'neocolonialismo-digital', 'financeirizacao', 'big-tech', 'uberizacao'],
+        color: '#f59e0b',
+        layer: 0
+    },
+    'general-intellect': {
+        name: 'General Intellect (Intelecto Geral)',
+        description: 'Conhecimento social acumulado (ciência, tecnologia, cooperação) como principal força produtiva — contradição: conhecimento quer ser livre, capital precisa cercá-lo',
+        connections: ['subsuncao-real', 'trabalho-imaterial', 'composicao-organica-capital', 'software-livre', 'propriedade-intelectual', 'comum-digital', 'ia', 'algoritmos', 'plataformas'],
+        color: '#a855f7',
+        layer: 0
+    },
+    'propriedade-intelectual': {
+        name: 'Propriedade Intelectual',
+        description: 'Copyright, patentes, DRM — cercamento do conhecimento para criar escassez artificial',
+        connections: ['general-intellect', 'comum-digital', 'pirataria', 'software-livre', 'big-tech'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'comum-digital': {
+        name: 'O Comum Digital',
+        description: 'Conhecimento produzido coletivamente que deveria ser apropriado coletivamente (Wikipedia, Linux, ciência aberta)',
+        connections: ['general-intellect', 'software-livre', 'propriedade-intelectual', 'plataformas-cooperativas', 'resistencia'],
+        color: '#10b981',
+        layer: 1
     }
 };
 

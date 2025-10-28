@@ -41,10 +41,10 @@ const chapterConceptsMap = {
         description: 'Teoria da Dependência, planejamento cibernético e neocolonialismo digital'
     },
     'cap-5': {
-        concepts: ['critica-capital', 'dialética', 'materialismo'],
-        readingTime: '12 min',
+        concepts: ['subsuncao-formal', 'subsuncao-real', 'composicao-organica-capital', 'queda-taxa-lucro', 'general-intellect', 'capital-constante', 'capital-variavel', 'contratendencias', 'critica-capital', 'dialética', 'materialismo'],
+        readingTime: '18 min',
         difficulty: 'avançado',
-        description: 'Método dialético de análise do capital'
+        description: 'Marx e a crítica da economia política: subsunção do trabalho, composição orgânica do capital, queda tendencial da taxa de lucro e o conceito revolucionário de General Intellect'
     },
     'cap-6': {
         concepts: ['sistemas-complexos', 'recursividade', 'comunicacao'],
