@@ -13650,6 +13650,114 @@
                 para esses bairros, onde eles obviamente realizam mais prisões (especialmente por crimes de
                 baixo nível, como posse de drogas), o que gera mais dados que "confirmam" a previsão do
                 algoritmo. A discriminação racial, agora, ganha o verniz de objetividade matemática.</p>
+
+            <h3>16.1.1 Anatomia do Policiamento Preditivo</h3>
+            <p>Para entender como o racismo é <strong>codificado em software</strong>, precisamos abrir a 
+                caixa-preta do policiamento preditivo. Os dois sistemas mais usados nos EUA são 
+                <strong>PredPol</strong> (agora "Geolitica") e <strong>HunchLab</strong>. Ambos prometem 
+                "ciência de dados" e "previsão neutra". Ambos reforçam discriminação.</p>
+
+            <div class="bio-box">
+                <div class="bio-icon">🤖</div>
+                <div class="bio-content">
+                    <div class="bio-title">Como Funciona um Algoritmo de Policiamento Preditivo</div>
+                    <p style="font-size: 0.875rem; line-height: 1.6; margin-top: 0.5rem;">
+                        <strong>Input (dados de entrada):</strong><br>
+                        • Dados históricos de crimes: local, data, hora, tipo de crime (furto, roubo, homicídio, 
+                        posse de drogas, etc.)<br>
+                        • Dados socioeconômicos: renda média, taxa de desemprego, escolaridade do bairro<br>
+                        • Dados demográficos: composição racial, densidade populacional<br>
+                        • Chamadas para polícia (911 nos EUA, 190 no Brasil)<br><br>
+                        <strong>Processamento (algoritmo):</strong><br>
+                        • Machine learning identifica <em>padrões</em> nos dados históricos<br>
+                        • Técnicas comuns: regressão logística, random forests, redes neurais<br>
+                        • Algoritmo aprende: "Crime tipo X tende a ocorrer em bairro tipo Y, em horário Z"<br>
+                        • Gera <strong>mapa de calor</strong> com áreas de "alto risco"<br><br>
+                        <strong>Output (decisão):</strong><br>
+                        • Sistema recomenda onde enviar patrulhas<br>
+                        • Polícia vai para área "prevista", faz abordagens, prisões<br>
+                        • Novos dados alimentam sistema: <strong>loop de feedback</strong><br><br>
+                        <strong>O Problema:</strong> "Dados históricos" não são registro objetivo da realidade. 
+                        São registro de <em>onde polícia patrulhou no passado</em>. Se polícia sempre patrulhou 
+                        mais em bairros negros (viés histórico), dados mostram mais crimes lá. Algoritmo aprende 
+                        viés como se fosse verdade. Reforça discriminação, dando-lhe aparência de ciência.
+                    </p>
+                </div>
+            </div>
+
+            <p>Exemplo real: <strong>Chicago</strong>, 2013-2019, usou sistema de "heat list" (lista de 
+                pessoas com alto risco de envolvimento em violência, como vítima ou perpetrador). Algoritmo 
+                analisava rede social, histórico de prisões, localização. Pessoas na lista recebiam "visitas 
+                preventivas" da polícia, mesmo sem ter cometido crime.</p>
+            
+            <ul>
+                <li><strong>Resultado:</strong> ~400 mil pessoas foram incluídas na lista ao longo dos anos. 
+                    Maioria esmagadora: negros e latinos de bairros pobres. Taxa de "acerto" (pessoa realmente 
+                    se envolveu em violência)? <strong>0,3%</strong>. Ou seja, 99,7% eram falsos positivos.</li>
+                <li><strong>Efeito colateral:</strong> Pessoas na lista enfrentavam mais vigilância, mais 
+                    abordagens policiais, mais risco de prisão por qualquer infração menor. Estigma social. 
+                    Dificuldade de conseguir emprego. Sistema criou <strong>profecia autorrealizável</strong>: 
+                    ao aumentar policiamento sobre alguém, aumenta-se probabilidade de prisão.</li>
+                <li><strong>Accountability:</strong> Cidade de Chicago descontinuou programa em 2019 após 
+                    pressão de movimentos sociais. Mas não antes de arruinar centenas de milhares de vidas.</li>
+            </ul>
+
+            <div class="bio-box" style="background: linear-gradient(135deg, rgba(220,38,38,0.08) 0%, rgba(239,68,68,0.12) 100%); border-left: 5px solid #dc2626;">
+                <div class="bio-icon">⚖️</div>
+                <div class="bio-content">
+                    <div class="bio-title">O Viés Está nos Dados, Não "Só" no Algoritmo</div>
+                    <p style="font-size: 0.875rem; line-height: 1.6; margin-top: 0.5rem;">
+                        Defesa comum de empresas de policiamento preditivo: "Nosso algoritmo é neutro, só aprende 
+                        com os dados." Mas <strong>dados não são neutros</strong>. Eles refletem sociedade 
+                        estruturalmente racista.<br><br>
+                        <strong>Exemplo: drogas.</strong> Estudos mostram que brancos e negros usam drogas em 
+                        taxas similares. Mas prisões por posse de drogas? Negros são presos 3-6x mais (varia 
+                        por estado/país). Por quê? Polícia patrulha mais em bairros negros. Faz mais 
+                        abordagens. Encontra mais drogas (porque procura mais). Dados mostram "mais crime em 
+                        bairros negros". Algoritmo "aprende" associação. Reforça patrulhamento. Loop infinito.<br><br>
+                        <strong>Solução ingênua:</strong> "Vamos tirar raça do algoritmo." Não funciona. 
+                        Algoritmo usa proxies (CEP, renda, tipo de crime) que correlacionam fortemente com raça. 
+                        Sistema continua discriminatório, mas agora <em>mais opaco</em>.<br><br>
+                        <strong>Solução real:</strong> Não usar policiamento preditivo. Investir em serviços 
+                        sociais (educação, saúde, emprego) que <em>realmente</em> reduzem crime. Descriminalizar 
+                        drogas. Fim da Guerra às Drogas. Não dá pra algoritmizar a justiça em sociedade injusta.
+                    </p>
+                </div>
+            </div>
+
+            <h3>16.1.2 Brasil: Reconhecimento Facial e Genocídio Algorítmico</h3>
+            <p>No Brasil, policiamento preditivo ainda é incipiente, mas <strong>reconhecimento facial</strong> 
+                já é realidade distópica. Sistemas instalados em cidades como Rio de Janeiro, Salvador, São 
+                Paulo prometem "segurança inteligente". Na prática, funcionam como <strong>máquinas de 
+                criminalização de pessoas negras</strong>.</p>
+
+            <p>Casos documentados:</p>
+            <ul>
+                <li><strong>2019, Rio de Janeiro:</strong> Sistema de reconhecimento facial identifica 
+                    erroneamente homem negro como procurado. Ele é preso, passa 9 dias na cadeia, antes de 
+                    erro ser descoberto. Vários casos similares documentados por Rede de Observatórios da 
+                    Segurança.</li>
+                <li><strong>2020, Salvador:</strong> Mulher negra presa por reconhecimento facial falso 
+                    enquanto voltava de festa de aniversário. Ficou grávida na prisão (estupro por agente). 
+                    Depois se descobriu: não era a pessoa procurada.</li>
+                <li><strong>Padrão:</strong> Tecnologia tem taxa de erro muito maior para rostos negros 
+                    (estudos do MIT mostram erro 34% maior para mulheres negras vs homens brancos). Combinado 
+                    com policiamento racista, resultado é <strong>automação da injustiça</strong>.</li>
+            </ul>
+
+            <p>Mas o problema não é apenas técnico (taxa de erro). Mesmo se algoritmo fosse "perfeito", 
+                continua sendo ferramenta de <strong>vigilância de massa</strong> usada desproporcionalmente 
+                contra populações marginalizadas. Em sociedade que criminaliza pobreza e negritude, tecnologia 
+                "neutra" de vigilância <em>sempre</em> será usada para controle social.</p>
+            
+            <p>Conexão com Guerra às Drogas: jovem negro em favela carioca está sob vigilância de câmeras com 
+                reconhecimento facial 24/7. Qualquer movimento pode ser interpretado como "suspeito". Se for 
+                visto em "boca de fumo", pode ser preso preventivamente. Se tiver R$ 50 no bolso e 2g de 
+                maconha, é enquadrado como traficante (Lei 11.343/2006 deixa distinção usuário/traficante a 
+                critério policial). Enquanto isso, jovem branco de classe média compra drogas via Telegram, 
+                recebe em casa, sem qualquer risco de vigilância ou prisão. <strong>Farmácia de apartheid 
+                tecnológica.</strong></p>
+
             <p>Ao mesmo tempo, as redes sociais se tornam um palco para o <strong>pânico moral 2.0</strong>. A
                 crise dos opioides e do fentanil, por exemplo, é frequentemente retratada de forma a demonizar
                 os usuários e a justificar políticas de "lei e ordem", ignorando as causas estruturais da crise,
@@ -13685,6 +13793,105 @@
                 descentralizada, baseada em grupos e canais que conectam diretamente produtores, intermediários
                 e consumidores, novamente criando uma camada de segurança e conveniência para aqueles que têm o
                 capital social e digital para acessá-la.</p>
+            
+            <h3>16.2.1 A Arquitetura do Mercado Digital de Drogas</h3>
+            <p>Para entender como a plataformização transformou o tráfico, precisamos analisar a 
+                <strong>arquitetura técnica</strong> desses mercados. O Silk Road não era apenas um site; 
+                era um ecossistema cibernético completo que reimaginava cada componente da transação ilegal:</p>
+            
+            <div class="bio-box">
+                <div class="bio-icon">🔐</div>
+                <div class="bio-content">
+                    <div class="bio-title">As Três Camadas da Dark Web</div>
+                    <p style="font-size: 0.875rem; line-height: 1.6; margin-top: 0.5rem;">
+                        <strong>1. Surface Web (internet comum):</strong> Indexado por Google, acessível por qualquer 
+                        navegador. Representa apenas ~4% do conteúdo total da internet.<br>
+                        <strong>2. Deep Web:</strong> Conteúdo não indexado — bases de dados acadêmicas, intranets 
+                        corporativas, e-mails, contas bancárias. Legal, mas privado. ~90% da internet.<br>
+                        <strong>3. Dark Web:</strong> Redes sobrepostas (overlay networks) que exigem software 
+                        específico para acesso. A mais famosa é a <strong>Tor</strong> (The Onion Router), que 
+                        anonimiza usuários criptografando tráfego em múltiplas camadas. ~6% da internet. Nem todo 
+                        conteúdo é ilegal — há fóruns de dissidentes políticos, jornalismo em países autoritários, 
+                        mas também mercados de drogas, armas, dados roubados.
+                    </p>
+                </div>
+            </div>
+
+            <p>O Silk Road combinava três tecnologias para criar um <strong>mercado de confiança sem Estado</strong>:</p>
+            <ul>
+                <li><strong>Rede Tor:</strong> Anonimato para compradores e vendedores. Impossível rastrear IP.</li>
+                <li><strong>Bitcoin:</strong> Pagamento pseudônimo. Transações registradas em blockchain, mas 
+                    difíceis de associar a identidades reais (especialmente com "mixers" que embaralham moedas).</li>
+                <li><strong>Sistema de reputação:</strong> Avaliações de compradores funcionavam como 
+                    <em>enforcement</em> descentralizado. Vendedor com 5 estrelas = confiável. Vendedor com 
+                    reclamações de produto adulterado = banido pela comunidade.</li>
+            </ul>
+
+            <p>O resultado foi uma <strong>desintermediação radical</strong>. No mercado de rua, você precisa 
+                confiar em pessoas — seu dealer, o fornecedor dele, etc. No Silk Road, você confiava no 
+                <em>sistema</em>. O algoritmo de reputação substituía a necessidade de conhecer pessoalmente 
+                o vendedor. O escrow criptográfico garantia que o dinheiro só seria liberado após confirmação 
+                de entrega. Era, literalmente, a aplicação da cibernética de Wiener ao crime organizado.</p>
+
+            <h3>16.2.2 A Farsa da "Democratização"</h3>
+            <p>Ross Ulbricht, criador do Silk Road, justificava o projeto com retórica libertária: estava 
+                "libertando" o mercado de drogas da violência de cartéis e do controle estatal. Mas essa 
+                narrativa ignora uma questão fundamental: <strong>quem tem acesso?</strong></p>
+
+            <div class="bio-box" style="background: linear-gradient(135deg, rgba(220,38,38,0.08) 0%, rgba(239,68,68,0.12) 100%); border-left: 5px solid #dc2626;">
+                <div class="bio-icon">⚠️</div>
+                <div class="bio-content">
+                    <div class="bio-title">Barreiras de Entrada da "Farmácia Libertária"</div>
+                    <p style="font-size: 0.875rem; line-height: 1.6; margin-top: 0.5rem;">
+                        Para comprar no Silk Road, você precisava de:<br>
+                        <strong>1. Conhecimento técnico:</strong> Instalar Tor, configurar segurança, entender 
+                        PGP (criptografia de mensagens). Curva de aprendizado íngreme.<br>
+                        <strong>2. Capital inicial:</strong> Comprar Bitcoin (na época, exchanges exigiam conta 
+                        bancária + verificação). Mínimo ~US$ 50-100.<br>
+                        <strong>3. Endereço seguro:</strong> Receber encomenda sem risco de interceptação policial. 
+                        Casa própria ou apartamento alugado formalmente.<br>
+                        <strong>4. Literacia digital em inglês:</strong> Interface do site, reviews de produtos, 
+                        fóruns de segurança — tudo em inglês técnico.<br><br>
+                        <strong>Quem NÃO tinha acesso:</strong> Usuário de crack na cracolândia. Trabalhador 
+                        informal sem conta bancária. Jovem de favela sem computador pessoal. Imigrante 
+                        indocumentado. Pessoa em situação de rua. Ou seja, <em>exatamente as populações mais 
+                        vulneráveis à violência da Guerra às Drogas</em>.
+                    </p>
+                </div>
+            </div>
+
+            <p>O Silk Road não "democratizou" o acesso a drogas. Ele criou uma <strong>farmácia para a 
+                classe média educada do Norte Global</strong>. Estudantes universitários, programadores, 
+                profissionais liberais — pessoas com capital cultural e econômico suficiente para navegar 
+                a complexidade técnica. Enquanto isso, o jovem negro vendendo maconha na esquina continuava 
+                sendo alvo de policiamento militarizado. A tecnologia não eliminou a violência; apenas a 
+                <strong>realocou geograficamente e socialmente</strong>.</p>
+
+            <h3>16.2.3 Do Silk Road ao Telegram: A Plataformização Descentralizada</h3>
+            <p>Após o FBI desmantelar o Silk Road em 2013 (e prender Ulbricht, condenado a prisão perpétua), 
+                o mercado migrou. Surgiram dezenas de sucessores (AlphaBay, Hansa, Dream Market), todos 
+                eventualmente fechados. Mas a partir de 2015, uma nova arquitetura emergiu: o 
+                <strong>tráfico via apps de mensagens</strong>.</p>
+
+            <p>Telegram, WhatsApp e Signal, criados para comunicação privada legítima, foram apropriados 
+                como <strong>infraestrutura de mercado informal</strong>. A lógica:</p>
+            <ul>
+                <li><strong>Canais públicos:</strong> Vendedores criam canais com milhares de membros, postando 
+                    "cardápios" (fotos de produtos, preços, disponibilidade). Funciona como vitrine.</li>
+                <li><strong>Mensagens privadas:</strong> Negociação individual. Cliente envia pedido, vendedor 
+                    confirma endereço, pagamento via Pix/transferência/cripto.</li>
+                <li><strong>Grupos fechados:</strong> Comunidades de "redução de danos" onde usuários compartilham 
+                    informações sobre pureza, dosagem, adulterações. Testagem caseira com reagentes químicos.</li>
+            </ul>
+
+            <p>Esse modelo tem vantagens sobre a dark web: <strong>mais acessível</strong> (qualquer pessoa 
+                com smartphone), <strong>mais rápido</strong> (entrega no mesmo dia, tipo iFood), 
+                <strong>mais social</strong> (comunidades de usuários, não apenas transações anônimas). 
+                Mas mantém a mesma lógica de <strong>apartheid</strong>: quem tem capital cultural para 
+                encontrar os canais certos, capital social para obter convites a grupos fechados, e capital 
+                econômico para pagar preços premium (produto testado, entrega discreta) acessa um mercado 
+                relativamente seguro. Quem não tem, volta para a boca de fumo, onde a violência policial e 
+                de facções é constante.</p>
             <h2>16.3 O Complexo Industrial-Terapêutico: A Medicalização para os Ricos</h2>
             <p>Enquanto a guerra e a repressão continuam para os pobres, a elite assiste à ascensão do que
                 podemos chamar de <strong>complexo industrial-terapêutico</strong>: a legalização e
@@ -13713,12 +13920,95 @@
                         estigmatiza e mata.</p>
                 </div>
             </div>
-            <p>A <strong>telemedicina</strong> acelera esse processo. Plataformas online prometem conectar
-                pacientes a médicos que podem prescrever antidepressivos, ansiolíticos e estimulantes após uma
-                breve consulta por vídeo. A conveniência para as classes mais altas, que podem pagar por essas
-                consultas e medicamentos, é inegável. No entanto, esse modelo cria enormes riscos de diagnóstico
-                incorreto, abuso de substâncias e falta de acompanhamento terapêutico adequado, transformando a
-                farmácia em um serviço de entrega rápido.</p>
+
+            <h3>16.3.1 A Economia Política dos Psicodélicos</h3>
+            <p>O "renascimento psicodélico" é frequentemente apresentado como uma revolução científica — e, 
+                em parte, é. Estudos clínicos mostram que psilocibina, MDMA e ayahuasca podem ter eficácia 
+                terapêutica para depressão resistente, PTSD e dependência química. Mas essa revolução científica 
+                está sendo capturada por uma <strong>revolução capitalista</strong> que transforma plantas 
+                medicinais milenares em commodities patenteáveis de US$ 10 mil por dose.</p>
+
+            <div class="bio-box">
+                <div class="bio-icon">💰</div>
+                <div class="bio-content">
+                    <div class="bio-title">Quem Lucra com o Renascimento Psicodélico?</div>
+                    <p style="font-size: 0.875rem; line-height: 1.6; margin-top: 0.5rem;">
+                        <strong>COMPASS Pathways:</strong> Startup britânica que patenteou uma formulação 
+                        sintética de psilocibina. IPO em 2020 levantou US$ 127 milhões. Fundador: George Goldsmith 
+                        (ex-executivo de private equity). Maior acionista: Peter Thiel (bilionário libertário 
+                        do PayPal).<br><br>
+                        <strong>MAPS (Multidisciplinary Association for Psychedelic Studies):</strong> ONG que 
+                        financiou pesquisas com MDMA para PTSD por décadas. Criou subsidiária com fins lucrativos 
+                        (MAPS PBC) para comercializar tratamento. Custo estimado: US$ 15-20 mil por paciente.<br><br>
+                        <strong>Atai Life Sciences:</strong> Holding de biotecnologia que controla múltiplas 
+                        startups psicodélicas. Fundador: Christian Angermayer (investidor alemão). IPO em 2021: 
+                        US$ 225 milhões. Portfólio inclui cetamina, DMT, ibogaína.<br><br>
+                        <strong>Field Trip Health:</strong> Rede de clínicas de cetamina no Canadá/EUA. Modelo: 
+                        "Starbucks dos psicodélicos". Sessão: US$ 750-1.500. Cliente-alvo: executivos estressados.<br><br>
+                        <strong>Padrão:</strong> Capital de risco → pesquisa clínica → patente → IPO → 
+                        monetização via terapia de luxo. Conhecimento indígena/contracultural = matéria-prima 
+                        gratuita. Lucro = privado. Acesso = restrito a quem pode pagar.
+                    </p>
+                </div>
+            </div>
+
+            <p>A contradição é gritante: <strong>psilocibina</strong>, composto presente em cogumelos que 
+                crescem naturalmente em todos os continentes, está sendo patenteada por startups como 
+                "invenção". Povos indígenas usam essas substâncias há milênios em contextos rituais e 
+                terapêuticos, mas não recebem crédito, compensação ou acesso aos tratamentos "revolucionários" 
+                derivados de seu conhecimento.</p>
+
+            <h3>16.3.2 Telemedicina como Farmácia Express</h3>
+            <p>A <strong>telemedicina</strong> acelera esse processo de medicalização. Plataformas online prometem 
+                conectar pacientes a médicos que podem prescrever antidepressivos, ansiolíticos e estimulantes 
+                após uma breve consulta por vídeo. A conveniência para as classes mais altas, que podem pagar por 
+                essas consultas e medicamentos, é inegável. No entanto, esse modelo cria enormes riscos de 
+                diagnóstico incorreto, abuso de substâncias e falta de acompanhamento terapêutico adequado, 
+                transformando a farmácia em um serviço de entrega rápido.</p>
+
+            <p>Exemplos do mercado brasileiro e americano:</p>
+            <ul>
+                <li><strong>Cerebral (EUA):</strong> App de "saúde mental" que explodiu na pandemia. Prometia 
+                    receita de Adderall/Ritalina após consulta de 30min por vídeo. Investigado pela DEA em 2022 
+                    por prescrição excessiva e negligente. CEO renunciou. Empresa admitiu falhas.<br>
+                    <em>Modelo de negócio:</em> Assinatura mensal (US$ 85) + medicamento. Quanto mais 
+                    receitas, mais lucro. Incentivo estrutural ao overdiagnosis de TDAH.</li>
+                <li><strong>Lemonaid/Hims/Hers (EUA):</strong> Plataformas de telemedicina para "bem-estar". 
+                    Vendem receitas de sildenafil (Viagra), finasterida (queda de cabelo), fluoxetina 
+                    (antidepressivo). Consulta online em 15min. Remédio chega em 2 dias.<br>
+                    <em>Problema:</em> Médico nunca vê paciente presencialmente. Interações medicamentosas? 
+                    Comorbidades? Terapia não-farmacológica? Ignoradas. Farmácia se torna <strong>vending 
+                    machine controlada</strong>.</li>
+                <li><strong>Vittude/Zenklub (Brasil):</strong> Apps de terapia online. Modelo inicial: conectar 
+                    psicólogos a pacientes. Evolução: adicionar psiquiatras para prescrição. Risco: transformar 
+                    terapia em "pipeline para receita". Paciente busca escuta, sai com Rivotril.</li>
+            </ul>
+
+            <div class="bio-box" style="background: linear-gradient(135deg, rgba(220,38,38,0.08) 0%, rgba(239,68,68,0.12) 100%); border-left: 5px solid #dc2626;">
+                <div class="bio-icon">⚠️</div>
+                <div class="bio-content">
+                    <div class="bio-title">A Epidemia de Opioides: Quando a Indústria Farmacêutica é o Cartel</div>
+                    <p style="font-size: 0.875rem; line-height: 1.6; margin-top: 0.5rem;">
+                        A crise de opioides nos EUA mata ~100 mil pessoas/ano desde 2020. Não foi acidente; foi 
+                        <strong>campanha de marketing criminosa</strong>.<br><br>
+                        <strong>1996:</strong> Purdue Pharma lança OxyContin (oxicodona). Marketing agressivo para 
+                        médicos: "menos de 1% dos pacientes viciam" (mentira deliberada baseada em carta mal 
+                        interpretada no NEJM). Bônus para representantes que aumentassem prescrições.<br><br>
+                        <strong>2000s:</strong> Médicos prescrevem opioides para dor crônica como se fossem 
+                        aspirina. Pacientes viciam. Quando receita acaba, migram para heroína (mais barata) ou 
+                        fentanil (mais potente). Overdoses explodem.<br><br>
+                        <strong>2007:</strong> Purdue admite "propaganda enganosa" em acordo judicial. Paga multa 
+                        de US$ 600 milhões. Continua vendendo OxyContin.<br><br>
+                        <strong>2020:</strong> Purdue declara falência, aceitando pagar US$ 8 bilhões. Família 
+                        Sackler (donos) mantém fortuna pessoal de US$ 10 bilhões. <strong>Ninguém foi preso.</strong><br><br>
+                        <strong>Lição:</strong> Quando corporação causa epidemia de dependência, é "crise de saúde 
+                        pública". Quando jovem de favela vende droga, é "tráfico". Química pode ser a mesma 
+                        (oxicodona ≈ heroína), mas <em>o tratamento legal depende de quem lucra</em>.
+                    </p>
+                </div>
+            </div>
+
+            <h3>16.3.3 Apropriação Cultural como Extrativismo Epistêmico</h3>
             <p>Este fenômeno também envolve uma profunda <strong>apropriação cultural</strong>. Conhecimentos
                 milenares de povos indígenas sobre o uso de plantas psicoativas, como a ayahuasca, são
                 extraídos, mercantilizados e vendidos como "experiências de bem-estar" em retiros de luxo para
@@ -13726,6 +14016,58 @@
                 substância é reembalada como uma ferramenta para a otimização pessoal e o alívio do estresse da
                 vida corporativa. A mesma planta que é sagrada para um povo indígena pode levar um jovem da
                 periferia à prisão.</p>
+
+            <p>Exemplos concretos desse <strong>extrativismo epistêmico</strong>:</p>
+            <ul>
+                <li><strong>Ayahuasca de US$ 10 mil:</strong> Retiros no Peru/Brasil voltados para executivos 
+                    do Vale do Silício. "Jornada de autodescoberta" em 5 dias. Resort com wifi, comida orgânica, 
+                    yoga matinal. Cerimônia com "xamã autêntico" (frequentemente mestiço urbano sem conexão real 
+                    com tradição). Cliente volta para San Francisco, post no LinkedIn sobre "liderança 
+                    visionária". Comunidade indígena que manteve conhecimento? Zero compensação.<br>
+                    <em>Ayahuasca (Banisteriopsis caapi + Psychotria viridis)</em> é sacramento em religiões 
+                    como Santo Daime, UDV, e práticas de povos amazônicos. Não é "droga recreativa"; é tecnologia 
+                    espiritual inserida em cosmologia específica. Extraí-la desse contexto = violência 
+                    epistêmica.</li>
+                <li><strong>Kambo (Phyllomedusa bicolor):</strong> Secreção de sapo usada por povos indígenas 
+                    da Amazônia em rituais de purificação. Agora vendida em clínicas de "biohacking" em Los 
+                    Angeles (US$ 150/sessão) como "detox natural" e "boost imunológico". Ciência real? Duvidosa. 
+                    Benefício para povos Katukina/Yawanawá? Zero.</li>
+                <li><strong>Rapé (tabaco + cinzas de plantas):</strong> Medicina tradicional de diversos povos 
+                    amazônicos. Vendido em lojas esotéricas de Berlim/Amsterdam para "expansão de consciência". 
+                    Embalagem exótica, narrativa romantizada, preço 1000% acima do valor local. Povos indígenas 
+                    viram fornecedores precarizados de matéria-prima para mercado de luxo.</li>
+            </ul>
+
+            <div class="bio-box">
+                <div class="bio-icon">🌿</div>
+                <div class="bio-content">
+                    <div class="bio-title">O Que É Apropriação Cultural no Contexto de Plantas Medicinais?</div>
+                    <p style="font-size: 0.875rem; line-height: 1.6; margin-top: 0.5rem;">
+                        Apropriação cultural ocorre quando elementos de uma cultura (especialmente de povos 
+                        marginalizados/colonizados) são extraídos e usados por grupo dominante sem permissão, 
+                        compreensão ou compensação. No caso de plantas psicoativas:<br><br>
+                        <strong>1. Descontextualização:</strong> Planta é separada de seu contexto ritual, 
+                        espiritual, comunitário. Ayahuasca não é só DMT + IMAO; é cerimônia, cantos, cosmologia, 
+                        transmissão de conhecimento. Reduzir a química = reduzir Eucaristia a "vinho + pão".<br><br>
+                        <strong>2. Mercantilização:</strong> Conhecimento mantido por gerações sem fins lucrativos 
+                        é transformado em commodity. "Xamã" vira prestador de serviço; planta vira produto.<br><br>
+                        <strong>3. Apagamento:</strong> Origem indígena é romantizada ("sabedoria ancestral") mas 
+                        comunidades reais são invisibilizadas. Cliente paga resort de luxo; indígenas recebem 
+                        migalhas ou nada.<br><br>
+                        <strong>4. Duplo padrão legal:</strong> Executivo branco tomando ayahuasca em retiro = 
+                        "wellness". Indígena vendendo mesma planta = risco de prisão por tráfico (em países onde 
+                        DMT é ilegal). <a href="#cap-26" style="color: #059669; text-decoration: underline;">Cap 26</a> 
+                        (Nhandereko) aprofunda crítica ao extrativismo epistêmico.
+                    </p>
+                </div>
+            </div>
+
+            <p>A questão não é que não-indígenas não devam ter acesso a essas medicinas. A questão é 
+                <strong>como</strong> esse acesso ocorre. Modelo atual: extrativista, não-recíproco, 
+                desrespeitoso. Alternativa: <strong>co-gestão</strong> de conhecimento, com povos indígenas 
+                decidindo termos de uso, recebendo compensação justa, mantendo autoridade epistêmica. Modelo 
+                inspirado em <strong>Nhandereko</strong> (Cap 26): conhecimento como bem comum relacional, 
+                não como propriedade privada.</p>
             <h2>Conclusão: Libertação ou Apartheid?</h2>
             <p>A análise da farmácia global digital revela a hipocrisia central da nossa relação com as drogas.
                 A tecnologia não é uma força neutra que está simplesmente "conectando" pessoas a substâncias.

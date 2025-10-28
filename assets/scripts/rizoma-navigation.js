@@ -11,6 +11,25 @@
  * - Sem estrutura arbórea
  * 
  * CHANGELOG:
+ * - 2025-10-28 (v13): Expansão massiva do Capítulo 16 (Farmácia Global e Guerra às Drogas Digital)
+ *   + 40+ novos conceitos: farmácia de apartheid, guerra às drogas, policiamento preditivo, complexo industrial-terapêutico
+ *   + Guerra às Drogas: Nixon/Ehrlichman, racismo estrutural, encarceramento massa, genocídio juventude negra
+ *   + Policiamento preditivo: PredPol, HunchLab, loop feedback vicioso, Chicago Heat List (400k pessoas, 0.3% acerto)
+ *   + Reconhecimento facial Brasil: RJ, Salvador, SP — taxa erro 34% maior para negros, prisões erradas, automação injustiça
+ *   + Racismo algorítmico: discriminação codificada em software, dados históricos = viés, legitimação matemática
+ *   + Profecia autorrealizável: vigilância aumenta probabilidade prisão, sistema cria realidade que afirma prever
+ *   + Silk Road (2011-2013): dark web, Tor + Bitcoin, redução danos seletiva (elite branca Norte Global), Ross Ulbricht
+ *   + Telegram/WhatsApp: mercado descentralizado, canais/grupos/mensagens, mais acessível, mantém apartheid
+ *   + Complexo industrial-terapêutico: medicalização para ricos, psicodélicos de luxo, telemedicina express
+ *   + Renascimento psicodélico corporativo: COMPASS Pathways, Peter Thiel, Atai, Field Trip, patentes US$ 10-20 mil/dose
+ *   + Telemedicina express: Cerebral (escândalo Adderall), Hims/Hers, Vittude/Zenklub, farmácia vending machine
+ *   + Epidemia opioides: Purdue Pharma/Sackler, OxyContin, ~100k mortes/ano, multa US$ 8bi mas ninguém preso
+ *   + Apropriação cultural: ayahuasca US$ 10 mil, kambo biohacking, rapé Amsterdam, extrativismo epistêmico
+ *   + Redução danos universal: Portugal 2001 (mortes -85%, HIV -90%), salas uso supervisionado, testagem, naloxona
+ *   + Políticas drogas radical: descriminalização + redução danos + legalização regulada + reparação histórica
+ *   + Conexões: Caps 3 (gerenciamento algorítmico), 13 (sex work), 14 (vício), 20-21 (Sul Global), 22 (necropolítica), 26 (Nhandereko)
+ *   Total: ~750 conceitos mapeados
+ * 
  * - 2025-10-28 (v12): Expansão massiva do Capítulo 15 (Corpo-Atleta na Arena Digital: Plataformização de Esportes e Esports)
  *   + 80+ novos conceitos: datificação corporal, esports como trabalho, torcedor-produtor, necropolítica esportiva
  *   + Datificação do corpo-atleta: wearables, tirania da métrica, panóptico esportivo, atleta quantificado
@@ -4634,6 +4653,236 @@ const conceptGraph = {
         name: 'Esporte Comunitário Não-Plataformizado',
         description: 'Várzea, LAN parties, Right to Play — prática fora da lógica performance/lucro, memória de que jogo nos pertence',
         connections: ['resistencia-plataformas', 'comum', 'nhandereko', 'varzea-invisivel'],
+        color: '#22c55e',
+        layer: 1
+    },
+
+    // ========================================
+    // CAPÍTULO 16: FARMÁCIA GLOBAL E GUERRA ÀS DROGAS DIGITAL
+    // ========================================
+    'farmacia-apartheid': {
+        name: 'Farmácia de Apartheid',
+        description: 'Sistema onde acesso, qualidade e status legal de substâncias dependem radicalmente de classe e raça — CEO microdosando LSD é inovador, jovem negro vendendo maconha é criminoso',
+        connections: ['guerra-drogas', 'policiamento-preditivo', 'complexo-industrial-terapeutico', 'reducao-danos-seletiva', 'necropolitica'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'guerra-drogas': {
+        name: 'Guerra às Drogas',
+        description: 'Política de proibição iniciada nos anos 70 (Nixon) — nunca foi sobre drogas, sempre sobre controle de populações racializadas (negros, latinos). Encarceramento em massa, militarização, genocídio',
+        connections: ['farmacia-apartheid', 'policiamento-preditivo', 'racismo-algoritmico', 'necropolitica', 'ehrlichman-quote'],
+        color: '#dc2626',
+        layer: -1
+    },
+    'ehrlichman-quote': {
+        name: 'Confissão de Ehrlichman (Nixon)',
+        description: '"Não podíamos tornar ilegal ser negro ou hippie, mas ao associar negros à heroína e hippies à maconha, e criminalizá-las, poderíamos desorganizar essas comunidades." (Assessor de Nixon, admitindo racismo estrutural da Guerra às Drogas)',
+        connections: ['guerra-drogas', 'racismo-algoritmico', 'policiamento-preditivo'],
+        color: '#dc2626',
+        layer: -1
+    },
+    'policiamento-preditivo': {
+        name: 'Policiamento Preditivo',
+        description: 'Algoritmos (PredPol, HunchLab) que "preveem" crimes usando dados históricos — aprende viés policial como se fosse verdade, reforça patrulhamento em bairros negros, cria loop de feedback vicioso',
+        connections: ['guerra-drogas', 'racismo-algoritmico', 'loop-feedback-vicioso', 'chicago-heat-list', 'gerenciamento-algoritmico'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'loop-feedback-vicioso': {
+        name: 'Loop de Feedback Vicioso (Policiamento)',
+        description: 'Algoritmo manda polícia para bairro X → mais prisões em X → mais dados "confirmando" que X é perigoso → mais policiamento → loop infinito. Discriminação ganha verniz de objetividade matemática',
+        connections: ['policiamento-preditivo', 'racismo-algoritmico', 'viés-algoritmico', 'profecia-autorrealizavel'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'chicago-heat-list': {
+        name: 'Chicago Heat List (2013-2019)',
+        description: '400 mil pessoas colocadas em "lista de risco de violência" baseada em algoritmo. Taxa de acerto: 0,3%. 99,7% falsos positivos. Maioria negros/latinos. Descontinuada em 2019 após pressão de movimentos',
+        connections: ['policiamento-preditivo', 'loop-feedback-vicioso', 'profecia-autorrealizavel', 'racismo-algoritmico'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'reconhecimento-facial-brasil': {
+        name: 'Reconhecimento Facial no Brasil',
+        description: 'Sistemas instalados em RJ, Salvador, SP — taxa de erro 34% maior para negros. Prisões erradas documentadas (homem RJ 9 dias preso, mulher Salvador estuprada na cadeia). Automação da injustiça racial',
+        connections: ['policiamento-preditivo', 'racismo-algoritmico', 'necropolitica', 'farmacia-apartheid'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'racismo-algoritmico': {
+        name: 'Racismo Algorítmico',
+        description: 'Discriminação racial codificada em software — dados históricos refletem séculos de racismo, IA aprende viés como padrão, legitima com aparência científica. Não é bug, é feature do sistema',
+        connections: ['policiamento-preditivo', 'loop-feedback-vicioso', 'viés-algoritmico', 'guerra-drogas', 'reconhecimento-facial-brasil'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'profecia-autorrealizavel': {
+        name: 'Profecia Autorrealizável',
+        description: 'Aumentar vigilância sobre alguém aumenta probabilidade de prisão (qualquer infração menor vira crime). Sistema cria realidade que afirma prever — cibernética perversa',
+        connections: ['loop-feedback-vicioso', 'policiamento-preditivo', 'chicago-heat-list'],
+        color: '#dc2626',
+        layer: 0
+    },
+
+    // Silk Road e Mercados Digitais
+    'silk-road': {
+        name: 'Silk Road (2011-2013)',
+        description: 'Mercado dark web que aplicou lógica e-commerce ao tráfico — avaliações, escrow, testagem comunitária. Criou redução de danos privatizada para elite branca do Norte Global',
+        connections: ['reducao-danos-seletiva', 'dark-web', 'tor-bitcoin', 'ross-ulbricht', 'farmacia-apartheid'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'dark-web': {
+        name: 'Dark Web',
+        description: 'Redes sobrepostas (overlay networks) que exigem software específico para acesso — Tor (The Onion Router) anonimiza tráfego. ~6% da internet. Nem tudo é ilegal, mas inclui mercados de drogas',
+        connections: ['silk-road', 'tor-bitcoin', 'telegram-whatsapp-trafico'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'tor-bitcoin': {
+        name: 'Tor + Bitcoin = Anonimato',
+        description: 'Combinação de rede Tor (anonimato de identidade) + Bitcoin (pagamento pseudônimo) criou infraestrutura de mercado sem Estado — confiança via algoritmo, não pessoas',
+        connections: ['silk-road', 'dark-web', 'reducao-danos-seletiva'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'ross-ulbricht': {
+        name: 'Ross Ulbricht',
+        description: 'Criador do Silk Road, preso em 2013, condenado a prisão perpétua (2 perpétuas + 40 anos). Justificava com retórica libertária, mas sistema beneficiou principalmente elite branca',
+        connections: ['silk-road', 'reducao-danos-seletiva'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'telegram-whatsapp-trafico': {
+        name: 'Telegram/WhatsApp como Mercado',
+        description: 'Apps de mensagens apropriados como infraestrutura de tráfico — canais públicos (vitrine), grupos fechados (testagem/redução de danos), mensagens privadas (pedido). Mais acessível que dark web, mantém apartheid',
+        connections: ['silk-road', 'dark-web', 'reducao-danos-seletiva', 'farmacia-apartheid'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'reducao-danos-seletiva': {
+        name: 'Redução de Danos Seletiva',
+        description: 'Silk Road/Telegram oferecem segurança (testagem, pureza) para quem tem capital técnico/social — violência da proibição empurrada para produtores do Sul e varejistas de periferia. Apartheid se mantém',
+        connections: ['silk-road', 'telegram-whatsapp-trafico', 'farmacia-apartheid', 'reducao-danos-universal'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'reducao-danos-universal': {
+        name: 'Redução de Danos Universal',
+        description: 'Abordagem de saúde pública: troca de seringas, salas de uso supervisionado, testagem de substâncias, distribuição naloxona — trata usuário com dignidade. Portugal (2001): mortes por overdose -85%, HIV -90%',
+        connections: ['reducao-danos-seletiva', 'descriminalizacao-portugal', 'farmacia-apartheid', 'politicas-drogas-radical'],
+        color: '#22c55e',
+        layer: 1
+    },
+
+    // Complexo Industrial-Terapêutico
+    'complexo-industrial-terapeutico': {
+        name: 'Complexo Industrial-Terapêutico',
+        description: 'Aliança indústria farmacêutica + biotecnologia + bem-estar para medicalizar/mercantilizar substâncias psicoativas — psilocibina de US$ 10 mil/dose, cetamina "Starbucks dos psicodélicos"',
+        connections: ['farmacia-apartheid', 'renascimento-psicodelico', 'telemedicina-express', 'apropiacao-cultural-plantas'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'renascimento-psicodelico': {
+        name: 'Renascimento Psicodélico Corporativo',
+        description: 'Startups (COMPASS, Atai, Field Trip) patenteiam compostos de plantas milenares — IPOs milionários, tratamento US$ 10-20 mil, acesso restrito a elite. Conhecimento indígena = matéria-prima gratuita',
+        connections: ['complexo-industrial-terapeutico', 'compass-pathways', 'apropiacao-cultural-plantas', 'peter-thiel-psicodelicos'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'compass-pathways': {
+        name: 'COMPASS Pathways',
+        description: 'Startup britânica que patenteou psilocibina sintética. IPO 2020: US$ 127 milhões. Fundador: George Goldsmith (ex-private equity). Maior acionista: Peter Thiel (bilionário libertário)',
+        connections: ['renascimento-psicodelico', 'peter-thiel-psicodelicos', 'complexo-industrial-terapeutico'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'peter-thiel-psicodelicos': {
+        name: 'Peter Thiel + Psicodélicos',
+        description: 'Bilionário do PayPal investe pesado em biotecnologia psicodélica (COMPASS, Atai) — aplica lógica Vale do Silício (patentes, IPOs, rentismo) a conhecimento milenar de povos indígenas',
+        connections: ['compass-pathways', 'renascimento-psicodelico', 'apropiacao-cultural-plantas'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'telemedicina-express': {
+        name: 'Telemedicina como Farmácia Express',
+        description: 'Apps (Cerebral, Hims/Hers, Vittude/Zenklub) prescrevem Adderall/Rivotril após consulta 15-30min — risco de overdiagnosis, abuso, falta acompanhamento. Farmácia vira vending machine',
+        connections: ['complexo-industrial-terapeutico', 'cerebral-adderall', 'farmacia-apartheid'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'cerebral-adderall': {
+        name: 'Cerebral (Escândalo 2022)',
+        description: 'App de "saúde mental" que prescrevia Adderall/Ritalina excessivamente via telemedicina. Investigado pela DEA. CEO renunciou. Modelo: assinatura mensal + medicamento = incentivo a overdiagnosis de TDAH',
+        connections: ['telemedicina-express', 'complexo-industrial-terapeutico'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'epidemia-opioides': {
+        name: 'Epidemia de Opioides (EUA)',
+        description: '~100 mil mortes/ano desde 2020. Purdue Pharma (OxyContin) mentiu "menos de 1% vicia", pagou bônus por prescrições, criou epidemia. Multa US$ 8 bi, família Sackler mantém US$ 10 bi. Ninguém preso',
+        connections: ['purdue-pharma-sackler', 'complexo-industrial-terapeutico', 'farmacia-apartheid'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'purdue-pharma-sackler': {
+        name: 'Purdue Pharma / Família Sackler',
+        description: 'Fabricante de OxyContin. Marketing criminoso causou epidemia opioides. Declara falência 2020, paga US$ 8 bi. Família Sackler (donos) mantém fortuna pessoal US$ 10 bi. Quando corporação causa epidemia de dependência, é "crise de saúde pública". Quando jovem de favela vende droga, é "tráfico"',
+        connections: ['epidemia-opioides', 'farmacia-apartheid', 'complexo-industrial-terapeutico'],
+        color: '#dc2626',
+        layer: 0
+    },
+
+    // Apropriação Cultural
+    'apropiacao-cultural-plantas': {
+        name: 'Apropriação Cultural de Plantas Medicinais',
+        description: 'Conhecimento milenar indígena (ayahuasca, kambo, rapé) extraído, mercantilizado, vendido como "bem-estar" para elite — contexto ritual/espiritual apagado, povos originários não compensados',
+        connections: ['complexo-industrial-terapeutico', 'renascimento-psicodelico', 'ayahuasca-10mil', 'extrativismo-epistemico', 'nhandereko'],
+        connections: ['ayahuasca-10mil', 'kambo-biohacking', 'rape-amsterdam', 'extrativismo-epistemico'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'ayahuasca-10mil': {
+        name: 'Ayahuasca de US$ 10 mil',
+        description: 'Retiros Peru/Brasil para executivos do Vale do Silício — 5 dias, resort, wifi, yoga, "xamã autêntico" (sem conexão real com tradição). Cliente volta, post LinkedIn sobre "liderança visionária". Comunidade indígena? Zero compensação',
+        connections: ['apropiacao-cultural-plantas', 'complexo-industrial-terapeutico', 'extrativismo-epistemico'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'kambo-biohacking': {
+        name: 'Kambo Biohacking',
+        description: 'Secreção de sapo amazônico usada em rituais de purificação indígenas — vendida em clínicas Los Angeles (US$ 150/sessão) como "detox/boost imunológico". Ciência duvidosa. Povos Katukina/Yawanawá? Zero benefício',
+        connections: ['apropiacao-cultural-plantas', 'extrativismo-epistemico'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'rape-amsterdam': {
+        name: 'Rapé em Lojas Esotéricas',
+        description: 'Tabaco + cinzas de plantas (medicina tradicional amazônica) — vendido em Berlim/Amsterdam para "expansão de consciência". Preço 1000% acima do valor local. Povos indígenas = fornecedores precarizados',
+        connections: ['apropiacao-cultural-plantas', 'extrativismo-epistemico'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'extrativismo-epistemico': {
+        name: 'Extrativismo Epistêmico',
+        description: 'Extração de conhecimento de povos marginalizados sem permissão/compensação — descontextualização, mercantilização, apagamento, duplo padrão legal. Violência epistêmica = colonialismo digital',
+        connections: ['apropiacao-cultural-plantas', 'ayahuasca-10mil', 'kambo-biohacking', 'rape-amsterdam', 'nhandereko'],
+        color: '#dc2626',
+        layer: 0
+    },
+
+    // Resistências e Alternativas
+    'descriminalizacao-portugal': {
+        name: 'Descriminalização em Portugal (2001)',
+        description: 'Todas as drogas descriminalizadas. Resultado: mortes por overdose -85%, infecções HIV -90%, uso problemático -50%. FUNCIONA. Trata usuário com dignidade, investe em saúde pública',
+        connections: ['reducao-danos-universal', 'politicas-drogas-radical', 'farmacia-apartheid'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'politicas-drogas-radical': {
+        name: 'Políticas de Drogas Radicalmente Diferentes',
+        description: 'Descriminalização total + redução de danos universal + legalização regulada (não via mercado, via distribuição pública/cooperativa) + reparação histórica (anistia, indenização, investimento periferia)',
+        connections: ['descriminalizacao-portugal', 'reducao-danos-universal', 'farmacia-apartheid', 'guerra-drogas'],
         color: '#22c55e',
         layer: 1
     }
