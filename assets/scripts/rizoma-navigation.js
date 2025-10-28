@@ -11,6 +11,31 @@
  * - Sem estrutura arbórea
  * 
  * CHANGELOG:
+ * - 2025-10-28 (v17): Expansão massiva do Capítulo 20 (Guerra das Redes: Geopolítica Cibernética)
+ *   + 50+ novos conceitos: arquitetura império do dólar, SWIFT, CIPS, SPFS, BRICS Pay, infraestrutura física
+ *   + Privilégio exorbitante: déficit US$ 1 tri/ano sustentável, 88% transações globais envolvem dólar, 59% reservas mundiais
+ *   + Petrodólar: acordo Nixon-Saud 1974, petróleo vendido apenas em dólares, demanda artificial permanente
+ *   + SWIFT: 11.000 bancos, 44,8 milhões mensagens/dia, formalmente neutro mas arma geopolítica americana
+ *   + Sanções russas 2022: 7 bancos desconectados SWIFT, rublo -30% em 1 semana, US$ 300 bi reservas congeladas
+ *   + CIPS chinês: 1.444 participantes em 109 países, US$ 98 tri/ano volume, 2-3% reservas globais yuan (vs 59% dólar)
+ *   + SPFS russo: 556 participantes (20 países), 2,5 milhões mensagens/dia, custo 10x menor que SWIFT, lento mas funcional
+ *   + BRICS Pay: integração Pix/UPI/FPS/Alipay, arquitetura federada 4 camadas, 3,5 bilhões pessoas (45% humanidade)
+ *   + Desafios BRICS: divergência interesses China/Rússia/Índia, volatilidade cambial, pressão EUA (sanções secundárias)
+ *   + Lei Ashby geopolítica: sistema unipolar = baixa variedade (controle EUA), multipolar = alta variedade (resiliência BRICS)
+ *   + VSM geopolítico: S1 (operações bancos), S2 (coordenação SWIFT/BRICS Pay), S3 (controle Tesouro EUA/Bancos Centrais), S4 (inteligência FMI/Novo Banco), S5 (política hegemonia vs multipolaridade)
+ *   + Cabos submarinos: 530 cabos, 1,4 milhão km, 99% tráfego internet, Google 33 cabos, Meta 17, Amazon 14, China 25 (Rota Seda Digital)
+ *   + Sul-Sul subdesenvolvido: ZERO cabos diretos África-LATAM, tráfego passa por EUA/Europa, latência +200ms
+ *   + Espionagem NSA: programa TEMPORA (UK), copia TODO tráfego cabos britânicos, Snowden revelou 2013
+ *   + Starlink: 5.500 satélites (60% de todos satélites órbita), meta 42.000 até 2027, 2,6 milhões assinantes, latência 20-40ms
+ *   + Uso militar Starlink: Ucrânia (20 mil terminais doados Musk), Taiwan (recusado por Musk teme China), controle privado infraestrutura crítica
+ *   + Alternativas satélites: Guowang chinês (13.000 satélites até 2030), Sfera russo (640), IRIS² UE (290, €6 bi), ISRO Índia (200)
+ *   + Data centers: AWS 32% mercado global (US$ 90 bi/ano), Azure 23%, Google Cloud 11%, Big 3 = 66% processamento mundial
+ *   + CLOUD Act 2018: EUA pode requisitar dados de empresas americanas MESMO fora território americano, viola GDPR europeia
+ *   + Brasil 70% dados em nuvens americanas, LGPD exige dados sensíveis no Brasil mas infraestrutura pública insuficiente
+ *   + Soberania digital: cabos Sul-Sul, data centers públicos regionais, constelações satélites próprias — custo US$ 200-500 bi em 15 anos
+ *   + Desdolarização: não banir dólar, mas torná-lo redundante/opcional — começar nicho (intra-BRICS) e expandir via efeito rede
+ *   Total: ~960 conceitos mapeados
+ * 
  * - 2025-10-28 (v16): Expansão massiva do Capítulo 19 (Outros Experimentos e a Nova Fronteira do Planejamento)
  *   + 50+ novos conceitos: autogestão iugoslava, Período Especial Cuba, crédito social, cooperativismo de plataforma
  *   + Iugoslávia (1950-1991): Tito, cisma com Stalin 1948, samoupravljanje (autogestão), propriedade social
@@ -5764,6 +5789,227 @@ const conceptGraph = {
         connections: ['coordenacao-distribuida', 'cooperativismo-plataforma'],
         color: '#22c55e',
         layer: 1
+    },
+
+    // ========================================
+    // CAPÍTULO 20: GUERRA DAS REDES - GEOPOLÍTICA CIBERNÉTICA
+    // ========================================
+    'privilegio-exorbitante': {
+        name: 'Privilégio Exorbitante do Dólar',
+        description: 'Valéry Giscard d\'Estaing (1960s): vantagem estrutural EUA por emitir moeda reserva global. 88% transações envolvem dólar, 59% reservas mundiais. EUA imprime dólares para pagar déficit US$ 1 tri/ano sem sofrer inflação (exportada ao mundo)',
+        connections: ['petrodolar', 'swift', 'desdolarizacao', 'imperio-dolar'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'petrodolar': {
+        name: 'Petrodólar',
+        description: 'Acordo Nixon-Saud (1974): petróleo vendido APENAS em dólares. Criou demanda artificial permanente pela moeda americana. Petróleo = commodity mais comercializada (US$ 2 tri/ano), logo todos precisam acumular dólares. Base do privilégio exorbitante',
+        connections: ['privilegio-exorbitante', 'imperio-dolar', 'desdolarizacao'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'imperio-dolar': {
+        name: 'Arquitetura do Império do Dólar',
+        description: 'Sistema financeiro global = sistema cibernético centralizado. Dólar = protocolo universal, SWIFT = infraestrutura de controle. Permite EUA monitorar/bloquear/sancionar qualquer país. Poder de rede em forma pura',
+        connections: ['swift', 'privilegio-exorbitante', 'petrodolar', 'sancoes-financeiras'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'swift': {
+        name: 'SWIFT',
+        description: 'Society for Worldwide Interbank Financial Telecommunication (1973). 11.000 bancos, 44,8 mi mensagens/dia. Formalmente cooperativa neutra (Bélgica), mas funciona como extensão do Tesouro dos EUA. Jurisdição sobre dólar = poder geopolítico',
+        connections: ['imperio-dolar', 'sancoes-financeiras', 'cips', 'spfs', 'brics-pay'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'sancoes-financeiras': {
+        name: 'Sanções Financeiras como Guerra de Informação',
+        description: 'Desconectar país do SWIFT = isolar economicamente sem disparar tiro. Casos: Irã 2012, Rússia 2022 (7 bancos, rublo -30%, US$ 300 bi reservas congeladas). É ataque à INFRAESTRUTURA DE INFORMAÇÃO, não aos ativos. Poder de rede puro',
+        connections: ['swift', 'imperio-dolar', 'sancoes-russia-2022', 'desdolarizacao'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'sancoes-russia-2022': {
+        name: 'Caso: Sanções Russas 2022',
+        description: '26/fev/2022: 7 bancos russos excluídos do SWIFT. Impacto imediato: rublo -30%, inflação 2%→17%, importações colapsaram. MAS: economia não colapsou — SPFS expandido, comércio em yuan/rublo, Bitcoin +400%. Sanções aceleraram desdolarização global',
+        connections: ['sancoes-financeiras', 'swift', 'spfs', 'cips', 'desdolarizacao'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'desdolarizacao': {
+        name: 'Desdolarização',
+        description: 'Não banir dólar, mas torná-lo redundante/opcional. Comércio em moedas locais, sistemas pagamento alternativos (CIPS, SPFS, BRICS Pay). Acelerada pós-sanções russas 2022 — países perceberam: depender 100% SWIFT = risco existencial',
+        connections: ['brics-pay', 'cips', 'spfs', 'sancoes-russia-2022', 'multipolaridade'],
+        color: '#047857',
+        layer: 1
+    },
+    'cips': {
+        name: 'CIPS (Sistema Chinês)',
+        description: 'Cross-Border Interbank Payment System (2015, PBOC). 1.444 participantes em 109 países, US$ 98 tri/ano volume. Liquida transações em yuan (vs SWIFT que só envia mensagens). Yuan ainda 2-3% reservas globais, mas crescendo 15%/ano. Semente de infraestrutura paralela',
+        connections: ['swift', 'desdolarizacao', 'yuan-digital', 'brics-pay', 'multipolaridade'],
+        color: '#047857',
+        layer: 1
+    },
+    'spfs': {
+        name: 'SPFS (Sistema Russo)',
+        description: 'System for Transfer of Financial Messages (2014, Banco Central Rússia). 556 participantes (20 países), 2,5 mi mensagens/dia. Custo 10x menor que SWIFT, mas lento (horas, não segundos). Modo emergência — funciona, mas ninguém quer usar exceto sob sanções',
+        connections: ['swift', 'desdolarizacao', 'sancoes-russia-2022', 'brics-pay'],
+        color: '#047857',
+        layer: 1
+    },
+    'brics-pay': {
+        name: 'BRICS Pay',
+        description: 'Plataforma federada integrando Pix (Brasil), UPI (Índia), FPS (Rússia), Alipay/WeChat (China). Não é moeda única — é camada de interoperabilidade. 3,5 bi pessoas (45% humanidade), PIB US$ 28 tri. Fase piloto 2025, implementação 2027-30. Estratégia: começar nicho, expandir via efeito rede',
+        connections: ['desdolarizacao', 'cips', 'spfs', 'pix', 'multipolaridade', 'soberania-rede'],
+        color: '#047857',
+        layer: 1
+    },
+    'yuan-digital': {
+        name: 'Yuan Digital (e-CNY)',
+        description: 'CBDC chinês. Permite internacionalização do yuan mantendo controle de capital. Dilema: liberalizar para competir com dólar OU manter controle para estabilidade? China tenta ambos via moeda digital. Se combinar com CIPS = ecossistema completo independente do dólar',
+        connections: ['cips', 'desdolarizacao', 'cbdcs', 'vigilancia-financeira'],
+        color: '#047857',
+        layer: 1
+    },
+    'multipolaridade': {
+        name: 'Multipolaridade e Variedade',
+        description: 'Sistema multipolar (múltiplas moedas/protocolos) = alta variedade (Lei de Ashby). Menos eficiente que unipolar, mas MUITO mais resiliente. Se um nó falha/vira arma, outros compensam. Batalha geopolítica = batalha pela variedade: EUA quer baixa (controle), BRICS quer alta (autonomia)',
+        connections: ['lei-ashby-geopolitica', 'vsm-geopolitico', 'brics-pay', 'soberania-rede'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'lei-ashby-geopolitica': {
+        name: 'Lei de Ashby Aplicada à Geopolítica',
+        description: '"Apenas variedade absorve variedade" (Ashby 1956). Sistema unipolar: Centro (EUA) tem 1 protocolo mas absorve variedade de 193 países via SWIFT. Sistema multipolar: Variedade distribuída — nenhum centro pode absorver tudo. Poder diluído = democracia de rede',
+        connections: ['multipolaridade', 'vsm-geopolitico', 'lei-ashby', 'variedade-requisita'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'vsm-geopolitico': {
+        name: 'VSM Geopolítico',
+        description: 'Stafford Beer aplicado a sistemas financeiros globais. Unipolar: S3 hipertrofiado (controle Tesouro EUA), S1 atrofiado (bancos sem autonomia). Multipolar: S1 robusto (autonomia local), S2 cooperativo (BRICS Pay), S3 descentralizado (bancos centrais nacionais). VSM distribuído = mais viável',
+        connections: ['multipolaridade', 'vsm', 'lei-ashby-geopolitica', 'brics-pay'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'soberania-rede': {
+        name: 'Soberania de Rede',
+        description: 'Capacidade de controlar infraestrutura própria de informação/comunicação. Não basta ter moeda alternativa — precisa de cabos submarinos, data centers, satélites. Sem infraestrutura física própria = colônia digital, mesmo com protocolos alternativos',
+        connections: ['brics-pay', 'cabos-submarinos', 'data-centers-soberania', 'starlink-geopolitica', 'infraestrutura-critica'],
+        color: '#06b6d4',
+        layer: 1
+    },
+    'cabos-submarinos': {
+        name: 'Cabos Submarinos',
+        description: '99% tráfego internet entre continentes. 530 cabos, 1,4 mi km. Controle: Google 33, Meta 17, Amazon 14, China 25 (Rota Seda Digital). Sul-Sul subdesenvolvido: ZERO cabos diretos África-LATAM — tráfego passa por EUA/Europa (+200ms latência). NSA intercepta tudo (Snowden 2013)',
+        connections: ['soberania-rede', 'espionagem-nsa', 'infraestrutura-critica', 'rota-seda-digital'],
+        color: '#06b6d4',
+        layer: 0
+    },
+    'espionagem-nsa': {
+        name: 'Espionagem NSA em Cabos',
+        description: 'Programa TEMPORA (UK): NSA + GCHQ copiam TODO tráfego que passa por cabos britânicos. Snowden revelou 2013. Pontos de aterrissagem de cabos = pontos de interceptação. Não há privacidade estrutural quando infraestrutura é controlada por adversário',
+        connections: ['cabos-submarinos', 'soberania-rede', 'vigilancia-massa', 'cloud-act'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'starlink-geopolitica': {
+        name: 'Starlink e Militarização do Espaço',
+        description: '5.500 satélites Musk (60% de todos satélites órbita), meta 42.000 até 2027. 2,6 mi assinantes, latência 20-40ms. Uso militar Ucrânia (20k terminais) — mas Musk tem controle total, desliga regiões. Infraestrutura crítica privatizada = feudalismo digital espacial',
+        connections: ['soberania-rede', 'infraestrutura-critica', 'alternativas-starlink', 'brasil-amazonia-starlink'],
+        color: '#a855f7',
+        layer: 0
+    },
+    'alternativas-starlink': {
+        name: 'Alternativas Soberanas a Starlink',
+        description: 'Guowang chinês (13.000 satélites até 2030), Sfera russo (640), IRIS² UE (290, €6 bi), ISRO Índia (200). Brasil: ZERO plano soberano — dependência total Starlink/Amazon Kuiper. Corrida espacial 2.0: quem controla órbita baixa controla internet do futuro',
+        connections: ['starlink-geopolitica', 'soberania-rede'],
+        color: '#a855f7',
+        layer: 1
+    },
+    'brasil-amazonia-starlink': {
+        name: 'Starlink na Amazônia',
+        description: '200k assinantes Starlink na Amazônia (única opção áreas remotas). Governo Lula tentou regular (representante legal, bloqueio X/Twitter 2023-24). Tensão: como regular infraestrutura crítica controlada por bilionário estrangeiro? Soberania amazônica ameaçada',
+        connections: ['starlink-geopolitica', 'soberania-rede', 'brasil-geopolitica'],
+        color: '#a855f7',
+        layer: 0
+    },
+    'data-centers-soberania': {
+        name: 'Data Centers e Soberania Digital',
+        description: 'AWS 32% mercado global (US$ 90 bi/ano), Azure 23%, Google 11% — Big 3 = 66% processamento mundial. Brasil 70% dados em nuvens americanas. CLOUD Act (2018): EUA pode requisitar dados MESMO fora território americano. Sem data centers públicos = colônia digital',
+        connections: ['soberania-rede', 'cloud-act', 'brasil-dados-eua', 'alternativas-nuvem'],
+        color: '#fb923c',
+        layer: 0
+    },
+    'cloud-act': {
+        name: 'CLOUD Act (2018)',
+        description: 'Lei americana: governo EUA pode requisitar dados armazenados por empresas americanas, MESMO em servidores fora dos EUA. Microsoft tem data center em Dublin? FBI pode exigir dados de clientes europeus. Viola GDPR. Hipocrisia: EUA acusa Huawei de espionagem mas faz o mesmo via Cisco/Juniper',
+        connections: ['data-centers-soberania', 'espionagem-nsa', 'soberania-rede'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'brasil-dados-eua': {
+        name: 'Brasil: 70% Dados em Nuvens Americanas',
+        description: 'LGPD (2020) exige dados sensíveis no Brasil, mas infraestrutura pública insuficiente (Serpro 20 petabytes vs AWS 200+ exabytes). Empresas pagam multas ou usam "data centers locais" AWS (que são apenas pontos presença conectados a infraestrutura americana). Soberania ilusória',
+        connections: ['data-centers-soberania', 'soberania-rede', 'brasil-geopolitica', 'lgpd'],
+        color: '#fb923c',
+        layer: 0
+    },
+    'alternativas-nuvem': {
+        name: 'Alternativas Soberanas de Nuvem',
+        description: 'Gaia-X (UE): fracasso — virou "selo certificação" ao invés de infraestrutura real. China: monopólio estatal-privado (Alibaba, Tencent, Huawei) + Grande Firewall. Índia: MeghRaj (nuvem governamental). Brasil precisa: "AWS pública" interoperável com BRICS. Custo: R$ 50-100 bi em 10 anos',
+        connections: ['data-centers-soberania', 'soberania-rede', 'brics-infraestrutura'],
+        color: '#fb923c',
+        layer: 1
+    },
+    'rota-seda-digital': {
+        name: 'Rota da Seda Digital (China)',
+        description: 'Extensão da Belt and Road Initiative: China constrói cabos submarinos, data centers, redes 5G na Ásia, África, LATAM. HMN Tech + China Telecom controlam 25 cabos (crescimento 400% desde 2015). Conecta Sul-Sul sem passar por EUA/Europa — mas substitui dependência americana por chinesa',
+        connections: ['cabos-submarinos', 'soberania-rede', 'cips', 'multipolaridade'],
+        color: '#06b6d4',
+        layer: 1
+    },
+    'infraestrutura-critica': {
+        name: 'Infraestrutura Crítica Digital',
+        description: 'Cabos submarinos, data centers, satélites, sistemas pagamento = infraestrutura crítica — ataques cibernéticos = ato de guerra. Pontos de estrangulamento: Estreito de Malaca (12 cabos, 40% tráfego Ásia-Ocidente), Suez (8), Bering (2). Cortar poucos cabos isola continentes',
+        connections: ['cabos-submarinos', 'soberania-rede', 'starlink-geopolitica', 'swift'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'brics-infraestrutura': {
+        name: 'Infraestrutura BRICS',
+        description: 'Proposta: cabos Sul-Sul (Brasil-África, Índia-África, China-LATAM), data centers públicos regionais, constelações satélites próprias. Custo estimado: US$ 200-500 bi em 15 anos. Parece caro? Defesa EUA custa US$ 900 bi/ANO. Infraestrutura digital É defesa nacional do século XXI',
+        connections: ['soberania-rede', 'brics-pay', 'cabos-submarinos', 'alternativas-starlink', 'data-centers-soberania'],
+        color: '#047857',
+        layer: 1
+    },
+    'brasil-geopolitica': {
+        name: 'Dilema Brasileiro: Entre Blocos',
+        description: 'Brasil: faz parte BRICS (apoia desdolarização) mas integrado a EUA (comércio US$ 80 bi/ano, investimentos US$ 120 bi). Tenta "equilibrar", mas acaba subordinado a ambos — não tem soberania de rede própria. Precisa escolher: construir alternativas OU aceitar dependência permanente',
+        connections: ['brics-pay', 'soberania-rede', 'brasil-dados-eua', 'brasil-amazonia-starlink', 'pix'],
+        color: '#f59e0b',
+        layer: 0
+    },
+    'pix': {
+        name: 'Pix: Soberania de Pagamento',
+        description: 'Sistema público pagamento instantâneo (Banco Central, 2020). 155 milhões usuários, gratuito. Antes: Visa/Mastercard monopolizavam. Depois: sistema nacional soberano. Maior sucesso política pública digital da década. BRICS Pay tenta replicar Pix em escala internacional',
+        connections: ['brics-pay', 'soberania-rede', 'brasil-geopolitica', 'desdolarizacao'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'cbdcs': {
+        name: 'CBDCs (Moedas Digitais Banco Central)',
+        description: 'Drex (Brasil), e-CNY (China), euro digital (UE). Aceleram desdolarização (facilitam pagamentos internacionais) MAS aumentam vigilância estatal (rastreamento total transações). Trade-off: privacidade vs soberania monetária. Precisa design que minimize vigilância (criptografia conhecimento zero)',
+        connections: ['yuan-digital', 'desdolarizacao', 'vigilancia-financeira', 'pix'],
+        color: '#f59e0b',
+        layer: 1
+    },
+    'vigilancia-financeira': {
+        name: 'Vigilância Financeira',
+        description: 'SWIFT permite EUA monitorar todas transações em dólar (panóptico financeiro global). CBDCs permitem Estados rastrearem 100% transações cidadãos. Capitalismo vigilância (Ocidente, privado) vs Socialismo vigilância (China, estatal). Ambos distópicos. Alternativa: governança algorítmica democrática, código aberto',
+        connections: ['swift', 'yuan-digital', 'cbdcs', 'capitalismo-vigilancia', 'crédito-social-china'],
+        color: '#ef4444',
+        layer: 0
     }
 };
 
