@@ -11,6 +11,21 @@
  * - Sem estrutura arbórea
  * 
  * CHANGELOG:
+ * - 2025-10-28 (v9): Expansão massiva do Capítulo 11 (Síntese Informacional)
+ *   + 60+ novos conceitos: informação como mercadoria, excedente comportamental, metabolismo informacional
+ *   + Informação não-rival: abundância vs escassez artificial (propriedade intelectual)
+ *   + Pirataria como luta de classes: Sci-Hub, Library Genesis, resistência ao cercamento
+ *   + Excedente comportamental = mais-valia informacional (Zuboff + Marx)
+ *   + Taxa de extração informacional: dados necessários vs dados extraídos
+ *   + Algoritmos como sistemas de feedback: loops positivos → vício, radicalização
+ *   + "Dados são o novo petróleo": crítica da metáfora (não-rival, trabalho vivo)
+ *   + Soberania de dados: propriedade privada vs estatal vs comum
+ *   + Metabolismo informacional: extração → processamento → mercadificação → feedback
+ *   + Casos brasileiros: pirataria acadêmica, Marco Civil da Internet, Cataki
+ *   + Ferramentas de luta: variedade, infraestrutura alternativa, transparência algorítmica
+ *   + Conexões: Caps 2-3 (cibernética/plataformas) + 8-10 (trabalho/valor) + 30 (dialética)
+ *   Total: ~460 conceitos mapeados
+ * 
  * - 2025-10-28 (v8): Expansão massiva do Capítulo 10 (Crítica do Valor / Wertkritik)
  *   + 50+ novos conceitos: Wertkritik, sujeito automático, capital fictício, colapso
  *   + Robert Kurz e Moishe Postone: crítica esotérica vs exotérica de Marx
@@ -643,35 +658,35 @@ const conceptGraph = {
     'capitalismo-vigilancia': {
         name: 'Capitalismo de Vigilância',
         description: 'Extração de dados comportamentais como matéria-prima (Zuboff)',
-        connections: ['mais-valia-dados', 'plataformizacao', 'resistencia', 'preco-valor', 'vigilancia', 'excedente-comportamental', 'produtos-previsao', 'shoshana-zuboff'],
+        connections: ['mais-valia-dados', 'plataformizacao', 'resistencia', 'preco-valor', 'vigilancia', 'excedente-comportamental', 'produtos-previsao', 'shoshana-zuboff', 'mais-valia-informacional', 'metabolismo-informacional'],
         color: '#ef4444',
         layer: 0
     },
     'shoshana-zuboff': {
         name: 'Shoshana Zuboff',
         description: 'Teórica do capitalismo de vigilância - Harvard',
-        connections: ['capitalismo-vigilancia', 'excedente-comportamental', 'produtos-previsao'],
+        connections: ['capitalismo-vigilancia', 'excedente-comportamental', 'produtos-previsao', 'mais-valia-informacional'],
         color: '#8b5cf6',
         layer: 0
     },
     'excedente-comportamental': {
         name: 'Excedente Comportamental',
         description: 'Dados coletados além do necessário para o serviço funcionar',
-        connections: ['capitalismo-vigilancia', 'produtos-previsao', 'dados', 'google-maps-exemplo'],
+        connections: ['capitalismo-vigilancia', 'produtos-previsao', 'dados', 'google-maps-exemplo', 'mais-valia-informacional', 'taxa-extracao-info'],
         color: '#ef4444',
         layer: 0
     },
     'produtos-previsao': {
         name: 'Produtos de Previsão',
         description: 'Previsões de comportamento futuro vendidas como mercadoria',
-        connections: ['capitalismo-vigilancia', 'excedente-comportamental', 'ia', 'serasa-score'],
+        connections: ['capitalismo-vigilancia', 'excedente-comportamental', 'ia', 'serasa-score', 'metabolismo-informacional'],
         color: '#ef4444',
         layer: 0
     },
     'dados': {
         name: 'Dados como Mercadoria',
         description: 'Nova matéria-prima do capitalismo digital',
-        connections: ['excedente-comportamental', 'mais-valia-dados', 'capitalismo-vigilancia', 'dupla-expropriacao'],
+        connections: ['excedente-comportamental', 'mais-valia-dados', 'capitalismo-vigilancia', 'dupla-expropriacao', 'dados-trabalho-cristalizado', 'informacao-como-trabalho'],
         color: '#ef4444',
         layer: 0
     },
@@ -1200,7 +1215,7 @@ const conceptGraph = {
     'comum-conceito': {
         name: 'O Comum',
         description: 'Riqueza produzida e compartilhada - nem estatal nem privada (natural, artificial, urbana)',
-        connections: ['pos-operaismo', 'hardt-negri', 'comum-natural', 'comum-artificial', 'comum-urbano', 'cercamento-digital'],
+        connections: ['pos-operaismo', 'hardt-negri', 'comum-natural', 'comum-artificial', 'comum-urbano', 'cercamento-digital', 'modelo-dados-comum', 'cooperativa-dados', 'sci-hub'],
         color: '#10b981',
         layer: 0
     },
@@ -1242,7 +1257,7 @@ const conceptGraph = {
     'cercamento-digital': {
         name: 'Cercamento Digital do Comum',
         description: 'Privatização de conhecimento, dados, cultura - patentes, copyright, propriedade de dados',
-        connections: ['comum-conceito', 'cercamento-classico', 'propriedade-intelectual', 'capitalismo-vigilancia'],
+        connections: ['comum-conceito', 'cercamento-classico', 'propriedade-intelectual', 'capitalismo-vigilancia', 'escassez-artificial', 'pirataria-luta-classes'],
         color: '#10b981',
         layer: 0
     },
@@ -1277,14 +1292,21 @@ const conceptGraph = {
     'torrent': {
         name: 'BitTorrent / P2P',
         description: 'Protocolo peer-to-peer de compartilhamento sem servidor central',
-        connections: ['pirataria', 'comum-artificial', 'descentralizacao', 'instituicoes-comum'],
+        connections: ['pirataria', 'comum-artificial', 'descentralizacao', 'instituicoes-comum', 'sci-hub', 'mastodon'],
         color: '#10b981',
         layer: 0
+    },
+    'commons-digital': {
+        name: 'Commons Digital',
+        description: 'Infraestrutura informacional compartilhada - Wikipedia, software livre, bibliotecas piratas',
+        connections: ['comum-conceito', 'comum-artificial', 'sci-hub', 'library-genesis', 'mastodon', 'software-livre', 'desescassificacao'],
+        color: '#10b981',
+        layer: 1
     },
     'instituicoes-comum': {
         name: 'Instituições do Comum',
         description: 'Formas organizacionais nem estatais nem mercantis - licenças livres, cooperativas, governança distribuída',
-        connections: ['comum-conceito', 'elinor-ostrom', 'software-livre', 'cooperativas-plataforma', 'creative-commons'],
+        connections: ['comum-conceito', 'elinor-ostrom', 'software-livre', 'cooperativas-plataforma', 'creative-commons', 'commons-digital'],
         color: '#10b981',
         layer: 1
     },
@@ -1624,8 +1646,341 @@ const conceptGraph = {
     'sintese-informacional': {
         name: 'Síntese Informacional (Cap 11)',
         description: 'Cibernética 2ª ordem media Wertkritik (estrutura) e Pós-Operaísmo (agência) - acoplamento circular',
-        connections: ['debate-posop-wertkritik', 'segunda-ordem', 'wertkritik', 'pos-operaismo'],
+        connections: ['debate-posop-wertkritik', 'segunda-ordem', 'wertkritik', 'pos-operaismo', 'informacao-como-trabalho', 'metabolismo-informacional', 'subsuncao-real-cibernetica'],
         color: '#a855f7',
+        layer: 1
+    },
+    
+    // ========================================
+    // CAPÍTULO 11: SÍNTESE INFORMACIONAL (EXPANSÃO v9)
+    // ========================================
+    'informacao-como-trabalho': {
+        name: 'Informação como Trabalho Cristalizado',
+        description: 'Trabalho = inscrição de ordem (redução de entropia). Logo, informação = trabalho materializado',
+        connections: ['sintese-informacional', 'tempo-trabalho-necessario', 'trabalho-abstrato', 'informacao-nao-rival'],
+        color: '#a855f7',
+        layer: 0
+    },
+    'informacao-nao-rival': {
+        name: 'Informação Não-Rival',
+        description: 'Custo marginal de cópia = zero. Abundância natural vs necessidade capitalista de escassez',
+        connections: ['informacao-como-trabalho', 'escassez-artificial', 'pirataria-luta-classes', 'commons-digital'],
+        color: '#a855f7',
+        layer: 0
+    },
+    'escassez-artificial': {
+        name: 'Escassificação Artificial',
+        description: 'Capital precisa criar escassez para lucrar: copyright, DRM, plataformização, SaaS',
+        connections: ['informacao-nao-rival', 'propriedade-intelectual', 'lock-in', 'cercamento-comum'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'propriedade-intelectual': {
+        name: 'Propriedade Intelectual',
+        description: 'Cercamento legal do conhecimento: patents, copyright, segredos comerciais',
+        connections: ['escassez-artificial', 'cercamento-comum', 'pirataria-luta-classes'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'pirataria-luta-classes': {
+        name: 'Pirataria como Luta de Classes',
+        description: 'No Sul Global, pirataria = resistência à escassificação artificial do conhecimento',
+        connections: ['informacao-nao-rival', 'escassez-artificial', 'sci-hub', 'library-genesis', 'desescassificacao'],
+        color: '#16a34a',
+        layer: 1
+    },
+    'sci-hub': {
+        name: 'Sci-Hub',
+        description: 'Alexandra Elbakyan: 88M+ artigos científicos gratuitos. Commons digital pirata, feedback corretivo',
+        connections: ['pirataria-luta-classes', 'commons-digital', 'exodo', 'infraestrutura-alternativa'],
+        color: '#16a34a',
+        layer: 1
+    },
+    'library-genesis': {
+        name: 'Library Genesis / Z-Library',
+        description: 'Bibliotecas piratas essenciais no Sul Global. Infraestrutura vital de acesso ao conhecimento',
+        connections: ['pirataria-luta-classes', 'sci-hub', 'commons-digital'],
+        color: '#16a34a',
+        layer: 1
+    },
+    'desescassificacao': {
+        name: 'Desescassificação',
+        description: 'Prática de reverter cercamentos artificiais, distribuindo livremente o que tem custo marginal zero',
+        connections: ['pirataria-luta-classes', 'commons-digital', 'multidao-conceito'],
+        color: '#16a34a',
+        layer: 1
+    },
+    'excedente-comportamental': {
+        name: 'Excedente Comportamental (Zuboff)',
+        description: 'Dados além do necessário para o serviço, coletados para criar produtos de previsão',
+        connections: ['capitalismo-vigilancia', 'mais-valia-informacional', 'taxa-extracao-info', 'produtos-previsao'],
+        color: '#f59e0b',
+        layer: 0
+    },
+    'mais-valia-informacional': {
+        name: 'Mais-Valia Informacional',
+        description: 'Excedente comportamental = mais-trabalho não-pago capturado pelas plataformas',
+        connections: ['excedente-comportamental', 'mais-valia', 'taxa-extracao-info', 'trabalho-gratuito'],
+        color: '#f59e0b',
+        layer: 0
+    },
+    'taxa-extracao-info': {
+        name: 'Taxa de Extração Informacional',
+        description: 'e_info = dados extraídos / dados necessários. Facebook/Google têm taxas altíssimas',
+        connections: ['mais-valia-informacional', 'excedente-comportamental', 'taxa-exploracao', 'gdpr-experimento'],
+        color: '#f59e0b',
+        layer: 0
+    },
+    'gdpr-experimento': {
+        name: 'GDPR como Experimento Natural',
+        description: 'Lei europeia revelou: plataformas coletam 20x mais dados do que o necessário (600MB-1GB/usuário)',
+        connections: ['taxa-extracao-info', 'excedente-comportamental', 'soberania-dados'],
+        color: '#3b82f6',
+        layer: 1
+    },
+    'loop-feedback-plataforma': {
+        name: 'Loop de Feedback das Plataformas',
+        description: 'Input (comportamento) → algoritmo → output (interface modificada) → novo comportamento → iteração',
+        connections: ['feedback', 'algoritmo', 'gerenciamento-algoritmico', 'feedback-positivo-vicioso'],
+        color: '#a855f7',
+        layer: 0
+    },
+    'feedback-positivo-vicioso': {
+        name: 'Feedback Positivo Vicioso',
+        description: 'Plataformas usam feedback positivo para viciar: mais cliques → mais extremismo → mais engajamento',
+        connections: ['loop-feedback-plataforma', 'feedback', 'vicio-digital', 'radicalizacao-algoritmica'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'radicalizacao-algoritmica': {
+        name: 'Radicalização Algorítmica',
+        description: 'YouTube/Facebook empurram usuários para extremos via feedback positivo (caso Caleb Cain)',
+        connections: ['feedback-positivo-vicioso', 'youtube-radicaliza', 'sujeito-automatico', 'camaras-eco'],
+        color: '#dc2626',
+        layer: 1
+    },
+    'youtube-radicaliza': {
+        name: 'Caso YouTube: Caleb Cain',
+        description: 'Peterson → Shapiro → Molyneux → Spencer. Algoritmo otimiza tempo de tela = empurra p/ extremismo',
+        connections: ['radicalizacao-algoritmica', 'feedback-positivo-vicioso', 'sujeito-automatico'],
+        color: '#dc2626',
+        layer: 1
+    },
+    'camaras-eco': {
+        name: 'Câmaras de Eco',
+        description: 'Algoritmos reforçam crenças existentes, isolando usuários em bolhas informacionais',
+        connections: ['radicalizacao-algoritmica', 'feedback-positivo-vicioso', 'polarizacao'],
+        color: '#dc2626',
+        layer: 1
+    },
+    'dados-novo-petroleo': {
+        name: '"Dados São o Novo Petróleo" (Crítica)',
+        description: 'Metáfora enganosa: petróleo é rival/escasso/natural. Dados são não-rival/abundante/trabalho vivo',
+        connections: ['informacao-nao-rival', 'mais-valia-informacional', 'dados-trabalho-cristalizado'],
+        color: '#f59e0b',
+        layer: 0
+    },
+    'dados-trabalho-cristalizado': {
+        name: 'Dados como Trabalho Cristalizado',
+        description: 'Metáfora correta: Seus cliques = trabalho na linha de montagem. Plataforma = dono da fábrica',
+        connections: ['dados-novo-petroleo', 'informacao-como-trabalho', 'mais-valia-informacional'],
+        color: '#a855f7',
+        layer: 0
+    },
+    'soberania-dados': {
+        name: 'Soberania de Dados',
+        description: 'Quem controla os dados? 3 modelos: propriedade privada (EUA), estatal (China), comum (proposta)',
+        connections: ['modelo-propriedade-privada', 'modelo-soberania-estatal', 'modelo-dados-comum', 'marco-civil-internet'],
+        color: '#3b82f6',
+        layer: 1
+    },
+    'modelo-propriedade-privada': {
+        name: 'Modelo 1: Propriedade Privada (Status Quo)',
+        description: 'Dados pertencem às plataformas. Resultado: concentração (GAFAM), vigilância, monetização da vida',
+        connections: ['soberania-dados', 'capitalismo-vigilancia', 'monopolio'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'modelo-soberania-estatal': {
+        name: 'Modelo 2: Soberania Estatal (China)',
+        description: 'Dados sob controle estatal. Planejamento + vigilância autoritária. Democracia inexistente',
+        connections: ['soberania-dados', 'china-cyberpunk', 'credito-social'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'modelo-dados-comum': {
+        name: 'Modelo 3: Dados como Comum',
+        description: 'Governança coletiva de dados. Data cooperatives, controle democrático da infraestrutura',
+        connections: ['soberania-dados', 'comum', 'cooperativa-dados', 'cataki-exemplo', 'infraestrutura-alternativa'],
+        color: '#16a34a',
+        layer: 1
+    },
+    'cooperativa-dados': {
+        name: 'Cooperativas de Dados',
+        description: 'Usuários se organizam coletivamente para controlar seus próprios dados',
+        connections: ['modelo-dados-comum', 'cooperativa-plataforma', 'comum', 'cataki-exemplo'],
+        color: '#16a34a',
+        layer: 1
+    },
+    'cataki-exemplo': {
+        name: 'Caso Cataki (Brasil)',
+        description: 'Plataforma cooperativa de catadores de recicláveis. Eles controlam seus próprios dados de coleta',
+        connections: ['cooperativa-dados', 'modelo-dados-comum', 'cooperativa-plataforma', 'brasil-resistencia'],
+        color: '#16a34a',
+        layer: 1
+    },
+    'marco-civil-internet': {
+        name: 'Marco Civil da Internet (2014)',
+        description: 'Tentativa brasileira de soberania digital. Lobby corporativo removeu data localization',
+        connections: ['soberania-dados', 'brasil-resistencia', 'dependencia-digital', 'lobby-big-tech'],
+        color: '#f59e0b',
+        layer: 1
+    },
+    'lobby-big-tech': {
+        name: 'Lobby de Big Tech',
+        description: 'Google/Facebook/Microsoft removeram exigências de soberania do Marco Civil',
+        connections: ['marco-civil-internet', 'monopolio', 'imperialismo-digital'],
+        color: '#dc2626',
+        layer: 1
+    },
+    'metabolismo-informacional': {
+        name: 'Metabolismo Informacional do Capital',
+        description: 'Sistema cibernético: extração (dados) → processamento (algoritmo) → mercadificação → feedback → acumulação',
+        connections: ['sintese-informacional', 'loop-feedback-plataforma', 'extracao-dados', 'produtos-previsao', 'subsuncao-real-cibernetica'],
+        color: '#a855f7',
+        layer: 1
+    },
+    'extracao-dados': {
+        name: 'Extração de Dados',
+        description: 'Trabalho humano (cognitivo, afetivo, atencional) gera dados como subproduto',
+        connections: ['metabolismo-informacional', 'trabalho-cognitivo', 'trabalho-afetivo', 'excedente-comportamental'],
+        color: '#f59e0b',
+        layer: 0
+    },
+    'subsuncao-real-cibernetica': {
+        name: 'Subsunção Real Cibernética',
+        description: 'Tese central: plataformas controlam rede informacional que media toda existência social',
+        connections: ['metabolismo-informacional', 'sintese-informacional', 'subsuncao-real', 'plataformizacao'],
+        color: '#a855f7',
+        layer: 1
+    },
+    'dupla-face-cibernetica': {
+        name: 'Dupla Face da Cibernética',
+        description: 'Mesma tecnologia: controle (sob capital) OU auto-organização (sob democracia). Depende de quem controla',
+        connections: ['sintese-informacional', 'cibernetica', 'planejamento-cibernetico', 'cybersyn'],
+        color: '#a855f7',
+        layer: 1
+    },
+    'bitcoin-sujeito-automatico': {
+        name: 'Caso Bitcoin: Sujeito Automático Puro',
+        description: 'Algoritmo autônomo valorizando valor sem controle humano. Forma-valor cristalizada em código',
+        connections: ['sujeito-automatico', 'capital-fictico', 'cripto-extrativismo', 'sintese-informacional'],
+        color: '#dc2626',
+        layer: 1
+    },
+    'cripto-extrativismo': {
+        name: 'Cripto-extrativismo',
+        description: 'Mineração de Bitcoin consome energia de países inteiros para valorizar capital fictício',
+        connections: ['bitcoin-sujeito-automatico', 'capital-fictico', 'crise-ecologica', 'extrativismo-dados'],
+        color: '#dc2626',
+        layer: 1
+    },
+    'lei-ashby-luta-classes': {
+        name: 'Lei de Ashby na Luta de Classes',
+        description: 'Batalha pela variedade: capital quer reduzir (controle), multidão quer aumentar (insubordinação)',
+        connections: ['lei-variedade-requisita', 'sintese-informacional', 'multidao-conceito', 'recusa-trabalho'],
+        color: '#a855f7',
+        layer: 1
+    },
+    'vigilancia-aumento-variedade': {
+        name: 'Vigilância como Aumento de Variedade do Capital',
+        description: 'Coleta massiva de dados = aumentar variedade do sistema de controle para antecipar/neutralizar resistência',
+        connections: ['lei-ashby-luta-classes', 'capitalismo-vigilancia', 'excedente-comportamental'],
+        color: '#dc2626',
+        layer: 1
+    },
+    'transparencia-algoritmica': {
+        name: 'Transparência Algorítmica',
+        description: 'Exigência de explicação das decisões algorítmicas. Luta de classes contra caixas-pretas de poder',
+        connections: ['fetiche-algoritmo', 'auditoria-algoritmica', 'contestacao-humana', 'ferramentas-luta'],
+        color: '#16a34a',
+        layer: 1
+    },
+    'auditoria-algoritmica': {
+        name: 'Auditoria Algorítmica Independente',
+        description: 'Investigar viés algorítmico (raça, gênero, classe) por entidades não-corporativas',
+        connections: ['transparencia-algoritmica', 'discriminacao-algoritmica', 'serasa-score'],
+        color: '#16a34a',
+        layer: 1
+    },
+    'contestacao-humana': {
+        name: 'Direito à Contestação Humana',
+        description: 'Decisões automatizadas devem poder ser questionadas por humanos (não-algoritmos)',
+        connections: ['transparencia-algoritmica', 'gerenciamento-algoritmico', 'uber-demissao-automatica'],
+        color: '#16a34a',
+        layer: 1
+    },
+    'socializacao-dados': {
+        name: 'Socialização de Dados',
+        description: 'Dados = trabalho cristalizado → devem ser propriedade social. Data trusts públicos, impostos sobre lucro de dados',
+        connections: ['modelo-dados-comum', 'mais-valia-informacional', 'dados-trabalho-cristalizado'],
+        color: '#16a34a',
+        layer: 1
+    },
+    'infraestrutura-alternativa': {
+        name: 'Infraestrutura Alternativa',
+        description: 'Construir fora do capital: cooperativas de plataforma, redes mesh, servidores próprios',
+        connections: ['sci-hub', 'cooperativa-plataforma', 'redes-mesh', 'mastodon', 'infoamazonia'],
+        color: '#16a34a',
+        layer: 1
+    },
+    'redes-mesh': {
+        name: 'Redes Mesh',
+        description: 'Internet comunitária peer-to-peer, sem provedores corporativos. Infraestrutura descentralizada',
+        connections: ['infraestrutura-alternativa', 'comum', 'exodo'],
+        color: '#16a34a',
+        layer: 1
+    },
+    'mastodon': {
+        name: 'Mastodon / Fediverse',
+        description: 'Rede social descentralizada, open-source, federada. Alternativa ao Twitter/Facebook',
+        connections: ['infraestrutura-alternativa', 'software-livre', 'commons-digital'],
+        color: '#16a34a',
+        layer: 1
+    },
+    'infoamazonia': {
+        name: 'Caso InfoAmazonia (Brasil)',
+        description: 'Rede de satélites comunitários monitora desmatamento fora de controle governamental/corporativo',
+        connections: ['infraestrutura-alternativa', 'brasil-resistencia', 'exodo', 'comum'],
+        color: '#16a34a',
+        layer: 1
+    },
+    'ferramentas-luta': {
+        name: '5 Princípios Táticos (Cap 11)',
+        description: 'Aumentar variedade, construir infraestrutura, transparência, socializar dados, cibernética horizontal',
+        connections: ['sintese-informacional', 'lei-ashby-luta-classes', 'infraestrutura-alternativa', 'transparencia-algoritmica', 'socializacao-dados'],
+        color: '#16a34a',
+        layer: 1
+    },
+    'metabolismo-industrial-vs-info': {
+        name: 'Metabolismo Industrial vs Informacional',
+        description: 'Séc XIX-XX (matéria/energia) vs Séc XXI (comportamento/dados). Mesma lógica de acumulação, nova base material',
+        connections: ['metabolismo-informacional', 'capitalismo', 'subsuncao-real-cibernetica'],
+        color: '#a855f7',
+        layer: 0
+    },
+    'residuo-digital': {
+        name: 'Resíduo Digital (Poluição Informacional)',
+        description: 'Metabolismo info produz: desinformação, vício, polarização, ansiedade (= CO₂ da era digital)',
+        connections: ['metabolismo-informacional', 'vicio-digital', 'radicalizacao-algoritmica', 'crise-saude-mental'],
+        color: '#dc2626',
+        layer: 1
+    },
+    'crise-saude-mental': {
+        name: 'Crise de Saúde Mental Digital',
+        description: 'Ansiedade, depressão, TDAH dispararam com redes sociais. Não é individual, é sistêmico',
+        connections: ['residuo-digital', 'vicio-digital', 'feedback-positivo-vicioso'],
+        color: '#dc2626',
         layer: 1
     },
     'critica-ecossocialista-wertkritik': {
@@ -2352,7 +2707,7 @@ const conceptGraph = {
     'software-livre': {
         name: 'Software Livre',
         description: 'Código aberto, auditável, modificável - soberania via transparência',
-        connections: ['soberania-tecnologica', 'resistencia', 'gnu-linux', 'commons-digitais'],
+        connections: ['soberania-tecnologica', 'resistencia', 'gnu-linux', 'commons-digitais', 'infraestrutura-alternativa', 'mastodon', 'desescassificacao'],
         color: '#10b981',
         layer: 1
     },
@@ -2380,7 +2735,14 @@ const conceptGraph = {
     'plataformas-cooperativas': {
         name: 'Plataformas Cooperativas',
         description: 'Uber/iFood de propriedade dos trabalhadores',
-        connections: ['soberania-tecnologica', 'resistencia', 'nhandereko', 'commons-digitais'],
+        connections: ['soberania-tecnologica', 'resistencia', 'nhandereko', 'commons-digitais', 'cooperativa-dados', 'cataki-exemplo'],
+        color: '#10b981',
+        layer: 1
+    },
+    'cooperativa-plataforma': {
+        name: 'Cooperativa de Plataforma (alias)',
+        description: 'Ver: Plataformas Cooperativas',
+        connections: ['plataformas-cooperativas'],
         color: '#10b981',
         layer: 1
     },
