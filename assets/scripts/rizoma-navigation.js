@@ -11,6 +11,38 @@
  * - Sem estrutura arbórea
  * 
  * CHANGELOG:
+ * - 2025-10-28 (v12): Expansão massiva do Capítulo 15 (Corpo-Atleta na Arena Digital: Plataformização de Esportes e Esports)
+ *   + 80+ novos conceitos: datificação corporal, esports como trabalho, torcedor-produtor, necropolítica esportiva
+ *   + Datificação do corpo-atleta: wearables, tirania da métrica, panóptico esportivo, atleta quantificado
+ *   + Empresas: StatSports, Catapult, Zebra Technologies, InStat, Wyscout, Stats Perform
+ *   + IA tática: sistemas recomendam substituições/estratégias em tempo real, morte do técnico humano
+ *   + Moneyball: Michael Lewis (2003), origem da datificação massiva, sabermetrics
+ *   + Viés algorítmico: IA supervaloriza físico em negros, subvaloriza cognitivo — racismo codificado
+ *   + Mercadificação biométrica: Sorare (NFTs de jogadores), tokenização de atletas (Liqi, Mintable)
+ *   + Atleta como startup: jovens periféricos vendem % da carreira futura via blockchain
+ *   + Biohacking atlético: câmaras hiperbáricas, crioterapia, peptídeos, tDCS, CRISPR futuro
+ *   + China: detecção genética de talentos (genes ACTN3/ACE), biopolítica estatal máxima
+ *   + Esports como experimento neoliberal: pirâmide extrema (99% ganham <salário-mínimo)
+ *   + Pro-gamer: trabalho cognitivo 10-14h/dia, burnout epidêmico, LER, carreira até 24 anos
+ *   + Propriedade privada do jogo: Riot/Valve controlam "campo" (código), podem mudar regras unilateralmente
+ *   + Vassalagem digital: jogador não tem "direito ao jogo", só licença revogável
+ *   + Dupla exploração: desenvolvedora (extrai valor do skill) + plataforma streaming (Twitch/YouTube 50% receita)
+ *   + Torcedor-produtor: criar meme, debater tática, votar enquete = trabalho não-pago monetizado
+ *   + Fantasy sports: DraftKings, FanDuel, Cartola FC — trabalho analítico gratuito gera dados vendidos
+ *   + Fan tokens: Socios.com (Barcelona, Flamengo) — financeirização da paixão, especulação sem democracia
+ *   + Apostas esportivas: 98% perdem longo prazo, in-play betting = slot machine disfarçada
+ *   + Brasil apostas: epidemia 2023-24, 15-20% desenvolvem vício, periferia perde R$ 200-500/mês
+ *   + Necropolítica esportiva: corpos negros = commodity extraível, 70%+ jogadores negros, 1%< dirigentes
+ *   + Extrativismo corporal: clubes europeus "fazendas de talentos" África/América Latina, 0,1% sucesso
+ *   + Casos brasileiros: várzea invisível para algoritmos (precisa dados desde criança), academias privatizadas caras
+ *   + Rosana Pinheiro-Machado: apostas = agiota digital, extração renda periferia → plataformas globais
+ *   + Resistências: CSPPA (sindicato CS), FPA (Fortnite), Sindicato Atletas (propriedade dados biométricos)
+ *   + Jogos open-source: Xonotic, 0 A.D., movimento Libre Gaming — governança democrática
+ *   + FairPlay Alliance: exigir publicação dados abertos (fim monopólio analítico)
+ *   + Esporte comunitário: várzea, LAN parties, Right to Play — prática fora da lógica de lucro
+ *   + Conexões: Caps 3 (gerenciamento algorítmico), 8 (trabalho imaterial), 9 (multidão/afetos), 14 (vício), 22 (necropolítica)
+ *   Total: ~710 conceitos mapeados
+ * 
  * - 2025-10-28 (v11): Expansão massiva do Capítulo 14 (Engenharia do Vício: Jogos, Apostas e Extração do Gozo)
  *   + 100+ novos conceitos: design viciante, neurociência, apostas, jogos, resistência
  *   + Neurociência do vício: dopamina, núcleo accumbens, Wolfram Schultz, superstímulos, dessensibilização/sensibilização
@@ -4341,6 +4373,269 @@ const conceptGraph = {
         connections: ['recompensa-variavel', 'dopamina', 'vicio-digital', 'infinite-scroll'],
         color: '#dc2626',
         layer: 0
+    },
+
+    // ========================================
+    // CAPÍTULO 15: ESPORTES E ESPORTS (PLATAFORMIZAÇÃO DO CORPO-ATLETA)
+    // ========================================
+    'datificacao-corpo-atleta': {
+        name: 'Datificação do Corpo-Atleta',
+        description: 'Transformação do corpo atlético em fluxo contínuo de dados biométricos via wearables — vigilância total da performance',
+        connections: ['atleta-quantificado', 'wearables', 'panoptico-esportivo', 'tirania-metrica', 'gerenciamento-algoritmico'],
+        color: '#f97316',
+        layer: 0
+    },
+    'atleta-quantificado': {
+        name: 'Atleta Quantificado',
+        description: 'Corpo-atleta reduzido a métricas (FC, velocidade, distância, fadiga) — se não vira dado, não existe',
+        connections: ['datificacao-corpo-atleta', 'wearables', 'tirania-metrica', 'biometria'],
+        color: '#f97316',
+        layer: 0
+    },
+    'wearables': {
+        name: 'Wearables Esportivos',
+        description: 'GPS vestíveis, monitores cardíacos, sensores movimento (StatSports, Catapult, Zebra) — panóptico portátil no corpo',
+        connections: ['atleta-quantificado', 'panoptico-esportivo', 'datificacao-corpo-atleta', 'biometria'],
+        color: '#f97316',
+        layer: 0
+    },
+    'panoptico-esportivo': {
+        name: 'Panóptico Esportivo',
+        description: 'Vigilância 24/7 via wearables — atleta internaliza supervisor (Foucault aplicado ao esporte digital)',
+        connections: ['wearables', 'datificacao-corpo-atleta', 'tirania-metrica', 'vigilancia-capitalismo'],
+        color: '#f97316',
+        layer: 0
+    },
+    'tirania-metrica': {
+        name: 'Tirania da Métrica',
+        description: 'Apenas o mensurável tem valor — intuição, criatividade, aspectos humanos não-quantificáveis são descartáveis',
+        connections: ['datificacao-corpo-atleta', 'atleta-quantificado', 'ia-tatica', 'moneyball'],
+        color: '#f97316',
+        layer: 0
+    },
+    'moneyball': {
+        name: 'Moneyball (2003)',
+        description: 'Livro de Michael Lewis — origem da datificação massiva no esporte via sabermetrics (análise estatística avançada)',
+        connections: ['tirania-metrica', 'datificacao-corpo-atleta', 'ia-tatica'],
+        color: '#f97316',
+        layer: -1
+    },
+    'ia-tatica': {
+        name: 'IA Tática',
+        description: 'Algoritmos (InStat, Wyscout) recomendam substituições/estratégias em tempo real — técnico obedece modelo, não "sente" jogo',
+        connections: ['tirania-metrica', 'datificacao-corpo-atleta', 'vies-algoritmico-esporte', 'algoritmo'],
+        color: '#f97316',
+        layer: 0
+    },
+    'vies-algoritmico-esporte': {
+        name: 'Viés Algorítmico no Scouting',
+        description: 'IA supervaloriza atributos físicos em jogadores negros, subvaloriza cognitivos — racismo codificado',
+        connections: ['ia-tatica', 'necropolítica-esportiva', 'discriminacao-algoritmica', 'corpo-negro-commodity'],
+        color: '#f97316',
+        layer: 0
+    },
+    'mercadificacao-biometrica': {
+        name: 'Mercadificação Biométrica',
+        description: 'Dados corporais viram ativos financeiros — Sorare (NFTs de jogadores), tokenização de atletas via blockchain',
+        connections: ['datificacao-corpo-atleta', 'tokenizacao-atletas', 'fan-tokens', 'capital-ficticio'],
+        color: '#f97316',
+        layer: 0
+    },
+    'tokenizacao-atletas': {
+        name: 'Tokenização de Atletas',
+        description: 'Plataformas (Liqi, Mintable) vendem "frações" da carreira de jovens — atleta como startup, corpo hipotecado desde infância',
+        connections: ['mercadificacao-biometrica', 'corpo-negro-commodity', 'precarizacao', 'blockchain'],
+        color: '#f97316',
+        layer: 0
+    },
+    'biohacking-atletico': {
+        name: 'Biohacking Atlético',
+        description: 'Câmaras hiperbáricas, crioterapia, peptídeos, tDCS, CRISPR futuro — aristocracia bioquímica no esporte',
+        connections: ['datificacao-corpo-atleta', 'deteccao-genetica-talentos', 'biopolitica'],
+        color: '#f97316',
+        layer: 0
+    },
+    'deteccao-genetica-talentos': {
+        name: 'Detecção Genética de Talentos',
+        description: 'China escaneia DNA de milhões de crianças buscando genes elite (ACTN3, ACE) — biopolítica máxima',
+        connections: ['biohacking-atletico', 'biopolitica', 'necropolítica-esportiva'],
+        color: '#f97316',
+        layer: 0
+    },
+    'esports-laboratorio-neoliberal': {
+        name: 'Esports como Experimento Neoliberal',
+        description: 'Pirâmide extrema (99% <salário-mínimo), sem direitos trabalhistas, exploração juvenil, descartabilidade aos 24 anos',
+        connections: ['pro-gamer', 'burnout-esports', 'precarizacao', 'gamificacao-trabalho-alienado'],
+        color: '#f97316',
+        layer: 0
+    },
+    'pro-gamer': {
+        name: 'Pro-Gamer',
+        description: 'Ciber-atleta: trabalho cognitivo 10-14h/dia, LER, burnout, carreira até 24 anos — trabalho imaterial extremo',
+        connections: ['esports-laboratorio-neoliberal', 'burnout-esports', 'trabalho-imaterial', 'propriedade-privada-jogo'],
+        color: '#f97316',
+        layer: 0
+    },
+    'burnout-esports': {
+        name: 'Burnout em Esports',
+        description: 'Exaustão epidêmica — rotina 10-14h/dia, aposentadoria aos 24 anos, "taylorização do lazer"',
+        connections: ['pro-gamer', 'esports-laboratorio-neoliberal', 'burnout', 'gamificacao-trabalho-alienado'],
+        color: '#f97316',
+        layer: 0
+    },
+    'propriedade-privada-jogo': {
+        name: 'Propriedade Privada do Jogo',
+        description: 'Riot/Valve possuem código do jogo — podem mudar regras unilateralmente, tornar skills obsoletas overnight (vassalagem digital)',
+        connections: ['pro-gamer', 'vassalagem-digital', 'plataformizacao', 'software-livre'],
+        color: '#f97316',
+        layer: 0
+    },
+    'vassalagem-digital': {
+        name: 'Vassalagem Digital',
+        description: 'Jogador não tem "direito ao jogo", só licença revogável — desenvolvedor controla campo, regras, narrativa, economia',
+        connections: ['propriedade-privada-jogo', 'pro-gamer', 'plataformizacao'],
+        color: '#f97316',
+        layer: 0
+    },
+    'dupla-exploracao-pro-gamer': {
+        name: 'Dupla Exploração do Pro-Gamer',
+        description: 'Desenvolvedora extrai valor do skill + plataforma streaming (Twitch/YouTube) fica com 50% receita — três patrões, zero contrato formal',
+        connections: ['pro-gamer', 'plataformizacao', 'extracao-valor', 'uberizacao'],
+        color: '#f97316',
+        layer: 0
+    },
+    'gamificacao-trabalho-alienado': {
+        name: 'Gamificação do Trabalho Alienado',
+        description: 'Esports = autoexploração voluntária travestida de paixão — quando lazer vira trabalho, não precisa coerção externa (Jamie Woodcock)',
+        connections: ['esports-laboratorio-neoliberal', 'burnout-esports', 'trabalho-imaterial', 'vicio-digital'],
+        color: '#f97316',
+        layer: 0
+    },
+    'torcedor-produtor': {
+        name: 'Torcedor-Produtor',
+        description: 'Fã realiza trabalho afetivo/cognitivo não-pago (criar meme, debater tática, votar enquete) monetizado por plataformas',
+        connections: ['trabalho-afetivo-nao-remunerado', 'fantasy-sports', 'fan-tokens', 'trabalho-digital-nao-remunerado'],
+        color: '#f97316',
+        layer: 0
+    },
+    'trabalho-afetivo-nao-remunerado': {
+        name: 'Trabalho Afetivo Não-Remunerado da Torcida',
+        description: 'Paixão pelo time = combustível grátis — quanto mais você ama, mais trabalha (subsunção total da vida via afeto)',
+        connections: ['torcedor-produtor', 'trabalho-afetivo', 'extracao-valor', 'afetos-expropriados'],
+        color: '#f97316',
+        layer: 0
+    },
+    'fantasy-sports': {
+        name: 'Fantasy Sports',
+        description: 'DraftKings, FanDuel, Cartola FC — trabalho analítico gratuito gera dataset massivo vendido para casas de apostas',
+        connections: ['torcedor-produtor', 'apostas-esportivas', 'trabalho-digital-nao-remunerado', 'engenharia-vicio'],
+        color: '#f97316',
+        layer: 0
+    },
+    'fan-tokens': {
+        name: 'Fan Tokens',
+        description: 'Socios.com (Barcelona, Flamengo) — financeirização da paixão, especulação sem democracia, migalhas simbólicas de participação',
+        connections: ['torcedor-produtor', 'financeirizacao-paixao', 'cripto-especulacao', 'blockchain'],
+        color: '#f97316',
+        layer: 0
+    },
+    'financeirizacao-paixao': {
+        name: 'Financeirização da Paixão',
+        description: 'Transformar pertencimento (relação comunitária) em ativo especulável — amor ao clube vira derivativo financeiro',
+        connections: ['fan-tokens', 'apostas-esportivas', 'mercadificacao', 'capital-ficticio'],
+        color: '#f97316',
+        layer: 0
+    },
+    'apostas-esportivas': {
+        name: 'Apostas Esportivas',
+        description: '98% perdem longo prazo, in-play betting = slot machine disfarçada, vício epidêmico (15-20% apostadores Brasil)',
+        connections: ['fantasy-sports', 'financeirizacao-paixao', 'engenharia-vicio', 'apostas-brasil-epidemia'],
+        color: '#f97316',
+        layer: 0
+    },
+    'apostas-brasil-epidemia': {
+        name: 'Epidemia de Apostas no Brasil',
+        description: '2023-24: 25mi apostadores, R$ 100bi/ano, periferia perde R$ 200-500/mês — apostas como agiota digital (Rosana Pinheiro-Machado)',
+        connections: ['apostas-esportivas', 'necropolítica-bets', 'extracao-periferia', 'vicio-digital'],
+        color: '#f97316',
+        layer: 0
+    },
+    'necropolítica-bets': {
+        name: 'Necropolítica via Bets',
+        description: 'Jovens negros periferia perdem salário inteiro, violência doméstica por perdas, casas de apostas = agiota digital',
+        connections: ['apostas-brasil-epidemia', 'necropolítica', 'extracao-periferia', 'corpo-negro-commodity'],
+        color: '#f97316',
+        layer: 0
+    },
+    'necropolítica-esportiva': {
+        name: 'Necropolítica Esportiva',
+        description: 'Corpos negros = commodity extraível/descartável — 70%+ jogadores negros, 1%< dirigentes (Achille Mbembe aplicado ao esporte)',
+        connections: ['corpo-negro-commodity', 'extrativismo-corporal', 'necropolítica', 'vies-algoritmico-esporte'],
+        color: '#f97316',
+        layer: 0
+    },
+    'corpo-negro-commodity': {
+        name: 'Corpo Negro como Commodity',
+        description: 'Corpos negros mensurados/otimizados/descartados, mentes brancas (técnicos/analistas) controlam dados — da senzala ao estádio',
+        connections: ['necropolítica-esportiva', 'extrativismo-corporal', 'datificacao-corpo-atleta', 'racismo-estrutural'],
+        color: '#f97316',
+        layer: 0
+    },
+    'extrativismo-corporal': {
+        name: 'Extrativismo Corporal',
+        description: 'Clubes europeus "fazendas de talentos" África/América Latina — 0,1% sucesso, 99,9% descartados sem educação/profissão',
+        connections: ['necropolítica-esportiva', 'corpo-negro-commodity', 'extrativismo-dados', 'colonialismo-digital'],
+        color: '#f97316',
+        layer: 0
+    },
+    'varzea-invisivel': {
+        name: 'Várzea Invisível para Algoritmos',
+        description: 'Jovem periferia sem dados desde criança (sem wearable aos 8 anos) = invisível para scouting — datificação exclui pobres',
+        connections: ['datificacao-corpo-atleta', 'extracao-periferia', 'necropolítica-esportiva'],
+        color: '#f97316',
+        layer: 0
+    },
+    'extracao-periferia': {
+        name: 'Extração da Periferia via Esporte',
+        description: 'Apostas + academias privatizadas caras + várzea invisível = fechamento de canal de mobilidade social via futebol',
+        connections: ['varzea-invisivel', 'apostas-brasil-epidemia', 'necropolítica-bets'],
+        color: '#f97316',
+        layer: 0
+    },
+    'sindicatos-esports': {
+        name: 'Sindicatos de Esports',
+        description: 'CSPPA (Counter-Strike), FPA (Fortnite) — luta por contratos padronizados, salário-mínimo, seguro-saúde, propriedade de dados',
+        connections: ['pro-gamer', 'resistencia-plataformas', 'organizacao-coletiva', 'direito-dados-biometricos'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'direito-dados-biometricos': {
+        name: 'Direito à Propriedade de Dados Biométricos',
+        description: 'Sindicato Atletas (Brasil) — atleta deve autorizar venda de dados corporais para terceiros (apostas, games)',
+        connections: ['sindicatos-esports', 'datificacao-corpo-atleta', 'soberania-dados', 'transparencia-radical-dados'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'jogos-open-source': {
+        name: 'Jogos Open-Source',
+        description: 'Xonotic, 0 A.D., movimento Libre Gaming — comunidade controla código, governança democrática, sem propriedade corporativa',
+        connections: ['propriedade-privada-jogo', 'software-livre', 'cooperativas-plataforma', 'resistencia-plataformas'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'transparencia-radical-dados': {
+        name: 'Transparência Radical de Dados',
+        description: 'FairPlay Alliance — exigir publicação de todos dados biométricos em formato aberto (API) — fim do monopólio analítico',
+        connections: ['direito-dados-biometricos', 'datificacao-corpo-atleta', 'transparencia-algoritmica', 'dados-abertos'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'esporte-comunitario': {
+        name: 'Esporte Comunitário Não-Plataformizado',
+        description: 'Várzea, LAN parties, Right to Play — prática fora da lógica performance/lucro, memória de que jogo nos pertence',
+        connections: ['resistencia-plataformas', 'comum', 'nhandereko', 'varzea-invisivel'],
+        color: '#22c55e',
+        layer: 1
     }
 };
 
