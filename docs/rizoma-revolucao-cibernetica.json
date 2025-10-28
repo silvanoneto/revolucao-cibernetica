@@ -1,0 +1,3557 @@
+{
+  "meta": {
+    "title": "A Revolução Cibernética - Rizoma de Conceitos",
+    "version": "2.0",
+    "date": "2025-10-28T02:09:26.064Z",
+    "totalConcepts": 116,
+    "changelog": [
+      "2025-10-27 (v2): Cap 2 - Cibernética (40 conceitos)",
+      "2025-10-27 (v1): Cap 1 - Marxismo (32 conceitos)"
+    ],
+    "exported_at": "2025-10-28T03:06:42.982898+00:00"
+  },
+  "nodes": [
+    {
+      "id": "mercadoria",
+      "name": "Mercadoria",
+      "description": "Produto do trabalho destinado à troca no mercado",
+      "color": "#ef4444",
+      "layer": -1,
+      "connections": [
+        "valor-uso",
+        "valor-troca",
+        "fetichismo",
+        "trabalho-abstrato"
+      ]
+    },
+    {
+      "id": "valor-uso",
+      "name": "Valor de Uso",
+      "description": "Utilidade concreta de uma mercadoria",
+      "color": "#ef4444",
+      "layer": -1,
+      "connections": [
+        "mercadoria",
+        "valor-troca",
+        "trabalho-concreto"
+      ]
+    },
+    {
+      "id": "valor-troca",
+      "name": "Valor de Troca",
+      "description": "Relação quantitativa de troca entre mercadorias",
+      "color": "#ef4444",
+      "layer": -1,
+      "connections": [
+        "mercadoria",
+        "valor-uso",
+        "trabalho-abstrato",
+        "preco-valor"
+      ]
+    },
+    {
+      "id": "trabalho-concreto",
+      "name": "Trabalho Concreto",
+      "description": "Atividade específica que cria valor de uso particular",
+      "color": "#ef4444",
+      "layer": -1,
+      "connections": [
+        "valor-uso",
+        "trabalho-abstrato",
+        "previa-ideacao"
+      ]
+    },
+    {
+      "id": "trabalho-abstrato",
+      "name": "Trabalho Abstrato",
+      "description": "Trabalho humano reduzido a dispêndio de tempo",
+      "color": "#ef4444",
+      "layer": -1,
+      "connections": [
+        "mercadoria",
+        "valor-troca",
+        "trabalho-concreto",
+        "tsn"
+      ]
+    },
+    {
+      "id": "tsn",
+      "name": "Tempo de Trabalho Socialmente Necessário",
+      "description": "Tempo médio para produzir mercadoria no nível tecnológico da sociedade",
+      "color": "#ef4444",
+      "layer": -1,
+      "connections": [
+        "trabalho-abstrato",
+        "valor-troca",
+        "forcas-produtivas"
+      ]
+    },
+    {
+      "id": "previa-ideacao",
+      "name": "Prévia-Ideação",
+      "description": "Capacidade humana de planejar mentalmente antes de executar",
+      "color": "#ef4444",
+      "layer": -1,
+      "connections": [
+        "trabalho-concreto",
+        "objetivacao",
+        "forcas-produtivas"
+      ]
+    },
+    {
+      "id": "objetivacao",
+      "name": "Objetivação",
+      "description": "Materialização da ideia no mundo através do trabalho",
+      "color": "#ef4444",
+      "layer": -1,
+      "connections": [
+        "previa-ideacao",
+        "trabalho-concreto",
+        "alienacao"
+      ]
+    },
+    {
+      "id": "forcas-produtivas",
+      "name": "Forças Produtivas",
+      "description": "Ferramentas, tecnologias, conhecimentos para transformar natureza",
+      "color": "#ef4444",
+      "layer": -1,
+      "connections": [
+        "tsn",
+        "relacoes-producao",
+        "automacao",
+        "ia"
+      ]
+    },
+    {
+      "id": "relacoes-producao",
+      "name": "Relações de Produção",
+      "description": "Relações sociais estabelecidas para produzir e distribuir bens",
+      "color": "#ef4444",
+      "layer": -1,
+      "connections": [
+        "forcas-produtivas",
+        "mais-valia",
+        "capital",
+        "uberizacao"
+      ]
+    },
+    {
+      "id": "mais-valia",
+      "name": "Mais-Valia",
+      "description": "Valor criado pelo trabalhador além do seu salário",
+      "color": "#ef4444",
+      "layer": 0,
+      "connections": [
+        "mais-valia-absoluta",
+        "mais-valia-relativa",
+        "capital",
+        "exploracao"
+      ]
+    },
+    {
+      "id": "mais-valia-absoluta",
+      "name": "Mais-Valia Absoluta",
+      "description": "Extração via aumento de jornada ou intensidade do trabalho",
+      "color": "#ef4444",
+      "layer": 0,
+      "connections": [
+        "mais-valia",
+        "mais-valia-relativa",
+        "uberizacao",
+        "reforma-trabalhista"
+      ]
+    },
+    {
+      "id": "mais-valia-relativa",
+      "name": "Mais-Valia Relativa",
+      "description": "Extração via aumento de produtividade (tecnologia)",
+      "color": "#ef4444",
+      "layer": 0,
+      "connections": [
+        "mais-valia",
+        "mais-valia-absoluta",
+        "automacao",
+        "algoritmos"
+      ]
+    },
+    {
+      "id": "capital",
+      "name": "Capital",
+      "description": "Processo de autovalorização: D-M-P-M'-D'",
+      "color": "#ef4444",
+      "layer": 0,
+      "connections": [
+        "mais-valia",
+        "circuito-capital",
+        "acumulacao",
+        "plataformizacao"
+      ]
+    },
+    {
+      "id": "circuito-capital",
+      "name": "Circuito do Capital (D-M-D')",
+      "description": "Dinheiro → Mercadorias → Produção → Mais Dinheiro",
+      "color": "#ef4444",
+      "layer": 0,
+      "connections": [
+        "capital",
+        "mais-valia",
+        "acumulacao"
+      ]
+    },
+    {
+      "id": "fetichismo",
+      "name": "Fetichismo da Mercadoria",
+      "description": "Relações sociais aparecem como relações entre coisas",
+      "color": "#ef4444",
+      "layer": 0,
+      "connections": [
+        "mercadoria",
+        "fetichismo-digital",
+        "ideologia",
+        "alienacao"
+      ]
+    },
+    {
+      "id": "fetichismo-digital",
+      "name": "Fetichismo do Dado",
+      "description": "Exploração mascarada como \"parceria\" e \"oportunidade\"",
+      "color": "#ef4444",
+      "layer": 0,
+      "connections": [
+        "fetichismo",
+        "mais-valia-dados",
+        "plataformizacao",
+        "magalu"
+      ]
+    },
+    {
+      "id": "preco-valor",
+      "name": "Preço ≠ Valor",
+      "description": "Preço oscila em torno do valor, mas não é o valor",
+      "color": "#ef4444",
+      "layer": 0,
+      "connections": [
+        "valor-troca",
+        "fetichismo",
+        "capitalismo-vigilancia"
+      ]
+    },
+    {
+      "id": "reforma-trabalhista",
+      "name": "Reforma Trabalhista 2017 (Brasil)",
+      "description": "Lei 13.467 - legalização da mais-valia absoluta",
+      "color": "#ef4444",
+      "layer": 0,
+      "connections": [
+        "mais-valia-absoluta",
+        "uberizacao",
+        "pejotizacao",
+        "intermitente"
+      ]
+    },
+    {
+      "id": "pejotizacao",
+      "name": "Pejotização",
+      "description": "Transformar empregados em \"pessoas jurídicas\" para fugir de direitos",
+      "color": "#ef4444",
+      "layer": 0,
+      "connections": [
+        "reforma-trabalhista",
+        "uberizacao",
+        "precarizacao"
+      ]
+    },
+    {
+      "id": "intermitente",
+      "name": "Trabalho Intermitente",
+      "description": "Disponibilidade 24/7, pagamento apenas por horas chamadas",
+      "color": "#ef4444",
+      "layer": 0,
+      "connections": [
+        "reforma-trabalhista",
+        "uberizacao",
+        "mais-valia-absoluta"
+      ]
+    },
+    {
+      "id": "magalu",
+      "name": "Magazine Luiza (Caso)",
+      "description": "Plataformização brasileira - controle sem propriedade",
+      "color": "#ef4444",
+      "layer": 0,
+      "connections": [
+        "fetichismo-digital",
+        "plataformizacao",
+        "mais-valia-dados",
+        "terceirizacao"
+      ]
+    },
+    {
+      "id": "terceirizacao",
+      "name": "Terceirização",
+      "description": "Transferência de riscos e custos para trabalhadores",
+      "color": "#ef4444",
+      "layer": 0,
+      "connections": [
+        "magalu",
+        "uberizacao",
+        "precarizacao"
+      ]
+    },
+    {
+      "id": "exploracao",
+      "name": "Exploração Capitalista",
+      "description": "Apropriação do trabalho excedente não-pago",
+      "color": "#ef4444",
+      "layer": 0,
+      "connections": [
+        "mais-valia",
+        "alienacao",
+        "resistencia"
+      ]
+    },
+    {
+      "id": "alienacao",
+      "name": "Alienação",
+      "description": "Estranhamento do trabalhador em relação ao produto e ao processo",
+      "color": "#ef4444",
+      "layer": 0,
+      "connections": [
+        "objetivacao",
+        "fetichismo",
+        "exploracao"
+      ]
+    },
+    {
+      "id": "precarizacao",
+      "name": "Precarização",
+      "description": "Degradação das condições de trabalho e direitos",
+      "color": "#ef4444",
+      "layer": 0,
+      "connections": [
+        "uberizacao",
+        "pejotizacao",
+        "terceirizacao",
+        "intermitente"
+      ]
+    },
+    {
+      "id": "acumulacao",
+      "name": "Acumulação de Capital",
+      "description": "Reinvestimento da mais-valia para gerar mais mais-valia",
+      "color": "#ef4444",
+      "layer": 0,
+      "connections": [
+        "capital",
+        "circuito-capital",
+        "monopolio"
+      ]
+    },
+    {
+      "id": "algoritmos",
+      "name": "Algoritmos de Controle",
+      "description": "Gerenciamento algorítmico automatizado do trabalho",
+      "color": "#ef4444",
+      "layer": 0,
+      "connections": [
+        "mais-valia-relativa",
+        "uberizacao",
+        "ia",
+        "vigilancia"
+      ]
+    },
+    {
+      "id": "automacao",
+      "name": "Automação",
+      "description": "Substituição de trabalho humano por máquinas",
+      "color": "#ef4444",
+      "layer": 0,
+      "connections": [
+        "forcas-produtivas",
+        "mais-valia-relativa",
+        "ia",
+        "desemprego"
+      ]
+    },
+    {
+      "id": "ia",
+      "name": "Inteligência Artificial",
+      "description": "Machine learning aplicado à extração de mais-valia",
+      "color": "#ef4444",
+      "layer": 0,
+      "connections": [
+        "automacao",
+        "algoritmos",
+        "mais-valia-dados",
+        "vigilancia"
+      ]
+    },
+    {
+      "id": "cibernetica",
+      "name": "Cibernética",
+      "description": "Ciência do controle e comunicação (Wiener, 1948)",
+      "color": "#8b5cf6",
+      "layer": -1,
+      "connections": [
+        "feedback",
+        "wiener",
+        "turing",
+        "shannon",
+        "segunda-ordem",
+        "automacao"
+      ]
+    },
+    {
+      "id": "wiener",
+      "name": "Norbert Wiener",
+      "description": "Fundador da cibernética (1948) - alertou sobre automação descontrolada",
+      "color": "#8b5cf6",
+      "layer": -1,
+      "connections": [
+        "cibernetica",
+        "feedback",
+        "duplo-uso-militar",
+        "vicio-digital"
+      ]
+    },
+    {
+      "id": "turing",
+      "name": "Alan Turing",
+      "description": "Máquina Universal + Problema da Parada - fundador da computação",
+      "color": "#8b5cf6",
+      "layer": -1,
+      "connections": [
+        "computabilidade",
+        "problema-parada",
+        "enigma",
+        "duplo-uso-militar"
+      ]
+    },
+    {
+      "id": "shannon",
+      "name": "Claude Shannon",
+      "description": "Teoria da Informação (1948) - informação como bits mensuráveis",
+      "color": "#8b5cf6",
+      "layer": -1,
+      "connections": [
+        "teoria-informacao",
+        "entropia",
+        "trabalho-imaterial",
+        "duplo-uso-militar"
+      ]
+    },
+    {
+      "id": "babbage",
+      "name": "Charles Babbage",
+      "description": "Máquina Analítica (1837) - primeiro computador programável (mecânico)",
+      "color": "#8b5cf6",
+      "layer": -1,
+      "connections": [
+        "ada-lovelace",
+        "algoritmo",
+        "automacao",
+        "materialidade-computacao"
+      ]
+    },
+    {
+      "id": "ada-lovelace",
+      "name": "Ada Lovelace",
+      "description": "Primeira programadora (1843) - viu computação além de números",
+      "color": "#ec4899",
+      "layer": -1,
+      "connections": [
+        "babbage",
+        "algoritmo",
+        "eniac-six",
+        "genero-computacao"
+      ]
+    },
+    {
+      "id": "eniac-six",
+      "name": "ENIAC Six",
+      "description": "Primeiras programadoras (1945) - invisibilizadas pela história",
+      "color": "#ec4899",
+      "layer": -1,
+      "connections": [
+        "ada-lovelace",
+        "genero-computacao",
+        "trabalho-invisivel"
+      ]
+    },
+    {
+      "id": "genero-computacao",
+      "name": "Gênero e Computação",
+      "description": "Padrão histórico: trabalho feminizado → masculinizado quando valorizado",
+      "color": "#ec4899",
+      "layer": 0,
+      "connections": [
+        "eniac-six",
+        "ada-lovelace",
+        "divisao-sexual-trabalho",
+        "trabalho-invisivel"
+      ]
+    },
+    {
+      "id": "feedback",
+      "name": "Feedback Loop",
+      "description": "Ciclo de retorno que modifica o sistema (negativo=estabiliza, positivo=amplifica)",
+      "color": "#10b981",
+      "layer": 0,
+      "connections": [
+        "cibernetica",
+        "wiener",
+        "autopoiese",
+        "temporalidade",
+        "vicio-digital"
+      ]
+    },
+    {
+      "id": "feedback-negativo",
+      "name": "Feedback Negativo",
+      "description": "Estabilizador - busca equilíbrio (termostato, homeostase)",
+      "color": "#10b981",
+      "layer": 0,
+      "connections": [
+        "feedback",
+        "homeostase",
+        "cybersyn"
+      ]
+    },
+    {
+      "id": "feedback-positivo",
+      "name": "Feedback Positivo",
+      "description": "Amplificador - crescimento exponencial ou colapso (microfonia, vício)",
+      "color": "#f97316",
+      "layer": 0,
+      "connections": [
+        "feedback",
+        "vicio-digital",
+        "viralizacao",
+        "necropolitica-digital"
+      ]
+    },
+    {
+      "id": "vicio-digital",
+      "name": "Vício Digital",
+      "description": "Apps como máquinas de Wiener: feedback positivo dopamina → mais scroll",
+      "color": "#f97316",
+      "layer": 0,
+      "connections": [
+        "feedback-positivo",
+        "wiener",
+        "dopamina",
+        "infinite-scroll",
+        "capitalismo-vigilancia"
+      ]
+    },
+    {
+      "id": "dopamina",
+      "name": "Dopamina Digital",
+      "description": "Sensor biológico usado como loop de feedback viciante",
+      "color": "#f97316",
+      "layer": 0,
+      "connections": [
+        "vicio-digital",
+        "feedback-positivo",
+        "recompensa-variavel"
+      ]
+    },
+    {
+      "id": "recompensa-variavel",
+      "name": "Recompensa Variável",
+      "description": "Incerteza maximiza dopamina (slot machine = próximo scroll)",
+      "color": "#f97316",
+      "layer": 0,
+      "connections": [
+        "dopamina",
+        "vicio-digital",
+        "gamificacao"
+      ]
+    },
+    {
+      "id": "infinite-scroll",
+      "name": "Infinite Scroll",
+      "description": "Remove ponto de parada - feedback positivo sem válvula de escape",
+      "color": "#f97316",
+      "layer": 0,
+      "connections": [
+        "vicio-digital",
+        "feedback-positivo"
+      ]
+    },
+    {
+      "id": "algoritmo",
+      "name": "Algoritmo",
+      "description": "Conjunto finito de instruções para resolver problema",
+      "color": "#8b5cf6",
+      "layer": -1,
+      "connections": [
+        "ada-lovelace",
+        "turing",
+        "computabilidade",
+        "automacao"
+      ]
+    },
+    {
+      "id": "computabilidade",
+      "name": "Computabilidade",
+      "description": "O que pode ser resolvido por algoritmo (Máquina de Turing)",
+      "color": "#8b5cf6",
+      "layer": -1,
+      "connections": [
+        "turing",
+        "algoritmo",
+        "problema-parada"
+      ]
+    },
+    {
+      "id": "problema-parada",
+      "name": "Problema da Parada",
+      "description": "Prova: nem tudo é computável - limites matemáticos da tecnologia",
+      "color": "#7c3aed",
+      "layer": 0,
+      "connections": [
+        "turing",
+        "computabilidade",
+        "limites-tecnologia",
+        "democracia-algoritmicica"
+      ]
+    },
+    {
+      "id": "limites-tecnologia",
+      "name": "Limites da Tecnologia",
+      "description": "Nem tudo pode ser \"resolvido com tecnologia\" - exige política",
+      "color": "#7c3aed",
+      "layer": 0,
+      "connections": [
+        "problema-parada",
+        "determinismo-tecnologico",
+        "democracia-algoritmicica"
+      ]
+    },
+    {
+      "id": "teoria-informacao",
+      "name": "Teoria da Informação",
+      "description": "Informação mensurável em bits, separada de significado (Shannon)",
+      "color": "#8b5cf6",
+      "layer": -1,
+      "connections": [
+        "shannon",
+        "bit",
+        "entropia",
+        "trabalho-imaterial"
+      ]
+    },
+    {
+      "id": "bit",
+      "name": "Bit",
+      "description": "Unidade básica de informação (0 ou 1) - permite digitalização de tudo",
+      "color": "#8b5cf6",
+      "layer": -1,
+      "connections": [
+        "teoria-informacao",
+        "shannon",
+        "digitalizacao"
+      ]
+    },
+    {
+      "id": "entropia",
+      "name": "Entropia Informacional",
+      "description": "Medida de incerteza/imprevisibilidade (Shannon = Boltzmann)",
+      "color": "#8b5cf6",
+      "layer": -1,
+      "connections": [
+        "teoria-informacao",
+        "shannon",
+        "materialidade-computacao"
+      ]
+    },
+    {
+      "id": "duplo-uso-militar",
+      "name": "Duplo Uso Militar",
+      "description": "Todas tecnologias fundacionais nasceram da guerra (Enigma, ENIAC, Internet)",
+      "color": "#dc2626",
+      "layer": -1,
+      "connections": [
+        "turing",
+        "wiener",
+        "shannon",
+        "enigma",
+        "darpa",
+        "geopolitica"
+      ]
+    },
+    {
+      "id": "enigma",
+      "name": "Enigma",
+      "description": "Código nazista quebrado por Turing - cibernética contra fascismo",
+      "color": "#dc2626",
+      "layer": -1,
+      "connections": [
+        "turing",
+        "duplo-uso-militar",
+        "necropolitica-digital"
+      ]
+    },
+    {
+      "id": "darpa",
+      "name": "DARPA",
+      "description": "ARPANET → Internet - rede militar virou www",
+      "color": "#dc2626",
+      "layer": 0,
+      "connections": [
+        "duplo-uso-militar",
+        "internet",
+        "geopolitica",
+        "vigilancia"
+      ]
+    },
+    {
+      "id": "materialidade-computacao",
+      "name": "Materialidade da Computação",
+      "description": "Não há \"desmaterialização\" - há mineração, energia, e-waste",
+      "color": "#22c55e",
+      "layer": 0,
+      "connections": [
+        "babbage",
+        "entropia",
+        "extrativismo",
+        "ecologia-digital",
+        "data-centers"
+      ]
+    },
+    {
+      "id": "ecologia-digital",
+      "name": "Ecologia Digital",
+      "description": "Custos ambientais invisibilizados: mineração → energia → e-waste",
+      "color": "#22c55e",
+      "layer": 0,
+      "connections": [
+        "materialidade-computacao",
+        "extrativismo",
+        "e-waste",
+        "data-centers"
+      ]
+    },
+    {
+      "id": "e-waste",
+      "name": "E-Waste",
+      "description": "Lixo eletrônico = genocídio lento (crianças em Gana queimando placas)",
+      "color": "#22c55e",
+      "layer": 0,
+      "connections": [
+        "ecologia-digital",
+        "necropolitica-digital",
+        "extrativismo"
+      ]
+    },
+    {
+      "id": "data-centers",
+      "name": "Data Centers",
+      "description": "Não há nuvem - há data centers consumindo rios para refrigeração",
+      "color": "#22c55e",
+      "layer": 0,
+      "connections": [
+        "materialidade-computacao",
+        "ecologia-digital",
+        "fetichismo-digital"
+      ]
+    },
+    {
+      "id": "autopoiese",
+      "name": "Autopoiese",
+      "description": "Sistemas que se auto-criam (Maturana & Varela)",
+      "color": "#8b5cf6",
+      "layer": -1,
+      "connections": [
+        "cibernetica",
+        "feedback",
+        "nhandereko"
+      ]
+    },
+    {
+      "id": "segunda-ordem",
+      "name": "Cibernética de Segunda Ordem",
+      "description": "Observador incluído no sistema observado",
+      "color": "#10b981",
+      "layer": 0,
+      "connections": [
+        "cibernetica",
+        "meta-observacao",
+        "ontologia-executavel"
+      ]
+    },
+    {
+      "id": "rizoma",
+      "name": "Rizoma",
+      "description": "Estrutura não-hierárquica (Deleuze & Guattari)",
+      "color": "#8b5cf6",
+      "layer": -1,
+      "connections": [
+        "multiplicidade",
+        "devir",
+        "navegacao-rizomatica"
+      ]
+    },
+    {
+      "id": "multiplicidade",
+      "name": "Multiplicidade",
+      "description": "Não é uno nem múltiplo - é multiplicidade",
+      "color": "#8b5cf6",
+      "layer": -1,
+      "connections": [
+        "rizoma",
+        "devir",
+        "ontologia-relacional"
+      ]
+    },
+    {
+      "id": "capitalismo-vigilancia",
+      "name": "Capitalismo de Vigilância",
+      "description": "Extração de dados comportamentais (Zuboff)",
+      "color": "#ef4444",
+      "layer": 0,
+      "connections": [
+        "mais-valia-dados",
+        "plataformizacao",
+        "resistencia",
+        "preco-valor",
+        "vigilancia"
+      ]
+    },
+    {
+      "id": "mais-valia-dados",
+      "name": "Mais-Valia de Dados",
+      "description": "Valor extraído do trabalho digital não-pago",
+      "color": "#ef4444",
+      "layer": 0,
+      "connections": [
+        "capitalismo-vigilancia",
+        "uberizacao",
+        "trabalho-imaterial",
+        "fetichismo-digital",
+        "magalu",
+        "ia"
+      ]
+    },
+    {
+      "id": "vigilancia",
+      "name": "Vigilância Digital",
+      "description": "Monitoramento contínuo de comportamento para extração de valor",
+      "color": "#ef4444",
+      "layer": 0,
+      "connections": [
+        "capitalismo-vigilancia",
+        "algoritmos",
+        "ia",
+        "resistencia"
+      ]
+    },
+    {
+      "id": "monopolio",
+      "name": "Monopólio de Plataforma",
+      "description": "Concentração de poder via efeitos de rede",
+      "color": "#ef4444",
+      "layer": 0,
+      "connections": [
+        "plataformizacao",
+        "acumulacao",
+        "capitalismo-vigilancia"
+      ]
+    },
+    {
+      "id": "ideologia",
+      "name": "Ideologia",
+      "description": "Sistema de representações que mascara contradições reais",
+      "color": "#ef4444",
+      "layer": 0,
+      "connections": [
+        "fetichismo",
+        "fetichismo-digital",
+        "alienacao"
+      ]
+    },
+    {
+      "id": "desemprego",
+      "name": "Desemprego Estrutural",
+      "description": "Excedente de população trabalhadora devido à automação",
+      "color": "#ef4444",
+      "layer": 0,
+      "connections": [
+        "automacao",
+        "precarizacao",
+        "uberizacao"
+      ]
+    },
+    {
+      "id": "ontologia-executavel",
+      "name": "Ontologia Executável",
+      "description": "Filosofia que se performa em código",
+      "color": "#10b981",
+      "layer": 0,
+      "connections": [
+        "segunda-ordem",
+        "critica-performativa",
+        "canvas-background"
+      ]
+    },
+    {
+      "id": "critica-performativa",
+      "name": "Crítica Performativa",
+      "description": "Sistema que executa sua própria crítica",
+      "color": "#10b981",
+      "layer": 0,
+      "connections": [
+        "ontologia-executavel",
+        "captcha",
+        "ironia-politica"
+      ]
+    },
+    {
+      "id": "captcha",
+      "name": "CAPTCHA Anti-Algorítmico",
+      "description": "Humanos passam, bots falham",
+      "color": "#10b981",
+      "layer": 0,
+      "connections": [
+        "critica-performativa",
+        "caos",
+        "resistencia"
+      ]
+    },
+    {
+      "id": "sistema-ternario",
+      "name": "Sistema Ternário (-1, 0, +1)",
+      "description": "Base 3 balanceada para representar temporalidade",
+      "color": "#10b981",
+      "layer": 0,
+      "connections": [
+        "temporalidade",
+        "feedback",
+        "backfeed"
+      ]
+    },
+    {
+      "id": "temporalidade",
+      "name": "Temporalidade Ternária",
+      "description": "Presente como tensão entre passado e futuro",
+      "color": "#10b981",
+      "layer": 0,
+      "connections": [
+        "sistema-ternario",
+        "feedback",
+        "guaiamum"
+      ]
+    },
+    {
+      "id": "nhandereko",
+      "name": "Nhandereko",
+      "description": "Orquestrador de conhecimento autopoiético",
+      "color": "#6366f1",
+      "layer": 1,
+      "connections": [
+        "autopoiese",
+        "epistemologia-guarani",
+        "modo-colaborativo"
+      ]
+    },
+    {
+      "id": "epistemologia-guarani",
+      "name": "Epistemologias Guarani",
+      "description": "Conhecimento relacional indígena",
+      "color": "#8b5cf6",
+      "layer": -1,
+      "connections": [
+        "nhandereko",
+        "ontologia-relacional",
+        "decolonial"
+      ]
+    },
+    {
+      "id": "navegacao-rizomatica",
+      "name": "Navegação Rizomática",
+      "description": "Este sistema que você está usando agora",
+      "color": "#6366f1",
+      "layer": 1,
+      "connections": [
+        "rizoma",
+        "grafo-conceitos",
+        "modo-colaborativo"
+      ]
+    },
+    {
+      "id": "modo-colaborativo",
+      "name": "Modo Colaborativo",
+      "description": "Interação síncrona entre usuários (planejado)",
+      "color": "#6366f1",
+      "layer": 1,
+      "connections": [
+        "nhandereko",
+        "navegacao-rizomatica",
+        "websocket"
+      ]
+    },
+    {
+      "id": "resistencia",
+      "name": "Resistência em Código",
+      "description": "Técnicas práticas de contra-automação",
+      "color": "#10b981",
+      "layer": 0,
+      "connections": [
+        "captcha",
+        "opacidade",
+        "honeypots",
+        "critica-performativa"
+      ]
+    },
+    {
+      "id": "devir",
+      "name": "Devir",
+      "description": "Processo de tornar-se, transformação contínua sem destino fixo",
+      "color": "#8b5cf6",
+      "layer": -1,
+      "connections": [
+        "rizoma",
+        "multiplicidade",
+        "ontologia-relacional"
+      ]
+    },
+    {
+      "id": "ontologia-relacional",
+      "name": "Ontologia Relacional",
+      "description": "Ser é relação, não substância isolada",
+      "color": "#8b5cf6",
+      "layer": -1,
+      "connections": [
+        "autopoiese",
+        "devir",
+        "multiplicidade",
+        "epistemologia-guarani"
+      ]
+    },
+    {
+      "id": "uberizacao",
+      "name": "Uberização",
+      "description": "Precarização do trabalho via plataformas digitais",
+      "color": "#ef4444",
+      "layer": 0,
+      "connections": [
+        "mais-valia-dados",
+        "plataformizacao",
+        "trabalho-imaterial",
+        "mais-valia-absoluta",
+        "mais-valia-relativa",
+        "reforma-trabalhista",
+        "intermitente",
+        "algoritmos",
+        "magalu",
+        "precarizacao",
+        "relacoes-producao"
+      ]
+    },
+    {
+      "id": "trabalho-imaterial",
+      "name": "Trabalho Imaterial",
+      "description": "Trabalho cognitivo, afetivo e comunicacional não-pago",
+      "color": "#ef4444",
+      "layer": 0,
+      "connections": [
+        "mais-valia-dados",
+        "uberizacao",
+        "capitalismo-vigilancia",
+        "trabalho-reprodutivo"
+      ]
+    },
+    {
+      "id": "trabalho-reprodutivo",
+      "name": "Trabalho Reprodutivo",
+      "description": "Trabalho de cuidado e manutenção da vida, historicamente invisibilizado",
+      "color": "#ef4444",
+      "layer": 0,
+      "connections": [
+        "trabalho-imaterial",
+        "ciberfeminismo",
+        "federici"
+      ]
+    },
+    {
+      "id": "federici",
+      "name": "Silvia Federici",
+      "description": "Teórica do trabalho reprodutivo e acumulação primitiva",
+      "color": "#8b5cf6",
+      "layer": -1,
+      "connections": [
+        "trabalho-reprodutivo",
+        "ciberfeminismo"
+      ]
+    },
+    {
+      "id": "ciberfeminismo",
+      "name": "Ciberfeminismo",
+      "description": "Análise feminista da tecnologia e do trabalho digital",
+      "color": "#8b5cf6",
+      "layer": 0,
+      "connections": [
+        "trabalho-reprodutivo",
+        "federici",
+        "resistencia"
+      ]
+    },
+    {
+      "id": "plataformizacao",
+      "name": "Plataformização",
+      "description": "Monopolização da infraestrutura digital",
+      "color": "#ef4444",
+      "layer": 0,
+      "connections": [
+        "capitalismo-vigilancia",
+        "uberizacao",
+        "resistencia",
+        "magalu",
+        "capital",
+        "fetichismo-digital",
+        "monopolio"
+      ]
+    },
+    {
+      "id": "decolonial",
+      "name": "Pensamento Decolonial",
+      "description": "Crítica à colonialidade do saber e do poder",
+      "color": "#8b5cf6",
+      "layer": -1,
+      "connections": [
+        "epistemologia-guarani",
+        "ubuntu",
+        "cosmotecnica"
+      ]
+    },
+    {
+      "id": "ubuntu",
+      "name": "Ubuntu",
+      "description": "Filosofia africana: \"Eu sou porque nós somos\"",
+      "color": "#8b5cf6",
+      "layer": -1,
+      "connections": [
+        "decolonial",
+        "ontologia-relacional",
+        "modo-colaborativo"
+      ]
+    },
+    {
+      "id": "cosmotecnica",
+      "name": "Cosmotécnica",
+      "description": "Técnicas enraizadas em cosmologias locais (Yuk Hui)",
+      "color": "#8b5cf6",
+      "layer": -1,
+      "connections": [
+        "decolonial",
+        "epistemologia-guarani",
+        "ontologia-executavel"
+      ]
+    },
+    {
+      "id": "guaiamum",
+      "name": "Guaiamum Lateral",
+      "description": "Movimento diagonal, não-linear, caranguejo",
+      "color": "#10b981",
+      "layer": 0,
+      "connections": [
+        "temporalidade",
+        "navegacao-rizomatica",
+        "backfeed"
+      ]
+    },
+    {
+      "id": "backfeed",
+      "name": "Backfeed",
+      "description": "Retorno do futuro para o presente (antecipação)",
+      "color": "#10b981",
+      "layer": 0,
+      "connections": [
+        "feedback",
+        "temporalidade",
+        "guaiamum",
+        "sistema-ternario"
+      ]
+    },
+    {
+      "id": "opacidade",
+      "name": "Opacidade Estratégica",
+      "description": "Resistir via não-transparência (Édouard Glissant)",
+      "color": "#10b981",
+      "layer": 0,
+      "connections": [
+        "resistencia",
+        "honeypots",
+        "captcha"
+      ]
+    },
+    {
+      "id": "honeypots",
+      "name": "Honeypots",
+      "description": "Armadilhas para capturar bots invasores",
+      "color": "#10b981",
+      "layer": 0,
+      "connections": [
+        "resistencia",
+        "opacidade",
+        "captcha"
+      ]
+    },
+    {
+      "id": "ironia-politica",
+      "name": "Ironia Política",
+      "description": "Crítica através da performance contraditória",
+      "color": "#10b981",
+      "layer": 0,
+      "connections": [
+        "critica-performativa",
+        "captcha",
+        "ontologia-executavel"
+      ]
+    },
+    {
+      "id": "grafo-conceitos",
+      "name": "Grafo de Conceitos",
+      "description": "Estrutura de dados que representa o rizoma",
+      "color": "#6366f1",
+      "layer": 1,
+      "connections": [
+        "navegacao-rizomatica",
+        "rizoma",
+        "websocket"
+      ]
+    },
+    {
+      "id": "websocket",
+      "name": "WebSocket",
+      "description": "Comunicação bidirecional em tempo real",
+      "color": "#6366f1",
+      "layer": 1,
+      "connections": [
+        "modo-colaborativo",
+        "grafo-conceitos",
+        "nhandereko"
+      ]
+    },
+    {
+      "id": "meta-observacao",
+      "name": "Meta-Observação",
+      "description": "Observar o ato de observar (segunda ordem)",
+      "color": "#10b981",
+      "layer": 0,
+      "connections": [
+        "segunda-ordem",
+        "ontologia-executavel",
+        "cibernetica"
+      ]
+    },
+    {
+      "id": "canvas-background",
+      "name": "Canvas Background",
+      "description": "Sistema de arte generativa que performa a filosofia",
+      "color": "#10b981",
+      "layer": 0,
+      "connections": [
+        "ontologia-executavel",
+        "sistema-ternario",
+        "caos"
+      ]
+    },
+    {
+      "id": "caos",
+      "name": "Caos Criativo",
+      "description": "Desordem produtiva, não-entrópica",
+      "color": "#10b981",
+      "layer": 0,
+      "connections": [
+        "canvas-background",
+        "captcha",
+        "sistema-ternario"
+      ]
+    },
+    {
+      "id": "trabalho-invisivel",
+      "name": "Trabalho Invisível",
+      "description": "Trabalho técnico desvalorizado e não-reconhecido",
+      "color": "#ec4899",
+      "layer": 0,
+      "connections": [
+        "eniac-six",
+        "genero-computacao",
+        "trabalho-reprodutivo",
+        "moderacao-conteudo"
+      ]
+    },
+    {
+      "id": "divisao-sexual-trabalho",
+      "name": "Divisão Sexual do Trabalho",
+      "description": "Segregação de gênero no trabalho digital",
+      "color": "#ec4899",
+      "layer": 0,
+      "connections": [
+        "genero-computacao",
+        "trabalho-invisivel",
+        "uberizacao"
+      ]
+    },
+    {
+      "id": "moderacao-conteudo",
+      "name": "Moderação de Conteúdo",
+      "description": "Trabalho traumático invisibilizado nas plataformas",
+      "color": "#ef4444",
+      "layer": 0,
+      "connections": [
+        "trabalho-invisivel",
+        "capitalismo-vigilancia",
+        "necropolitica-digital"
+      ]
+    },
+    {
+      "id": "necropolitica-digital",
+      "name": "Necropolítica Digital",
+      "description": "Algoritmos que decidem quem vive e quem morre (Mbembe)",
+      "color": "#dc2626",
+      "layer": 0,
+      "connections": [
+        "feedback-positivo",
+        "enigma",
+        "e-waste",
+        "moderacao-conteudo",
+        "gabinete-odio"
+      ]
+    },
+    {
+      "id": "gabinete-odio",
+      "name": "Gabinete do Ódio",
+      "description": "Feedback positivo amplificando genocídio via algoritmos",
+      "color": "#dc2626",
+      "layer": 0,
+      "connections": [
+        "necropolitica-digital",
+        "feedback-positivo",
+        "viralizacao"
+      ]
+    },
+    {
+      "id": "viralizacao",
+      "name": "Viralização",
+      "description": "Feedback positivo social (engajamento exponencial)",
+      "color": "#f97316",
+      "layer": 0,
+      "connections": [
+        "feedback-positivo",
+        "gabinete-odio",
+        "dopamina"
+      ]
+    },
+    {
+      "id": "gamificacao",
+      "name": "Gamificação",
+      "description": "Mecânicas de jogo aplicadas para maximizar engajamento",
+      "color": "#f97316",
+      "layer": 0,
+      "connections": [
+        "recompensa-variavel",
+        "vicio-digital",
+        "uberizacao"
+      ]
+    },
+    {
+      "id": "cybersyn",
+      "name": "Proyecto Cybersyn",
+      "description": "Cibernética socialista no Chile de Allende (1971-73)",
+      "color": "#22c55e",
+      "layer": -1,
+      "connections": [
+        "feedback-negativo",
+        "cibernetica",
+        "wiener",
+        "planejamento-participativo"
+      ]
+    },
+    {
+      "id": "planejamento-participativo",
+      "name": "Planejamento Participativo",
+      "description": "Cibernética como ferramenta democrática, não tecnocrática",
+      "color": "#22c55e",
+      "layer": 0,
+      "connections": [
+        "cybersyn",
+        "democracia-algoritmicica",
+        "resistencia"
+      ]
+    },
+    {
+      "id": "democracia-algoritmicica",
+      "name": "Democracia Algorítmica",
+      "description": "Limites e possibilidades de tecnologia na democracia",
+      "color": "#7c3aed",
+      "layer": 0,
+      "connections": [
+        "problema-parada",
+        "limites-tecnologia",
+        "planejamento-participativo"
+      ]
+    },
+    {
+      "id": "determinismo-tecnologico",
+      "name": "Determinismo Tecnológico",
+      "description": "Crença falsa de que tecnologia resolve tudo",
+      "color": "#7c3aed",
+      "layer": 0,
+      "connections": [
+        "limites-tecnologia",
+        "problema-parada",
+        "fetichismo-digital"
+      ]
+    },
+    {
+      "id": "homeostase",
+      "name": "Homeostase",
+      "description": "Equilíbrio dinâmico via feedback negativo",
+      "color": "#10b981",
+      "layer": 0,
+      "connections": [
+        "feedback-negativo",
+        "cybersyn",
+        "autopoiese"
+      ]
+    },
+    {
+      "id": "digitalizacao",
+      "name": "Digitalização",
+      "description": "Conversão de tudo em bits - base da mercantilização digital",
+      "color": "#8b5cf6",
+      "layer": 0,
+      "connections": [
+        "bit",
+        "teoria-informacao",
+        "mais-valia-dados",
+        "fetichismo-digital"
+      ]
+    },
+    {
+      "id": "extrativismo",
+      "name": "Extrativismo Digital",
+      "description": "Mineração de dados + mineração literal (terras raras)",
+      "color": "#22c55e",
+      "layer": 0,
+      "connections": [
+        "materialidade-computacao",
+        "ecologia-digital",
+        "e-waste",
+        "mais-valia-dados"
+      ]
+    },
+    {
+      "id": "geopolitica",
+      "name": "Geopolítica Digital",
+      "description": "Guerra das redes, soberania tecnológica, BRICS vs OTAN",
+      "color": "#dc2626",
+      "layer": 0,
+      "connections": [
+        "darpa",
+        "duplo-uso-militar",
+        "vigilancia",
+        "internet"
+      ]
+    },
+    {
+      "id": "internet",
+      "name": "Internet",
+      "description": "ARPANET militar → www civil (mas vigilância permanece)",
+      "color": "#6366f1",
+      "layer": 0,
+      "connections": [
+        "darpa",
+        "geopolitica",
+        "capitalismo-vigilancia"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "mercadoria",
+      "target": "valor-uso",
+      "type": "relates_to"
+    },
+    {
+      "source": "mercadoria",
+      "target": "valor-troca",
+      "type": "relates_to"
+    },
+    {
+      "source": "mercadoria",
+      "target": "fetichismo",
+      "type": "relates_to"
+    },
+    {
+      "source": "mercadoria",
+      "target": "trabalho-abstrato",
+      "type": "relates_to"
+    },
+    {
+      "source": "valor-uso",
+      "target": "mercadoria",
+      "type": "relates_to"
+    },
+    {
+      "source": "valor-uso",
+      "target": "valor-troca",
+      "type": "relates_to"
+    },
+    {
+      "source": "valor-uso",
+      "target": "trabalho-concreto",
+      "type": "relates_to"
+    },
+    {
+      "source": "valor-troca",
+      "target": "mercadoria",
+      "type": "relates_to"
+    },
+    {
+      "source": "valor-troca",
+      "target": "valor-uso",
+      "type": "relates_to"
+    },
+    {
+      "source": "valor-troca",
+      "target": "trabalho-abstrato",
+      "type": "relates_to"
+    },
+    {
+      "source": "valor-troca",
+      "target": "preco-valor",
+      "type": "relates_to"
+    },
+    {
+      "source": "trabalho-concreto",
+      "target": "valor-uso",
+      "type": "relates_to"
+    },
+    {
+      "source": "trabalho-concreto",
+      "target": "trabalho-abstrato",
+      "type": "relates_to"
+    },
+    {
+      "source": "trabalho-concreto",
+      "target": "previa-ideacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "trabalho-abstrato",
+      "target": "mercadoria",
+      "type": "relates_to"
+    },
+    {
+      "source": "trabalho-abstrato",
+      "target": "valor-troca",
+      "type": "relates_to"
+    },
+    {
+      "source": "trabalho-abstrato",
+      "target": "trabalho-concreto",
+      "type": "relates_to"
+    },
+    {
+      "source": "trabalho-abstrato",
+      "target": "tsn",
+      "type": "relates_to"
+    },
+    {
+      "source": "tsn",
+      "target": "trabalho-abstrato",
+      "type": "relates_to"
+    },
+    {
+      "source": "tsn",
+      "target": "valor-troca",
+      "type": "relates_to"
+    },
+    {
+      "source": "tsn",
+      "target": "forcas-produtivas",
+      "type": "relates_to"
+    },
+    {
+      "source": "previa-ideacao",
+      "target": "trabalho-concreto",
+      "type": "relates_to"
+    },
+    {
+      "source": "previa-ideacao",
+      "target": "objetivacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "previa-ideacao",
+      "target": "forcas-produtivas",
+      "type": "relates_to"
+    },
+    {
+      "source": "objetivacao",
+      "target": "previa-ideacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "objetivacao",
+      "target": "trabalho-concreto",
+      "type": "relates_to"
+    },
+    {
+      "source": "objetivacao",
+      "target": "alienacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "forcas-produtivas",
+      "target": "tsn",
+      "type": "relates_to"
+    },
+    {
+      "source": "forcas-produtivas",
+      "target": "relacoes-producao",
+      "type": "relates_to"
+    },
+    {
+      "source": "forcas-produtivas",
+      "target": "automacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "forcas-produtivas",
+      "target": "ia",
+      "type": "relates_to"
+    },
+    {
+      "source": "relacoes-producao",
+      "target": "forcas-produtivas",
+      "type": "relates_to"
+    },
+    {
+      "source": "relacoes-producao",
+      "target": "mais-valia",
+      "type": "relates_to"
+    },
+    {
+      "source": "relacoes-producao",
+      "target": "capital",
+      "type": "relates_to"
+    },
+    {
+      "source": "relacoes-producao",
+      "target": "uberizacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "mais-valia",
+      "target": "mais-valia-absoluta",
+      "type": "relates_to"
+    },
+    {
+      "source": "mais-valia",
+      "target": "mais-valia-relativa",
+      "type": "relates_to"
+    },
+    {
+      "source": "mais-valia",
+      "target": "capital",
+      "type": "relates_to"
+    },
+    {
+      "source": "mais-valia",
+      "target": "exploracao",
+      "type": "relates_to"
+    },
+    {
+      "source": "mais-valia-absoluta",
+      "target": "mais-valia",
+      "type": "relates_to"
+    },
+    {
+      "source": "mais-valia-absoluta",
+      "target": "mais-valia-relativa",
+      "type": "relates_to"
+    },
+    {
+      "source": "mais-valia-absoluta",
+      "target": "uberizacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "mais-valia-absoluta",
+      "target": "reforma-trabalhista",
+      "type": "relates_to"
+    },
+    {
+      "source": "mais-valia-relativa",
+      "target": "mais-valia",
+      "type": "relates_to"
+    },
+    {
+      "source": "mais-valia-relativa",
+      "target": "mais-valia-absoluta",
+      "type": "relates_to"
+    },
+    {
+      "source": "mais-valia-relativa",
+      "target": "automacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "mais-valia-relativa",
+      "target": "algoritmos",
+      "type": "relates_to"
+    },
+    {
+      "source": "capital",
+      "target": "mais-valia",
+      "type": "relates_to"
+    },
+    {
+      "source": "capital",
+      "target": "circuito-capital",
+      "type": "relates_to"
+    },
+    {
+      "source": "capital",
+      "target": "acumulacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "capital",
+      "target": "plataformizacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "circuito-capital",
+      "target": "capital",
+      "type": "relates_to"
+    },
+    {
+      "source": "circuito-capital",
+      "target": "mais-valia",
+      "type": "relates_to"
+    },
+    {
+      "source": "circuito-capital",
+      "target": "acumulacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "fetichismo",
+      "target": "mercadoria",
+      "type": "relates_to"
+    },
+    {
+      "source": "fetichismo",
+      "target": "fetichismo-digital",
+      "type": "relates_to"
+    },
+    {
+      "source": "fetichismo",
+      "target": "ideologia",
+      "type": "relates_to"
+    },
+    {
+      "source": "fetichismo",
+      "target": "alienacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "fetichismo-digital",
+      "target": "fetichismo",
+      "type": "relates_to"
+    },
+    {
+      "source": "fetichismo-digital",
+      "target": "mais-valia-dados",
+      "type": "relates_to"
+    },
+    {
+      "source": "fetichismo-digital",
+      "target": "plataformizacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "fetichismo-digital",
+      "target": "magalu",
+      "type": "relates_to"
+    },
+    {
+      "source": "preco-valor",
+      "target": "valor-troca",
+      "type": "relates_to"
+    },
+    {
+      "source": "preco-valor",
+      "target": "fetichismo",
+      "type": "relates_to"
+    },
+    {
+      "source": "preco-valor",
+      "target": "capitalismo-vigilancia",
+      "type": "relates_to"
+    },
+    {
+      "source": "reforma-trabalhista",
+      "target": "mais-valia-absoluta",
+      "type": "relates_to"
+    },
+    {
+      "source": "reforma-trabalhista",
+      "target": "uberizacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "reforma-trabalhista",
+      "target": "pejotizacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "reforma-trabalhista",
+      "target": "intermitente",
+      "type": "relates_to"
+    },
+    {
+      "source": "pejotizacao",
+      "target": "reforma-trabalhista",
+      "type": "relates_to"
+    },
+    {
+      "source": "pejotizacao",
+      "target": "uberizacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "pejotizacao",
+      "target": "precarizacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "intermitente",
+      "target": "reforma-trabalhista",
+      "type": "relates_to"
+    },
+    {
+      "source": "intermitente",
+      "target": "uberizacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "intermitente",
+      "target": "mais-valia-absoluta",
+      "type": "relates_to"
+    },
+    {
+      "source": "magalu",
+      "target": "fetichismo-digital",
+      "type": "relates_to"
+    },
+    {
+      "source": "magalu",
+      "target": "plataformizacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "magalu",
+      "target": "mais-valia-dados",
+      "type": "relates_to"
+    },
+    {
+      "source": "magalu",
+      "target": "terceirizacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "terceirizacao",
+      "target": "magalu",
+      "type": "relates_to"
+    },
+    {
+      "source": "terceirizacao",
+      "target": "uberizacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "terceirizacao",
+      "target": "precarizacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "exploracao",
+      "target": "mais-valia",
+      "type": "relates_to"
+    },
+    {
+      "source": "exploracao",
+      "target": "alienacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "exploracao",
+      "target": "resistencia",
+      "type": "relates_to"
+    },
+    {
+      "source": "alienacao",
+      "target": "objetivacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "alienacao",
+      "target": "fetichismo",
+      "type": "relates_to"
+    },
+    {
+      "source": "alienacao",
+      "target": "exploracao",
+      "type": "relates_to"
+    },
+    {
+      "source": "precarizacao",
+      "target": "uberizacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "precarizacao",
+      "target": "pejotizacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "precarizacao",
+      "target": "terceirizacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "precarizacao",
+      "target": "intermitente",
+      "type": "relates_to"
+    },
+    {
+      "source": "acumulacao",
+      "target": "capital",
+      "type": "relates_to"
+    },
+    {
+      "source": "acumulacao",
+      "target": "circuito-capital",
+      "type": "relates_to"
+    },
+    {
+      "source": "acumulacao",
+      "target": "monopolio",
+      "type": "relates_to"
+    },
+    {
+      "source": "algoritmos",
+      "target": "mais-valia-relativa",
+      "type": "relates_to"
+    },
+    {
+      "source": "algoritmos",
+      "target": "uberizacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "algoritmos",
+      "target": "ia",
+      "type": "relates_to"
+    },
+    {
+      "source": "algoritmos",
+      "target": "vigilancia",
+      "type": "relates_to"
+    },
+    {
+      "source": "automacao",
+      "target": "forcas-produtivas",
+      "type": "relates_to"
+    },
+    {
+      "source": "automacao",
+      "target": "mais-valia-relativa",
+      "type": "relates_to"
+    },
+    {
+      "source": "automacao",
+      "target": "ia",
+      "type": "relates_to"
+    },
+    {
+      "source": "automacao",
+      "target": "desemprego",
+      "type": "relates_to"
+    },
+    {
+      "source": "ia",
+      "target": "automacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "ia",
+      "target": "algoritmos",
+      "type": "relates_to"
+    },
+    {
+      "source": "ia",
+      "target": "mais-valia-dados",
+      "type": "relates_to"
+    },
+    {
+      "source": "ia",
+      "target": "vigilancia",
+      "type": "relates_to"
+    },
+    {
+      "source": "cibernetica",
+      "target": "feedback",
+      "type": "relates_to"
+    },
+    {
+      "source": "cibernetica",
+      "target": "wiener",
+      "type": "relates_to"
+    },
+    {
+      "source": "cibernetica",
+      "target": "turing",
+      "type": "relates_to"
+    },
+    {
+      "source": "cibernetica",
+      "target": "shannon",
+      "type": "relates_to"
+    },
+    {
+      "source": "cibernetica",
+      "target": "segunda-ordem",
+      "type": "relates_to"
+    },
+    {
+      "source": "cibernetica",
+      "target": "automacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "wiener",
+      "target": "cibernetica",
+      "type": "relates_to"
+    },
+    {
+      "source": "wiener",
+      "target": "feedback",
+      "type": "relates_to"
+    },
+    {
+      "source": "wiener",
+      "target": "duplo-uso-militar",
+      "type": "relates_to"
+    },
+    {
+      "source": "wiener",
+      "target": "vicio-digital",
+      "type": "relates_to"
+    },
+    {
+      "source": "turing",
+      "target": "computabilidade",
+      "type": "relates_to"
+    },
+    {
+      "source": "turing",
+      "target": "problema-parada",
+      "type": "relates_to"
+    },
+    {
+      "source": "turing",
+      "target": "enigma",
+      "type": "relates_to"
+    },
+    {
+      "source": "turing",
+      "target": "duplo-uso-militar",
+      "type": "relates_to"
+    },
+    {
+      "source": "shannon",
+      "target": "teoria-informacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "shannon",
+      "target": "entropia",
+      "type": "relates_to"
+    },
+    {
+      "source": "shannon",
+      "target": "trabalho-imaterial",
+      "type": "relates_to"
+    },
+    {
+      "source": "shannon",
+      "target": "duplo-uso-militar",
+      "type": "relates_to"
+    },
+    {
+      "source": "babbage",
+      "target": "ada-lovelace",
+      "type": "relates_to"
+    },
+    {
+      "source": "babbage",
+      "target": "algoritmo",
+      "type": "relates_to"
+    },
+    {
+      "source": "babbage",
+      "target": "automacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "babbage",
+      "target": "materialidade-computacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "ada-lovelace",
+      "target": "babbage",
+      "type": "relates_to"
+    },
+    {
+      "source": "ada-lovelace",
+      "target": "algoritmo",
+      "type": "relates_to"
+    },
+    {
+      "source": "ada-lovelace",
+      "target": "eniac-six",
+      "type": "relates_to"
+    },
+    {
+      "source": "ada-lovelace",
+      "target": "genero-computacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "eniac-six",
+      "target": "ada-lovelace",
+      "type": "relates_to"
+    },
+    {
+      "source": "eniac-six",
+      "target": "genero-computacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "eniac-six",
+      "target": "trabalho-invisivel",
+      "type": "relates_to"
+    },
+    {
+      "source": "genero-computacao",
+      "target": "eniac-six",
+      "type": "relates_to"
+    },
+    {
+      "source": "genero-computacao",
+      "target": "ada-lovelace",
+      "type": "relates_to"
+    },
+    {
+      "source": "genero-computacao",
+      "target": "divisao-sexual-trabalho",
+      "type": "relates_to"
+    },
+    {
+      "source": "genero-computacao",
+      "target": "trabalho-invisivel",
+      "type": "relates_to"
+    },
+    {
+      "source": "feedback",
+      "target": "cibernetica",
+      "type": "relates_to"
+    },
+    {
+      "source": "feedback",
+      "target": "wiener",
+      "type": "relates_to"
+    },
+    {
+      "source": "feedback",
+      "target": "autopoiese",
+      "type": "relates_to"
+    },
+    {
+      "source": "feedback",
+      "target": "temporalidade",
+      "type": "relates_to"
+    },
+    {
+      "source": "feedback",
+      "target": "vicio-digital",
+      "type": "relates_to"
+    },
+    {
+      "source": "feedback-negativo",
+      "target": "feedback",
+      "type": "relates_to"
+    },
+    {
+      "source": "feedback-negativo",
+      "target": "homeostase",
+      "type": "relates_to"
+    },
+    {
+      "source": "feedback-negativo",
+      "target": "cybersyn",
+      "type": "relates_to"
+    },
+    {
+      "source": "feedback-positivo",
+      "target": "feedback",
+      "type": "relates_to"
+    },
+    {
+      "source": "feedback-positivo",
+      "target": "vicio-digital",
+      "type": "relates_to"
+    },
+    {
+      "source": "feedback-positivo",
+      "target": "viralizacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "feedback-positivo",
+      "target": "necropolitica-digital",
+      "type": "relates_to"
+    },
+    {
+      "source": "vicio-digital",
+      "target": "feedback-positivo",
+      "type": "relates_to"
+    },
+    {
+      "source": "vicio-digital",
+      "target": "wiener",
+      "type": "relates_to"
+    },
+    {
+      "source": "vicio-digital",
+      "target": "dopamina",
+      "type": "relates_to"
+    },
+    {
+      "source": "vicio-digital",
+      "target": "infinite-scroll",
+      "type": "relates_to"
+    },
+    {
+      "source": "vicio-digital",
+      "target": "capitalismo-vigilancia",
+      "type": "relates_to"
+    },
+    {
+      "source": "dopamina",
+      "target": "vicio-digital",
+      "type": "relates_to"
+    },
+    {
+      "source": "dopamina",
+      "target": "feedback-positivo",
+      "type": "relates_to"
+    },
+    {
+      "source": "dopamina",
+      "target": "recompensa-variavel",
+      "type": "relates_to"
+    },
+    {
+      "source": "recompensa-variavel",
+      "target": "dopamina",
+      "type": "relates_to"
+    },
+    {
+      "source": "recompensa-variavel",
+      "target": "vicio-digital",
+      "type": "relates_to"
+    },
+    {
+      "source": "recompensa-variavel",
+      "target": "gamificacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "infinite-scroll",
+      "target": "vicio-digital",
+      "type": "relates_to"
+    },
+    {
+      "source": "infinite-scroll",
+      "target": "feedback-positivo",
+      "type": "relates_to"
+    },
+    {
+      "source": "algoritmo",
+      "target": "ada-lovelace",
+      "type": "relates_to"
+    },
+    {
+      "source": "algoritmo",
+      "target": "turing",
+      "type": "relates_to"
+    },
+    {
+      "source": "algoritmo",
+      "target": "computabilidade",
+      "type": "relates_to"
+    },
+    {
+      "source": "algoritmo",
+      "target": "automacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "computabilidade",
+      "target": "turing",
+      "type": "relates_to"
+    },
+    {
+      "source": "computabilidade",
+      "target": "algoritmo",
+      "type": "relates_to"
+    },
+    {
+      "source": "computabilidade",
+      "target": "problema-parada",
+      "type": "relates_to"
+    },
+    {
+      "source": "problema-parada",
+      "target": "turing",
+      "type": "relates_to"
+    },
+    {
+      "source": "problema-parada",
+      "target": "computabilidade",
+      "type": "relates_to"
+    },
+    {
+      "source": "problema-parada",
+      "target": "limites-tecnologia",
+      "type": "relates_to"
+    },
+    {
+      "source": "problema-parada",
+      "target": "democracia-algoritmicica",
+      "type": "relates_to"
+    },
+    {
+      "source": "limites-tecnologia",
+      "target": "problema-parada",
+      "type": "relates_to"
+    },
+    {
+      "source": "limites-tecnologia",
+      "target": "determinismo-tecnologico",
+      "type": "relates_to"
+    },
+    {
+      "source": "limites-tecnologia",
+      "target": "democracia-algoritmicica",
+      "type": "relates_to"
+    },
+    {
+      "source": "teoria-informacao",
+      "target": "shannon",
+      "type": "relates_to"
+    },
+    {
+      "source": "teoria-informacao",
+      "target": "bit",
+      "type": "relates_to"
+    },
+    {
+      "source": "teoria-informacao",
+      "target": "entropia",
+      "type": "relates_to"
+    },
+    {
+      "source": "teoria-informacao",
+      "target": "trabalho-imaterial",
+      "type": "relates_to"
+    },
+    {
+      "source": "bit",
+      "target": "teoria-informacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "bit",
+      "target": "shannon",
+      "type": "relates_to"
+    },
+    {
+      "source": "bit",
+      "target": "digitalizacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "entropia",
+      "target": "teoria-informacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "entropia",
+      "target": "shannon",
+      "type": "relates_to"
+    },
+    {
+      "source": "entropia",
+      "target": "materialidade-computacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "duplo-uso-militar",
+      "target": "turing",
+      "type": "relates_to"
+    },
+    {
+      "source": "duplo-uso-militar",
+      "target": "wiener",
+      "type": "relates_to"
+    },
+    {
+      "source": "duplo-uso-militar",
+      "target": "shannon",
+      "type": "relates_to"
+    },
+    {
+      "source": "duplo-uso-militar",
+      "target": "enigma",
+      "type": "relates_to"
+    },
+    {
+      "source": "duplo-uso-militar",
+      "target": "darpa",
+      "type": "relates_to"
+    },
+    {
+      "source": "duplo-uso-militar",
+      "target": "geopolitica",
+      "type": "relates_to"
+    },
+    {
+      "source": "enigma",
+      "target": "turing",
+      "type": "relates_to"
+    },
+    {
+      "source": "enigma",
+      "target": "duplo-uso-militar",
+      "type": "relates_to"
+    },
+    {
+      "source": "enigma",
+      "target": "necropolitica-digital",
+      "type": "relates_to"
+    },
+    {
+      "source": "darpa",
+      "target": "duplo-uso-militar",
+      "type": "relates_to"
+    },
+    {
+      "source": "darpa",
+      "target": "internet",
+      "type": "relates_to"
+    },
+    {
+      "source": "darpa",
+      "target": "geopolitica",
+      "type": "relates_to"
+    },
+    {
+      "source": "darpa",
+      "target": "vigilancia",
+      "type": "relates_to"
+    },
+    {
+      "source": "materialidade-computacao",
+      "target": "babbage",
+      "type": "relates_to"
+    },
+    {
+      "source": "materialidade-computacao",
+      "target": "entropia",
+      "type": "relates_to"
+    },
+    {
+      "source": "materialidade-computacao",
+      "target": "extrativismo",
+      "type": "relates_to"
+    },
+    {
+      "source": "materialidade-computacao",
+      "target": "ecologia-digital",
+      "type": "relates_to"
+    },
+    {
+      "source": "materialidade-computacao",
+      "target": "data-centers",
+      "type": "relates_to"
+    },
+    {
+      "source": "ecologia-digital",
+      "target": "materialidade-computacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "ecologia-digital",
+      "target": "extrativismo",
+      "type": "relates_to"
+    },
+    {
+      "source": "ecologia-digital",
+      "target": "e-waste",
+      "type": "relates_to"
+    },
+    {
+      "source": "ecologia-digital",
+      "target": "data-centers",
+      "type": "relates_to"
+    },
+    {
+      "source": "e-waste",
+      "target": "ecologia-digital",
+      "type": "relates_to"
+    },
+    {
+      "source": "e-waste",
+      "target": "necropolitica-digital",
+      "type": "relates_to"
+    },
+    {
+      "source": "e-waste",
+      "target": "extrativismo",
+      "type": "relates_to"
+    },
+    {
+      "source": "data-centers",
+      "target": "materialidade-computacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "data-centers",
+      "target": "ecologia-digital",
+      "type": "relates_to"
+    },
+    {
+      "source": "data-centers",
+      "target": "fetichismo-digital",
+      "type": "relates_to"
+    },
+    {
+      "source": "autopoiese",
+      "target": "cibernetica",
+      "type": "relates_to"
+    },
+    {
+      "source": "autopoiese",
+      "target": "feedback",
+      "type": "relates_to"
+    },
+    {
+      "source": "autopoiese",
+      "target": "nhandereko",
+      "type": "relates_to"
+    },
+    {
+      "source": "segunda-ordem",
+      "target": "cibernetica",
+      "type": "relates_to"
+    },
+    {
+      "source": "segunda-ordem",
+      "target": "meta-observacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "segunda-ordem",
+      "target": "ontologia-executavel",
+      "type": "relates_to"
+    },
+    {
+      "source": "rizoma",
+      "target": "multiplicidade",
+      "type": "relates_to"
+    },
+    {
+      "source": "rizoma",
+      "target": "devir",
+      "type": "relates_to"
+    },
+    {
+      "source": "rizoma",
+      "target": "navegacao-rizomatica",
+      "type": "relates_to"
+    },
+    {
+      "source": "multiplicidade",
+      "target": "rizoma",
+      "type": "relates_to"
+    },
+    {
+      "source": "multiplicidade",
+      "target": "devir",
+      "type": "relates_to"
+    },
+    {
+      "source": "multiplicidade",
+      "target": "ontologia-relacional",
+      "type": "relates_to"
+    },
+    {
+      "source": "capitalismo-vigilancia",
+      "target": "mais-valia-dados",
+      "type": "relates_to"
+    },
+    {
+      "source": "capitalismo-vigilancia",
+      "target": "plataformizacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "capitalismo-vigilancia",
+      "target": "resistencia",
+      "type": "relates_to"
+    },
+    {
+      "source": "capitalismo-vigilancia",
+      "target": "preco-valor",
+      "type": "relates_to"
+    },
+    {
+      "source": "capitalismo-vigilancia",
+      "target": "vigilancia",
+      "type": "relates_to"
+    },
+    {
+      "source": "mais-valia-dados",
+      "target": "capitalismo-vigilancia",
+      "type": "relates_to"
+    },
+    {
+      "source": "mais-valia-dados",
+      "target": "uberizacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "mais-valia-dados",
+      "target": "trabalho-imaterial",
+      "type": "relates_to"
+    },
+    {
+      "source": "mais-valia-dados",
+      "target": "fetichismo-digital",
+      "type": "relates_to"
+    },
+    {
+      "source": "mais-valia-dados",
+      "target": "magalu",
+      "type": "relates_to"
+    },
+    {
+      "source": "mais-valia-dados",
+      "target": "ia",
+      "type": "relates_to"
+    },
+    {
+      "source": "vigilancia",
+      "target": "capitalismo-vigilancia",
+      "type": "relates_to"
+    },
+    {
+      "source": "vigilancia",
+      "target": "algoritmos",
+      "type": "relates_to"
+    },
+    {
+      "source": "vigilancia",
+      "target": "ia",
+      "type": "relates_to"
+    },
+    {
+      "source": "vigilancia",
+      "target": "resistencia",
+      "type": "relates_to"
+    },
+    {
+      "source": "monopolio",
+      "target": "plataformizacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "monopolio",
+      "target": "acumulacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "monopolio",
+      "target": "capitalismo-vigilancia",
+      "type": "relates_to"
+    },
+    {
+      "source": "ideologia",
+      "target": "fetichismo",
+      "type": "relates_to"
+    },
+    {
+      "source": "ideologia",
+      "target": "fetichismo-digital",
+      "type": "relates_to"
+    },
+    {
+      "source": "ideologia",
+      "target": "alienacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "desemprego",
+      "target": "automacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "desemprego",
+      "target": "precarizacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "desemprego",
+      "target": "uberizacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "ontologia-executavel",
+      "target": "segunda-ordem",
+      "type": "relates_to"
+    },
+    {
+      "source": "ontologia-executavel",
+      "target": "critica-performativa",
+      "type": "relates_to"
+    },
+    {
+      "source": "ontologia-executavel",
+      "target": "canvas-background",
+      "type": "relates_to"
+    },
+    {
+      "source": "critica-performativa",
+      "target": "ontologia-executavel",
+      "type": "relates_to"
+    },
+    {
+      "source": "critica-performativa",
+      "target": "captcha",
+      "type": "relates_to"
+    },
+    {
+      "source": "critica-performativa",
+      "target": "ironia-politica",
+      "type": "relates_to"
+    },
+    {
+      "source": "captcha",
+      "target": "critica-performativa",
+      "type": "relates_to"
+    },
+    {
+      "source": "captcha",
+      "target": "caos",
+      "type": "relates_to"
+    },
+    {
+      "source": "captcha",
+      "target": "resistencia",
+      "type": "relates_to"
+    },
+    {
+      "source": "sistema-ternario",
+      "target": "temporalidade",
+      "type": "relates_to"
+    },
+    {
+      "source": "sistema-ternario",
+      "target": "feedback",
+      "type": "relates_to"
+    },
+    {
+      "source": "sistema-ternario",
+      "target": "backfeed",
+      "type": "relates_to"
+    },
+    {
+      "source": "temporalidade",
+      "target": "sistema-ternario",
+      "type": "relates_to"
+    },
+    {
+      "source": "temporalidade",
+      "target": "feedback",
+      "type": "relates_to"
+    },
+    {
+      "source": "temporalidade",
+      "target": "guaiamum",
+      "type": "relates_to"
+    },
+    {
+      "source": "nhandereko",
+      "target": "autopoiese",
+      "type": "relates_to"
+    },
+    {
+      "source": "nhandereko",
+      "target": "epistemologia-guarani",
+      "type": "relates_to"
+    },
+    {
+      "source": "nhandereko",
+      "target": "modo-colaborativo",
+      "type": "relates_to"
+    },
+    {
+      "source": "epistemologia-guarani",
+      "target": "nhandereko",
+      "type": "relates_to"
+    },
+    {
+      "source": "epistemologia-guarani",
+      "target": "ontologia-relacional",
+      "type": "relates_to"
+    },
+    {
+      "source": "epistemologia-guarani",
+      "target": "decolonial",
+      "type": "relates_to"
+    },
+    {
+      "source": "navegacao-rizomatica",
+      "target": "rizoma",
+      "type": "relates_to"
+    },
+    {
+      "source": "navegacao-rizomatica",
+      "target": "grafo-conceitos",
+      "type": "relates_to"
+    },
+    {
+      "source": "navegacao-rizomatica",
+      "target": "modo-colaborativo",
+      "type": "relates_to"
+    },
+    {
+      "source": "modo-colaborativo",
+      "target": "nhandereko",
+      "type": "relates_to"
+    },
+    {
+      "source": "modo-colaborativo",
+      "target": "navegacao-rizomatica",
+      "type": "relates_to"
+    },
+    {
+      "source": "modo-colaborativo",
+      "target": "websocket",
+      "type": "relates_to"
+    },
+    {
+      "source": "resistencia",
+      "target": "captcha",
+      "type": "relates_to"
+    },
+    {
+      "source": "resistencia",
+      "target": "opacidade",
+      "type": "relates_to"
+    },
+    {
+      "source": "resistencia",
+      "target": "honeypots",
+      "type": "relates_to"
+    },
+    {
+      "source": "resistencia",
+      "target": "critica-performativa",
+      "type": "relates_to"
+    },
+    {
+      "source": "devir",
+      "target": "rizoma",
+      "type": "relates_to"
+    },
+    {
+      "source": "devir",
+      "target": "multiplicidade",
+      "type": "relates_to"
+    },
+    {
+      "source": "devir",
+      "target": "ontologia-relacional",
+      "type": "relates_to"
+    },
+    {
+      "source": "ontologia-relacional",
+      "target": "autopoiese",
+      "type": "relates_to"
+    },
+    {
+      "source": "ontologia-relacional",
+      "target": "devir",
+      "type": "relates_to"
+    },
+    {
+      "source": "ontologia-relacional",
+      "target": "multiplicidade",
+      "type": "relates_to"
+    },
+    {
+      "source": "ontologia-relacional",
+      "target": "epistemologia-guarani",
+      "type": "relates_to"
+    },
+    {
+      "source": "uberizacao",
+      "target": "mais-valia-dados",
+      "type": "relates_to"
+    },
+    {
+      "source": "uberizacao",
+      "target": "plataformizacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "uberizacao",
+      "target": "trabalho-imaterial",
+      "type": "relates_to"
+    },
+    {
+      "source": "uberizacao",
+      "target": "mais-valia-absoluta",
+      "type": "relates_to"
+    },
+    {
+      "source": "uberizacao",
+      "target": "mais-valia-relativa",
+      "type": "relates_to"
+    },
+    {
+      "source": "uberizacao",
+      "target": "reforma-trabalhista",
+      "type": "relates_to"
+    },
+    {
+      "source": "uberizacao",
+      "target": "intermitente",
+      "type": "relates_to"
+    },
+    {
+      "source": "uberizacao",
+      "target": "algoritmos",
+      "type": "relates_to"
+    },
+    {
+      "source": "uberizacao",
+      "target": "magalu",
+      "type": "relates_to"
+    },
+    {
+      "source": "uberizacao",
+      "target": "precarizacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "uberizacao",
+      "target": "relacoes-producao",
+      "type": "relates_to"
+    },
+    {
+      "source": "trabalho-imaterial",
+      "target": "mais-valia-dados",
+      "type": "relates_to"
+    },
+    {
+      "source": "trabalho-imaterial",
+      "target": "uberizacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "trabalho-imaterial",
+      "target": "capitalismo-vigilancia",
+      "type": "relates_to"
+    },
+    {
+      "source": "trabalho-imaterial",
+      "target": "trabalho-reprodutivo",
+      "type": "relates_to"
+    },
+    {
+      "source": "trabalho-reprodutivo",
+      "target": "trabalho-imaterial",
+      "type": "relates_to"
+    },
+    {
+      "source": "trabalho-reprodutivo",
+      "target": "ciberfeminismo",
+      "type": "relates_to"
+    },
+    {
+      "source": "trabalho-reprodutivo",
+      "target": "federici",
+      "type": "relates_to"
+    },
+    {
+      "source": "federici",
+      "target": "trabalho-reprodutivo",
+      "type": "relates_to"
+    },
+    {
+      "source": "federici",
+      "target": "ciberfeminismo",
+      "type": "relates_to"
+    },
+    {
+      "source": "ciberfeminismo",
+      "target": "trabalho-reprodutivo",
+      "type": "relates_to"
+    },
+    {
+      "source": "ciberfeminismo",
+      "target": "federici",
+      "type": "relates_to"
+    },
+    {
+      "source": "ciberfeminismo",
+      "target": "resistencia",
+      "type": "relates_to"
+    },
+    {
+      "source": "plataformizacao",
+      "target": "capitalismo-vigilancia",
+      "type": "relates_to"
+    },
+    {
+      "source": "plataformizacao",
+      "target": "uberizacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "plataformizacao",
+      "target": "resistencia",
+      "type": "relates_to"
+    },
+    {
+      "source": "plataformizacao",
+      "target": "magalu",
+      "type": "relates_to"
+    },
+    {
+      "source": "plataformizacao",
+      "target": "capital",
+      "type": "relates_to"
+    },
+    {
+      "source": "plataformizacao",
+      "target": "fetichismo-digital",
+      "type": "relates_to"
+    },
+    {
+      "source": "plataformizacao",
+      "target": "monopolio",
+      "type": "relates_to"
+    },
+    {
+      "source": "decolonial",
+      "target": "epistemologia-guarani",
+      "type": "relates_to"
+    },
+    {
+      "source": "decolonial",
+      "target": "ubuntu",
+      "type": "relates_to"
+    },
+    {
+      "source": "decolonial",
+      "target": "cosmotecnica",
+      "type": "relates_to"
+    },
+    {
+      "source": "ubuntu",
+      "target": "decolonial",
+      "type": "relates_to"
+    },
+    {
+      "source": "ubuntu",
+      "target": "ontologia-relacional",
+      "type": "relates_to"
+    },
+    {
+      "source": "ubuntu",
+      "target": "modo-colaborativo",
+      "type": "relates_to"
+    },
+    {
+      "source": "cosmotecnica",
+      "target": "decolonial",
+      "type": "relates_to"
+    },
+    {
+      "source": "cosmotecnica",
+      "target": "epistemologia-guarani",
+      "type": "relates_to"
+    },
+    {
+      "source": "cosmotecnica",
+      "target": "ontologia-executavel",
+      "type": "relates_to"
+    },
+    {
+      "source": "guaiamum",
+      "target": "temporalidade",
+      "type": "relates_to"
+    },
+    {
+      "source": "guaiamum",
+      "target": "navegacao-rizomatica",
+      "type": "relates_to"
+    },
+    {
+      "source": "guaiamum",
+      "target": "backfeed",
+      "type": "relates_to"
+    },
+    {
+      "source": "backfeed",
+      "target": "feedback",
+      "type": "relates_to"
+    },
+    {
+      "source": "backfeed",
+      "target": "temporalidade",
+      "type": "relates_to"
+    },
+    {
+      "source": "backfeed",
+      "target": "guaiamum",
+      "type": "relates_to"
+    },
+    {
+      "source": "backfeed",
+      "target": "sistema-ternario",
+      "type": "relates_to"
+    },
+    {
+      "source": "opacidade",
+      "target": "resistencia",
+      "type": "relates_to"
+    },
+    {
+      "source": "opacidade",
+      "target": "honeypots",
+      "type": "relates_to"
+    },
+    {
+      "source": "opacidade",
+      "target": "captcha",
+      "type": "relates_to"
+    },
+    {
+      "source": "honeypots",
+      "target": "resistencia",
+      "type": "relates_to"
+    },
+    {
+      "source": "honeypots",
+      "target": "opacidade",
+      "type": "relates_to"
+    },
+    {
+      "source": "honeypots",
+      "target": "captcha",
+      "type": "relates_to"
+    },
+    {
+      "source": "ironia-politica",
+      "target": "critica-performativa",
+      "type": "relates_to"
+    },
+    {
+      "source": "ironia-politica",
+      "target": "captcha",
+      "type": "relates_to"
+    },
+    {
+      "source": "ironia-politica",
+      "target": "ontologia-executavel",
+      "type": "relates_to"
+    },
+    {
+      "source": "grafo-conceitos",
+      "target": "navegacao-rizomatica",
+      "type": "relates_to"
+    },
+    {
+      "source": "grafo-conceitos",
+      "target": "rizoma",
+      "type": "relates_to"
+    },
+    {
+      "source": "grafo-conceitos",
+      "target": "websocket",
+      "type": "relates_to"
+    },
+    {
+      "source": "websocket",
+      "target": "modo-colaborativo",
+      "type": "relates_to"
+    },
+    {
+      "source": "websocket",
+      "target": "grafo-conceitos",
+      "type": "relates_to"
+    },
+    {
+      "source": "websocket",
+      "target": "nhandereko",
+      "type": "relates_to"
+    },
+    {
+      "source": "meta-observacao",
+      "target": "segunda-ordem",
+      "type": "relates_to"
+    },
+    {
+      "source": "meta-observacao",
+      "target": "ontologia-executavel",
+      "type": "relates_to"
+    },
+    {
+      "source": "meta-observacao",
+      "target": "cibernetica",
+      "type": "relates_to"
+    },
+    {
+      "source": "canvas-background",
+      "target": "ontologia-executavel",
+      "type": "relates_to"
+    },
+    {
+      "source": "canvas-background",
+      "target": "sistema-ternario",
+      "type": "relates_to"
+    },
+    {
+      "source": "canvas-background",
+      "target": "caos",
+      "type": "relates_to"
+    },
+    {
+      "source": "caos",
+      "target": "canvas-background",
+      "type": "relates_to"
+    },
+    {
+      "source": "caos",
+      "target": "captcha",
+      "type": "relates_to"
+    },
+    {
+      "source": "caos",
+      "target": "sistema-ternario",
+      "type": "relates_to"
+    },
+    {
+      "source": "trabalho-invisivel",
+      "target": "eniac-six",
+      "type": "relates_to"
+    },
+    {
+      "source": "trabalho-invisivel",
+      "target": "genero-computacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "trabalho-invisivel",
+      "target": "trabalho-reprodutivo",
+      "type": "relates_to"
+    },
+    {
+      "source": "trabalho-invisivel",
+      "target": "moderacao-conteudo",
+      "type": "relates_to"
+    },
+    {
+      "source": "divisao-sexual-trabalho",
+      "target": "genero-computacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "divisao-sexual-trabalho",
+      "target": "trabalho-invisivel",
+      "type": "relates_to"
+    },
+    {
+      "source": "divisao-sexual-trabalho",
+      "target": "uberizacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "moderacao-conteudo",
+      "target": "trabalho-invisivel",
+      "type": "relates_to"
+    },
+    {
+      "source": "moderacao-conteudo",
+      "target": "capitalismo-vigilancia",
+      "type": "relates_to"
+    },
+    {
+      "source": "moderacao-conteudo",
+      "target": "necropolitica-digital",
+      "type": "relates_to"
+    },
+    {
+      "source": "necropolitica-digital",
+      "target": "feedback-positivo",
+      "type": "relates_to"
+    },
+    {
+      "source": "necropolitica-digital",
+      "target": "enigma",
+      "type": "relates_to"
+    },
+    {
+      "source": "necropolitica-digital",
+      "target": "e-waste",
+      "type": "relates_to"
+    },
+    {
+      "source": "necropolitica-digital",
+      "target": "moderacao-conteudo",
+      "type": "relates_to"
+    },
+    {
+      "source": "necropolitica-digital",
+      "target": "gabinete-odio",
+      "type": "relates_to"
+    },
+    {
+      "source": "gabinete-odio",
+      "target": "necropolitica-digital",
+      "type": "relates_to"
+    },
+    {
+      "source": "gabinete-odio",
+      "target": "feedback-positivo",
+      "type": "relates_to"
+    },
+    {
+      "source": "gabinete-odio",
+      "target": "viralizacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "viralizacao",
+      "target": "feedback-positivo",
+      "type": "relates_to"
+    },
+    {
+      "source": "viralizacao",
+      "target": "gabinete-odio",
+      "type": "relates_to"
+    },
+    {
+      "source": "viralizacao",
+      "target": "dopamina",
+      "type": "relates_to"
+    },
+    {
+      "source": "gamificacao",
+      "target": "recompensa-variavel",
+      "type": "relates_to"
+    },
+    {
+      "source": "gamificacao",
+      "target": "vicio-digital",
+      "type": "relates_to"
+    },
+    {
+      "source": "gamificacao",
+      "target": "uberizacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "cybersyn",
+      "target": "feedback-negativo",
+      "type": "relates_to"
+    },
+    {
+      "source": "cybersyn",
+      "target": "cibernetica",
+      "type": "relates_to"
+    },
+    {
+      "source": "cybersyn",
+      "target": "wiener",
+      "type": "relates_to"
+    },
+    {
+      "source": "cybersyn",
+      "target": "planejamento-participativo",
+      "type": "relates_to"
+    },
+    {
+      "source": "planejamento-participativo",
+      "target": "cybersyn",
+      "type": "relates_to"
+    },
+    {
+      "source": "planejamento-participativo",
+      "target": "democracia-algoritmicica",
+      "type": "relates_to"
+    },
+    {
+      "source": "planejamento-participativo",
+      "target": "resistencia",
+      "type": "relates_to"
+    },
+    {
+      "source": "democracia-algoritmicica",
+      "target": "problema-parada",
+      "type": "relates_to"
+    },
+    {
+      "source": "democracia-algoritmicica",
+      "target": "limites-tecnologia",
+      "type": "relates_to"
+    },
+    {
+      "source": "democracia-algoritmicica",
+      "target": "planejamento-participativo",
+      "type": "relates_to"
+    },
+    {
+      "source": "determinismo-tecnologico",
+      "target": "limites-tecnologia",
+      "type": "relates_to"
+    },
+    {
+      "source": "determinismo-tecnologico",
+      "target": "problema-parada",
+      "type": "relates_to"
+    },
+    {
+      "source": "determinismo-tecnologico",
+      "target": "fetichismo-digital",
+      "type": "relates_to"
+    },
+    {
+      "source": "homeostase",
+      "target": "feedback-negativo",
+      "type": "relates_to"
+    },
+    {
+      "source": "homeostase",
+      "target": "cybersyn",
+      "type": "relates_to"
+    },
+    {
+      "source": "homeostase",
+      "target": "autopoiese",
+      "type": "relates_to"
+    },
+    {
+      "source": "digitalizacao",
+      "target": "bit",
+      "type": "relates_to"
+    },
+    {
+      "source": "digitalizacao",
+      "target": "teoria-informacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "digitalizacao",
+      "target": "mais-valia-dados",
+      "type": "relates_to"
+    },
+    {
+      "source": "digitalizacao",
+      "target": "fetichismo-digital",
+      "type": "relates_to"
+    },
+    {
+      "source": "extrativismo",
+      "target": "materialidade-computacao",
+      "type": "relates_to"
+    },
+    {
+      "source": "extrativismo",
+      "target": "ecologia-digital",
+      "type": "relates_to"
+    },
+    {
+      "source": "extrativismo",
+      "target": "e-waste",
+      "type": "relates_to"
+    },
+    {
+      "source": "extrativismo",
+      "target": "mais-valia-dados",
+      "type": "relates_to"
+    },
+    {
+      "source": "geopolitica",
+      "target": "darpa",
+      "type": "relates_to"
+    },
+    {
+      "source": "geopolitica",
+      "target": "duplo-uso-militar",
+      "type": "relates_to"
+    },
+    {
+      "source": "geopolitica",
+      "target": "vigilancia",
+      "type": "relates_to"
+    },
+    {
+      "source": "geopolitica",
+      "target": "internet",
+      "type": "relates_to"
+    },
+    {
+      "source": "internet",
+      "target": "darpa",
+      "type": "relates_to"
+    },
+    {
+      "source": "internet",
+      "target": "geopolitica",
+      "type": "relates_to"
+    },
+    {
+      "source": "internet",
+      "target": "capitalismo-vigilancia",
+      "type": "relates_to"
+    }
+  ]
+}

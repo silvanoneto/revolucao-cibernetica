@@ -1,0 +1,959 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+         http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="name" for="node" attr.name="name" attr.type="string"/>
+  <key id="description" for="node" attr.name="description" attr.type="string"/>
+  <key id="color" for="node" attr.name="color" attr.type="string"/>
+  <key id="layer" for="node" attr.name="layer" attr.type="int"/>
+  <graph id="Rizoma" edgedefault="undirected">
+    <node id="mercadoria">
+      <data key="name">Mercadoria</data>
+      <data key="description">Produto do trabalho destinado à troca no mercado</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">-1</data>
+    </node>
+    <node id="valor-uso">
+      <data key="name">Valor de Uso</data>
+      <data key="description">Utilidade concreta de uma mercadoria</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">-1</data>
+    </node>
+    <node id="valor-troca">
+      <data key="name">Valor de Troca</data>
+      <data key="description">Relação quantitativa de troca entre mercadorias</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">-1</data>
+    </node>
+    <node id="trabalho-concreto">
+      <data key="name">Trabalho Concreto</data>
+      <data key="description">Atividade específica que cria valor de uso particular</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">-1</data>
+    </node>
+    <node id="trabalho-abstrato">
+      <data key="name">Trabalho Abstrato</data>
+      <data key="description">Trabalho humano reduzido a dispêndio de tempo</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">-1</data>
+    </node>
+    <node id="tsn">
+      <data key="name">Tempo de Trabalho Socialmente Necessário</data>
+      <data key="description">Tempo médio para produzir mercadoria no nível tecnológico da sociedade</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">-1</data>
+    </node>
+    <node id="previa-ideacao">
+      <data key="name">Prévia-Ideação</data>
+      <data key="description">Capacidade humana de planejar mentalmente antes de executar</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">-1</data>
+    </node>
+    <node id="objetivacao">
+      <data key="name">Objetivação</data>
+      <data key="description">Materialização da ideia no mundo através do trabalho</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">-1</data>
+    </node>
+    <node id="forcas-produtivas">
+      <data key="name">Forças Produtivas</data>
+      <data key="description">Ferramentas, tecnologias, conhecimentos para transformar natureza</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">-1</data>
+    </node>
+    <node id="relacoes-producao">
+      <data key="name">Relações de Produção</data>
+      <data key="description">Relações sociais estabelecidas para produzir e distribuir bens</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">-1</data>
+    </node>
+    <node id="mais-valia">
+      <data key="name">Mais-Valia</data>
+      <data key="description">Valor criado pelo trabalhador além do seu salário</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="mais-valia-absoluta">
+      <data key="name">Mais-Valia Absoluta</data>
+      <data key="description">Extração via aumento de jornada ou intensidade do trabalho</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="mais-valia-relativa">
+      <data key="name">Mais-Valia Relativa</data>
+      <data key="description">Extração via aumento de produtividade (tecnologia)</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="capital">
+      <data key="name">Capital</data>
+      <data key="description">Processo de autovalorização: D-M-P-M'-D'</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="circuito-capital">
+      <data key="name">Circuito do Capital (D-M-D')</data>
+      <data key="description">Dinheiro → Mercadorias → Produção → Mais Dinheiro</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="fetichismo">
+      <data key="name">Fetichismo da Mercadoria</data>
+      <data key="description">Relações sociais aparecem como relações entre coisas</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="fetichismo-digital">
+      <data key="name">Fetichismo do Dado</data>
+      <data key="description">Exploração mascarada como "parceria" e "oportunidade"</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="preco-valor">
+      <data key="name">Preço ≠ Valor</data>
+      <data key="description">Preço oscila em torno do valor, mas não é o valor</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="reforma-trabalhista">
+      <data key="name">Reforma Trabalhista 2017 (Brasil)</data>
+      <data key="description">Lei 13.467 - legalização da mais-valia absoluta</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="pejotizacao">
+      <data key="name">Pejotização</data>
+      <data key="description">Transformar empregados em "pessoas jurídicas" para fugir de direitos</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="intermitente">
+      <data key="name">Trabalho Intermitente</data>
+      <data key="description">Disponibilidade 24/7, pagamento apenas por horas chamadas</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="magalu">
+      <data key="name">Magazine Luiza (Caso)</data>
+      <data key="description">Plataformização brasileira - controle sem propriedade</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="terceirizacao">
+      <data key="name">Terceirização</data>
+      <data key="description">Transferência de riscos e custos para trabalhadores</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="exploracao">
+      <data key="name">Exploração Capitalista</data>
+      <data key="description">Apropriação do trabalho excedente não-pago</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="alienacao">
+      <data key="name">Alienação</data>
+      <data key="description">Estranhamento do trabalhador em relação ao produto e ao processo</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="precarizacao">
+      <data key="name">Precarização</data>
+      <data key="description">Degradação das condições de trabalho e direitos</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="acumulacao">
+      <data key="name">Acumulação de Capital</data>
+      <data key="description">Reinvestimento da mais-valia para gerar mais mais-valia</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="algoritmos">
+      <data key="name">Algoritmos de Controle</data>
+      <data key="description">Gerenciamento algorítmico automatizado do trabalho</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="automacao">
+      <data key="name">Automação</data>
+      <data key="description">Substituição de trabalho humano por máquinas</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="ia">
+      <data key="name">Inteligência Artificial</data>
+      <data key="description">Machine learning aplicado à extração de mais-valia</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="cibernetica">
+      <data key="name">Cibernética</data>
+      <data key="description">Ciência do controle e comunicação (Wiener, 1948)</data>
+      <data key="color">#8b5cf6</data>
+      <data key="layer">-1</data>
+    </node>
+    <node id="wiener">
+      <data key="name">Norbert Wiener</data>
+      <data key="description">Fundador da cibernética (1948) - alertou sobre automação descontrolada</data>
+      <data key="color">#8b5cf6</data>
+      <data key="layer">-1</data>
+    </node>
+    <node id="turing">
+      <data key="name">Alan Turing</data>
+      <data key="description">Máquina Universal + Problema da Parada - fundador da computação</data>
+      <data key="color">#8b5cf6</data>
+      <data key="layer">-1</data>
+    </node>
+    <node id="shannon">
+      <data key="name">Claude Shannon</data>
+      <data key="description">Teoria da Informação (1948) - informação como bits mensuráveis</data>
+      <data key="color">#8b5cf6</data>
+      <data key="layer">-1</data>
+    </node>
+    <node id="babbage">
+      <data key="name">Charles Babbage</data>
+      <data key="description">Máquina Analítica (1837) - primeiro computador programável (mecânico)</data>
+      <data key="color">#8b5cf6</data>
+      <data key="layer">-1</data>
+    </node>
+    <node id="ada-lovelace">
+      <data key="name">Ada Lovelace</data>
+      <data key="description">Primeira programadora (1843) - viu computação além de números</data>
+      <data key="color">#ec4899</data>
+      <data key="layer">-1</data>
+    </node>
+    <node id="eniac-six">
+      <data key="name">ENIAC Six</data>
+      <data key="description">Primeiras programadoras (1945) - invisibilizadas pela história</data>
+      <data key="color">#ec4899</data>
+      <data key="layer">-1</data>
+    </node>
+    <node id="genero-computacao">
+      <data key="name">Gênero e Computação</data>
+      <data key="description">Padrão histórico: trabalho feminizado → masculinizado quando valorizado</data>
+      <data key="color">#ec4899</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="feedback">
+      <data key="name">Feedback Loop</data>
+      <data key="description">Ciclo de retorno que modifica o sistema (negativo=estabiliza, positivo=amplifica)</data>
+      <data key="color">#10b981</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="feedback-negativo">
+      <data key="name">Feedback Negativo</data>
+      <data key="description">Estabilizador - busca equilíbrio (termostato, homeostase)</data>
+      <data key="color">#10b981</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="feedback-positivo">
+      <data key="name">Feedback Positivo</data>
+      <data key="description">Amplificador - crescimento exponencial ou colapso (microfonia, vício)</data>
+      <data key="color">#f97316</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="vicio-digital">
+      <data key="name">Vício Digital</data>
+      <data key="description">Apps como máquinas de Wiener: feedback positivo dopamina → mais scroll</data>
+      <data key="color">#f97316</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="dopamina">
+      <data key="name">Dopamina Digital</data>
+      <data key="description">Sensor biológico usado como loop de feedback viciante</data>
+      <data key="color">#f97316</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="recompensa-variavel">
+      <data key="name">Recompensa Variável</data>
+      <data key="description">Incerteza maximiza dopamina (slot machine = próximo scroll)</data>
+      <data key="color">#f97316</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="infinite-scroll">
+      <data key="name">Infinite Scroll</data>
+      <data key="description">Remove ponto de parada - feedback positivo sem válvula de escape</data>
+      <data key="color">#f97316</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="algoritmo">
+      <data key="name">Algoritmo</data>
+      <data key="description">Conjunto finito de instruções para resolver problema</data>
+      <data key="color">#8b5cf6</data>
+      <data key="layer">-1</data>
+    </node>
+    <node id="computabilidade">
+      <data key="name">Computabilidade</data>
+      <data key="description">O que pode ser resolvido por algoritmo (Máquina de Turing)</data>
+      <data key="color">#8b5cf6</data>
+      <data key="layer">-1</data>
+    </node>
+    <node id="problema-parada">
+      <data key="name">Problema da Parada</data>
+      <data key="description">Prova: nem tudo é computável - limites matemáticos da tecnologia</data>
+      <data key="color">#7c3aed</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="limites-tecnologia">
+      <data key="name">Limites da Tecnologia</data>
+      <data key="description">Nem tudo pode ser "resolvido com tecnologia" - exige política</data>
+      <data key="color">#7c3aed</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="teoria-informacao">
+      <data key="name">Teoria da Informação</data>
+      <data key="description">Informação mensurável em bits, separada de significado (Shannon)</data>
+      <data key="color">#8b5cf6</data>
+      <data key="layer">-1</data>
+    </node>
+    <node id="bit">
+      <data key="name">Bit</data>
+      <data key="description">Unidade básica de informação (0 ou 1) - permite digitalização de tudo</data>
+      <data key="color">#8b5cf6</data>
+      <data key="layer">-1</data>
+    </node>
+    <node id="entropia">
+      <data key="name">Entropia Informacional</data>
+      <data key="description">Medida de incerteza/imprevisibilidade (Shannon = Boltzmann)</data>
+      <data key="color">#8b5cf6</data>
+      <data key="layer">-1</data>
+    </node>
+    <node id="duplo-uso-militar">
+      <data key="name">Duplo Uso Militar</data>
+      <data key="description">Todas tecnologias fundacionais nasceram da guerra (Enigma, ENIAC, Internet)</data>
+      <data key="color">#dc2626</data>
+      <data key="layer">-1</data>
+    </node>
+    <node id="enigma">
+      <data key="name">Enigma</data>
+      <data key="description">Código nazista quebrado por Turing - cibernética contra fascismo</data>
+      <data key="color">#dc2626</data>
+      <data key="layer">-1</data>
+    </node>
+    <node id="darpa">
+      <data key="name">DARPA</data>
+      <data key="description">ARPANET → Internet - rede militar virou www</data>
+      <data key="color">#dc2626</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="materialidade-computacao">
+      <data key="name">Materialidade da Computação</data>
+      <data key="description">Não há "desmaterialização" - há mineração, energia, e-waste</data>
+      <data key="color">#22c55e</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="ecologia-digital">
+      <data key="name">Ecologia Digital</data>
+      <data key="description">Custos ambientais invisibilizados: mineração → energia → e-waste</data>
+      <data key="color">#22c55e</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="e-waste">
+      <data key="name">E-Waste</data>
+      <data key="description">Lixo eletrônico = genocídio lento (crianças em Gana queimando placas)</data>
+      <data key="color">#22c55e</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="data-centers">
+      <data key="name">Data Centers</data>
+      <data key="description">Não há nuvem - há data centers consumindo rios para refrigeração</data>
+      <data key="color">#22c55e</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="autopoiese">
+      <data key="name">Autopoiese</data>
+      <data key="description">Sistemas que se auto-criam (Maturana &amp; Varela)</data>
+      <data key="color">#8b5cf6</data>
+      <data key="layer">-1</data>
+    </node>
+    <node id="segunda-ordem">
+      <data key="name">Cibernética de Segunda Ordem</data>
+      <data key="description">Observador incluído no sistema observado</data>
+      <data key="color">#10b981</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="rizoma">
+      <data key="name">Rizoma</data>
+      <data key="description">Estrutura não-hierárquica (Deleuze &amp; Guattari)</data>
+      <data key="color">#8b5cf6</data>
+      <data key="layer">-1</data>
+    </node>
+    <node id="multiplicidade">
+      <data key="name">Multiplicidade</data>
+      <data key="description">Não é uno nem múltiplo - é multiplicidade</data>
+      <data key="color">#8b5cf6</data>
+      <data key="layer">-1</data>
+    </node>
+    <node id="capitalismo-vigilancia">
+      <data key="name">Capitalismo de Vigilância</data>
+      <data key="description">Extração de dados comportamentais (Zuboff)</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="mais-valia-dados">
+      <data key="name">Mais-Valia de Dados</data>
+      <data key="description">Valor extraído do trabalho digital não-pago</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="vigilancia">
+      <data key="name">Vigilância Digital</data>
+      <data key="description">Monitoramento contínuo de comportamento para extração de valor</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="monopolio">
+      <data key="name">Monopólio de Plataforma</data>
+      <data key="description">Concentração de poder via efeitos de rede</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="ideologia">
+      <data key="name">Ideologia</data>
+      <data key="description">Sistema de representações que mascara contradições reais</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="desemprego">
+      <data key="name">Desemprego Estrutural</data>
+      <data key="description">Excedente de população trabalhadora devido à automação</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="ontologia-executavel">
+      <data key="name">Ontologia Executável</data>
+      <data key="description">Filosofia que se performa em código</data>
+      <data key="color">#10b981</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="critica-performativa">
+      <data key="name">Crítica Performativa</data>
+      <data key="description">Sistema que executa sua própria crítica</data>
+      <data key="color">#10b981</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="captcha">
+      <data key="name">CAPTCHA Anti-Algorítmico</data>
+      <data key="description">Humanos passam, bots falham</data>
+      <data key="color">#10b981</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="sistema-ternario">
+      <data key="name">Sistema Ternário (-1, 0, +1)</data>
+      <data key="description">Base 3 balanceada para representar temporalidade</data>
+      <data key="color">#10b981</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="temporalidade">
+      <data key="name">Temporalidade Ternária</data>
+      <data key="description">Presente como tensão entre passado e futuro</data>
+      <data key="color">#10b981</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="nhandereko">
+      <data key="name">Nhandereko</data>
+      <data key="description">Orquestrador de conhecimento autopoiético</data>
+      <data key="color">#6366f1</data>
+      <data key="layer">1</data>
+    </node>
+    <node id="epistemologia-guarani">
+      <data key="name">Epistemologias Guarani</data>
+      <data key="description">Conhecimento relacional indígena</data>
+      <data key="color">#8b5cf6</data>
+      <data key="layer">-1</data>
+    </node>
+    <node id="navegacao-rizomatica">
+      <data key="name">Navegação Rizomática</data>
+      <data key="description">Este sistema que você está usando agora</data>
+      <data key="color">#6366f1</data>
+      <data key="layer">1</data>
+    </node>
+    <node id="modo-colaborativo">
+      <data key="name">Modo Colaborativo</data>
+      <data key="description">Interação síncrona entre usuários (planejado)</data>
+      <data key="color">#6366f1</data>
+      <data key="layer">1</data>
+    </node>
+    <node id="resistencia">
+      <data key="name">Resistência em Código</data>
+      <data key="description">Técnicas práticas de contra-automação</data>
+      <data key="color">#10b981</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="devir">
+      <data key="name">Devir</data>
+      <data key="description">Processo de tornar-se, transformação contínua sem destino fixo</data>
+      <data key="color">#8b5cf6</data>
+      <data key="layer">-1</data>
+    </node>
+    <node id="ontologia-relacional">
+      <data key="name">Ontologia Relacional</data>
+      <data key="description">Ser é relação, não substância isolada</data>
+      <data key="color">#8b5cf6</data>
+      <data key="layer">-1</data>
+    </node>
+    <node id="uberizacao">
+      <data key="name">Uberização</data>
+      <data key="description">Precarização do trabalho via plataformas digitais</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="trabalho-imaterial">
+      <data key="name">Trabalho Imaterial</data>
+      <data key="description">Trabalho cognitivo, afetivo e comunicacional não-pago</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="trabalho-reprodutivo">
+      <data key="name">Trabalho Reprodutivo</data>
+      <data key="description">Trabalho de cuidado e manutenção da vida, historicamente invisibilizado</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="federici">
+      <data key="name">Silvia Federici</data>
+      <data key="description">Teórica do trabalho reprodutivo e acumulação primitiva</data>
+      <data key="color">#8b5cf6</data>
+      <data key="layer">-1</data>
+    </node>
+    <node id="ciberfeminismo">
+      <data key="name">Ciberfeminismo</data>
+      <data key="description">Análise feminista da tecnologia e do trabalho digital</data>
+      <data key="color">#8b5cf6</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="plataformizacao">
+      <data key="name">Plataformização</data>
+      <data key="description">Monopolização da infraestrutura digital</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="decolonial">
+      <data key="name">Pensamento Decolonial</data>
+      <data key="description">Crítica à colonialidade do saber e do poder</data>
+      <data key="color">#8b5cf6</data>
+      <data key="layer">-1</data>
+    </node>
+    <node id="ubuntu">
+      <data key="name">Ubuntu</data>
+      <data key="description">Filosofia africana: "Eu sou porque nós somos"</data>
+      <data key="color">#8b5cf6</data>
+      <data key="layer">-1</data>
+    </node>
+    <node id="cosmotecnica">
+      <data key="name">Cosmotécnica</data>
+      <data key="description">Técnicas enraizadas em cosmologias locais (Yuk Hui)</data>
+      <data key="color">#8b5cf6</data>
+      <data key="layer">-1</data>
+    </node>
+    <node id="guaiamum">
+      <data key="name">Guaiamum Lateral</data>
+      <data key="description">Movimento diagonal, não-linear, caranguejo</data>
+      <data key="color">#10b981</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="backfeed">
+      <data key="name">Backfeed</data>
+      <data key="description">Retorno do futuro para o presente (antecipação)</data>
+      <data key="color">#10b981</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="opacidade">
+      <data key="name">Opacidade Estratégica</data>
+      <data key="description">Resistir via não-transparência (Édouard Glissant)</data>
+      <data key="color">#10b981</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="honeypots">
+      <data key="name">Honeypots</data>
+      <data key="description">Armadilhas para capturar bots invasores</data>
+      <data key="color">#10b981</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="ironia-politica">
+      <data key="name">Ironia Política</data>
+      <data key="description">Crítica através da performance contraditória</data>
+      <data key="color">#10b981</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="grafo-conceitos">
+      <data key="name">Grafo de Conceitos</data>
+      <data key="description">Estrutura de dados que representa o rizoma</data>
+      <data key="color">#6366f1</data>
+      <data key="layer">1</data>
+    </node>
+    <node id="websocket">
+      <data key="name">WebSocket</data>
+      <data key="description">Comunicação bidirecional em tempo real</data>
+      <data key="color">#6366f1</data>
+      <data key="layer">1</data>
+    </node>
+    <node id="meta-observacao">
+      <data key="name">Meta-Observação</data>
+      <data key="description">Observar o ato de observar (segunda ordem)</data>
+      <data key="color">#10b981</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="canvas-background">
+      <data key="name">Canvas Background</data>
+      <data key="description">Sistema de arte generativa que performa a filosofia</data>
+      <data key="color">#10b981</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="caos">
+      <data key="name">Caos Criativo</data>
+      <data key="description">Desordem produtiva, não-entrópica</data>
+      <data key="color">#10b981</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="trabalho-invisivel">
+      <data key="name">Trabalho Invisível</data>
+      <data key="description">Trabalho técnico desvalorizado e não-reconhecido</data>
+      <data key="color">#ec4899</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="divisao-sexual-trabalho">
+      <data key="name">Divisão Sexual do Trabalho</data>
+      <data key="description">Segregação de gênero no trabalho digital</data>
+      <data key="color">#ec4899</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="moderacao-conteudo">
+      <data key="name">Moderação de Conteúdo</data>
+      <data key="description">Trabalho traumático invisibilizado nas plataformas</data>
+      <data key="color">#ef4444</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="necropolitica-digital">
+      <data key="name">Necropolítica Digital</data>
+      <data key="description">Algoritmos que decidem quem vive e quem morre (Mbembe)</data>
+      <data key="color">#dc2626</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="gabinete-odio">
+      <data key="name">Gabinete do Ódio</data>
+      <data key="description">Feedback positivo amplificando genocídio via algoritmos</data>
+      <data key="color">#dc2626</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="viralizacao">
+      <data key="name">Viralização</data>
+      <data key="description">Feedback positivo social (engajamento exponencial)</data>
+      <data key="color">#f97316</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="gamificacao">
+      <data key="name">Gamificação</data>
+      <data key="description">Mecânicas de jogo aplicadas para maximizar engajamento</data>
+      <data key="color">#f97316</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="cybersyn">
+      <data key="name">Proyecto Cybersyn</data>
+      <data key="description">Cibernética socialista no Chile de Allende (1971-73)</data>
+      <data key="color">#22c55e</data>
+      <data key="layer">-1</data>
+    </node>
+    <node id="planejamento-participativo">
+      <data key="name">Planejamento Participativo</data>
+      <data key="description">Cibernética como ferramenta democrática, não tecnocrática</data>
+      <data key="color">#22c55e</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="democracia-algoritmicica">
+      <data key="name">Democracia Algorítmica</data>
+      <data key="description">Limites e possibilidades de tecnologia na democracia</data>
+      <data key="color">#7c3aed</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="determinismo-tecnologico">
+      <data key="name">Determinismo Tecnológico</data>
+      <data key="description">Crença falsa de que tecnologia resolve tudo</data>
+      <data key="color">#7c3aed</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="homeostase">
+      <data key="name">Homeostase</data>
+      <data key="description">Equilíbrio dinâmico via feedback negativo</data>
+      <data key="color">#10b981</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="digitalizacao">
+      <data key="name">Digitalização</data>
+      <data key="description">Conversão de tudo em bits - base da mercantilização digital</data>
+      <data key="color">#8b5cf6</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="extrativismo">
+      <data key="name">Extrativismo Digital</data>
+      <data key="description">Mineração de dados + mineração literal (terras raras)</data>
+      <data key="color">#22c55e</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="geopolitica">
+      <data key="name">Geopolítica Digital</data>
+      <data key="description">Guerra das redes, soberania tecnológica, BRICS vs OTAN</data>
+      <data key="color">#dc2626</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="internet">
+      <data key="name">Internet</data>
+      <data key="description">ARPANET militar → www civil (mas vigilância permanece)</data>
+      <data key="color">#6366f1</data>
+      <data key="layer">0</data>
+    </node>
+    <edge source="mercadoria" target="valor-uso"/>
+    <edge source="mercadoria" target="valor-troca"/>
+    <edge source="mercadoria" target="fetichismo"/>
+    <edge source="mercadoria" target="trabalho-abstrato"/>
+    <edge source="valor-uso" target="valor-troca"/>
+    <edge source="valor-uso" target="trabalho-concreto"/>
+    <edge source="valor-troca" target="trabalho-abstrato"/>
+    <edge source="valor-troca" target="preco-valor"/>
+    <edge source="trabalho-concreto" target="trabalho-abstrato"/>
+    <edge source="trabalho-concreto" target="previa-ideacao"/>
+    <edge source="trabalho-abstrato" target="tsn"/>
+    <edge source="tsn" target="valor-troca"/>
+    <edge source="tsn" target="forcas-produtivas"/>
+    <edge source="previa-ideacao" target="objetivacao"/>
+    <edge source="previa-ideacao" target="forcas-produtivas"/>
+    <edge source="objetivacao" target="trabalho-concreto"/>
+    <edge source="objetivacao" target="alienacao"/>
+    <edge source="forcas-produtivas" target="relacoes-producao"/>
+    <edge source="forcas-produtivas" target="automacao"/>
+    <edge source="forcas-produtivas" target="ia"/>
+    <edge source="relacoes-producao" target="mais-valia"/>
+    <edge source="relacoes-producao" target="capital"/>
+    <edge source="relacoes-producao" target="uberizacao"/>
+    <edge source="mais-valia" target="mais-valia-absoluta"/>
+    <edge source="mais-valia" target="mais-valia-relativa"/>
+    <edge source="mais-valia" target="capital"/>
+    <edge source="mais-valia" target="exploracao"/>
+    <edge source="mais-valia-absoluta" target="mais-valia-relativa"/>
+    <edge source="mais-valia-absoluta" target="uberizacao"/>
+    <edge source="mais-valia-absoluta" target="reforma-trabalhista"/>
+    <edge source="mais-valia-relativa" target="automacao"/>
+    <edge source="mais-valia-relativa" target="algoritmos"/>
+    <edge source="capital" target="circuito-capital"/>
+    <edge source="capital" target="acumulacao"/>
+    <edge source="capital" target="plataformizacao"/>
+    <edge source="circuito-capital" target="mais-valia"/>
+    <edge source="circuito-capital" target="acumulacao"/>
+    <edge source="fetichismo" target="fetichismo-digital"/>
+    <edge source="fetichismo" target="ideologia"/>
+    <edge source="fetichismo" target="alienacao"/>
+    <edge source="fetichismo-digital" target="mais-valia-dados"/>
+    <edge source="fetichismo-digital" target="plataformizacao"/>
+    <edge source="fetichismo-digital" target="magalu"/>
+    <edge source="preco-valor" target="fetichismo"/>
+    <edge source="preco-valor" target="capitalismo-vigilancia"/>
+    <edge source="reforma-trabalhista" target="uberizacao"/>
+    <edge source="reforma-trabalhista" target="pejotizacao"/>
+    <edge source="reforma-trabalhista" target="intermitente"/>
+    <edge source="pejotizacao" target="uberizacao"/>
+    <edge source="pejotizacao" target="precarizacao"/>
+    <edge source="intermitente" target="uberizacao"/>
+    <edge source="intermitente" target="mais-valia-absoluta"/>
+    <edge source="magalu" target="plataformizacao"/>
+    <edge source="magalu" target="mais-valia-dados"/>
+    <edge source="magalu" target="terceirizacao"/>
+    <edge source="terceirizacao" target="uberizacao"/>
+    <edge source="terceirizacao" target="precarizacao"/>
+    <edge source="exploracao" target="alienacao"/>
+    <edge source="exploracao" target="resistencia"/>
+    <edge source="precarizacao" target="uberizacao"/>
+    <edge source="precarizacao" target="intermitente"/>
+    <edge source="acumulacao" target="monopolio"/>
+    <edge source="algoritmos" target="uberizacao"/>
+    <edge source="algoritmos" target="ia"/>
+    <edge source="algoritmos" target="vigilancia"/>
+    <edge source="automacao" target="ia"/>
+    <edge source="automacao" target="desemprego"/>
+    <edge source="ia" target="mais-valia-dados"/>
+    <edge source="ia" target="vigilancia"/>
+    <edge source="cibernetica" target="feedback"/>
+    <edge source="cibernetica" target="wiener"/>
+    <edge source="cibernetica" target="turing"/>
+    <edge source="cibernetica" target="shannon"/>
+    <edge source="cibernetica" target="segunda-ordem"/>
+    <edge source="cibernetica" target="automacao"/>
+    <edge source="wiener" target="feedback"/>
+    <edge source="wiener" target="duplo-uso-militar"/>
+    <edge source="wiener" target="vicio-digital"/>
+    <edge source="turing" target="computabilidade"/>
+    <edge source="turing" target="problema-parada"/>
+    <edge source="turing" target="enigma"/>
+    <edge source="turing" target="duplo-uso-militar"/>
+    <edge source="shannon" target="teoria-informacao"/>
+    <edge source="shannon" target="entropia"/>
+    <edge source="shannon" target="trabalho-imaterial"/>
+    <edge source="shannon" target="duplo-uso-militar"/>
+    <edge source="babbage" target="ada-lovelace"/>
+    <edge source="babbage" target="algoritmo"/>
+    <edge source="babbage" target="automacao"/>
+    <edge source="babbage" target="materialidade-computacao"/>
+    <edge source="ada-lovelace" target="algoritmo"/>
+    <edge source="ada-lovelace" target="eniac-six"/>
+    <edge source="ada-lovelace" target="genero-computacao"/>
+    <edge source="eniac-six" target="genero-computacao"/>
+    <edge source="eniac-six" target="trabalho-invisivel"/>
+    <edge source="genero-computacao" target="divisao-sexual-trabalho"/>
+    <edge source="genero-computacao" target="trabalho-invisivel"/>
+    <edge source="feedback" target="autopoiese"/>
+    <edge source="feedback" target="temporalidade"/>
+    <edge source="feedback" target="vicio-digital"/>
+    <edge source="feedback-negativo" target="feedback"/>
+    <edge source="feedback-negativo" target="homeostase"/>
+    <edge source="feedback-negativo" target="cybersyn"/>
+    <edge source="feedback-positivo" target="feedback"/>
+    <edge source="feedback-positivo" target="vicio-digital"/>
+    <edge source="feedback-positivo" target="viralizacao"/>
+    <edge source="feedback-positivo" target="necropolitica-digital"/>
+    <edge source="vicio-digital" target="dopamina"/>
+    <edge source="vicio-digital" target="infinite-scroll"/>
+    <edge source="vicio-digital" target="capitalismo-vigilancia"/>
+    <edge source="dopamina" target="feedback-positivo"/>
+    <edge source="dopamina" target="recompensa-variavel"/>
+    <edge source="recompensa-variavel" target="vicio-digital"/>
+    <edge source="recompensa-variavel" target="gamificacao"/>
+    <edge source="infinite-scroll" target="feedback-positivo"/>
+    <edge source="algoritmo" target="turing"/>
+    <edge source="algoritmo" target="computabilidade"/>
+    <edge source="algoritmo" target="automacao"/>
+    <edge source="computabilidade" target="problema-parada"/>
+    <edge source="problema-parada" target="limites-tecnologia"/>
+    <edge source="problema-parada" target="democracia-algoritmicica"/>
+    <edge source="limites-tecnologia" target="determinismo-tecnologico"/>
+    <edge source="limites-tecnologia" target="democracia-algoritmicica"/>
+    <edge source="teoria-informacao" target="bit"/>
+    <edge source="teoria-informacao" target="entropia"/>
+    <edge source="teoria-informacao" target="trabalho-imaterial"/>
+    <edge source="bit" target="shannon"/>
+    <edge source="bit" target="digitalizacao"/>
+    <edge source="entropia" target="materialidade-computacao"/>
+    <edge source="duplo-uso-militar" target="enigma"/>
+    <edge source="duplo-uso-militar" target="darpa"/>
+    <edge source="duplo-uso-militar" target="geopolitica"/>
+    <edge source="enigma" target="necropolitica-digital"/>
+    <edge source="darpa" target="internet"/>
+    <edge source="darpa" target="geopolitica"/>
+    <edge source="darpa" target="vigilancia"/>
+    <edge source="materialidade-computacao" target="extrativismo"/>
+    <edge source="materialidade-computacao" target="ecologia-digital"/>
+    <edge source="materialidade-computacao" target="data-centers"/>
+    <edge source="ecologia-digital" target="extrativismo"/>
+    <edge source="ecologia-digital" target="e-waste"/>
+    <edge source="ecologia-digital" target="data-centers"/>
+    <edge source="e-waste" target="necropolitica-digital"/>
+    <edge source="e-waste" target="extrativismo"/>
+    <edge source="data-centers" target="fetichismo-digital"/>
+    <edge source="autopoiese" target="cibernetica"/>
+    <edge source="autopoiese" target="nhandereko"/>
+    <edge source="segunda-ordem" target="meta-observacao"/>
+    <edge source="segunda-ordem" target="ontologia-executavel"/>
+    <edge source="rizoma" target="multiplicidade"/>
+    <edge source="rizoma" target="devir"/>
+    <edge source="rizoma" target="navegacao-rizomatica"/>
+    <edge source="multiplicidade" target="devir"/>
+    <edge source="multiplicidade" target="ontologia-relacional"/>
+    <edge source="capitalismo-vigilancia" target="mais-valia-dados"/>
+    <edge source="capitalismo-vigilancia" target="plataformizacao"/>
+    <edge source="capitalismo-vigilancia" target="resistencia"/>
+    <edge source="capitalismo-vigilancia" target="vigilancia"/>
+    <edge source="mais-valia-dados" target="uberizacao"/>
+    <edge source="mais-valia-dados" target="trabalho-imaterial"/>
+    <edge source="vigilancia" target="resistencia"/>
+    <edge source="monopolio" target="plataformizacao"/>
+    <edge source="monopolio" target="capitalismo-vigilancia"/>
+    <edge source="ideologia" target="fetichismo-digital"/>
+    <edge source="ideologia" target="alienacao"/>
+    <edge source="desemprego" target="precarizacao"/>
+    <edge source="desemprego" target="uberizacao"/>
+    <edge source="ontologia-executavel" target="critica-performativa"/>
+    <edge source="ontologia-executavel" target="canvas-background"/>
+    <edge source="critica-performativa" target="captcha"/>
+    <edge source="critica-performativa" target="ironia-politica"/>
+    <edge source="captcha" target="caos"/>
+    <edge source="captcha" target="resistencia"/>
+    <edge source="sistema-ternario" target="temporalidade"/>
+    <edge source="sistema-ternario" target="feedback"/>
+    <edge source="sistema-ternario" target="backfeed"/>
+    <edge source="temporalidade" target="guaiamum"/>
+    <edge source="nhandereko" target="epistemologia-guarani"/>
+    <edge source="nhandereko" target="modo-colaborativo"/>
+    <edge source="epistemologia-guarani" target="ontologia-relacional"/>
+    <edge source="epistemologia-guarani" target="decolonial"/>
+    <edge source="navegacao-rizomatica" target="grafo-conceitos"/>
+    <edge source="navegacao-rizomatica" target="modo-colaborativo"/>
+    <edge source="modo-colaborativo" target="websocket"/>
+    <edge source="resistencia" target="opacidade"/>
+    <edge source="resistencia" target="honeypots"/>
+    <edge source="resistencia" target="critica-performativa"/>
+    <edge source="devir" target="ontologia-relacional"/>
+    <edge source="ontologia-relacional" target="autopoiese"/>
+    <edge source="uberizacao" target="plataformizacao"/>
+    <edge source="uberizacao" target="trabalho-imaterial"/>
+    <edge source="uberizacao" target="mais-valia-relativa"/>
+    <edge source="uberizacao" target="magalu"/>
+    <edge source="trabalho-imaterial" target="capitalismo-vigilancia"/>
+    <edge source="trabalho-imaterial" target="trabalho-reprodutivo"/>
+    <edge source="trabalho-reprodutivo" target="ciberfeminismo"/>
+    <edge source="trabalho-reprodutivo" target="federici"/>
+    <edge source="federici" target="ciberfeminismo"/>
+    <edge source="ciberfeminismo" target="resistencia"/>
+    <edge source="plataformizacao" target="resistencia"/>
+    <edge source="decolonial" target="ubuntu"/>
+    <edge source="decolonial" target="cosmotecnica"/>
+    <edge source="ubuntu" target="ontologia-relacional"/>
+    <edge source="ubuntu" target="modo-colaborativo"/>
+    <edge source="cosmotecnica" target="epistemologia-guarani"/>
+    <edge source="cosmotecnica" target="ontologia-executavel"/>
+    <edge source="guaiamum" target="navegacao-rizomatica"/>
+    <edge source="guaiamum" target="backfeed"/>
+    <edge source="backfeed" target="feedback"/>
+    <edge source="backfeed" target="temporalidade"/>
+    <edge source="opacidade" target="honeypots"/>
+    <edge source="opacidade" target="captcha"/>
+    <edge source="honeypots" target="captcha"/>
+    <edge source="ironia-politica" target="captcha"/>
+    <edge source="ironia-politica" target="ontologia-executavel"/>
+    <edge source="grafo-conceitos" target="rizoma"/>
+    <edge source="grafo-conceitos" target="websocket"/>
+    <edge source="websocket" target="nhandereko"/>
+    <edge source="meta-observacao" target="ontologia-executavel"/>
+    <edge source="meta-observacao" target="cibernetica"/>
+    <edge source="canvas-background" target="sistema-ternario"/>
+    <edge source="canvas-background" target="caos"/>
+    <edge source="caos" target="sistema-ternario"/>
+    <edge source="trabalho-invisivel" target="trabalho-reprodutivo"/>
+    <edge source="trabalho-invisivel" target="moderacao-conteudo"/>
+    <edge source="divisao-sexual-trabalho" target="trabalho-invisivel"/>
+    <edge source="divisao-sexual-trabalho" target="uberizacao"/>
+    <edge source="moderacao-conteudo" target="capitalismo-vigilancia"/>
+    <edge source="moderacao-conteudo" target="necropolitica-digital"/>
+    <edge source="necropolitica-digital" target="gabinete-odio"/>
+    <edge source="gabinete-odio" target="feedback-positivo"/>
+    <edge source="gabinete-odio" target="viralizacao"/>
+    <edge source="viralizacao" target="dopamina"/>
+    <edge source="gamificacao" target="vicio-digital"/>
+    <edge source="gamificacao" target="uberizacao"/>
+    <edge source="cybersyn" target="cibernetica"/>
+    <edge source="cybersyn" target="wiener"/>
+    <edge source="cybersyn" target="planejamento-participativo"/>
+    <edge source="planejamento-participativo" target="democracia-algoritmicica"/>
+    <edge source="planejamento-participativo" target="resistencia"/>
+    <edge source="determinismo-tecnologico" target="problema-parada"/>
+    <edge source="determinismo-tecnologico" target="fetichismo-digital"/>
+    <edge source="homeostase" target="cybersyn"/>
+    <edge source="homeostase" target="autopoiese"/>
+    <edge source="digitalizacao" target="teoria-informacao"/>
+    <edge source="digitalizacao" target="mais-valia-dados"/>
+    <edge source="digitalizacao" target="fetichismo-digital"/>
+    <edge source="extrativismo" target="mais-valia-dados"/>
+    <edge source="geopolitica" target="vigilancia"/>
+    <edge source="geopolitica" target="internet"/>
+    <edge source="internet" target="capitalismo-vigilancia"/>
+  </graph>
+</graphml>
