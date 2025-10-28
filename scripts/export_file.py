@@ -951,21 +951,40 @@ def create_xml(minify: bool = False) -> str:
     root = ET.Element("revolucao_cibernetica")
     root.set("version", "1.0")
     root.set("format", "ai_structured")
-    root.set("generated", datetime.now().isoformat())
+    # Preserve previous 'generated' timestamp if file exists to avoid spurious diffs
+    prev_generated = None
+    prev_xml = "docs/revolucao_cibernetica.xml"
+    prev_min_xml = "docs/revolucao_cibernetica.min.xml"
+    try:
+        if os.path.exists(prev_xml):
+            prev_dom = ET.parse(prev_xml)
+            prev_root = prev_dom.getroot()
+            prev_generated = prev_root.get("generated")
+        elif os.path.exists(prev_min_xml):
+            prev_dom = ET.parse(prev_min_xml)
+            prev_root = prev_dom.getroot()
+            prev_generated = prev_root.get("generated")
+    except Exception:
+        prev_generated = None
+
+    if prev_generated:
+        root.set("generated", prev_generated)
+    else:
+        root.set("generated", datetime.now().isoformat())
 
     # Metadados
     metadata = ET.SubElement(root, "metadata")
     ET.SubElement(metadata, "title").text = "A Revolução Cibernética"
-    ET.SubElement(
-        metadata, "subtitle"
-    ).text = "Uma Ontologia Relacional para a Era da Informação"
+    ET.SubElement(metadata, "subtitle").text = (
+        "Uma Ontologia Relacional para a Era da Informação"
+    )
     ET.SubElement(metadata, "author").text = "O Besta Fera"
     ET.SubElement(metadata, "language").text = "pt-BR"
     ET.SubElement(metadata, "license").text = "Creative Commons BY-SA 4.0"
     ET.SubElement(metadata, "url").text = "https://obestafera.com"
-    ET.SubElement(
-        metadata, "description"
-    ).text = "Ensaio filosófico sobre cibernética, ontologia relacional e a transformação da subjetividade na era digital."
+    ET.SubElement(metadata, "description").text = (
+        "Ensaio filosófico sobre cibernética, ontologia relacional e a transformação da subjetividade na era digital."
+    )
 
     # Tags para categorização
     tags_elem = ET.SubElement(metadata, "tags")
@@ -1340,6 +1359,23 @@ def create_jsonl():
                     jsonl_file.write(json.dumps(json_obj, ensure_ascii=False) + "\n")
 
         # Adicionar metadados como última linha (opcional)
+        # Preserve previous 'generated' timestamp if present to avoid spurious diffs
+        prev_generated = None
+        try:
+            if os.path.exists(output_file):
+                with open(output_file, "r", encoding="utf-8") as _f:
+                    lines = _f.read().splitlines()
+                    if lines:
+                        try:
+                            import json as _json
+
+                            last = _json.loads(lines[-1])
+                            prev_generated = last.get("generated")
+                        except Exception:
+                            prev_generated = None
+        except Exception:
+            prev_generated = None
+
         metadata_obj = {
             "id": "_metadata",
             "type": "metadata",
@@ -1350,7 +1386,7 @@ def create_jsonl():
             "license": "Creative Commons BY-SA 4.0",
             "url": "https://obestafera.com",
             "total_paragraphs": paragraph_count,
-            "generated": datetime.now().isoformat(),
+            "generated": prev_generated or datetime.now().isoformat(),
             "format": "jsonl",
             "optimized_for": ["embeddings", "rag", "fine-tuning", "streaming"],
             "tags": [
@@ -1446,10 +1482,10 @@ def create_rizoma_exports():
     with open(src_json, "r", encoding="utf-8") as f:
         data = json.load(f)
 
-    # Atualizar timestamp
+    # Atualizar timestamp apenas se ausente, para evitar diffs por timestamp em todas execuções
     if "meta" in data:
-        # Use timezone-aware UTC timestamp
-        data["meta"]["exported_at"] = datetime.now(timezone.utc).isoformat()
+        if not data["meta"].get("exported_at"):
+            data["meta"]["exported_at"] = datetime.now(timezone.utc).isoformat()
 
     # Re-escrever JSON (formatado) para garantir consistência
     out_json = "docs/rizoma-revolucao-cibernetica.json"
