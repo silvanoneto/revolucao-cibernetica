@@ -1,7 +1,7 @@
 # A Revolução Cibernética - Rizoma de Conceitos
 **Versão:** 2.0  
 **Data:** 2025-10-28T02:09:26.064Z  
-**Total de Conceitos:** 116
+**Total de Conceitos:** 124
 
 ## 📊 Estatísticas
 
@@ -37,7 +37,7 @@ Conjunto finito de instruções para resolver problema
 
 Sistemas que se auto-criam (Maturana & Varela)
 
-**Conexões:** `cibernetica`, `feedback`, `nhandereko`
+**Conexões:** `cibernetica`, `feedback`, `nhandereko`, `fechamento-operacional`, `acoplamento-estrutural`, `recursividade`, `segunda-ordem`
 
 ---
 
@@ -61,7 +61,7 @@ Máquina Analítica (1837) - primeiro computador programável (mecânico)
 
 Ciência do controle e comunicação (Wiener, 1948)
 
-**Conexões:** `feedback`, `wiener`, `turing`, `shannon`, `segunda-ordem`, `automacao`
+**Conexões:** `feedback`, `wiener`, `turing`, `shannon`, `segunda-ordem`, `automacao`, `autopoiese`, `variedade-requisita`, `vsm`, `acoplamento-estrutural`
 
 ---
 
@@ -209,6 +209,14 @@ Capacidade humana de planejar mentalmente antes de executar
 
 ---
 
+#### Recursividade (`recursividade`)
+
+Processos que se aplicam aos próprios resultados gerando complexidade emergente
+
+**Conexões:** `autopoiese`, `feedback`, `vsm`, `emergencia`, `fractais`
+
+---
+
 #### Relações de Produção (`relacoes-producao`)
 
 Relações sociais estabelecidas para produzir e distribuir bens
@@ -290,6 +298,14 @@ Utilidade concreta de uma mercadoria
 ---
 
 ### Camada 0: Presente (0)
+
+#### Acoplamento Estrutural (`acoplamento-estrutural`)
+
+Sistemas autopoiéticos se adaptam mutuamente através de interações recorrentes sem perder autonomia
+
+**Conexões:** `autopoiese`, `segunda-ordem`, `comunicacao`, `linguagem-sistema`
+
+---
 
 #### Acumulação de Capital (`acumulacao`)
 
@@ -383,7 +399,7 @@ Análise feminista da tecnologia e do trabalho digital
 
 Observador incluído no sistema observado
 
-**Conexões:** `cibernetica`, `meta-observacao`, `ontologia-executavel`
+**Conexões:** `cibernetica`, `meta-observacao`, `ontologia-executavel`, `autopoiese`, `acoplamento-estrutural`
 
 ---
 
@@ -483,6 +499,22 @@ Custos ambientais invisibilizados: mineração → energia → e-waste
 
 ---
 
+#### Emergência (`emergencia`)
+
+Propriedades qualitativas novas que surgem no sistema mas não existem nos componentes
+
+**Conexões:** `recursividade`, `sistemas-complexos`, `consciencia`, `sociedade`
+
+---
+
+#### Escalada Simétrica (`escalada-simetrica`)
+
+Feedback positivo descontrolado em interações competitivas (Bateson)
+
+**Conexões:** `feedback`, `patologias-sistemicas`, `corrida-armamentista`
+
+---
+
 #### Exploração Capitalista (`exploracao`)
 
 Apropriação do trabalho excedente não-pago
@@ -496,6 +528,14 @@ Apropriação do trabalho excedente não-pago
 Mineração de dados + mineração literal (terras raras)
 
 **Conexões:** `materialidade-computacao`, `ecologia-digital`, `e-waste`, `mais-valia-dados`
+
+---
+
+#### Fechamento Operacional (`fechamento-operacional`)
+
+Operações do sistema se referem apenas a si mesmas em ciclo recursivo
+
+**Conexões:** `autopoiese`, `recursividade`, `perturbacao-ambiente`
 
 ---
 
@@ -635,11 +675,27 @@ Crítica através da performance contraditória
 
 ---
 
+#### Lei da Variedade Requisita (`variedade-requisita`)
+
+Para controlar um sistema, o regulador precisa ter variedade igual ou maior (Ashby)
+
+**Conexões:** `cibernetica`, `feedback`, `vsm`, `descentralizacao`
+
+---
+
 #### Limites da Tecnologia (`limites-tecnologia`)
 
 Nem tudo pode ser "resolvido com tecnologia" - exige política
 
 **Conexões:** `problema-parada`, `determinismo-tecnologico`, `democracia-algoritmicica`
+
+---
+
+#### Linguagem como Sistema (`linguagem-sistema`)
+
+Coordenação comportamental através de acoplamento estrutural, não transmissão de informação
+
+**Conexões:** `acoplamento-estrutural`, `comunicacao`, `cibernetica`
 
 ---
 
@@ -696,6 +752,14 @@ Não há "desmaterialização" - há mineração, energia, e-waste
 Observar o ato de observar (segunda ordem)
 
 **Conexões:** `segunda-ordem`, `ontologia-executavel`, `cibernetica`
+
+---
+
+#### Modelo de Sistema Viável (`vsm`)
+
+Arquitetura recursiva de governança organizacional (Stafford Beer)
+
+**Conexões:** `variedade-requisita`, `cybersyn`, `cibernetica`, `recursividade`, `autonomia-coordenacao`
 
 ---
 

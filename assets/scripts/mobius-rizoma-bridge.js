@@ -47,10 +47,10 @@ const chapterConceptsMap = {
         description: 'Marx e a crítica da economia política: subsunção do trabalho, composição orgânica do capital, queda tendencial da taxa de lucro e o conceito revolucionário de General Intellect'
     },
     'cap-6': {
-        concepts: ['sistemas-complexos', 'recursividade', 'comunicacao'],
-        readingTime: '10 min',
-        difficulty: 'intermediário',
-        description: 'Cibernética aplicada à sociedade'
+        concepts: ['feedback-positivo', 'feedback-negativo', 'variedade-requisita', 'autopoiese', 'fechamento-operacional', 'cibernetica-primeira-ordem', 'cibernetica-segunda-ordem', 'acoplamento-estrutural', 'recursividade', 'emergencia', 'modelo-sistema-viavel', 'vsm', 'stafford-beer', 'cybersyn', 'escalada-simetrica', 'patologias-ciberneticas', 'bateson', 'maturana', 'varela', 'ashby', 'von-foerster', 'sistemas-complexos', 'comunicacao', 'controle-cibernetico'],
+        readingTime: '25 min',
+        difficulty: 'avançado',
+        description: 'Cibernética aplicada à sociedade: feedback, Lei da Variedade Requisita, autopoiese, acoplamento estrutural, VSM e patologias sistêmicas'
     },
     'cap-7': {
         concepts: ['tecnologia', 'automacao', 'trabalho-digital'],
