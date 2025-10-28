@@ -11,6 +11,33 @@
  * - Sem estrutura arbórea
  * 
  * CHANGELOG:
+ * - 2025-10-28 (v11): Expansão massiva do Capítulo 14 (Engenharia do Vício: Jogos, Apostas e Extração do Gozo)
+ *   + 100+ novos conceitos: design viciante, neurociência, apostas, jogos, resistência
+ *   + Neurociência do vício: dopamina, núcleo accumbens, Wolfram Schultz, superstímulos, dessensibilização/sensibilização
+ *   + Sistema de recompensa: recompensa variável intermitente, craving (fissura), gozo lacaniano, vício como valor
+ *   + Caixa de Skinner: condicionamento operante, behaviorismo, metáfora para apps viciantes
+ *   + Genealogia histórica: slot machines Las Vegas → casino online → gamificação generalizada
+ *   + Natasha Dow Schüll: "Addiction by Design" (2012), casino físico (1960-90), arquitetura de vício
+ *   + B.J. Fogg: Behavior Model, Stanford Persuasive Tech Lab, Nir Eyal "Hooked"
+ *   + Games as a Service (GaaS): monetização contínua, passes de batalha, FOMO
+ *   + Loot Boxes: mecanicamente idênticas a slot machines, não reguladas como jogo de azar
+ *   + Apostas esportivas (Bets): transformar paixão em ativo financeiro, influencers de bets, modelo de afiliados
+ *   + Brasil: Lei 14.790/2023 (regulamentação fraca), epidemia 2023-24 (25mi apostadores, R$ 100bi/ano)
+ *   + Necropolítica via Bets: jovens negros periferia perdendo salário inteiro, casa de apostas = agiota digital
+ *   + Clubes como outdoors: todos 20 times Série A viraram propaganda de apostas
+ *   + Cassino no bolso: acessibilidade infinita 24/7, dark patterns, jogo do Tigrinho
+ *   + Criptomoedas/NFTs: trading 24/7 (capitalismo elimina sono), Robinhood gamificação, Axie Infinity
+ *   + Casos globais: China (limite 90min/dia, "ópio espiritual"), EUA (lobby bloqueia), Europa (Bélgica/Holanda ban)
+ *   + Psicologia social: vergonha como controle, isolamento/invisibilidade, comunidades de recuperação
+ *   + Responsabilidade corporativa: Facebook Files (Haugen), Zynga "ordenhar baleias", conhecimento oculto
+ *   + Whales: 40-60% da receita vem de viciados — falácia da "diversão responsável"
+ *   + Resistência: class actions, boicote Battlefront II, regulação loot boxes (Bélgica 2018)
+ *   + Alternativas: Slow Gaming, Stardew Valley, design ético (Celeste, Hades), anti-dark-patterns
+ *   + Feedback cibernético perverso: algoritmo ajusta para manter no "estado ideal" de compulsão (homeostase perversa)
+ *   + Gozo e Valor: viciado preso em loop = encarnação do Sujeito Automático (D-M-D' infinito)
+ *   + Conexões: Caps 3 (vigilância), 8 (trabalho cognitivo), 10 (Wertkritik/sujeito automático), 13 (sexo/fé), 22 (necropolítica)
+ *   Total: ~630 conceitos mapeados
+ * 
  * - 2025-10-28 (v10): Expansão massiva do Capítulo 13 (Sexualidade e Religião na Era Digital)
  *   + 70+ novos conceitos: plataformização de sexo e fé, esferas íntimas como fronteiras de acumulação
  *   + Apps de namoro: Tinder (Elo Score, gamificação), Grindr (liberação + vigilância), mercados bilaterais
@@ -3793,6 +3820,526 @@ const conceptGraph = {
         description: 'Algoritmos "deixam morrer" ao invisibilizar conteúdo vital, amplificar desinformação mortal, expor usuários vulneráveis — morte social/literal',
         connections: ['shadowbanning', 'instagram-trans', 'necropolitica-antivacina', 'grindr-vigilancia', 'necropolitica-digital'],
         color: '#7f1d1d',
+        layer: 0
+    },
+
+    // ========================================
+    // CAPÍTULO 14: ENGENHARIA DO VÍCIO — JOGOS, APOSTAS E EXTRAÇÃO DO GOZO
+    // ========================================
+    // Conceitos centrais: design viciante, neurociência da recompensa, apostas/jogos como casino,
+    // genealogia histórica, casos globais, movimentos de resistência
+    
+    'engenharia-vicio': {
+        name: 'Engenharia do Vício',
+        description: 'Uso sistemático de psicologia comportamental e neurociência para criar produtos que geram dependência compulsiva',
+        connections: ['skinner-caixa', 'recompensa-variavel', 'gaas', 'loot-box', 'dopamina', 'gozo'],
+        color: '#dc2626',
+        layer: 0 // Presente
+    },
+    'gaas': {
+        name: 'Games as a Service (GaaS)',
+        description: 'Modelo de negócio: não vender jogo completo, mas manter jogador engajado indefinidamente via updates/passes/microtransações',
+        connections: ['engenharia-vicio', 'loot-box', 'recompensa-variavel', 'fomo', 'plataformizacao'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'loot-box': {
+        name: 'Loot Box (Caixa de Recompensa)',
+        description: 'Caixa virtual com recompensa aleatória — mecanicamente idêntica a slot machine, mas não regulada como jogo de azar',
+        connections: ['gaas', 'recompensa-variavel', 'skinner-caixa', 'dopamina', 'regulacao-loot-box'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'skinner-caixa': {
+        name: 'Caixa de Skinner',
+        description: 'Dispositivo experimental de B.F. Skinner (1930s): rato pressiona alavanca para comida — metáfora para apps viciantes',
+        connections: ['recompensa-variavel', 'engenharia-vicio', 'behaviorismo', 'fogg-modelo'],
+        color: '#dc2626',
+        layer: -1 // Passado
+    },
+    'recompensa-variavel': {
+        name: 'Recompensa Variável Intermitente',
+        description: 'Recompensa imprevisível cria comportamento mais compulsivo que recompensa constante (descoberta de Skinner)',
+        connections: ['skinner-caixa', 'loot-box', 'dopamina', 'slot-machine', 'refresh-feed'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'dopamina': {
+        name: 'Dopamina e Sistema de Recompensa',
+        description: 'Neurotransmissor liberado na ANTECIPAÇÃO de recompensa (não ao recebê-la) — base neurológica do vício',
+        connections: ['recompensa-variavel', 'nucleo-accumbens', 'schultz-dopamina', 'superstimulo', 'craving'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'nucleo-accumbens': {
+        name: 'Núcleo Accumbens',
+        description: 'Região cerebral onde dopamina é liberada — centro do sistema de recompensa',
+        connections: ['dopamina', 'superstimulo', 'dessensibilizacao'],
+        color: '#f97316',
+        layer: 0
+    },
+    'schultz-dopamina': {
+        name: 'Pesquisas de Wolfram Schultz',
+        description: 'Neurocientista (Cambridge) provou que dopamina dispara na ANTECIPAÇÃO, não na recompensa — imprevisibilidade maximiza dopamina',
+        connections: ['dopamina', 'recompensa-variavel', 'nucleo-accumbens'],
+        color: '#f97316',
+        layer: -1
+    },
+    'superstimulo': {
+        name: 'Superstímulo',
+        description: 'Estímulo artificial (drogas, jogos, redes sociais) muito mais intenso que estímulos naturais — sistema de recompensa não evoluiu para isso',
+        connections: ['dopamina', 'nucleo-accumbens', 'vicio-digital', 'dessensibilizacao'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'dessensibilizacao': {
+        name: 'Dessensibilização (Tolerância)',
+        description: 'Cérebro reduz receptores de dopamina após exposição repetida — precisa doses cada vez maiores para mesmo efeito',
+        connections: ['superstimulo', 'dopamina', 'sensibilizacao', 'vicio-quimico-vs-comportamental'],
+        color: '#f97316',
+        layer: 0
+    },
+    'sensibilizacao': {
+        name: 'Sensibilização (Craving)',
+        description: 'Cérebro se torna hiperreativo a PISTAS associadas ao vício (som de notificação, anúncio de aposta) — dispara desejo automaticamente',
+        connections: ['dessensibilizacao', 'craving', 'dopamina'],
+        color: '#f97316',
+        layer: 0
+    },
+    'craving': {
+        name: 'Craving (Fissura)',
+        description: 'Desejo compulsivo disparado por pistas ambientais — redução de prazer + aumento de compulsão',
+        connections: ['sensibilizacao', 'dopamina', 'gozo'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'gozo': {
+        name: 'Gozo (conceito lacaniano)',
+        description: 'Prazer excessivo, repetitivo, mortífero — não mais prazer, mas compulsão de repetição (pulsão de morte)',
+        connections: ['craving', 'engenharia-vicio', 'sujeito-automatico', 'vicio-valor'],
+        color: '#7f1d1d',
+        layer: 0
+    },
+    'vicio-valor': {
+        name: 'Viciados em Valor',
+        description: 'Viciado preso em loop de compulsão = encarnação perfeita do Sujeito Automático do Valor (D-M-D\' infinito)',
+        connections: ['gozo', 'sujeito-automatico', 'engenharia-vicio', 'capital-ficticio'],
+        color: '#7f1d1d',
+        layer: 0
+    },
+    'vicio-quimico-vs-comportamental': {
+        name: 'Vício Químico vs Comportamental',
+        description: 'Estudo Cambridge 2017: jogadores compulsivos têm ativação cerebral IDÊNTICA a dependentes químicos',
+        connections: ['dessensibilizacao', 'dopamina', 'gozo'],
+        color: '#f97316',
+        layer: 0
+    },
+    
+    // Genealogia histórica do design viciante
+    'slot-machine': {
+        name: 'Slot Machine (Caça-Níqueis)',
+        description: 'Máquina de apostas de Las Vegas (1960s+) — laboratório original do design viciante: recompensa variável, sons, celebração de "quase-ganhar"',
+        connections: ['recompensa-variavel', 'schull-addiction-design', 'casino-fisico', 'loot-box'],
+        color: '#dc2626',
+        layer: -1
+    },
+    'schull-addiction-design': {
+        name: 'Natasha Dow Schüll: Addiction by Design',
+        description: 'Antropóloga documenta design de slots em Las Vegas — objetivo mudou de "ganhar jackpot" para "entrar na zona" (estado dissociativo)',
+        connections: ['slot-machine', 'casino-fisico', 'engenharia-vicio'],
+        color: '#f97316',
+        layer: -1
+    },
+    'casino-fisico': {
+        name: 'Casino Físico (Las Vegas 1960-90)',
+        description: 'Arquitetura de vício: sem relógios/janelas, labirintos, luzes/sons constantes, bebidas grátis — desorientação temporal',
+        connections: ['slot-machine', 'schull-addiction-design', 'casino-online'],
+        color: '#dc2626',
+        layer: -1
+    },
+    'casino-online': {
+        name: 'Casino Online (1990-2010)',
+        description: 'Eliminação de barreiras físicas + DADOS EM TEMPO REAL — personalização algorítmica: se você vai desistir, sistema oferece bônus',
+        connections: ['casino-fisico', 'feedback-cibernetico-vicio', 'cassino-bolso', 'bets-brasil'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'feedback-cibernetico-vicio': {
+        name: 'Feedback Cibernético do Vício',
+        description: 'Casino online = sistema cibernético que ajusta em tempo real para manter jogador no "estado ideal" de compulsão',
+        connections: ['casino-online', 'feedback-negativo', 'homeostase-perversa'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'homeostase-perversa': {
+        name: 'Homeostase Perversa',
+        description: 'Algoritmo busca "equilíbrio" — nem desistindo (0 lucro), nem ganhando demais (prejuízo) — manter no loop infinito',
+        connections: ['feedback-cibernetico-vicio', 'homeostase', 'engenharia-vicio'],
+        color: '#7f1d1d',
+        layer: 0
+    },
+    'fogg-modelo': {
+        name: 'B.J. Fogg: Behavior Model',
+        description: 'Psicólogo Stanford ensina design de comportamento: Motivação + Habilidade (facilidade) + Gatilho (notificação) = Ação',
+        connections: ['skinner-caixa', 'stanford-lab-persuasivo', 'engenharia-vicio', 'dark-patterns'],
+        color: '#dc2626',
+        layer: -1
+    },
+    'stanford-lab-persuasivo': {
+        name: 'Persuasive Technology Lab (Stanford)',
+        description: 'B.J. Fogg fundou lab em 1998 — alunos incluem fundadores Instagram, autor de "Hooked" — ensino explícito de manipulação',
+        connections: ['fogg-modelo', 'eyal-hooked', 'engenharia-vicio'],
+        color: '#dc2626',
+        layer: -1
+    },
+    'eyal-hooked': {
+        name: 'Nir Eyal: Hooked',
+        description: 'Livro-manual de como criar "hábitos" (eufemismo para vício) — ex-aluno de Fogg, depois se arrependeu publicamente (2019)',
+        connections: ['stanford-lab-persuasivo', 'fogg-modelo', 'engenharia-vicio'],
+        color: '#f97316',
+        layer: 0
+    },
+    
+    // Apostas esportivas (Bets)
+    'bets-apostas': {
+        name: 'Apostas Esportivas (Bets)',
+        description: 'Transformar paixão do torcedor em ativo financeiro — "acreditar" no time vira ato de investimento',
+        connections: ['influencer-bets', 'casa-sempre-vence', 'bets-brasil', 'epidemia-bets-brasil'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'influencer-bets': {
+        name: 'Influenciador de Bets',
+        description: 'Figura que vende ilusão de vencer acaso via "análise" — ganha não com apostas, mas com código de afiliado e cursos',
+        connections: ['bets-apostas', 'piramide-digital', 'afiliados-modelo'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'afiliados-modelo': {
+        name: 'Modelo de Afiliados',
+        description: 'Influencer ganha 30-50% do que seus seguidores PERDEM — incentivo financeiro para promover vício',
+        connections: ['influencer-bets', 'piramide-digital', 'epidemia-bets-brasil'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'casa-sempre-vence': {
+        name: '"A Casa Sempre Vence"',
+        description: 'Probabilidades estatísticas garantem que, no agregado, plataforma sempre lucra — apostador individual pode ganhar, massa sempre perde',
+        connections: ['bets-apostas', 'ilusao-controle'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'ilusao-controle': {
+        name: 'Ilusão de Controle',
+        description: 'Crença de que conhecimento/habilidade pode vencer acaso — erro cognitivo explorado por apostas/jogos',
+        connections: ['casa-sempre-vence', 'bets-apostas', 'gozo'],
+        color: '#f97316',
+        layer: 0
+    },
+    'bets-brasil': {
+        name: 'Regulamentação Bets Brasil (Lei 14.790/2023)',
+        description: 'Governo legalizou apostas online com taxação ridícula (18%) e SEM proibir publicidade — Estado como sócio do vício',
+        connections: ['epidemia-bets-brasil', 'bets-apostas', 'clubes-outdoors'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'epidemia-bets-brasil': {
+        name: 'Epidemia das Bets (Brasil 2023-24)',
+        description: '25 milhões apostaram, R$ 100bi/ano movimentados — trabalhadores perdendo salário inteiro, casos de suicídio, classe C/D/E mais afetada',
+        connections: ['bets-brasil', 'afiliados-modelo', 'necropolitica-bets', 'agiota-digital'],
+        color: '#7f1d1d',
+        layer: 0
+    },
+    'clubes-outdoors': {
+        name: 'Clubes como Outdoors de Bets',
+        description: 'Todos 20 times Série A viraram outdoors (camisas, placas, naming rights) — clubes em crise vendem integridade por patrocínio',
+        connections: ['bets-brasil', 'epidemia-bets-brasil', 'corrupcao-esportiva'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'corrupcao-esportiva': {
+        name: 'Corrupção de Resultados',
+        description: 'Apostas online facilitam manipulação de jogos — jogadores/árbitros subornados para garantir resultados específicos',
+        connections: ['clubes-outdoors', 'bets-apostas'],
+        color: '#7f1d1d',
+        layer: 0
+    },
+    'necropolitica-bets': {
+        name: 'Necropolítica via Bets',
+        description: 'Jovens negros da periferia com salário R$ 1.400 perdendo tudo — "deixar morrer por endividamento" enquanto extrai lucro até o fim',
+        connections: ['epidemia-bets-brasil', 'necropolitica-digital', 'agiota-digital', 'periferia-laboratorio'],
+        color: '#7f1d1d',
+        layer: 0
+    },
+    'agiota-digital': {
+        name: 'Casa de Apostas como Agiota Digital',
+        description: 'Facilidade de depositar via Pix + algoritmo viciante = nova agiotagem sem violência física, mas com violência estrutural',
+        connections: ['necropolitica-bets', 'epidemia-bets-brasil', 'cassino-bolso'],
+        color: '#7f1d1d',
+        layer: 0
+    },
+    'periferia-laboratorio': {
+        name: 'Periferia como Laboratório',
+        description: 'População precarizada, sem educação financeira, desemprego alto — teste de até onde pode-se extrair valor de quem não tem nada',
+        connections: ['necropolitica-bets', 'epidemia-bets-brasil', 'extrativismo'],
+        color: '#7f1d1d',
+        layer: 0
+    },
+    
+    // Cassino no bolso
+    'cassino-bolso': {
+        name: 'Cassino no Bolso',
+        description: 'Eliminação RADICAL de atrito: disponível 24/7, a um clique — remove "freios" naturais do comportamento',
+        connections: ['casino-online', 'jogo-tigrinho', 'dark-patterns', 'acessibilidade-infinita'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'acessibilidade-infinita': {
+        name: 'Acessibilidade Infinita',
+        description: 'Casino físico tem barreiras (deslocamento, troca de dinheiro) — online não tem nenhuma, potencializa vício',
+        connections: ['cassino-bolso', 'casino-online', '24-7-capitalismo'],
+        color: '#dc2626',
+        layer: 0
+    },
+    '24-7-capitalismo': {
+        name: 'Capitalismo 24/7',
+        description: 'Jonathan Crary: capitalismo busca eliminar sono como última barreira — cripto/apostas nunca fecham',
+        connections: ['acessibilidade-infinita', 'cripto-trading-vicio', 'extrativismo'],
+        color: '#7f1d1d',
+        layer: 0
+    },
+    'jogo-tigrinho': {
+        name: 'Jogo do Tigrinho (Brasil)',
+        description: 'Slot online disfarçado de "jogo de habilidade" — viral entre população precarizada, promessa de "ganho rápido"',
+        connections: ['cassino-bolso', 'epidemia-bets-brasil', 'slot-machine'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'dark-patterns': {
+        name: 'Dark Patterns (Padrões Sombrios)',
+        description: 'Design manipulativo: depósito fácil vs saque difícil, celebração de pequenas vitórias, "quase-ganhar" para incentivar mais tentativa',
+        connections: ['cassino-bolso', 'engenharia-vicio', 'opacidade'],
+        color: '#dc2626',
+        layer: 0
+    },
+    
+    // Criptomoedas e NFTs como vício
+    'cripto-trading-vicio': {
+        name: 'Trading de Cripto como Vício',
+        description: 'Mercado 24/7 + notificações constantes + gamificação (confetes no Robinhood) = slot machine financeira',
+        connections: ['24-7-capitalismo', 'robinhood-gamificacao', 'nft-loot-box'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'robinhood-gamificacao': {
+        name: 'Robinhood: Gamificação do Trading',
+        description: 'App de ações com confetes virtuais, gráficos estilo videogame — multado US$ 70mi (2020) por "gamificação de investimentos"',
+        connections: ['cripto-trading-vicio', 'dark-patterns', 'engenharia-vicio'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'nft-loot-box': {
+        name: 'NFTs como Loot Box Descentralizada',
+        description: 'NFTs de colecionáveis = exatamente mesma mecânica de loot box (comprar sem saber valor) — blockchain não muda psicologia',
+        connections: ['loot-box', 'cripto-trading-vicio', 'axie-infinity'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'axie-infinity': {
+        name: 'Axie Infinity (Filipinas 2021)',
+        description: 'Jogo "play-to-earn": pobres jogavam 10-12h/dia por criptomoedas — token colapsou 95%, revelou-se trabalho precarizado + pirâmide',
+        connections: ['nft-loot-box', 'cripto-trading-vicio', 'trabalho-precarizado'],
+        color: '#7f1d1d',
+        layer: 0
+    },
+    
+    // Casos globais de regulação
+    'china-controle-jogos': {
+        name: 'China: Limite de 90min/dia',
+        description: 'Governo chinês (2019) limitou jogos para menores: 90min dias úteis, 3h feriados, nada 22h-8h — chamou videogames de "ópio espiritual"',
+        connections: ['regulacao-loot-box', 'guerras-opio', 'resistencia-regulacao'],
+        color: '#22c55e',
+        layer: 0
+    },
+    'guerras-opio': {
+        name: 'Guerras do Ópio (1839-60)',
+        description: 'Império Britânico viciou China em ópio para criar mercado — paralelo histórico: design viciante digital = colonialismo cognitivo',
+        connections: ['china-controle-jogos', 'extrativismo', 'necropolitica-bets'],
+        color: '#dc2626',
+        layer: -1
+    },
+    'eua-lobby-cassino': {
+        name: 'EUA: Lobby Bloqueia Regulação',
+        description: 'Indústria de jogos doou milhões para Congresso, ESRB (autorregulação) é financiada por empresas — conflito de interesses',
+        connections: ['regulacao-loot-box', 'resistencia-regulacao'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'europa-fragmentada': {
+        name: 'Europa: Regulação Fragmentada',
+        description: 'Bélgica/Holanda baniram loot boxes (2018), UK fez revisão — mas empresas simplesmente bloqueiam IPs desses países',
+        connections: ['regulacao-loot-box', 'belgica-ban-loot-box', 'resistencia-regulacao'],
+        color: '#f97316',
+        layer: 0
+    },
+    'belgica-ban-loot-box': {
+        name: 'Bélgica Bane Loot Boxes (2018)',
+        description: 'Primeiro país a declarar loot boxes ilegais sob leis de jogo de azar — EA removeu de FIFA, mas só na Bélgica',
+        connections: ['europa-fragmentada', 'loot-box', 'regulacao-loot-box'],
+        color: '#22c55e',
+        layer: 0
+    },
+    'regulacao-loot-box': {
+        name: 'Movimento por Regulação de Loot Boxes',
+        description: 'Pesquisadores, pais, gamers pressionam governos — classificar como jogo de azar, proibir para menores',
+        connections: ['belgica-ban-loot-box', 'europa-fragmentada', 'china-controle-jogos', 'resistencia-vicio'],
+        color: '#22c55e',
+        layer: 1
+    },
+    
+    // Psicologia social do vício
+    'vergonha-vicio': {
+        name: 'Vergonha como Controle',
+        description: 'Narrativa "responsabilidade pessoal" culpa viciado, não design — privatização do fracasso, socialização do lucro',
+        connections: ['neoliberalismo', 'vicio-nao-falha-moral', 'isolamento-vicio'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'vicio-nao-falha-moral': {
+        name: 'Vício ≠ Falha Moral',
+        description: 'Vício é ESTRUTURALMENTE PRODUZIDO por design corporativo + precarização social — não fraqueza individual',
+        connections: ['vergonha-vicio', 'engenharia-vicio', 'resistencia-vicio'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'isolamento-vicio': {
+        name: 'Isolamento e Invisibilidade',
+        description: 'Vício digital é invisível (vs álcool/cigarro) — facilita negação, atrasa intervenção (média 7-10 anos)',
+        connections: ['vergonha-vicio', 'comunidades-recuperacao'],
+        color: '#f97316',
+        layer: 0
+    },
+    'comunidades-recuperacao': {
+        name: 'Comunidades de Recuperação',
+        description: 'r/problemgambling, Gamblers Anonymous — apoio mútuo + POLITIZAÇÃO do vício (reconhecer sistema predatório)',
+        connections: ['isolamento-vicio', 'resistencia-vicio', 'gamblers-anonymous'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'gamblers-anonymous': {
+        name: 'Gamblers Anonymous',
+        description: 'Programa de 12 Passos para jogo compulsivo — modelo AA aplicado a apostas',
+        connections: ['comunidades-recuperacao', 'resistencia-vicio'],
+        color: '#22c55e',
+        layer: 1
+    },
+    
+    // Responsabilidade corporativa
+    'facebook-files-vicio': {
+        name: 'Facebook Files: "Pioramos Imagem Corporal"',
+        description: 'Documentos vazados (2021): Facebook sabia há anos que Instagram causa depressão em adolescentes, mas priorizou engagement',
+        connections: ['haugen-whistleblower', 'conhecimento-corporativo-oculto', 'lucro-acima-saude'],
+        color: '#7f1d1d',
+        layer: 0
+    },
+    'haugen-whistleblower': {
+        name: 'Frances Haugen (Whistleblower)',
+        description: 'Ex-funcionária vazou Facebook Files — provou decisão consciente de priorizar lucro sobre saúde mental',
+        connections: ['facebook-files-vicio', 'conhecimento-corporativo-oculto'],
+        color: '#22c55e',
+        layer: 0
+    },
+    'zynga-whales': {
+        name: 'Caso Zynga: "Ordenhar Baleias"',
+        description: 'Emails internos (2012): FarmVille designers discutiam como identificar "whales" e criar recursos para "ordenhar" esses usuários',
+        connections: ['whales-usuarios', 'conhecimento-corporativo-oculto', 'gaas'],
+        color: '#7f1d1d',
+        layer: 0
+    },
+    'whales-usuarios': {
+        name: 'Whales (Baleias)',
+        description: 'Termo da indústria: usuários que gastam desproporcionalmente — representam 40-60% da receita de jogos/apostas predatórios',
+        connections: ['zynga-whales', 'diversao-responsavel-falacia', 'engenharia-vicio'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'diversao-responsavel-falacia': {
+        name: 'Falácia da "Diversão Responsável"',
+        description: 'Empresas alegam "só pequena minoria vicia" — mas viciados são 40-60% da receita. Não é efeito colateral, É O MODELO DE NEGÓCIO',
+        connections: ['whales-usuarios', 'conhecimento-corporativo-oculto', 'vicio-nao-falha-moral'],
+        color: '#7f1d1d',
+        layer: 0
+    },
+    'conhecimento-corporativo-oculto': {
+        name: 'Conhecimento Corporativo Oculto',
+        description: 'Paralelo com Cigarette Papers (1990s): tabaco sabia desde 1960 que causa câncer, mas ocultou — Big Tech repete padrão',
+        connections: ['facebook-files-vicio', 'zynga-whales', 'haugen-whistleblower', 'lucro-acima-saude'],
+        color: '#7f1d1d',
+        layer: 0
+    },
+    'lucro-acima-saude': {
+        name: 'Lucro Acima de Saúde Mental',
+        description: 'Decisão corporativa consciente: sabem que design causa dano, mas mudar reduziria engagement/receita',
+        connections: ['conhecimento-corporativo-oculto', 'facebook-files-vicio', 'diversao-responsavel-falacia'],
+        color: '#7f1d1d',
+        layer: 0
+    },
+    
+    // Resistência e alternativas
+    'resistencia-vicio': {
+        name: 'Resistência à Engenharia do Vício',
+        description: 'Movimento conecta experiência pessoal a luta política: class actions, boicotes, pressão regulatória, design ético',
+        connections: ['regulacao-loot-box', 'comunidades-recuperacao', 'class-action-loot-box', 'slow-gaming', 'design-etico'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'class-action-loot-box': {
+        name: 'Class Actions contra Loot Boxes',
+        description: 'Pais processam EA (2020, Canadá) — loot boxes violam leis de proteção ao consumidor. EA pagou US$ 10mi sem admitir culpa',
+        connections: ['resistencia-vicio', 'loot-box', 'regulacao-loot-box'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'boicote-battlefront': {
+        name: 'Boicote Star Wars Battlefront II (2017)',
+        description: 'Comunidade gamer revoltou contra loot boxes predatórias — comentário da EA = mais downvotado da história do Reddit (668k)',
+        connections: ['resistencia-vicio', 'loot-box', 'class-action-loot-box'],
+        color: '#22c55e',
+        layer: 0
+    },
+    'slow-gaming': {
+        name: 'Movimento Slow Gaming',
+        description: 'Jogos que RESPEITAM tempo do jogador — Journey, Stardew Valley, Hollow Knight — sem microtransações, sem pressão temporal',
+        connections: ['resistencia-vicio', 'design-etico', 'stardew-valley'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'stardew-valley': {
+        name: 'Stardew Valley (Caso)',
+        description: 'Jogo feito por 1 pessoa (Eric Barone), vendeu 20mi+ cópias — prova que lucratividade ≠ predatoriedade',
+        connections: ['slow-gaming', 'design-etico'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'design-etico': {
+        name: 'Design Ético (Anti-Dark-Patterns)',
+        description: 'Celeste (assist mode), Hades (progressão sem FOMO) — escolhas de design que priorizam bem-estar sobre maximização de engagement',
+        connections: ['slow-gaming', 'resistencia-vicio', 'stardew-valley'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'fomo': {
+        name: 'FOMO (Fear of Missing Out)',
+        description: 'Medo de ficar de fora — explorado por eventos temporários, passes de batalha, recompensas de login diário',
+        connections: ['gaas', 'engenharia-vicio', 'design-etico'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'refresh-feed': {
+        name: 'Refresh Feed = Slot Machine',
+        description: 'Atualizar feed de redes sociais/email = puxar alavanca de slot machine — incerteza sobre recompensa maximiza dopamina',
+        connections: ['recompensa-variavel', 'dopamina', 'vicio-digital', 'infinite-scroll'],
+        color: '#dc2626',
         layer: 0
     }
 };
