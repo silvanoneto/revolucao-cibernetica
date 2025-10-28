@@ -18,10 +18,10 @@ function testMobiusDetection(x, y) {
         console.error('❌ IndexMobius não encontrado. A página carregou completamente?');
         return;
     }
-    
+
     const mobius = window.indexMobius;
     const point = mobius.getPointAtMouse(x, y);
-    
+
     console.log('🎯 Teste de detecção em posição:', { x, y });
     console.log('📊 Configurações:', {
         width: mobius.options.width,
@@ -29,7 +29,7 @@ function testMobiusDetection(x, y) {
         radius: mobius.options.radius,
         rotation: mobius.rotation
     });
-    
+
     if (point) {
         console.log('✅ Ponto detectado:', {
             id: point.id,
@@ -39,26 +39,26 @@ function testMobiusDetection(x, y) {
         });
     } else {
         console.log('❌ Nenhum ponto detectado nesta posição');
-        
+
         // Calcular ponto mais próximo
         const centerX = mobius.options.width / 2;
         const centerY = mobius.options.height / 2;
-        
+
         let closest = null;
         let minDistance = Infinity;
-        
+
         for (const pt of mobius.navigationPoints) {
             const angle = pt.angle + mobius.rotation;
             const px = centerX + Math.cos(angle) * mobius.options.radius;
             const py = centerY + Math.sin(angle) * mobius.options.radius;
             const distance = Math.sqrt((x - px) ** 2 + (y - py) ** 2);
-            
+
             if (distance < minDistance) {
                 minDistance = distance;
                 closest = { ...pt, calculatedX: px, calculatedY: py };
             }
         }
-        
+
         console.log('🎯 Ponto mais próximo:', {
             id: closest.id,
             label: closest.label,
@@ -73,7 +73,7 @@ function enableMobiusDebug() {
         console.error('❌ IndexMobius não encontrado');
         return;
     }
-    
+
     window.indexMobius.options.debug = true;
     console.log('✅ Debug visual ativado - você verá um círculo vermelho no cursor');
 }
@@ -83,7 +83,7 @@ function disableMobiusDebug() {
         console.error('❌ IndexMobius não encontrado');
         return;
     }
-    
+
     window.indexMobius.options.debug = false;
     console.log('❌ Debug visual desativado');
 }
@@ -93,9 +93,9 @@ function showMobiusInfo() {
         console.error('❌ IndexMobius não encontrado');
         return;
     }
-    
+
     const mobius = window.indexMobius;
-    
+
     console.log('📊 Informações do Möbius:');
     console.table({
         'Canvas Width': mobius.canvas.width,
@@ -110,7 +110,7 @@ function showMobiusInfo() {
         'Auto Rotate': mobius.autoRotate,
         'Rotation': mobius.rotation.toFixed(4)
     });
-    
+
     console.log('🎯 Pontos de navegação:', mobius.navigationPoints.length);
     console.log('🔴 Passado:', mobius.navigationPoints.filter(p => p.layer === 'passado').length);
     console.log('🟢 Presente:', mobius.navigationPoints.filter(p => p.layer === 'presente').length);

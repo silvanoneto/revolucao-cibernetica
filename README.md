@@ -232,6 +232,7 @@ http://localhost:8000/entry.html  # Começa pelo CAPTCHA
 ```
 
 **Fluxo de navegação:**
+
 ```
 entry.html (CAPTCHA) → index.html (Ensaio) → manifesto.html (Político)
                      ↓
@@ -271,6 +272,7 @@ entry.html (CAPTCHA) → index.html (Ensaio) → manifesto.html (Político)
 #### 🔴 **Passado (-1)** — Genealogia Intelectual (1948-2023)
 
 Timeline interativa com:
+
 - **1948:** Norbert Wiener — *Cybernetics*
 - **1960:** Stafford Beer — Management Cybernetics
 - **1972:** Gregory Bateson — *Steps to an Ecology of Mind*
@@ -347,12 +349,12 @@ Você pode:
 
 Este trabalho está licenciado sob **[Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/deed.pt-br)** (CC BY-SA 4.0).
 
-### Você pode:
+### Você pode
 
 - ✅ **Compartilhar** — copiar e redistribuir em qualquer formato
 - ✅ **Adaptar** — remixar, transformar, criar a partir do material
 
-### Desde que:
+### Desde que
 
 - 📝 **Atribuição** — dê o crédito apropriado
 - 🔄 **CompartilhaIgual** — distribua sob a mesma licença

@@ -308,7 +308,7 @@ function initCanvas() {
         console.error('❌ Canvas não encontrado!');
         return false;
     }
-    
+
     ctx = canvas.getContext('2d');
     console.log('✅ Contexto 2d obtido:', !!ctx);
 
@@ -333,17 +333,17 @@ function initCanvas() {
 
     canvas.addEventListener('click', handleCanvasClick);
     canvas.addEventListener('touchstart', handleCanvasTouch, { passive: false });
-    
+
     // � CRIAR BOTÃO DE MÉTRICAS (canto inferior direito do canvas)
     createMetricsButton();
-    
+
     // �🛡️ PROTEÇÃO: Impedir fechar modal clicando fora durante bloqueio
     const overlay = document.getElementById('captchaOverlay');
     if (overlay) {
         overlay.removeEventListener('click', handleOverlayClick);
         overlay.addEventListener('click', handleOverlayClick);
     }
-    
+
     console.log('✅ initCanvas() completo');
     return true;
 }
@@ -359,10 +359,10 @@ function createMetricsButton() {
         console.log('📊 Botão de métricas desabilitado (canvas não inicializado)');
         return;
     }
-    
+
     // Verificar se já existe
     if (document.getElementById('metricsButton')) return;
-    
+
     // Criar botão
     metricsButton = document.createElement('button');
     metricsButton.id = 'metricsButton';
@@ -384,25 +384,25 @@ function createMetricsButton() {
         transition: all 0.4s ease;
         backdrop-filter: blur(10px);
     `;
-    
+
     // Hover effect
     metricsButton.addEventListener('mouseenter', () => {
         metricsButton.style.background = 'rgba(139, 92, 246, 0.2)';
         metricsButton.style.transform = 'scale(1.1)';
     });
-    
+
     metricsButton.addEventListener('mouseleave', () => {
         metricsButton.style.background = 'rgba(0, 0, 0, 0.7)';
         metricsButton.style.transform = 'scale(1)';
     });
-    
+
     metricsButton.addEventListener('click', toggleMetrics);
-    
+
     // Adicionar ao container do canvas
     const canvasContainer = canvas.parentElement;
     canvasContainer.style.position = 'relative';
     canvasContainer.appendChild(metricsButton);
-    
+
     // 🦀 Criar controles Guaiamum (perspectivas) próximos ao botão de métricas
     // Apenas criar se não existir
     if (!document.querySelector('.guaiamum-controls')) {
@@ -430,7 +430,7 @@ function createMetricsButton() {
 
         canvasContainer.appendChild(gu);
     }
-    
+
     // Criar painel de métricas (inicialmente oculto)
     createMetricsPanel();
 }
@@ -457,7 +457,7 @@ function createMetricsPanel() {
         backdrop-filter: blur(15px);
         transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease;
     `;
-    
+
     canvas.parentElement.appendChild(metricsPanel);
 }
 
@@ -465,7 +465,7 @@ function toggleMetrics() {
     metricsVisible = !metricsVisible;
     metricsPanel.style.display = metricsVisible ? 'block' : 'none';
     metricsButton.innerHTML = metricsVisible ? '📉' : '📊';
-    
+
     if (metricsVisible) {
         updateMetricsPanel();
     }
@@ -486,48 +486,48 @@ function toggleMetrics() {
 function setGuaiamumPerspective(direction) {
     // Remove estado ativo de todos os botões
     document.querySelectorAll('.guaiamum-btn').forEach(btn => btn.classList.remove('active'));
-    
+
     // Define nova perspectiva baseada na anatomia funcional
-    switch(direction) {
+    switch (direction) {
         case 'front': // 🦵 Patas Anteriores → Equilíbrio Visual (Fisheye)
             sphericalView.targetBlend = -1.0;
             sphericalView.nextModeChange = frameCount + 99999; // Pausa automação
             document.querySelector('.guaiamum-front')?.classList.add('active');
             console.log('🦀 GUAIAMUM [Patas Anteriores]: Equilíbrio Visual → Fisheye (-1.0) | Expansão/Passado');
             break;
-            
+
         case 'center': // 🎯 Centro → Sensores de Vibração (Plano)
             sphericalView.targetBlend = 0.0;
             sphericalView.nextModeChange = frameCount + 99999;
             document.querySelector('.guaiamum-center')?.classList.add('active');
             console.log('🦀 GUAIAMUM [Centro Sensorial]: Detecção de Vibrações → Plano (0.0) | Equilíbrio/Presente');
             break;
-            
+
         case 'back': // 🦵 Patas Posteriores → Locomoção Rápida (Globe)
             sphericalView.targetBlend = 1.0;
             sphericalView.nextModeChange = frameCount + 99999;
             document.querySelector('.guaiamum-back')?.classList.add('active');
             console.log('🦀 GUAIAMUM [Patas Posteriores]: Locomoção Rápida → Globe (+1.0) | Síntese/Futuro');
             break;
-            
+
         case 'left': // 🦞 Garra Maior → Defesa/Competição (Reflexão)
             // Garra Maior: Defesa contra predadores, competição entre machos
             sphericalView.viewRotation -= Math.PI / 4; // Rotaciona -45° (volta ao passado)
             document.querySelector('.guaiamum-left')?.classList.add('active');
             console.log('🦀 GUAIAMUM [Garra Maior]: Defesa/Competição → Rotação -45° | Reflexão sobre Passado (lateralidade futura)');
             break;
-            
+
         case 'right': // 🦞 Garra Menor → Manipulação/Alimentação (Ação)
             // Garra Menor: Manipulação de alimentos, organismos pequenos
             sphericalView.viewRotation += Math.PI / 4; // Rotaciona +45° (avança ao futuro)
             document.querySelector('.guaiamum-right')?.classList.add('active');
             console.log('🦀 GUAIAMUM [Garra Menor]: Manipulação/Alimentação → Rotação +45° | Ação sobre Futuro (lateralidade futura)');
             break;
-            
+
         default:
             console.warn('🦀 GUAIAMUM: Direção desconhecida:', direction);
     }
-    
+
     // Atualiza painel de métricas se visível
     if (metricsVisible) {
         updateMetricsPanel();
@@ -536,13 +536,13 @@ function setGuaiamumPerspective(direction) {
 
 function updateMetricsPanel() {
     if (!metricsVisible || !metricsPanel) return;
-    
+
     // 🎨 Detectar modo de cor baseado no fundo
-    const backgroundBrightness = colorChaos.enabled 
-        ? 1.0 - colorChaos.background.currentOpacity 
+    const backgroundBrightness = colorChaos.enabled
+        ? 1.0 - colorChaos.background.currentOpacity
         : 1.0;
     const isDarkBackground = backgroundBrightness < 0.5;
-    
+
     // Cores dinâmicas baseadas no modo
     const colors = isDarkBackground ? {
         // 🌙 MODO ESCURO: Cores escuras para fundo claro
@@ -567,9 +567,9 @@ function updateMetricsPanel() {
         border: '#a78bfa',
         text: '#10b981'
     };
-    
+
     let html = `<div style="color: ${colors.title}; font-weight: bold; margin-bottom: 10px; font-size: 13px;">⚛️ MÉTRICAS TERNÁRIAS EM TEMPO REAL</div>`;
-    
+
     // ⚛️ FILOSOFIA TERNÁRIA: Visualização do sistema -1, 0, +1
     html += `<div style="color: ${colors.section}; margin-bottom: 8px;">⚛️ FILOSOFIA TERNÁRIA:</div>`;
     html += `<div style="margin-left: 10px; font-size: 11px;">`;
@@ -587,7 +587,7 @@ function updateMetricsPanel() {
     html += `<span style="color: ${colors.info};">Feedback</span>`;
     html += `</div>`;
     html += `</div>`;
-    
+
     // Métricas globais
     html += `<div style="color: ${colors.section}; margin-top: 10px; margin-bottom: 8px;">🌐 SISTEMA GLOBAL:</div>`;
     html += `<div style="margin-left: 10px;">`;
@@ -596,18 +596,18 @@ function updateMetricsPanel() {
     html += `Desafio: <span style="color: ${colors.highlight};">${currentChallengeType}</span><br>`;
     html += `Slow Motion: <span style="color: ${isDirectionBasedChallenge(currentChallengeType) ? colors.success : '#6b7280'}">${isDirectionBasedChallenge(currentChallengeType) ? 'ATIVO' : 'inativo'}</span><br>`;
     html += `</div>`;
-    
+
     // ⚛️ ESTATÍSTICAS DO CAOS TERNÁRIO
     if (captchaShapes.length > 0) {
         const avgChaos = captchaShapes.reduce((sum, s) => sum + s.chaosLevel, 0) / captchaShapes.length;
         const minChaos = Math.min(...captchaShapes.map(s => s.chaosLevel));
         const maxChaos = Math.max(...captchaShapes.map(s => s.chaosLevel));
-        
+
         // Contar formas em cada região
         const expansionCount = captchaShapes.filter(s => s.chaosLevel < -0.3).length;
         const equilibriumCount = captchaShapes.filter(s => Math.abs(s.chaosLevel) <= 0.3).length;
         const synthesisCount = captchaShapes.filter(s => s.chaosLevel > 0.3).length;
-        
+
         html += `<div style="color: ${colors.section}; margin-top: 10px; margin-bottom: 8px;">⚛️ DISTRIBUIÇÃO DO CAOS:</div>`;
         html += `<div style="margin-left: 10px; font-size: 11px;">`;
         html += `Média: <span style="color: ${avgChaos < -0.3 ? colors.warning : avgChaos > 0.3 ? colors.info : colors.success}">${avgChaos.toFixed(2)}</span><br>`;
@@ -619,7 +619,7 @@ function updateMetricsPanel() {
         html += `</div>`;
         html += `</div>`;
     }
-    
+
     // Ponto de luz/escuridão
     html += `<div style="color: ${colors.section}; margin-top: 10px; margin-bottom: 8px;">💡 LUZ/ESCURIDÃO:</div>`;
     html += `<div style="margin-left: 10px;">`;
@@ -627,7 +627,7 @@ function updateMetricsPanel() {
     html += `Intensidade: <span style="color: ${lightPoint.currentIntensity > 0 ? colors.section : colors.info}">${lightPoint.currentIntensity.toFixed(2)}</span> ${lightPoint.currentIntensity > 0 ? '💡' : '🌑'}<br>`;
     html += `Velocidade: (${lightPoint.vx.toFixed(2)}, ${lightPoint.vy.toFixed(2)})<br>`;
     html += `</div>`;
-    
+
     // Perspectiva esférica - Sistema ternário de transição
     html += `<div style="color: ${colors.section}; margin-top: 10px; margin-bottom: 8px;">🌐 PERSPECTIVA TERNÁRIA:</div>`;
     html += `<div style="margin-left: 10px;">`;
@@ -653,11 +653,11 @@ function updateMetricsPanel() {
     html += `</div>`;
     html += `Rotação: <span style="color: ${colors.title};">${(sphericalView.viewRotation * 180 / Math.PI).toFixed(1)}°</span><br>`;
     html += `</div>`;
-    
+
     // ⚛️ SELEÇÃO INTELIGENTE: Uma forma de cada extremo do espectro ternário
     // Encontrar a forma mais próxima de cada valor característico: -1, 0, +1
     const selectedShapes = [];
-    
+
     if (captchaShapes.length > 0) {
         // 1. Forma mais próxima de -1 (Expansão Máxima - bordas)
         const closestToMinusOne = captchaShapes.reduce((closest, shape) => {
@@ -665,8 +665,8 @@ function updateMetricsPanel() {
             const closestDist = Math.abs(closest.chaosLevel - (-1.0));
             return distToMinusOne < closestDist ? shape : closest;
         });
-        selectedShapes.push({shape: closestToMinusOne, label: 'Expansão (-1)'});
-        
+        selectedShapes.push({ shape: closestToMinusOne, label: 'Expansão (-1)' });
+
         // 2. Forma mais próxima de 0 (Equilíbrio - meio)
         const closestToZero = captchaShapes.reduce((closest, shape) => {
             const distToZero = Math.abs(shape.chaosLevel);
@@ -675,9 +675,9 @@ function updateMetricsPanel() {
         });
         // Evitar duplicata se a mesma forma for mais próxima de -1 e 0
         if (closestToZero !== closestToMinusOne) {
-            selectedShapes.push({shape: closestToZero, label: 'Equilíbrio (0)'});
+            selectedShapes.push({ shape: closestToZero, label: 'Equilíbrio (0)' });
         }
-        
+
         // 3. Forma mais próxima de +1 (Síntese Máxima - centro)
         const closestToPlusOne = captchaShapes.reduce((closest, shape) => {
             const distToPlusOne = Math.abs(shape.chaosLevel - 1.0);
@@ -686,10 +686,10 @@ function updateMetricsPanel() {
         });
         // Evitar duplicatas
         if (closestToPlusOne !== closestToMinusOne && closestToPlusOne !== closestToZero) {
-            selectedShapes.push({shape: closestToPlusOne, label: 'Síntese (+1)'});
+            selectedShapes.push({ shape: closestToPlusOne, label: 'Síntese (+1)' });
         }
     }
-    
+
     // Métricas das formas selecionadas (representantes dos 3 extremos ternários)
     html += `<div style="color: ${colors.section}; margin-top: 10px; margin-bottom: 8px;">🔷 CAOS TERNÁRIO DAS FORMAS:</div>`;
     html += `<div style="font-size: 10px; opacity: 0.7; margin-left: 10px; margin-bottom: 6px;">`;
@@ -697,19 +697,19 @@ function updateMetricsPanel() {
     html += `<span style="color: ${colors.success};">0</span>, `;
     html += `<span style="color: ${colors.info};">+1</span>`;
     html += `</div>`;
-    
+
     selectedShapes.forEach((item, i) => {
         const shape = item.shape;
         // 🌀 SISTEMA TERNÁRIO: -1 (bordas/expansão) ← 0 (equilíbrio) → +1 (centro/síntese)
         const chaosValue = shape.chaosLevel.toFixed(2);
         const absChaos = Math.abs(shape.chaosLevel);
         const chaosPercent = (absChaos * 100).toFixed(0);
-        
+
         // Determinar label e cor baseado no valor
         let chaosLabel = '';
         let chaosSymbol = '';
         let chaosColor = colors.success;
-        
+
         if (shape.chaosLevel < -0.7) {
             chaosLabel = 'Expansão Máxima';
             chaosSymbol = '−−';
@@ -731,14 +731,14 @@ function updateMetricsPanel() {
             chaosSymbol = '++';
             chaosColor = colors.info;
         }
-        
+
         html += `<div style="margin-left: 10px; margin-bottom: 8px; border-left: 2px solid ${colors.border}; padding-left: 8px;">`;
         html += `<span style="color: ${colors.title};">⚛️ ${item.label}</span><br>`;
         html += `Tipo: ${shape.type || 'circle'} | Cor: <span style="color: ${shape.color}">${shape.color}</span><br>`;
         html += `Pos: (${Math.round(shape.x)}, ${Math.round(shape.y)})<br>`;
         html += `Vel: (${shape.vx.toFixed(2)}, ${shape.vy.toFixed(2)})<br>`;
         html += `Z-index: <span style="color: ${colors.success};">${shape.zIndex}</span> → <span style="color: ${colors.success};">${Math.round(shape.targetZ)}</span><br>`;
-        
+
         // ⚛️ BARRA VISUAL DO ESPECTRO TERNÁRIO
         html += `<div style="margin-top: 4px; margin-bottom: 4px;">`;
         html += `<div style="font-size: 10px; opacity: 0.7; margin-bottom: 2px;">`;
@@ -753,15 +753,15 @@ function updateMetricsPanel() {
         html += `<div style="position: absolute; left: ${position}px; top: 0; width: 3px; height: 8px; background: white; box-shadow: 0 0 4px rgba(0,0,0,0.5);"></div>`;
         html += `</div>`;
         html += `</div>`;
-        
+
         html += `Caos: <span style="color: ${chaosColor}; font-weight: bold;">${chaosSymbol} ${chaosValue}</span> `;
         html += `<span style="opacity: 0.7;">(${chaosPercent}% | ${chaosLabel})</span><br>`;
         html += `Rotação: ${shape.rotationSpeed.toFixed(3)} rad/f<br>`;
         html += `</div>`;
     });
-    
+
     metricsPanel.innerHTML = html;
-    
+
     // Atualizar a cada frame se visível
     if (metricsVisible) {
         requestAnimationFrame(updateMetricsPanel);
@@ -786,36 +786,36 @@ function handleOverlayClick(event) {
 // 🎨 SISTEMA DE CONTRASTE ADAPTATIVO PARA UI
 function updateUIContrast() {
     // Calcular luminosidade do fundo baseado na opacidade da camada preta
-    const backgroundBrightness = colorChaos.enabled 
+    const backgroundBrightness = colorChaos.enabled
         ? 1.0 - colorChaos.background.currentOpacity  // 1.0 = claro, 0.0 = escuro
         : 1.0; // Padrão claro quando caos desabilitado
-    
+
     // Detectar se está em modo escuro (quando opacidade > 0.5)
     const isDarkBackground = backgroundBrightness < 0.5;
-    
+
     // Selecionar elementos da UI
     const challengeBox = document.querySelector('.challenge-box');
     const challengeError = document.querySelector('.challenge-error');
-    
+
     if (challengeBox) {
         if (isDarkBackground) {
             // 🌙 MODO ESCURO: Caixa clara com texto escuro
             challengeBox.style.background = `rgba(255, 255, 255, ${0.85 + backgroundBrightness * 0.1})`;
             challengeBox.style.color = '#1a1a1a';
-            
+
             // Título
             const title = challengeBox.querySelector('h2');
             if (title) title.style.color = '#8b5cf6';
-            
+
             // Texto
             const text = challengeBox.querySelector('p');
             if (text) text.style.color = '#4a5568';
-            
+
             // Strong elements
             challengeBox.querySelectorAll('strong').forEach(el => {
                 el.style.color = '#8b5cf6';
             });
-            
+
             // Botão regenerar
             const regenBtn = challengeBox.querySelector('.challenge-regenerate button');
             if (regenBtn) {
@@ -827,20 +827,20 @@ function updateUIContrast() {
             // ☀️ MODO CLARO: Caixa escura com texto claro (padrão)
             challengeBox.style.background = `rgba(0, 0, 0, ${0.85 - backgroundBrightness * 0.1})`;
             challengeBox.style.color = '#e5e7eb';
-            
+
             // Título
             const title = challengeBox.querySelector('h2');
             if (title) title.style.color = '#a78bfa';
-            
+
             // Texto
             const text = challengeBox.querySelector('p');
             if (text) text.style.color = '#d1d5db';
-            
+
             // Strong elements
             challengeBox.querySelectorAll('strong').forEach(el => {
                 el.style.color = '#a78bfa';
             });
-            
+
             // Botão regenerar
             const regenBtn = challengeBox.querySelector('.challenge-regenerate button');
             if (regenBtn) {
@@ -850,7 +850,7 @@ function updateUIContrast() {
             }
         }
     }
-    
+
     // Ajustar caixa de erro também
     if (challengeError) {
         if (isDarkBackground) {
@@ -863,7 +863,7 @@ function updateUIContrast() {
             challengeError.style.color = '#ef4444'; // Vermelho claro
         }
     }
-    
+
     // 📊 Ajustar painel de métricas
     const metricsPanel = document.getElementById('metricsPanel');
     if (metricsPanel) {
@@ -872,7 +872,7 @@ function updateUIContrast() {
             metricsPanel.style.background = 'rgba(255, 255, 255, 0.95)';
             metricsPanel.style.borderColor = 'rgba(139, 92, 246, 0.6)';
             metricsPanel.style.color = '#1a1a1a';
-            
+
             // Atualizar cores inline do HTML das métricas
             if (metricsVisible && metricsPanel.innerHTML) {
                 // As cores serão atualizadas na próxima chamada de updateMetricsPanel
@@ -885,7 +885,7 @@ function updateUIContrast() {
             metricsPanel.style.color = '#10b981';
         }
     }
-    
+
     // 🎯 Ajustar botão de métricas
     const metricsButton = document.getElementById('metricsButton');
     if (metricsButton) {
@@ -906,13 +906,13 @@ function updateUIContrast() {
 // 🎨 FUNÇÃO AUXILIAR: Obter cor adaptativa para números
 function getAdaptiveTextColor() {
     // Calcular luminosidade do fundo baseado na opacidade da camada preta
-    const backgroundBrightness = colorChaos.enabled 
+    const backgroundBrightness = colorChaos.enabled
         ? 1.0 - colorChaos.background.currentOpacity  // 1.0 = claro, 0.0 = escuro
         : 1.0; // Padrão claro quando caos desabilitado
-    
+
     // Detectar se está em modo escuro (quando opacidade > 0.5)
     const isDarkBackground = backgroundBrightness < 0.5;
-    
+
     // Retornar cor apropriada
     return isDarkBackground ? '#1a1a1a' : '#ffffff'; // Escuro em fundo claro, branco em fundo escuro
 }
@@ -922,15 +922,15 @@ function getRandomVelocity() {
     // Velocidade base ajustada para mobile e desktop
     // Mobile usa velocidade menor para melhor performance
     const baseSpeed = isMobile ? 0.25 : 0.7;
-    
+
     // Variação aleatória entre 60% e 140% da velocidade base
     // Isso garante que não seja nem muito lento (mínimo 60%) nem muito rápido (máximo 140%)
     const speedVariation = 0.6 + Math.random() * 0.8; // Range: 0.6 a 1.4
     const speed = baseSpeed * speedVariation * canvasScale;
-    
+
     // Ângulo aleatório (qualquer direção)
     const angle = Math.random() * Math.PI * 2;
-    
+
     return {
         vx: Math.cos(angle) * speed,
         vy: Math.sin(angle) * speed
@@ -941,14 +941,14 @@ function getRandomVelocity() {
 function getRandomRotation() {
     // Velocidade de rotação base (em radianos por frame)
     const baseRotationSpeed = 0.02; // ~1 grau por frame
-    
+
     // Variação entre 50% e 150% da velocidade base
     const speedVariation = 0.5 + Math.random();
     const rotationSpeed = baseRotationSpeed * speedVariation;
-    
+
     // 50% de chance de girar no sentido horário ou anti-horário
     const direction = Math.random() < 0.5 ? 1 : -1;
-    
+
     return rotationSpeed * direction;
 }
 
@@ -956,7 +956,7 @@ function getRandomRotation() {
 function addShape(shapeData, speedMultiplier = 1.0) {
     const velocity = getRandomVelocity();
     const rotation = getRandomRotation();
-    
+
     // Aplicar multiplicador de velocidade (para testes espaciais usar 0.15-0.2)
     captchaShapes.push({
         ...shapeData,
@@ -1019,7 +1019,7 @@ function getRandomColors(count) {
         '#2563eb', '#6366f1', '#8b5cf6', '#a855f7', '#7c3aed', '#ec4899',
         '#f43f5e', '#14b8a6', '#0d9488', '#f59e0b',
     ];
-    
+
     // Embaralhar e pegar as primeiras 'count' cores
     const shuffled = [...vibrantColors].sort(() => Math.random() - 0.5);
     return shuffled.slice(0, Math.min(count, shuffled.length));
@@ -1029,17 +1029,17 @@ function getRandomColors(count) {
 function invertColor(hex) {
     // Remove # se presente
     hex = hex.replace('#', '');
-    
+
     // Converte hex para RGB
     const r = parseInt(hex.substring(0, 2), 16);
     const g = parseInt(hex.substring(2, 4), 16);
     const b = parseInt(hex.substring(4, 6), 16);
-    
+
     // Inverte cada canal (255 - valor)
     const invR = (255 - r).toString(16).padStart(2, '0');
     const invG = (255 - g).toString(16).padStart(2, '0');
     const invB = (255 - b).toString(16).padStart(2, '0');
-    
+
     return `#${invR}${invG}${invB}`;
 }
 
@@ -1052,7 +1052,7 @@ function getRandomShapeType() {
 // Gerar múltiplos tipos de formas (pode ter repetição)
 function getRandomShapeTypes(count) {
     const shapes = ['circle', 'square', 'triangle', 'star'];
-    return Array.from({ length: count }, () => 
+    return Array.from({ length: count }, () =>
         shapes[Math.floor(Math.random() * shapes.length)]
     );
 }
@@ -1064,7 +1064,7 @@ function getRandomRadius(minRadius, maxRadius) {
 
 // Gerar múltiplos tamanhos variados
 function getRandomRadii(count, minRadius, maxRadius) {
-    return Array.from({ length: count }, () => 
+    return Array.from({ length: count }, () =>
         getRandomRadius(minRadius, maxRadius)
     );
 }
@@ -1077,63 +1077,63 @@ function updateShapesPosition() {
         stopAnimation();
         return;
     }
-    
+
     // Throttle de FPS no mobile para melhor performance
     // Desktop: 60 FPS, Mobile: 30 FPS
     const now = performance.now();
     const targetFrameTime = isMobile ? 33 : 16; // 30 FPS mobile, 60 FPS desktop
-    
+
     if (now - lastFrameTime < targetFrameTime) {
         animationFrameId = requestAnimationFrame(updateShapesPosition);
         return;
     }
-    
+
     lastFrameTime = now;
-    
+
     // Incrementar contador de frames
     frameCount++;
-    
+
     try {
         captchaShapes.forEach(shape => {
             // 🌪️ CALCULAR NÍVEL DE CAOS BASEADO NA DISTÂNCIA DAS BORDAS (sistema fechado)
             shape.chaosLevel = calculateChaosLevel(shape.x, shape.y, canvas.width, canvas.height);
-            
+
             // 🎯 SLOW MOTION em testes de direção (reduz movimento/rotação/caos)
             const isSlowMotion = isDirectionBasedChallenge(currentChallengeType);
             const slowMotionFactor = isSlowMotion ? 0.3 : 1.0; // 30% da velocidade normal
-            
+
             // 🌀 CAOS É MÁXIMO NOS EXTREMOS (bordas E centro)
             // chaosLevel: -1 (bordas) → 0 (equilíbrio) → +1 (centro)
             // Caos absoluto: 0 (equilíbrio) → 1 (extremos)
             const absChaos = Math.abs(shape.chaosLevel);
-            
+
             // Aplicar caos à velocidade (extremos = mais caos = movimento mais errático)
             const chaosMultiplier = 1.0 + (absChaos * 1.5); // 1.0x (equilíbrio) a 2.5x (extremos)
             shape.vx = shape.baseVx * chaosMultiplier * slowMotionFactor;
             shape.vy = shape.baseVy * chaosMultiplier * slowMotionFactor;
-            
+
             // Aplicar caos à rotação (extremos = mais caos = rotação mais rápida)
             const rotationChaosMultiplier = 1.0 + (absChaos * 2.0); // 1.0x a 3.0x
             shape.rotationSpeed = shape.baseRotationSpeed * rotationChaosMultiplier * slowMotionFactor;
-            
+
             // Atualizar posição base
             shape.x += shape.vx;
             shape.y += shape.vy;
-            
+
             // 🔄 INTERPOLAÇÃO SUAVE DE POSIÇÃO (para colisões suaves)
             // Inicializar targetX/targetY se não existirem
             if (shape.targetX === undefined) shape.targetX = shape.x;
             if (shape.targetY === undefined) shape.targetY = shape.y;
-            
+
             // Interpolar posição atual em direção à posição alvo
             if (Math.abs(shape.x - shape.targetX) > 0.1 || Math.abs(shape.y - shape.targetY) > 0.1) {
                 const diffX = shape.targetX - shape.x;
                 const diffY = shape.targetY - shape.y;
-                
+
                 // Aplicar interpolação
                 shape.x += diffX * shape.collisionFadeSpeed;
                 shape.y += diffY * shape.collisionFadeSpeed;
-                
+
                 // Snap quando muito próximo (evitar oscilação infinita)
                 if (Math.abs(diffX) < 0.1) shape.x = shape.targetX;
                 if (Math.abs(diffY) < 0.1) shape.y = shape.targetY;
@@ -1142,14 +1142,14 @@ function updateShapesPosition() {
                 shape.targetX = shape.x;
                 shape.targetY = shape.y;
             }
-            
+
             // Atualizar rotação
             if (shape.rotationSpeed !== undefined) {
                 shape.rotation = (shape.rotation || 0) + shape.rotationSpeed;
                 // Normalizar ângulo entre 0 e 2π
                 shape.rotation = shape.rotation % (Math.PI * 2);
             }
-            
+
             // NOVA FUNCIONALIDADE: Mudanças aleatórias de direção (movimento orgânico)
             // Cada forma muda de direção em intervalos ÚNICOS e DESSINCRONIZADOS
             if (!shape.nextDirectionChange) {
@@ -1160,7 +1160,7 @@ function updateShapesPosition() {
                 const interval = minFrames + Math.floor(Math.random() * (maxFrames - minFrames));
                 shape.nextDirectionChange = frameCount + interval;
             }
-            
+
             if (frameCount >= shape.nextDirectionChange) {
                 // 🌪️ Mudança de direção influenciada pelo caos absoluto
                 // Extremos (bordas E centro) = mudanças mais bruscas
@@ -1170,23 +1170,23 @@ function updateShapesPosition() {
                 const currentSpeed = Math.sqrt(shape.vx ** 2 + shape.vy ** 2);
                 const currentAngle = Math.atan2(shape.vy, shape.vx);
                 const newAngle = currentAngle + angleChange;
-                
+
                 // Atualizar velocidades base (sem multiplicador de caos)
                 const baseSpeed = Math.sqrt(shape.baseVx ** 2 + shape.baseVy ** 2);
                 shape.baseVx = Math.cos(newAngle) * baseSpeed;
                 shape.baseVy = Math.sin(newAngle) * baseSpeed;
-                
+
                 // Recalcular velocidades com caos
                 const chaosMultiplier = 1.0 + (absChaos * 1.5);
                 shape.vx = shape.baseVx * chaosMultiplier;
                 shape.vy = shape.baseVy * chaosMultiplier;
-                
+
                 // Chance de inverter rotação aumenta com caos absoluto
                 const flipChance = 0.3 + (absChaos * 0.3); // 30% a 60%
                 if (Math.random() < flipChance && shape.rotationSpeed !== undefined) {
                     shape.baseRotationSpeed = -shape.baseRotationSpeed;
                 }
-                
+
                 // Chance de mudar velocidade de rotação aumenta com caos absoluto
                 const changeChance = 0.2 + (absChaos * 0.3); // 20% a 50%
                 if (Math.random() < changeChance && shape.rotationSpeed !== undefined) {
@@ -1196,39 +1196,39 @@ function updateShapesPosition() {
                     const maxRotationSpeed = isMobile ? 0.03 : 0.04;
                     shape.baseRotationSpeed = Math.max(-maxRotationSpeed, Math.min(maxRotationSpeed, shape.baseRotationSpeed));
                 }
-                
+
                 // Agendar próxima mudança com intervalo ÚNICO para esta forma
                 const minFrames = 90 + Math.floor(Math.random() * 60);   // 90-150
                 const maxFrames = 180 + Math.floor(Math.random() * 120); // 180-300
                 const interval = minFrames + Math.floor(Math.random() * (maxFrames - minFrames));
                 shape.nextDirectionChange = frameCount + interval;
             }
-            
+
             // Verificar colisão com bordas e inverter direção
             const maxSize = shape.radius * 2; // Considerando o tamanho da forma
-            
-            if (shape.x - maxSize/2 <= 0 || shape.x + maxSize/2 >= canvas.width) {
+
+            if (shape.x - maxSize / 2 <= 0 || shape.x + maxSize / 2 >= canvas.width) {
                 shape.vx = -shape.vx;
                 // Ajustar posição para evitar que fique preso na borda
-                shape.x = Math.max(maxSize/2, Math.min(canvas.width - maxSize/2, shape.x));
-                
+                shape.x = Math.max(maxSize / 2, Math.min(canvas.width - maxSize / 2, shape.x));
+
                 // Ao bater na borda, pequena chance de mudar rotação também
                 if (Math.random() < 0.4 && shape.rotationSpeed !== undefined) {
                     shape.rotationSpeed = -shape.rotationSpeed;
                 }
             }
-            
-            if (shape.y - maxSize/2 <= 0 || shape.y + maxSize/2 >= canvas.height) {
+
+            if (shape.y - maxSize / 2 <= 0 || shape.y + maxSize / 2 >= canvas.height) {
                 shape.vy = -shape.vy;
                 // Ajustar posição para evitar que fique preso na borda
-                shape.y = Math.max(maxSize/2, Math.min(canvas.height - maxSize/2, shape.y));
-                
+                shape.y = Math.max(maxSize / 2, Math.min(canvas.height - maxSize / 2, shape.y));
+
                 // Ao bater na borda, pequena chance de mudar rotação também
                 if (Math.random() < 0.4 && shape.rotationSpeed !== undefined) {
                     shape.rotationSpeed = -shape.rotationSpeed;
                 }
             }
-            
+
             // 🎨 INVERSÃO CAÓTICA DE COR (individual por forma, dessincronizada)
             // BLOQUEADA em desafios que dependem de cores específicas
             if (colorChaos.enabled && shape.colorInversion && !shape.clicked && !isColorBasedChallenge(currentChallengeType)) {
@@ -1236,36 +1236,36 @@ function updateShapesPosition() {
                 if (frameCount >= shape.colorInversion.nextToggle) {
                     // Toggle do estado de inversão
                     shape.colorInversion.isInverted = !shape.colorInversion.isInverted;
-                    
+
                     // Aplicar ou remover inversão
                     if (shape.colorInversion.isInverted) {
                         shape.color = invertColor(shape.colorInversion.baseColor);
                     } else {
                         shape.color = shape.colorInversion.baseColor;
                     }
-                    
+
                     // 🌪️ Intervalo de próxima inversão reduzido pelo caos absoluto (extremos = mais rápido)
                     const absChaos = Math.abs(shape.chaosLevel);
                     const chaosTimeReduction = 1.0 - (absChaos * 0.5); // 1.0x a 0.5x
-                    const interval = shape.colorInversion.minInterval + 
+                    const interval = shape.colorInversion.minInterval +
                         Math.floor(Math.random() * (shape.colorInversion.maxInterval - shape.colorInversion.minInterval));
                     shape.colorInversion.nextToggle = frameCount + Math.floor(interval * chaosTimeReduction);
                 }
             }
-            
+
             // 📊 MUDANÇA CAÓTICA DE Z-INDEX (com transição suave)
             if (frameCount >= shape.nextZIndexChange) {
                 // Definir novo z-index alvo aleatório
                 shape.targetZ = Math.random() * 100;
-                
+
                 // 🌪️ Intervalo de próxima mudança reduzido pelo caos absoluto (extremos = mais rápido)
                 const absChaos = Math.abs(shape.chaosLevel);
                 const chaosTimeReduction = 1.0 - (absChaos * 0.5); // 1.0x a 0.5x
-                const interval = shape.zIndexChangeInterval.min + 
+                const interval = shape.zIndexChangeInterval.min +
                     Math.floor(Math.random() * (shape.zIndexChangeInterval.max - shape.zIndexChangeInterval.min));
                 shape.nextZIndexChange = frameCount + Math.floor(interval * chaosTimeReduction);
             }
-            
+
             // 🌫️ INTERPOLAR Z-INDEX SUAVEMENTE (velocidade afetada pelo caos e slow motion)
             if (shape.currentZ !== shape.targetZ) {
                 const diff = shape.targetZ - shape.currentZ;
@@ -1274,7 +1274,7 @@ function updateShapesPosition() {
                 const chaosFadeMultiplier = 1.0 + (absChaos * 2.0); // 1.0x a 3.0x
                 // 🎯 Slow motion reduz velocidade em testes de direção
                 const effectiveFadeSpeed = shape.zFadeSpeed * chaosFadeMultiplier * slowMotionFactor;
-                
+
                 if (Math.abs(diff) < effectiveFadeSpeed) {
                     // Próximo do alvo, snap para o valor exato
                     shape.currentZ = shape.targetZ;
@@ -1282,50 +1282,50 @@ function updateShapesPosition() {
                     // Interpolar suavemente
                     shape.currentZ += diff * effectiveFadeSpeed;
                 }
-                
+
                 // Atualizar zIndex inteiro (usado para ordenação)
                 shape.zIndex = Math.floor(shape.currentZ);
             }
         });
-        
+
         // 🔄 DETECÇÃO E RESOLUÇÃO DE COLISÕES ENTRE FORMAS (com profundidade)
         for (let i = 0; i < captchaShapes.length; i++) {
             for (let j = i + 1; j < captchaShapes.length; j++) {
                 const shape1 = captchaShapes[i];
                 const shape2 = captchaShapes[j];
-                
+
                 // 📊 VERIFICAR PROFUNDIDADE (z-index) - só colidem se estiverem na mesma camada
                 const z1 = shape1.zIndex !== undefined ? shape1.zIndex : 50;
                 const z2 = shape2.zIndex !== undefined ? shape2.zIndex : 50;
                 const zDifference = Math.abs(z1 - z2);
-                
+
                 // Se estão em camadas muito diferentes (>20 de diferença), não colidem
                 if (zDifference > 20) continue;
-                
+
                 // Calcular distância entre centros
                 const dx = shape2.x - shape1.x;
                 const dy = shape2.y - shape1.y;
                 const distance = Math.sqrt(dx * dx + dy * dy);
-                
+
                 // Soma dos raios (considera tamanho das formas)
                 const minDistance = shape1.radius + shape2.radius;
-                
+
                 // Se estão colidindo
                 if (distance < minDistance && distance > 0) {
                     // Normalizar vetor de direção
                     const nx = dx / distance;
                     const ny = dy / distance;
-                    
+
                     // Calcular overlap
                     const overlap = minDistance - distance;
-                    
+
                     // 🔄 COLISÃO SUAVE: definir posições alvo ao invés de mover instantaneamente
                     const separation = overlap * 0.5;
                     shape1.targetX = shape1.x - nx * separation;
                     shape1.targetY = shape1.y - ny * separation;
                     shape2.targetX = shape2.x + nx * separation;
                     shape2.targetY = shape2.y + ny * separation;
-                    
+
                     // Trocar velocidades (colisão elástica simplificada)
                     const tempVx = shape1.vx;
                     const tempVy = shape1.vy;
@@ -1333,7 +1333,7 @@ function updateShapesPosition() {
                     shape1.vy = shape2.vy;
                     shape2.vx = tempVx;
                     shape2.vy = tempVy;
-                    
+
                     // Pequena chance de inverter rotação também
                     if (Math.random() < 0.3) {
                         shape1.rotationSpeed = -shape1.rotationSpeed;
@@ -1342,27 +1342,27 @@ function updateShapesPosition() {
                 }
             }
         }
-        
+
         // 🎨 INVERSÃO CAÓTICA DO FUNDO DO CANVAS (dessincronizada das formas)
         if (colorChaos.enabled && frameCount >= colorChaos.background.nextToggle) {
             // Toggle do estado de inversão do fundo
             colorChaos.background.isInverted = !colorChaos.background.isInverted;
-            
+
             // Definir opacidade alvo baseada no estado
             colorChaos.background.targetOpacity = colorChaos.background.isInverted ? 1.0 : 0.0;
-            
+
             // Agendar próxima inversão do fundo
-            const interval = colorChaos.background.minInterval + 
+            const interval = colorChaos.background.minInterval +
                 Math.floor(Math.random() * (colorChaos.background.maxInterval - colorChaos.background.minInterval));
             colorChaos.background.nextToggle = frameCount + interval;
-            
+
             console.log(`🎨 Fundo ${colorChaos.background.isInverted ? 'escurecendo' : 'clareando'} | Próxima inversão em ${interval} frames`);
         }
-        
+
         // 🌫️ FADE SUAVE DO FUNDO (interpolação linear)
         if (colorChaos.background.currentOpacity !== colorChaos.background.targetOpacity) {
             const diff = colorChaos.background.targetOpacity - colorChaos.background.currentOpacity;
-            
+
             if (Math.abs(diff) < colorChaos.background.fadeSpeed) {
                 // Próximo da meta, snap para o valor exato
                 colorChaos.background.currentOpacity = colorChaos.background.targetOpacity;
@@ -1371,79 +1371,79 @@ function updateShapesPosition() {
                 colorChaos.background.currentOpacity += diff * colorChaos.background.fadeSpeed;
             }
         }
-        
+
         // 🌟 ATUALIZAR PONTO DE LUZ INVISÍVEL
         // Movimento suave e contínuo
         lightPoint.x += lightPoint.vx;
         lightPoint.y += lightPoint.vy;
-        
+
         // Mudança aleatória de direção a cada 120-240 frames
         if (!lightPoint.nextDirectionChange) {
             lightPoint.nextDirectionChange = frameCount + 120 + Math.floor(Math.random() * 120);
         }
-        
+
         if (frameCount >= lightPoint.nextDirectionChange) {
             const angleChange = (Math.random() - 0.5) * 0.6; // ±0.3 radianos (~±17 graus)
             const currentSpeed = Math.sqrt(lightPoint.vx ** 2 + lightPoint.vy ** 2);
             const currentAngle = Math.atan2(lightPoint.vy, lightPoint.vx);
             const newAngle = currentAngle + angleChange;
-            
+
             lightPoint.vx = Math.cos(newAngle) * currentSpeed;
             lightPoint.vy = Math.sin(newAngle) * currentSpeed;
-            
+
             // Próxima mudança
             lightPoint.nextDirectionChange = frameCount + 120 + Math.floor(Math.random() * 120);
         }
-        
+
         // Colisão do ponto de luz com bordas (com bounce suave)
         if (lightPoint.x <= 0 || lightPoint.x >= canvas.width) {
             lightPoint.vx = -lightPoint.vx;
             lightPoint.x = Math.max(0, Math.min(canvas.width, lightPoint.x));
         }
-        
+
         if (lightPoint.y <= 0 || lightPoint.y >= canvas.height) {
             lightPoint.vy = -lightPoint.vy;
             lightPoint.y = Math.max(0, Math.min(canvas.height, lightPoint.y));
         }
-        
+
         // 💡⚫ INVERSÃO CAÓTICA LUZ/ESCURIDÃO (dessincronizada do fundo)
         if (frameCount >= lightPoint.nextToggle) {
             // Toggle entre luz e escuridão
             lightPoint.isLight = !lightPoint.isLight;
-            
+
             // Definir intensidade alvo
             lightPoint.targetIntensity = lightPoint.isLight ? 1.0 : -1.0;
-            
+
             // Agendar próxima inversão
-            const interval = lightPoint.minInterval + 
+            const interval = lightPoint.minInterval +
                 Math.floor(Math.random() * (lightPoint.maxInterval - lightPoint.minInterval));
             lightPoint.nextToggle = frameCount + interval;
-            
+
             console.log(`💡 Ponto ${lightPoint.isLight ? 'iluminando' : 'escurecendo'} | Próxima inversão em ${interval} frames`);
         }
-        
+
         // 🌫️ FADE SUAVE DA INTENSIDADE (interpolação linear)
         if (lightPoint.currentIntensity !== lightPoint.targetIntensity) {
             const diff = lightPoint.targetIntensity - lightPoint.currentIntensity;
-            
+
             if (Math.abs(diff) < lightPoint.fadeSpeed) {
                 lightPoint.currentIntensity = lightPoint.targetIntensity;
             } else {
                 lightPoint.currentIntensity += diff * lightPoint.fadeSpeed;
             }
         }
-        
+
         // 🌐 SISTEMA DE PERSPECTIVA ESFÉRICA CAÓTICA (Transição -1 a +1)
         if (sphericalView.enabled) {
             // 🎯 Slow motion em testes de direção (reduz velocidade de transições)
             const isSlowMotion = isDirectionBasedChallenge(currentChallengeType);
             const perspectiveSlowMotion = isSlowMotion ? 0.2 : 1.0; // 20% da velocidade
-            
+
             // Alternar entre estados (-1 → 0 → +1 → 0 → -1)
             if (frameCount >= sphericalView.nextModeChange) {
                 // Ciclo de transições:
                 // -1.0 (Fisheye) → 0.0 (Plano) → +1.0 (Globe) → 0.0 (Plano) → -1.0 (Fisheye)
-                
+
                 if (sphericalView.currentBlend <= -0.9) {
                     // De Fisheye para Plano
                     sphericalView.targetBlend = 0.0;
@@ -1457,17 +1457,17 @@ function updateShapesPosition() {
                     // De Plano para Fisheye
                     sphericalView.targetBlend = -1.0;
                 }
-                
+
                 // Agendar próxima mudança
-                const interval = sphericalView.minInterval + 
+                const interval = sphericalView.minInterval +
                     Math.floor(Math.random() * (sphericalView.maxInterval - sphericalView.minInterval));
                 sphericalView.nextModeChange = frameCount + interval;
-                
-                const modeName = sphericalView.targetBlend < -0.5 ? 'Fisheye' : 
-                                 sphericalView.targetBlend > 0.5 ? 'Globe' : 'Plano';
+
+                const modeName = sphericalView.targetBlend < -0.5 ? 'Fisheye' :
+                    sphericalView.targetBlend > 0.5 ? 'Globe' : 'Plano';
                 console.log(`🌐 Perspectiva mudando para ${modeName} (blend → ${sphericalView.targetBlend.toFixed(2)}) em ${interval} frames`);
             }
-            
+
             // Interpolar blend suavemente (com slow motion)
             if (Math.abs(sphericalView.currentBlend - sphericalView.targetBlend) > 0.001) {
                 const diff = sphericalView.targetBlend - sphericalView.currentBlend;
@@ -1478,20 +1478,20 @@ function updateShapesPosition() {
                     sphericalView.currentBlend += diff > 0 ? effectiveBlendSpeed : -effectiveBlendSpeed;
                 }
             }
-            
+
             // Rotação suave da visão fisheye (com slow motion)
             sphericalView.viewRotation += sphericalView.viewRotationSpeed * perspectiveSlowMotion;
             if (sphericalView.viewRotation > Math.PI * 2) {
                 sphericalView.viewRotation -= Math.PI * 2;
             }
         }
-        
+
         // 🎨 Atualizar contraste da UI baseado no fundo
         updateUIContrast();
-        
+
         // Redesenhar canvas
         drawCircles();
-        
+
         // Continuar animação
         animationFrameId = requestAnimationFrame(updateShapesPosition);
     } catch (error) {
@@ -1634,8 +1634,8 @@ function generateVisualCaptcha() {
     lightPoint.isLight = true;               // 💡 Começa como luz
     lightPoint.currentIntensity = 1.0;       // 💡 Intensidade inicial (luz completa)
     lightPoint.targetIntensity = 1.0;        // 💡 Alvo inicial (luz completa)
-    lightPoint.nextToggle = frameCount + 
-        lightPoint.minInterval + 
+    lightPoint.nextToggle = frameCount +
+        lightPoint.minInterval +
         Math.floor(Math.random() * (lightPoint.maxInterval - lightPoint.minInterval));
     console.log('💡 Ponto de luz/escuridão inicializado em:', lightPoint.x.toFixed(1), lightPoint.y.toFixed(1));
 
@@ -1643,8 +1643,8 @@ function generateVisualCaptcha() {
     colorChaos.background.isInverted = false; // ⚪ Sempre começa em modo claro
     colorChaos.background.currentOpacity = 0; // ⚪ Opacidade inicial (transparente)
     colorChaos.background.targetOpacity = 0;  // ⚪ Alvo inicial (transparente)
-    colorChaos.background.nextToggle = frameCount + 
-        colorChaos.background.minInterval + 
+    colorChaos.background.nextToggle = frameCount +
+        colorChaos.background.minInterval +
         Math.floor(Math.random() * (colorChaos.background.maxInterval - colorChaos.background.minInterval));
     console.log('🎨 Sistema de inversão de cores inicializado (modo claro)');
 
@@ -1749,10 +1749,10 @@ function generateVisualCaptcha() {
 
     console.log('🎨 Desenhando formas... Total:', captchaShapes.length);
     drawCircles();
-    
+
     // Iniciar animação das formas (corrigido - loops com limitador)
     startAnimation();
-    
+
     console.log('✅ generateVisualCaptcha() completo');
 }
 
@@ -1761,7 +1761,7 @@ function findSafePosition(usedPositions, radius) {
     const maxAttempts = 100;
     let attempts = 0;
     let x, y, tooClose;
-    
+
     do {
         tooClose = false;
         x = Math.random() * (canvas.width - 100 * canvasScale) + 50 * canvasScale;
@@ -1775,14 +1775,14 @@ function findSafePosition(usedPositions, radius) {
                 break;
             }
         }
-        
+
         attempts++;
         if (attempts >= maxAttempts) {
             console.warn('⚠️ Máximo de tentativas atingido, usando última posição');
             break; // Força saída
         }
     } while (tooClose);
-    
+
     return { x, y };
 }
 
@@ -1793,7 +1793,7 @@ function generateSizeChallenge() {
 
     // Embaralhar tamanhos
     sizes.sort(() => Math.random() - 0.5);
-    
+
     // VARIAÇÃO: Cores e formas diferentes para cada círculo
     const colors = getRandomColors(5);
     const shapeTypes = getRandomShapeTypes(5);
@@ -2036,17 +2036,17 @@ function addDistractors(usedPositions, count) {
         '#0d9488', // Verde-azulado
         '#f59e0b', // Âmbar
     ];
-    
+
     // Embaralhar cores para máxima variedade
     const shuffledColors = [...distractorColors].sort(() => Math.random() - 0.5);
-    
+
     for (let i = 0; i < count; i++) {
         const radius = Math.floor((Math.random() * 25 + 15) * canvasScale);
-        
+
         // Usar função helper segura
         const pos = findSafePosition(usedPositions, radius);
         usedPositions.push({ x: pos.x, y: pos.y, radius });
-        
+
         // Escolher cor única da paleta embaralhada (evita repetição próxima)
         const color = shuffledColors[i % shuffledColors.length];
 
@@ -2493,7 +2493,7 @@ function generateShapeSquaresChallenge() {
         let x, y, tooClose;
         const otherShapes = shapes.filter(s => s !== 'square');
         const shapeType = otherShapes[Math.floor(Math.random() * otherShapes.length)];
-        
+
         let attempts = 0;
         const maxAttempts = 100;
         do {
@@ -2573,7 +2573,7 @@ function generateShapeTrianglesChallenge() {
         let x, y, tooClose;
         const otherShapes = shapes.filter(s => s !== 'triangle');
         const shapeType = otherShapes[Math.floor(Math.random() * otherShapes.length)];
-        
+
         let attempts = 0;
         const maxAttempts = 100;
         do {
@@ -2653,7 +2653,7 @@ function generateShapeStarsChallenge() {
         let x, y, tooClose;
         const otherShapes = shapes.filter(s => s !== 'star');
         const shapeType = otherShapes[Math.floor(Math.random() * otherShapes.length)];
-        
+
         let attempts = 0;
         const maxAttempts = 100;
         do {
@@ -2731,7 +2731,7 @@ function generateShapeMixOrderChallenge() {
     for (let i = 0; i < 2; i++) {
         let x, y, tooClose;
         const shapeType = orderedShapes[Math.floor(Math.random() * orderedShapes.length)];
-        
+
         let attempts = 0;
         const maxAttempts = 100;
         do {
@@ -2769,11 +2769,11 @@ function generateShapeMixOrderChallenge() {
 function generateColorShapesChallenge(targetColor) {
     const usedPositions = [];
     const shapes = ['circle', 'square', 'triangle', 'star'];
-    
+
     // VARIAÇÃO: Tamanhos variados para todas as formas
     const minRadius = Math.floor((isMobile ? 22 : 18) * canvasScale);
     const maxRadius = Math.floor((isMobile ? 38 : 34) * canvasScale);
-    
+
     // Paleta MUITO expandida de cores vibrantes (NUNCA cinza!)
     const allColors = [
         '#ef4444', '#dc2626', '#f97316', '#fb923c', '#eab308', '#fbbf24',
@@ -2781,13 +2781,13 @@ function generateColorShapesChallenge(targetColor) {
         '#2563eb', '#6366f1', '#8b5cf6', '#a855f7', '#7c3aed', '#ec4899',
         '#f43f5e', '#14b8a6', '#0d9488', '#f59e0b',
     ];
-    
+
     // 3 formas da cor alvo (formas E tamanhos variados)
     for (let i = 0; i < 3; i++) {
         let x, y, tooClose;
         const shapeType = shapes[Math.floor(Math.random() * shapes.length)];
         const radius = getRandomRadius(minRadius, maxRadius); // Tamanho aleatório
-        
+
         let attempts = 0;
         const maxAttempts = 100;
         do {
@@ -2823,13 +2823,13 @@ function generateColorShapesChallenge(targetColor) {
     // 4 distratores de outras cores (cores E tamanhos variados)
     const otherColors = allColors.filter(c => c !== targetColor);
     const shuffledColors = [...otherColors].sort(() => Math.random() - 0.5);
-    
+
     for (let i = 0; i < 4; i++) {
         let x, y, tooClose;
         const shapeType = shapes[Math.floor(Math.random() * shapes.length)];
         const radius = getRandomRadius(minRadius, maxRadius); // Tamanho aleatório
         const distractorColor = shuffledColors[i % shuffledColors.length];
-        
+
         let attempts = 0;
         const maxAttempts = 100;
         do {
@@ -2869,7 +2869,7 @@ function generateShapeColorMatchChallenge() {
     const usedPositions = [];
     const radius = Math.floor((isMobile ? 30 : 26) * canvasScale);
     const shapes = ['circle', 'square', 'triangle', 'star'];
-    
+
     // 3 quadrados verdes (alvo)
     for (let i = 0; i < 3; i++) {
         let x, y, tooClose;
@@ -2912,11 +2912,11 @@ function generateShapeColorMatchChallenge() {
         { type: 'circle', color: '#10b981' },  // Círculo verde
         { type: 'triangle', color: '#10b981' } // Triângulo verde
     ];
-    
+
     for (let i = 0; i < 4; i++) {
         let x, y, tooClose;
         const distractor = distractors[i];
-        
+
         let attempts = 0;
         const maxAttempts = 100;
         do {
@@ -2961,7 +2961,7 @@ function generateRainbowShapesChallenge() {
     for (let i = 0; i < 4; i++) {
         let x, y, tooClose;
         const shapeType = shapes[Math.floor(Math.random() * shapes.length)];
-        
+
         let attempts = 0;
         const maxAttempts = 100;
         do {
@@ -2999,7 +2999,7 @@ function generateRainbowShapesChallenge() {
     for (let i = 0; i < 2; i++) {
         let x, y, tooClose;
         const shapeType = shapes[Math.floor(Math.random() * shapes.length)];
-        
+
         let attempts = 0;
         const maxAttempts = 100;
         do {
@@ -3045,7 +3045,7 @@ function generateSameColorDifferentShapesChallenge() {
     for (let i = 0; i < 4; i++) {
         let x, y, tooClose;
         const shapeType = shapes[i]; // Uma de cada tipo
-        
+
         let attempts = 0;
         const maxAttempts = 100;
         do {
@@ -3083,7 +3083,7 @@ function generateSameColorDifferentShapesChallenge() {
     for (let i = 0; i < 3; i++) {
         let x, y, tooClose;
         const shapeType = shapes[Math.floor(Math.random() * shapes.length)];
-        
+
         let attempts = 0;
         const maxAttempts = 100;
         do {
@@ -3134,7 +3134,7 @@ function applyFisheyeTransform(x, y, centerX, centerY, strength, rotation) {
     // Deslocar para origem
     let dx = x - centerX;
     let dy = y - centerY;
-    
+
     // Aplicar rotação da visão
     if (rotation !== 0) {
         const cos = Math.cos(rotation);
@@ -3144,30 +3144,30 @@ function applyFisheyeTransform(x, y, centerX, centerY, strength, rotation) {
         dx = rotX;
         dy = rotY;
     }
-    
+
     // Calcular distância do centro
     const distance = Math.sqrt(dx * dx + dy * dy);
     const maxDist = Math.sqrt(centerX * centerX + centerY * centerY);
-    
+
     if (distance < 0.001) {
         return { x, y, scale: 1.0 };
     }
-    
+
     // Normalizar distância (0-1)
     const normalizedDist = Math.min(distance / maxDist, 1.0);
-    
+
     // Aplicar distorção fisheye (quadrática)
     const distortion = Math.pow(normalizedDist, 1.0 - strength * 0.5);
     const newDistance = distortion * maxDist;
-    
+
     // Calcular nova posição
     const ratio = newDistance / distance;
     const newX = centerX + dx * ratio;
     const newY = centerY + dy * ratio;
-    
+
     // Escala baseada na distorção (periferia fica maior)
     const scale = 0.7 + (normalizedDist * 0.6 * strength);
-    
+
     return { x: newX, y: newY, scale };
 }
 
@@ -3185,34 +3185,34 @@ function applyGlobeTransform(x, y, centerX, centerY, globeRadius, deadzone) {
     // Deslocar para origem
     const dx = x - centerX;
     const dy = y - centerY;
-    
+
     // Calcular distância do centro (normalizada)
     const distance = Math.sqrt(dx * dx + dy * dy);
     const normalizedDist = Math.min(distance / globeRadius, 1.0);
-    
+
     // Zona morta central (formas desaparecem)
     if (normalizedDist < deadzone) {
         const deadzoneOpacity = normalizedDist / deadzone;
         const deadzoneScale = 0.1 + (0.9 * deadzoneOpacity);
-        return { 
-            x, 
-            y, 
-            scale: deadzoneScale, 
-            opacity: deadzoneOpacity * 0.3 
+        return {
+            x,
+            y,
+            scale: deadzoneScale,
+            opacity: deadzoneOpacity * 0.3
         };
     }
-    
+
     // Simular profundidade esférica:
     // Centro = infinito (pequeno, transparente)
     // Periferia = perto (grande, opaco)
     const depthFactor = (normalizedDist - deadzone) / (1.0 - deadzone);
-    
+
     // Escala: cresce do centro para fora
     const scale = 0.3 + (depthFactor * 0.9);
-    
+
     // Opacidade: aumenta do centro para fora
     const opacity = 0.3 + (depthFactor * 0.7);
-    
+
     // Posição mantida (sem distorção espacial no modo globe)
     return { x, y, scale, opacity };
 }
@@ -3243,11 +3243,11 @@ function applyPointDistortion(px, py, centerX, centerY, canvasCenterX, canvasCen
     if (!sphericalView.enabled || Math.abs(sphericalView.currentBlend) < 0.01) {
         return { x: px, y: py };
     }
-    
+
     // Calcular offset do ponto em relação ao centro da forma
     const offsetX = px - centerX;
     const offsetY = py - centerY;
-    
+
     // Aplicar transformação fisheye ao ponto
     const fisheyePoint = applyFisheyeTransform(
         px, py,
@@ -3255,7 +3255,7 @@ function applyPointDistortion(px, py, centerX, centerY, canvasCenterX, canvasCen
         sphericalView.fisheyeStrength,
         sphericalView.viewRotation
     );
-    
+
     // Aplicar transformação globe ao ponto
     const globePoint = applyGlobeTransform(
         px, py,
@@ -3263,10 +3263,10 @@ function applyPointDistortion(px, py, centerX, centerY, canvasCenterX, canvasCen
         sphericalView.globeRadius,
         sphericalView.centerDeadzone
     );
-    
+
     // Mesclar transformações com sistema estendido
     const blended = blendTransformsExtended(px, py, fisheyePoint, globePoint, sphericalView.currentBlend);
-    
+
     return { x: blended.x, y: blended.y };
 }
 
@@ -3326,20 +3326,20 @@ function calculateChaosLevel(x, y, canvasWidth, canvasHeight) {
     const distFromRight = (canvasWidth - x) / canvasWidth;
     const distFromTop = y / canvasHeight;
     const distFromBottom = (canvasHeight - y) / canvasHeight;
-    
+
     // Menor distância até qualquer borda (normalizada)
     const minDistToBorder = Math.min(distFromLeft, distFromRight, distFromTop, distFromBottom);
-    
+
     // 🌀 NOVO SISTEMA: -1 (bordas/expansão) ← 0 (equilíbrio) → +1 (centro/síntese)
     // Normalizar minDistToBorder (0 a 0.5) para escala (-1 a +1)
     // Bordas (minDist ≈ 0) → chaos = -1 (expansão/limites da natureza)
     // Centro (minDist ≈ 0.5) → chaos = +1 (síntese/colisões)
     // Meio-termo (minDist ≈ 0.25) → chaos = 0 (equilíbrio)
-    
+
     // Mapear [0, 0.5] para [-1, +1]
     const normalizedDist = minDistToBorder * 2.0; // [0, 1]
     const chaosLevel = (normalizedDist * 2.0) - 1.0; // [-1, +1]
-    
+
     // Aplicar curva não-linear para enfatizar extremos
     // Valores próximos de 0 (equilíbrio) são menos influenciados
     const sign = Math.sign(chaosLevel);
@@ -3353,11 +3353,11 @@ function drawCircles() {
         console.error('❌ Canvas ou contexto não disponível');
         return;
     }
-    
+
     try {
         // 🎨 LIMPAR CANVAS (sempre começa transparente)
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        
+
         // 🌫️ APLICAR CAMADA DE FUNDO PRETA COM FADE SUAVE
         if (colorChaos.enabled && colorChaos.background.currentOpacity > 0) {
             ctx.fillStyle = `rgba(0, 0, 0, ${colorChaos.background.currentOpacity})`;
@@ -3375,29 +3375,29 @@ function drawCircles() {
         // Desenhar todas as formas (em ordem de z-index)
         sortedShapes.forEach((shape, idx) => {
             // Salvar estado do contexto
-            
+
             // 🌐 APLICAR TRANSFORMAÇÃO ESFÉRICA (Sistema -1 a +1: Fisheye ⇄ Plano ⇄ Globe)
             let transformedX = shape.x;
             let transformedY = shape.y;
             let sphericalScale = 1.0;
             let sphericalOpacity = 1.0;
-            
+
             const blend = sphericalView.currentBlend;
-            
+
             if (sphericalView.enabled && Math.abs(blend) > 0.01) {
                 const centerX = canvas.width / 2;
                 const centerY = canvas.height / 2;
-                
+
                 // Transformação Fisheye
                 const fisheyeTransform = applyFisheyeTransform(
-                    shape.x, 
-                    shape.y, 
-                    centerX, 
-                    centerY, 
+                    shape.x,
+                    shape.y,
+                    centerX,
+                    centerY,
                     sphericalView.fisheyeStrength,
                     sphericalView.viewRotation
                 );
-                
+
                 // Transformação Globe
                 const globeTransform = applyGlobeTransform(
                     shape.x,
@@ -3407,28 +3407,28 @@ function drawCircles() {
                     sphericalView.globeRadius,
                     sphericalView.centerDeadzone
                 );
-                
+
                 // Mesclar transformações com sistema estendido -1 a +1
                 const blended = blendTransformsExtended(
                     shape.x, shape.y,
-                    fisheyeTransform, 
-                    globeTransform, 
+                    fisheyeTransform,
+                    globeTransform,
                     blend
                 );
-                
+
                 transformedX = blended.x;
                 transformedY = blended.y;
                 sphericalScale = blended.scale;
                 sphericalOpacity = blended.opacity;
             }
-            
+
             ctx.save();
-            
+
             // 📏 CALCULAR ESCALA 3D BASEADA EM Z-INDEX (perspectiva de profundidade)
             const zValue = shape.currentZ !== undefined ? shape.currentZ : 50;
             // Normalizar z-index: 0 = fundo (longe), 100 = frente (perto)
             const depthFactor = zValue / 100; // 0.0 a 1.0
-            
+
             // Escala baseada em profundidade:
             // z=0 (fundo): 0.5x (50% do tamanho) - mais longe
             // z=50 (meio): 0.75x (75% do tamanho) - médio
@@ -3436,19 +3436,19 @@ function drawCircles() {
             const minScale = 0.5;  // Escala mínima (fundo)
             const maxScale = 1.0;  // Escala máxima (frente)
             const scale3D = minScale + (maxScale - minScale) * depthFactor;
-            
+
             // Opacidade base por profundidade:
             // z=0: 0.6 (mais transparente/longe)
             // z=100: 1.0 (mais opaco/perto)
             const minDepthOpacity = 0.6;
             const maxDepthOpacity = 1.0;
             const depthOpacity = minDepthOpacity + (maxDepthOpacity - minDepthOpacity) * depthFactor;
-            
+
             // �💡⚫ CALCULAR OPACIDADE BASEADA NA DISTÂNCIA E INTENSIDADE (LUZ/ESCURIDÃO)
             const dx = shape.x - lightPoint.x;
             const dy = shape.y - lightPoint.y;
             const distance = Math.sqrt(dx * dx + dy * dy);
-            
+
             // Calcular fator de distância normalizado (0 = no centro, 1 = na borda do raio)
             let distanceFactor;
             if (distance <= lightPoint.radius) {
@@ -3456,10 +3456,10 @@ function drawCircles() {
             } else {
                 distanceFactor = 1.0; // Fora do raio
             }
-            
+
             // Calcular opacidade baseada na intensidade atual (luz/escuridão)
             let opacity;
-            
+
             if (lightPoint.currentIntensity > 0) {
                 // MODO LUZ (positivo): perto = mais opaco, longe = menos opaco
                 const lightStrength = lightPoint.currentIntensity; // 0.0 a 1.0
@@ -3472,21 +3472,21 @@ function drawCircles() {
                 // NEUTRO (0.0): sem efeito, opacidade constante
                 opacity = (lightPoint.maxOpacity + lightPoint.minOpacity) / 2;
             }
-            
+
             // Garantir que opacidade está no range válido
             // 🎭 COMBINAR OPACIDADE: profundidade × luz/escuridão × esférica
             const finalOpacity = opacity * depthOpacity * sphericalOpacity;
             ctx.globalAlpha = finalOpacity;
-            
+
             // Aplicar rotação se a forma tiver (usando posição transformada)
             if (shape.rotation !== undefined && shape.rotation !== 0) {
                 ctx.translate(transformedX, transformedY);
                 ctx.rotate(shape.rotation);
                 ctx.translate(-transformedX, -transformedY);
             }
-            
+
             ctx.beginPath();
-            
+
             // Definir cores
             if (shape.clicked) {
                 ctx.fillStyle = '#10b981'; // Verde quando clicado
@@ -3500,15 +3500,15 @@ function drawCircles() {
             // 📦 APLICAR ESCALA FINAL: 3D × Esférica
             const finalScale = scale3D * sphericalScale;
             const scaledRadius = shape.radius * finalScale;
-            
+
             // Centro do canvas para distorção de pontos
             const canvasCenterX = canvas.width / 2;
             const canvasCenterY = canvas.height / 2;
-            
+
             // Desenhar forma baseada no tipo (com distorção de pontos)
             const shapeType = shape.type || 'circle';
-            
-            switch(shapeType) {
+
+            switch (shapeType) {
                 case 'circle':
                     // 🌀 CÍRCULO COM DISTORÇÃO: dividir em segmentos e distorcer cada ponto
                     if (sphericalView.enabled && Math.abs(sphericalView.currentBlend) > 0.1) {
@@ -3517,14 +3517,14 @@ function drawCircles() {
                             const angle = (i / segments) * Math.PI * 2;
                             const px = transformedX + Math.cos(angle) * scaledRadius;
                             const py = transformedY + Math.sin(angle) * scaledRadius;
-                            
+
                             // Aplicar distorção ao ponto
                             const distorted = applyPointDistortion(
-                                px, py, 
+                                px, py,
                                 transformedX, transformedY,
                                 canvasCenterX, canvasCenterY
                             );
-                            
+
                             if (i === 0) {
                                 ctx.moveTo(distorted.x, distorted.y);
                             } else {
@@ -3537,26 +3537,26 @@ function drawCircles() {
                         ctx.arc(transformedX, transformedY, scaledRadius, 0, Math.PI * 2);
                     }
                     break;
-                    
+
                 case 'square':
                     const squareSize = scaledRadius * 1.6;
-                    
+
                     // 🌀 QUADRADO COM DISTORÇÃO: distorcer cada vértice
                     if (sphericalView.enabled && Math.abs(sphericalView.currentBlend) > 0.1) {
                         const corners = [
-                            { x: transformedX - squareSize/2, y: transformedY - squareSize/2 }, // Top-left
-                            { x: transformedX + squareSize/2, y: transformedY - squareSize/2 }, // Top-right
-                            { x: transformedX + squareSize/2, y: transformedY + squareSize/2 }, // Bottom-right
-                            { x: transformedX - squareSize/2, y: transformedY + squareSize/2 }  // Bottom-left
+                            { x: transformedX - squareSize / 2, y: transformedY - squareSize / 2 }, // Top-left
+                            { x: transformedX + squareSize / 2, y: transformedY - squareSize / 2 }, // Top-right
+                            { x: transformedX + squareSize / 2, y: transformedY + squareSize / 2 }, // Bottom-right
+                            { x: transformedX - squareSize / 2, y: transformedY + squareSize / 2 }  // Bottom-left
                         ];
-                        
+
                         corners.forEach((corner, i) => {
                             const distorted = applyPointDistortion(
                                 corner.x, corner.y,
                                 transformedX, transformedY,
                                 canvasCenterX, canvasCenterY
                             );
-                            
+
                             if (i === 0) {
                                 ctx.moveTo(distorted.x, distorted.y);
                             } else {
@@ -3566,161 +3566,161 @@ function drawCircles() {
                         ctx.closePath();
                     } else {
                         // Quadrado normal sem distorção
-                        ctx.rect(transformedX - squareSize/2, transformedY - squareSize/2, squareSize, squareSize);
+                        ctx.rect(transformedX - squareSize / 2, transformedY - squareSize / 2, squareSize, squareSize);
                     }
                     break;
-                
-            case 'triangle':
-                const triHeight = scaledRadius * 1.8;
-                const triBase = scaledRadius * 1.6;
-                
-                // 🌀 TRIÂNGULO COM DISTORÇÃO: distorcer cada vértice
-                if (sphericalView.enabled && Math.abs(sphericalView.currentBlend) > 0.1) {
-                    const vertices = [
-                        { x: transformedX, y: transformedY - triHeight/2 },                    // Top
-                        { x: transformedX - triBase/2, y: transformedY + triHeight/2 },        // Bottom-left
-                        { x: transformedX + triBase/2, y: transformedY + triHeight/2 }         // Bottom-right
-                    ];
-                    
-                    vertices.forEach((vertex, i) => {
-                        const distorted = applyPointDistortion(
-                            vertex.x, vertex.y,
-                            transformedX, transformedY,
-                            canvasCenterX, canvasCenterY
-                        );
-                        
-                        if (i === 0) {
-                            ctx.moveTo(distorted.x, distorted.y);
-                        } else {
-                            ctx.lineTo(distorted.x, distorted.y);
-                        }
-                    });
-                    ctx.closePath();
-                } else {
-                    // Triângulo normal sem distorção
-                    ctx.moveTo(transformedX, transformedY - triHeight/2);
-                    ctx.lineTo(transformedX - triBase/2, transformedY + triHeight/2);
-                    ctx.lineTo(transformedX + triBase/2, transformedY + triHeight/2);
-                    ctx.closePath();
-                }
-                break;
-                
-            case 'star':
-                // 🌀 ESTRELA COM DISTORÇÃO: distorcer cada ponta
-                if (sphericalView.enabled && Math.abs(sphericalView.currentBlend) > 0.1) {
-                    const outerRadius = scaledRadius * 1.3;
-                    const innerRadius = scaledRadius * 0.6;
-                    const spikes = 5;
-                    let rot = Math.PI / 2 * 3;
-                    const step = Math.PI / spikes;
-                    
-                    // Primeiro ponto (topo)
-                    let firstPoint = applyPointDistortion(
-                        transformedX, transformedY - outerRadius,
-                        transformedX, transformedY,
-                        canvasCenterX, canvasCenterY
-                    );
-                    ctx.moveTo(firstPoint.x, firstPoint.y);
-                    
-                    // Desenhar cada ponta da estrela distorcida
-                    for (let i = 0; i < spikes; i++) {
-                        // Ponta externa
-                        let px = transformedX + Math.cos(rot) * outerRadius;
-                        let py = transformedY + Math.sin(rot) * outerRadius;
-                        let distorted = applyPointDistortion(
-                            px, py,
-                            transformedX, transformedY,
-                            canvasCenterX, canvasCenterY
-                        );
-                        ctx.lineTo(distorted.x, distorted.y);
-                        rot += step;
-                        
-                        // Ponta interna
-                        px = transformedX + Math.cos(rot) * innerRadius;
-                        py = transformedY + Math.sin(rot) * innerRadius;
-                        distorted = applyPointDistortion(
-                            px, py,
-                            transformedX, transformedY,
-                            canvasCenterX, canvasCenterY
-                        );
-                        ctx.lineTo(distorted.x, distorted.y);
-                        rot += step;
+
+                case 'triangle':
+                    const triHeight = scaledRadius * 1.8;
+                    const triBase = scaledRadius * 1.6;
+
+                    // 🌀 TRIÂNGULO COM DISTORÇÃO: distorcer cada vértice
+                    if (sphericalView.enabled && Math.abs(sphericalView.currentBlend) > 0.1) {
+                        const vertices = [
+                            { x: transformedX, y: transformedY - triHeight / 2 },                    // Top
+                            { x: transformedX - triBase / 2, y: transformedY + triHeight / 2 },        // Bottom-left
+                            { x: transformedX + triBase / 2, y: transformedY + triHeight / 2 }         // Bottom-right
+                        ];
+
+                        vertices.forEach((vertex, i) => {
+                            const distorted = applyPointDistortion(
+                                vertex.x, vertex.y,
+                                transformedX, transformedY,
+                                canvasCenterX, canvasCenterY
+                            );
+
+                            if (i === 0) {
+                                ctx.moveTo(distorted.x, distorted.y);
+                            } else {
+                                ctx.lineTo(distorted.x, distorted.y);
+                            }
+                        });
+                        ctx.closePath();
+                    } else {
+                        // Triângulo normal sem distorção
+                        ctx.moveTo(transformedX, transformedY - triHeight / 2);
+                        ctx.lineTo(transformedX - triBase / 2, transformedY + triHeight / 2);
+                        ctx.lineTo(transformedX + triBase / 2, transformedY + triHeight / 2);
+                        ctx.closePath();
                     }
-                    
-                    ctx.lineTo(firstPoint.x, firstPoint.y);
-                    ctx.closePath();
-                } else {
-                    // Estrela normal sem distorção
-                    drawStar(ctx, transformedX, transformedY, 5, scaledRadius * 1.3, scaledRadius * 0.6);
-                }
-                break;
-        }
+                    break;
 
-        // Configurar borda
-        if (shape.dashed) {
-            const dashSize = Math.floor((isMobile ? 6 : 5) * canvasScale);
-            ctx.setLineDash([dashSize, dashSize]);
-        } else {
-            ctx.setLineDash([]);
-        }
+                case 'star':
+                    // 🌀 ESTRELA COM DISTORÇÃO: distorcer cada ponta
+                    if (sphericalView.enabled && Math.abs(sphericalView.currentBlend) > 0.1) {
+                        const outerRadius = scaledRadius * 1.3;
+                        const innerRadius = scaledRadius * 0.6;
+                        const spikes = 5;
+                        let rot = Math.PI / 2 * 3;
+                        const step = Math.PI / spikes;
 
-        // 🌑 APLICAR SOMBRA BASEADA EM PROFUNDIDADE (formas mais perto têm sombra mais forte)
-        if (!shape.clicked) {
-            const shadowBlur = 5 + (15 * depthFactor); // 5-20px blur
-            const shadowOpacity = 0.2 + (0.3 * depthFactor); // 0.2-0.5 opacity
-            ctx.shadowColor = `rgba(0, 0, 0, ${shadowOpacity})`;
-            ctx.shadowBlur = shadowBlur;
-            ctx.shadowOffsetX = 3 * depthFactor; // 0-3px offset
-            ctx.shadowOffsetY = 3 * depthFactor;
-        }
+                        // Primeiro ponto (topo)
+                        let firstPoint = applyPointDistortion(
+                            transformedX, transformedY - outerRadius,
+                            transformedX, transformedY,
+                            canvasCenterX, canvasCenterY
+                        );
+                        ctx.moveTo(firstPoint.x, firstPoint.y);
 
-        ctx.lineWidth = Math.max(2, Math.floor(3 * canvasScale));
-        ctx.fill();
-        ctx.stroke();
-        
-        // Resetar sombra
-        ctx.shadowColor = 'transparent';
-        ctx.shadowBlur = 0;
-        ctx.shadowOffsetX = 0;
-        ctx.shadowOffsetY = 0;
+                        // Desenhar cada ponta da estrela distorcida
+                        for (let i = 0; i < spikes; i++) {
+                            // Ponta externa
+                            let px = transformedX + Math.cos(rot) * outerRadius;
+                            let py = transformedY + Math.sin(rot) * outerRadius;
+                            let distorted = applyPointDistortion(
+                                px, py,
+                                transformedX, transformedY,
+                                canvasCenterX, canvasCenterY
+                            );
+                            ctx.lineTo(distorted.x, distorted.y);
+                            rot += step;
 
-        // Borda dupla para desafio only-borders
-        if (shape.doubleBorder && !shape.clicked) {
-            ctx.beginPath();
-            if (shapeType === 'circle') {
-                ctx.arc(transformedX, transformedY, scaledRadius + 5 * canvasScale, 0, Math.PI * 2);
+                            // Ponta interna
+                            px = transformedX + Math.cos(rot) * innerRadius;
+                            py = transformedY + Math.sin(rot) * innerRadius;
+                            distorted = applyPointDistortion(
+                                px, py,
+                                transformedX, transformedY,
+                                canvasCenterX, canvasCenterY
+                            );
+                            ctx.lineTo(distorted.x, distorted.y);
+                            rot += step;
+                        }
+
+                        ctx.lineTo(firstPoint.x, firstPoint.y);
+                        ctx.closePath();
+                    } else {
+                        // Estrela normal sem distorção
+                        drawStar(ctx, transformedX, transformedY, 5, scaledRadius * 1.3, scaledRadius * 0.6);
+                    }
+                    break;
             }
-            ctx.strokeStyle = shape.color;
-            ctx.lineWidth = Math.max(1, Math.floor(2 * canvasScale));
+
+            // Configurar borda
+            if (shape.dashed) {
+                const dashSize = Math.floor((isMobile ? 6 : 5) * canvasScale);
+                ctx.setLineDash([dashSize, dashSize]);
+            } else {
+                ctx.setLineDash([]);
+            }
+
+            // 🌑 APLICAR SOMBRA BASEADA EM PROFUNDIDADE (formas mais perto têm sombra mais forte)
+            if (!shape.clicked) {
+                const shadowBlur = 5 + (15 * depthFactor); // 5-20px blur
+                const shadowOpacity = 0.2 + (0.3 * depthFactor); // 0.2-0.5 opacity
+                ctx.shadowColor = `rgba(0, 0, 0, ${shadowOpacity})`;
+                ctx.shadowBlur = shadowBlur;
+                ctx.shadowOffsetX = 3 * depthFactor; // 0-3px offset
+                ctx.shadowOffsetY = 3 * depthFactor;
+            }
+
+            ctx.lineWidth = Math.max(2, Math.floor(3 * canvasScale));
+            ctx.fill();
             ctx.stroke();
-        }
 
-        // Resetar dash
-        ctx.setLineDash([]);
+            // Resetar sombra
+            ctx.shadowColor = 'transparent';
+            ctx.shadowBlur = 0;
+            ctx.shadowOffsetX = 0;
+            ctx.shadowOffsetY = 0;
 
-        // Mostrar número da forma (para connect-dots)
-        if (shape.number && !shape.clicked) {
-            ctx.fillStyle = getAdaptiveTextColor();
-            const fontSize = Math.floor((isMobile ? 20 : 18) * canvasScale);
-            ctx.font = `bold ${fontSize}px Inter`;
-            ctx.textAlign = 'center';
-            ctx.textBaseline = 'middle';
-            ctx.fillText(shape.number, transformedX, transformedY);
-        }
+            // Borda dupla para desafio only-borders
+            if (shape.doubleBorder && !shape.clicked) {
+                ctx.beginPath();
+                if (shapeType === 'circle') {
+                    ctx.arc(transformedX, transformedY, scaledRadius + 5 * canvasScale, 0, Math.PI * 2);
+                }
+                ctx.strokeStyle = shape.color;
+                ctx.lineWidth = Math.max(1, Math.floor(2 * canvasScale));
+                ctx.stroke();
+            }
 
-        // Mostrar número da ordem se clicado
-        if (shape.clicked && shape.clickOrder >= 0) {
-            ctx.fillStyle = getAdaptiveTextColor();
-            const fontSize = Math.floor((isMobile ? 18 : 16) * canvasScale);
-            ctx.font = `bold ${fontSize}px Inter`;
-            ctx.textAlign = 'center';
-            ctx.textBaseline = 'middle';
-            ctx.fillText(shape.clickOrder + 1, transformedX, transformedY);
-        }
-        
-        // Restaurar estado do contexto (após aplicar rotação)
-        ctx.restore();
-    });
+            // Resetar dash
+            ctx.setLineDash([]);
+
+            // Mostrar número da forma (para connect-dots)
+            if (shape.number && !shape.clicked) {
+                ctx.fillStyle = getAdaptiveTextColor();
+                const fontSize = Math.floor((isMobile ? 20 : 18) * canvasScale);
+                ctx.font = `bold ${fontSize}px Inter`;
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText(shape.number, transformedX, transformedY);
+            }
+
+            // Mostrar número da ordem se clicado
+            if (shape.clicked && shape.clickOrder >= 0) {
+                ctx.fillStyle = getAdaptiveTextColor();
+                const fontSize = Math.floor((isMobile ? 18 : 16) * canvasScale);
+                ctx.font = `bold ${fontSize}px Inter`;
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText(shape.clickOrder + 1, transformedX, transformedY);
+            }
+
+            // Restaurar estado do contexto (após aplicar rotação)
+            ctx.restore();
+        });
     } catch (error) {
         console.error('❌ Erro ao desenhar formas:', error);
         stopAnimation();
@@ -3769,7 +3769,7 @@ function handleCanvasClick(event) {
         console.log('🚫 Canvas bloqueado - clique ignorado');
         return;
     }
-    
+
     const rect = canvas.getBoundingClientRect();
 
     // Calcular coordenadas considerando o scaling do canvas
@@ -3789,7 +3789,7 @@ function handleCanvasTouch(event) {
         event.preventDefault();
         return;
     }
-    
+
     event.preventDefault(); // Prevenir scroll e zoom
 
     const rect = canvas.getBoundingClientRect();
@@ -3811,21 +3811,21 @@ function processCircleClick(x, y) {
         console.log('🚫 processCircleClick bloqueado - ignorando');
         return;
     }
-    
+
     // Calcular centro do canvas para transformações
     const centerX = canvas.width / 2;
     const centerY = canvas.height / 2;
-    
+
     // Verificar qual forma foi clicada (considerando transformações esféricas)
     for (let i = captchaShapes.length - 1; i >= 0; i--) {
         const shape = captchaShapes[i];
         const shapeType = shape.type || 'circle';
-        
+
         // Aplicar transformações esféricas para obter posição visual da forma
         let visualX = shape.x;
         let visualY = shape.y;
         let visualScale = 1.0;
-        
+
         if (sphericalView.enabled && Math.abs(sphericalView.currentBlend) > 0.01) {
             // Mesma lógica do drawCircles
             const fisheyeTransform = applyFisheyeTransform(
@@ -3837,43 +3837,43 @@ function processCircleClick(x, y) {
                 sphericalView.globeRadius, sphericalView.centerDeadzone
             );
             const blended = blendTransformsExtended(shape.x, shape.y, fisheyeTransform, globeTransform, sphericalView.currentBlend);
-            
+
             visualX = blended.x;
             visualY = blended.y;
             visualScale = blended.scale;
         }
-        
+
         // Aplicar escala 3D
         const zValue = shape.currentZ !== undefined ? shape.currentZ : 50;
         const depthFactor = zValue / 100;
         const scale3D = 0.5 + (0.5 * depthFactor);
         const finalScale = scale3D * visualScale;
-        
+
         let isInside = false;
 
         // Verificar se o clique está dentro da forma (usando posição e escala transformadas)
-        switch(shapeType) {
+        switch (shapeType) {
             case 'circle':
                 const distance = Math.sqrt((x - visualX) ** 2 + (y - visualY) ** 2);
                 const touchRadius = (isMobile ? shape.radius + 10 : shape.radius) * finalScale;
                 isInside = distance <= touchRadius;
                 break;
-                
+
             case 'square':
                 const squareSize = shape.radius * 1.6 * finalScale;
                 const halfSize = squareSize / 2;
                 const buffer = isMobile ? 10 : 5;
                 isInside = (x >= visualX - halfSize - buffer && x <= visualX + halfSize + buffer &&
-                           y >= visualY - halfSize - buffer && y <= visualY + halfSize + buffer);
+                    y >= visualY - halfSize - buffer && y <= visualY + halfSize + buffer);
                 break;
-                
+
             case 'triangle':
                 // Aproximação simples: verificar se está dentro do círculo que contém o triângulo
                 const triDist = Math.sqrt((x - visualX) ** 2 + (y - visualY) ** 2);
                 const triRadius = (isMobile ? shape.radius * 1.8 + 10 : shape.radius * 1.8) * finalScale;
                 isInside = triDist <= triRadius;
                 break;
-                
+
             case 'star':
                 // Aproximação: verificar se está dentro do círculo externo da estrela
                 const starDist = Math.sqrt((x - visualX) ** 2 + (y - visualY) ** 2);
@@ -4081,7 +4081,7 @@ function verifyCaptcha() {
     } else {
         // Bloquear canvas e mostrar contador ternário (-1→0→+1)
         blockCaptchaCanvas();
-        
+
         // Resetar após 1.5s
         setTimeout(() => {
             unblockCaptchaCanvas();
@@ -4095,21 +4095,21 @@ function verifyCaptcha() {
 function decimalToBalancedTernary(value, digits = 8) {
     // Normalizar valor para [0, 1] → mapear para range ternário
     const normalized = (value + 1.0) / 2.0; // -1→0, 0→0.5, +1→1
-    
+
     // Calcular valor ternário máximo para n dígitos
     // Em ternário balanceado: máximo = (3^n - 1) / 2
     const maxTernary = (Math.pow(3, digits) - 1) / 2;
-    
+
     // Mapear valor normalizado para range ternário: [-maxTernary, +maxTernary]
     const ternaryValue = Math.round((normalized * 2.0 - 1.0) * maxTernary);
-    
+
     // Converter para ternário balanceado (base -1, 0, +1)
     let remaining = ternaryValue;
     const trits = [];
-    
+
     for (let i = 0; i < digits; i++) {
         const trit = ((remaining % 3) + 3) % 3;
-        
+
         if (trit === 0) {
             trits.push('0');
         } else if (trit === 1) {
@@ -4120,7 +4120,7 @@ function decimalToBalancedTernary(value, digits = 8) {
             remaining = Math.floor(remaining / 3) + 1;
         }
     }
-    
+
     // Reverter array para ordem correta (mais significativo primeiro)
     return trits.reverse().join('');
 }
@@ -4132,61 +4132,61 @@ function blockCaptchaCanvas(durationSeconds = 1.5) {
     const canvas = document.getElementById('captchaCanvas');
     const modalOverlay = document.getElementById('modalBlockOverlay');
     const cancelBtn = document.querySelector('.captcha-btn-cancel');
-    
+
     if (!overlay || !counter || !canvas) return;
-    
+
     // ATIVAR FLAG DE BLOQUEIO
     isCanvasBlocked = true;
-    
+
     // Parar animação das formas
     stopAnimation();
-    
+
     // Desabilitar eventos do canvas
     canvas.style.pointerEvents = 'none';
     canvas.style.touchAction = 'none';
-    
+
     // 🔒 DESABILITAR BOTÃO CANCELAR
     if (cancelBtn) {
         cancelBtn.disabled = true;
         cancelBtn.style.opacity = '0.5';
         cancelBtn.style.cursor = 'not-allowed';
     }
-    
+
     // 🔒 BLOQUEAR MODAL INTEIRO
     if (modalOverlay) {
         modalOverlay.classList.add('active');
     }
-    
+
     // Mostrar overlay
     overlay.classList.add('active');
-    
+
     // ⚛️ SISTEMA TERNÁRIO (-1, 0, +1) - Passado, Presente, Futuro
     // Calcular parâmetros do contador baseado na duração
     const durationMs = durationSeconds * 1000;
     const updateInterval = 50; // Atualizar a cada 50ms
     const totalSteps = Math.floor(durationMs / updateInterval);
-    
+
     // Contador vai de -1.0 (passado/bloqueado) até +1.0 (futuro/livre)
     const startValue = -1.0;
     const endValue = 1.0;
     const increment = (endValue - startValue) / totalSteps;
-    
+
     let currentValue = startValue;
-    
+
     const interval = setInterval(() => {
         currentValue += increment;
-        
+
         // Converter para representação ternária balanceada de 8 dígitos
         // Cada posição pode ser: - (negativo), 0 (zero), + (positivo)
         const ternary = decimalToBalancedTernary(currentValue, 8);
         counter.textContent = ternary;
-        
+
         if (currentValue >= endValue) {
             counter.textContent = '++++++++'; // Garantir que termine em ++++++++
             clearInterval(interval);
         }
     }, updateInterval);
-    
+
     console.log(`🔒 Canvas E MODAL bloqueados por ${durationSeconds}s - contador ternário (-1→0→+1) sincronizado`);
 }
 
@@ -4196,31 +4196,31 @@ function unblockCaptchaCanvas() {
     const canvas = document.getElementById('captchaCanvas');
     const modalOverlay = document.getElementById('modalBlockOverlay');
     const cancelBtn = document.querySelector('.captcha-btn-cancel');
-    
+
     if (!overlay || !canvas) return;
-    
+
     // Remover overlay
     overlay.classList.remove('active');
-    
+
     // 🔓 REABILITAR BOTÃO CANCELAR
     if (cancelBtn) {
         cancelBtn.disabled = false;
         cancelBtn.style.opacity = '1';
         cancelBtn.style.cursor = 'pointer';
     }
-    
+
     // 🔓 DESBLOQUEAR MODAL INTEIRO
     if (modalOverlay) {
         modalOverlay.classList.remove('active');
     }
-    
+
     // Reabilitar eventos do canvas
     canvas.style.pointerEvents = 'auto';
     canvas.style.touchAction = 'none';
-    
+
     // DESATIVAR FLAG DE BLOQUEIO
     isCanvasBlocked = false;
-    
+
     console.log('🔓 Canvas E MODAL desbloqueados');
 }
 
@@ -4470,12 +4470,12 @@ function verifyConnectDots() {
 function verifyShapeSquares() {
     const squares = captchaShapes.filter(c => c.type === 'square' && c.color === '#8b5cf6');
     const clickedSquares = squares.filter(c => c.clicked);
-    
+
     if (clickedSquares.length !== 3) {
         showCaptchaError('❌ Clique em todos os 3 quadrados roxos!');
         return false;
     }
-    
+
     // Verificar se clicou em algo que não é quadrado roxo
     const clickedShapes = captchaShapes.filter(c => c.clicked);
     for (let shape of clickedShapes) {
@@ -4484,19 +4484,19 @@ function verifyShapeSquares() {
             return false;
         }
     }
-    
+
     return true;
 }
 
 function verifyShapeTriangles() {
     const triangles = captchaShapes.filter(c => c.type === 'triangle' && c.color === '#8b5cf6');
     const clickedTriangles = triangles.filter(c => c.clicked);
-    
+
     if (clickedTriangles.length !== 3) {
         showCaptchaError('❌ Clique em todos os 3 triângulos roxos!');
         return false;
     }
-    
+
     // Verificar se clicou em algo que não é triângulo roxo
     const clickedShapes = captchaShapes.filter(c => c.clicked);
     for (let shape of clickedShapes) {
@@ -4505,19 +4505,19 @@ function verifyShapeTriangles() {
             return false;
         }
     }
-    
+
     return true;
 }
 
 function verifyShapeStars() {
     const stars = captchaShapes.filter(c => c.type === 'star' && c.color === '#8b5cf6');
     const clickedStars = stars.filter(c => c.clicked);
-    
+
     if (clickedStars.length !== 3) {
         showCaptchaError('❌ Clique em todas as 3 estrelas roxas!');
         return false;
     }
-    
+
     // Verificar se clicou em algo que não é estrela roxa
     const clickedShapes = captchaShapes.filter(c => c.clicked);
     for (let shape of clickedShapes) {
@@ -4526,7 +4526,7 @@ function verifyShapeStars() {
             return false;
         }
     }
-    
+
     return true;
 }
 
@@ -4535,12 +4535,12 @@ function verifyShapeMixOrder() {
     const clickedShapes = validShapes
         .filter(c => c.clicked)
         .sort((a, b) => a.clickOrder - b.clickOrder);
-    
+
     if (clickedShapes.length !== 4) {
         showCaptchaError('❌ Clique nas 4 formas roxas na ordem correta!');
         return false;
     }
-    
+
     // Verificar ordem: círculo → quadrado → triângulo → estrela
     const expectedOrder = ['circle', 'square', 'triangle', 'star'];
     for (let i = 0; i < 4; i++) {
@@ -4549,19 +4549,19 @@ function verifyShapeMixOrder() {
             return false;
         }
     }
-    
+
     return true;
 }
 
 function verifyColorShapes(targetColor, colorName) {
     const colorShapes = captchaShapes.filter(c => c.color === targetColor);
     const clickedColorShapes = colorShapes.filter(c => c.clicked);
-    
+
     if (clickedColorShapes.length !== 3) {
         showCaptchaError(`❌ Clique em todas as 3 formas ${colorName}!`);
         return false;
     }
-    
+
     // Verificar se clicou em algo da cor errada
     const clickedShapes = captchaShapes.filter(c => c.clicked);
     for (let shape of clickedShapes) {
@@ -4570,19 +4570,19 @@ function verifyColorShapes(targetColor, colorName) {
             return false;
         }
     }
-    
+
     return true;
 }
 
 function verifyShapeColorMatch() {
     const greenSquares = captchaShapes.filter(c => c.type === 'square' && c.color === '#10b981');
     const clickedGreenSquares = greenSquares.filter(c => c.clicked);
-    
+
     if (clickedGreenSquares.length !== 3) {
         showCaptchaError('❌ Clique em todos os 3 quadrados verdes!');
         return false;
     }
-    
+
     // Verificar se clicou em algo que não é quadrado verde
     const clickedShapes = captchaShapes.filter(c => c.clicked);
     for (let shape of clickedShapes) {
@@ -4591,7 +4591,7 @@ function verifyShapeColorMatch() {
             return false;
         }
     }
-    
+
     return true;
 }
 
@@ -4600,12 +4600,12 @@ function verifyRainbowShapes() {
     const clickedShapes = rainbowShapes
         .filter(c => c.clicked)
         .sort((a, b) => a.clickOrder - b.clickOrder);
-    
+
     if (clickedShapes.length !== 4) {
         showCaptchaError('❌ Clique nas 4 formas coloridas na ordem correta!');
         return false;
     }
-    
+
     // Verificar ordem: Vermelho → Laranja → Verde → Azul (colorOrder: 0, 1, 2, 3)
     for (let i = 0; i < 4; i++) {
         if (clickedShapes[i].colorOrder !== i) {
@@ -4613,19 +4613,19 @@ function verifyRainbowShapes() {
             return false;
         }
     }
-    
+
     return true;
 }
 
 function verifySameColorDifferentShapes() {
     const purpleShapes = captchaShapes.filter(c => c.color === '#8b5cf6');
     const clickedPurpleShapes = purpleShapes.filter(c => c.clicked);
-    
+
     if (clickedPurpleShapes.length !== 4) {
         showCaptchaError('❌ Clique em todas as 4 formas roxas!');
         return false;
     }
-    
+
     // Verificar se clicou em algo que não é roxo
     const clickedShapes = captchaShapes.filter(c => c.clicked);
     for (let shape of clickedShapes) {
@@ -4634,7 +4634,7 @@ function verifySameColorDifferentShapes() {
             return false;
         }
     }
-    
+
     return true;
 }
 
@@ -4651,27 +4651,27 @@ function showCaptchaError(message) {
 function regenerateCaptcha() {
     const now = Date.now();
     const btn = document.querySelector('.captcha-refresh-btn');
-    
+
     // Verificar se está em timeout
     if (regenerateTimeoutId !== null) {
         console.log('⏳ Timeout ativo, ignorando clique');
         return;
     }
-    
+
     // Calcular delay desde último clique
     const timeSinceLastClick = lastRegenerateTime === 0 ? Infinity : (now - lastRegenerateTime) / 1000;
-    
+
     // Adicionar ao histórico de cliques
     regenerateClickHistory.push(now);
     // Manter apenas últimos 10 cliques
     if (regenerateClickHistory.length > 10) {
         regenerateClickHistory.shift();
     }
-    
+
     // SISTEMA DE PENALIDADE ADAPTATIVA
     // Quanto menor o delay, maior a penalidade
     let newTimeout = 0;
-    
+
     if (timeSinceLastClick < 2) {
         // Clique muito rápido (< 2s) - penalidade severa
         newTimeout = Math.min(regenerateTimeout + 15, 60); // +15s, máx 60s
@@ -4689,28 +4689,28 @@ function regenerateCaptcha() {
         newTimeout = Math.max(regenerateTimeout - 5, 2); // -5s, mín 2s
         console.log('✅ Pausa detectada. Reduzindo timeout: -5s');
     }
-    
+
     regenerateTimeout = newTimeout;
     lastRegenerateTime = now;
-    
+
     // 🍪 SALVAR ESTADO EM COOKIES
     saveLockToCookie(now, regenerateTimeout);
     saveHistoryToCookie(regenerateClickHistory);
-    
+
     // Determinar duração do bloqueio
     // Se há timeout, usar o tempo do timeout, senão usar 1.5s padrão
     const blockDuration = regenerateTimeout > 0 ? regenerateTimeout : 1.5;
-    
+
     // 🔒 BLOQUEAR CANVAS COM OVERLAY (sincronizado com timeout)
     blockCaptchaCanvas(blockDuration);
-    
+
     // Aplicar timeout se necessário
     if (regenerateTimeout > 0) {
         btn.disabled = true;
         btn.textContent = `⏳ Aguarde ${regenerateTimeout}s`;
         btn.style.opacity = '0.5';
         btn.style.cursor = 'not-allowed';
-        
+
         // Contador visual
         let remaining = regenerateTimeout;
         regenerateTimeoutId = setInterval(() => {
@@ -4729,7 +4729,7 @@ function regenerateCaptcha() {
             }
         }, 1000);
     }
-    
+
     // Limpar erro
     const error = document.getElementById('captchaError');
     error.classList.remove('active');
@@ -4740,7 +4740,7 @@ function regenerateCaptcha() {
     // Limpar completamente
     captchaShapes = [];
     clickedOrder = [];
-    
+
     // IMPORTANTE: Resetar frameCount para evitar overflow e sincronização
     frameCount = 0;
 
@@ -4748,10 +4748,10 @@ function regenerateCaptcha() {
     setTimeout(() => {
         // 🔓 DESBLOQUEAR CANVAS
         unblockCaptchaCanvas();
-        
+
         // Gerar novo desafio (que vai iniciar nova animação)
         generateVisualCaptcha();
-        
+
         console.log(`🔄 Captcha regenerado. Próximo timeout: ${regenerateTimeout}s`);
     }, blockDuration * 1000); // Converter para milissegundos
 }
@@ -4764,13 +4764,13 @@ function showCaptcha() {
     // 🍪 CARREGAR ESTADO DOS COOKIES
     const savedLock = loadLockFromCookie();
     const savedHistory = loadHistoryFromCookie();
-    
+
     if (savedLock) {
         // Verificar se lock ainda é válido
         const now = Date.now();
         const timeSinceLock = (now - savedLock.timestamp) / 1000;
         const remainingTimeout = Math.max(0, savedLock.timeout - timeSinceLock);
-        
+
         if (remainingTimeout > 0) {
             console.warn('🍪 Lock encontrado no cookie! Timeout restante:', remainingTimeout.toFixed(1) + 's');
             lastRegenerateTime = savedLock.timestamp;
@@ -4779,7 +4779,7 @@ function showCaptcha() {
             clearLockCookies();
         }
     }
-    
+
     if (savedHistory.length > 0) {
         // Restaurar histórico (últimas 10 entradas)
         regenerateClickHistory = savedHistory.slice(-10);
@@ -4799,7 +4799,7 @@ function showCaptcha() {
     console.log('🧹 Limpando estado...');
     captchaShapes = [];
     clickedOrder = [];
-    
+
     // Resetar frameCount
     frameCount = 0;
 
@@ -4823,7 +4823,7 @@ function closeCaptcha() {
         console.warn('🚫 Modal bloqueado - não é possível fechar durante contagem');
         return;
     }
-    
+
     const overlay = document.getElementById('captchaOverlay');
     overlay.classList.remove('active');
 
@@ -4833,7 +4833,7 @@ function closeCaptcha() {
     // Limpar estado
     captchaShapes = [];
     clickedOrder = [];
-    
+
     // Resetar timeout ao fechar (não penalizar usuário que desistiu)
     resetRegenerateTimeout();
 }
@@ -4844,14 +4844,14 @@ function resetRegenerateTimeout() {
         clearInterval(regenerateTimeoutId);
         regenerateTimeoutId = null;
     }
-    
+
     regenerateTimeout = 0;
     lastRegenerateTime = 0;
     regenerateClickHistory = [];
-    
+
     // 🍪 LIMPAR COOKIES
     clearLockCookies();
-    
+
     // Restaurar botão ao estado normal
     const btn = document.querySelector('.captcha-refresh-btn');
     if (btn) {
@@ -4860,7 +4860,7 @@ function resetRegenerateTimeout() {
         btn.style.opacity = '1';
         btn.style.cursor = 'pointer';
     }
-    
+
     console.log('🔄 Timeout resetado e cookies limpos');
 }
 
@@ -4945,7 +4945,7 @@ function downloadEPUB() {
 // Inicializar quando página carregar
 document.addEventListener('DOMContentLoaded', () => {
     console.log('📄 DOMContentLoaded - Inicializando...');
-    
+
     // Tentar inicializar canvas (pode falhar se modal estiver hidden)
     const canvasInitResult = initCanvas();
     if (!canvasInitResult) {
@@ -4973,7 +4973,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }, 250);
     });
-    
+
     console.log('✅ Inicialização completa');
 });
 
@@ -5056,7 +5056,7 @@ function resetEntryFailedAttempts() {
     // remover cookie definindo expirada
     try {
         document.cookie = `${COOKIE_ENTRY_ATTEMPTS}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
-    } catch {}
+    } catch { }
     updateEntryAttemptsIndicator(0);
 }
 
@@ -5078,7 +5078,7 @@ function initEntryCaptcha() {
         return false;
     }
     console.log('✓ Canvas encontrado:', entryCanvas.id);
-    
+
     entryCtx = entryCanvas.getContext('2d');
     if (!entryCtx) {
         console.error('❌ Contexto 2D não disponível');
@@ -5087,50 +5087,50 @@ function initEntryCaptcha() {
 
     // Detectar mobile
     const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    
+
     // Event listeners
     entryCanvas.removeEventListener('click', handleEntryCaptchaClick);
     entryCanvas.removeEventListener('touchstart', handleEntryCaptchaTouchstart);
-    
+
     entryCanvas.addEventListener('click', handleEntryCaptchaClick);
     entryCanvas.addEventListener('touchstart', handleEntryCaptchaTouchstart, { passive: false });
-    
+
     // Gerar captcha inicial
     generateEntryCaptcha();
-    
+
     console.log('✅ initEntryCaptcha() completo');
     return true;
 }
 
 function generateEntryCaptcha(forcedType) {
     console.log('🎲 generateEntryCaptcha() iniciado - timestamp:', Date.now());
-    
+
     // Verificar se canvas e contexto estão disponíveis
     if (!entryCanvas || !entryCtx) {
         console.error('❌ Canvas ou contexto não disponível');
-        
+
         // Tentar obter referências novamente sem chamar initEntryCaptcha (evitar loop)
         entryCanvas = document.getElementById('entryCaptchaCanvas') || document.getElementById('captchaCanvas');
         if (entryCanvas) {
             entryCtx = entryCanvas.getContext('2d');
             console.log('✅ Canvas recuperado:', entryCanvas.id);
         }
-        
+
         if (!entryCanvas || !entryCtx) {
             console.error('❌ Não foi possível recuperar canvas - abortando');
             return;
         }
     }
-    
+
     console.log('✓ Canvas OK:', entryCanvas.id, 'Dimensões:', entryCanvas.width, 'x', entryCanvas.height);
-    
+
     // Limpar
     entryCaptchaShapes = [];
     entryClickedOrder = [];
     entryCtx.clearRect(0, 0, entryCanvas.width, entryCanvas.height);
-    
+
     console.log('✓ Canvas limpo - gerando novo desafio...');
-    
+
     // Escolher tipo de desafio — se a chamada fornecer um tipo explícito, usá-lo,
     // caso contrário escolher aleatoriamente (compatibilidade com chamadas existentes)
     if (typeof forcedType === 'string' && forcedType.length) {
@@ -5139,7 +5139,7 @@ function generateEntryCaptcha(forcedType) {
         entryCurrentChallengeType = getRandomChallengeType();
     }
     console.log('🎯 Tipo de desafio entrada:', entryCurrentChallengeType);
-    
+
     // Atualizar instrução (suporta múltiplos IDs para compatibilidade)
     let instruction = document.getElementById('entryCaptchaInstruction');
     if (!instruction) {
@@ -5151,7 +5151,7 @@ function generateEntryCaptcha(forcedType) {
     } else {
         console.warn('⚠️ Elemento de instrução de entrada não encontrado');
     }
-    
+
     // Salvar contexto atual do download (se existir)
     const tempCanvas = typeof canvas !== 'undefined' ? canvas : null;
     const tempCtx = typeof ctx !== 'undefined' ? ctx : null;
@@ -5159,7 +5159,7 @@ function generateEntryCaptcha(forcedType) {
     const tempType = typeof currentChallengeType !== 'undefined' ? currentChallengeType : null;
     const tempScale = typeof canvasScale !== 'undefined' ? canvasScale : 1;
     const tempMobile = typeof isMobile !== 'undefined' ? isMobile : false;
-    
+
     // Configurar contexto temporário para entrada
     canvas = entryCanvas;
     ctx = entryCtx;
@@ -5168,9 +5168,9 @@ function generateEntryCaptcha(forcedType) {
     // Canvas de entrada usa dimensões reais (fullscreen)
     canvasScale = 1;
     isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    
+
     console.log('📐 Dimensões do canvas de entrada:', entryCanvas.width, 'x', entryCanvas.height);
-    
+
     // Gerar desafio usando as funções existentes
     switch (entryCurrentChallengeType) {
         case 'size-ascending':
@@ -5241,10 +5241,10 @@ function generateEntryCaptcha(forcedType) {
             generateSizeChallenge();
             break;
     }
-    
+
     // Copiar shapes gerados para entrada
     entryCaptchaShapes = [...captchaShapes];
-    
+
     // Restaurar contexto do download
     canvas = tempCanvas;
     ctx = tempCtx;
@@ -5252,7 +5252,7 @@ function generateEntryCaptcha(forcedType) {
     currentChallengeType = tempType;
     canvasScale = tempScale;
     isMobile = tempMobile;
-    
+
     console.log('🎨 Desenhando entrada... Total:', entryCaptchaShapes.length);
     drawEntryCaptcha();
     console.log('✅ generateEntryCaptcha() COMPLETO - timestamp:', Date.now());
@@ -5261,20 +5261,20 @@ function generateEntryCaptcha(forcedType) {
 function drawEntryCaptcha() {
     console.log('🖌️ drawEntryCaptcha() iniciado - shapes:', entryCaptchaShapes.length);
     entryCtx.clearRect(0, 0, entryCanvas.width, entryCanvas.height);
-    
+
     // Desenhar cada forma manualmente (baseado em drawCircles)
     entryCaptchaShapes.forEach((shape, idx) => {
         entryCtx.save();
-        
+
         // Aplicar rotação se necessário
         if (shape.rotation !== undefined && shape.rotation !== 0) {
             entryCtx.translate(shape.x, shape.y);
             entryCtx.rotate(shape.rotation);
             entryCtx.translate(-shape.x, -shape.y);
         }
-        
+
         entryCtx.beginPath();
-        
+
         // Definir cores
         if (shape.clicked) {
             entryCtx.fillStyle = '#10b981'; // Verde quando clicado
@@ -5284,45 +5284,45 @@ function drawEntryCaptcha() {
             entryCtx.strokeStyle = shape.color === '#9ca3af' ? '#6b7280' :
                 (shape.color ? getDarkerShade(shape.color) : '#7c3aed');
         }
-        
+
         // Desenhar forma baseada no tipo
         const shapeType = shape.type || 'circle';
-        
-        switch(shapeType) {
+
+        switch (shapeType) {
             case 'circle':
                 entryCtx.arc(shape.x, shape.y, shape.radius, 0, Math.PI * 2);
                 break;
-                
+
             case 'square':
                 const squareSize = shape.radius * 1.6;
-                entryCtx.rect(shape.x - squareSize/2, shape.y - squareSize/2, squareSize, squareSize);
+                entryCtx.rect(shape.x - squareSize / 2, shape.y - squareSize / 2, squareSize, squareSize);
                 break;
-                
+
             case 'triangle':
                 const triHeight = shape.radius * 1.8;
                 const triBase = shape.radius * 1.6;
-                entryCtx.moveTo(shape.x, shape.y - triHeight/2);
-                entryCtx.lineTo(shape.x - triBase/2, shape.y + triHeight/2);
-                entryCtx.lineTo(shape.x + triBase/2, shape.y + triHeight/2);
+                entryCtx.moveTo(shape.x, shape.y - triHeight / 2);
+                entryCtx.lineTo(shape.x - triBase / 2, shape.y + triHeight / 2);
+                entryCtx.lineTo(shape.x + triBase / 2, shape.y + triHeight / 2);
                 entryCtx.closePath();
                 break;
-                
+
             case 'star':
                 drawStar(entryCtx, shape.x, shape.y, 5, shape.radius * 1.3, shape.radius * 0.6);
                 break;
         }
-        
+
         // Configurar borda
         if (shape.dashed) {
             entryCtx.setLineDash([5, 5]);
         } else {
             entryCtx.setLineDash([]);
         }
-        
+
         entryCtx.lineWidth = 3;
         entryCtx.fill();
         entryCtx.stroke();
-        
+
         // Borda dupla
         if (shape.doubleBorder && !shape.clicked) {
             entryCtx.beginPath();
@@ -5333,10 +5333,10 @@ function drawEntryCaptcha() {
             entryCtx.lineWidth = 2;
             entryCtx.stroke();
         }
-        
+
         // Resetar dash
         entryCtx.setLineDash([]);
-        
+
         // Mostrar número (connect-dots)
         if (shape.number && !shape.clicked) {
             entryCtx.fillStyle = getAdaptiveTextColor();
@@ -5345,7 +5345,7 @@ function drawEntryCaptcha() {
             entryCtx.textBaseline = 'middle';
             entryCtx.fillText(shape.number, shape.x, shape.y);
         }
-        
+
         // Mostrar ordem de clique
         if (shape.clicked && shape.clickOrder !== undefined) {
             entryCtx.fillStyle = getAdaptiveTextColor();
@@ -5354,10 +5354,10 @@ function drawEntryCaptcha() {
             entryCtx.textBaseline = 'middle';
             entryCtx.fillText(shape.clickOrder + 1, shape.x, shape.y);
         }
-        
+
         entryCtx.restore();
     });
-    
+
     console.log('✅ drawEntryCaptcha() COMPLETO - desenhadas', entryCaptchaShapes.length, 'formas');
 }
 
@@ -5366,14 +5366,14 @@ function handleEntryCaptchaClick(event) {
         console.log('🚫 Canvas bloqueado - clique ignorado');
         return;
     }
-    
+
     const rect = entryCanvas.getBoundingClientRect();
     const scaleX = entryCanvas.width / rect.width;
     const scaleY = entryCanvas.height / rect.height;
-    
+
     const x = (event.clientX - rect.left) * scaleX;
     const y = (event.clientY - rect.top) * scaleY;
-    
+
     processEntryCaptchaClick(x, y);
 }
 
@@ -5383,17 +5383,17 @@ function handleEntryCaptchaTouchstart(event) {
         event.preventDefault();
         return;
     }
-    
+
     event.preventDefault();
-    
+
     const rect = entryCanvas.getBoundingClientRect();
     const touch = event.touches[0];
     const scaleX = entryCanvas.width / rect.width;
     const scaleY = entryCanvas.height / rect.height;
-    
+
     const x = (touch.clientX - rect.left) * scaleX;
     const y = (touch.clientY - rect.top) * scaleY;
-    
+
     processEntryCaptchaClick(x, y);
 }
 
@@ -5405,27 +5405,27 @@ function processEntryCaptchaClick(x, y) {
         let isInside = false;
 
         // Verificar se o clique está dentro da forma (mesma lógica do download)
-        switch(shapeType) {
+        switch (shapeType) {
             case 'circle':
                 const distance = Math.sqrt((x - shape.x) ** 2 + (y - shape.y) ** 2);
                 const touchRadius = shape.radius + 10; // Buffer para mobile
                 isInside = distance <= touchRadius;
                 break;
-                
+
             case 'square':
                 const squareSize = shape.radius * 1.6;
                 const halfSize = squareSize / 2;
                 const buffer = 10;
                 isInside = (x >= shape.x - halfSize - buffer && x <= shape.x + halfSize + buffer &&
-                           y >= shape.y - halfSize - buffer && y <= shape.y + halfSize + buffer);
+                    y >= shape.y - halfSize - buffer && y <= shape.y + halfSize + buffer);
                 break;
-                
+
             case 'triangle':
                 const triDist = Math.sqrt((x - shape.x) ** 2 + (y - shape.y) ** 2);
                 const triRadius = shape.radius * 1.8 + 10;
                 isInside = triDist <= triRadius;
                 break;
-                
+
             case 'star':
                 const starDist = Math.sqrt((x - shape.x) ** 2 + (y - shape.y) ** 2);
                 const starRadius = shape.radius * 1.3 + 10;
@@ -5510,7 +5510,7 @@ function processEntryCaptchaClick(x, y) {
                 shape.clickOrder = entryClickedOrder.length; // Adicionar ordem de clique
                 entryClickedOrder.push(shape);
                 drawEntryCaptcha();
-                
+
                 // Determinar quantas formas devem ser clicadas baseado no tipo de desafio
                 let targetCount;
                 switch (entryCurrentChallengeType) {
@@ -5536,7 +5536,7 @@ function processEntryCaptchaClick(x, y) {
                         targetCount = 5;
                         break;
                 }
-                
+
                 // Verificar automaticamente após clicar no número correto
                 if (entryClickedOrder.length === targetCount) {
                     setTimeout(verifyEntryCaptcha, 300);
@@ -5549,124 +5549,124 @@ function processEntryCaptchaClick(x, y) {
 
 function verifyEntryCaptcha() {
     console.log('🔍 Verificando captcha de entrada...');
-    
+
     let isCorrect = false;
-    
+
     try {
         // Usar as mesmas funções de verificação do download
         const tempShapes = captchaShapes;
         const tempClickedOrder = clickedOrder;
         const tempType = currentChallengeType;
-        
+
         // Temporariamente usar arrays de entrada
         captchaShapes = entryCaptchaShapes;
         clickedOrder = entryClickedOrder.map(shape => entryCaptchaShapes.indexOf(shape));
         currentChallengeType = entryCurrentChallengeType;
-        
-        console.log('📊 Verificando tipo:', entryCurrentChallengeType, 'cliques:', clickedOrder);
-    
-    // Verificar usando as funções existentes
-    switch (entryCurrentChallengeType) {
-        case 'size-ascending':
-            isCorrect = verifySizeAscending();
-            break;
-        case 'size-descending':
-            isCorrect = verifySizeDescending();
-            break;
-        case 'color-sequence':
-            isCorrect = verifyColorSequence();
-            break;
-        case 'position-left':
-            isCorrect = verifyPositionLeft();
-            break;
-        case 'odd-circles':
-            isCorrect = verifyOddCircles();
-            break;
-        case 'position-top':
-            isCorrect = verifyPositionTop();
-            break;
-        case 'rainbow-order':
-            isCorrect = verifyRainbowOrder();
-            break;
-        case 'avoid-color':
-            isCorrect = verifyAvoidColor();
-            break;
-        case 'only-borders':
-            isCorrect = verifyOnlyBorders();
-            break;
-        case 'diagonal-pattern':
-            isCorrect = verifyDiagonalPattern();
-            break;
-        case 'concentric-rings':
-            isCorrect = verifyConcentricRings();
-            break;
-        case 'connect-dots':
-            isCorrect = verifyConnectDots();
-            break;
-        case 'shape-squares':
-            isCorrect = verifyShapeSquares();
-            break;
-        case 'shape-triangles':
-            isCorrect = verifyShapeTriangles();
-            break;
-        case 'shape-stars':
-            isCorrect = verifyShapeStars();
-            break;
-        case 'shape-mix-order':
-            isCorrect = verifyShapeMixOrder();
-            break;
-        case 'color-blue-shapes':
-            isCorrect = verifyColorShapes('#3b82f6', 'azuis');
-            break;
-        case 'color-green-shapes':
-            isCorrect = verifyColorShapes('#10b981', 'verdes');
-            break;
-        case 'color-pink-shapes':
-            isCorrect = verifyColorShapes('#ec4899', 'rosas');
-            break;
-        case 'color-orange-shapes':
-            isCorrect = verifyColorShapes('#f97316', 'laranjas');
-            break;
-        case 'shape-color-match':
-            isCorrect = verifyShapeColorMatch();
-            break;
-        case 'rainbow-shapes':
-            isCorrect = verifyRainbowShapes();
-            break;
-        case 'same-color-different-shapes':
-            isCorrect = verifySameColorDifferentShapes();
-            break;
-    }
-    
-    // Restaurar
-    captchaShapes = tempShapes;
-    clickedOrder = tempClickedOrder;
-    currentChallengeType = tempType;
-    
-    if (isCorrect) {
-        // Sucesso!
-        sessionStorage.setItem('entry_captcha_passed', 'true');
-        // Resetar contador de tentativas ao atingir sucesso
-        resetEntryFailedAttempts();
-        document.getElementById('entryCaptchaOverlay').classList.remove('active');
-        console.log('✅ Captcha de entrada verificado com sucesso!');
-        return true;
-    } else {
-        // Erro
-        showEntryCaptchaError();
-        
-        // Incrementar contador de tentativas falhas e calcular duração adaptativa
-        const attempts = incrementEntryFailedAttempts();
-        // Regra: cada falha adiciona +1.5s, começando em 1.5s; cap em 120s para segurança
-        const adaptiveDuration = Math.min(1.5 + (attempts - 1) * 1.5, 120);
-        console.warn(`🔒 Falha na tentativa de entrada (#${attempts}) - bloqueando por ${adaptiveDuration}s`);
 
-        // Bloquear usando duração adaptativa; o fluxo de desbloqueio/reload é tratado por blockEntryCaptcha
-        blockEntryCaptcha(adaptiveDuration);
-        
-        return false;
-    }
-    
+        console.log('📊 Verificando tipo:', entryCurrentChallengeType, 'cliques:', clickedOrder);
+
+        // Verificar usando as funções existentes
+        switch (entryCurrentChallengeType) {
+            case 'size-ascending':
+                isCorrect = verifySizeAscending();
+                break;
+            case 'size-descending':
+                isCorrect = verifySizeDescending();
+                break;
+            case 'color-sequence':
+                isCorrect = verifyColorSequence();
+                break;
+            case 'position-left':
+                isCorrect = verifyPositionLeft();
+                break;
+            case 'odd-circles':
+                isCorrect = verifyOddCircles();
+                break;
+            case 'position-top':
+                isCorrect = verifyPositionTop();
+                break;
+            case 'rainbow-order':
+                isCorrect = verifyRainbowOrder();
+                break;
+            case 'avoid-color':
+                isCorrect = verifyAvoidColor();
+                break;
+            case 'only-borders':
+                isCorrect = verifyOnlyBorders();
+                break;
+            case 'diagonal-pattern':
+                isCorrect = verifyDiagonalPattern();
+                break;
+            case 'concentric-rings':
+                isCorrect = verifyConcentricRings();
+                break;
+            case 'connect-dots':
+                isCorrect = verifyConnectDots();
+                break;
+            case 'shape-squares':
+                isCorrect = verifyShapeSquares();
+                break;
+            case 'shape-triangles':
+                isCorrect = verifyShapeTriangles();
+                break;
+            case 'shape-stars':
+                isCorrect = verifyShapeStars();
+                break;
+            case 'shape-mix-order':
+                isCorrect = verifyShapeMixOrder();
+                break;
+            case 'color-blue-shapes':
+                isCorrect = verifyColorShapes('#3b82f6', 'azuis');
+                break;
+            case 'color-green-shapes':
+                isCorrect = verifyColorShapes('#10b981', 'verdes');
+                break;
+            case 'color-pink-shapes':
+                isCorrect = verifyColorShapes('#ec4899', 'rosas');
+                break;
+            case 'color-orange-shapes':
+                isCorrect = verifyColorShapes('#f97316', 'laranjas');
+                break;
+            case 'shape-color-match':
+                isCorrect = verifyShapeColorMatch();
+                break;
+            case 'rainbow-shapes':
+                isCorrect = verifyRainbowShapes();
+                break;
+            case 'same-color-different-shapes':
+                isCorrect = verifySameColorDifferentShapes();
+                break;
+        }
+
+        // Restaurar
+        captchaShapes = tempShapes;
+        clickedOrder = tempClickedOrder;
+        currentChallengeType = tempType;
+
+        if (isCorrect) {
+            // Sucesso!
+            sessionStorage.setItem('entry_captcha_passed', 'true');
+            // Resetar contador de tentativas ao atingir sucesso
+            resetEntryFailedAttempts();
+            document.getElementById('entryCaptchaOverlay').classList.remove('active');
+            console.log('✅ Captcha de entrada verificado com sucesso!');
+            return true;
+        } else {
+            // Erro
+            showEntryCaptchaError();
+
+            // Incrementar contador de tentativas falhas e calcular duração adaptativa
+            const attempts = incrementEntryFailedAttempts();
+            // Regra: cada falha adiciona +1.5s, começando em 1.5s; cap em 120s para segurança
+            const adaptiveDuration = Math.min(1.5 + (attempts - 1) * 1.5, 120);
+            console.warn(`🔒 Falha na tentativa de entrada (#${attempts}) - bloqueando por ${adaptiveDuration}s`);
+
+            // Bloquear usando duração adaptativa; o fluxo de desbloqueio/reload é tratado por blockEntryCaptcha
+            blockEntryCaptcha(adaptiveDuration);
+
+            return false;
+        }
+
     } catch (error) {
         console.error('❌ Erro ao verificar captcha:', error);
         showEntryCaptchaError();
@@ -5677,7 +5677,7 @@ function verifyEntryCaptcha() {
 function showEntryCaptchaError() {
     const error = document.getElementById('entryCaptchaError');
     error.classList.add('active');
-    
+
     setTimeout(() => {
         error.classList.remove('active');
     }, 2000);
@@ -5687,15 +5687,15 @@ function blockEntryCaptcha(durationSeconds = 1.5) {
     const overlay = document.getElementById('entryCaptchaBlockOverlay');
     const counter = document.getElementById('entryBinaryCounter');
     const modalOverlay = document.getElementById('entryModalBlockOverlay');
-    
+
     if (!overlay || !counter) return;
-    
+
     entryIsCanvasBlocked = true;
-    
+
     if (modalOverlay) {
         modalOverlay.classList.add('active');
     }
-    
+
     // Garantir que o overlay ocupe toda a tela (forçar fullscreen)
     overlay.style.position = 'fixed';
     overlay.style.top = '0';
@@ -5738,19 +5738,19 @@ function blockEntryCaptcha(durationSeconds = 1.5) {
             sub.style.padding = '4px 8px';
         }
     } catch (e) { /* ignore */ }
-    
+
     // ⚛️ SISTEMA TERNÁRIO (-1, 0, +1) - Passado, Presente, Futuro
     const durationMs = durationSeconds * 1000;
     const updateInterval = 50;
     const totalSteps = Math.floor(durationMs / updateInterval);
-    
+
     // Contador vai de -1.0 (passado/bloqueado) até +1.0 (futuro/livre)
     const startValue = -1.0;
     const endValue = 1.0;
     const increment = (endValue - startValue) / totalSteps;
-    
+
     let currentValue = startValue;
-    
+
     // Glitch helpers
     const glitchTimeouts = [];
     let lastRendered = '';
@@ -5797,8 +5797,8 @@ function blockEntryCaptcha(durationSeconds = 1.5) {
             const g = makeGlitch(lastRendered);
             counter.textContent = g;
             // transform + color flicker
-            counter.style.transform = `translate(${(Math.random()-0.5)*8}px, ${(Math.random()-0.5)*6}px) skew(${(Math.random()-0.5)*6}deg)`;
-            counter.style.color = ['#10b981', '#ec4899', '#f59e0b'][Math.floor(Math.random()*3)];
+            counter.style.transform = `translate(${(Math.random() - 0.5) * 8}px, ${(Math.random() - 0.5) * 6}px) skew(${(Math.random() - 0.5) * 6}deg)`;
+            counter.style.color = ['#10b981', '#ec4899', '#f59e0b'][Math.floor(Math.random() * 3)];
 
             const t = setTimeout(() => {
                 counter.textContent = lastRendered;
@@ -5814,12 +5814,12 @@ function blockEntryCaptcha(durationSeconds = 1.5) {
             // limpar glitches pendentes
             while (glitchTimeouts.length) clearTimeout(glitchTimeouts.pop());
             // parar alternância de fundo e restaurar estilos
-            try { clearInterval(bgInterval); } catch (e) {}
+            try { clearInterval(bgInterval); } catch (e) { }
             try {
                 counter.style.backgroundColor = '';
                 counter.style.color = '#10b981';
                 counter.style.textShadow = '0 0 10px rgba(16,185,129,0.5)';
-            } catch (e) {}
+            } catch (e) { }
 
             // Ao finalizar a contagem ternária, desbloquear e recarregar a página
             try {
@@ -5839,24 +5839,24 @@ function blockEntryCaptcha(durationSeconds = 1.5) {
             }, 120);
         }
     }, updateInterval);
-    
+
     console.log(`🔒 Captcha de entrada bloqueado por ${durationSeconds}s - contador ternário (-1→0→+1)`);
 }
 
 function unblockEntryCaptcha() {
     const overlay = document.getElementById('entryCaptchaBlockOverlay');
     const modalOverlay = document.getElementById('entryModalBlockOverlay');
-    
+
     if (overlay) {
         overlay.classList.remove('active');
     }
-    
+
     if (modalOverlay) {
         modalOverlay.classList.remove('active');
     }
-    
+
     entryIsCanvasBlocked = false;
-    
+
     console.log('🔓 Captcha de entrada desbloqueado');
 }
 
@@ -5865,18 +5865,18 @@ function regenerateEntryCaptcha() {
         console.warn('🚫 Captcha bloqueado - não é possível regenerar');
         return;
     }
-    
+
     console.log('🔄 Regenerando captcha de entrada...');
     blockEntryCaptcha(1.5);
-    
+
     setTimeout(() => {
         console.log('⏰ Timeout completado - gerando novo captcha');
         unblockEntryCaptcha();
-        
+
         // Limpar estado anterior
         entryCaptchaShapes = [];
         entryClickedOrder = [];
-        
+
         // Regenerar tudo do zero
         generateEntryCaptcha();
     }, 1600); // Extra 100ms para garantir
@@ -5905,7 +5905,7 @@ function changeEntryChallenge(type) {
     } catch (e) {
         // Se não existir entryCurrentChallengeType, atualizar currentChallengeType como fallback
         console.warn('⚠️ entryCurrentChallengeType não definido, usando currentChallengeType como fallback');
-    try { currentChallengeType = type; } catch (e2) {}
+        try { currentChallengeType = type; } catch (e2) { }
     }
 
     // Chamar a geração do captcha de entrada (preferir window-level para permitir spies/mocks)
@@ -5940,29 +5940,29 @@ window.changeEntryChallenge = changeEntryChallenge;
 // Auto-inicializar captcha de entrada se o overlay estiver presente
 document.addEventListener('DOMContentLoaded', () => {
     console.log('📄 DOMContentLoaded - Verificando captcha de entrada...');
-    
+
     const entryOverlay = document.getElementById('entryCaptchaOverlay');
     if (!entryOverlay) {
         console.log('ℹ️ Sem overlay de entrada nesta página');
         return;
     }
-    
+
     // Verificar se já passou pelo captcha
     const entryCaptchaPassed = sessionStorage.getItem('entry_captcha_passed');
-    
+
     if (entryCaptchaPassed === 'true') {
         console.log('✅ Captcha de entrada já foi completado - ocultando');
         entryOverlay.classList.remove('active');
     } else {
         console.log('🔒 Captcha de entrada necessário - inicializando');
         entryOverlay.classList.add('active');
-        
+
         // Aguardar um pouco para garantir que DOM está pronto
         setTimeout(() => {
             initEntryCaptcha();
         }, 100);
     }
-    
+
     // Prevenir fechamento do modal de entrada sem completar
     entryOverlay.addEventListener('click', (e) => {
         if (e.target === entryOverlay && !entryIsCanvasBlocked) {

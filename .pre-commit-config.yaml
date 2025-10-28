@@ -4,7 +4,11 @@ repos:
       - id: update-generated
         name: Update generated files (rizoma)
         entry: python3 scripts/precommit/update_generated.py
-        language: python
+        # Use the system Python so the hook runs in your environment where
+        # the exporter dependencies are installed (ebooklib, Pillow, lxml, etc.).
+        # The default 'python' language creates an isolated venv which doesn't
+        # have those heavy deps and causes ModuleNotFoundError.
+        language: system
         pass_filenames: false
         always_run: true
 

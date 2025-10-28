@@ -14,7 +14,7 @@ class LoadingOverlay {
             subtitle: options.subtitle || 'Inicializando sistema...',
             minDisplayTime: options.minDisplayTime || 1000 // Mínimo 1s
         }, options || {});
-        
+
         this.startTime = Date.now();
         this.loadedResources = 0;
         this.totalResources = 0;
@@ -22,7 +22,7 @@ class LoadingOverlay {
         this.overlay = null;
         this.progressBar = null;
         this.statusText = null;
-        
+
         this.init();
     }
 
@@ -48,7 +48,7 @@ class LoadingOverlay {
             throw err;
         }
     }
-    
+
     init() {
         // Resolve asset paths so the cover loads regardless of base href or
         // whether the page is opened via file:// or served from a subpath.
@@ -104,7 +104,7 @@ class LoadingOverlay {
         // Ensure no double slashes
         return (base + '/' + normalized).replace(/([^:]\/)\/+/g, '$1');
     }
-    
+
     createOverlay() {
         // Criar estrutura HTML
         this.overlay = document.createElement('div');
@@ -137,22 +137,22 @@ class LoadingOverlay {
                 <p class="loading-status">Carregando recursos...</p>
             </div>
         `;
-        
-    // Inserir no início do documentElement (html) to avoid stacking-context
-    // issues caused by transformed/fixed parents. Also force a very large
-    // z-index and fixed full-viewport sizing inline so the overlay stays
-    // above all other UI.
-    this.overlay.style.position = 'fixed';
-    this.overlay.style.top = '0';
-    this.overlay.style.left = '0';
-    this.overlay.style.width = '100vw';
-    this.overlay.style.height = '100vh';
-    // Use a very large z-index to outrank other elements (32-bit max safe)
-    this.overlay.style.zIndex = String(2147483647);
 
-    // Append to the document root to minimize stacking-context interference
-    const root = document.documentElement || document.body;
-    root.insertBefore(this.overlay, root.firstChild);
+        // Inserir no início do documentElement (html) to avoid stacking-context
+        // issues caused by transformed/fixed parents. Also force a very large
+        // z-index and fixed full-viewport sizing inline so the overlay stays
+        // above all other UI.
+        this.overlay.style.position = 'fixed';
+        this.overlay.style.top = '0';
+        this.overlay.style.left = '0';
+        this.overlay.style.width = '100vw';
+        this.overlay.style.height = '100vh';
+        // Use a very large z-index to outrank other elements (32-bit max safe)
+        this.overlay.style.zIndex = String(2147483647);
+
+        // Append to the document root to minimize stacking-context interference
+        const root = document.documentElement || document.body;
+        root.insertBefore(this.overlay, root.firstChild);
 
         // Referenciar elementos
         this.progressBar = this.overlay.querySelector('.loading-progress-bar');
@@ -174,36 +174,36 @@ class LoadingOverlay {
             });
         });
     }
-    
+
     countResources() {
         // Contar scripts
         const scripts = document.querySelectorAll('script[src]');
         this.totalResources += scripts.length;
-        
+
         // Contar stylesheets
         const styles = document.querySelectorAll('link[rel="stylesheet"]');
         this.totalResources += styles.length;
-        
+
         // Contar imagens no HTML
         const images = document.querySelectorAll('img[src]');
         this.totalResources += images.length;
-        
+
         console.log(`📦 Total de recursos para carregar: ${this.totalResources}`);
     }
-    
+
     trackProgress() {
         // Listener para scripts
         document.querySelectorAll('script[src]').forEach(script => {
             script.addEventListener('load', () => this.onResourceLoaded('script', script.src));
             script.addEventListener('error', () => this.onResourceError('script', script.src));
         });
-        
+
         // Listener para stylesheets
         document.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
             link.addEventListener('load', () => this.onResourceLoaded('stylesheet', link.href));
             link.addEventListener('error', () => this.onResourceError('stylesheet', link.href));
         });
-        
+
         // Listener para imagens
         document.querySelectorAll('img[src]').forEach(img => {
             if (img.complete) {
@@ -213,12 +213,12 @@ class LoadingOverlay {
                 img.addEventListener('error', () => this.onResourceError('image', img.src));
             }
         });
-        
+
         // Fallback: remover após window.onload
         window.addEventListener('load', () => {
             setTimeout(() => this.complete(), 300);
         });
-        
+
         // Fallback de segurança: remover após 10 segundos
         setTimeout(() => {
             if (!this.isReady) {
@@ -227,71 +227,71 @@ class LoadingOverlay {
             }
         }, 10000);
     }
-    
+
     onResourceLoaded(type, src) {
         this.loadedResources++;
         const progress = (this.loadedResources / this.totalResources) * 100;
         this.updateProgress(progress);
-        
+
         const fileName = src.split('/').pop();
         this.updateStatus(`Carregado: ${fileName.substring(0, 30)}...`);
-        
+
         console.log(`✅ ${type} carregado: ${fileName}`);
-        
+
         // Se todos recursos carregados
         if (this.loadedResources >= this.totalResources) {
             this.complete();
         }
     }
-    
+
     onResourceError(type, src) {
         this.loadedResources++;
         const fileName = src.split('/').pop();
         console.warn(`⚠️ Erro ao carregar ${type}: ${fileName}`);
-        
+
         // Continuar mesmo com erros
         if (this.loadedResources >= this.totalResources) {
             this.complete();
         }
     }
-    
+
     updateProgress(percentage) {
         if (this.progressBar) {
             this.progressBar.style.width = Math.min(percentage, 100) + '%';
         }
     }
-    
+
     updateStatus(message) {
         if (this.statusText) {
             this.statusText.textContent = message;
         }
     }
-    
+
     complete() {
         if (this.isReady) return;
         this.isReady = true;
-        
+
         const elapsedTime = Date.now() - this.startTime;
         const remainingTime = Math.max(0, this.options.minDisplayTime - elapsedTime);
-        
+
         // Garantir tempo mínimo de exibição
         setTimeout(() => {
             this.updateProgress(100);
             this.updateStatus('Sistema pronto! ✨');
-            
+
             // Remover overlay com fade
             setTimeout(() => {
                 this.hide();
             }, 400);
         }, remainingTime);
     }
-    
+
     hide() {
         if (!this.overlay) return;
-        
+
         // Fade out
         this.overlay.classList.add('hidden');
-        
+
         // Remover do DOM após animação
         setTimeout(() => {
             this.overlay.classList.add('removed');
@@ -302,7 +302,7 @@ class LoadingOverlay {
                 console.log('🌀 Loading overlay removido');
             }, 100);
         }, 800);
-        
+
         // Dispatch evento customizado
         window.dispatchEvent(new CustomEvent('loadingComplete', {
             detail: {
@@ -311,7 +311,7 @@ class LoadingOverlay {
             }
         }));
     }
-    
+
     // Método público para forçar remoção
     forceRemove() {
         console.log('🌀 Forçando remoção do loading overlay');

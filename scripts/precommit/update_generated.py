@@ -48,7 +48,9 @@ def run_export() -> int:
 def git_status_contains_generated() -> list[str]:
     """Return list of generated files that appear as changed/untracked in git status --porcelain."""
     try:
-        out = subprocess.check_output(["git", "status", "--porcelain"], cwd=ROOT, text=True)
+        out = subprocess.check_output(
+            ["git", "status", "--porcelain"], cwd=ROOT, text=True
+        )
     except subprocess.CalledProcessError as e:
         print("Failed to run git status:", e)
         return []
@@ -100,7 +102,9 @@ def main() -> int:
         timestamp = datetime.now(timezone.utc).isoformat()
         # Author (from git config) and statistics
         try:
-            author = subprocess.check_output(["git", "config", "user.name"], cwd=ROOT, text=True).strip()
+            author = subprocess.check_output(
+                ["git", "config", "user.name"], cwd=ROOT, text=True
+            ).strip()
         except subprocess.CalledProcessError:
             author = "unknown"
 
@@ -132,7 +136,9 @@ def main() -> int:
         body = "\n".join(body_lines)
 
         # Commit with a short title and a detailed body (use two -m args)
-        subprocess.check_call(["git", "commit", "-m", title, "-m", body, "--no-verify"], cwd=ROOT)
+        subprocess.check_call(
+            ["git", "commit", "-m", title, "-m", body, "--no-verify"], cwd=ROOT
+        )
         print("Auto-committed generated files:")
         print("  ", title)
         print(body)

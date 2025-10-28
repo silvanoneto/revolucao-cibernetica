@@ -9,7 +9,7 @@ if ('serviceWorker' in navigator) {
       .register('/service-worker.js')
       .then((registration) => {
         console.log('✅ Service Worker registrado com sucesso:', registration.scope);
-        
+
         // Verificar atualizações periodicamente
         setInterval(() => {
           registration.update();
