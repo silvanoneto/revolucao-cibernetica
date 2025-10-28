@@ -11,6 +11,15 @@
  * - Sem estrutura arbórea
  * 
  * CHANGELOG:
+ * - 2025-10-28 (v3): Expansão massiva do Capítulo 3 (Capitalismo Digital)
+ *   + 35+ novos conceitos: Zuboff, excedente comportamental, produtos de previsão
+ *   + Plataformas: efeito de rede, lock-in, tipos (Srnicek), guerra Rappi/iFood
+ *   + Uberização: gerenciamento algorítmico, Breque dos Apps, transparência
+ *   + IA desmistificada: ghost work, Mechanical Turk, moderadores, ciclo de extração
+ *   + Fetiche do algoritmo: máscaras de poder, discriminação, caso Uber caixa-preta
+ *   + Casos brasileiros: Serasa Score, redlining digital
+ *   Total: ~155 conceitos mapeados
+ * 
  * - 2025-10-27 (v2): Expansão massiva do Capítulo 2 (Cibernética)
  *   + 40 novos conceitos: Wiener, Turing, Shannon, Babbage, Ada Lovelace
  *   + ENIAC Six e gênero na computação (invisibilização histórica)
@@ -148,8 +157,50 @@ const conceptGraph = {
     'fetichismo-digital': {
         name: 'Fetichismo do Dado',
         description: 'Exploração mascarada como "parceria" e "oportunidade"',
-        connections: ['fetichismo', 'mais-valia-dados', 'plataformizacao', 'magalu'],
+        connections: ['fetichismo', 'mais-valia-dados', 'plataformizacao', 'magalu', 'algoritmo-fetiche'],
         color: '#ef4444',
+        layer: 0
+    },
+    'algoritmo-fetiche': {
+        name: 'Fetiche do Algoritmo',
+        description: 'Relações de poder aparecem como decisões técnicas neutras',
+        connections: ['fetichismo-digital', 'gerenciamento-algoritmico', 'alienacao', 'mascara-poder', 'tres-perguntas-algoritmo'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'mascara-poder': {
+        name: 'Algoritmo como Máscara',
+        description: 'Caixa-preta esconde escolhas humanas e interesses econômicos',
+        connections: ['algoritmo-fetiche', 'opacidade', 'caso-uber-caixa-preta'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'caso-uber-caixa-preta': {
+        name: 'Caso Uber: Caixa-Preta (2019)',
+        description: 'Algoritmo "aposentou" motoristas antigos sem avisar',
+        connections: ['mascara-poder', 'gerenciamento-algoritmico', 'uberizacao'],
+        color: '#10b981',
+        layer: 0
+    },
+    'tres-perguntas-algoritmo': {
+        name: 'Três Perguntas para Desmascarar Fetiche',
+        description: '1) Quem programou? 2) Quais dados? 3) Quem se beneficia?',
+        connections: ['algoritmo-fetiche', 'transparencia-algoritmica', 'resistencia'],
+        color: '#10b981',
+        layer: 1
+    },
+    'algoritmo-racismo': {
+        name: 'Algoritmo Reproduz Desigualdade',
+        description: 'IA treinada em sociedade racista = IA racista',
+        connections: ['algoritmo-fetiche', 'serasa-score', 'redlining-digital', 'discriminacao-algoritmica'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'discriminacao-algoritmica': {
+        name: 'Discriminação Algorítmica',
+        description: 'Desigualdades naturalizadas como "análise de risco baseada em dados"',
+        connections: ['algoritmo-racismo', 'algoritmo-fetiche', 'ideologia'],
+        color: '#dc2626',
         layer: 0
     },
     'preco-valor': {
@@ -238,9 +289,58 @@ const conceptGraph = {
     },
     'ia': {
         name: 'Inteligência Artificial',
-        description: 'Machine learning aplicado à extração de mais-valia',
-        connections: ['automacao', 'algoritmos', 'mais-valia-dados', 'vigilancia'],
+        description: 'Machine learning: estatística avançada aplicada a volumes massivos de dados',
+        connections: ['automacao', 'algoritmos', 'mais-valia-dados', 'vigilancia', 'ghost-work', 'ciclo-extracao-ia', 'desmistificacao-ia', 'feedback-loop-ia'],
         color: '#ef4444',
+        layer: 0
+    },
+    'desmistificacao-ia': {
+        name: 'Desmistificando a IA',
+        description: 'IA não é magia: é reconhecimento de padrões em dados',
+        connections: ['ia', 'algoritmos', 'dados'],
+        color: '#10b981',
+        layer: 0
+    },
+    'ciclo-extracao-ia': {
+        name: 'Ciclo de Extração via IA',
+        description: 'Mais dados → IA melhor → serviços viciantes → mais usuários → mais dados',
+        connections: ['ia', 'capitalismo-vigilancia', 'feedback-positivo', 'vicio-digital'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'feedback-loop-ia': {
+        name: 'Feedback Loops na IA',
+        description: 'Cibernética aplicada ao lucro: loops positivos e negativos mantêm engajamento',
+        connections: ['ia', 'feedback', 'feedback-positivo', 'feedback-negativo', 'vicio-digital'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'ghost-work': {
+        name: 'Ghost Work (Trabalho Fantasma)',
+        description: 'Trabalho humano invisível que treina IA: rotulação, moderação',
+        connections: ['ia', 'mais-valia', 'mechanical-turk', 'moderadores-conteudo', 'anotadores-dados'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'mechanical-turk': {
+        name: 'Amazon Mechanical Turk',
+        description: 'Plataforma de microtarefas: US$ 0,01-0,10 por tarefa',
+        connections: ['ghost-work', 'uberizacao', 'mais-valia-absoluta'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'moderadores-conteudo': {
+        name: 'Moderadores de Conteúdo',
+        description: 'Trabalhadores que assistem violência por salário mínimo desenvolvendo PTSD',
+        connections: ['ghost-work', 'trabalho-imaterial', 'necropolitica'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'anotadores-dados': {
+        name: 'Anotadores de Dados',
+        description: 'Rotulam objetos em imagens para treinar carros autônomos',
+        connections: ['ghost-work', 'ia', 'mais-valia'],
+        color: '#dc2626',
         layer: 0
     },
 
@@ -480,9 +580,65 @@ const conceptGraph = {
     },
     'capitalismo-vigilancia': {
         name: 'Capitalismo de Vigilância',
-        description: 'Extração de dados comportamentais (Zuboff)',
-        connections: ['mais-valia-dados', 'plataformizacao', 'resistencia', 'preco-valor', 'vigilancia'],
+        description: 'Extração de dados comportamentais como matéria-prima (Zuboff)',
+        connections: ['mais-valia-dados', 'plataformizacao', 'resistencia', 'preco-valor', 'vigilancia', 'excedente-comportamental', 'produtos-previsao', 'shoshana-zuboff'],
         color: '#ef4444',
+        layer: 0
+    },
+    'shoshana-zuboff': {
+        name: 'Shoshana Zuboff',
+        description: 'Teórica do capitalismo de vigilância - Harvard',
+        connections: ['capitalismo-vigilancia', 'excedente-comportamental', 'produtos-previsao'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'excedente-comportamental': {
+        name: 'Excedente Comportamental',
+        description: 'Dados coletados além do necessário para o serviço funcionar',
+        connections: ['capitalismo-vigilancia', 'produtos-previsao', 'dados', 'google-maps-exemplo'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'produtos-previsao': {
+        name: 'Produtos de Previsão',
+        description: 'Previsões de comportamento futuro vendidas como mercadoria',
+        connections: ['capitalismo-vigilancia', 'excedente-comportamental', 'ia', 'serasa-score'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'dados': {
+        name: 'Dados como Mercadoria',
+        description: 'Nova matéria-prima do capitalismo digital',
+        connections: ['excedente-comportamental', 'mais-valia-dados', 'capitalismo-vigilancia', 'dupla-expropriacao'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'dupla-expropriacao': {
+        name: 'Dupla Expropriação',
+        description: 'Tempo (atenção) + rastro digital convertidos em lucro sem compensação',
+        connections: ['dados', 'capitalismo-vigilancia', 'mais-valia'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'google-maps-exemplo': {
+        name: 'Caso Google Maps',
+        description: 'Exemplo concreto de coleta de excedente comportamental',
+        connections: ['excedente-comportamental', 'vigilancia', 'dados'],
+        color: '#10b981',
+        layer: 0
+    },
+    'serasa-score': {
+        name: 'Serasa Score',
+        description: 'Discriminação algorítmica via score de crédito no Brasil',
+        connections: ['produtos-previsao', 'algoritmo-fetiche', 'redlining-digital', 'necropolitica'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'redlining-digital': {
+        name: 'Redlining Digital',
+        description: 'Discriminação por CEP automatizada via algoritmos',
+        connections: ['serasa-score', 'algoritmo-fetiche', 'necropolitica'],
+        color: '#dc2626',
         layer: 0
     },
     'mais-valia-dados': {
@@ -607,9 +763,58 @@ const conceptGraph = {
     'uberizacao': {
         name: 'Uberização',
         description: 'Precarização do trabalho via plataformas digitais',
-        connections: ['mais-valia-dados', 'plataformizacao', 'trabalho-imaterial', 'mais-valia-absoluta', 'mais-valia-relativa', 'reforma-trabalhista', 'intermitente', 'algoritmos', 'magalu', 'precarizacao', 'relacoes-producao'],
+        connections: ['mais-valia-dados', 'plataformizacao', 'trabalho-imaterial', 'mais-valia-absoluta', 'mais-valia-relativa', 'reforma-trabalhista', 'intermitente', 'algoritmos', 'magalu', 'precarizacao', 'relacoes-producao', 'gerenciamento-algoritmico', 'breque-apps', 'empreendedorismo-si'],
         color: '#ef4444',
         layer: 0
+    },
+    'gerenciamento-algoritmico': {
+        name: 'Gerenciamento Algorítmico',
+        description: 'Controle de trabalhadores via algoritmos sem chefe humano',
+        connections: ['uberizacao', 'algoritmos', 'algoritmo-fetiche', 'tyranny-algorithm'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'tyranny-algorithm': {
+        name: 'Tirania do Algoritmo',
+        description: 'Sistema de controle cibernético para maximizar extração de valor',
+        connections: ['gerenciamento-algoritmico', 'feedback', 'uberizacao'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'empreendedorismo-si': {
+        name: 'Empreendedorismo de Si',
+        description: 'Ideologia neoliberal: trabalhador precarizado como "empresário"',
+        connections: ['uberizacao', 'ideologia', 'neoliberalismo-progressista'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'neoliberalismo-progressista': {
+        name: 'Neoliberalismo Progressista',
+        description: 'Exploração vendida como libertação via linguagem emancipatória',
+        connections: ['empreendedorismo-si', 'ideologia', 'ultrarracionalismo'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'breque-apps': {
+        name: 'Breque dos Apps (2020)',
+        description: 'Primeira greve de algoritmos - entregadores no Brasil',
+        connections: ['uberizacao', 'resistencia', 'gerenciamento-algoritmico', 'transparencia-algoritmica'],
+        color: '#10b981',
+        layer: 0
+    },
+    'transparencia-algoritmica': {
+        name: 'Transparência Algorítmica',
+        description: 'Reivindicação: abrir a caixa-preta do algoritmo',
+        connections: ['breque-apps', 'algoritmo-fetiche', 'auditoria-algoritmica'],
+        color: '#10b981',
+        layer: 1
+    },
+    'auditoria-algoritmica': {
+        name: 'Auditoria Algorítmica',
+        description: 'Proposta de fiscalização de decisões algorítmicas',
+        connections: ['transparencia-algoritmica', 'resistencia'],
+        color: '#6366f1',
+        layer: 1
     },
     'trabalho-imaterial': {
         name: 'Trabalho Imaterial',
@@ -641,9 +846,58 @@ const conceptGraph = {
     },
     'plataformizacao': {
         name: 'Plataformização',
-        description: 'Monopolização da infraestrutura digital',
-        connections: ['capitalismo-vigilancia', 'uberizacao', 'resistencia', 'magalu', 'capital', 'fetichismo-digital', 'monopolio'],
+        description: 'Monopolização da infraestrutura digital via efeitos de rede',
+        connections: ['capitalismo-vigilancia', 'uberizacao', 'resistencia', 'magalu', 'capital', 'fetichismo-digital', 'monopolio', 'efeito-rede', 'plataforma-lean', 'plataforma-publicidade'],
         color: '#ef4444',
+        layer: 0
+    },
+    'efeito-rede': {
+        name: 'Efeito de Rede',
+        description: 'Valor cresce exponencialmente com número de usuários (Lei de Metcalfe)',
+        connections: ['plataformizacao', 'monopolio', 'lock-in', 'guerra-plataformas-brasil'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'lock-in': {
+        name: 'Lock-in Effect',
+        description: 'Aprisionamento do usuário pela massa crítica de uma rede',
+        connections: ['efeito-rede', 'monopolio', 'whatsapp-exemplo'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'whatsapp-exemplo': {
+        name: 'Caso WhatsApp',
+        description: 'Exemplo de lock-in: impossível migrar sem perder toda a rede',
+        connections: ['lock-in', 'efeito-rede'],
+        color: '#10b981',
+        layer: 0
+    },
+    'guerra-plataformas-brasil': {
+        name: 'Guerra Rappi vs iFood (2020-2025)',
+        description: 'Estudo de caso sobre efeitos de rede e imperialismo digital',
+        connections: ['efeito-rede', 'plataformizacao', 'imperialismo-digital'],
+        color: '#10b981',
+        layer: 0
+    },
+    'plataforma-lean': {
+        name: 'Plataforma Lean',
+        description: 'Uber/iFood - intermediação sem ativos físicos (Srnicek)',
+        connections: ['plataformizacao', 'uberizacao', 'srnicek'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'plataforma-publicidade': {
+        name: 'Plataforma de Publicidade',
+        description: 'Google/Facebook - extração de dados para anúncios',
+        connections: ['plataformizacao', 'capitalismo-vigilancia', 'srnicek'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'srnicek': {
+        name: 'Nick Srnicek',
+        description: 'Teórico do capitalismo de plataforma (Platform Capitalism, 2016)',
+        connections: ['plataforma-lean', 'plataforma-publicidade', 'plataformizacao'],
+        color: '#8b5cf6',
         layer: 0
     },
     'decolonial': {
