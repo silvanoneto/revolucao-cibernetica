@@ -11,6 +11,25 @@
  * - Sem estrutura arbórea
  * 
  * CHANGELOG:
+ * - 2025-10-28 (v15): Expansão massiva do Capítulo 18 (Projeto Cybersyn - Chile 1970-73)
+ *   + 50+ novos conceitos: via chilena ao socialismo, Fernando Flores, detalhes técnicos Cybersyn
+ *   + Contexto histórico: Allende, Unidade Popular, via chilena (democracia + socialismo), bloqueio EUA
+ *   + Fernando Flores: ministro 27 anos, arquiteto político, co-design com trabalhadores, torturado 3 anos
+ *   + Raúl Espejo (28 anos): liderou equipe Cyberstride, exilou-se UK após golpe
+ *   + Gui Bonsiepe: designer alemão, sala operações futurista (7 cadeiras, painéis, estética igualitária)
+ *   + Tecnologia: Cyberstride (software bayesiano), Cybernet (telex), IBM 360/50 alugado, algedônica (gráficos)
+ *   + Tecnologia apropriada: telex (anos 30) + 1 mainframe = funcionou - lição para Sul Global
+ *   + VSM detalhado: 5 sistemas (Operações, Coordenação, Controle, Inteligência, Política) aplicados à economia
+ *   + Lei Ashby: variedade requisita, atenuador/amplificador variedade, anti-microgerenciamento
+ *   + Greve caminhoneiros Out/1972: 26 dias, CIA financiou, Cybersyn coordenou 200 caminhões em 24h - prova funciona
+ *   + CIA/Nixon/Kissinger: Operação Fubelt, US$ 8mi (~50mi hoje) para desestabilizar, financiar golpe
+ *   + Golpe 11/Set/1973: Pinochet bombardeou La Moneda, Allende suicidou-se, ditadura 17 anos (40 mil mortos)
+ *   + Destruição Cybersyn: sala operações destruída, mainframe devolvido IBM, engenheiros presos/torturados/exilados
+ *   + Eden Medina: historiadora MIT/Indiana, "Cybernetic Revolutionaries" (2011) - redescobriu história apagada
+ *   + Lições para hoje: 1) Planejamento≠controle, 2) Tech apropriada>futurismo, 3) Design=política, 4) Defesa necessária
+ *   + Cybersyn 2.0: com internet/IA/blockchain/IoT - 100x mais fácil hoje, barreira é política não técnica
+ *   Total: ~860 conceitos mapeados
+ * 
  * - 2025-10-28 (v14): Expansão massiva do Capítulo 17 (OGAS - A Internet Vermelha da URSS)
  *   + 60+ novos conceitos: planejamento cibernético soviético, resistência burocrática, lições históricas
  *   + Problema planejamento: Gosplan (12 milhões preços, 50 mil empresas), planos quinquenais (6 meses-2 anos atraso)
@@ -3621,6 +3640,260 @@ const conceptGraph = {
         connections: ['cybersyn', 'necropolitica-digital', 'duplo-uso-militar'],
         color: '#dc2626',
         layer: -1
+    },
+    
+    // Cybersyn - Expansão Capítulo 18 (2025-10-28)
+    'allende': {
+        name: 'Salvador Allende',
+        description: 'Presidente socialista Chile (1970-73), via chilena ao socialismo, apoiou Cybersyn',
+        connections: ['cybersyn', 'unidade-popular', 'golpe-pinochet', 'fernando-flores'],
+        color: '#22c55e',
+        layer: -1
+    },
+    'unidade-popular': {
+        name: 'Unidade Popular',
+        description: 'Coalizão esquerda chilena que elegeu Allende (socialistas, comunistas, radicais)',
+        connections: ['allende', 'cybersyn', 'golpe-pinochet', 'via-chilena-socialismo'],
+        color: '#22c55e',
+        layer: -1
+    },
+    'via-chilena-socialismo': {
+        name: 'Via Chilena ao Socialismo',
+        description: 'Construir socialismo por vias democráticas/pacíficas, sem revolução armada - 3ª via',
+        connections: ['allende', 'unidade-popular', 'cybersyn', 'golpe-pinochet'],
+        color: '#22c55e',
+        layer: -1
+    },
+    'fernando-flores': {
+        name: 'Fernando Flores',
+        description: 'Ministro Economia Allende, arquiteto político Cybersyn, PhD Berkeley, senador Chile',
+        connections: ['cybersyn', 'beer', 'allende', 'tortura-ditadura', 'design-ontologico'],
+        color: '#22c55e',
+        layer: -1
+    },
+    'raul-espejo': {
+        name: 'Raúl Espejo',
+        description: 'Engenheiro 28 anos, liderou equipe Cyberstride, exilou-se UK após golpe',
+        connections: ['cybersyn', 'cyberstride', 'fernando-flores', 'golpe-pinochet'],
+        color: '#22c55e',
+        layer: -1
+    },
+    'gui-bonsiepe': {
+        name: 'Gui Bonsiepe',
+        description: 'Designer alemão que projetou sala operações Cybersyn - estética futurista igualitária',
+        connections: ['sala-operacoes-cybersyn', 'design-politico', 'cybersyn'],
+        color: '#22c55e',
+        layer: -1
+    },
+    'cyberstride': {
+        name: 'Cyberstride',
+        description: 'Software análise estatística Cybersyn - métodos bayesianos, detecta anomalias tempo real',
+        connections: ['cybersyn', 'algedonica', 'ibm-360', 'raul-espejo', 'filtro-variedade'],
+        color: '#22c55e',
+        layer: -1
+    },
+    'algedonica': {
+        name: 'Algedônica (Gráficos)',
+        description: 'Do grego algos (dor) + hedone (prazer) - visualização saúde econômica via cores',
+        connections: ['cyberstride', 'beer', 'cybersyn', 'dashboard-economico'],
+        color: '#22c55e',
+        layer: -1
+    },
+    'sala-operacoes-cybersyn': {
+        name: 'Sala de Operações (Opsroom)',
+        description: '7 cadeiras giratórias, painéis, telas - design para deliberação coletiva, não comando',
+        connections: ['cybersyn', 'gui-bonsiepe', 'design-politico', 'democracia-visual'],
+        color: '#22c55e',
+        layer: -1
+    },
+    'ibm-360': {
+        name: 'IBM 360/50',
+        description: 'Mainframe alugado usado pelo Cybersyn, devolvido à IBM após golpe 1973',
+        connections: ['cybersyn', 'cyberstride', 'tecnologia-apropriada'],
+        color: '#22c55e',
+        layer: -1
+    },
+    'telex-network': {
+        name: 'Rede de Telex',
+        description: '~500 máquinas telex (tech anos 30) conectando fábricas a Santiago - solução low-tech',
+        connections: ['cybernet', 'cybersyn', 'tecnologia-apropriada', 'gambiarra-revolucionaria'],
+        color: '#22c55e',
+        layer: -1
+    },
+    'tecnologia-apropriada': {
+        name: 'Tecnologia Apropriada',
+        description: 'Usar tech disponível/acessível criativamente, não esperar por futurismo - Cybersyn modelo',
+        connections: ['cybersyn', 'telex-network', 'gambiarra-revolucionaria', 'sul-global'],
+        color: '#10b981',
+        layer: 1
+    },
+    'variedade-requisita-ashby': {
+        name: 'Lei Variedade Requisita (Ashby)',
+        description: '"Apenas variedade pode absorver variedade" - controle precisa = complexidade do controlado',
+        connections: ['ashby', 'vsm', 'beer', 'cybersyn', 'anti-microgerenciamento'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'ashby': {
+        name: 'William Ross Ashby',
+        description: 'Ciberneticista britânico - Lei da Variedade Requisita, influenciou Beer',
+        connections: ['variedade-requisita-ashby', 'beer', 'wiener', 'cibernetica'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'atenuador-variedade': {
+        name: 'Atenuador de Variedade',
+        description: 'Centro filtra informação, lida apenas com exceções - evita sobrecarga (conceito Beer)',
+        connections: ['variedade-requisita-ashby', 'beer', 'vsm', 'cybersyn'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'amplificador-variedade': {
+        name: 'Amplificador de Variedade',
+        description: 'Centro dá ferramentas para unidades se auto-regularem - aumenta capacidade resposta',
+        connections: ['variedade-requisita-ashby', 'beer', 'vsm', 'cybersyn', 'autonomia-local'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'autonomia-vs-coesao': {
+        name: 'Autonomia vs Coesão',
+        description: 'Tensão central VSM: unidades precisam autonomia LOCAL + coesão GLOBAL para viabilidade',
+        connections: ['vsm', 'beer', 'cybersyn', 'federalismo-cibernetico'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'sistema-1-vsm': {
+        name: 'Sistema 1 (VSM - Operações)',
+        description: 'Unidades autônomas fazem trabalho real - no Cybersyn: fábricas com autonomia decisória',
+        connections: ['vsm', 'beer', 'cybersyn', 'autonomia-local'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'sistema-2-vsm': {
+        name: 'Sistema 2 (VSM - Coordenação)',
+        description: 'Previne conflitos entre unidades - no Cybersyn: protocolos telex, alocação matéria-prima',
+        connections: ['vsm', 'beer', 'cybersyn', 'coordenacao-descentralizada'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'sistema-3-vsm': {
+        name: 'Sistema 3 (VSM - Controle Operacional)',
+        description: 'Otimiza recursos presente - no Cybersyn: Cyberstride detecta gargalos, realoca recursos',
+        connections: ['vsm', 'beer', 'cybersyn', 'cyberstride', 'otimizacao-tempo-real'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'sistema-4-vsm': {
+        name: 'Sistema 4 (VSM - Inteligência/Planejamento)',
+        description: 'Monitora ambiente externo, planeja futuro - no Cybersyn: economistas simulam políticas',
+        connections: ['vsm', 'beer', 'cybersyn', 'planejamento-adaptativo'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'sistema-5-vsm': {
+        name: 'Sistema 5 (VSM - Política/Identidade)',
+        description: 'Define valores, prioridades - no Cybersyn: governo Allende + assembleias trabalhadores',
+        connections: ['vsm', 'beer', 'cybersyn', 'democracia-economica', 'allende'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'greve-caminhoneiros-1972-detalhes': {
+        name: 'Greve 1972 - Logística Resistência',
+        description: '26 dias, CIA financiou, Cybersyn coordenou 200 caminhões leais em 24h - 30% capacidade mantida',
+        connections: ['greve-caminhoneiros-1972', 'cybersyn', 'cia-chile', 'prova-conceito'],
+        color: '#22c55e',
+        layer: 0
+    },
+    'cia-chile': {
+        name: 'CIA - Operação Fubelt',
+        description: 'US$ 8mi (~50mi hoje) para desestabilizar Allende - financiou greve, propaganda, golpe',
+        connections: ['golpe-pinochet', 'greve-caminhoneiros-1972', 'allende', 'imperialismo-digital'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'operacao-fubelt': {
+        name: 'Operação Fubelt (nome código)',
+        description: 'Plano CIA derrubar Allende - docs desclassificados provam financiamento golpe',
+        connections: ['cia-chile', 'golpe-pinochet', 'kissinger', 'nixon'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'kissinger': {
+        name: 'Henry Kissinger',
+        description: 'Secretário Estado EUA - "não deixaremos Chile virar outra Cuba" - ordenou sabotagem',
+        connections: ['cia-chile', 'operacao-fubelt', 'golpe-pinochet', 'imperialismo'],
+        color: '#dc2626',
+        layer: -1
+    },
+    'nixon': {
+        name: 'Richard Nixon',
+        description: 'Presidente EUA (1969-74) - ordenou CIA desestabilizar Allende, financiou golpe',
+        connections: ['cia-chile', 'operacao-fubelt', 'golpe-pinochet', 'guerra-fria'],
+        color: '#dc2626',
+        layer: -1
+    },
+    'tortura-ditadura-chile': {
+        name: 'Tortura Ditadura Pinochet',
+        description: '40 mil mortos/torturados/desaparecidos (1973-90) - Flores 3 anos Ilha Dawson',
+        connections: ['golpe-pinochet', 'fernando-flores', 'raul-espejo', 'necropolitica'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'destruicao-sala-operacoes': {
+        name: 'Destruição Sala Operações',
+        description: 'Soldados invadiram, pensaram "espionagem soviética", destruíram cadeiras/painéis',
+        connections: ['golpe-pinochet', 'sala-operacoes-cybersyn', 'apagamento-historico'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'apagamento-historico-cybersyn': {
+        name: 'Apagamento Histórico Cybersyn',
+        description: 'Ditadura destruiu docs, censurou história - esquecido até anos 2000 (Eden Medina)',
+        connections: ['golpe-pinochet', 'cybersyn', 'eden-medina', 'historia-luta'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'eden-medina': {
+        name: 'Eden Medina',
+        description: 'Historiadora MIT/Indiana - "Cybernetic Revolutionaries" (2011) - redescobriu Cybersyn',
+        connections: ['cybersyn', 'apagamento-historico-cybersyn', 'historia-luta', 'prova-viabilidade'],
+        color: '#10b981',
+        layer: 0
+    },
+    'prova-viabilidade-socialismo': {
+        name: 'Cybersyn = Prova Viabilidade',
+        description: 'Socialismo cibernético não é utopia - já foi feito, funcionou, foi assassinado (não falhou)',
+        connections: ['cybersyn', 'ogas-vs-cybersyn', 'eden-medina', 'licoes-para-hoje'],
+        color: '#10b981',
+        layer: 1
+    },
+    'licoes-cybersyn-hoje': {
+        name: 'Lições Cybersyn para Século XXI',
+        description: '1) Planejamento≠controle, 2) Tech apropriada>futurismo, 3) Design=política, 4) Defesa necessária, 5) Workers no loop',
+        connections: ['cybersyn', 'prova-viabilidade-socialismo', 'cooperativas-plataforma', 'blockchain-dao'],
+        color: '#10b981',
+        layer: 1
+    },
+    'cybersyn-2-0': {
+        name: 'Cybersyn 2.0 (possibilidades)',
+        description: 'Com internet, IA, blockchain, IoT - tudo que Cybersyn fez em 1971 é 100x mais fácil hoje',
+        connections: ['licoes-cybersyn-hoje', 'cooperativas-plataforma', 'blockchain-dao', 'xai', 'iot-sensores'],
+        color: '#10b981',
+        layer: 1
+    },
+    'design-politico': {
+        name: 'Design Político',
+        description: 'Design materializa valores - sala Cybersyn (igualitária) vs NASA (hierárquica)',
+        connections: ['sala-operacoes-cybersyn', 'gui-bonsiepe', 'dark-patterns', 'ux-emancipatorio'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'co-design-democratico': {
+        name: 'Co-Design Democrático',
+        description: 'Flores organizou reuniões fábricas - workers decidiram quais dados coletar, como exibir',
+        connections: ['fernando-flores', 'cybersyn', 'participacao-trabalhadores', 'cibernetica-segunda-ordem'],
+        color: '#22c55e',
+        layer: 0
     },
     
     // Dependência Digital (atualização 2025)
