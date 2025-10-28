@@ -18,7 +18,7 @@ if (savedTheme === 'light') {
 function toggleFontSize() {
     const html = document.documentElement;
     const currentSize = localStorage.getItem('fontSize') || 'medium';
-    
+
     let newSize;
     if (currentSize === 'small') {
         newSize = 'medium';
@@ -27,13 +27,13 @@ function toggleFontSize() {
     } else {
         newSize = 'small';
     }
-    
+
     // Remover classes antigas
     html.classList.remove('font-small', 'font-medium', 'font-large');
-    
+
     // Adicionar nova classe
     html.classList.add('font-' + newSize);
-    
+
     // Salvar preferência
     localStorage.setItem('fontSize', newSize);
 }
@@ -47,11 +47,11 @@ function toggleMobileMenu() {
     const sidebar = document.getElementById('sidebar');
     const overlay = document.querySelector('.mobile-overlay, .sidebar-overlay');
     const menuBtn = document.querySelector('.mobile-menu-btn');
-    
+
     if (!sidebar || !overlay) return;
-    
+
     const isOpen = sidebar.classList.contains('mobile-open');
-    
+
     if (isOpen) {
         closeMobileMenu();
     } else {
@@ -71,9 +71,9 @@ function closeMobileMenu() {
     const sidebar = document.getElementById('sidebar');
     const overlay = document.querySelector('.mobile-overlay, .sidebar-overlay');
     const menuBtn = document.querySelector('.mobile-menu-btn');
-    
+
     if (!sidebar || !overlay) return;
-    
+
     sidebar.classList.remove('mobile-open');
     overlay.classList.remove('active');
     if (menuBtn) menuBtn.classList.remove('menu-open');
@@ -88,7 +88,7 @@ function handleOverlayKey(event) {
 }
 
 // Fechar menu ao pressionar ESC
-document.addEventListener('keydown', function(event) {
+document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape') {
         closeMobileMenu();
     }
@@ -98,7 +98,7 @@ document.addEventListener('keydown', function(event) {
 window.addEventListener('scroll', () => {
     const progressBar = document.getElementById('reading-progress');
     if (!progressBar) return;
-    
+
     const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
     const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     const scrolled = (winScroll / height) * 100;
@@ -129,11 +129,11 @@ function updateActiveNav() {
 
     let current = '';
     const scrollPosition = window.scrollY + 100;
-    
+
     for (const section of sections) {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.offsetHeight;
-        
+
         if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
             current = section.getAttribute('id');
         }

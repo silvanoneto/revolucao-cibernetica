@@ -231,7 +231,7 @@ function getChapterMetadata(chapterId) {
  */
 function openRizomaForChapter(chapterId) {
     const metadata = getChapterMetadata(chapterId);
-    
+
     if (!metadata || !metadata.concepts || metadata.concepts.length === 0) {
         console.warn('⚠️ Nenhum conceito mapeado para:', chapterId);
         // Fallback: abrir rizoma geral
@@ -240,11 +240,11 @@ function openRizomaForChapter(chapterId) {
         }
         return;
     }
-    
+
     // Abrir rizoma com primeiro conceito (mais relevante)
     const primaryConcept = metadata.concepts[0];
     console.log('🌀 Abrindo rizoma para capítulo:', chapterId, '→ conceito:', primaryConcept);
-    
+
     if (typeof window.openRizoma === 'function') {
         window.openRizoma(primaryConcept);
     } else {
@@ -256,10 +256,10 @@ function openRizomaForChapter(chapterId) {
  * Adicionar tooltip com conceitos ao passar mouse em ponto da Möbius
  */
 function enhanceMobiusTooltip(originalDrawFunction) {
-    return function() {
+    return function () {
         // Chamar função original
         originalDrawFunction.call(this);
-        
+
         // Adicionar informações extras se hover
         if (this.hoveredPoint) {
             const metadata = getChapterMetadata(this.hoveredPoint.id);
@@ -267,21 +267,21 @@ function enhanceMobiusTooltip(originalDrawFunction) {
                 const ctx = this.ctx;
                 const x = this.mouseX;
                 const y = this.mouseY - 120; // Acima do tooltip padrão
-                
+
                 // Background do tooltip extra
                 ctx.fillStyle = 'rgba(0, 0, 0, 0.9)';
                 ctx.fillRect(x - 100, y, 200, 80);
-                
+
                 // Borda
                 ctx.strokeStyle = this.layerColors[this.hoveredPoint.layer].primary;
                 ctx.lineWidth = 2;
                 ctx.strokeRect(x - 100, y, 200, 80);
-                
+
                 // Texto
                 ctx.fillStyle = '#ffffff';
                 ctx.font = '12px Inter, sans-serif';
                 ctx.textAlign = 'center';
-                
+
                 ctx.fillText(`⏱️ ${metadata.readingTime}`, x, y + 20);
                 ctx.fillText(`📊 ${metadata.difficulty}`, x, y + 40);
                 ctx.fillText('🌀 Clique duplo: Rizoma', x, y + 60);
@@ -296,20 +296,20 @@ function enhanceMobiusTooltip(originalDrawFunction) {
 function setupMobiusDoubleClick(mobiusInstance) {
     let lastClickTime = 0;
     const doubleClickThreshold = 300; // ms
-    
+
     const canvas = mobiusInstance.canvas;
-    
+
     canvas.addEventListener('click', (e) => {
         const currentTime = Date.now();
         const timeSinceLastClick = currentTime - lastClickTime;
-        
+
         if (timeSinceLastClick < doubleClickThreshold && mobiusInstance.hoveredPoint) {
             // Clique duplo detectado
             e.preventDefault();
             e.stopPropagation();
             openRizomaForChapter(mobiusInstance.hoveredPoint.id);
         }
-        
+
         lastClickTime = currentTime;
     });
 }
@@ -319,22 +319,22 @@ function setupMobiusDoubleClick(mobiusInstance) {
  */
 function initMobiusRizomaBridge() {
     console.log('🌉 Inicializando ponte Möbius ↔ Rizoma...');
-    
+
     // Aguardar ambos os sistemas estarem prontos
     const checkAndInit = () => {
         if (typeof window.indexMobius !== 'undefined' && typeof window.openRizoma === 'function') {
             console.log('✅ Sistemas detectados, ativando integração...');
-            
+
             // Setup double-click handler
             setupMobiusDoubleClick(window.indexMobius);
-            
+
             // Enhance tooltip (opcional - pode causar problemas)
             // if (window.indexMobius.drawHoverTooltip) {
             //     window.indexMobius.drawHoverTooltip = enhanceMobiusTooltip(
             //         window.indexMobius.drawHoverTooltip
             //     );
             // }
-            
+
             console.log('✅ Ponte Möbius ↔ Rizoma ativada!');
             console.log('💡 Clique duplo em pontos da Möbius para abrir conceitos no Rizoma');
         } else {
@@ -342,7 +342,7 @@ function initMobiusRizomaBridge() {
             setTimeout(checkAndInit, 500);
         }
     };
-    
+
     checkAndInit();
 }
 

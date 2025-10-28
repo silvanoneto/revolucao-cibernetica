@@ -243,7 +243,7 @@ const conceptGraph = {
         color: '#ef4444',
         layer: 0
     },
-    
+
     // ========================================
     // CAPÍTULO 2: CIBERNÉTICA E FUNDAMENTOS
     // ========================================
@@ -737,7 +737,7 @@ const conceptGraph = {
         color: '#10b981',
         layer: 0
     },
-    
+
     // ========================================
     // CONCEITOS ADICIONAIS (CAPS 14-28)
     // ========================================
@@ -869,7 +869,7 @@ let searchDebounceTimer = null;
  */
 function initializeRizoma() {
     console.log('🌀 Inicializando navegação rizomática...');
-    
+
     // Criar overlay
     rizomaOverlay = document.createElement('div');
     rizomaOverlay.id = 'rizoma-overlay';
@@ -886,9 +886,9 @@ function initializeRizoma() {
         overflow: auto;
         padding: 2rem;
     `;
-    
+
     document.body.appendChild(rizomaOverlay);
-    
+
     // Adicionar botão de fechar
     const closeBtn = document.createElement('button');
     closeBtn.innerHTML = '✕ Fechar Rizoma';
@@ -909,7 +909,7 @@ function initializeRizoma() {
     `;
     closeBtn.onclick = closeRizoma;
     rizomaOverlay.appendChild(closeBtn);
-    
+
     // Adicionar botão de exportar
     const exportBtn = document.createElement('button');
     exportBtn.innerHTML = '📥 Exportar Rizoma';
@@ -938,7 +938,7 @@ function initializeRizoma() {
     };
     exportBtn.onclick = exportRizoma;
     rizomaOverlay.appendChild(exportBtn);
-    
+
     console.log('✅ Navegação rizomática inicializada');
 }
 
@@ -948,21 +948,21 @@ function initializeRizoma() {
  */
 function openRizoma(startConcept = null) {
     console.log('🌀 Abrindo rizoma...', startConcept);
-    
+
     // Verificar se há transição ternária em andamento
     if (typeof isTransitioning !== 'undefined' && isTransitioning) {
         console.warn('⏸️ Aguarde a transição ternária concluir');
         return;
     }
-    
+
     if (!rizomaOverlay) {
         initializeRizoma();
     }
-    
+
     selectedConcept = startConcept;
     rizomaActive = true;
     rizomaOverlay.style.display = 'block';
-    
+
     // Render do grafo
     renderRizomaGraph();
 
@@ -983,7 +983,7 @@ function openRizoma(startConcept = null) {
             }
         }
     }, 200);
-    
+
     // Impedir scroll do body
     document.body.style.overflow = 'hidden';
 }
@@ -993,7 +993,7 @@ function openRizoma(startConcept = null) {
  */
 function exportRizoma() {
     console.log('📥 Exportando rizoma...');
-    
+
     // Criar menu de opções
     const menu = document.createElement('div');
     menu.style.cssText = `
@@ -1009,7 +1009,7 @@ function exportRizoma() {
         box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
         min-width: 400px;
     `;
-    
+
     menu.innerHTML = `
         <h3 style="margin: 0 0 1.5rem 0; color: #8b5cf6; font-size: 1.5rem; text-align: center;">
             📥 Exportar Rizoma
@@ -1085,34 +1085,34 @@ function exportRizoma() {
             </button>
         </div>
     `;
-    
+
     rizomaOverlay.appendChild(menu);
-    
+
     // Event listeners
     menu.querySelector('#export-json').onclick = () => {
         exportAsJSON();
         menu.remove();
     };
-    
+
     menu.querySelector('#export-graphml').onclick = () => {
         exportAsGraphML();
         menu.remove();
     };
-    
+
     menu.querySelector('#export-csv').onclick = () => {
         exportAsCSV();
         menu.remove();
     };
-    
+
     menu.querySelector('#export-markdown').onclick = () => {
         exportAsMarkdown();
         menu.remove();
     };
-    
+
     menu.querySelector('#export-cancel').onclick = () => {
         menu.remove();
     };
-    
+
     // Hover effects
     menu.querySelectorAll('button').forEach(btn => {
         btn.onmouseover = () => {
@@ -1151,7 +1151,7 @@ function exportAsJSON() {
         })),
         edges: []
     };
-    
+
     // Gerar arestas
     Object.entries(conceptGraph).forEach(([sourceId, concept]) => {
         concept.connections.forEach(targetId => {
@@ -1162,7 +1162,7 @@ function exportAsJSON() {
             });
         });
     });
-    
+
     downloadFile('rizoma-revolucao-cibernetica.json', JSON.stringify(data, null, 2), 'application/json');
     console.log('✅ Exportado como JSON');
 }
@@ -1182,7 +1182,7 @@ function exportAsGraphML() {
   <key id="layer" for="node" attr.name="layer" attr.type="int"/>
   <graph id="Rizoma" edgedefault="undirected">
 `;
-    
+
     // Adicionar nós
     Object.entries(conceptGraph).forEach(([id, concept]) => {
         xml += `    <node id="${id}">
@@ -1193,7 +1193,7 @@ function exportAsGraphML() {
     </node>
 `;
     });
-    
+
     // Adicionar arestas (sem duplicatas)
     const edgesAdded = new Set();
     Object.entries(conceptGraph).forEach(([sourceId, concept]) => {
@@ -1205,10 +1205,10 @@ function exportAsGraphML() {
             }
         });
     });
-    
+
     xml += `  </graph>
 </graphml>`;
-    
+
     downloadFile('rizoma-revolucao-cibernetica.graphml', xml, 'application/xml');
     console.log('✅ Exportado como GraphML');
 }
@@ -1222,7 +1222,7 @@ function exportAsCSV() {
     Object.entries(conceptGraph).forEach(([id, concept]) => {
         nodesCSV += `"${id}","${escapeCSV(concept.name)}","${escapeCSV(concept.description)}","${concept.color}",${concept.layer},${concept.connections.length}\n`;
     });
-    
+
     // CSV de arestas
     let edgesCSV = 'source,target\n';
     const edgesAdded = new Set();
@@ -1235,13 +1235,13 @@ function exportAsCSV() {
             }
         });
     });
-    
+
     // Download como ZIP (simulado com dois arquivos)
     downloadFile('rizoma-nodes.csv', nodesCSV, 'text/csv');
     setTimeout(() => {
         downloadFile('rizoma-edges.csv', edgesCSV, 'text/csv');
     }, 500);
-    
+
     console.log('✅ Exportado como CSV (nós + arestas)');
 }
 
@@ -1268,7 +1268,7 @@ function exportAsMarkdown() {
 ### Camada -1: Passado (Fundamentos Históricos)
 
 `;
-    
+
     Object.entries(conceptGraph)
         .filter(([_, c]) => c.layer === -1)
         .sort((a, b) => a[1].name.localeCompare(b[1].name))
@@ -1278,11 +1278,11 @@ function exportAsMarkdown() {
             md += `**Conexões:** ${concept.connections.map(c => `\`${c}\``).join(', ')}\n\n`;
             md += `---\n\n`;
         });
-    
+
     md += `### Camada 0: Presente (Análise Contemporânea)
 
 `;
-    
+
     Object.entries(conceptGraph)
         .filter(([_, c]) => c.layer === 0)
         .sort((a, b) => a[1].name.localeCompare(b[1].name))
@@ -1292,11 +1292,11 @@ function exportAsMarkdown() {
             md += `**Conexões:** ${concept.connections.map(c => `\`${c}\``).join(', ')}\n\n`;
             md += `---\n\n`;
         });
-    
+
     md += `### Camada 1: Futuro (Horizontes de Transformação)
 
 `;
-    
+
     Object.entries(conceptGraph)
         .filter(([_, c]) => c.layer === 1)
         .sort((a, b) => a[1].name.localeCompare(b[1].name))
@@ -1306,7 +1306,7 @@ function exportAsMarkdown() {
             md += `**Conexões:** ${concept.connections.map(c => `\`${c}\``).join(', ')}\n\n`;
             md += `---\n\n`;
         });
-    
+
     md += `## 📝 Como Usar
 
 Este documento pode ser usado para:
@@ -1328,7 +1328,7 @@ Este documento pode ser usado para:
 *Gerado automaticamente pela Navegação Rizomática*  
 *A Revolução Cibernética © 2025*
 `;
-    
+
     downloadFile('rizoma-revolucao-cibernetica.md', md, 'text/markdown');
     console.log('✅ Exportado como Markdown');
 }
@@ -1338,10 +1338,10 @@ Este documento pode ser usado para:
  */
 function escapeXML(str) {
     return str.replace(/&/g, '&amp;')
-              .replace(/</g, '&lt;')
-              .replace(/>/g, '&gt;')
-              .replace(/"/g, '&quot;')
-              .replace(/'/g, '&apos;');
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&apos;');
 }
 
 function escapeCSV(str) {
@@ -1361,7 +1361,7 @@ function downloadFile(filename, content, mimeType) {
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
-    
+
     // Mostrar notificação
     showExportNotification(filename);
 }
@@ -1385,9 +1385,9 @@ function showExportNotification(filename) {
         animation: slideIn 0.3s ease;
     `;
     notification.innerHTML = `✅ ${filename} baixado com sucesso!`;
-    
+
     document.body.appendChild(notification);
-    
+
     setTimeout(() => {
         notification.style.animation = 'slideOut 0.3s ease';
         setTimeout(() => notification.remove(), 300);
@@ -1399,18 +1399,18 @@ function showExportNotification(filename) {
  */
 function closeRizoma() {
     console.log('👻 Fechando rizoma...');
-    
+
     // Verificar se há transição ternária em andamento
     if (typeof isTransitioning !== 'undefined' && isTransitioning) {
         console.warn('⏸️ Aguarde a transição ternária concluir');
         return;
     }
-    
+
     rizomaActive = false;
     if (rizomaOverlay) {
         rizomaOverlay.style.display = 'none';
     }
-    
+
     // Restaurar scroll
     document.body.style.overflow = '';
 }
@@ -1420,14 +1420,14 @@ function closeRizoma() {
  */
 function renderRizomaGraph() {
     if (!rizomaOverlay) return;
-    
+
     // Limpar conteúdo anterior (exceto botões de controle)
     const closeBtn = rizomaOverlay.querySelector('button:nth-of-type(1)');
     const exportBtn = rizomaOverlay.querySelector('button:nth-of-type(2)');
     rizomaOverlay.innerHTML = '';
     if (closeBtn) rizomaOverlay.appendChild(closeBtn);
     if (exportBtn) rizomaOverlay.appendChild(exportBtn);
-    
+
     // Container principal
     const container = document.createElement('div');
     container.style.cssText = `
@@ -1436,7 +1436,7 @@ function renderRizomaGraph() {
         padding-top: 4rem;
         position: relative;
     `;
-    
+
     // Título
     const title = document.createElement('h2');
     container.id = 'rizoma-main-container';
@@ -1447,7 +1447,7 @@ function renderRizomaGraph() {
         margin-bottom: 1rem;
     `;
     container.appendChild(title);
-    
+
     // Subtítulo
     const subtitle = document.createElement('p');
     subtitle.innerHTML = 'Conceitos interligados sem hierarquia. <strong>Clique para explorar conexões.</strong><br><small>Pressione <kbd>R</kbd> para abrir/fechar | <kbd>ESC</kbd> para fechar</small>';
@@ -1458,7 +1458,7 @@ function renderRizomaGraph() {
         margin-bottom: 1rem;
     `;
     container.appendChild(subtitle);
-    
+
     // Barra de busca e filtros
     const searchBar = document.createElement('div');
     searchBar.style.cssText = `
@@ -1469,7 +1469,7 @@ function renderRizomaGraph() {
         margin-bottom: 1.5rem;
         flex-wrap: wrap;
     `;
-    
+
     // Campo de busca
     const searchInput = document.createElement('input');
     searchInput.type = 'text';
@@ -1523,10 +1523,10 @@ function renderRizomaGraph() {
     `;
     layerSelect.value = layerFilter;
     layerSelect.addEventListener('change', (e) => {
-    layerFilter = e.target.value === 'all' ? 'all' : parseInt(e.target.value);
-    updateRizomaResults();
+        layerFilter = e.target.value === 'all' ? 'all' : parseInt(e.target.value);
+        updateRizomaResults();
     });
-    
+
     // Botão limpar filtros
     const clearBtn = document.createElement('button');
     clearBtn.textContent = '🗑️ Limpar';
@@ -1542,9 +1542,9 @@ function renderRizomaGraph() {
         font-weight: 600;
     `;
     clearBtn.addEventListener('click', () => {
-    searchFilter = '';
-    layerFilter = 'all';
-    updateRizomaResults();
+        searchFilter = '';
+        layerFilter = 'all';
+        updateRizomaResults();
     });
     clearBtn.addEventListener('mouseenter', () => {
         clearBtn.style.background = 'rgba(239, 68, 68, 0.3)';
@@ -1554,11 +1554,11 @@ function renderRizomaGraph() {
         clearBtn.style.background = 'rgba(239, 68, 68, 0.2)';
         clearBtn.style.transform = 'scale(1)';
     });
-    
+
     searchBar.appendChild(searchInput);
     searchBar.appendChild(layerSelect);
     searchBar.appendChild(clearBtn);
-    
+
     // Botão de alternar visualização
     const toggleViewBtn = document.createElement('button');
     toggleViewBtn.textContent = viewMode === 'grid' ? '🕸️ Grafo' : '🔲 Grade';
@@ -1585,37 +1585,37 @@ function renderRizomaGraph() {
         toggleViewBtn.style.background = 'rgba(99, 102, 241, 0.2)';
         toggleViewBtn.style.transform = 'scale(1)';
     });
-    
+
     searchBar.appendChild(toggleViewBtn);
     container.appendChild(searchBar);
-    
+
     // Estatísticas do rizoma
     const stats = document.createElement('div');
     stats.id = 'rizoma-stats';
     const allConcepts = Object.entries(conceptGraph);
-    
+
     // Aplicar filtros
     const filteredConcepts = allConcepts.filter(([key, concept]) => {
         // Filtro de busca
-        const matchesSearch = !searchFilter || 
+        const matchesSearch = !searchFilter ||
             concept.name.toLowerCase().includes(searchFilter) ||
             concept.description.toLowerCase().includes(searchFilter) ||
             key.toLowerCase().includes(searchFilter);
-        
+
         // Filtro de camada
         const matchesLayer = layerFilter === 'all' || concept.layer === layerFilter;
-        
+
         return matchesSearch && matchesLayer;
     });
-    
+
     const totalConcepts = Object.keys(conceptGraph).length;
     const visibleConcepts = filteredConcepts.length;
     const totalConnections = Object.values(conceptGraph).reduce((sum, c) => sum + c.connections.length, 0);
     const avgConnections = (totalConnections / totalConcepts).toFixed(1);
-    
+
     // Log de diagnóstico
     console.log(`🌀 Rizoma renderizado: ${totalConcepts} conceitos, ${totalConnections} conexões, média ${avgConnections}/nó`);
-    
+
     stats.innerHTML = `
         <div style="text-align: center; margin-bottom: 2rem; color: #9ca3af;">
             📊 <strong>${visibleConcepts}</strong> conceitos ${visibleConcepts < totalConcepts ? `(${totalConcepts} total)` : ''} • 
@@ -1627,7 +1627,7 @@ function renderRizomaGraph() {
         </div>
     `;
     container.appendChild(stats);
-    
+
     // SVG para linhas de conexão (posicionado atrás do grid)
     const svgContainer = document.createElement('div');
     svgContainer.id = 'connection-svg-container';
@@ -1640,7 +1640,7 @@ function renderRizomaGraph() {
         pointer-events: none;
         z-index: 0;
     `;
-    
+
     const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     svg.setAttribute('width', '100%');
     svg.setAttribute('height', '100%');
@@ -1649,16 +1649,16 @@ function renderRizomaGraph() {
     svg.style.left = '0';
     svgContainer.appendChild(svg);
     container.appendChild(svgContainer);
-    
+
     // Renderizar baseado no modo de visualização
     if (viewMode === 'graph') {
         renderGraphView(container, filteredConcepts);
     } else {
         renderGridView(container, filteredConcepts);
     }
-    
+
     rizomaOverlay.appendChild(container);
-    
+
     // Desenhar conexões e garantir que o card selecionado esteja visível (modo grid)
     if (selectedConcept && viewMode === 'grid') {
         setTimeout(() => {
@@ -1691,14 +1691,14 @@ function renderGridView(container, filteredConcepts) {
         position: relative;
         z-index: 1;
     `;
-    
+
     // Renderizar apenas conceitos filtrados
     filteredConcepts.forEach(([key, concept]) => {
         const card = createConceptCard(key, concept);
         card.dataset.conceptKey = key;
         grid.appendChild(card);
     });
-    
+
     // Mensagem se não houver resultados
     if (filteredConcepts.length === 0) {
         const noResults = document.createElement('div');
@@ -1716,9 +1716,9 @@ function renderGridView(container, filteredConcepts) {
         `;
         grid.appendChild(noResults);
     }
-    
+
     container.appendChild(grid);
-    
+
     // Legenda de camadas
     const legend = createLegend();
     container.appendChild(legend);
@@ -1740,19 +1740,19 @@ function renderGraphView(container, filteredConcepts) {
         margin-bottom: 2rem;
         overflow: hidden;
     `;
-    
+
     const canvas = document.createElement('canvas');
     canvas.width = 1400;
     canvas.height = 600;
     canvas.style.width = '100%';
     canvas.style.height = '100%';
     graphContainer.appendChild(canvas);
-    
+
     container.appendChild(graphContainer);
-    
+
     // Inicializar simulação de força
     initForceDirectedGraph(canvas, filteredConcepts);
-    
+
     // Legenda
     const legend = createLegend();
     container.appendChild(legend);
@@ -1774,7 +1774,7 @@ function createLegend() {
         border-radius: 12px;
         border: 1px solid rgba(139, 92, 246, 0.3);
     `;
-    
+
     legend.innerHTML = `
         <div style="display: flex; align-items: center; gap: 0.5rem;">
             <div style="width: 20px; height: 20px; background: #8b5cf6; border-radius: 4px;"></div>
@@ -1793,7 +1793,7 @@ function createLegend() {
             <span style="color: #ef4444;">Crítica</span>
         </div>
     `;
-    
+
     return legend;
 }
 
@@ -1873,7 +1873,7 @@ function initForceDirectedGraph(canvas, filteredConcepts) {
     const ctx = canvas.getContext('2d');
     const width = canvas.width;
     const height = canvas.height;
-    
+
     // Criar nós com posições iniciais
     const nodes = filteredConcepts.map(([key, concept]) => ({
         key,
@@ -1884,13 +1884,13 @@ function initForceDirectedGraph(canvas, filteredConcepts) {
         vy: 0,
         radius: 25
     }));
-    
+
     // Criar mapa de índices
     const nodeMap = {};
     nodes.forEach((node, i) => {
         nodeMap[node.key] = i;
     });
-    
+
     // Criar arestas
     const edges = [];
     filteredConcepts.forEach(([key, concept]) => {
@@ -1903,7 +1903,7 @@ function initForceDirectedGraph(canvas, filteredConcepts) {
             }
         });
     });
-    
+
     // Parâmetros da simulação
     const params = {
         repulsion: 5000,
@@ -1912,11 +1912,11 @@ function initForceDirectedGraph(canvas, filteredConcepts) {
         centerForce: 0.02,
         minDistance: 100
     };
-    
+
     let animationId;
     let isDragging = false;
     let draggedNode = null;
-    
+
     // Função de atualização
     function update() {
         // Força de repulsão entre todos os nós
@@ -1925,12 +1925,12 @@ function initForceDirectedGraph(canvas, filteredConcepts) {
                 const dx = nodes[j].x - nodes[i].x;
                 const dy = nodes[j].y - nodes[i].y;
                 const dist = Math.sqrt(dx * dx + dy * dy) || 1;
-                
+
                 if (dist < params.minDistance) {
                     const force = params.repulsion / (dist * dist);
                     const fx = (dx / dist) * force;
                     const fy = (dy / dist) * force;
-                    
+
                     nodes[i].vx -= fx;
                     nodes[i].vy -= fy;
                     nodes[j].vx += fx;
@@ -1938,7 +1938,7 @@ function initForceDirectedGraph(canvas, filteredConcepts) {
                 }
             }
         }
-        
+
         // Força de atração pelas arestas
         edges.forEach(edge => {
             const source = nodes[edge.source];
@@ -1946,28 +1946,28 @@ function initForceDirectedGraph(canvas, filteredConcepts) {
             const dx = target.x - source.x;
             const dy = target.y - source.y;
             const dist = Math.sqrt(dx * dx + dy * dy) || 1;
-            
+
             const force = dist * params.attraction;
             const fx = (dx / dist) * force;
             const fy = (dy / dist) * force;
-            
+
             source.vx += fx;
             source.vy += fy;
             target.vx -= fx;
             target.vy -= fy;
         });
-        
+
         // Força para o centro
         const centerX = width / 2;
         const centerY = height / 2;
-        
+
         nodes.forEach(node => {
             const dx = centerX - node.x;
             const dy = centerY - node.y;
             node.vx += dx * params.centerForce;
             node.vy += dy * params.centerForce;
         });
-        
+
         // Atualizar posições
         nodes.forEach(node => {
             if (node !== draggedNode) {
@@ -1975,18 +1975,18 @@ function initForceDirectedGraph(canvas, filteredConcepts) {
                 node.vy *= params.damping;
                 node.x += node.vx;
                 node.y += node.vy;
-                
+
                 // Manter dentro dos limites
                 node.x = Math.max(node.radius, Math.min(width - node.radius, node.x));
                 node.y = Math.max(node.radius, Math.min(height - node.radius, node.y));
             }
         });
     }
-    
+
     // Função de renderização
     function render() {
         ctx.clearRect(0, 0, width, height);
-        
+
         // Desenhar arestas
         ctx.strokeStyle = 'rgba(139, 92, 246, 0.2)';
         ctx.lineWidth = 1;
@@ -1998,11 +1998,11 @@ function initForceDirectedGraph(canvas, filteredConcepts) {
             ctx.lineTo(target.x, target.y);
             ctx.stroke();
         });
-        
+
         // Desenhar nós
         nodes.forEach(node => {
             const isSelected = node.key === selectedConcept;
-            
+
             // Círculo externo (brilho se selecionado)
             if (isSelected) {
                 ctx.fillStyle = node.concept.color + '40';
@@ -2010,24 +2010,24 @@ function initForceDirectedGraph(canvas, filteredConcepts) {
                 ctx.arc(node.x, node.y, node.radius + 10, 0, Math.PI * 2);
                 ctx.fill();
             }
-            
+
             // Círculo principal
             ctx.fillStyle = node.concept.color;
             ctx.beginPath();
             ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
             ctx.fill();
-            
+
             // Borda
             ctx.strokeStyle = isSelected ? '#ffffff' : 'rgba(255, 255, 255, 0.3)';
             ctx.lineWidth = isSelected ? 3 : 1;
             ctx.stroke();
-            
+
             // Texto
             ctx.fillStyle = '#ffffff';
             ctx.font = 'bold 12px sans-serif';
             ctx.textAlign = 'center';
             ctx.textBaseline = 'middle';
-            
+
             // Dividir texto em linhas se necessário
             const words = node.concept.name.split(' ');
             if (words.length > 2) {
@@ -2038,14 +2038,14 @@ function initForceDirectedGraph(canvas, filteredConcepts) {
             }
         });
     }
-    
+
     // Loop de animação
     function animate() {
         update();
         render();
         animationId = requestAnimationFrame(animate);
     }
-    
+
     // Interação com mouse
     canvas.addEventListener('mousedown', (e) => {
         const rect = canvas.getBoundingClientRect();
@@ -2053,13 +2053,13 @@ function initForceDirectedGraph(canvas, filteredConcepts) {
         const scaleY = canvas.height / rect.height;
         const mouseX = (e.clientX - rect.left) * scaleX;
         const mouseY = (e.clientY - rect.top) * scaleY;
-        
+
         // Verificar se clicou em algum nó
         for (let node of nodes) {
             const dx = mouseX - node.x;
             const dy = mouseY - node.y;
             const dist = Math.sqrt(dx * dx + dy * dy);
-            
+
             if (dist < node.radius) {
                 isDragging = true;
                 draggedNode = node;
@@ -2068,7 +2068,7 @@ function initForceDirectedGraph(canvas, filteredConcepts) {
             }
         }
     });
-    
+
     canvas.addEventListener('mousemove', (e) => {
         if (isDragging && draggedNode) {
             const rect = canvas.getBoundingClientRect();
@@ -2079,45 +2079,45 @@ function initForceDirectedGraph(canvas, filteredConcepts) {
             draggedNode.vx = 0;
             draggedNode.vy = 0;
         }
-        
+
         // Mudar cursor se estiver sobre um nó
         const rect = canvas.getBoundingClientRect();
         const scaleX = canvas.width / rect.width;
         const scaleY = canvas.height / rect.height;
         const mouseX = (e.clientX - rect.left) * scaleX;
         const mouseY = (e.clientY - rect.top) * scaleY;
-        
+
         let overNode = false;
         for (let node of nodes) {
             const dx = mouseX - node.x;
             const dy = mouseY - node.y;
             const dist = Math.sqrt(dx * dx + dy * dy);
-            
+
             if (dist < node.radius) {
                 overNode = true;
                 break;
             }
         }
-        
+
         canvas.style.cursor = overNode ? 'pointer' : 'default';
     });
-    
+
     canvas.addEventListener('mouseup', () => {
         isDragging = false;
         draggedNode = null;
     });
-    
+
     canvas.addEventListener('mouseleave', () => {
         isDragging = false;
         draggedNode = null;
     });
-    
+
     // Iniciar animação
     animate();
-    
+
     // Limpar ao fechar
     const originalClose = closeRizoma;
-    window.closeRizoma = function() {
+    window.closeRizoma = function () {
         if (animationId) {
             cancelAnimationFrame(animationId);
         }
@@ -2131,33 +2131,33 @@ function initForceDirectedGraph(canvas, filteredConcepts) {
  */
 function drawConnections() {
     if (!selectedConcept) return;
-    
+
     const svg = document.querySelector('#connection-svg-container svg');
     if (!svg) return;
-    
+
     // Limpar conexões anteriores
     svg.innerHTML = '';
-    
+
     // Obter posição do card selecionado
     const selectedCard = document.querySelector(`[data-concept-key="${selectedConcept}"]`);
     if (!selectedCard) return;
-    
+
     const selectedRect = selectedCard.getBoundingClientRect();
     const containerRect = document.getElementById('concepts-grid').getBoundingClientRect();
-    
+
     const selectedCenterX = selectedRect.left + selectedRect.width / 2 - containerRect.left;
     const selectedCenterY = selectedRect.top + selectedRect.height / 2 - containerRect.top;
-    
+
     // Desenhar linha para cada conexão
     const concept = conceptGraph[selectedConcept];
     concept.connections.forEach(connKey => {
         const connCard = document.querySelector(`[data-concept-key="${connKey}"]`);
         if (!connCard) return;
-        
+
         const connRect = connCard.getBoundingClientRect();
         const connCenterX = connRect.left + connRect.width / 2 - containerRect.left;
         const connCenterY = connRect.top + connRect.height / 2 - containerRect.top;
-        
+
         // Criar linha SVG
         const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
         line.setAttribute('x1', selectedCenterX);
@@ -2168,7 +2168,7 @@ function drawConnections() {
         line.setAttribute('stroke-width', '2');
         line.setAttribute('stroke-opacity', '0.5');
         line.setAttribute('stroke-dasharray', '5,5');
-        
+
         // Animação de "formiga marchando"
         const animate = document.createElementNS('http://www.w3.org/2000/svg', 'animate');
         animate.setAttribute('attributeName', 'stroke-dashoffset');
@@ -2176,7 +2176,7 @@ function drawConnections() {
         animate.setAttribute('to', '10');
         animate.setAttribute('dur', '0.5s');
         animate.setAttribute('repeatCount', 'indefinite');
-        
+
         line.appendChild(animate);
         svg.appendChild(line);
     });
@@ -2191,10 +2191,10 @@ function createConceptCard(key, concept) {
     card.className = 'concept-card';
     card.dataset.concept = key;
     card.dataset.conceptKey = key;
-    
+
     const isSelected = selectedConcept === key;
     const isConnected = selectedConcept && conceptGraph[selectedConcept]?.connections.includes(key);
-    
+
     card.style.cssText = `
         background: ${isSelected ? 'rgba(139, 92, 246, 0.2)' : isConnected ? 'rgba(99, 102, 241, 0.15)' : 'rgba(26, 26, 46, 0.8)'};
         border: 2px solid ${isSelected ? concept.color : isConnected ? conceptGraph[selectedConcept].color : 'rgba(' + hexToRgb(concept.color) + ', 0.3)'};
@@ -2206,14 +2206,14 @@ function createConceptCard(key, concept) {
         ${isSelected ? 'transform: scale(1.05); box-shadow: 0 0 30px ' + concept.color + ';' : ''}
         ${isConnected ? 'box-shadow: 0 0 20px ' + conceptGraph[selectedConcept].color + '40;' : ''}
     `;
-    
+
     // Badge de camada temporal
     const layerBadge = {
         '-1': '🕰️ Passado',
         '0': '⚡ Presente',
         '1': '🔮 Futuro'
     }[concept.layer] || '❓';
-    
+
     card.innerHTML = `
         <div style="position: absolute; top: 0.5rem; right: 0.5rem; font-size: 0.7rem; opacity: 0.7;">
             ${layerBadge}
@@ -2224,30 +2224,30 @@ function createConceptCard(key, concept) {
             <strong style="color: #a78bfa; font-size: 0.85rem;">Conectado a (${concept.connections.length}):</strong>
             <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem;">
                 ${concept.connections.map(conn => {
-                    const connConcept = conceptGraph[conn];
-                    if (!connConcept) return '';
-                    return `<span style="background: ${connConcept.color}; color: white; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem;">${connConcept.name}</span>`;
-                }).join('')}
+        const connConcept = conceptGraph[conn];
+        if (!connConcept) return '';
+        return `<span style="background: ${connConcept.color}; color: white; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem;">${connConcept.name}</span>`;
+    }).join('')}
             </div>
         </div>
     `;
-    
+
     card.addEventListener('click', () => selectConcept(key));
-    
+
     card.addEventListener('mouseenter', () => {
         if (key !== selectedConcept) {
             card.style.transform = 'translateY(-5px)';
             card.style.boxShadow = `0 10px 30px ${concept.color}40`;
         }
     });
-    
+
     card.addEventListener('mouseleave', () => {
         if (key !== selectedConcept) {
             card.style.transform = '';
             card.style.boxShadow = isConnected ? `0 0 20px ${conceptGraph[selectedConcept].color}40` : '';
         }
     });
-    
+
     return card;
 }
 
@@ -2258,7 +2258,7 @@ function selectConcept(key) {
     console.log('🎯 Conceito selecionado:', key);
     selectedConcept = selectedConcept === key ? null : key;
     renderRizomaGraph();
-    
+
     // Mostrar painel de detalhes se houver conceito selecionado
     if (selectedConcept) {
         showConceptDetails(selectedConcept);
@@ -2273,10 +2273,10 @@ function selectConcept(key) {
 function showConceptDetails(key) {
     const concept = conceptGraph[key];
     if (!concept) return;
-    
+
     // Remover painel existente
     hideConceptDetails();
-    
+
     // Criar painel
     const panel = document.createElement('div');
     panel.id = 'concept-details-panel';
@@ -2295,7 +2295,7 @@ function showConceptDetails(key) {
         box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
         animation: slideInRight 0.3s ease;
     `;
-    
+
     // Adicionar animação CSS
     const style = document.createElement('style');
     style.textContent = `
@@ -2322,14 +2322,14 @@ function showConceptDetails(key) {
         }
     `;
     document.head.appendChild(style);
-    
+
     // Badge de camada
     const layerBadge = {
         '-1': '🕰️ Passado',
         '0': '⚡ Presente',
         '1': '🔮 Futuro'
     }[concept.layer] || '❓';
-    
+
     // Conteúdo do painel
     panel.innerHTML = `
         <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
@@ -2368,9 +2368,9 @@ function showConceptDetails(key) {
             </h4>
             <div style="display: flex; flex-direction: column; gap: 0.75rem;">
                 ${concept.connections.map(connKey => {
-                    const connConcept = conceptGraph[connKey];
-                    if (!connConcept) return '';
-                    return `
+        const connConcept = conceptGraph[connKey];
+        if (!connConcept) return '';
+        return `
                         <div onclick="selectConcept('${connKey}')" style="
                             background: rgba(${hexToRgb(connConcept.color)}, 0.1);
                             border: 1px solid rgba(${hexToRgb(connConcept.color)}, 0.3);
@@ -2399,7 +2399,7 @@ function showConceptDetails(key) {
                             </div>
                         </div>
                     `;
-                }).join('')}
+    }).join('')}
             </div>
         </div>
         
@@ -2412,9 +2412,9 @@ function showConceptDetails(key) {
             💡 <strong>Dica:</strong> Clique em uma conexão para explorar outro conceito
         </div>
     `;
-    
+
     rizomaOverlay.appendChild(panel);
-    
+
     // Expor função globalmente
     window.hideConceptDetails = hideConceptDetails;
 }
@@ -2434,8 +2434,8 @@ function hideConceptDetails() {
  */
 function hexToRgb(hex) {
     const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-    return result ? 
-        `${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(result[3], 16)}` : 
+    return result ?
+        `${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(result[3], 16)}` :
         '139, 92, 246';
 }
 
@@ -2444,7 +2444,7 @@ function hexToRgb(hex) {
  */
 function tagConceptsInContent() {
     console.log('🏷️ Adicionando tags de conceitos...');
-    
+
     // Função auxiliar para processar nó de texto
     function processTextNode(textNode) {
         const text = textNode.textContent;
@@ -2557,19 +2557,19 @@ function tagConceptsInContent() {
         parent.insertBefore(fragment, textNode);
         parent.removeChild(textNode);
     }
-    
+
     // Procurar em parágrafos e listas, mas apenas nos nós de texto
     const selectors = 'p, li, h1, h2, h3, h4, blockquote, td';
     document.querySelectorAll(selectors).forEach(element => {
         // Pular se já foi processado ou se contém elementos interativos
-        if (element.querySelector('.concept-tag') || 
-            element.querySelector('a') || 
+        if (element.querySelector('.concept-tag') ||
+            element.querySelector('a') ||
             element.querySelector('button') ||
             element.closest('.sidebar') ||
             element.closest('#rizoma-overlay')) {
             return;
         }
-        
+
         // Processar apenas nós de texto diretos
         Array.from(element.childNodes).forEach(node => {
             if (node.nodeType === Node.TEXT_NODE && node.textContent.trim()) {
@@ -2577,7 +2577,7 @@ function tagConceptsInContent() {
             }
         });
     });
-    
+
     console.log('✅ Conceitos tagueados no conteúdo');
 }
 
@@ -2607,16 +2607,16 @@ function buildConceptRegex(escapedName) {
 // Inicializar ao carregar página
 document.addEventListener('DOMContentLoaded', () => {
     console.log('🌀 Módulo de navegação rizomática carregado');
-    
+
     // Inicializar overlay imediatamente
     initializeRizoma();
-    
+
     // Expor funções globalmente ANTES de taguear
     window.openRizoma = openRizoma;
     window.closeRizoma = closeRizoma;
     window.selectConcept = selectConcept;
     window.hideConceptDetails = hideConceptDetails;
-    
+
     // Esperar conteúdo carregar antes de taguear
     setTimeout(() => {
         tagConceptsInContent();
@@ -2629,7 +2629,7 @@ document.addEventListener('keydown', (e) => {
     // R para toggle
     if ((e.key === 'r' || e.key === 'R') && !e.ctrlKey && !e.metaKey && !e.altKey) {
         // Verificar se não está digitando em um input
-        if (document.activeElement.tagName !== 'INPUT' && 
+        if (document.activeElement.tagName !== 'INPUT' &&
             document.activeElement.tagName !== 'TEXTAREA') {
             e.preventDefault();
             if (!rizomaActive) {
@@ -2639,7 +2639,7 @@ document.addEventListener('keydown', (e) => {
             }
         }
     }
-    
+
     // ESC para fechar
     if (e.key === 'Escape' && rizomaActive) {
         e.preventDefault();
