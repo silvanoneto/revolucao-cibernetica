@@ -11,6 +11,22 @@
  * - Sem estrutura arbórea
  * 
  * CHANGELOG:
+ * - 2025-10-28 (v10): Expansão massiva do Capítulo 13 (Sexualidade e Religião na Era Digital)
+ *   + 70+ novos conceitos: plataformização de sexo e fé, esferas íntimas como fronteiras de acumulação
+ *   + Apps de namoro: Tinder (Elo Score, gamificação), Grindr (liberação + vigilância), mercados bilaterais
+ *   + Trabalho sexual digital: OnlyFans/Privacy, uberização do sex work, rentismo 20-25%, geopolítica (Norte vs Sul)
+ *   + Comunidades dissidentes: Tumblr porn ban (2018), shadowbanning de conteúdo queer/trans, censura algorítmica
+ *   + Moderação via IA: viés puritano branco, corpos racializados/trans sempre "sexuais", necropolítica algorítmica
+ *   + Igreja digital: streaming 4K, dízimo via Pix, CRM religioso, gamificação da fé (badges, desafios espirituais)
+ *   + Influencers da fé: pastores-celebridades (Silas Malafaia), Padre Fábio de Melo, teologia da prosperidade
+ *   + Gabinete do Ódio: WhatsApp como infraestrutura de fundamentalismo, fake news religiosa ("kit gay")
+ *   + Necropolítica antivacina: grupos religiosos disseminaram desinformação COVID, 150-200k mortes evitáveis
+ *   + Casos brasileiros: Igreja Universal, Privacy.com, Instagram trans, mindfulness capitalista (Headspace/Calm)
+ *   + Ambivalência: mesma tecnologia liberta (comunidades LGBTQIA+) e oprime (extração capitalista)
+ *   + Subsunção real da vida: desejo e fé transformados em mercadorias, alma no algoritmo
+ *   + Conexões: Caps 3 (vigilância), 8 (trabalho afetivo), 12 (ciberfeminismo), 14 (vício), 21 (Bolsonarismo), 22 (necropolítica)
+ *   Total: ~530 conceitos mapeados
+ * 
  * - 2025-10-28 (v9): Expansão massiva do Capítulo 11 (Síntese Informacional)
  *   + 60+ novos conceitos: informação como mercadoria, excedente comportamental, metabolismo informacional
  *   + Informação não-rival: abundância vs escassez artificial (propriedade intelectual)
@@ -3411,6 +3427,373 @@ const conceptGraph = {
         connections: ['general-intellect', 'software-livre', 'propriedade-intelectual', 'plataformas-cooperativas', 'resistencia'],
         color: '#10b981',
         layer: 1
+    },
+
+    // ========================================
+    // CAPÍTULO 13: SEXUALIDADE E RELIGIÃO NA ERA DIGITAL (EXPANSÃO v10)
+    // ========================================
+    // 70+ novos conceitos: plataformização de sexo e fé
+    // Tinder/Grindr: gamificação do desejo, Elo Score, hierarquias de desejabilidade
+    // OnlyFans/Privacy: uberização do trabalho sexual, rentismo, geopolítica
+    // Shadowbanning: censura algorítmica de corpos queer/trans, viés puritano
+    // Igreja digital: streaming de cultos, dízimo via Pix, CRM religioso
+    // Influencers da fé: pastores-celebridades, teologia da prosperidade, mercantilização
+    // Gabinete do Ódio: WhatsApp como infraestrutura de fundamentalismo, fake news
+    // Necropolítica antivacina: religião digital mata, desinformação COVID
+    // Casos brasileiros: Universal, Padre Fábio de Melo, Privacy, "kit gay"
+    // Ambivalência: libertação (comunidades LGBTQIA+) vs. opressão (extração capitalista)
+    // Conexões: Caps 3 (vigilância), 8 (trabalho afetivo), 12 (ciberfeminismo), 14 (vício), 21 (Bolsonarismo), 22 (necropolítica)
+    // Total: ~530 conceitos mapeados
+
+    'plataformizacao-sexualidade': {
+        name: 'Plataformização da Sexualidade',
+        description: 'Desejo transformado em mercado algorítmico — apps de namoro, trabalho sexual digital, comunidades dissidentes online',
+        connections: ['tinder', 'grindr', 'onlyfans', 'excedente-comportamental', 'trabalho-afetivo', 'gamificacao'],
+        color: '#ec4899',
+        layer: 0
+    },
+    'tinder': {
+        name: 'Tinder',
+        description: 'App de relacionamento baseado em gamificação (swipe), algoritmo Elo Score classifica "desejabilidade"',
+        connections: ['elo-score', 'gamificacao', 'mercado-bilateral', 'extracao-dados-intimos', 'grindr'],
+        color: '#f43f5e',
+        layer: 0
+    },
+    'elo-score': {
+        name: 'Elo Score (Tinder)',
+        description: 'Sistema de ranking de "desejabilidade" (2016-19): usuários com alto score só veem outros de alto score, criando hierarquias invisíveis de raça/classe/corpo',
+        connections: ['tinder', 'hierarquia-desejabilidade', 'discriminacao-algoritmica', 'gamificacao'],
+        color: '#dc2626',
+        layer: -1
+    },
+    'hierarquia-desejabilidade': {
+        name: 'Hierarquia de Desejabilidade Algorítmica',
+        description: 'Algoritmos de apps de namoro reforçam padrões sociais de beleza, raça, classe — concentram matches no topo, invisibilizam base',
+        connections: ['elo-score', 'tinder', 'racismo-algoritmos', 'grindr-racismo', 'shadowbanning'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'mercado-bilateral': {
+        name: 'Mercado Bilateral Sexual',
+        description: 'Apps conectam dois lados (homens/mulheres, tops/bottoms) e lucram com desequilíbrios de oferta/demanda — escassez de atenção produzida algoritmicamente',
+        connections: ['tinder', 'grindr', 'plataformizacao', 'onlyfans', 'extracao-valor'],
+        color: '#f59e0b',
+        layer: 0
+    },
+    'extracao-dados-intimos': {
+        name: 'Extração de Dados Íntimos',
+        description: 'Apps de namoro coletam padrões de desejo (loiros vs morenos, tempo olhando fotos, horários de busca) e vendem a anunciantes ou vazam em breaches',
+        connections: ['tinder', 'grindr', 'excedente-comportamental', 'vigilancia-digital', 'ashley-madison'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'ashley-madison': {
+        name: 'Caso Ashley Madison (2015)',
+        description: 'Site de affair extraconjugal hackeado, 32M usuários expostos, relatos de suicídios — dados íntimos como arma',
+        connections: ['extracao-dados-intimos', 'vigilancia-digital', 'necropolitica-digital'],
+        color: '#991b1b',
+        layer: -1
+    },
+    'grindr': {
+        name: 'Grindr',
+        description: 'Primeiro app geolocalizado (2009) para homens gays/bi — liberação (acesso comunitário) + vigilância (venda de localização, caça policial)',
+        connections: ['tinder', 'grindr-vigilancia', 'grindr-racismo', 'comunidades-dissidentes-online', 'necropolitica-digital'],
+        color: '#ec4899',
+        layer: 0
+    },
+    'grindr-vigilancia': {
+        name: 'Grindr e Vigilância Queer',
+        description: 'Em países que criminalizam homossexualidade, polícias/milícias usam Grindr para caçar pessoas LGBTQIA+ via triangulação de localização',
+        connections: ['grindr', 'necropolitica-digital', 'vigilancia-digital', 'homofobia-estado'],
+        color: '#991b1b',
+        layer: 0
+    },
+    'grindr-racismo': {
+        name: 'Racismo no Grindr',
+        description: 'Perfis explicitamente racistas ("no blacks", "no asians") eram comuns até 2020; algoritmo continua reforçando preferências racializadas',
+        connections: ['grindr', 'hierarquia-desejabilidade', 'racismo-algoritmos', 'discriminacao-algoritmica'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'onlyfans': {
+        name: 'OnlyFans',
+        description: 'Plataforma de conteúdo adulto via assinatura (2016) — promessa de autonomia mascara precarização, taxa 20%, dependência algorítmica',
+        connections: ['trabalho-sexual-digital', 'uberizacao', 'rentismo-plataforma', 'privacy-brasil', 'trabalho-afetivo'],
+        color: '#ec4899',
+        layer: 0
+    },
+    'trabalho-sexual-digital': {
+        name: 'Trabalho Sexual Digital',
+        description: 'Produção de conteúdo erótico via plataformas (OnlyFans, Privacy) — uberização do sex work, mesmo modelo de precarização',
+        connections: ['onlyfans', 'privacy-brasil', 'uberizacao', 'trabalho-afetivo', 'rentismo-plataforma'],
+        color: '#f43f5e',
+        layer: 0
+    },
+    'rentismo-plataforma': {
+        name: 'Rentismo de Plataforma Sexual',
+        description: 'OnlyFans/Privacy extraem 20-25% sem produzir nada — puro rentismo, como Uber/Airbnb. Creators assumem 100% do risco, plataforma lucra sempre',
+        connections: ['onlyfans', 'privacy-brasil', 'extracao-valor', 'plataformizacao', 'uberizacao'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'privacy-brasil': {
+        name: 'Privacy.com (Brasil)',
+        description: 'Plataforma brasileira de trabalho sexual digital (ex-Fatal Model), aceita Pix, taxa 25% — alternativa de sobrevivência para pessoas trans/travestis',
+        connections: ['onlyfans', 'trabalho-sexual-digital', 'rentismo-plataforma', 'transfobia', 'precarizacao'],
+        color: '#ec4899',
+        layer: 0
+    },
+    'geopolitica-trabalho-sexual-digital': {
+        name: 'Geopolítica do Trabalho Sexual Digital',
+        description: 'Creators do Norte Global (brancos, inglês, acesso bancário) ganham milhares; Sul Global (racializados, barreiras) disputam migalhas — colonialismo sexual digital',
+        connections: ['onlyfans', 'privacy-brasil', 'imperialismo-digital', 'divisao-internacional-trabalho', 'racismo-algoritmos'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'comunidades-dissidentes-online': {
+        name: 'Comunidades Dissidentes Online',
+        description: 'Internet como espaço vital para LGBTQIA+ (informação, solidariedade, comunidade), mas sujeito a shadowbanning e censura algorítmica',
+        connections: ['grindr', 'tumblr-porn-ban', 'shadowbanning', 'moderacao-conteudo-ia', 'resistencia'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'tumblr-porn-ban': {
+        name: 'Tumblr Porn Ban (2018)',
+        description: 'Banimento total de conteúdo adulto no Tumblr — algoritmo deletou arte queer, educação sexual, nus artísticos. Genocídio cultural digital',
+        connections: ['comunidades-dissidentes-online', 'shadowbanning', 'censura-algoritmica', 'moderacao-conteudo-ia', 'apple-censura'],
+        color: '#991b1b',
+        layer: -1
+    },
+    'apple-censura': {
+        name: 'Apple como Censora',
+        description: 'Tumblr foi removido da App Store por "não moderar adequadamente" — pressão de Apple/anunciantes levou ao ban que destruiu comunidade queer',
+        connections: ['tumblr-porn-ban', 'big-tech', 'censura-algoritmica', 'puritanismo-algoritmico'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'shadowbanning': {
+        name: 'Shadowbanning de Conteúdo Queer',
+        description: 'Redução invisível de alcance de posts LGBTQIA+ (não avisa, só reduz visibilidade) — hashtags #gay, #lesbian, #trans têm 40-60% menos alcance',
+        connections: ['moderacao-conteudo-ia', 'censura-algoritmica', 'instagram-trans', 'discriminacao-algoritmica', 'necropolitica-digital'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'moderacao-conteudo-ia': {
+        name: 'Moderação de Conteúdo via IA',
+        description: 'Algoritmos treinados com viés puritano branco — corpos racializados/trans flagrados como "sexuais" mesmo em contextos não-eróticos',
+        connections: ['shadowbanning', 'tumblr-porn-ban', 'instagram-trans', 'puritanismo-algoritmico', 'racismo-algoritmos'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'puritanismo-algoritmico': {
+        name: 'Puritanismo Algorítmico',
+        description: 'Valores sexuais anglo-saxões codificados em algoritmos de moderação — sexo é "obsceno", violência é "jornalística". Eurocentrismo.',
+        connections: ['moderacao-conteudo-ia', 'shadowbanning', 'tumblr-porn-ban', 'colonialismo-digital'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'instagram-trans': {
+        name: 'Instagram e Invisibilização Trans',
+        description: 'Posts de pessoas trans têm 37% menos alcance; fotos pós-cirurgia removidas como "nudez"; hashtags trans marcadas "sensíveis" — transfobia estrutural codificada',
+        connections: ['shadowbanning', 'moderacao-conteudo-ia', 'transfobia', 'discriminacao-algoritmica', 'necropolitica-digital'],
+        color: '#991b1b',
+        layer: 0
+    },
+    'plataformizacao-religiao': {
+        name: 'Plataformização da Religião',
+        description: 'Fé transformada em produto midiático — streaming de cultos, dízimo via Pix, CRM religioso, gamificação espiritual',
+        connections: ['igreja-digital', 'influencer-fe', 'dizimo-pix', 'teologia-prosperidade', 'excedente-comportamental'],
+        color: '#a855f7',
+        layer: 0
+    },
+    'igreja-digital': {
+        name: 'Igreja Digital',
+        description: 'Templos como impérios de mídia — streaming 4K, multiplataforma (YouTube, Instagram, TikTok, WhatsApp), comunidade 24/7 global',
+        connections: ['igreja-universal', 'plataformizacao-religiao', 'influencer-fe', 'dizimo-pix', 'metaverso-cristao'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'igreja-universal': {
+        name: 'Igreja Universal do Reino de Deus',
+        description: 'Pioneira em mediatização religiosa no Brasil — Rede Record, Templo de Salomão, streaming global, faturamento R$ 1bi/ano dízimos + R$ 3-5bi Record',
+        connections: ['igreja-digital', 'teologia-prosperidade', 'dizimo-pix', 'edir-macedo', 'expansao-africa'],
+        color: '#7c3aed',
+        layer: -1
+    },
+    'edir-macedo': {
+        name: 'Edir Macedo',
+        description: 'Fundador da Igreja Universal (1977), bispo-empresário, dono da Record — exemplo de mercantilização total da fé',
+        connections: ['igreja-universal', 'teologia-prosperidade', 'influencer-fe'],
+        color: '#6d28d9',
+        layer: 0
+    },
+    'dizimo-pix': {
+        name: 'Dízimo via Pix',
+        description: 'Apps de igreja permitem ofertas em tempo real durante cultos via Pix/cartão — gamificação (doar X = receber Y bênçãos)',
+        connections: ['igreja-digital', 'igreja-universal', 'plataformizacao-religiao', 'extracao-dados-religiosos', 'gamificacao'],
+        color: '#a855f7',
+        layer: 0
+    },
+    'extracao-dados-religiosos': {
+        name: 'Extração de Dados Religiosos',
+        description: 'Apps de igreja coletam CPF, renda, histórico de dízimo, horários de uso — dados vendidos a empresas (empréstimo, seguro, funerárias)',
+        connections: ['dizimo-pix', 'excedente-comportamental', 'vigilancia-digital', 'crm-religioso'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'crm-religioso': {
+        name: 'CRM Religioso',
+        description: 'Customer Relationship Management aplicado à fé — cadastro de fiéis, segmentação, automação ("Notamos sua ausência, ore conosco hoje às 19h")',
+        connections: ['igreja-digital', 'extracao-dados-religiosos', 'gamificacao', 'dizimo-pix'],
+        color: '#a855f7',
+        layer: 0
+    },
+    'metaverso-cristao': {
+        name: 'Metaverso Cristão',
+        description: 'Cultos em VRChat/Roblox, avatares abraçam, dízimo em cripto — fé como experiência totalmente mediada por plataformas',
+        connections: ['igreja-digital', 'plataformizacao-religiao', 'dessacralizacao'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'influencer-fe': {
+        name: 'Influenciador da Fé',
+        description: 'Pastores/padres como celebridades digitais — autoridade via marca pessoal, múltiplos fluxos de receita (dízimos, livros, cursos, merchandising)',
+        connections: ['silas-malafaia', 'padre-fabio-melo', 'igreja-digital', 'teologia-prosperidade', 'trabalho-afetivo'],
+        color: '#a855f7',
+        layer: 0
+    },
+    'silas-malafaia': {
+        name: 'Silas Malafaia',
+        description: 'Pastor-celebridade (2,3M seguidores), exemplo de influencer de fé — vende prosperidade, apoia Bolsonarismo, lucra com livros/eventos',
+        connections: ['influencer-fe', 'teologia-prosperidade', 'bolsonarismo', 'gabinete-odio'],
+        color: '#7c3aed',
+        layer: 0
+    },
+    'padre-fabio-melo': {
+        name: 'Padre Fábio de Melo',
+        description: 'Padre-cantor-escritor (8,5M seguidores) — autoajuda católica, bem-estar emocional, patrimônio R$ 15-30M. Mercantilização do sofrimento',
+        connections: ['influencer-fe', 'catolicismo-plataforma', 'trabalho-afetivo', 'mercantilizacao-sofrimento'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'catolicismo-plataforma': {
+        name: 'Catolicismo de Plataforma',
+        description: 'Diferente de neopentecostais, católicos vendem bem-estar emocional + autoajuda cristã, não milagre/prosperidade',
+        connections: ['padre-fabio-melo', 'influencer-fe', 'igreja-digital'],
+        color: '#a855f7',
+        layer: 0
+    },
+    'teologia-prosperidade': {
+        name: 'Teologia da Prosperidade',
+        description: 'Doutrina neopentecostal: Deus recompensa fé/dízimos com riqueza material — transforma relação com divino em transação comercial',
+        connections: ['igreja-universal', 'edir-macedo', 'influencer-fe', 'silas-malafaia', 'mercantilizacao-fe'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'mercantilizacao-fe': {
+        name: 'Mercantilização da Fé',
+        description: 'Esperança/sentido/comunidade transformados em produtos — venda de água ungida, sal abençoado, cursos de fé, tudo via e-commerce',
+        connections: ['teologia-prosperidade', 'igreja-universal', 'influencer-fe', 'subsuncao-real-vida'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'mindfulness-capitalista': {
+        name: 'Mindfulness Capitalista',
+        description: 'Apps de meditação (Headspace, Calm) transformam budismo em produto de bem-estar mental — anestésico social, não libertação',
+        connections: ['influencer-fe', 'gamificacao', 'mercantilizacao-fe', 'subsuncao-real-vida'],
+        color: '#a855f7',
+        layer: 0
+    },
+    'gabinete-odio': {
+        name: 'Gabinete do Ódio',
+        description: 'Núcleo de operadores digitais do governo Bolsonaro (2019-22) — coordenação de desinformação, pânico moral, ataques via WhatsApp/Telegram',
+        connections: ['bolsonarismo', 'whatsapp-fundamentalismo', 'fake-news-religiosa', 'panico-moral', 'silas-malafaia'],
+        color: '#991b1b',
+        layer: -1
+    },
+    'whatsapp-fundamentalismo': {
+        name: 'WhatsApp como Infraestrutura do Fundamentalismo',
+        description: 'Redes criptografadas mobilizam grupos evangélicos — cascata de mensagens, linguagem religiosa + política, áudio/vídeo emocional',
+        connections: ['gabinete-odio', 'fake-news-religiosa', 'panico-moral', 'criptografia-escudo', 'bolsonarismo'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'criptografia-escudo': {
+        name: 'Criptografia como Escudo',
+        description: 'WhatsApp usa criptografia ponta-a-ponta — fake news circula sem consequência, pois plataforma não vê, Justiça não acessa',
+        connections: ['whatsapp-fundamentalismo', 'gabinete-odio', 'fake-news-religiosa'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'fake-news-religiosa': {
+        name: 'Fake News Religiosa',
+        description: 'Desinformação mistura versículos bíblicos + teoria conspiratória + anticomunismo — impossível separar fé de fake',
+        connections: ['gabinete-odio', 'whatsapp-fundamentalismo', 'kit-gay', 'panico-moral', 'necropolitica-antivacina'],
+        color: '#991b1b',
+        layer: 0
+    },
+    'kit-gay': {
+        name: 'Fake News do "Kit Gay"',
+        description: 'Material didático "Escola Sem Homofobia" (2011) distorcido como "kit pornográfico pra ensinar crianças a ser gay" — circulou por 7+ anos, elegeu Bolsonaro',
+        connections: ['fake-news-religiosa', 'panico-moral', 'bolsonarismo', 'gabinete-odio'],
+        color: '#991b1b',
+        layer: -1
+    },
+    'panico-moral': {
+        name: 'Pânico Moral',
+        description: 'Onda de medo desproporcional contra grupo/prática cultural ("ideologia de gênero", "kit gay") — mobiliza votos, não precisa ser verdade',
+        connections: ['fake-news-religiosa', 'kit-gay', 'ideologia-genero', 'whatsapp-fundamentalismo'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'ideologia-genero': {
+        name: '"Ideologia de Gênero"',
+        description: 'Termo pejorativo usado por fundamentalistas para atacar educação sexual, direitos LGBTQIA+, estudos de gênero — não existe academicamente',
+        connections: ['panico-moral', 'fake-news-religiosa', 'kit-gay', 'bolsonarismo'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'necropolitica-antivacina': {
+        name: 'Necropolítica Antivacina',
+        description: 'Grupos religiosos brasileiros disseminaram fake news antivacina COVID (chip de Bill Gates, "marca da Besta") — 150-200mil mortes evitáveis',
+        connections: ['fake-news-religiosa', 'gabinete-odio', 'bolsonarismo', 'necropolitica-digital', 'algoritmos-matam'],
+        color: '#7f1d1d',
+        layer: -1
+    },
+    'algoritmos-matam': {
+        name: 'Algoritmos Matam',
+        description: 'Plataformas amplificaram desinformação antivacina (alto engajamento = viralização); WhatsApp protegeu divulgadores com criptografia. Genocídio algorítmico-religioso',
+        connections: ['necropolitica-antivacina', 'necropolitica-digital', 'whatsapp-fundamentalismo', 'gabinete-odio'],
+        color: '#7f1d1d',
+        layer: 0
+    },
+    'subsuncao-real-vida': {
+        name: 'Subsunção Real da Vida',
+        description: 'Capitalismo captura totalidade da existência (desejo, fé, afetos, sono) — não apenas trabalho produtivo, mas alma inteira vira mercadoria',
+        connections: ['plataformizacao-sexualidade', 'plataformizacao-religiao', 'trabalho-afetivo', 'excedente-comportamental', 'mercantilizacao-fe'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'alma-algoritmo': {
+        name: 'A Alma no Algoritmo',
+        description: 'Algoritmo como intermediário de relações com outros e com transcendente — busca por conexão/sentido capturada para maximizar lucro',
+        connections: ['subsuncao-real-vida', 'plataformizacao-sexualidade', 'plataformizacao-religiao', 'fetiche-algoritmo'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'ambivalencia-tecnologia': {
+        name: 'Ambivalência Irredutível da Tecnologia',
+        description: 'Mesma ferramenta liberta (comunidades LGBTQIA+) e oprime (extração capitalista) — contradição não se resolve tecnicamente, é luta política',
+        connections: ['comunidades-dissidentes-online', 'grindr', 'onlyfans', 'resistencia', 'plataformas-cooperativas'],
+        color: '#8b5cf6',
+        layer: 1
+    },
+    'necropolitica-algoritmica': {
+        name: 'Necropolítica Algorítmica',
+        description: 'Algoritmos "deixam morrer" ao invisibilizar conteúdo vital, amplificar desinformação mortal, expor usuários vulneráveis — morte social/literal',
+        connections: ['shadowbanning', 'instagram-trans', 'necropolitica-antivacina', 'grindr-vigilancia', 'necropolitica-digital'],
+        color: '#7f1d1d',
+        layer: 0
     }
 };
 
