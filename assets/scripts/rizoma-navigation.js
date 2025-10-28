@@ -11,6 +11,19 @@
  * - Sem estrutura arbórea
  * 
  * CHANGELOG:
+ * - 2025-10-28 (v7): Expansão massiva do Capítulo 9 (Pós-Operaísmo e a Teoria da Multidão)
+ *   + 35+ novos conceitos: Multidão, Império, Biopoder, Êxodo, Comum
+ *   + Hardt & Negri: Império (rede de poder desterritorializada), Multidão (vs. Povo)
+ *   + Virno: Gramática da Multidão, Êxodo como estratégia política, defecção criativa
+ *   + O Comum: natural, artificial/social, metropolitano/urbano
+ *   + Cercamento do comum: privatização digital, patentes, copyright, dados
+ *   + Instituições do comum: licenças livres, cooperativas de plataforma, governança distribuída
+ *   + Biopoder: subsunção real da vida, trabalho biopolítico, produção de subjetividade
+ *   + Críticas: eurocentrismo, trabalho reprodutivo invisibilizado (Federici), otimismo tecnológico
+ *   + MST e MTST como exemplos brasileiros de multidão e êxodo
+ *   + Conexões: trabalho imaterial (Cap 8), Wertkritik (Cap 10), cooperativas (Cap 19)
+ *   Total: ~350 conceitos mapeados
+ * 
  * - 2025-10-28 (v6): Expansão massiva do Capítulo 8 (Trabalho Imaterial, Cognitivo e Afetivo)
  *   + 40+ novos conceitos: trabalho cognitivo, trabalho afetivo, general intellect
  *   + Lazzarato: dimensões do trabalho imaterial (informacional + cultural/afetiva)
@@ -1095,6 +1108,242 @@ const conceptGraph = {
         color: '#8b5cf6',
         layer: 0
     },
+
+    // ========================================
+    // CAPÍTULO 9: PÓS-OPERAÍSMO E A TEORIA DA MULTIDÃO
+    // ========================================
+    'pos-operaismo': {
+        name: 'Pós-Operaísmo',
+        description: 'Atualização do operaísmo para a era do trabalho imaterial e capitalismo cognitivo',
+        connections: ['operaismo', 'multidao-conceito', 'imperio-livro', 'comum-conceito', 'hardt-negri', 'virno'],
+        color: '#10b981',
+        layer: 0
+    },
+    'multidao-conceito': {
+        name: 'Multidão',
+        description: 'Multiplicidade de singularidades que cooperam - não pode ser reduzida a unidade (vs. Povo)',
+        connections: ['pos-operaismo', 'hardt-negri', 'virno', 'povo-conceito', 'general-intellect', 'comum-conceito'],
+        color: '#10b981',
+        layer: 0
+    },
+    'povo-conceito': {
+        name: 'Povo (vs. Multidão)',
+        description: 'Identidade unificada que subsume diferenças - vontade geral representada pelo Estado',
+        connections: ['multidao-conceito', 'estado', 'representacao-politica'],
+        color: '#10b981',
+        layer: -1
+    },
+    'imperio-livro': {
+        name: 'Império (Hardt & Negri)',
+        description: 'Nova forma de soberania global - rede descentralizada de poder (Estados, corporações, FMI, OMC)',
+        connections: ['pos-operaismo', 'hardt-negri', 'imperialismo-digital', 'multidao-conceito', 'biopoder-conceito'],
+        color: '#10b981',
+        layer: 0
+    },
+    'hardt-negri': {
+        name: 'Michael Hardt & Antonio Negri',
+        description: 'Autores de Império, Multidão, Commonwealth - teóricos do pós-operaísmo',
+        connections: ['pos-operaismo', 'imperio-livro', 'multidao-conceito', 'comum-conceito', 'bioproducao'],
+        color: '#10b981',
+        layer: -1
+    },
+    'virno': {
+        name: 'Paolo Virno',
+        description: 'Gramática da Multidão - linguagem e trabalho imaterial, Êxodo como estratégia',
+        connections: ['pos-operaismo', 'multidao-conceito', 'exodo-estrategia', 'general-intellect', 'operaismo'],
+        color: '#10b981',
+        layer: -1
+    },
+    'biopoder-conceito': {
+        name: 'Biopoder',
+        description: 'Poder sobre a vida da população (Foucault) - fazer viver ou deixar morrer',
+        connections: ['imperio-livro', 'bioproducao', 'trabalho-imaterial', 'subsuncao-real-vida'],
+        color: '#10b981',
+        layer: 0
+    },
+    'bioproducao': {
+        name: 'Bioprodução / Trabalho Biopolítico',
+        description: 'Trabalho que produz e reproduz a vida social em sua totalidade (afetos, relações, subjetividade)',
+        connections: ['trabalho-afetivo', 'biopoder-conceito', 'hardt-negri', 'imperio-livro', 'multidao-conceito'],
+        color: '#10b981',
+        layer: 0
+    },
+    'subsuncao-real-vida': {
+        name: 'Subsunção Real da Vida',
+        description: 'Toda a vida (não só trabalho) é capturada pelo capital - trabalho 24/7, redes sociais, sono',
+        connections: ['biopoder-conceito', 'trabalho-imaterial', 'fabrica-social', 'capitalismo-vigilancia'],
+        color: '#10b981',
+        layer: 0
+    },
+    'exodo-estrategia': {
+        name: 'Êxodo (Estratégia Política)',
+        description: 'Deserção criativa + construção de alternativas - não tomar o poder, mas construir outro poder',
+        connections: ['virno', 'pos-operaismo', 'recusa-trabalho', 'comum-conceito', 'mst-mtst', 'zapatistas'],
+        color: '#10b981',
+        layer: 1 // Futuro (estratégia)
+    },
+    'comum-conceito': {
+        name: 'O Comum',
+        description: 'Riqueza produzida e compartilhada - nem estatal nem privada (natural, artificial, urbana)',
+        connections: ['pos-operaismo', 'hardt-negri', 'comum-natural', 'comum-artificial', 'comum-urbano', 'cercamento-digital'],
+        color: '#10b981',
+        layer: 0
+    },
+    'comum-natural': {
+        name: 'Comum Natural',
+        description: 'Recursos compartilhados da Terra: ar, água, florestas, biodiversidade',
+        connections: ['comum-conceito', 'cercamento-classico', 'elinor-ostrom'],
+        color: '#10b981',
+        layer: -1
+    },
+    'comum-artificial': {
+        name: 'Comum Artificial / Social',
+        description: 'Conhecimento, linguagem, código, cultura produzidos coletivamente',
+        connections: ['comum-conceito', 'general-intellect', 'wikipedia-caso', 'software-livre', 'common-digital'],
+        color: '#10b981',
+        layer: 0
+    },
+    'comum-urbano': {
+        name: 'Comum Metropolitano / Urbano',
+        description: 'Espaço urbano, encontros, redes de vizinhança - direito à cidade (Harvey)',
+        connections: ['comum-conceito', 'david-harvey', 'direito-cidade', 'ocupacoes-urbanas'],
+        color: '#10b981',
+        layer: 0
+    },
+    'david-harvey': {
+        name: 'David Harvey',
+        description: 'Geógrafo marxista - acumulação por espoliação, direito à cidade, crítico do Império',
+        connections: ['comum-urbano', 'direito-cidade', 'neoliberalismo', 'acumulacao-primitiva'],
+        color: '#10b981',
+        layer: -1
+    },
+    'direito-cidade': {
+        name: 'Direito à Cidade',
+        description: 'Direito coletivo de moldar e recriar o espaço urbano - não só acessar',
+        connections: ['comum-urbano', 'david-harvey', 'ocupacoes-urbanas', 'mst-mtst'],
+        color: '#10b981',
+        layer: 1
+    },
+    'cercamento-digital': {
+        name: 'Cercamento Digital do Comum',
+        description: 'Privatização de conhecimento, dados, cultura - patentes, copyright, propriedade de dados',
+        connections: ['comum-conceito', 'cercamento-classico', 'propriedade-intelectual', 'capitalismo-vigilancia'],
+        color: '#10b981',
+        layer: 0
+    },
+    'cercamento-classico': {
+        name: 'Cercamento (Enclosure)',
+        description: 'Privatização histórica dos commons - terras comunais transformadas em propriedade privada',
+        connections: ['comum-natural', 'cercamento-digital', 'acumulacao-primitiva'],
+        color: '#10b981',
+        layer: -1
+    },
+    'propriedade-intelectual': {
+        name: 'Propriedade Intelectual',
+        description: 'Copyright, patentes, marcas - mercantilização do conhecimento',
+        connections: ['cercamento-digital', 'software-livre', 'pirataria', 'creative-commons'],
+        color: '#10b981',
+        layer: 0
+    },
+    'creative-commons': {
+        name: 'Creative Commons',
+        description: 'Licenças que permitem compartilhamento e remix de obras culturais',
+        connections: ['propriedade-intelectual', 'software-livre', 'comum-artificial', 'instituicoes-comum'],
+        color: '#10b981',
+        layer: 1
+    },
+    'pirataria': {
+        name: 'Pirataria Digital',
+        description: 'Compartilhamento não-autorizado como resistência ao cercamento - Napster, Pirate Bay',
+        connections: ['propriedade-intelectual', 'cercamento-digital', 'resistencia', 'torrent'],
+        color: '#10b981',
+        layer: 0
+    },
+    'torrent': {
+        name: 'BitTorrent / P2P',
+        description: 'Protocolo peer-to-peer de compartilhamento sem servidor central',
+        connections: ['pirataria', 'comum-artificial', 'descentralizacao', 'instituicoes-comum'],
+        color: '#10b981',
+        layer: 0
+    },
+    'instituicoes-comum': {
+        name: 'Instituições do Comum',
+        description: 'Formas organizacionais nem estatais nem mercantis - licenças livres, cooperativas, governança distribuída',
+        connections: ['comum-conceito', 'elinor-ostrom', 'software-livre', 'cooperativas-plataforma', 'creative-commons'],
+        color: '#10b981',
+        layer: 1
+    },
+    'elinor-ostrom': {
+        name: 'Elinor Ostrom',
+        description: 'Nobel Economia - gestão comunitária de recursos comuns sem Estado ou mercado',
+        connections: ['instituicoes-comum', 'comum-natural', 'governanca-comum'],
+        color: '#10b981',
+        layer: -1
+    },
+    'governanca-comum': {
+        name: 'Governança do Comum',
+        description: 'Sistemas de decisão coletiva e autogestão de recursos compartilhados',
+        connections: ['instituicoes-comum', 'elinor-ostrom', 'cooperativas-plataforma', 'assembleia'],
+        color: '#10b981',
+        layer: 1
+    },
+    'mst-mtst': {
+        name: 'MST e MTST',
+        description: 'Movimentos brasileiros de ocupação (terra e moradia) - exemplos de multidão e êxodo',
+        connections: ['exodo-estrategia', 'multidao-conceito', 'ocupacoes-urbanas', 'comum-conceito', 'assembleia'],
+        color: '#10b981',
+        layer: 0
+    },
+    'ocupacoes-urbanas': {
+        name: 'Ocupações Urbanas',
+        description: 'Prédios/espaços abandonados ocupados e transformados em moradia/cultura coletiva',
+        connections: ['mst-mtst', 'direito-cidade', 'comum-urbano', 'exodo-estrategia'],
+        color: '#10b981',
+        layer: 0
+    },
+    'zapatistas': {
+        name: 'Zapatistas (EZLN)',
+        description: 'Movimento indígena mexicano - "mandar obedecendo", autonomia, resistência ao neoliberalismo',
+        connections: ['exodo-estrategia', 'autonomia', 'nhandereko', 'assembleia'],
+        color: '#10b981',
+        layer: 0
+    },
+    'representacao-politica': {
+        name: 'Representação Política',
+        description: 'Sistema onde representantes eleitos tomam decisões em nome do povo',
+        connections: ['povo-conceito', 'estado', 'democracia-direta', 'assembleia'],
+        color: '#10b981',
+        layer: -1
+    },
+    'democracia-direta': {
+        name: 'Democracia Direta',
+        description: 'Participação direta nas decisões sem intermediários - assembleias, referendos',
+        connections: ['representacao-politica', 'assembleia', 'mst-mtst', 'zapatistas'],
+        color: '#10b981',
+        layer: 1
+    },
+    'assembleia': {
+        name: 'Assembleia Popular',
+        description: 'Reunião horizontal para tomada coletiva de decisões',
+        connections: ['democracia-direta', 'mst-mtst', 'zapatistas', 'ocupacoes-urbanas', 'governanca-comum'],
+        color: '#10b981',
+        layer: 1
+    },
+    'eurocentrismo-posop': {
+        name: 'Crítica: Eurocentrismo Pós-Operaísta',
+        description: 'Pós-operaísmo foca em trabalhadores cognitivos, negligencia trabalho manual/reprodutivo periférico',
+        connections: ['pos-operaismo', 'trabalho-reprodutivo', 'federici', 'colonialidade'],
+        color: '#10b981',
+        layer: 0
+    },
+    'otimismo-tecnologico': {
+        name: 'Crítica: Otimismo Tecnológico',
+        description: 'Pós-operaísmo superestima potencial emancipatório da tecnologia?',
+        connections: ['pos-operaismo', 'capitalismo-vigilancia', 'plataformizacao'],
+        color: '#10b981',
+        layer: 0
+    },
+    
     'plataformizacao': {
         name: 'Plataformização',
         description: 'Monopolização da infraestrutura digital via efeitos de rede',
