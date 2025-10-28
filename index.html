@@ -27458,6 +27458,32 @@ ANÁLISE FINAL → ANÁLISE APROFUNDADA → ANÁLISE DE COERÊNCIA
     <!-- Canvas do captcha.js (para background) -->
     <script src="assets/scripts/captcha.js" defer></script>
 
+    <!-- Defensive fix: ensure all chapter sections are children of #main-content -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            try {
+                const main = document.getElementById('main-content');
+                if (!main) return;
+                const chapters = Array.from(document.querySelectorAll('section.chapter'));
+                chapters.forEach(ch => {
+                    if (!main.contains(ch)) {
+                        // add a non-destructive comment where the node was found
+                        try {
+                            const note = document.createComment('AUTOMOVE: moved section into #main-content');
+                            if (ch.parentNode) ch.parentNode.insertBefore(note, ch);
+                        } catch (e) {/* ignore */}
+                        // move the node into main (appended at end)
+                        main.appendChild(ch);
+                        // flag for debugging
+                        ch.setAttribute('data-moved-into-main', 'true');
+                    }
+                });
+            } catch (err) {
+                console.error('chapter relocation script failed', err);
+            }
+        });
+    </script>
+
 </body>
 
 </html>
