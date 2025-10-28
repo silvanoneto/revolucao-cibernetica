@@ -23,42 +23,16 @@
   </metadata>
   <document type="teoria" source="index.html">
     <section id="teoria_1" level="2">
-      <title>📚 Raízes Intelectuais</title>
+      <title>� Passado — Raízes Intelectuais</title>
       <content>
-        <paragraph index="0">A genealogia das ideias que fundamentam este projeto - um mapa não-linear de
-                        influências teóricas e práticas.</paragraph>
+        <paragraph index="0">De Marx a Deleuze, de Wiener a Haraway — um mapa das ideias que fundamentam este projeto.</paragraph>
       </content>
       <key_concepts>
-        <concept>&quot;Não é a consciência dos homens que determina o seu ser, mas, ao contrário, é o seu
-                                    ser social que determina sua consciência.&quot;</concept>
-        <concept>feedback</concept>
-        <concept>Impacto:</concept>
-        <concept>Crítica:</concept>
-        <concept>Legado:</concept>
-        <concept>Diferenças que fazem diferença.</concept>
-        <concept>Conexão:</concept>
-        <concept>analogia
-                                    conceitual</concept>
-        <concept>Rizoma, multiplicidades, máquinas desejantes.</concept>
-        <concept>Implementação:</concept>
-        <concept>Influência:</concept>
-        <concept>Autopoiese, acoplamento estrutural, cognição como processo vivo.</concept>
-        <concept>Nhandereko:</concept>
-        <concept>Turning point:</concept>
-        <concept>Consequência:</concept>
-        <concept>Lição:</concept>
-        <concept>extração de dados comportamentais</concept>
-        <concept>Contribuição:</concept>
-        <concept>Síntese:</concept>
-        <concept>Tensão:</concept>
-        <concept>Sistema ternário implementado como demonstração conceitual.</concept>
+        <concept>Você está aqui.</concept>
         <concept>Nota técnica:</concept>
-        <concept>pedagógico/conceitual</concept>
-        <concept>Você está aqui:</concept>
-        <concept>Celso Furtado &amp; Teoria da Dependência:</concept>
-        <concept>Paulo Freire - Pedagogia do Oprimido:</concept>
-        <concept>Epistemologias Guarani (Nhandereko):</concept>
-        <concept>Movimento Software Livre Brasil:</concept>
+        <concept>Furtado &amp; Dependência:</concept>
+        <concept>Freire:</concept>
+        <concept>Nhandereko (Guarani):</concept>
       </key_concepts>
     </section>
     <section id="teoria_2" level="2">
