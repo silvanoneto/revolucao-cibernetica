@@ -11,6 +11,21 @@
  * - Sem estrutura arbórea
  * 
  * CHANGELOG:
+ * - 2025-10-28 (v8): Expansão massiva do Capítulo 10 (Crítica do Valor / Wertkritik)
+ *   + 50+ novos conceitos: Wertkritik, sujeito automático, capital fictício, colapso
+ *   + Robert Kurz e Moishe Postone: crítica esotérica vs exotérica de Marx
+ *   + Dominação abstrata: não é pessoal, é estrutural (forma-valor domina todos)
+ *   + Teoria da dissociação (Roswitha Scholz): patriarcado como estrutura do capitalismo
+ *   + Automação como contradição: elimina trabalho vivo (única fonte de valor)
+ *   + Capital fictício: dívidas, bolhas, financeirização como sobrevida do sistema
+ *   + Casos brasileiros: desindustrialização, informalidade, milícias, necropolítica
+ *   + Wertkritik e tecnologia: IA destrói trabalho cognitivo, cripto é capital fictício
+ *   + Algoritmos como sujeito automático digitalizado (fetiche algorítmico)
+ *   + Plataformas como rentismo (não produzem valor, extraem renda)
+ *   + Debates: vs marxismo tradicional, feministas, pós-operaísmo, ecossocialistas
+ *   + Síntese: forças (radicalidade) e limites (ausência de programa)
+ *   Total: ~400 conceitos mapeados
+ * 
  * - 2025-10-28 (v7): Expansão massiva do Capítulo 9 (Pós-Operaísmo e a Teoria da Multidão)
  *   + 35+ novos conceitos: Multidão, Império, Biopoder, Êxodo, Comum
  *   + Hardt & Negri: Império (rede de poder desterritorializada), Multidão (vs. Povo)
@@ -1343,7 +1358,322 @@ const conceptGraph = {
         color: '#10b981',
         layer: 0
     },
+
+    // ========================================
+    // CAPÍTULO 10: CRÍTICA DO VALOR (WERTKRITIK)
+    // ========================================
+    'wertkritik': {
+        name: 'Crítica do Valor (Wertkritik)',
+        description: 'Corrente alemã que critica o trabalho abstrato e a forma-valor em si, não apenas sua distribuição',
+        connections: ['robert-kurz', 'moishe-postone', 'sujeito-automatico', 'dominacao-abstrata', 'dissociacao-valor', 'colapso-modernizacao'],
+        color: '#dc2626',
+        layer: -1
+    },
+    'robert-kurz': {
+        name: 'Robert Kurz (1943-2012)',
+        description: 'Teórico alemão fundador da Wertkritik - O Colapso da Modernização (1991)',
+        connections: ['wertkritik', 'krisis-revista', 'colapso-modernizacao', 'capital-ficti cio', 'trabalho-abstrato'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'moishe-postone': {
+        name: 'Moishe Postone (1942-2018)',
+        description: 'Historiador canadense-americano - Time, Labor and Social Domination (1993) - reinterpretação radical de Marx',
+        connections: ['wertkritik', 'dominacao-abstrata', 'trabalho-abstrato', 'tempo-abstrato'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'krisis-revista': {
+        name: 'Revista Krisis (1986) / Exit! (2004)',
+        description: 'Revistas alemãs fundadas por Kurz e colegas para desenvolver a crítica do valor',
+        connections: ['robert-kurz', 'wertkritik', 'dissociacao-valor'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'critica-esoterica': {
+        name: 'Crítica Esotérica de Marx',
+        description: 'Análise das categorias abstratas e impessoais (Valor, fetiche) que dominam toda a sociedade',
+        connections: ['wertkritik', 'critica-exoterica', 'sujeito-automatico', 'fetiche-mercadoria'],
+        color: '#dc2626',
+        layer: -1
+    },
+    'critica-exoterica': {
+        name: 'Crítica Exotérica de Marx',
+        description: 'Análise da luta de classes e exploração (superfície visível do capitalismo)',
+        connections: ['critica-esoterica', 'luta-classes', 'mais-valia'],
+        color: '#dc2626',
+        layer: -1
+    },
+    'sujeito-automatico': {
+        name: 'Sujeito Automático',
+        description: 'O Valor como força quase consciente cujo único objetivo é sua autovalorização infinita (D-M-D\')',
+        connections: ['wertkritik', 'dominacao-abstrata', 'fetiche-mercadoria', 'ultrarracionalismo', 'algoritmos-sujeito-automatico'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'dominacao-abstrata': {
+        name: 'Dominação Abstrata',
+        description: 'Dominação não-pessoal da estrutura social (Valor) sobre capitalistas e trabalhadores',
+        connections: ['wertkritik', 'sujeito-automatico', 'fetiche-mercadoria'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'dissociacao-valor': {
+        name: 'Teoria da Dissociação (Abspaltung)',
+        description: 'Roswitha Scholz: patriarcado é estrutural ao capitalismo - o "feminino" (cuidado, afeto) é dissociado/desvalorizado',
+        connections: ['wertkritik', 'roswitha-scholz', 'trabalho-reprodutivo', 'feminizacao-trabalho', 'dissociacao-geopolitica'],
+        color: '#ec4899',
+        layer: 0
+    },
+    'roswitha-scholz': {
+        name: 'Roswitha Scholz',
+        description: 'Teórica feminista alemã da Wertkritik - desenvolveu teoria da dissociação valor-gênero',
+        connections: ['dissociacao-valor', 'wertkritik', 'krisis-revista'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'dissociacao-geopolitica': {
+        name: 'Dissociação Geopolítica',
+        description: 'Sul Global é dissociado: necessário (recursos) mas desprezado (sem direitos) - paralelo com gênero',
+        connections: ['dissociacao-valor', 'imperialismo-digital', 'extrativismo-digital', 'colonialidade'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'colapso-modernizacao': {
+        name: 'Colapso da Modernização',
+        description: 'Tese de Kurz: capitalismo caminha para limite interno absoluto - automação destrói base do valor',
+        connections: ['wertkritik', 'robert-kurz', 'automacao-crise-valor', 'capital-ficticio', 'barbarizacao'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'automacao-crise-valor': {
+        name: 'Automação como Crise do Valor',
+        description: 'Contradição: automação elimina trabalho vivo (única fonte de valor) → crise de valorização',
+        connections: ['colapso-modernizacao', 'trabalho-vivo', 'capital-ficticio', 'ia-automacao-cognitiva'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'trabalho-vivo': {
+        name: 'Trabalho Vivo',
+        description: 'Trabalho humano atual - única fonte de valor no capitalismo (Marx)',
+        connections: ['trabalho-abstrato', 'mais-valia', 'automacao-crise-valor'],
+        color: '#ef4444',
+        layer: -1
+    },
+    'capital-ficticio': {
+        name: 'Capital Fictício',
+        description: 'Riqueza que parece real mas não tem substância de valor - dívidas, bolhas, derivativos',
+        connections: ['colapso-modernizacao', 'financeirizacao', 'bolhas-especulativas', 'criptomoedas-capital-ficticio'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'financeirizacao': {
+        name: 'Financeirização',
+        description: 'Migração do capital da produção para especulação - sintoma de crise de valorização',
+        connections: ['capital-ficticio', 'bolhas-especulativas', 'derivativos', 'quantitative-easing'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'bolhas-especulativas': {
+        name: 'Bolhas Especulativas',
+        description: 'Preços inflam sem correspondência com valor real - imóveis, ações, criptos',
+        connections: ['capital-ficticio', 'financeirizacao', 'criptomoedas-capital-ficticio'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'derivativos': {
+        name: 'Derivativos Financeiros',
+        description: 'Produtos financeiros abstratos (apostas sobre apostas) - mercado valia 10x PIB mundial em 2008',
+        connections: ['capital-ficticio', 'financeirizacao', 'crise-2008'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'quantitative-easing': {
+        name: 'Expansão Monetária (QE)',
+        description: 'Bancos centrais imprimem dinheiro para evitar colapso - adia crise, não resolve',
+        connections: ['capital-ficticio', 'financeirizacao'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'crise-2008': {
+        name: 'Crise Financeira 2008',
+        description: 'Colapso de bolha imobiliária/derivativos - confirmou tese do capital fictício',
+        connections: ['derivativos', 'capital-ficticio', 'bolhas-especulativas'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'desindustrializacao-brasil': {
+        name: 'Desindustrialização Brasil (1990-2024)',
+        description: 'Indústria cai de 34% (1985) para 11% (2023) do PIB - reprimarização da economia',
+        connections: ['colapso-modernizacao', 'neoliberalismo-brasil', 'extrativismo-digital'],
+        color: '#10b981',
+        layer: 0
+    },
+    'neoliberalismo-brasil': {
+        name: 'Neoliberalismo Brasil (Collor, FHC)',
+        description: 'Abertura econômica + Real sobrevalorizado = destruição indústria nacional',
+        connections: ['desindustrializacao-brasil', 'dependencia-digital'],
+        color: '#10b981',
+        layer: 0
+    },
+    'informalidade-brasil': {
+        name: 'Informalidade Brasil (39% em 2023)',
+        description: 'Não é atraso - é forma periférica da crise de valorização (população supérflua)',
+        connections: ['populacao-superflua', 'uberizacao', 'reforma-trabalhista-2017'],
+        color: '#10b981',
+        layer: 0
+    },
+    'reforma-trabalhista-2017': {
+        name: 'Reforma Trabalhista 2017 (Lei 13.467)',
+        description: 'Legalização da precarização - contrato intermitente, pejotização',
+        connections: ['informalidade-brasil', 'uberizacao', 'trabalho-abstrato'],
+        color: '#10b981',
+        layer: 0
+    },
+    'populacao-superflua': {
+        name: 'População Supérflua (Humanidade Supérflua)',
+        description: 'Massas expulsas da produção de valor - não são mais "exército de reserva"',
+        connections: ['colapso-modernizacao', 'automacao-crise-valor', 'informalidade-brasil', 'barbarizacao'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'milicias-necropolitica-brasil': {
+        name: 'Milícias e Necropolítica (Rio/SP)',
+        description: 'Re-feudalização: poderes armados controlam territórios onde Estado não garante valorização',
+        connections: ['barbarizacao', 'necropolitica-digital', 'populacao-superflua'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'barbarizacao': {
+        name: 'Barbarização',
+        description: 'Desintegração social que acompanha colapso - guerras, autoritarismo, re-feudalização',
+        connections: ['colapso-modernizacao', 'populacao-superflua', 'milicias-necropolitica-brasil'],
+        color: '#dc2626',
+        layer: 0
+    },
+    'ia-automacao-cognitiva': {
+        name: 'IA e Automação do Trabalho Cognitivo',
+        description: 'GPT, DALL-E substituem trabalho imaterial - elimina até general intellect',
+        connections: ['automacao-crise-valor', 'trabalho-cognitivo', 'general-intellect', 'capital-ficticio'],
+        color: '#dc2626',
+        layer: 1
+    },
+    'paradoxo-ia-valor': {
+        name: 'Paradoxo da IA',
+        description: 'IA produz abundância mas não cria valor - tempo socialmente necessário → zero',
+        connections: ['ia-automacao-cognitiva', 'trabalho-abstrato', 'capital-ficticio'],
+        color: '#dc2626',
+        layer: 1
+    },
+    'criptomoedas-capital-ficticio': {
+        name: 'Criptomoedas como Capital Fictício',
+        description: 'Bitcoin não é pós-capitalista - é capital fictício descentralizado (especulação pura)',
+        connections: ['capital-ficticio', 'bolhas-especulativas', 'cripto-consumo-energetico'],
+        color: '#dc2626',
+        layer: 1
+    },
+    'cripto-consumo-energetico': {
+        name: 'Mineração Bitcoin = Trabalho Abstrato Computacional',
+        description: 'Consome mais energia que Argentina - queima recursos sem criar valor de uso',
+        connections: ['criptomoedas-capital-ficticio', 'trabalho-abstrato', 'crise-ecologica'],
+        color: '#dc2626',
+        layer: 1
+    },
+    'algoritmos-sujeito-automatico': {
+        name: 'Algoritmos como Sujeito Automático Digitalizado',
+        description: 'Algoritmos parecem ter vontade própria - mas apenas executam lógica de valorização',
+        connections: ['sujeito-automatico', 'fetiche-algoritmo', 'capitalismo-vigilancia'],
+        color: '#dc2626',
+        layer: 1
+    },
+    'fetiche-algoritmo': {
+        name: 'Fetichismo Algorítmico',
+        description: 'Atribuir agência ao algoritmo - mas ele cristaliza relações sociais capitalistas',
+        connections: ['algoritmos-sujeito-automatico', 'fetiche-mercadoria', 'transparencia-algoritmica'],
+        color: '#dc2626',
+        layer: 1
+    },
+    'plataformas-rentismo': {
+        name: 'Plataformas como Rentismo Digital',
+        description: 'Uber, Meta, Amazon não produzem valor - extraem renda de posição monopolista',
+        connections: ['plataformizacao', 'capital-ficticio', 'financeirizacao'],
+        color: '#dc2626',
+        layer: 1
+    },
+    'critica-marxismo-tradicional-wertkritik': {
+        name: 'Debate: Wertkritik vs Marxismo Ortodoxo',
+        description: 'Ortodoxos: "Wertkritik paralisa luta". Wertkritik: "Vocês gerenciam capitalismo, não abolem"',
+        connections: ['wertkritik', 'luta-classes', 'pos-operaismo'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'critica-feminista-wertkritik': {
+        name: 'Debate: Feministas vs Dissociação',
+        description: 'Federici: risco de essencializar gênero. Scholz: é construção histórica, não biologia',
+        connections: ['dissociacao-valor', 'federici', 'interseccionalidade'],
+        color: '#ec4899',
+        layer: 0
+    },
+    'debate-posop-wertkritik': {
+        name: 'Debate: Pós-Operaísmo vs Wertkritik',
+        description: 'Hardt/Negri: "há agência". Kurz: "êxodo opera dentro da forma-valor". Cap 11 media isso',
+        connections: ['wertkritik', 'pos-operaismo', 'multidao-conceito', 'sintese-informacional'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'sintese-informacional': {
+        name: 'Síntese Informacional (Cap 11)',
+        description: 'Cibernética 2ª ordem media Wertkritik (estrutura) e Pós-Operaísmo (agência) - acoplamento circular',
+        connections: ['debate-posop-wertkritik', 'segunda-ordem', 'wertkritik', 'pos-operaismo'],
+        color: '#a855f7',
+        layer: 1
+    },
+    'critica-ecossocialista-wertkritik': {
+        name: 'Debate: Ecossocialistas vs Wertkritik',
+        description: 'Moore/Malm: "foca só em valor, ignora natureza". Kurz: "crise ecológica = consequência da forma-valor"',
+        connections: ['wertkritik', 'crise-ecologica', 'decrescimento'],
+        color: '#16a34a',
+        layer: 0
+    },
+    'decrescimento': {
+        name: 'Decrescimento',
+        description: 'Economia pós-crescimento baseada em necessidades humanas e limites ecológicos',
+        connections: ['crise-ecologica', 'wertkritik', 'colapso-modernizacao'],
+        color: '#16a34a',
+        layer: 1
+    },
+    'critica-negativa-wertkritik': {
+        name: 'Crítica Negativa',
+        description: 'Força da Wertkritik: destrói ilusões reformistas. Limite: não constrói programa positivo',
+        connections: ['wertkritik', 'ultrarracionalismo', 'sintese-informacional'],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'ultrarracionalismo': {
+        name: 'Ultrarracionalismo (Cap 31)',
+        description: 'Fé cega em lógicas sistêmicas abstratas - naturaliza dominação (mercado, algoritmo, "TINA")',
+        connections: ['sujeito-automatico', 'critica-negativa-wertkritik', 'neoliberalismo-progressista'],
+        color: '#dc2626',
+        layer: 1
+    },
+    'neoliberalismo-progressista': {
+        name: 'Neoliberalismo Progressista',
+        description: '"Gostaríamos de fazer diferente, mas o mercado exige" - esquerda capturada pelo sujeito automático',
+        connections: ['ultrarracionalismo', 'sujeito-automatico'],
+        color: '#dc2626',
+        layer: 1
+    },
+    'tempo-abstrato': {
+        name: 'Tempo Abstrato',
+        description: 'Postone: capitalismo impõe temporalidade abstrata (tempo-relógio) sobre tempo concreto da vida',
+        connections: ['moishe-postone', 'trabalho-abstrato', 'dominacao-abstrata'],
+        color: '#dc2626',
+        layer: 0
+    },
     
+    // ========================================
+    // CONTINUAÇÃO CONCEITOS OUTROS CAPÍTULOS
+    // ========================================
     'plataformizacao': {
         name: 'Plataformização',
         description: 'Monopolização da infraestrutura digital via efeitos de rede',
