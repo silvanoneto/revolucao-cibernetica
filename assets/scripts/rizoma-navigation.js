@@ -11,6 +11,51 @@
  * - Sem estrutura arbórea
  * 
  * CHANGELOG:
+ * - 2025-10-28 (v16): Expansão massiva do Capítulo 19 (Outros Experimentos e a Nova Fronteira do Planejamento)
+ *   + 50+ novos conceitos: autogestão iugoslava, Período Especial Cuba, crédito social, cooperativismo de plataforma
+ *   + Iugoslávia (1950-1991): Tito, cisma com Stalin 1948, samoupravljanje (autogestão), propriedade social
+ *   + Edvard Kardelj: teórico autogestão, "sociedade vs Estado", paradoxo (teorizou contra burocracia, foi vice-presidente)
+ *   + Lei Empresas Econômicas 1950: conselhos trabalhadores elegem direção, uma pessoa = um voto
+ *   + Mercado socialista: cooperativas competem, crescimento 6%/ano (1950-70), mas contradições insuperáveis
+ *   + Contradições Iugoslávia: desigualdade regional (Eslovênia 5-6x Kosovo), desemprego 15%, nacionalismo, dívida US$ 20bi
+ *   + Benjamin Ward: problema teórico — autogestão maximiza renda/trabalhador, não emprego (subprodução)
+ *   + Colapso 1991-99: guerras, genocídio Srebrenica (8 mil mortos), 140 mil mortos total, 4 milhões deslocados
+ *   + Lição: autogestão + mercado capitalista = contradição estrutural (mercado esmaga democracia)
+ *   + Cuba Período Especial (1991-93): PIB -35%, importações -75%, petróleo -86%, calorias 3000→1900/dia
+ *   + Organopônicos: hortas urbanas, permacultura, 20-30 kg/m²/ano (10x agricultura normal), 50% vegetais Havana (1997)
+ *   + Nelso Companioni: agrônomo pioneiro, Alamar, 26 mil hortas (1997), modelo global FAO/PNUD
+ *   + Biotecnologia cubana: vacinas (meningite B, hepatite B, COVID Abdala/Soberana), genéricos de qualidade
+ *   + Reformas mercado: turismo 340k→1.7mi (1990-2000), dolarização 1993, desigualdade reemergente (taxista>cirurgião)
+ *   + Lição Cuba: resiliência local + rigidez central = inovação bloqueada; transição energética abrupta possível mas traumática
+ *   + Crédito Social China: shèhuì xìnyòng tǐxì, não é "score único Black Mirror", mas ecossistema fragmentado 3 camadas
+ *   + PBOC: crédito financeiro tradicional, 560 milhões pessoas, histórico empréstimos (mais "normal")
+ *   + Enterprise Social Credit: foco compliance corporativo, blacklists empresas (33 mi entradas), 290 mi restrições aplicadas
+ *   + Pilotos municipais: ~40 cidades, Rongcheng (Shandong) — 1.000 pontos base, perde por lixo/bicicleta calçada
+ *   + Sesame Credit (Zhima): Alibaba/Ant Financial, 350-950, combina pagamentos + compras + rede social + comportamento online
+ *   + Crédito Ocidental: Serasa (Brasil 1968), FICO (EUA 1989), 69 milhões negativados Brasil (1 em 3 adultos)
+ *   + Racismo codificado score: EUA brancos 734, negros 677 — diferença 60 pontos = juros 3-5% maiores = dezenas milhares dólares
+ *   + 3 diferenças China/Ocidente: 1) fusão explícita Estado-Empresa, 2) expansão para "comportamento cívico", 3) opacidade total
+ *   + Capitalismo vigilância (Ocidente) vs Socialismo vigilância (China): ambos distópicos, controle privado vs estatal-corporativo
+ *   + Governança algorítmica democrática: código aberto, trusts de dados cooperativos, abolição certos scores (emprego)
+ *   + Trebor Scholz: acadêmico alemão-americano, cunhou "platform cooperativism" (2014), livro-manifesto 2016
+ *   + Platform Cooperativism Consortium: New School NYC, mapeia cooperativas, treina, conecta desenvolvedores
+ *   + 7 princípios cooperativistas ICA adaptados digital: adesão livre, controle democrático (1 pessoa=1 voto), participação econômica
+ *   + CoopCycle: 30+ cooperativas entrega bicicleta, 10 países, software livre GitHub, taxa 15-20% (vs 30-40% Uber Eats)
+ *   + Fairbnb: Itália/Holanda, 50% taxas → projetos comunitários locais, anti-gentrificação, 500 listagens (vs 7 mi Airbnb)
+ *   + Up & Go: Nova York, mulheres latinas limpeza, 95% pagamento → trabalhadoras (vs 50-60% apps capitalistas)
+ *   + Resonate: streaming musical, stream-to-own (0.002€/stream, 9x = compra 0.02€), governança multi-stakeholder
+ *   + Stocksy: cooperativa fotógrafos Canadá, 50-75% venda foto (vs 15-35% Shutterstock), US$ 15mi faturamento 2022
+ *   + Brasil cooperativas: Motorsapp (SP, mototaxistas, taxa 12%), Celeiro (Porto Alegre, orgânicos), Cataki (100+ cooperativas)
+ *   + 5 barreiras escala cooperativas: 1) acesso capital (VCs despejaram US$ 25bi Uber), 2) efeitos rede/lock-in, 3) infraestrutura tech cara, 4) dumping predatório, 5) legislação hostil
+ *   + Estratégias sobrevivência: federação (CoopCycle modelo), nicho antes massa, apoio estatal (Barcelona software livre), multi-stakeholder
+ *   + Tecnologias habilitadoras: DAOs (smart contracts governança), IA logística livre (OSRM), software livre como commons (Linux)
+ *   + 3 cenários futuro: 1) nichos 5-10% (cooperativas sobrevivem pequenas), 2) regulação justa 30-40%, 3) colapso+reconstrução
+ *   + Lição síntese: alternativa existe e funciona (centenas cooperativas), barreira não é técnica mas POLÍTICA (precisa Estado aliado)
+ *   + Coordenação distribuída: autonomia local + coordenação global via plataformas digitais transparentes (VSM Beer aplicado)
+ *   + Planejamento participativo digital: deliberação direta trabalhadores/consumidores, IA para simulação cenários, orçamento participativo escala
+ *   + Propriedade social diversificada: cooperativas trabalhadores/consumidores + estatal democrática + commons digitais + comunitária
+ *   Total: ~910 conceitos mapeados
+ * 
  * - 2025-10-28 (v15): Expansão massiva do Capítulo 18 (Projeto Cybersyn - Chile 1970-73)
  *   + 50+ novos conceitos: via chilena ao socialismo, Fernando Flores, detalhes técnicos Cybersyn
  *   + Contexto histórico: Allende, Unidade Popular, via chilena (democracia + socialismo), bloqueio EUA
@@ -5481,6 +5526,242 @@ const conceptGraph = {
         name: 'Políticas de Drogas Radicalmente Diferentes',
         description: 'Descriminalização total + redução de danos universal + legalização regulada (não via mercado, via distribuição pública/cooperativa) + reparação histórica (anistia, indenização, investimento periferia)',
         connections: ['descriminalizacao-portugal', 'reducao-danos-universal', 'farmacia-apartheid', 'guerra-drogas'],
+        color: '#22c55e',
+        layer: 1
+    },
+
+    // ========================================
+    // CAPÍTULO 19: OUTROS EXPERIMENTOS E NOVA FRONTEIRA DO PLANEJAMENTO
+    // ========================================
+    
+    // 19.1 - Autogestão Iugoslávia
+    'autogestao-iugoslavia': {
+        name: 'Autogestão Iugoslava (Samoupravljanje)',
+        description: 'Empresas geridas por conselhos de trabalhadores eleitos. Propriedade social (nem privada nem estatal). Mercado socialista: competição + autogestão = contradição que causou colapso',
+        connections: ['tito', 'kardelj', 'propriedade-social', 'mercado-socialista', 'cooperativismo-plataforma'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'tito': {
+        name: 'Josip Broz Tito',
+        description: 'Líder iugoslavo. Rompeu com Stalin (1948), criou "terceira via": socialismo não-stalinista. Nacionalismo comunista vs controle soviético',
+        connections: ['autogestao-iugoslavia', 'kardelj', 'cisma-stalin'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'kardelj': {
+        name: 'Edvard Kardelj',
+        description: 'Teórico da autogestão. Paradoxo: teorizou contra burocracia estatal, mas foi vice-presidente por décadas. Sistema dependia de carisma, não estruturas',
+        connections: ['autogestao-iugoslavia', 'tito', 'propriedade-social'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'propriedade-social': {
+        name: 'Propriedade Social',
+        description: 'Categoria jurídica única: nem privada nem estatal, pertence "à sociedade". Gerida por trabalhadores. Tentativa de superar tanto capitalismo quanto estatismo',
+        connections: ['autogestao-iugoslavia', 'kardelj', 'cooperativismo-plataforma'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'mercado-socialista': {
+        name: 'Mercado Socialista',
+        description: 'Cooperativas autogeridas competindo em mercado. Cresceu 6%/ano (1950-70), MAS mercado pressiona comportamento capitalista: demissões, desigualdade, subprodução',
+        connections: ['autogestao-iugoslavia', 'benjamin-ward', 'colapso-iugoslavia'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'benjamin-ward': {
+        name: 'Benjamin Ward (Problema Teórico)',
+        description: 'Cooperativas maximizam renda/trabalhador, não emprego total. Resultado: subprodução crônica, resistência contratar mesmo com demanda alta',
+        connections: ['mercado-socialista', 'autogestao-iugoslavia'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'colapso-iugoslavia': {
+        name: 'Colapso Iugoslávia (1991-99)',
+        description: '140 mil mortos, 4 milhões deslocados. Genocídio Srebrenica (8 mil). Desigualdade regional (Eslovênia 5-6x Kosovo), dívida US$ 20bi, nacionalismo. Lição: autogestão + mercado = contradição insuperável',
+        connections: ['mercado-socialista', 'autogestao-iugoslavia'],
+        color: '#ef4444',
+        layer: -1
+    },
+    
+    // 19.2 - Cuba Período Especial
+    'periodo-especial-cuba': {
+        name: 'Período Especial Cuba (1991-93)',
+        description: 'Colapso URSS = PIB -35%, importações -75%, petróleo -86%. Calorias 3000→1900/dia. Transição energética abrupta forçada. Inovação na adversidade',
+        connections: ['organoponicos', 'companioni', 'biotecnologia-cubana', 'resiliencia-local'],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'organoponicos': {
+        name: 'Organopônicos (Hortas Urbanas)',
+        description: 'Agricultura urbana orgânica. 20-30 kg/m²/ano (10x normal). 26 mil hortas em Havana (1997), 50% dos vegetais. Modelo global (FAO/PNUD)',
+        connections: ['periodo-especial-cuba', 'companioni', 'permacultura'],
+        color: '#22c55e',
+        layer: 0
+    },
+    'companioni': {
+        name: 'Nelso Companioni',
+        description: 'Agrônomo pioneiro dos organopônicos. Alamar (Havana). Provou: em crise, comunidades locais inovam mais rápido que burocracia central',
+        connections: ['organoponicos', 'periodo-especial-cuba'],
+        color: '#22c55e',
+        layer: 0
+    },
+    'biotecnologia-cubana': {
+        name: 'Biotecnologia Cubana',
+        description: 'Vacinas próprias: meningite B, hepatite B, COVID (Abdala/Soberana). Genéricos de qualidade. Paradoxo: país bloqueado há 60 anos com indústria farmacêutica avançada',
+        connections: ['periodo-especial-cuba'],
+        color: '#22c55e',
+        layer: 0
+    },
+    'resiliencia-local': {
+        name: 'Resiliência Local vs Rigidez Central',
+        description: 'Cuba: capacidade de auto-organização local extraordinária, MAS burocracia central atrasou escala. Lição: precisa cibernética 2ª ordem (autonomia local + coordenação democrática)',
+        connections: ['periodo-especial-cuba', 'organoponicos', 'cybersyn', 'cooperativismo-plataforma'],
+        color: '#22c55e',
+        layer: 1
+    },
+    
+    // 19.3 - Crédito Social e Governança por Score
+    'credito-social-china': {
+        name: 'Sistema de Crédito Social Chinês',
+        description: 'NÃO é "score único Black Mirror". Ecossistema fragmentado 3 camadas: financeiro (PBOC), corporativo (blacklists empresas), pilotos municipais (~40 cidades)',
+        connections: ['pboc', 'enterprise-social-credit', 'sesame-credit', 'governanca-algoritmica'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'pboc': {
+        name: 'PBOC (Crédito Financeiro)',
+        description: 'Banco Central China. Score de crédito tradicional (como Serasa/FICO). 560 milhões pessoas. Histórico empréstimos. Mais "normal" dos três sistemas',
+        connections: ['credito-social-china', 'serasa-fico'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'enterprise-social-credit': {
+        name: 'Enterprise Social Credit',
+        description: 'Foco: compliance corporativo. 33 milhões blacklists empresas. 290 milhões restrições aplicadas (CEOs impedidos viajar, licitações bloqueadas). Combate fraude/poluição',
+        connections: ['credito-social-china'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'sesame-credit': {
+        name: 'Sesame Credit (Zhima - Alibaba)',
+        description: 'Score privado 350-950. Combina: pagamentos + compras + rede social + comportamento online. Capitalismo de vigilância chinês. Comprar fraldas ↑ score, videogames ↓',
+        connections: ['credito-social-china', 'capitalismo-vigilancia'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'serasa-fico': {
+        name: 'Serasa/FICO (Crédito Ocidental)',
+        description: 'Governança algorítmica privada. Brasil: 69 milhões negativados (1 em 3 adultos). EUA: racismo codificado (brancos 734, negros 677 = juros 3-5% maiores)',
+        connections: ['pboc', 'governanca-algoritmica', 'racismo-algoritmico'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'governanca-algoritmica': {
+        name: 'Governança Algorítmica',
+        description: 'Convergência global: Ocidente = vigilância privada para lucro, China = vigilância estatal-corporativa para controle. Ambos distópicos. Precisamos: código aberto + trusts de dados cooperativos',
+        connections: ['credito-social-china', 'serasa-fico', 'sesame-credit', 'capitalismo-vigilancia'],
+        color: '#ef4444',
+        layer: 0
+    },
+    
+    // 19.4 - Cooperativismo de Plataforma
+    'cooperativismo-plataforma': {
+        name: 'Cooperativismo de Plataforma',
+        description: 'Plataformas digitais de propriedade e gestão democrática dos trabalhadores/usuários. Mesma tecnologia (apps), controle invertido. Alternativa existe e funciona (centenas de cooperativas), barreira é POLÍTICA',
+        connections: ['trebor-scholz', 'coopcycle', 'fairbnb', 'up-go', 'resonate', 'stocksy', 'cooperativas-brasil'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'trebor-scholz': {
+        name: 'Trebor Scholz',
+        description: 'Acadêmico alemão-americano. Cunhou "platform cooperativism" (2014), livro-manifesto (2016). Platform Cooperativism Consortium (New School NYC). Argumento: cooperativas mais sustentáveis que startups VC',
+        connections: ['cooperativismo-plataforma'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'coopcycle': {
+        name: 'CoopCycle (Europa)',
+        description: '30+ cooperativas entrega bicicleta, 10 países. Software livre (GitHub). Taxa 15-20% vs 30-40% Uber Eats. Federação = economia de escala. Modelo replicável',
+        connections: ['cooperativismo-plataforma', 'software-livre', 'federacao-cooperativas'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'fairbnb': {
+        name: 'Fairbnb (Itália/Holanda)',
+        description: '50% das taxas → projetos comunitários locais. Anti-gentrificação. 500 listagens vs 7 milhões Airbnb. Pequena mas crescendo em cidades conscientes',
+        connections: ['cooperativismo-plataforma'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'up-go': {
+        name: 'Up & Go (Nova York)',
+        description: 'Cooperativa limpeza. Mulheres latinas/imigrantes. 95% pagamento → trabalhadoras vs 50-60% apps capitalistas. Trabalhadoras ganham 40-50% mais, decidem tudo democraticamente',
+        connections: ['cooperativismo-plataforma'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'resonate': {
+        name: 'Resonate (Streaming Musical)',
+        description: 'Stream-to-own: 0.002€/stream, 9x = compra 0.02€. Governança multi-stakeholder (artistas + ouvintes + trabalhadores). Vs Spotify que paga 0.003€/stream infinito',
+        connections: ['cooperativismo-plataforma'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'stocksy': {
+        name: 'Stocksy (Fotos - Canadá)',
+        description: 'Cooperativa fotógrafos. 50-75% venda foto vs 15-35% Shutterstock. US$ 15mi faturamento (2022), distribuiu US$ 7,5mi para 1.000+ fotógrafos-membros',
+        connections: ['cooperativismo-plataforma'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'cooperativas-brasil': {
+        name: 'Cooperativas Digitais Brasil',
+        description: 'Motorsapp (SP, mototaxistas, taxa 12%), Celeiro (Porto Alegre, orgânicos), Cataki (100+ cooperativas catadores). Potencial inexplorado, precisam apoio estatal',
+        connections: ['cooperativismo-plataforma'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'barreiras-cooperativas': {
+        name: '5 Barreiras Escala Cooperativas',
+        description: '1) Capital (VCs despejaram US$ 25bi no Uber), 2) Efeitos rede/lock-in, 3) Infraestrutura tech cara, 4) Dumping predatório, 5) Legislação hostil. Solução: apoio estatal + federação',
+        connections: ['cooperativismo-plataforma', 'coopcycle', 'apoio-estatal-cooperativas'],
+        color: '#ef4444',
+        layer: 0
+    },
+    'federacao-cooperativas': {
+        name: 'Federação de Cooperativas',
+        description: 'Estratégia escala: cooperativas locais pequenas, federadas em rede grande. Compartilham: software, marca, conhecimento, contratos públicos. CoopCycle = 30 coops = 1.500 trabalhadores',
+        connections: ['coopcycle', 'cooperativismo-plataforma', 'software-livre'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'apoio-estatal-cooperativas': {
+        name: 'Apoio Estatal a Cooperativas',
+        description: 'Estado precisa tomar lado: financiar formação, compras públicas cooperativas, forçar interoperabilidade (API aberta), facilitar conversão empresa→cooperativa. Barcelona, Bologna = modelos',
+        connections: ['cooperativismo-plataforma', 'barreiras-cooperativas'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'software-livre': {
+        name: 'Software Livre como Commons',
+        description: 'Linux roda 90% servidores. Cooperativas podem compartilhar stack tecnológico (OSRM = roteamento livre). Custos divididos, benefícios compartilhados. Tech não é barreira',
+        connections: ['coopcycle', 'federacao-cooperativas', 'cooperativismo-plataforma'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'coordenacao-distribuida': {
+        name: 'Coordenação Distribuída',
+        description: 'Futuro pós-capitalista: autonomia local + coordenação global via plataformas digitais transparentes. VSM de Beer aplicado a federação de cooperativas. Planejamento ≠ controle, = liberdade coletiva',
+        connections: ['cooperativismo-plataforma', 'resiliencia-local', 'vsm', 'cybersyn'],
+        color: '#22c55e',
+        layer: 1
+    },
+    'planejamento-participativo-digital': {
+        name: 'Planejamento Participativo Digital',
+        description: 'Deliberação direta trabalhadores/consumidores via plataformas. IA para simulação cenários, orçamento participativo em escala nacional/global. Tecnologia existe, falta vontade política',
+        connections: ['coordenacao-distribuida', 'cooperativismo-plataforma'],
         color: '#22c55e',
         layer: 1
     }
