@@ -2,7 +2,7 @@ repos:
   - repo: local
     hooks:
       - id: update-generated
-        name: Update generated files (rizoma)
+        name: Update generated files
         entry: python3 scripts/precommit/update_generated.py
         # Use the system Python so the hook runs in your environment where
         # the exporter dependencies are installed (ebooklib, Pillow, lxml, etc.).
