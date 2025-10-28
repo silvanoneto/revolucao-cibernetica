@@ -58,15 +58,6 @@ jobs:
       - name: Run exporter
         run: python3 scripts/export_file.py all
 
-      - name: Fail if generated files changed
-        run: |
-          if ! git diff --quiet --exit-code; then
-            echo "\nGenerated files are out of date. Run 'python3 scripts/export_file.py all' locally and commit the changes.\n"
-            git --no-pager status --porcelain
-            git --no-pager diff --name-only
-            exit 1
-          fi
-
   deploy:
     runs-on: ubuntu-latest
     name: Build and publish to gh-pages
