@@ -1,7 +1,7 @@
 # A Revolução Cibernética - Rizoma de Conceitos
-**Versão:** 2.1  
-**Data:** 2025-10-28T02:09:26.064Z  
-**Total de Conceitos:** 172
+**Versão:** 2.2  
+**Data:** 2025-10-29T00:00:00.000Z  
+**Total de Conceitos:** 194
 
 ## 📊 Estatísticas
 
@@ -411,6 +411,22 @@ Humanos passam, bots falham
 
 ---
 
+#### COMPAS (Reincidência) (`compas`)
+
+45% falsos positivos negros vs 23% brancos - racismo sistêmico
+
+**Conexões:** `capitalismo-racial-digital`, `discriminacao-algoritmica`, `justica-preditiva`
+
+---
+
+#### Cambridge Analytica (`cambridge-analytica`)
+
+87M perfis Facebook → microtargeting psicológico → Brexit/Trump
+
+**Conexões:** `economia-politica-odio`, `capitalismo-vigilancia`, `engenharia-comportamento`
+
+---
+
 #### Canvas Background (`canvas-background`)
 
 Sistema de arte generativa que performa a filosofia
@@ -432,6 +448,14 @@ Desordem produtiva, não-entrópica
 Processo de autovalorização: D-M-P-M'-D'
 
 **Conexões:** `mais-valia`, `circuito-capital`, `acumulacao`, `plataformizacao`
+
+---
+
+#### Capitalismo Racial Digital (`capitalismo-racial-digital`)
+
+Reconhecimento facial erro 34% mulheres negras vs 0,8% homens brancos
+
+**Conexões:** `necropolitica-digital`, `discriminacao-algoritmica`, `sistema-detecta`, `compas`
 
 ---
 
@@ -475,6 +499,14 @@ Claude Shannon: operações booleanas (AND/OR/NOT) implementáveis em eletrônic
 
 ---
 
+#### Clearview AI (`clearview-ai`)
+
+3 bilhões rostos raspados sem consentimento - vigilância total
+
+**Conexões:** `capitalismo-racial-digital`, `vigilancia-dados`, `capitalismo-vigilancia`
+
+---
+
 #### Colonização da Imaginação (`colonizacao-imaginacao`)
 
 Incapacidade de conceber alternativas — realismo capitalista (Mark Fisher)
@@ -488,6 +520,14 @@ Incapacidade de conceber alternativas — realismo capitalista (Mark Fisher)
 Capital metaboliza críticas, despolitiza via mercantilização (contracultura→publicidade)
 
 **Conexões:** `saltos-abortados`, `neutralizar-conteudo`, `feminismo-girlboss`, `opensource-bigtech`
+
+---
+
+#### Crise Epistêmica (`crise-epistemica`)
+
+3 patologias: relativismo tóxico, conspiracionismo hiper-racional, fundamentalismo digital
+
+**Conexões:** `economia-politica-odio`, `fact-checking-estrutural`, `colapso-verdade`
 
 ---
 
@@ -547,6 +587,14 @@ Excedente de população trabalhadora devido à automação
 
 ---
 
+#### Desinformação Industrial (`desinformacao-industrial`)
+
+6 estágios: produtores→amplificadores→mercenários→plataformas→anunciantes→beneficiários
+
+**Conexões:** `economia-politica-odio`, `gabinete-odio`, `capitalismo-vigilancia`
+
+---
+
 #### Determinismo Tecnológico (`determinismo-tecnologico`)
 
 Crença falsa de que tecnologia resolve tudo
@@ -595,6 +643,14 @@ Custos ambientais invisibilizados: mineração → energia → e-waste
 
 ---
 
+#### Economia Política do Ódio (`economia-politica-odio`)
+
+R$ 12M contratos milícias digitais + mercado US$ 78B global
+
+**Conexões:** `gabinete-odio`, `necropolitica-digital`, `desinformacao-industrial`, `cambridge-analytica`
+
+---
+
 #### Emergência (`emergencia`)
 
 Propriedades qualitativas novas que surgem no sistema mas não existem nos componentes
@@ -632,6 +688,14 @@ Apropriação do trabalho excedente não-pago
 Mineração de dados + mineração literal (terras raras)
 
 **Conexões:** `materialidade-computacao`, `ecologia-digital`, `e-waste`, `mais-valia-dados`
+
+---
+
+#### Facebook Papers (`facebook-papers`)
+
+Documentos internos: Zuckerberg sabia algoritmos matavam, priorizou lucro
+
+**Conexões:** `vsm-necropolitico`, `frances-haugen`, `necropolitica-digital`
 
 ---
 
@@ -691,11 +755,19 @@ Exploração mascarada como "parceria" e "oportunidade"
 
 ---
 
+#### Frances Haugen (Whistleblower) (`frances-haugen`)
+
+Ex-cientista dados Facebook expôs algoritmos ódio deliberados
+
+**Conexões:** `facebook-papers`, `vsm-necropolitico`, `resistencia-digital`
+
+---
+
 #### Gabinete do Ódio (`gabinete-odio`)
 
 Feedback positivo amplificando genocídio via algoritmos
 
-**Conexões:** `necropolitica-digital`, `feedback-positivo`, `viralizacao`
+**Conexões:** `necropolitica-digital`, `feedback-positivo`, `viralizacao`, `economia-politica-odio`
 
 ---
 
@@ -995,6 +1067,14 @@ Monopolização da infraestrutura digital
 
 ---
 
+#### Por Que Fact-Checking Falha (`fact-checking-estrutural`)
+
+5 razões: assimetria temporal, não atinge bolhas, efeito backfire, assimetria recursos, problema sistêmico
+
+**Conexões:** `crise-epistemica`, `economia-politica-odio`, `reformas-infraestruturais`
+
+---
+
 #### Precarização (`precarizacao`)
 
 Degradação das condições de trabalho e direitos
@@ -1075,6 +1155,14 @@ Transformações impedidas por repressão, cooptação ou limitação epistêmic
 
 ---
 
+#### Sistema Detecta (Bahia) (`sistema-detecta`)
+
+90% alertas miram jovens homens negros - genocídio algorítmico
+
+**Conexões:** `capitalismo-racial-digital`, `necropolitica-digital`, `vigilancia-preditiva`
+
+---
+
 #### Sistema Ternário (-1, 0, +1) (`sistema-ternario`)
 
 Base 3 balanceada para representar temporalidade
@@ -1147,6 +1235,14 @@ Trabalho de cuidado e manutenção da vida, historicamente invisibilizado
 
 ---
 
+#### Trauma Moderadores (`moderacao-trauma`)
+
+PTSD após visualizar atrocidades 8h/dia - trabalho necropolítico
+
+**Conexões:** `vsm-necropolitico`, `moderacao-conteudo`, `autocuidado-militante`
+
+---
+
 #### Uberização (`uberizacao`)
 
 Precarização do trabalho via plataformas digitais
@@ -1160,6 +1256,14 @@ Precarização do trabalho via plataformas digitais
 Saltos atuais (IA, quântica, bio) exigem direcionamento consciente — tempo é limitado
 
 **Conexões:** `salto-dialetico`, `ia-salto-andamento`, `responsabilidade-coletiva`
+
+---
+
+#### VSM Necropolítico Expandido (`vsm-necropolitico`)
+
+S1-S5 Facebook Papers: sistema viável para morte não democracia
+
+**Conexões:** `necropolitica-digital`, `facebook-papers`, `frances-haugen`, `moderacao-trauma`
 
 ---
 
@@ -1189,11 +1293,35 @@ Apps como máquinas de Wiener: feedback positivo dopamina → mais scroll
 
 ### Camada 1: Futuro (+1)
 
+#### 7 Reformas Infraestruturais (`reformas-infraestruturais`)
+
+Educação midiática, transparência algorítmica, desmonetização ódio, responsabilização plataformas, etc.
+
+**Conexões:** `fact-checking-estrutural`, `resistencia-digital`, `dsa-europeia`
+
+---
+
+#### Alegria Militante (`alegria-militante`)
+
+Audre Lorde: autocuidado não indulgência, é guerra política - contra cinismo necropolitico
+
+**Conexões:** `autocuidado-militante`, `resistencia-bem-sucedida`, `necropolitica-digital`
+
+---
+
 #### Anomalias Empíricas (`anomalias-empiricas`)
 
 Observações que teoria vigente não consegue explicar (Kuhn)
 
 **Conexões:** `crise-abstracao`, `tycho-brahe`, `mudanca-paradigma`
+
+---
+
+#### Autocuidado Militante (`autocuidado-militante`)
+
+10 sinais PTSD + 7 estratégias individuais + 6 práticas coletivas
+
+**Conexões:** `moderacao-trauma`, `resistencia-bem-sucedida`, `alegria-militante`, `cuidado-coletivo`
 
 ---
 
@@ -1213,6 +1341,14 @@ Fase 1: quando filosofia encontra contradições empíricas insolúveis
 
 ---
 
+#### Cuidado Coletivo (`cuidado-coletivo`)
+
+6 práticas: check-ins emocionais, rodízio tarefas pesadas, espaços descompressão, terapia grupo, rituais celebração, cultura não-julgamento
+
+**Conexões:** `autocuidado-militante`, `resistencia-bem-sucedida`, `organizacao-coletiva`
+
+---
+
 #### De Leitor a Construtor (`leitor-construtor`)
 
 Fase 3 pendente: organizar cooperativas, implementar protocolos, construir redes mesh
@@ -1226,6 +1362,14 @@ Fase 3 pendente: organizar cooperativas, implementar protocolos, construir redes
 Natureza deixa de ser sagrada, torna-se recurso quantificável e explorável
 
 **Conexões:** `hegemonia-cultural`, `matematizacao`, `extrativismo`, `cosmotecnica`
+
+---
+
+#### Digital Services Act (UE) (`dsa-europeia`)
+
+Multas até 6% receita global - responsabilização plataformas
+
+**Conexões:** `resistencia-bem-sucedida`, `reformas-infraestruturais`, `regulacao-plataformas`
 
 ---
 
@@ -1357,6 +1501,14 @@ Fase 3: nova ciência gera tecnologias que transformam mundo material
 
 ---
 
+#### Resistência Bem-Sucedida (`resistencia-bem-sucedida`)
+
+Sleeping Giants R$ 30M cortados, TSE 700M posts removidos, DSA 6% multas
+
+**Conexões:** `sleeping-giants`, `tse-2022`, `dsa-europeia`, `whistleblowers`
+
+---
+
 #### Salto Dialético (`salto-dialetico`)
 
 Processo pelo qual filosofia abstrata se transforma em ciência concreta que recria o mundo
@@ -1373,6 +1525,22 @@ Processo pelo qual filosofia abstrata se transforma em ciência concreta que rec
 
 ---
 
+#### Sleeping Giants Brasil (`sleeping-giants`)
+
+Campanha cortou R$ 30M publicidade sites ódio - boicote funciona
+
+**Conexões:** `resistencia-bem-sucedida`, `economia-politica-odio`, `desmonetizacao-odio`
+
+---
+
+#### TSE Eleições 2022 (`tse-2022`)
+
+700 milhões posts fake news removidos - regulação possível
+
+**Conexões:** `resistencia-bem-sucedida`, `desinformacao-industrial`, `regulacao-plataformas`
+
+---
+
 #### Tese-Antítese-Síntese (`tese-antitese-sintese`)
 
 Movimento dialético hegeliano: contradição gera superação qualitativa
@@ -1386,6 +1554,14 @@ Movimento dialético hegeliano: contradição gera superação qualitativa
 Comunicação bidirecional em tempo real
 
 **Conexões:** `modo-colaborativo`, `grafo-conceitos`, `nhandereko`
+
+---
+
+#### Whistleblowers (Haugen/Zhang/Wylie) (`whistleblowers`)
+
+Denunciantes internos expõem crimes corporativos - coragem política
+
+**Conexões:** `frances-haugen`, `resistencia-bem-sucedida`, `transparencia-corporativa`
 
 ---
 

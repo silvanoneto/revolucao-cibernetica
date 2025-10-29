@@ -11,6 +11,8 @@
  * - Sem estrutura arbórea
  * 
  * CHANGELOG:
+ * - 2025-10-29: Sincronizado com rizoma-revolucao-cibernetica.json (6154 conceitos)
+ * - 2025-10-29: Sincronizado com rizoma-revolucao-cibernetica.json (6154 conceitos)
  * - 2025-10-28 (v29): Expansão massiva do Capítulo 32 (A Democracia como Sistema Operacional — Bugs, Patches e um Novo Protocolo)
  *   + 80+ novos conceitos: democracia liberal bugs sistêmicos, presidencialismo coalizão Brasil, democracia participativa patches, novo protocolo governança, experimentações concretas
  *   + Cap 32.1-4: Quatro Pilares Novo Protocolo — plataformas deliberação coletiva (GitHub legislação), sensores sociais feedback tempo real (painel bem-estar), autogestão múltiplas escalas (rede federada), sorteio mandatos imperativos (desprofissionalização política)
@@ -968,7597 +970,1361 @@
 
 // Grafo de conceitos (nós do rizoma)
 const conceptGraph = {
-    // ========================================
-    // CAPÍTULO 1: MARXISMO BÁSICO
-    // ========================================
     'mercadoria': {
         name: 'Mercadoria',
         description: 'Produto do trabalho destinado à troca no mercado',
-        connections: ['valor-uso', 'valor-troca', 'fetichismo', 'trabalho-abstrato'],
+        connections: ["valor-uso", "valor-troca", "fetichismo", "trabalho-abstrato"],
         color: '#ef4444',
-        layer: -1 // Passado (conceito fundacional)
+        layer: -1
     },
     'valor-uso': {
         name: 'Valor de Uso',
         description: 'Utilidade concreta de uma mercadoria',
-        connections: ['mercadoria', 'valor-troca', 'trabalho-concreto'],
+        connections: ["mercadoria", "valor-troca", "trabalho-concreto"],
         color: '#ef4444',
         layer: -1
     },
     'valor-troca': {
         name: 'Valor de Troca',
         description: 'Relação quantitativa de troca entre mercadorias',
-        connections: ['mercadoria', 'valor-uso', 'trabalho-abstrato', 'preco-valor'],
+        connections: ["mercadoria", "valor-uso", "trabalho-abstrato", "preco-valor"],
         color: '#ef4444',
         layer: -1
     },
     'trabalho-concreto': {
         name: 'Trabalho Concreto',
         description: 'Atividade específica que cria valor de uso particular',
-        connections: ['valor-uso', 'trabalho-abstrato', 'previa-ideacao'],
+        connections: ["valor-uso", "trabalho-abstrato", "previa-ideacao"],
         color: '#ef4444',
         layer: -1
     },
     'trabalho-abstrato': {
         name: 'Trabalho Abstrato',
         description: 'Trabalho humano reduzido a dispêndio de tempo',
-        connections: ['mercadoria', 'valor-troca', 'trabalho-concreto', 'tsn'],
+        connections: ["mercadoria", "valor-troca", "trabalho-concreto", "tsn"],
         color: '#ef4444',
         layer: -1
     },
     'tsn': {
         name: 'Tempo de Trabalho Socialmente Necessário',
         description: 'Tempo médio para produzir mercadoria no nível tecnológico da sociedade',
-        connections: ['trabalho-abstrato', 'valor-troca', 'forcas-produtivas'],
+        connections: ["trabalho-abstrato", "valor-troca", "forcas-produtivas"],
         color: '#ef4444',
         layer: -1
     },
     'previa-ideacao': {
         name: 'Prévia-Ideação',
         description: 'Capacidade humana de planejar mentalmente antes de executar',
-        connections: ['trabalho-concreto', 'objetivacao', 'forcas-produtivas'],
+        connections: ["trabalho-concreto", "objetivacao", "forcas-produtivas"],
         color: '#ef4444',
         layer: -1
     },
     'objetivacao': {
         name: 'Objetivação',
         description: 'Materialização da ideia no mundo através do trabalho',
-        connections: ['previa-ideacao', 'trabalho-concreto', 'alienacao'],
+        connections: ["previa-ideacao", "trabalho-concreto", "alienacao"],
         color: '#ef4444',
         layer: -1
     },
     'forcas-produtivas': {
         name: 'Forças Produtivas',
         description: 'Ferramentas, tecnologias, conhecimentos para transformar natureza',
-        connections: ['tsn', 'relacoes-producao', 'automacao', 'ia'],
+        connections: ["tsn", "relacoes-producao", "automacao", "ia"],
         color: '#ef4444',
         layer: -1
     },
     'relacoes-producao': {
         name: 'Relações de Produção',
         description: 'Relações sociais estabelecidas para produzir e distribuir bens',
-        connections: ['forcas-produtivas', 'mais-valia', 'capital', 'uberizacao'],
+        connections: ["forcas-produtivas", "mais-valia", "capital", "uberizacao"],
         color: '#ef4444',
         layer: -1
     },
     'mais-valia': {
         name: 'Mais-Valia',
         description: 'Valor criado pelo trabalhador além do seu salário',
-        connections: ['mais-valia-absoluta', 'mais-valia-relativa', 'capital', 'exploracao'],
+        connections: ["mais-valia-absoluta", "mais-valia-relativa", "capital", "exploracao"],
         color: '#ef4444',
-        layer: 0 // Presente (conceito ativo)
+        layer: 0
     },
     'mais-valia-absoluta': {
         name: 'Mais-Valia Absoluta',
         description: 'Extração via aumento de jornada ou intensidade do trabalho',
-        connections: ['mais-valia', 'mais-valia-relativa', 'uberizacao', 'reforma-trabalhista'],
+        connections: ["mais-valia", "mais-valia-relativa", "uberizacao", "reforma-trabalhista"],
         color: '#ef4444',
         layer: 0
     },
     'mais-valia-relativa': {
         name: 'Mais-Valia Relativa',
         description: 'Extração via aumento de produtividade (tecnologia)',
-        connections: ['mais-valia', 'mais-valia-absoluta', 'automacao', 'algoritmos'],
+        connections: ["mais-valia", "mais-valia-absoluta", "automacao", "algoritmos"],
         color: '#ef4444',
         layer: 0
     },
     'capital': {
         name: 'Capital',
         description: 'Processo de autovalorização: D-M-P-M\'-D\'',
-        connections: ['mais-valia', 'circuito-capital', 'acumulacao', 'plataformizacao'],
+        connections: ["mais-valia", "circuito-capital", "acumulacao", "plataformizacao"],
         color: '#ef4444',
         layer: 0
     },
     'circuito-capital': {
         name: 'Circuito do Capital (D-M-D\')',
         description: 'Dinheiro → Mercadorias → Produção → Mais Dinheiro',
-        connections: ['capital', 'mais-valia', 'acumulacao'],
+        connections: ["capital", "mais-valia", "acumulacao"],
         color: '#ef4444',
         layer: 0
     },
     'fetichismo': {
         name: 'Fetichismo da Mercadoria',
         description: 'Relações sociais aparecem como relações entre coisas',
-        connections: ['mercadoria', 'fetichismo-digital', 'ideologia', 'alienacao'],
+        connections: ["mercadoria", "fetichismo-digital", "ideologia", "alienacao"],
         color: '#ef4444',
         layer: 0
     },
     'fetichismo-digital': {
         name: 'Fetichismo do Dado',
-        description: 'Exploração mascarada como "parceria" e "oportunidade"',
-        connections: ['fetichismo', 'mais-valia-dados', 'plataformizacao', 'magalu', 'algoritmo-fetiche'],
+        description: 'Exploração mascarada como \"parceria\" e \"oportunidade\"',
+        connections: ["fetichismo", "mais-valia-dados", "plataformizacao", "magalu"],
         color: '#ef4444',
-        layer: 0
-    },
-    'algoritmo-fetiche': {
-        name: 'Fetiche do Algoritmo',
-        description: 'Relações de poder aparecem como decisões técnicas neutras',
-        connections: ['fetichismo-digital', 'gerenciamento-algoritmico', 'alienacao', 'mascara-poder', 'tres-perguntas-algoritmo'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'mascara-poder': {
-        name: 'Algoritmo como Máscara',
-        description: 'Caixa-preta esconde escolhas humanas e interesses econômicos',
-        connections: ['algoritmo-fetiche', 'opacidade', 'caso-uber-caixa-preta'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'caso-uber-caixa-preta': {
-        name: 'Caso Uber: Caixa-Preta (2019)',
-        description: 'Algoritmo "aposentou" motoristas antigos sem avisar',
-        connections: ['mascara-poder', 'gerenciamento-algoritmico', 'uberizacao'],
-        color: '#10b981',
-        layer: 0
-    },
-    'tres-perguntas-algoritmo': {
-        name: 'Três Perguntas para Desmascarar Fetiche',
-        description: '1) Quem programou? 2) Quais dados? 3) Quem se beneficia?',
-        connections: ['algoritmo-fetiche', 'transparencia-algoritmica', 'resistencia'],
-        color: '#10b981',
-        layer: 1
-    },
-    'algoritmo-racismo': {
-        name: 'Algoritmo Reproduz Desigualdade',
-        description: 'IA treinada em sociedade racista = IA racista',
-        connections: ['algoritmo-fetiche', 'serasa-score', 'redlining-digital', 'discriminacao-algoritmica'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'discriminacao-algoritmica': {
-        name: 'Discriminação Algorítmica',
-        description: 'Desigualdades naturalizadas como "análise de risco baseada em dados"',
-        connections: ['algoritmo-racismo', 'algoritmo-fetiche', 'ideologia'],
-        color: '#dc2626',
         layer: 0
     },
     'preco-valor': {
         name: 'Preço ≠ Valor',
         description: 'Preço oscila em torno do valor, mas não é o valor',
-        connections: ['valor-troca', 'fetichismo', 'capitalismo-vigilancia'],
+        connections: ["valor-troca", "fetichismo", "capitalismo-vigilancia"],
         color: '#ef4444',
         layer: 0
     },
     'reforma-trabalhista': {
         name: 'Reforma Trabalhista 2017 (Brasil)',
         description: 'Lei 13.467 - legalização da mais-valia absoluta',
-        connections: ['mais-valia-absoluta', 'uberizacao', 'pejotizacao', 'intermitente'],
+        connections: ["mais-valia-absoluta", "uberizacao", "pejotizacao", "intermitente"],
         color: '#ef4444',
         layer: 0
     },
     'pejotizacao': {
         name: 'Pejotização',
-        description: 'Transformar empregados em "pessoas jurídicas" para fugir de direitos',
-        connections: ['reforma-trabalhista', 'uberizacao', 'precarizacao'],
+        description: 'Transformar empregados em \"pessoas jurídicas\" para fugir de direitos',
+        connections: ["reforma-trabalhista", "uberizacao", "precarizacao"],
         color: '#ef4444',
         layer: 0
     },
     'intermitente': {
         name: 'Trabalho Intermitente',
         description: 'Disponibilidade 24/7, pagamento apenas por horas chamadas',
-        connections: ['reforma-trabalhista', 'uberizacao', 'mais-valia-absoluta'],
+        connections: ["reforma-trabalhista", "uberizacao", "mais-valia-absoluta"],
         color: '#ef4444',
         layer: 0
     },
     'magalu': {
         name: 'Magazine Luiza (Caso)',
         description: 'Plataformização brasileira - controle sem propriedade',
-        connections: ['fetichismo-digital', 'plataformizacao', 'mais-valia-dados', 'terceirizacao'],
+        connections: ["fetichismo-digital", "plataformizacao", "mais-valia-dados", "terceirizacao"],
         color: '#ef4444',
         layer: 0
     },
     'terceirizacao': {
         name: 'Terceirização',
         description: 'Transferência de riscos e custos para trabalhadores',
-        connections: ['magalu', 'uberizacao', 'precarizacao'],
+        connections: ["magalu", "uberizacao", "precarizacao"],
         color: '#ef4444',
         layer: 0
     },
     'exploracao': {
         name: 'Exploração Capitalista',
         description: 'Apropriação do trabalho excedente não-pago',
-        connections: ['mais-valia', 'alienacao', 'resistencia'],
+        connections: ["mais-valia", "alienacao", "resistencia"],
         color: '#ef4444',
         layer: 0
     },
     'alienacao': {
         name: 'Alienação',
         description: 'Estranhamento do trabalhador em relação ao produto e ao processo',
-        connections: ['objetivacao', 'fetichismo', 'exploracao'],
+        connections: ["objetivacao", "fetichismo", "exploracao"],
         color: '#ef4444',
         layer: 0
     },
     'precarizacao': {
         name: 'Precarização',
         description: 'Degradação das condições de trabalho e direitos',
-        connections: ['uberizacao', 'pejotizacao', 'terceirizacao', 'intermitente'],
+        connections: ["uberizacao", "pejotizacao", "terceirizacao", "intermitente"],
         color: '#ef4444',
         layer: 0
     },
     'acumulacao': {
         name: 'Acumulação de Capital',
         description: 'Reinvestimento da mais-valia para gerar mais mais-valia',
-        connections: ['capital', 'circuito-capital', 'monopolio'],
+        connections: ["capital", "circuito-capital", "monopolio"],
         color: '#ef4444',
         layer: 0
     },
     'algoritmos': {
         name: 'Algoritmos de Controle',
         description: 'Gerenciamento algorítmico automatizado do trabalho',
-        connections: ['mais-valia-relativa', 'uberizacao', 'ia', 'vigilancia'],
+        connections: ["mais-valia-relativa", "uberizacao", "ia", "vigilancia"],
         color: '#ef4444',
         layer: 0
     },
     'automacao': {
         name: 'Automação',
         description: 'Substituição de trabalho humano por máquinas',
-        connections: ['forcas-produtivas', 'mais-valia-relativa', 'ia', 'desemprego'],
+        connections: ["forcas-produtivas", "mais-valia-relativa", "ia", "desemprego"],
         color: '#ef4444',
         layer: 0
     },
     'ia': {
         name: 'Inteligência Artificial',
-        description: 'Machine learning: estatística avançada aplicada a volumes massivos de dados',
-        connections: ['automacao', 'algoritmos', 'mais-valia-dados', 'vigilancia', 'ghost-work', 'ciclo-extracao-ia', 'desmistificacao-ia', 'feedback-loop-ia'],
+        description: 'Machine learning aplicado à extração de mais-valia',
+        connections: ["automacao", "algoritmos", "mais-valia-dados", "vigilancia"],
         color: '#ef4444',
         layer: 0
     },
-    'desmistificacao-ia': {
-        name: 'Desmistificando a IA',
-        description: 'IA não é magia: é reconhecimento de padrões em dados',
-        connections: ['ia', 'algoritmos', 'dados'],
-        color: '#10b981',
-        layer: 0
-    },
-    'ciclo-extracao-ia': {
-        name: 'Ciclo de Extração via IA',
-        description: 'Mais dados → IA melhor → serviços viciantes → mais usuários → mais dados',
-        connections: ['ia', 'capitalismo-vigilancia', 'feedback-positivo', 'vicio-digital'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'feedback-loop-ia': {
-        name: 'Feedback Loops na IA',
-        description: 'Cibernética aplicada ao lucro: loops positivos e negativos mantêm engajamento',
-        connections: ['ia', 'feedback', 'feedback-positivo', 'feedback-negativo', 'vicio-digital'],
-        color: '#8b5cf6',
-        layer: 0
-    },
-    'ghost-work': {
-        name: 'Ghost Work (Trabalho Fantasma)',
-        description: 'Trabalho humano invisível que treina IA: rotulação, moderação',
-        connections: ['ia', 'mais-valia', 'mechanical-turk', 'moderadores-conteudo', 'anotadores-dados'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'mechanical-turk': {
-        name: 'Amazon Mechanical Turk',
-        description: 'Plataforma de microtarefas: US$ 0,01-0,10 por tarefa',
-        connections: ['ghost-work', 'uberizacao', 'mais-valia-absoluta'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'moderadores-conteudo': {
-        name: 'Moderadores de Conteúdo',
-        description: 'Trabalhadores que assistem violência por salário mínimo desenvolvendo PTSD',
-        connections: ['ghost-work', 'trabalho-imaterial', 'necropolitica'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'anotadores-dados': {
-        name: 'Anotadores de Dados',
-        description: 'Rotulam objetos em imagens para treinar carros autônomos',
-        connections: ['ghost-work', 'ia', 'mais-valia'],
-        color: '#dc2626',
-        layer: 0
-    },
-
-    // ========================================
-    // CAPÍTULO 2: CIBERNÉTICA E FUNDAMENTOS
-    // ========================================
     'cibernetica': {
         name: 'Cibernética',
         description: 'Ciência do controle e comunicação (Wiener, 1948)',
-        connections: ['feedback', 'wiener', 'turing', 'shannon', 'segunda-ordem', 'automacao'],
+        connections: ["feedback", "wiener", "turing", "shannon", "segunda-ordem", "automacao", "autopoiese", "variedade-requisita", "vsm", "acoplamento-estrutural"],
         color: '#8b5cf6',
-        layer: -1 // Passado
+        layer: -1
     },
     'wiener': {
         name: 'Norbert Wiener',
         description: 'Fundador da cibernética (1948) - alertou sobre automação descontrolada',
-        connections: ['cibernetica', 'feedback', 'duplo-uso-militar', 'vicio-digital'],
+        connections: ["cibernetica", "feedback", "duplo-uso-militar", "vicio-digital"],
         color: '#8b5cf6',
         layer: -1
     },
     'turing': {
         name: 'Alan Turing',
         description: 'Máquina Universal + Problema da Parada - fundador da computação',
-        connections: ['computabilidade', 'problema-parada', 'enigma', 'duplo-uso-militar'],
+        connections: ["computabilidade", "problema-parada", "enigma", "duplo-uso-militar"],
         color: '#8b5cf6',
         layer: -1
     },
     'shannon': {
         name: 'Claude Shannon',
         description: 'Teoria da Informação (1948) - informação como bits mensuráveis',
-        connections: ['teoria-informacao', 'entropia', 'trabalho-imaterial', 'duplo-uso-militar'],
+        connections: ["teoria-informacao", "entropia", "trabalho-imaterial", "duplo-uso-militar"],
         color: '#8b5cf6',
         layer: -1
     },
     'babbage': {
         name: 'Charles Babbage',
         description: 'Máquina Analítica (1837) - primeiro computador programável (mecânico)',
-        connections: ['ada-lovelace', 'algoritmo', 'automacao', 'materialidade-computacao'],
+        connections: ["ada-lovelace", "algoritmo", "automacao", "materialidade-computacao"],
         color: '#8b5cf6',
         layer: -1
     },
     'ada-lovelace': {
         name: 'Ada Lovelace',
         description: 'Primeira programadora (1843) - viu computação além de números',
-        connections: ['babbage', 'algoritmo', 'eniac-six', 'genero-computacao'],
-        color: '#ec4899', // Rosa para destacar gênero
+        connections: ["babbage", "algoritmo", "eniac-six", "genero-computacao"],
+        color: '#ec4899',
         layer: -1
     },
     'eniac-six': {
         name: 'ENIAC Six',
         description: 'Primeiras programadoras (1945) - invisibilizadas pela história',
-        connections: ['ada-lovelace', 'genero-computacao', 'trabalho-invisivel'],
+        connections: ["ada-lovelace", "genero-computacao", "trabalho-invisivel"],
         color: '#ec4899',
         layer: -1
     },
     'genero-computacao': {
         name: 'Gênero e Computação',
         description: 'Padrão histórico: trabalho feminizado → masculinizado quando valorizado',
-        connections: ['eniac-six', 'ada-lovelace', 'divisao-sexual-trabalho', 'trabalho-invisivel', 'cyborg-feminism', 'tecnofeminismo'],
+        connections: ["eniac-six", "ada-lovelace", "divisao-sexual-trabalho", "trabalho-invisivel"],
         color: '#ec4899',
         layer: 0
     },
     'feedback': {
         name: 'Feedback Loop',
         description: 'Ciclo de retorno que modifica o sistema (negativo=estabiliza, positivo=amplifica)',
-        connections: ['cibernetica', 'wiener', 'autopoiese', 'temporalidade', 'vicio-digital'],
+        connections: ["cibernetica", "wiener", "autopoiese", "temporalidade", "vicio-digital"],
         color: '#10b981',
-        layer: 0 // Presente
+        layer: 0
     },
     'feedback-negativo': {
         name: 'Feedback Negativo',
         description: 'Estabilizador - busca equilíbrio (termostato, homeostase)',
-        connections: ['feedback', 'homeostase', 'cybersyn'],
+        connections: ["feedback", "homeostase", "cybersyn"],
         color: '#10b981',
         layer: 0
     },
     'feedback-positivo': {
         name: 'Feedback Positivo',
         description: 'Amplificador - crescimento exponencial ou colapso (microfonia, vício)',
-        connections: ['feedback', 'vicio-digital', 'viralizacao', 'necropolitica-digital', 'terra-luna-collapse'],
-        color: '#f97316', // Laranja para atenção
+        connections: ["feedback", "vicio-digital", "viralizacao", "necropolitica-digital"],
+        color: '#f97316',
         layer: 0
     },
     'vicio-digital': {
         name: 'Vício Digital',
         description: 'Apps como máquinas de Wiener: feedback positivo dopamina → mais scroll',
-        connections: ['feedback-positivo', 'wiener', 'dopamina', 'infinite-scroll', 'capitalismo-vigilancia'],
+        connections: ["feedback-positivo", "wiener", "dopamina", "infinite-scroll", "capitalismo-vigilancia"],
         color: '#f97316',
         layer: 0
     },
     'dopamina': {
         name: 'Dopamina Digital',
         description: 'Sensor biológico usado como loop de feedback viciante',
-        connections: ['vicio-digital', 'feedback-positivo', 'recompensa-variavel'],
+        connections: ["vicio-digital", "feedback-positivo", "recompensa-variavel"],
         color: '#f97316',
         layer: 0
     },
     'recompensa-variavel': {
         name: 'Recompensa Variável',
         description: 'Incerteza maximiza dopamina (slot machine = próximo scroll)',
-        connections: ['dopamina', 'vicio-digital', 'gamificacao'],
+        connections: ["dopamina", "vicio-digital", "gamificacao"],
         color: '#f97316',
         layer: 0
     },
     'infinite-scroll': {
         name: 'Infinite Scroll',
         description: 'Remove ponto de parada - feedback positivo sem válvula de escape',
-        connections: ['vicio-digital', 'feedback-positivo'],
+        connections: ["vicio-digital", "feedback-positivo"],
         color: '#f97316',
         layer: 0
     },
     'algoritmo': {
         name: 'Algoritmo',
         description: 'Conjunto finito de instruções para resolver problema',
-        connections: ['ada-lovelace', 'turing', 'computabilidade', 'automacao'],
+        connections: ["ada-lovelace", "turing", "computabilidade", "automacao"],
         color: '#8b5cf6',
         layer: -1
     },
     'computabilidade': {
         name: 'Computabilidade',
         description: 'O que pode ser resolvido por algoritmo (Máquina de Turing)',
-        connections: ['turing', 'algoritmo', 'problema-parada'],
+        connections: ["turing", "algoritmo", "problema-parada"],
         color: '#8b5cf6',
         layer: -1
     },
     'problema-parada': {
         name: 'Problema da Parada',
         description: 'Prova: nem tudo é computável - limites matemáticos da tecnologia',
-        connections: ['turing', 'computabilidade', 'limites-tecnologia', 'democracia-algoritmicica'],
-        color: '#7c3aed', // Roxo para conceito filosófico
+        connections: ["turing", "computabilidade", "limites-tecnologia", "democracia-algoritmicica"],
+        color: '#7c3aed',
         layer: 0
     },
     'limites-tecnologia': {
         name: 'Limites da Tecnologia',
-        description: 'Nem tudo pode ser "resolvido com tecnologia" - exige política',
-        connections: ['problema-parada', 'determinismo-tecnologico', 'democracia-algoritmicica'],
+        description: 'Nem tudo pode ser \"resolvido com tecnologia\" - exige política',
+        connections: ["problema-parada", "determinismo-tecnologico", "democracia-algoritmicica"],
         color: '#7c3aed',
         layer: 0
     },
     'teoria-informacao': {
         name: 'Teoria da Informação',
         description: 'Informação mensurável em bits, separada de significado (Shannon)',
-        connections: ['shannon', 'bit', 'entropia', 'trabalho-imaterial'],
+        connections: ["shannon", "bit", "entropia", "trabalho-imaterial"],
         color: '#8b5cf6',
         layer: -1
     },
     'bit': {
         name: 'Bit',
         description: 'Unidade básica de informação (0 ou 1) - permite digitalização de tudo',
-        connections: ['teoria-informacao', 'shannon', 'digitalizacao'],
+        connections: ["teoria-informacao", "shannon", "digitalizacao"],
         color: '#8b5cf6',
         layer: -1
     },
     'entropia': {
         name: 'Entropia Informacional',
         description: 'Medida de incerteza/imprevisibilidade (Shannon = Boltzmann)',
-        connections: ['teoria-informacao', 'shannon', 'materialidade-computacao'],
+        connections: ["teoria-informacao", "shannon", "materialidade-computacao"],
         color: '#8b5cf6',
         layer: -1
     },
     'duplo-uso-militar': {
         name: 'Duplo Uso Militar',
         description: 'Todas tecnologias fundacionais nasceram da guerra (Enigma, ENIAC, Internet)',
-        connections: ['turing', 'wiener', 'shannon', 'enigma', 'darpa', 'geopolitica'],
-        color: '#dc2626', // Vermelho para militar
+        connections: ["turing", "wiener", "shannon", "enigma", "darpa", "geopolitica"],
+        color: '#dc2626',
         layer: -1
     },
     'enigma': {
         name: 'Enigma',
         description: 'Código nazista quebrado por Turing - cibernética contra fascismo',
-        connections: ['turing', 'duplo-uso-militar', 'necropolitica-digital'],
+        connections: ["turing", "duplo-uso-militar", "necropolitica-digital"],
         color: '#dc2626',
         layer: -1
     },
     'darpa': {
         name: 'DARPA',
         description: 'ARPANET → Internet - rede militar virou www',
-        connections: ['duplo-uso-militar', 'internet', 'geopolitica', 'vigilancia'],
+        connections: ["duplo-uso-militar", "internet", "geopolitica", "vigilancia"],
         color: '#dc2626',
         layer: 0
     },
     'materialidade-computacao': {
         name: 'Materialidade da Computação',
-        description: 'Não há "desmaterialização" - há mineração, energia, e-waste',
-        connections: ['babbage', 'entropia', 'extrativismo', 'ecologia-digital', 'data-centers'],
-        color: '#22c55e', // Verde para ecologia
+        description: 'Não há \"desmaterialização\" - há mineração, energia, e-waste',
+        connections: ["babbage", "entropia", "extrativismo", "ecologia-digital", "data-centers"],
+        color: '#22c55e',
         layer: 0
     },
     'ecologia-digital': {
         name: 'Ecologia Digital',
         description: 'Custos ambientais invisibilizados: mineração → energia → e-waste',
-        connections: ['materialidade-computacao', 'extrativismo', 'e-waste', 'data-centers'],
+        connections: ["materialidade-computacao", "extrativismo", "e-waste", "data-centers"],
         color: '#22c55e',
         layer: 0
     },
     'e-waste': {
         name: 'E-Waste',
         description: 'Lixo eletrônico = genocídio lento (crianças em Gana queimando placas)',
-        connections: ['ecologia-digital', 'necropolitica-digital', 'extrativismo'],
+        connections: ["ecologia-digital", "necropolitica-digital", "extrativismo"],
         color: '#22c55e',
         layer: 0
     },
     'data-centers': {
         name: 'Data Centers',
         description: 'Não há nuvem - há data centers consumindo rios para refrigeração',
-        connections: ['materialidade-computacao', 'ecologia-digital', 'fetichismo-digital'],
+        connections: ["materialidade-computacao", "ecologia-digital", "fetichismo-digital"],
         color: '#22c55e',
         layer: 0
     },
     'autopoiese': {
         name: 'Autopoiese',
         description: 'Sistemas que se auto-criam (Maturana & Varela)',
-        connections: ['cibernetica', 'feedback', 'nhandereko'],
+        connections: ["cibernetica", "feedback", "nhandereko", "fechamento-operacional", "acoplamento-estrutural", "recursividade", "segunda-ordem"],
         color: '#8b5cf6',
         layer: -1
     },
     'segunda-ordem': {
         name: 'Cibernética de Segunda Ordem',
         description: 'Observador incluído no sistema observado',
-        connections: ['cibernetica', 'meta-observacao', 'ontologia-executavel'],
+        connections: ["cibernetica", "meta-observacao", "ontologia-executavel", "autopoiese", "acoplamento-estrutural"],
+        color: '#10b981',
+        layer: 0
+    },
+    'acoplamento-estrutural': {
+        name: 'Acoplamento Estrutural',
+        description: 'Sistemas autopoiéticos se adaptam mutuamente através de interações recorrentes sem perder autonomia',
+        connections: ["autopoiese", "segunda-ordem", "comunicacao", "linguagem-sistema"],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'variedade-requisita': {
+        name: 'Lei da Variedade Requisita',
+        description: 'Para controlar um sistema, o regulador precisa ter variedade igual ou maior (Ashby)',
+        connections: ["cibernetica", "feedback", "vsm", "descentralizacao"],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'vsm': {
+        name: 'Modelo de Sistema Viável',
+        description: 'Arquitetura recursiva de governança organizacional (Stafford Beer)',
+        connections: ["variedade-requisita", "cybersyn", "cibernetica", "recursividade", "autonomia-coordenacao"],
+        color: '#10b981',
+        layer: 0
+    },
+    'recursividade': {
+        name: 'Recursividade',
+        description: 'Processos que se aplicam aos próprios resultados gerando complexidade emergente',
+        connections: ["autopoiese", "feedback", "vsm", "emergencia", "fractais"],
+        color: '#8b5cf6',
+        layer: -1
+    },
+    'emergencia': {
+        name: 'Emergência',
+        description: 'Propriedades qualitativas novas que surgem no sistema mas não existem nos componentes',
+        connections: ["recursividade", "sistemas-complexos", "consciencia", "sociedade"],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'escalada-simetrica': {
+        name: 'Escalada Simétrica',
+        description: 'Feedback positivo descontrolado em interações competitivas (Bateson)',
+        connections: ["feedback", "patologias-sistemicas", "corrida-armamentista"],
+        color: '#ef4444',
+        layer: 0
+    },
+    'fechamento-operacional': {
+        name: 'Fechamento Operacional',
+        description: 'Operações do sistema se referem apenas a si mesmas em ciclo recursivo',
+        connections: ["autopoiese", "recursividade", "perturbacao-ambiente"],
+        color: '#8b5cf6',
+        layer: 0
+    },
+    'linguagem-sistema': {
+        name: 'Linguagem como Sistema',
+        description: 'Coordenação comportamental através de acoplamento estrutural, não transmissão de informação',
+        connections: ["acoplamento-estrutural", "comunicacao", "cibernetica"],
         color: '#10b981',
         layer: 0
     },
     'rizoma': {
         name: 'Rizoma',
         description: 'Estrutura não-hierárquica (Deleuze & Guattari)',
-        connections: ['multiplicidade', 'devir', 'navegacao-rizomatica'],
+        connections: ["multiplicidade", "devir", "navegacao-rizomatica"],
         color: '#8b5cf6',
         layer: -1
     },
     'multiplicidade': {
         name: 'Multiplicidade',
         description: 'Não é uno nem múltiplo - é multiplicidade',
-        connections: ['rizoma', 'devir', 'ontologia-relacional'],
+        connections: ["rizoma", "devir", "ontologia-relacional"],
         color: '#8b5cf6',
         layer: -1
     },
     'capitalismo-vigilancia': {
         name: 'Capitalismo de Vigilância',
-        description: 'Extração de dados comportamentais como matéria-prima (Zuboff)',
-        connections: ['mais-valia-dados', 'plataformizacao', 'resistencia', 'preco-valor', 'vigilancia', 'excedente-comportamental', 'produtos-previsao', 'shoshana-zuboff', 'mais-valia-informacional', 'metabolismo-informacional'],
+        description: 'Extração de dados comportamentais (Zuboff)',
+        connections: ["mais-valia-dados", "plataformizacao", "resistencia", "preco-valor", "vigilancia"],
         color: '#ef4444',
-        layer: 0
-    },
-    'shoshana-zuboff': {
-        name: 'Shoshana Zuboff',
-        description: 'Teórica do capitalismo de vigilância - Harvard',
-        connections: ['capitalismo-vigilancia', 'excedente-comportamental', 'produtos-previsao', 'mais-valia-informacional'],
-        color: '#8b5cf6',
-        layer: 0
-    },
-    'excedente-comportamental': {
-        name: 'Excedente Comportamental',
-        description: 'Dados coletados além do necessário para o serviço funcionar',
-        connections: ['capitalismo-vigilancia', 'produtos-previsao', 'dados', 'google-maps-exemplo', 'mais-valia-informacional', 'taxa-extracao-info'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'produtos-previsao': {
-        name: 'Produtos de Previsão',
-        description: 'Previsões de comportamento futuro vendidas como mercadoria',
-        connections: ['capitalismo-vigilancia', 'excedente-comportamental', 'ia', 'serasa-score', 'metabolismo-informacional'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'dados': {
-        name: 'Dados como Mercadoria',
-        description: 'Nova matéria-prima do capitalismo digital',
-        connections: ['excedente-comportamental', 'mais-valia-dados', 'capitalismo-vigilancia', 'dupla-expropriacao', 'dados-trabalho-cristalizado', 'informacao-como-trabalho'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'dupla-expropriacao': {
-        name: 'Dupla Expropriação',
-        description: 'Tempo (atenção) + rastro digital convertidos em lucro sem compensação',
-        connections: ['dados', 'capitalismo-vigilancia', 'mais-valia'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'google-maps-exemplo': {
-        name: 'Caso Google Maps',
-        description: 'Exemplo concreto de coleta de excedente comportamental',
-        connections: ['excedente-comportamental', 'vigilancia', 'dados'],
-        color: '#10b981',
-        layer: 0
-    },
-    'serasa-score': {
-        name: 'Serasa Score',
-        description: 'Discriminação algorítmica via score de crédito no Brasil',
-        connections: ['produtos-previsao', 'algoritmo-fetiche', 'redlining-digital', 'necropolitica'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'redlining-digital': {
-        name: 'Redlining Digital',
-        description: 'Discriminação por CEP automatizada via algoritmos',
-        connections: ['serasa-score', 'algoritmo-fetiche', 'necropolitica'],
-        color: '#dc2626',
         layer: 0
     },
     'mais-valia-dados': {
         name: 'Mais-Valia de Dados',
         description: 'Valor extraído do trabalho digital não-pago',
-        connections: ['capitalismo-vigilancia', 'uberizacao', 'trabalho-imaterial', 'fetichismo-digital', 'magalu', 'ia'],
+        connections: ["capitalismo-vigilancia", "uberizacao", "trabalho-imaterial", "fetichismo-digital", "magalu", "ia"],
         color: '#ef4444',
         layer: 0
     },
     'vigilancia': {
         name: 'Vigilância Digital',
         description: 'Monitoramento contínuo de comportamento para extração de valor',
-        connections: ['capitalismo-vigilancia', 'algoritmos', 'ia', 'resistencia'],
+        connections: ["capitalismo-vigilancia", "algoritmos", "ia", "resistencia"],
         color: '#ef4444',
         layer: 0
     },
     'monopolio': {
         name: 'Monopólio de Plataforma',
         description: 'Concentração de poder via efeitos de rede',
-        connections: ['plataformizacao', 'acumulacao', 'capitalismo-vigilancia'],
+        connections: ["plataformizacao", "acumulacao", "capitalismo-vigilancia"],
         color: '#ef4444',
         layer: 0
     },
     'ideologia': {
         name: 'Ideologia',
         description: 'Sistema de representações que mascara contradições reais',
-        connections: ['fetichismo', 'fetichismo-digital', 'alienacao'],
+        connections: ["fetichismo", "fetichismo-digital", "alienacao"],
         color: '#ef4444',
         layer: 0
     },
     'desemprego': {
         name: 'Desemprego Estrutural',
         description: 'Excedente de população trabalhadora devido à automação',
-        connections: ['automacao', 'precarizacao', 'uberizacao'],
+        connections: ["automacao", "precarizacao", "uberizacao"],
         color: '#ef4444',
         layer: 0
     },
     'ontologia-executavel': {
         name: 'Ontologia Executável',
         description: 'Filosofia que se performa em código',
-        connections: ['segunda-ordem', 'critica-performativa', 'canvas-background'],
+        connections: ["segunda-ordem", "critica-performativa", "canvas-background"],
         color: '#10b981',
         layer: 0
     },
     'critica-performativa': {
         name: 'Crítica Performativa',
         description: 'Sistema que executa sua própria crítica',
-        connections: ['ontologia-executavel', 'captcha', 'ironia-politica'],
+        connections: ["ontologia-executavel", "captcha", "ironia-politica"],
         color: '#10b981',
         layer: 0
     },
     'captcha': {
         name: 'CAPTCHA Anti-Algorítmico',
         description: 'Humanos passam, bots falham',
-        connections: ['critica-performativa', 'caos', 'resistencia'],
+        connections: ["critica-performativa", "caos", "resistencia"],
         color: '#10b981',
         layer: 0
     },
     'sistema-ternario': {
         name: 'Sistema Ternário (-1, 0, +1)',
         description: 'Base 3 balanceada para representar temporalidade',
-        connections: ['temporalidade', 'feedback', 'backfeed'],
+        connections: ["temporalidade", "feedback", "backfeed"],
         color: '#10b981',
         layer: 0
     },
     'temporalidade': {
         name: 'Temporalidade Ternária',
         description: 'Presente como tensão entre passado e futuro',
-        connections: ['sistema-ternario', 'feedback', 'guaiamum'],
+        connections: ["sistema-ternario", "feedback", "guaiamum"],
         color: '#10b981',
         layer: 0
     },
     'nhandereko': {
         name: 'Nhandereko',
-        description: '"Nosso modo de ser" — sistema completo de vida Guarani baseado em reciprocidade (Jopói), territorialidade (Tekoa), bem viver (Teko Porã), e amor coletivo (Mborayu). Crítica radical à acumulação capitalista e ao extrativismo digital. Cap 26 expandido.',
-        connections: ['autopoiese', 'epistemologia-guarani', 'modo-colaborativo', 'tekoa', 'jopoi', 'mborayu', 'teko-pora', 'ayvu'],
+        description: 'Orquestrador de conhecimento autopoiético',
+        connections: ["autopoiese", "epistemologia-guarani", "modo-colaborativo"],
         color: '#6366f1',
-        layer: 1 // Futuro
-    },
-    'tekoa': {
-        name: 'Tekoa',
-        description: 'Território Guarani como condição de existência do Nhandereko. Não é propriedade privada — é totalidade de relações (terra, floresta, rios, comunidade, espíritos) que tornam possível a vida boa. Sem Tekoa não há Nhandereko. Luta por demarcação = luta contra extrativismo físico e digital.',
-        connections: ['nhandereko', 'territorio-digital', 'soberania-tecnologica', 'infraestrutura-comunitaria', 'demarcacao-terras'],
-        color: '#16a34a',
-        layer: 1
-    },
-    'tekoa-digital': {
-        name: 'Tekoa Digital',
-        description: 'Infraestrutura digital como território comunitário: redes mesh locais (Guifi.net, NYC Mesh, Rede Quilombo SP), servidores cooperativos locais, minigrids solares para autonomia energética. Nuvem corporativa é colonização; Tekoa digital é soberania.',
-        connections: ['tekoa', 'redes-mesh-comunitarias', 'servidores-cooperativos', 'soberania-digital-br', 'infraestrutura-comunitaria'],
-        color: '#16a34a',
-        layer: 1
-    },
-    'jopoi': {
-        name: 'Jopói',
-        description: 'Reciprocidade obrigatória como fundamento econômico Guarani. Anti-acumulação: quem acumula perde legitimidade. Oposto da economia de plataforma (transação + extração). Exemplos: software livre, time banking, mutual aid networks. Capitalismo destruiu reciprocidade via enclosure, criminalização vadiagem, privatização internet.',
-        connections: ['nhandereko', 'reciprocidade-algoritmica', 'economia-dadiva', 'potlatch', 'comum-digital', 'cooperativismo-plataforma'],
-        color: '#8b5cf6',
-        layer: 1
-    },
-    'economia-dadiva': {
-        name: 'Economia da Dádiva',
-        description: 'Sistema econômico baseado em reciprocidade não-calculada, não equivalência mercantil (Marcel Mauss). Potlatch: redistribuição forçada de riqueza para prevenir desigualdade. Software livre é economia dádiva digital. Oposto: plataformas mercantilizam práticas de reciprocidade (CouchSurfing→Airbnb, caronas→Uber).',
-        connections: ['jopoi', 'potlatch', 'software-livre', 'commons-digitais', 'mercantilizacao-reciprocidade'],
-        color: '#8b5cf6',
-        layer: 1
-    },
-    'potlatch': {
-        name: 'Potlatch',
-        description: 'Cerimônia de redistribuição obrigatória de riqueza em povos da costa noroeste (América do Norte). Tecnologia social para prevenir desigualdade. Capitalismo digital é anti-potlatch: acumulação contínua, ocultação de riqueza (paraísos fiscais), maximização de desigualdade (Bezos US$ 200bi, motoristas urinam em garrafas).',
-        connections: ['economia-dadiva', 'jopoi', 'anti-acumulacao', 'desigualdade-digital'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'mborayu': {
-        name: 'Mborayu',
-        description: 'Amor coletivo, solidariedade afetiva, cuidado mútuo Guarani. Laço que torna possível vida em comunidade. Oposto de: individualismo neoliberal, gamificação redes sociais (acumular followers), economia atenção transacional. Mborayu afirma: não somos indivíduos isolados, mas nós coletivos.',
-        connections: ['nhandereko', 'amor-coletivo', 'cuidado-mutuo', 'solidariedade-digital', 'economia-atencao'],
-        color: '#ec4899',
-        layer: 1
-    },
-    'teko-pora': {
-        name: 'Teko Porã',
-        description: 'Bem viver, vida boa Guarani. Não é riqueza material/consumo/acumulação. É: saúde coletiva, autonomia alimentar, reciprocidade/generosidade, vida ritual/espiritual, harmonia relações sociais, liberdade (não ser escravo). Radicalmente incompatível com capitalismo (precisa tempo, território, autonomia).',
-        connections: ['nhandereko', 'bem-viver', 'buen-vivir', 'ubuntu-filosofia', 'autonomia', 'tempo-ciclico'],
-        color: '#10b981',
-        layer: 1
-    },
-    'ayvu': {
-        name: 'Ayvu',
-        description: 'Palavra-alma Guarani. Comunicação não é transmissão de informação (Shannon) — é ato ontológico que cria realidade. Falar é fundar mundo. No Aty Guasu (assembleia), decisão emerge de consenso cósmico (humanos + ancestrais + espíritos + futuro), não soma opiniões individuais. Crítica radical à epistemologia da comunicação digital (Shannon/algoritmos/engajamento).',
-        connections: ['nhandereko', 'comunicacao-ontologica', 'shannon-limitado', 'aty-guasu', 'palavra-criadora', 'ritual-digital'],
-        color: '#f59e0b',
-        layer: 1
-    },
-    'comunicacao-ontologica': {
-        name: 'Comunicação Ontológica',
-        description: 'Ayvu ensina: comunicação não informa, ela funda mundo. Arquitetura baseada em Ayvu: comunicação como ritual (não feed infinito), palavras têm peso ontológico (não likes), tempo cósmico (não engajamento), responsabilidade radical (não leveza "é só internet"). Descolonizar epistemologia da comunicação.',
-        connections: ['ayvu', 'shannon-limitado', 'ritual-digital', 'comunicacao-cap29', 'arquitetura-comunicacao'],
-        color: '#f59e0b',
-        layer: 1
-    },
-    'shannon-limitado': {
-        name: 'Shannon: Brilhante mas Limitado',
-        description: 'Teoria Informação (Shannon 1948): mensagem transmitida A→B, ruído, bits. Útil para engenharia mas pressupõe ontologia da comunicação que é colonial: comunicação é transmissão neutra, significado irrelevante. Ayvu mostra outra forma: comunicação é criação de mundo. Não abandonar Shannon — complementá-lo com outras epistemologias.',
-        connections: ['comunicacao-ontologica', 'ayvu', 'teoria-informacao-shannon', 'epistemologia-comunicacao'],
-        color: '#f59e0b',
-        layer: 0
-    },
-
-    // ========================================
-    // CAPÍTULO 29: ARQUITETURA INVISÍVEL DA COMUNICAÇÃO (EXPANDIDO)
-    // ========================================
-    'arquitetura-comunicacao': {
-        name: 'Arquitetura Invisível da Comunicação',
-        description: 'Cap 29: Comunicação não transmite realidade — ela a CONSTRÓI. Sete dimensões: (1) relacional (Ava Reko), (2) estrutural (gramática molda pensamento), (3) performática (rituais criam poder), (4) hegemônica (naturalização arbitrário), (5) reflexiva (ironia/metacomunicação), (6) mediatizada (ordens múltiplas realidade), (7) protocolar (código antes código). Campo batalha ontológico onde realidade social é contestada.',
-        connections: ['comunicacao-ontologica', 'sapir-whorf', 'goffman-performance', 'gramsci-hegemonia', 'baudrillard-hiperrealidade', 'protocolos-ontologicos', 'trabalho-comunicativo'],
-        color: '#f59e0b',
-        layer: 0
-    },
-    'superestrutura-comunicativa': {
-        name: 'Superestrutura e Infraestrutura Comunicativa',
-        description: 'Cap 29.1: Marx distinguiu base econômica (relações produção) e superestrutura (cultura/ideologia/instituições). Comunicação é MECANISMO pelo qual superestrutura se reproduz e transforma. Quando você usa linguagem "mercado livre" ou aceita "mérito" como natural, está PERFORMANDO superestrutura capitalista. Gramática não é neutra — espelha/reforça relações poder.',
-        connections: ['arquitetura-comunicacao', 'marx-base-superestrutura', 'ideologia-dominante', 'hegemonia-cultural', 'luta-cultural'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'sapir-whorf': {
-        name: 'Hipótese Sapir-Whorf (Relativismo Linguístico)',
-        description: 'Cap 29.2.1: Estrutura língua influencia estrutura pensamento. Gênero gramatical (masculino/feminino) impõe lente categórica. Evidencialidade (como você sabe?) em Guarani força epistemic humility. "Nós" inclusivo/exclusivo materializa relacionalidade. Línguas diferentes constroem ONTOLOGIAS diferentes. Não é determinismo — é que gramática torna certas formas pensar mais fáceis/difíceis.',
-        connections: ['arquitetura-comunicacao', 'gramatica-ontologia', 'evidencialidade-linguistica', 'nos-inclusivo', 'cosmolinguistica'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'gramatica-ontologia': {
-        name: 'Gramática como Destino Ontológico',
-        description: 'Cap 29.2.1: Linguagem impõe grade interpretação sobre mundo. Português "os usuários" (masculino universal) = hierarquia implícita. Guarani força especificar se você viu/ouviu/inferiu = epistemologia diferente. Toki Pona (120 palavras) força simplicidade = muda como você pensa. Não pode haver tecnologia emancipatória sem LINGUAGEM emancipatória.',
-        connections: ['sapir-whorf', 'arquitetura-comunicacao', 'evidencialidade-linguistica', 'vocabulario-resistencia'],
-        color: '#8b5cf6',
-        layer: 0
-    },
-    'evidencialidade-linguistica': {
-        name: 'Evidencialidade Linguística',
-        description: 'Cap 29.2.1: Línguas que codificam COMO você sabe algo (testemunho direto/relato/inferência). Guarani NÃO PERMITE dizer "está chovendo" sem especificar fonte conhecimento. Epistemic humility gramática codificada. Oposto: português/inglês permitem afirmações categóricas sem evidência = facilita fake news. Algoritmos também têm evidencialidade zero.',
-        connections: ['sapir-whorf', 'gramatica-ontologia', 'epistemologia-guarani', 'fake-news-epistemologia'],
-        color: '#8b5cf6',
-        layer: 0
-    },
-    'nos-inclusivo': {
-        name: '"Nós" Inclusivo vs Exclusivo',
-        description: 'Cap 29.2.1: Guarani distingue "nós" (eu+você) vs "nós" (eu+outros sem você). Ferramenta gramatical que materializa pertença precisa e identidade coletiva. Português tem só "nós" ambíguo = facilita retórica nacionalista ("nós brasileiros" oculta divisões classe/raça). Ava Reko codificado na gramática.',
-        connections: ['sapir-whorf', 'nhandereko', 'ava-reko', 'identidade-coletiva'],
-        color: '#16a34a',
-        layer: 1
-    },
-    'goffman-performance': {
-        name: 'Goffman: Comunicação como Performance',
-        description: 'Cap 29.2.2: Erving Goffman (A Apresentação do Eu na Vida Cotidiana): comunicação é ritual dramático que PERFORMA relações sociais. Ações de fala (Austin): juiz profere sentença não descreve, ele REALIZA. Poder performático deriva de superestrutura que autoriza. Shadowban é sentença morte social performada por algoritmo sem juiz humano.',
-        connections: ['arquitetura-comunicacao', 'acoes-fala', 'rituais-poder', 'cenografia-poder', 'rituais-digitais'],
-        color: '#f59e0b',
-        layer: 0
-    },
-    'acoes-fala': {
-        name: 'Ações de Fala (Speech Acts)',
-        description: 'Cap 29.2.2: J.L. Austin: certas falas NÃO descrevem — elas REALIZAM. "Eu vos declaro casados", "Está despedido", "Aprovo moção". Poder performativo: falar = fazer acontecer. Algoritmos também fazem ações fala: "você foi banido", "crédito negado", "perfil shadowbanned". Código é linguagem performativa — cria realidade ao ser executado.',
-        connections: ['goffman-performance', 'algoritmos-performativos', 'shadowban-assassinato', 'codigo-linguagem'],
-        color: '#f59e0b',
-        layer: 0
-    },
-    'rituais-poder': {
-        name: 'Rituais de Poder',
-        description: 'Cap 29.2.2: Comício político (palanque/bandeiras/microfones), reunião executiva (sala topo/roupa formal/protocolos reverência) = encenações comunicativas que produzem e legitimam autoridade. Linguagem corporal, protocolos, códigos vestimenta = ferramentas não-verbais espelham/reforçam hierarquias. Cybersyn (Cap 18) tinha estética DIFERENTE: transparente/coletiva/circular.',
-        connections: ['goffman-performance', 'cenografia-poder', 'cybersyn-estetica', 'protocolos-sociais'],
-        color: '#f59e0b',
-        layer: 0
-    },
-    'rituais-digitais': {
-        name: 'Rituais Digitais',
-        description: 'Cap 29.2.2: Check-in Facebook, Stories Instagram, tweet performático = rituais comunicam pertencimento/status/identidade. Economia atenção (Cap 12) construída sobre performatividade constante existência. Selfie não é apenas foto — é ato fala "eu existo, vejam-me". Likes não são mera métrica — são validação ontológica. Redes sociais = palcos para performance permanente.',
-        connections: ['goffman-performance', 'economia-atencao', 'performatividade-digital', 'selfie-ontologia'],
-        color: '#ec4899',
-        layer: 0
-    },
-    'gramsci-hegemonia': {
-        name: 'Gramsci: Hegemonia Cultural',
-        description: 'Cap 29.2.3: Antonio Gramsci: hegemonia = quando superestrutura vira "senso comum". Classe dominante domina não só pela força, mas por fazer suas ideias parecerem NATURAIS. Ferramentas comunicação são vetores cruciais: mídia, escola, publicidade naturalizam arbitrário. Enquadramento midiático ("gastos sociais" vs "investimentos sociais") constrói versão realidade que reforça ordem vigente.',
-        connections: ['arquitetura-comunicacao', 'senso-comum', 'enquadramento-midiatico', 'curriculo-ideologico', 'publicidade-ideologia'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'senso-comum': {
-        name: 'Senso Comum como Construção',
-        description: 'Cap 29.2.3: Ápice poder superestrutura: tornar-se "óbvio". "Mercado é eficiente", "mérito determina sucesso", "crescimento infinito possível" = não são verdades — são ideologia naturalizada. Comunicação repete até virar senso comum. Desconstruir exige mostrar que "natural" é CONSTRUÍDO. Estranhar água em que nadamos.',
-        connections: ['gramsci-hegemonia', 'ideologia-dominante', 'desnaturalizacao', 'critica-ideologica'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'enquadramento-midiatico': {
-        name: 'Enquadramento Midiático (Framing)',
-        description: 'Cap 29.2.3: Mídia não reporta fatos neutros — ENQUADRA. Escolha especialistas, termos usados, o que é omitido = constrói narrativa. "Manifestação" vs "vandalismo", "reforma" vs "desmonte", "flexibilização" vs "precarização". Cap 22: Gabinete Ódio usou enquadramento sistemático transformar adversários em "inimigos nação". Linguagem é campo batalha.',
-        connections: ['gramsci-hegemonia', 'midia-corporativa', 'fake-news-epistemologia', 'vocabulario-resistencia'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'curriculo-ideologico': {
-        name: 'Currículo Escolar como Ideologia',
-        description: 'Cap 29.2.3: Narrativa histórica ensinada = ferramenta comunicação espelha ideologia nacional específica. Omite certas vozes, glorifica outras, transforma versão particular em "A História". Brasil: silencia genocídio indígena, romantiza miscigenação, invisibiliza contribuição negra. História é sempre contada por vencedores — descolonizar educação = multiplicar narrativas.',
-        connections: ['gramsci-hegemonia', 'educacao-bancaria', 'curriculo-decolonial', 'historia-oficial'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'publicidade-ideologia': {
-        name: 'Publicidade como Superestrutura',
-        description: 'Cap 29.2.3: Publicidade não vende apenas produtos — vende ESTILO VIDA ideal. Espelha/reproduz superestrutura capitalismo consumo: felicidade via posse, individualismo, crescimento infinito. Engenharia vício (Cap 14) = publicidade extrema: comunica constantemente "você incompleto sem mais um scroll". Propaganda não é aberração — é capitalismo em forma pura.',
-        connections: ['gramsci-hegemonia', 'engenharia-vicio', 'consumismo', 'capitalismo-desejo'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'ironia-metacomunicacao': {
-        name: 'Ironia como Metacomunicação',
-        description: 'Cap 29.3: Ironia/sarcasmo = ondas informação duas camadas: literal (dito) vs intencional (significado). "Que legal, mais app explorando trabalhadores" — tensão entre camadas gera significado. Ironia age como espelho deformante: distorce para REVELAR incongruências/hipocrisias superestrutura. É metacomunicação: comunica SOBRE comunicação. Ferramenta resistência — mas capital coopta (meme marketing).',
-        connections: ['arquitetura-comunicacao', 'duas-camadas-significado', 'ironia-resistencia', 'metacomunicacao', 'meme-politico'],
-        color: '#8b5cf6',
-        layer: 0
-    },
-    'duas-camadas-significado': {
-        name: 'Duas Camadas de Significado',
-        description: 'Cap 29.3: Ironia opera criando dissonância deliberada camada literal vs intencional. Contradição é MOTOR do significado. Mas exige contexto partilhado — ouvinte deve ter conhecimento para perceber dissonância e cocriar sentido. É dança cognitiva que fortalece laços grupo (Ava Reko novamente). Ironia pressupõe comunidade. Não funciona em público geral — só entre "nós".',
-        connections: ['ironia-metacomunicacao', 'contexto-partilhado', 'comunidade-interpretativa'],
-        color: '#8b5cf6',
-        layer: 0
-    },
-    'ironia-estrutural-livro': {
-        name: 'Este Livro é Irônico?',
-        description: 'Cap 29.3: Sim. Ao usar ferramentas capitalismo digital (hiperlinks, UX, navegação não-linear) para criticar capitalismo digital, livro performa ironia estrutural. Escrever em português acadêmico (linguagem poder) para criticar poder = tensão produtiva. Cap 28 incorporou epistemologias não-ocidentais mas contradição permanece: NÃO PODE escapar completamente sistema ao criticá-lo de dentro. Metacomunicação é tudo que podemos fazer.',
-        connections: ['ironia-metacomunicacao', 'critica-imanente', 'contradição-performativa'],
-        color: '#8b5cf6',
-        layer: 0
-    },
-    'mediatizacao-mundo': {
-        name: 'Mediatização do Mundo',
-        description: 'Cap 29.4.1: Baudrillard alertou hiperrealidade: simulações mais "reais" que real. Mas não é falso vs verdadeiro — são CAMADAS ONTOLÓGICAS: (1) matéria bruta, (2) informação sobre matéria, (3) informação sobre informação (metadados/algoritmos), (4) IA gerativa (metacomunicação automatizada). Vivemos em ecologia interfaces — não "contato direto" com real.',
-        connections: ['arquitetura-comunicacao', 'baudrillard-hiperrealidade', 'realidades-multiplas-ordens', 'ontologia-camadas', 'ia-ordem-quarta'],
-        color: '#9333ea',
-        layer: 0
-    },
-    'baudrillard-hiperrealidade': {
-        name: 'Baudrillard: Hiperrealidade e Simulacro',
-        description: 'Cap 29.4.1: Jean Baudrillard: hiperrealidade = estágio onde simulações se tornam mais "reais" que real. Mapa substitui território. Mas Cap 29 vai além: não é "falso" — são camadas ontológicas REAIS. Guerra Ucrânia vivenciada via: (1) explosões físicas nunca vemos, (2) fotos/vídeos mediados, (3) timeline Twitter algoritmicamente filtrada, (4) deepfakes Zelensky. Cada camada constrói realidade DIFERENTE.',
-        connections: ['mediatizacao-mundo', 'realidades-multiplas-ordens', 'simulacro', 'mapa-territorio'],
-        color: '#9333ea',
-        layer: 0
-    },
-    'realidades-multiplas-ordens': {
-        name: 'Realidades de Múltiplas Ordens',
-        description: 'Cap 29.4.1: (1) Ordem 1 = matéria bruta/processos físicos. (2) Ordem 2 = informação sobre matéria (linguagem/conceitos/ciência). (3) Ordem 3 = informação sobre informação (metadados/algoritmos recomendação/análise sentimento). (4) Ordem 4 (emergente) = IA gerativa cria conteúdo baseado padrões outros conteúdos — não descreve mundo, descreve COMO HUMANOS DESCREVEM MUNDO. Metacomunicação automatizada.',
-        connections: ['mediatizacao-mundo', 'baudrillard-hiperrealidade', 'metadados-poder', 'ia-ordem-quarta'],
-        color: '#9333ea',
-        layer: 0
-    },
-    'ia-ordem-quarta': {
-        name: 'IA como Realidade de Quarta Ordem',
-        description: 'Cap 29.4.1: ChatGPT/Gemini não descrevem mundo — descrevem como HUMANOS descrevem mundo (treinados em textos humanos). É metacomunicação automatizada. Ordem 4 = reflexividade total: sistema comunica sobre como comunicamos. Perigo: se IA gera conteúdo que treina próxima IA, feedback loop pode colapsar em estereótipos auto-reforçantes. Hiperrealidade levada ao extremo.',
-        connections: ['realidades-multiplas-ordens', 'ia-generativa', 'metacomunicacao', 'colapso-semiotico'],
-        color: '#9333ea',
-        layer: 0
-    },
-    'engenharia-ontologica': {
-        name: 'Engenharia Ontológica',
-        description: 'Cap 29.4.1: Quem controla camadas superiores comunicação (Ordem 3-4) controla quais realidades são POSSÍVEIS DE EXPERIMENTAR. Não é censura simples — é moldar O QUE EXISTE para usuário. Cap 3: plataformas controlam infraestrutura Ordem 3. Agora entendemos: controlar algoritmo recomendação = controlar ontologia. Filtro-bolha não filtra opiniões — filtra MUNDOS POSSÍVEIS.',
-        connections: ['mediatizacao-mundo', 'controle-ontologico', 'filtro-bolha-ontologico', 'infraestrutura-realidade'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'trabalho-comunicativo': {
-        name: 'Trabalho Imaterial Comunicativo',
-        description: 'Cap 29.4.2: Quando posta Instagram/escreve review Amazon/responde survey, VOCÊ ESTÁ TRABALHANDO. Sentido marxista preciso: (1) investe trabalho (tempo/energia cognitiva), (2) conteúdo gera valor (dados treinar algoritmos/conteúdo atrai atenção), (3) não é pago — mais-valia 100% capturada por plataforma. 2h/dia Instagram = US$ 20/dia = US$ 7.300/ano trabalho não-pago. × 2bi usuários = US$ 14,6 tri/ano trabalho imaterial capturado.',
-        connections: ['arquitetura-comunicacao', 'trabalho-imaterial', 'mais-valia-dados', 'exploracao-comunicativa', 'trabalho-gratuito-massivo'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'exploracao-comunicativa': {
-        name: 'Exploração Comunicativa',
-        description: 'Cap 29.4.2: Uber explora trabalho material (dirigir). Instagram explora trabalho imaterial (comunicar). Mesma lógica: externalizar custos, internalizar lucros. Diferença: motorista SABE que trabalha; usuário Instagram não. Naturalização do trabalho comunicativo como "lazer" = ideologia perfeita. Você trabalha sem perceber — e ainda PAGA (atenção/dados/privacidade) para trabalhar.',
-        connections: ['trabalho-comunicativo', 'uberizacao', 'mais-valia-dados', 'naturalizacao-trabalho'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'sujeito-autoproduzido': {
-        name: 'Sujeito que se Autoproduz',
-        description: 'Cap 29.4.2: Peculiaridade dialética: ao produzir conteúdo, você PRODUZ A SI MESMO como sujeito. Identidade online não é "representação" de self pre-existente — é CONSTITUTIVA. Você SE TORNA quem você performa comunicativamente (Goffman). Cap 10 (Sujeito Automático): capital se autoproduz via D-M-D\'. Paralelo: sujeito digital se autoproduz via Post→Reação→Novo Post. Você não "usa" plataformas — é COPRODUZIDO por elas via comunicação.',
-        connections: ['trabalho-comunicativo', 'sujeito-automatico', 'identidade-performativa', 'feedback-autopoietico'],
-        color: '#9333ea',
-        layer: 0
-    },
-    'protocolos-ontologicos': {
-        name: 'Protocolos como Gramáticas Técnicas',
-        description: 'Cap 29.4.3: Protocolo não é apenas "como computadores conversam" — é ONTOLOGIA materializada em código que determina: (1) quem pode falar com quem (cliente-servidor vs P2P), (2) quem pode verificar verdade (autoridade central vs consenso distribuído), (3) quem possui dados (servidores corporativos vs armazenamento local). HTTP/DNS/TCP-IP carregam ontologias centralizadoras. Alternativas: IPFS/Tor/Matrix/ActivityPub.',
-        connections: ['arquitetura-comunicacao', 'protocolos-poder', 'galloway-protocolo', 'dns-censura', 'p2p-ontologia', 'federacao-protocolos'],
-        color: '#6366f1',
-        layer: 0
-    },
-    'galloway-protocolo': {
-        name: 'Galloway: Protocolo como Controle',
-        description: 'Cap 29.4.3: Alexander Galloway (Protocol: How Control Exists After Decentralization): protocolo é forma poder característica era digital. Não é controle centralizado (rei) nem totalmente descentralizado (anarquia) — é CONTROLE DISTRIBUÍDO VIA REGRAS. Protocolo permite descentralização técnica (muitos nodes) mas mantém controle lógico (regras uniformes). DNS descentralizado geograficamente mas hierárquico logicamente (ICANN no topo).',
-        connections: ['protocolos-ontologicos', 'controle-distribuido', 'descentralizacao-ilusoria'],
-        color: '#6366f1',
-        layer: 0
-    },
-    'dns-censura': {
-        name: 'DNS como Infraestrutura de Censura',
-        description: 'Cap 29.4.3: Domain Name System parece técnico/neutro — apenas traduz google.com → IP. Mas DNS é HIERÁRQUICO (ICANN topo) e BASEADO EM ESTADO-NAÇÃO (.br, .us, .cn). Governos podem censurar domínios (Turquia bloqueou Twitter.com via DNS 2014). Corporações podem remover sites (Amazon hospeda infraestrutura DNS; removeu Parler 2021). Colonialismo digital: .com/.org anglófonos; línguas não-latinas acesso limitado.',
-        connections: ['protocolos-ontologicos', 'censura-infraestrutural', 'icann-poder', 'colonialismo-protocolo'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'p2p-ontologia': {
-        name: 'P2P como Ontologia Alternativa',
-        description: 'Cap 29.4.3: BitTorrent: todos são cliente E servidor simultaneamente. Ontologia implícita: horizontalidade (sem hierarquia), agência (todos contribuem), descentralização (sem ponto único falha). IPFS (InterPlanetary File System): arquivos endereçados por CONTEÚDO (hash) não LOCALIZAÇÃO (servidor). Informação é pública/imutável por design. Tor: comunicação anônima via roteamento camadas. Privacidade é direito fundamental, não privilégio.',
-        connections: ['protocolos-ontologicos', 'bittorrent', 'ipfs', 'tor-browser', 'descentralizacao-real'],
-        color: '#16a34a',
-        layer: 1
-    },
-    'federacao-protocolos': {
-        name: 'Protocolos Federados',
-        description: 'Cap 29.4.3: ActivityPub (Mastodon/Fediverso): servidores independentes se comunicam via protocolo aberto. Ontologia: federação (autonomia local + interoperabilidade global), diversidade (múltiplas implementações), commons (protocolo é bem público). Matrix: chat federado. Qualquer um pode rodar servidor; todos interoperam. Alternativa email corporativo (Slack/Discord proprietários). Comunicação é comum, não propriedade privada.',
-        connections: ['protocolos-ontologicos', 'activitypub', 'mastodon-fediverso', 'matrix-protocol', 'commons-protocolos'],
-        color: '#16a34a',
-        layer: 1
-    },
-    'resistencia-protocolar': {
-        name: 'Resistência Protocolar Prática',
-        description: 'Cap 29.4.3: Protocolos dominantes carregam ontologias centralizadoras. Alternativas emergentes: IPFS (web descentralizada), Tor (anonimato), Matrix (chat federado). Não é apenas "usar app diferente" — é VIVER EM ONTOLOGIA DIFERENTE (descentralizada, sem algoritmo ranqueamento, sem publicidade). Cap 28: cosmoprotocos — protocolos que incorporam valores culturais diversos, não só eficiência capitalista. Protocolo é política materializada em código.',
-        connections: ['protocolos-ontologicos', 'p2p-ontologia', 'federacao-protocolos', 'cosmoprotocos', 'lei-protecao-epistemologica'],
-        color: '#16a34a',
-        layer: 1
-    },
-    'praxis-comunicativa': {
-        name: 'Práxis Comunicativa',
-        description: 'Cap 29.4.4: Teoria sem prática é idealismo. Se comunicação constrói realidade, MUDAR COMO COMUNICAMOS É MUDAR REALIDADE. Quatro níveis intervenção: (1) Individual (auditoria vocabulário, metacomunicação, desautomatização rituais), (2) Coletivo (círculos fala Nhandereko, tradução conceitos línguas locais, protocolo assíncrono), (3) Infraestrutural (migração protocolos federados, glossários resistência, auditoria algorítmica comunitária), (4) Prefigurativo (viver agora relações comunicativas que queremos universalizar).',
-        connections: ['arquitetura-comunicacao', 'higiene-comunicativa', 'circulo-fala-nhandereko', 'migracao-protocolos', 'politica-prefigurativa-comunicacao'],
-        color: '#16a34a',
-        layer: 1
-    },
-    'higiene-comunicativa': {
-        name: 'Higiene Comunicativa Individual',
-        description: 'Cap 29.4.4: (1) Auditoria vocabulário: anote palavras/frases usadas frequentemente. Identifique termos normalizam exploração ("empreendedor si mesmo" → "precarizado"). (2) Protocolo metacomunicação: reserve 10% tempo discutir COMO estão discutindo. (3) Desautomatização rituais digitais: antes postar, pergunte "construo comunidade ou performo status?" Se segunda, considere não postar. Quebrar feedback loop viciante.',
-        connections: ['praxis-comunicativa', 'vocabulario-resistencia', 'metacomunicacao', 'desvicio-digital'],
-        color: '#16a34a',
-        layer: 1
-    },
-    'circulo-fala-nhandereko': {
-        name: 'Círculos de Fala Inspirados em Nhandereko',
-        description: 'Cap 29.4.4: Reuniões onde cada pessoa fala tempo igual, sem interrupção. Decisões por consenso (não maioria). Jopói aplicado: cada fala é "dom" para coletivo, não propriedade individual. Experimente 3 meses; documente mudanças dinâmica grupal. Arquitetura comunicação diferente produz relações sociais diferentes. Não é apenas "técnica facilitação" — é ONTOLOGIA RELACIONAL praticada.',
-        connections: ['praxis-comunicativa', 'nhandereko', 'jopoi', 'consenso-decisorio', 'horizontalidade-praticada'],
-        color: '#16a34a',
-        layer: 1
-    },
-    'vocabulario-resistencia': {
-        name: 'Vocabulário de Resistência',
-        description: 'Cap 29.4.4: Desenvolver vocabulário compartilhado para fenômenos capitalismo torna invisíveis. Exemplo: "trabalho fantasma" (preencher formulários, montar IKEA, self-checkout — trabalho não-pago que era emprego). "Assassinato comunicativo" (shadowban). "Negligência algorítmica" (DETER desativado). Publicar online; deixar outros contribuírem. Nomear é tornar visível. Visível pode ser combatido.',
-        connections: ['praxis-comunicativa', 'enquadramento-midiatico', 'gramatica-ontologia', 'nomear-invisivel'],
-        color: '#16a34a',
-        layer: 1
-    },
-    'migracao-protocolos': {
-        name: 'Migração para Protocolos Federados',
-        description: 'Cap 29.4.4: Trocar WhatsApp → Matrix, Twitter → Mastodon, Medium → WriteFreely. Não apenas "usar app diferente" — é VIVER EM ONTOLOGIA DIFERENTE (descentralizada, sem algoritmo ranqueamento, sem publicidade). Convide 5 pessoas; explique POR QUE protocolo importa. Efeito rede trabalha contra alternativas — mas toda transição começa com primeiros adotantes. Você precisa ser pioneiro.',
-        connections: ['praxis-comunicativa', 'protocolos-ontologicos', 'federacao-protocolos', 'matrix-protocol', 'mastodon-fediverso'],
-        color: '#16a34a',
-        layer: 1
-    },
-    'politica-prefigurativa-comunicacao': {
-        name: 'Política Prefigurativa Comunicativa',
-        description: 'Cap 29.4.4: Não podemos usar meios hierárquicos para fins igualitários (Malatesta/Graeber). Forma comunicação É conteúdo político. Se critica capitalismo vigilância mas usa WhatsApp para organizar = contradição performativa. Se defende horizontalidade mas reuniões têm sempre mesmas pessoas falando = performa hierarquia implícita. Política prefigurativa: VIVER AGORA relações comunicativas que queremos universalizar. Não é purismo — é coerência ontológica.',
-        connections: ['praxis-comunicativa', 'graeber-politica-prefigurativa', 'coerencia-ontologica', 'contradicao-performativa'],
-        color: '#16a34a',
-        layer: 1
-    },
-    'cosmolinguistica': {
-        name: 'Cosmolinguísticas Plurais',
-        description: 'Cap 29: Caps 26-28 argumentaram tecnologias não são neutras — são cosmotécnicas. Este cap generaliza: LINGUAGENS também são cosmolinguísticas. Cada língua constrói realidade diferente. Guarani (nós inclusivo/exclusivo) materializa Ava Reko. Ubuntu ("pessoa através de outras") = ontologia linguística. Toki Pona (120 palavras) força simplicidade. Resistência colonialismo digital exige resistência linguística. Defender línguas indígenas = defender modos alternativos construir realidade.',
-        connections: ['arquitetura-comunicacao', 'sapir-whorf', 'cosmotecnicas-plurais', 'epistemologia-guarani', 'ubuntu-filosofia'],
-        color: '#8b5cf6',
-        layer: 1
-    },
-    'algoritmos-performativos': {
-        name: 'Algoritmos como Linguagem Performativa',
-        description: 'Cap 29: Caps 10+15: algoritmos não executam comandos — CONSTITUEM subjetividades. Código é linguagem performativa (como sentença judicial que cria realidade ao enunciar). Algoritmo crédito diz "você é alto risco" — não DESCREVE você, PERFORMA sua realidade econômica. Você SE TORNA "alto risco" porque bancos agem nisso. Profecia autorrealizável. Cap 15: reproduz discriminação racial/gênero. Auditar algoritmos = análise linguística. Código é comunicação. Comunicação é poder.',
-        connections: ['arquitetura-comunicacao', 'acoes-fala', 'sujeito-automatico', 'discriminacao-algoritmica', 'profecia-autorrealizavel'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'teste-materialidade-comunicacao': {
-        name: 'Teste Materialidade vs Relativismo',
-        description: 'Cap 29.5: Dizer "comunicação constrói realidade" pode parecer relativismo ("tudo narrativa, não há verdade"). NÃO É. Matéria física existe independente comunicação (Ordem 1). Gravidade funciona sem acreditar. MAS: significado social fenômenos físicos é comunicativamente construído. "Aquecimento global" é real (física), mas se enquadrado "ciclo natural" vs "crise antropogênica", AÇÕES resultantes radicalmente diferentes. Estruturas sociais (capitalismo/Estado/família) existem APENAS porque comunicativamente reproduzidas. Dinheiro vale porque coletivamente COMUNICAMOS que vale.',
-        connections: ['arquitetura-comunicacao', 'materialismo-historico', 'construcao-social-realidade', 'fenomenologia-social'],
-        color: '#8b5cf6',
-        layer: 0
-    },
-    'extrativismo-fusionado': {
-        name: 'Extrativismo Físico + Digital Fusionado',
-        description: 'Agronegócio + Big Tech operam juntos. Vale + Microsoft: IA para mineração em terras indígenas, reconhecimento facial reprime manifestações. Bayer-Monsanto: IA agricultura precisão intensifica monocultura (algoritmo só funciona com monoculturas, diversidade = ruído). Garimpo Yanomami: Telegram + GPS + Bitcoin para invasão/lavagem dinheiro. Tecnologia "neutra" facilita extração predatória.',
-        connections: ['extrativismo', 'agro-big-tech', 'vale-microsoft', 'monsanto-ia', 'garimpo-cripto', 'necropolitica-digital'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'vale-microsoft': {
-        name: 'Vale + Microsoft: Vigilância Mineração',
-        description: 'Parceria IA/Azure para "otimizar mineração" = monitoramento satélite/drones áreas interesse mineral que coincidem com terras indígenas não-demarcadas. Microsoft vende reconhecimento facial para reprimir retomadas Guarani-Kaiowá. Big Tech fornece ferramentas, agro usa para violência.',
-        connections: ['extrativismo-fusionado', 'vigilancia-corporativa', 'reconhecimento-facial', 'terras-indigenas', 'microsoft-cumplicidade'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'monsanto-ia': {
-        name: 'Bayer-Monsanto + IA: Monocultura Algorítmica',
-        description: 'IA agricultura precisão (drones, tratores autônomos, algoritmos solo/clima) intensifica monocultura. Sistema só funciona com soja/milho/algodão transgênico; policulturas indígenas = ruído. Climate FieldView (US$ 3k/ano): pequenos agricultores dependem plataforma (lock-in), Monsanto acumula dados globais = poder sobre sistema alimentar. Extração dados + terra + autonomia alimentar.',
-        connections: ['extrativismo-fusionado', 'ia-agro', 'monocultura-digital', 'lock-in-plataforma', 'soberania-alimentar'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'garimpo-cripto': {
-        name: 'Garimpo Ilegal + Criptomoedas',
-        description: 'Garimpos Yanomami/Munduruku +500% (2019-22): Telegram/Signal coordenam invasões, GPS/drones mapeiam ouro, Bitcoin lava dinheiro ilegal. Tecnologia "neutra" (criptografia, blockchain, drones) apropriada por extração predatória. Não é exceção — é lógica design: cripto ideologia libertária "fugir Estado" não distingue Estado opressor vs fiscalização ambiental.',
-        connections: ['extrativismo-fusionado', 'criptomoedas-extrativismo', 'garimpo-ilegal-yanomami', 'tecnologia-neutra-mito'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'necropolitica-digital': {
-        name: 'Necropolítica Digital-Territorial',
-        description: 'Mbembe: necropolítica = poder determinar quem vive/morre. Digital-territorial: Yanomami 20k garimpeiros, 570 crianças mortas (2019-22), governo Bolsonaro não agiu = escolha deixar morrer tecnologicamente assistida. Sistema alertas desmatamento (DETER) desativado, dados saúde ocultados, fiscais instruídos não autuar. Algoritmos desligados para permitir morte. Negligência algorítmica deliberada: indígenas = ruído no dado agronegócio.',
-        connections: ['extrativismo-fusionado', 'mbembe-necropolitica', 'genocidio-indigena', 'yanomami-crise-humanitaria', 'algoritmos-morte'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'resistencia-digital-territorial': {
-        name: 'Resistência Digital-Territorial Integrada',
-        description: 'Se extrativismo é fusionado, resistência também é. Mapeamento contra-hegemônico: indígenas usam drones/satélites/IA para documentar invasões (Vigilantes Amazônia). Redes mesh TIs (Marãiwatsédé): soberania comunicacional. Blockchain certificação origem (Cacau Yanomami, castanha): contra extração ilegal. Alianças urbano-indígenas: hackers FOSS + povos indígenas desenvolvem ferramentas específicas.',
-        connections: ['resistencia', 'tekoa-digital', 'mapeamento-contra-hegemonico', 'blockchain-certificacao', 'aliancas-urbano-indigenas'],
-        color: '#16a34a',
-        layer: 1
-    },
-    'demarcacao-terras': {
-        name: 'Demarcação Terras = Luta Anticapitalista',
-        description: 'Luta por território físico + luta por soberania digital = mesma guerra contra extrativismo. Terra sem controle sobre dados = colonização parcial. Dados sem território físico = virtualidade descarnada. Nhandereko ensina: Tekoa (território) é condição do modo de ser — vale também para era digital. Não há tecnologia emancipatória sem território.',
-        connections: ['tekoa', 'soberania-digital-br', 'luta-indigena', 'extrativismo-fusionado', 'territorio-dados'],
-        color: '#16a34a',
         layer: 1
     },
     'epistemologia-guarani': {
         name: 'Epistemologias Guarani',
-        description: 'Conhecimento relacional indígena não-hierárquico expandido: Tekoa (território), Jopói (reciprocidade), Mborayu (amor coletivo), Teko Porã (bem viver), Ayvu (palavra-alma), Yvy Marã Ey (Terra Sem Males). Sistema completo pensamento que questiona bases capitalismo digital.',
-        connections: ['nhandereko', 'ontologia-relacional', 'decolonial', 'tekoa', 'jopoi', 'mborayu', 'teko-pora', 'ayvu', 'yvy-mara-ey'],
+        description: 'Conhecimento relacional indígena',
+        connections: ["nhandereko", "ontologia-relacional", "decolonial"],
         color: '#8b5cf6',
         layer: -1
     },
     'navegacao-rizomatica': {
         name: 'Navegação Rizomática',
         description: 'Este sistema que você está usando agora',
-        connections: ['rizoma', 'grafo-conceitos', 'modo-colaborativo'],
+        connections: ["rizoma", "grafo-conceitos", "modo-colaborativo"],
         color: '#6366f1',
         layer: 1
     },
     'modo-colaborativo': {
         name: 'Modo Colaborativo',
         description: 'Interação síncrona entre usuários (planejado)',
-        connections: ['nhandereko', 'navegacao-rizomatica', 'websocket'],
+        connections: ["nhandereko", "navegacao-rizomatica", "websocket"],
         color: '#6366f1',
         layer: 1
     },
     'resistencia': {
         name: 'Resistência em Código',
         description: 'Técnicas práticas de contra-automação',
-        connections: ['captcha', 'opacidade', 'honeypots', 'critica-performativa', 'hackfeministas', 'coding-rights-brasil', 'marialab', 'signal-app', 'tor-browser', 'low-tech'],
+        connections: ["captcha", "opacidade", "honeypots", "critica-performativa"],
         color: '#10b981',
         layer: 0
     },
     'devir': {
         name: 'Devir',
         description: 'Processo de tornar-se, transformação contínua sem destino fixo',
-        connections: ['rizoma', 'multiplicidade', 'ontologia-relacional'],
+        connections: ["rizoma", "multiplicidade", "ontologia-relacional"],
         color: '#8b5cf6',
         layer: -1
     },
     'ontologia-relacional': {
         name: 'Ontologia Relacional',
         description: 'Ser é relação, não substância isolada',
-        connections: ['autopoiese', 'devir', 'multiplicidade', 'epistemologia-guarani'],
+        connections: ["autopoiese", "devir", "multiplicidade", "epistemologia-guarani"],
         color: '#8b5cf6',
         layer: -1
     },
     'uberizacao': {
         name: 'Uberização',
         description: 'Precarização do trabalho via plataformas digitais',
-        connections: ['mais-valia-dados', 'plataformizacao', 'trabalho-imaterial', 'mais-valia-absoluta', 'mais-valia-relativa', 'reforma-trabalhista', 'intermitente', 'algoritmos', 'magalu', 'precarizacao', 'relacoes-producao', 'gerenciamento-algoritmico', 'breque-apps', 'empreendedorismo-si'],
+        connections: ["mais-valia-dados", "plataformizacao", "trabalho-imaterial", "mais-valia-absoluta", "mais-valia-relativa", "reforma-trabalhista", "intermitente", "algoritmos", "magalu", "precarizacao", "relacoes-producao"],
         color: '#ef4444',
         layer: 0
-    },
-    'gerenciamento-algoritmico': {
-        name: 'Gerenciamento Algorítmico',
-        description: 'Controle de trabalhadores via algoritmos sem chefe humano',
-        connections: ['uberizacao', 'algoritmos', 'algoritmo-fetiche', 'tyranny-algorithm'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'tyranny-algorithm': {
-        name: 'Tirania do Algoritmo',
-        description: 'Sistema de controle cibernético para maximizar extração de valor',
-        connections: ['gerenciamento-algoritmico', 'feedback', 'uberizacao'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'empreendedorismo-si': {
-        name: 'Empreendedorismo de Si',
-        description: 'Ideologia neoliberal: trabalhador precarizado como "empresário"',
-        connections: ['uberizacao', 'ideologia', 'neoliberalismo-progressista'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'neoliberalismo-progressista': {
-        name: 'Neoliberalismo Progressista',
-        description: 'Exploração vendida como libertação via linguagem emancipatória',
-        connections: ['empreendedorismo-si', 'ideologia', 'ultrarracionalismo'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'breque-apps': {
-        name: 'Breque dos Apps (2020)',
-        description: 'Primeira greve de algoritmos - entregadores no Brasil',
-        connections: ['uberizacao', 'resistencia', 'gerenciamento-algoritmico', 'transparencia-algoritmica'],
-        color: '#10b981',
-        layer: 0
-    },
-    'transparencia-algoritmica': {
-        name: 'Transparência Algorítmica',
-        description: 'Reivindicação: abrir a caixa-preta do algoritmo',
-        connections: ['breque-apps', 'algoritmo-fetiche', 'auditoria-algoritmica'],
-        color: '#10b981',
-        layer: 1
-    },
-    'auditoria-algoritmica': {
-        name: 'Auditoria Algorítmica',
-        description: 'Proposta de fiscalização de decisões algorítmicas',
-        connections: ['transparencia-algoritmica', 'resistencia'],
-        color: '#6366f1',
-        layer: 1
     },
     'trabalho-imaterial': {
         name: 'Trabalho Imaterial',
-        description: 'Trabalho cujo produto é informação, conhecimento, afeto ou relação social',
-        connections: ['trabalho-cognitivo', 'trabalho-afetivo', 'lazzarato', 'mais-valia-dados', 'uberizacao', 'capitalismo-vigilancia', 'trabalho-reprodutivo', 'pos-fordismo', 'general-intellect', 'fabrica-social'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'lazzarato': {
-        name: 'Maurizio Lazzarato',
-        description: 'Sociólogo italiano que cunhou o conceito de trabalho imaterial (1996)',
-        connections: ['trabalho-imaterial', 'trabalho-cognitivo', 'trabalho-afetivo', 'pos-operaismo', 'sociedade-divida'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'trabalho-cognitivo': {
-        name: 'Trabalho Cognitivo',
-        description: 'Trabalho que manipula conhecimento, informação e símbolos (programação, design, análise)',
-        connections: ['trabalho-imaterial', 'general-intellect', 'capitalismo-cognitivo', 'software-livre', 'ia', 'lazzarato', 'precarizacao-cognitiva', 'programadores', 'cientistas-dados'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'trabalho-afetivo': {
-        name: 'Trabalho Afetivo',
-        description: 'Trabalho que produz ou manipula afetos, emoções e relações sociais',
-        connections: ['trabalho-imaterial', 'trabalho-cuidado', 'emotional-labor', 'trabalho-sociabilidade', 'influencers', 'moderadores-conteudo', 'bioproducao', 'lazzarato', 'hardt', 'feminizacao-trabalho', 'cyborg-feminism', 'hackfeministas'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'trabalho-cuidado': {
-        name: 'Trabalho Corporal de Cuidado (Care Work)',
-        description: 'Enfermeiras, cuidadores, babás - manipulam corpos através de interação afetiva',
-        connections: ['trabalho-afetivo', 'trabalho-reprodutivo', 'feminizacao-trabalho', 'precarizacao', 'plataformizacao'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'emotional-labor': {
-        name: 'Trabalho Emocional (Emotional Labor)',
-        description: 'Gestão e performance de emoções como obrigação profissional (Arlie Hochschild)',
-        connections: ['trabalho-afetivo', 'call-centers-brasil', 'atendentes', 'vendedores', 'hochschild'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'hochschild': {
-        name: 'Arlie Hochschild',
-        description: 'Socióloga que desenvolveu conceito de emotional labor (The Managed Heart, 1983)',
-        connections: ['emotional-labor', 'trabalho-afetivo'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'trabalho-sociabilidade': {
-        name: 'Trabalho de Produção de Sociabilidade',
-        description: 'Produzir conexões sociais, comunidades, identidades (influencers, community managers)',
-        connections: ['trabalho-afetivo', 'influencers', 'community-managers', 'redes-sociais', 'parasocialidade'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'general-intellect': {
-        name: 'General Intellect (Intelecto Geral)',
-        description: 'Conhecimento social coletivo que se torna força produtiva (Marx, Grundrisse)',
-        connections: ['trabalho-cognitivo', 'trabalho-imaterial', 'capitalismo-cognitivo', 'software-livre', 'wikipedia-caso', 'stack-overflow', 'common-digital', 'pos-operaismo', 'negri'],
-        color: '#ef4444',
-        layer: -1
-    },
-    'capitalismo-cognitivo': {
-        name: 'Capitalismo Cognitivo',
-        description: 'Regime onde conhecimento e informação são principais fontes de valor',
-        connections: ['trabalho-cognitivo', 'general-intellect', 'propriedade-intelectual', 'patentes', 'copyright', 'comum-digital'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'wikipedia-caso': {
-        name: 'Caso Wikipedia',
-        description: 'Exemplo de general intellect: 6M artigos, produção colaborativa, captura corporativa por IAs',
-        connections: ['general-intellect', 'software-livre', 'comum-digital', 'captura-comum', 'ia'],
-        color: '#10b981',
-        layer: 0
-    },
-    'stack-overflow': {
-        name: 'Caso Stack Overflow',
-        description: 'Plataforma de Q&A para programadores: conhecimento coletivo valendo US$ 1,8 bi (2021)',
-        connections: ['general-intellect', 'trabalho-cognitivo', 'captura-comum', 'trabalho-gratuito'],
-        color: '#10b981',
-        layer: 0
-    },
-    'captura-comum': {
-        name: 'Captura do Comum',
-        description: 'Privatização de conhecimento produzido coletivamente (via plataformas, patentes, copyright)',
-        connections: ['general-intellect', 'comum-digital', 'propriedade-intelectual', 'wikipedia-caso', 'stack-overflow', 'ia-treinamento'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'ia-treinamento': {
-        name: 'Dados de Treinamento para IA',
-        description: 'GPT/Gemini treinados com bilhões de textos coletivos (livros, código, posts) sem compensação',
-        connections: ['captura-comum', 'ia', 'general-intellect', 'copyright', 'trabalho-gratuito'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'hardt': {
-        name: 'Michael Hardt',
-        description: 'Professor Duke University, co-autor de Império/Multidão com Negri. Teórico do trabalho afetivo',
-        connections: ['trabalho-afetivo', 'bioproducao', 'negri', 'imperio-livro', 'multidao-conceito'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'bioproducao': {
-        name: 'Bioprodução (Produção Biopolítica)',
-        description: 'Capital produz e gerencia não só mercadorias, mas a própria vida (saúde, afeto, cultura)',
-        connections: ['trabalho-afetivo', 'hardt', 'negri', 'foucault', 'biopolitica', 'industrias-biopoliticas'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'industrias-biopoliticas': {
-        name: 'Indústrias Biopolíticas',
-        description: 'Farmacêuticas, planos saúde, entretenimento, segurança privada, redes sociais',
-        connections: ['bioproducao', 'trabalho-afetivo', 'capitalismo-vigilancia'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'feminizacao-trabalho': {
-        name: 'Feminização do Trabalho',
-        description: 'Qualidades historicamente femininas (cuidado, empatia) exigidas de todos, mas desvalorizadas',
-        connections: ['trabalho-afetivo', 'trabalho-reprodutivo', 'trabalho-cuidado', 'pos-fordismo', 'precarizacao', 'federici'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'moderadores-conteudo': {
-        name: 'Caso: Moderadores Filipinas',
-        description: 'Manila: epicentro global da moderação traumática (violência, abuso) - PTSD, US$300-500/mês',
-        connections: ['trabalho-afetivo', 'emotional-labor', 'necropolitica', 'imperialismo-digital', 'ghost-work', 'precarizacao'],
-        color: '#10b981',
-        layer: 0
-    },
-    'call-centers-brasil': {
-        name: 'Caso: Call Centers Brasil',
-        description: '1,5M trabalhadores: taylorismo afetivo - TMA em segundos, scripts obrigatórios, LER/DORT',
-        connections: ['emotional-labor', 'trabalho-afetivo', 'fordismo', 'taylorismo', 'precarizacao', 'trabalho-imaterial'],
-        color: '#10b981',
-        layer: 0
-    },
-    'influencers-brasil': {
-        name: 'Caso: Criadores de Conteúdo Brasil',
-        description: '500k+ vivendo de conteúdo: pirâmide (0,01% ganham, 90% trabalham de graça), vida íntima vira produto',
-        connections: ['trabalho-afetivo', 'trabalho-sociabilidade', 'plataformizacao', 'algoritmos', 'trabalho-gratuito', 'autoexploracao', 'parasocialidade'],
-        color: '#10b981',
-        layer: 0
-    },
-    'impulsionadores-brasil': {
-        name: 'Caso: "Impulsionadores" Brasil',
-        description: 'Jovens vendendo gestão de mídias sociais/tráfego pago - trabalho cognitivo precarizado periférico',
-        connections: ['trabalho-cognitivo', 'precarizacao', 'autoexploracao', 'algoritmos', 'periferia-global'],
-        color: '#10b981',
-        layer: 0
-    },
-    'parasocialidade': {
-        name: 'Relações Parasociais',
-        description: 'Vínculos unilaterais audiência→influencer sentidos como amizade real - trabalho afetivo monetizado',
-        connections: ['trabalho-sociabilidade', 'influencers-brasil', 'trabalho-afetivo', 'redes-sociais'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'subsuncao-cibernetica': {
-        name: 'Subsunção Real Cibernética (Vital)',
-        description: 'Capital captura não só tempo de trabalho, mas vida inteira: afetos, relações, corpo, lazer 24/7',
-        connections: ['subsuncao-real', 'trabalho-imaterial', 'pos-fordismo', 'fabrica-social', 'uberizacao', 'sempre-on', 'home-office'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'sempre-on': {
-        name: 'Trabalho 24/7 (Always On)',
-        description: 'Dissolução fronteiras trabalho/vida: e-mails à noite, networking em "lazer", home office sem expediente',
-        connections: ['subsuncao-cibernetica', 'precarizacao', 'burnout', 'trabalho-cognitivo', 'trabalho-afetivo'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'home-office': {
-        name: 'Home Office como Armadilha',
-        description: '"Trabalhe de onde quiser" = casa vira fábrica permanente, sem divisão espacial trabalho/vida',
-        connections: ['subsuncao-cibernetica', 'sempre-on', 'precarizacao', 'pandemia-covid'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'autoexploracao': {
-        name: 'Autoexploração Gamificada',
-        description: 'Paixão como ideologia: quanto mais ama trabalho, mais aceita precariedade - "faça o que ama"',
-        connections: ['precarizacao', 'trabalho-imaterial', 'subsuncao-cibernetica', 'influencers-brasil', 'impulsionadores-brasil', 'lazzarato'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'trabalho-gratuito': {
-        name: 'Trabalho Não-Pago Massivo',
-        description: 'Usuários geram conteúdo/dados que plataformas monetizam sem compensação',
-        connections: ['trabalho-imaterial', 'mais-valia-dados', 'capitalismo-vigilancia', 'wikipedia-caso', 'stack-overflow', 'ia-treinamento', 'influencers-brasil'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'precarizacao-cognitiva': {
-        name: 'Precarização do Trabalho Cognitivo',
-        description: 'Programadores, designers, cientistas em contratos temporários, freela sem direitos, burnout',
-        connections: ['trabalho-cognitivo', 'precarizacao', 'burnout', 'sempre-on', 'pos-fordismo'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'sociedade-divida': {
-        name: 'Sociedade da Dívida (Lazzarato)',
-        description: 'Endividamento (estudantes, trabalhadores, países) como controle social - futuro subordinado ao capital',
-        connections: ['lazzarato', 'precarizacao', 'financeirizacao'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'pos-fordismo': {
-        name: 'Pós-Fordismo (Acumulação Flexível)',
-        description: 'Modelo produtivo: flexibilização, terceirização, just-in-time, centralidade do trabalho imaterial',
-        connections: ['fordismo', 'trabalho-imaterial', 'precarizacao', 'uberizacao', 'fabrica-social', 'feminizacao-trabalho', 'recusa-trabalho'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'fabrica-social': {
-        name: 'Fábrica Social',
-        description: 'Produção de valor se estende para além da fábrica - toda sociedade vira produtiva (comunicação, lazer, cultura)',
-        connections: ['pos-fordismo', 'trabalho-imaterial', 'subsuncao-cibernetica', 'pos-operaismo', 'negri'],
+        description: 'Trabalho cognitivo, afetivo e comunicacional não-pago',
+        connections: ["mais-valia-dados", "uberizacao", "capitalismo-vigilancia", "trabalho-reprodutivo"],
         color: '#ef4444',
         layer: 0
     },
     'trabalho-reprodutivo': {
         name: 'Trabalho Reprodutivo',
         description: 'Trabalho de cuidado e manutenção da vida, historicamente invisibilizado',
-        connections: ['trabalho-imaterial', 'ciberfeminismo', 'federici'],
+        connections: ["trabalho-imaterial", "ciberfeminismo", "federici"],
         color: '#ef4444',
         layer: 0
     },
     'federici': {
         name: 'Silvia Federici',
         description: 'Teórica do trabalho reprodutivo e acumulação primitiva',
-        connections: ['trabalho-reprodutivo', 'ciberfeminismo'],
+        connections: ["trabalho-reprodutivo", "ciberfeminismo"],
         color: '#8b5cf6',
         layer: -1
     },
     'ciberfeminismo': {
         name: 'Ciberfeminismo',
         description: 'Análise feminista da tecnologia e do trabalho digital',
-        connections: ['trabalho-reprodutivo', 'federici', 'resistencia'],
+        connections: ["trabalho-reprodutivo", "federici", "resistencia"],
         color: '#8b5cf6',
         layer: 0
     },
-
-    // ========================================
-    // CAPÍTULO 9: PÓS-OPERAÍSMO E A TEORIA DA MULTIDÃO
-    // ========================================
-    'pos-operaismo': {
-        name: 'Pós-Operaísmo',
-        description: 'Atualização do operaísmo para a era do trabalho imaterial e capitalismo cognitivo',
-        connections: ['operaismo', 'multidao-conceito', 'imperio-livro', 'comum-conceito', 'hardt-negri', 'virno'],
-        color: '#10b981',
-        layer: 0
-    },
-    'multidao-conceito': {
-        name: 'Multidão',
-        description: 'Multiplicidade de singularidades que cooperam - não pode ser reduzida a unidade (vs. Povo)',
-        connections: ['pos-operaismo', 'hardt-negri', 'virno', 'povo-conceito', 'general-intellect', 'comum-conceito'],
-        color: '#10b981',
-        layer: 0
-    },
-    'povo-conceito': {
-        name: 'Povo (vs. Multidão)',
-        description: 'Identidade unificada que subsume diferenças - vontade geral representada pelo Estado',
-        connections: ['multidao-conceito', 'estado', 'representacao-politica'],
-        color: '#10b981',
-        layer: -1
-    },
-    'imperio-livro': {
-        name: 'Império (Hardt & Negri)',
-        description: 'Nova forma de soberania global - rede descentralizada de poder (Estados, corporações, FMI, OMC)',
-        connections: ['pos-operaismo', 'hardt-negri', 'imperialismo-digital', 'multidao-conceito', 'biopoder-conceito'],
-        color: '#10b981',
-        layer: 0
-    },
-    'hardt-negri': {
-        name: 'Michael Hardt & Antonio Negri',
-        description: 'Autores de Império, Multidão, Commonwealth - teóricos do pós-operaísmo',
-        connections: ['pos-operaismo', 'imperio-livro', 'multidao-conceito', 'comum-conceito', 'bioproducao'],
-        color: '#10b981',
-        layer: -1
-    },
-    'virno': {
-        name: 'Paolo Virno',
-        description: 'Gramática da Multidão - linguagem e trabalho imaterial, Êxodo como estratégia',
-        connections: ['pos-operaismo', 'multidao-conceito', 'exodo-estrategia', 'general-intellect', 'operaismo'],
-        color: '#10b981',
-        layer: -1
-    },
-    'biopoder-conceito': {
-        name: 'Biopoder',
-        description: 'Poder sobre a vida da população (Foucault) - fazer viver ou deixar morrer',
-        connections: ['imperio-livro', 'bioproducao', 'trabalho-imaterial', 'subsuncao-real-vida'],
-        color: '#10b981',
-        layer: 0
-    },
-    'bioproducao': {
-        name: 'Bioprodução / Trabalho Biopolítico',
-        description: 'Trabalho que produz e reproduz a vida social em sua totalidade (afetos, relações, subjetividade)',
-        connections: ['trabalho-afetivo', 'biopoder-conceito', 'hardt-negri', 'imperio-livro', 'multidao-conceito'],
-        color: '#10b981',
-        layer: 0
-    },
-    'subsuncao-real-vida': {
-        name: 'Subsunção Real da Vida',
-        description: 'Toda a vida (não só trabalho) é capturada pelo capital - trabalho 24/7, redes sociais, sono',
-        connections: ['biopoder-conceito', 'trabalho-imaterial', 'fabrica-social', 'capitalismo-vigilancia'],
-        color: '#10b981',
-        layer: 0
-    },
-    'exodo-estrategia': {
-        name: 'Êxodo (Estratégia Política)',
-        description: 'Deserção criativa + construção de alternativas - não tomar o poder, mas construir outro poder',
-        connections: ['virno', 'pos-operaismo', 'recusa-trabalho', 'comum-conceito', 'mst-mtst', 'zapatistas'],
-        color: '#10b981',
-        layer: 1 // Futuro (estratégia)
-    },
-    'comum-conceito': {
-        name: 'O Comum',
-        description: 'Riqueza produzida e compartilhada - nem estatal nem privada (natural, artificial, urbana)',
-        connections: ['pos-operaismo', 'hardt-negri', 'comum-natural', 'comum-artificial', 'comum-urbano', 'cercamento-digital', 'modelo-dados-comum', 'cooperativa-dados', 'sci-hub'],
-        color: '#10b981',
-        layer: 0
-    },
-    'comum-natural': {
-        name: 'Comum Natural',
-        description: 'Recursos compartilhados da Terra: ar, água, florestas, biodiversidade',
-        connections: ['comum-conceito', 'cercamento-classico', 'elinor-ostrom'],
-        color: '#10b981',
-        layer: -1
-    },
-    'comum-artificial': {
-        name: 'Comum Artificial / Social',
-        description: 'Conhecimento, linguagem, código, cultura produzidos coletivamente',
-        connections: ['comum-conceito', 'general-intellect', 'wikipedia-caso', 'software-livre', 'common-digital'],
-        color: '#10b981',
-        layer: 0
-    },
-    'comum-urbano': {
-        name: 'Comum Metropolitano / Urbano',
-        description: 'Espaço urbano, encontros, redes de vizinhança - direito à cidade (Harvey)',
-        connections: ['comum-conceito', 'david-harvey', 'direito-cidade', 'ocupacoes-urbanas'],
-        color: '#10b981',
-        layer: 0
-    },
-    'david-harvey': {
-        name: 'David Harvey',
-        description: 'Geógrafo marxista - acumulação por espoliação, direito à cidade, crítico do Império',
-        connections: ['comum-urbano', 'direito-cidade', 'neoliberalismo', 'acumulacao-primitiva'],
-        color: '#10b981',
-        layer: -1
-    },
-    'direito-cidade': {
-        name: 'Direito à Cidade',
-        description: 'Direito coletivo de moldar e recriar o espaço urbano - não só acessar',
-        connections: ['comum-urbano', 'david-harvey', 'ocupacoes-urbanas', 'mst-mtst'],
-        color: '#10b981',
-        layer: 1
-    },
-    'cercamento-digital': {
-        name: 'Cercamento Digital do Comum',
-        description: 'Privatização de conhecimento, dados, cultura - patentes, copyright, propriedade de dados',
-        connections: ['comum-conceito', 'cercamento-classico', 'propriedade-intelectual', 'capitalismo-vigilancia', 'escassez-artificial', 'pirataria-luta-classes'],
-        color: '#10b981',
-        layer: 0
-    },
-    'cercamento-classico': {
-        name: 'Cercamento (Enclosure)',
-        description: 'Privatização histórica dos commons - terras comunais transformadas em propriedade privada',
-        connections: ['comum-natural', 'cercamento-digital', 'acumulacao-primitiva'],
-        color: '#10b981',
-        layer: -1
-    },
-    'propriedade-intelectual': {
-        name: 'Propriedade Intelectual',
-        description: 'Copyright, patentes, marcas - mercantilização do conhecimento',
-        connections: ['cercamento-digital', 'software-livre', 'pirataria', 'creative-commons'],
-        color: '#10b981',
-        layer: 0
-    },
-    'creative-commons': {
-        name: 'Creative Commons',
-        description: 'Licenças que permitem compartilhamento e remix de obras culturais',
-        connections: ['propriedade-intelectual', 'software-livre', 'comum-artificial', 'instituicoes-comum'],
-        color: '#10b981',
-        layer: 1
-    },
-    'pirataria': {
-        name: 'Pirataria Digital',
-        description: 'Compartilhamento não-autorizado como resistência ao cercamento - Napster, Pirate Bay',
-        connections: ['propriedade-intelectual', 'cercamento-digital', 'resistencia', 'torrent'],
-        color: '#10b981',
-        layer: 0
-    },
-    'torrent': {
-        name: 'BitTorrent / P2P',
-        description: 'Protocolo peer-to-peer de compartilhamento sem servidor central',
-        connections: ['pirataria', 'comum-artificial', 'descentralizacao', 'instituicoes-comum', 'sci-hub', 'mastodon'],
-        color: '#10b981',
-        layer: 0
-    },
-    'commons-digital': {
-        name: 'Commons Digital',
-        description: 'Infraestrutura informacional compartilhada - Wikipedia, software livre, bibliotecas piratas',
-        connections: ['comum-conceito', 'comum-artificial', 'sci-hub', 'library-genesis', 'mastodon', 'software-livre', 'desescassificacao'],
-        color: '#10b981',
-        layer: 1
-    },
-    'instituicoes-comum': {
-        name: 'Instituições do Comum',
-        description: 'Formas organizacionais nem estatais nem mercantis - licenças livres, cooperativas, governança distribuída',
-        connections: ['comum-conceito', 'elinor-ostrom', 'software-livre', 'cooperativas-plataforma', 'creative-commons', 'commons-digital'],
-        color: '#10b981',
-        layer: 1
-    },
-    'elinor-ostrom': {
-        name: 'Elinor Ostrom',
-        description: 'Nobel Economia - gestão comunitária de recursos comuns sem Estado ou mercado',
-        connections: ['instituicoes-comum', 'comum-natural', 'governanca-comum'],
-        color: '#10b981',
-        layer: -1
-    },
-    'governanca-comum': {
-        name: 'Governança do Comum',
-        description: 'Sistemas de decisão coletiva e autogestão de recursos compartilhados',
-        connections: ['instituicoes-comum', 'elinor-ostrom', 'cooperativas-plataforma', 'assembleia'],
-        color: '#10b981',
-        layer: 1
-    },
-    'mst-mtst': {
-        name: 'MST e MTST',
-        description: 'Movimentos brasileiros de ocupação (terra e moradia) - exemplos de multidão e êxodo',
-        connections: ['exodo-estrategia', 'multidao-conceito', 'ocupacoes-urbanas', 'comum-conceito', 'assembleia'],
-        color: '#10b981',
-        layer: 0
-    },
-    'ocupacoes-urbanas': {
-        name: 'Ocupações Urbanas',
-        description: 'Prédios/espaços abandonados ocupados e transformados em moradia/cultura coletiva',
-        connections: ['mst-mtst', 'direito-cidade', 'comum-urbano', 'exodo-estrategia'],
-        color: '#10b981',
-        layer: 0
-    },
-    'zapatistas': {
-        name: 'Zapatistas (EZLN)',
-        description: 'Movimento indígena mexicano - "mandar obedecendo", autonomia, resistência ao neoliberalismo',
-        connections: ['exodo-estrategia', 'autonomia', 'nhandereko', 'assembleia'],
-        color: '#10b981',
-        layer: 0
-    },
-    'representacao-politica': {
-        name: 'Representação Política',
-        description: 'Sistema onde representantes eleitos tomam decisões em nome do povo',
-        connections: ['povo-conceito', 'estado', 'democracia-direta', 'assembleia'],
-        color: '#10b981',
-        layer: -1
-    },
-    'democracia-direta': {
-        name: 'Democracia Direta',
-        description: 'Participação direta nas decisões sem intermediários - assembleias, referendos',
-        connections: ['representacao-politica', 'assembleia', 'mst-mtst', 'zapatistas'],
-        color: '#10b981',
-        layer: 1
-    },
-    'assembleia': {
-        name: 'Assembleia Popular',
-        description: 'Reunião horizontal para tomada coletiva de decisões',
-        connections: ['democracia-direta', 'mst-mtst', 'zapatistas', 'ocupacoes-urbanas', 'governanca-comum'],
-        color: '#10b981',
-        layer: 1
-    },
-    'eurocentrismo-posop': {
-        name: 'Crítica: Eurocentrismo Pós-Operaísta',
-        description: 'Pós-operaísmo foca em trabalhadores cognitivos, negligencia trabalho manual/reprodutivo periférico',
-        connections: ['pos-operaismo', 'trabalho-reprodutivo', 'federici', 'colonialidade'],
-        color: '#10b981',
-        layer: 0
-    },
-    'otimismo-tecnologico': {
-        name: 'Crítica: Otimismo Tecnológico',
-        description: 'Pós-operaísmo superestima potencial emancipatório da tecnologia?',
-        connections: ['pos-operaismo', 'capitalismo-vigilancia', 'plataformizacao'],
-        color: '#10b981',
-        layer: 0
-    },
-
-    // ========================================
-    // CAPÍTULO 10: CRÍTICA DO VALOR (WERTKRITIK)
-    // ========================================
-    'wertkritik': {
-        name: 'Crítica do Valor (Wertkritik)',
-        description: 'Corrente alemã que critica o trabalho abstrato e a forma-valor em si, não apenas sua distribuição',
-        connections: ['robert-kurz', 'moishe-postone', 'sujeito-automatico', 'dominacao-abstrata', 'dissociacao-valor', 'colapso-modernizacao'],
-        color: '#dc2626',
-        layer: -1
-    },
-    'robert-kurz': {
-        name: 'Robert Kurz (1943-2012)',
-        description: 'Teórico alemão fundador da Wertkritik - O Colapso da Modernização (1991)',
-        connections: ['wertkritik', 'krisis-revista', 'colapso-modernizacao', 'capital-ficti cio', 'trabalho-abstrato'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'moishe-postone': {
-        name: 'Moishe Postone (1942-2018)',
-        description: 'Historiador canadense-americano - Time, Labor and Social Domination (1993) - reinterpretação radical de Marx',
-        connections: ['wertkritik', 'dominacao-abstrata', 'trabalho-abstrato', 'tempo-abstrato'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'krisis-revista': {
-        name: 'Revista Krisis (1986) / Exit! (2004)',
-        description: 'Revistas alemãs fundadas por Kurz e colegas para desenvolver a crítica do valor',
-        connections: ['robert-kurz', 'wertkritik', 'dissociacao-valor'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'critica-esoterica': {
-        name: 'Crítica Esotérica de Marx',
-        description: 'Análise das categorias abstratas e impessoais (Valor, fetiche) que dominam toda a sociedade',
-        connections: ['wertkritik', 'critica-exoterica', 'sujeito-automatico', 'fetiche-mercadoria'],
-        color: '#dc2626',
-        layer: -1
-    },
-    'critica-exoterica': {
-        name: 'Crítica Exotérica de Marx',
-        description: 'Análise da luta de classes e exploração (superfície visível do capitalismo)',
-        connections: ['critica-esoterica', 'luta-classes', 'mais-valia'],
-        color: '#dc2626',
-        layer: -1
-    },
-    'sujeito-automatico': {
-        name: 'Sujeito Automático',
-        description: 'O Valor como força quase consciente cujo único objetivo é sua autovalorização infinita (D-M-D\')',
-        connections: ['wertkritik', 'dominacao-abstrata', 'fetiche-mercadoria', 'ultrarracionalismo', 'algoritmos-sujeito-automatico'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'dominacao-abstrata': {
-        name: 'Dominação Abstrata',
-        description: 'Dominação não-pessoal da estrutura social (Valor) sobre capitalistas e trabalhadores',
-        connections: ['wertkritik', 'sujeito-automatico', 'fetiche-mercadoria'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'dissociacao-valor': {
-        name: 'Teoria da Dissociação (Abspaltung)',
-        description: 'Roswitha Scholz: patriarcado é estrutural ao capitalismo - o "feminino" (cuidado, afeto) é dissociado/desvalorizado',
-        connections: ['wertkritik', 'roswitha-scholz', 'trabalho-reprodutivo', 'feminizacao-trabalho', 'dissociacao-geopolitica'],
-        color: '#ec4899',
-        layer: 0
-    },
-    'roswitha-scholz': {
-        name: 'Roswitha Scholz',
-        description: 'Teórica feminista alemã da Wertkritik - desenvolveu teoria da dissociação valor-gênero',
-        connections: ['dissociacao-valor', 'wertkritik', 'krisis-revista'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'dissociacao-geopolitica': {
-        name: 'Dissociação Geopolítica',
-        description: 'Sul Global é dissociado: necessário (recursos) mas desprezado (sem direitos) - paralelo com gênero',
-        connections: ['dissociacao-valor', 'imperialismo-digital', 'extrativismo-digital', 'colonialidade'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'colapso-modernizacao': {
-        name: 'Colapso da Modernização',
-        description: 'Tese de Kurz: capitalismo caminha para limite interno absoluto - automação destrói base do valor',
-        connections: ['wertkritik', 'robert-kurz', 'automacao-crise-valor', 'capital-ficticio', 'barbarizacao'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'automacao-crise-valor': {
-        name: 'Automação como Crise do Valor',
-        description: 'Contradição: automação elimina trabalho vivo (única fonte de valor) → crise de valorização',
-        connections: ['colapso-modernizacao', 'trabalho-vivo', 'capital-ficticio', 'ia-automacao-cognitiva'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'trabalho-vivo': {
-        name: 'Trabalho Vivo',
-        description: 'Trabalho humano atual - única fonte de valor no capitalismo (Marx)',
-        connections: ['trabalho-abstrato', 'mais-valia', 'automacao-crise-valor'],
-        color: '#ef4444',
-        layer: -1
-    },
-    'capital-ficticio': {
-        name: 'Capital Fictício',
-        description: 'Riqueza que parece real mas não tem substância de valor - dívidas, bolhas, derivativos',
-        connections: ['colapso-modernizacao', 'financeirizacao', 'bolhas-especulativas', 'criptomoedas-capital-ficticio', 'daos-plutocracia', 'ftx-collapse', 'terra-luna-collapse', 'el-salvador-bitcoin'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'financeirizacao': {
-        name: 'Financeirização',
-        description: 'Migração do capital da produção para especulação - sintoma de crise de valorização',
-        connections: ['capital-ficticio', 'bolhas-especulativas', 'derivativos', 'quantitative-easing'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'bolhas-especulativas': {
-        name: 'Bolhas Especulativas',
-        description: 'Preços inflam sem correspondência com valor real - imóveis, ações, criptos',
-        connections: ['capital-ficticio', 'financeirizacao', 'criptomoedas-capital-ficticio'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'derivativos': {
-        name: 'Derivativos Financeiros',
-        description: 'Produtos financeiros abstratos (apostas sobre apostas) - mercado valia 10x PIB mundial em 2008',
-        connections: ['capital-ficticio', 'financeirizacao', 'crise-2008'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'quantitative-easing': {
-        name: 'Expansão Monetária (QE)',
-        description: 'Bancos centrais imprimem dinheiro para evitar colapso - adia crise, não resolve',
-        connections: ['capital-ficticio', 'financeirizacao'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'crise-2008': {
-        name: 'Crise Financeira 2008',
-        description: 'Colapso de bolha imobiliária/derivativos - confirmou tese do capital fictício',
-        connections: ['derivativos', 'capital-ficticio', 'bolhas-especulativas'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'desindustrializacao-brasil': {
-        name: 'Desindustrialização Brasil (1990-2024)',
-        description: 'Indústria cai de 34% (1985) para 11% (2023) do PIB - reprimarização da economia',
-        connections: ['colapso-modernizacao', 'neoliberalismo-brasil', 'extrativismo-digital'],
-        color: '#10b981',
-        layer: 0
-    },
-    'neoliberalismo-brasil': {
-        name: 'Neoliberalismo Brasil (Collor, FHC)',
-        description: 'Abertura econômica + Real sobrevalorizado = destruição indústria nacional',
-        connections: ['desindustrializacao-brasil', 'dependencia-digital'],
-        color: '#10b981',
-        layer: 0
-    },
-    'informalidade-brasil': {
-        name: 'Informalidade Brasil (39% em 2023)',
-        description: 'Não é atraso - é forma periférica da crise de valorização (população supérflua)',
-        connections: ['populacao-superflua', 'uberizacao', 'reforma-trabalhista-2017'],
-        color: '#10b981',
-        layer: 0
-    },
-    'reforma-trabalhista-2017': {
-        name: 'Reforma Trabalhista 2017 (Lei 13.467)',
-        description: 'Legalização da precarização - contrato intermitente, pejotização',
-        connections: ['informalidade-brasil', 'uberizacao', 'trabalho-abstrato'],
-        color: '#10b981',
-        layer: 0
-    },
-    'populacao-superflua': {
-        name: 'População Supérflua (Humanidade Supérflua)',
-        description: 'Massas expulsas da produção de valor - não são mais "exército de reserva"',
-        connections: ['colapso-modernizacao', 'automacao-crise-valor', 'informalidade-brasil', 'barbarizacao'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'milicias-necropolitica-brasil': {
-        name: 'Milícias e Necropolítica (Rio/SP)',
-        description: 'Re-feudalização: poderes armados controlam territórios onde Estado não garante valorização',
-        connections: ['barbarizacao', 'necropolitica-digital', 'populacao-superflua'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'barbarizacao': {
-        name: 'Barbarização',
-        description: 'Desintegração social que acompanha colapso - guerras, autoritarismo, re-feudalização',
-        connections: ['colapso-modernizacao', 'populacao-superflua', 'milicias-necropolitica-brasil'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'ia-automacao-cognitiva': {
-        name: 'IA e Automação do Trabalho Cognitivo',
-        description: 'GPT, DALL-E substituem trabalho imaterial - elimina até general intellect',
-        connections: ['automacao-crise-valor', 'trabalho-cognitivo', 'general-intellect', 'capital-ficticio'],
-        color: '#dc2626',
-        layer: 1
-    },
-    'paradoxo-ia-valor': {
-        name: 'Paradoxo da IA',
-        description: 'IA produz abundância mas não cria valor - tempo socialmente necessário → zero',
-        connections: ['ia-automacao-cognitiva', 'trabalho-abstrato', 'capital-ficticio'],
-        color: '#dc2626',
-        layer: 1
-    },
-    'criptomoedas-capital-ficticio': {
-        name: 'Criptomoedas como Capital Fictício',
-        description: 'Bitcoin não é pós-capitalista - é capital fictício descentralizado (especulação pura)',
-        connections: ['capital-ficticio', 'bolhas-especulativas', 'cripto-consumo-energetico', 'daos-plutocracia', 'web3-critique', 'ftx-collapse', 'terra-luna-collapse', 'el-salvador-bitcoin'],
-        color: '#dc2626',
-        layer: 1
-    },
-    'cripto-consumo-energetico': {
-        name: 'Mineração Bitcoin = Trabalho Abstrato Computacional',
-        description: 'Consome mais energia que Argentina - queima recursos sem criar valor de uso',
-        connections: ['criptomoedas-capital-ficticio', 'trabalho-abstrato', 'crise-ecologica'],
-        color: '#dc2626',
-        layer: 1
-    },
-    'algoritmos-sujeito-automatico': {
-        name: 'Algoritmos como Sujeito Automático Digitalizado',
-        description: 'Algoritmos parecem ter vontade própria - mas apenas executam lógica de valorização',
-        connections: ['sujeito-automatico', 'fetiche-algoritmo', 'capitalismo-vigilancia'],
-        color: '#dc2626',
-        layer: 1
-    },
-    'fetiche-algoritmo': {
-        name: 'Fetichismo Algorítmico',
-        description: 'Atribuir agência ao algoritmo - mas ele cristaliza relações sociais capitalistas',
-        connections: ['algoritmos-sujeito-automatico', 'fetiche-mercadoria', 'transparencia-algoritmica'],
-        color: '#dc2626',
-        layer: 1
-    },
-    'plataformas-rentismo': {
-        name: 'Plataformas como Rentismo Digital',
-        description: 'Uber, Meta, Amazon não produzem valor - extraem renda de posição monopolista',
-        connections: ['plataformizacao', 'capital-ficticio', 'financeirizacao'],
-        color: '#dc2626',
-        layer: 1
-    },
-    'critica-marxismo-tradicional-wertkritik': {
-        name: 'Debate: Wertkritik vs Marxismo Ortodoxo',
-        description: 'Ortodoxos: "Wertkritik paralisa luta". Wertkritik: "Vocês gerenciam capitalismo, não abolem"',
-        connections: ['wertkritik', 'luta-classes', 'pos-operaismo'],
-        color: '#8b5cf6',
-        layer: 0
-    },
-    'critica-feminista-wertkritik': {
-        name: 'Debate: Feministas vs Dissociação',
-        description: 'Federici: risco de essencializar gênero. Scholz: é construção histórica, não biologia',
-        connections: ['dissociacao-valor', 'federici', 'interseccionalidade'],
-        color: '#ec4899',
-        layer: 0
-    },
-    'debate-posop-wertkritik': {
-        name: 'Debate: Pós-Operaísmo vs Wertkritik',
-        description: 'Hardt/Negri: "há agência". Kurz: "êxodo opera dentro da forma-valor". Cap 11 media isso',
-        connections: ['wertkritik', 'pos-operaismo', 'multidao-conceito', 'sintese-informacional'],
-        color: '#8b5cf6',
-        layer: 0
-    },
-    'sintese-informacional': {
-        name: 'Síntese Informacional (Cap 11)',
-        description: 'Cibernética 2ª ordem media Wertkritik (estrutura) e Pós-Operaísmo (agência) - acoplamento circular',
-        connections: ['debate-posop-wertkritik', 'segunda-ordem', 'wertkritik', 'pos-operaismo', 'informacao-como-trabalho', 'metabolismo-informacional', 'subsuncao-real-cibernetica'],
-        color: '#a855f7',
-        layer: 1
-    },
-    
-    // ========================================
-    // CAPÍTULO 11: SÍNTESE INFORMACIONAL (EXPANSÃO v9)
-    // ========================================
-    'informacao-como-trabalho': {
-        name: 'Informação como Trabalho Cristalizado',
-        description: 'Trabalho = inscrição de ordem (redução de entropia). Logo, informação = trabalho materializado',
-        connections: ['sintese-informacional', 'tempo-trabalho-necessario', 'trabalho-abstrato', 'informacao-nao-rival'],
-        color: '#a855f7',
-        layer: 0
-    },
-    'informacao-nao-rival': {
-        name: 'Informação Não-Rival',
-        description: 'Custo marginal de cópia = zero. Abundância natural vs necessidade capitalista de escassez',
-        connections: ['informacao-como-trabalho', 'escassez-artificial', 'pirataria-luta-classes', 'commons-digital'],
-        color: '#a855f7',
-        layer: 0
-    },
-    'escassez-artificial': {
-        name: 'Escassificação Artificial',
-        description: 'Capital precisa criar escassez para lucrar: copyright, DRM, plataformização, SaaS',
-        connections: ['informacao-nao-rival', 'propriedade-intelectual', 'lock-in', 'cercamento-comum'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'propriedade-intelectual': {
-        name: 'Propriedade Intelectual',
-        description: 'Cercamento legal do conhecimento: patents, copyright, segredos comerciais',
-        connections: ['escassez-artificial', 'cercamento-comum', 'pirataria-luta-classes'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'pirataria-luta-classes': {
-        name: 'Pirataria como Luta de Classes',
-        description: 'No Sul Global, pirataria = resistência à escassificação artificial do conhecimento',
-        connections: ['informacao-nao-rival', 'escassez-artificial', 'sci-hub', 'library-genesis', 'desescassificacao'],
-        color: '#16a34a',
-        layer: 1
-    },
-    'sci-hub': {
-        name: 'Sci-Hub',
-        description: 'Alexandra Elbakyan: 88M+ artigos científicos gratuitos. Commons digital pirata, feedback corretivo',
-        connections: ['pirataria-luta-classes', 'commons-digital', 'exodo', 'infraestrutura-alternativa'],
-        color: '#16a34a',
-        layer: 1
-    },
-    'library-genesis': {
-        name: 'Library Genesis / Z-Library',
-        description: 'Bibliotecas piratas essenciais no Sul Global. Infraestrutura vital de acesso ao conhecimento',
-        connections: ['pirataria-luta-classes', 'sci-hub', 'commons-digital'],
-        color: '#16a34a',
-        layer: 1
-    },
-    'desescassificacao': {
-        name: 'Desescassificação',
-        description: 'Prática de reverter cercamentos artificiais, distribuindo livremente o que tem custo marginal zero',
-        connections: ['pirataria-luta-classes', 'commons-digital', 'multidao-conceito'],
-        color: '#16a34a',
-        layer: 1
-    },
-    'excedente-comportamental': {
-        name: 'Excedente Comportamental (Zuboff)',
-        description: 'Dados além do necessário para o serviço, coletados para criar produtos de previsão',
-        connections: ['capitalismo-vigilancia', 'mais-valia-informacional', 'taxa-extracao-info', 'produtos-previsao'],
-        color: '#f59e0b',
-        layer: 0
-    },
-    'mais-valia-informacional': {
-        name: 'Mais-Valia Informacional',
-        description: 'Excedente comportamental = mais-trabalho não-pago capturado pelas plataformas',
-        connections: ['excedente-comportamental', 'mais-valia', 'taxa-extracao-info', 'trabalho-gratuito'],
-        color: '#f59e0b',
-        layer: 0
-    },
-    'taxa-extracao-info': {
-        name: 'Taxa de Extração Informacional',
-        description: 'e_info = dados extraídos / dados necessários. Facebook/Google têm taxas altíssimas',
-        connections: ['mais-valia-informacional', 'excedente-comportamental', 'taxa-exploracao', 'gdpr-experimento'],
-        color: '#f59e0b',
-        layer: 0
-    },
-    'gdpr-experimento': {
-        name: 'GDPR como Experimento Natural',
-        description: 'Lei europeia revelou: plataformas coletam 20x mais dados do que o necessário (600MB-1GB/usuário)',
-        connections: ['taxa-extracao-info', 'excedente-comportamental', 'soberania-dados'],
-        color: '#3b82f6',
-        layer: 1
-    },
-    'loop-feedback-plataforma': {
-        name: 'Loop de Feedback das Plataformas',
-        description: 'Input (comportamento) → algoritmo → output (interface modificada) → novo comportamento → iteração',
-        connections: ['feedback', 'algoritmo', 'gerenciamento-algoritmico', 'feedback-positivo-vicioso'],
-        color: '#a855f7',
-        layer: 0
-    },
-    'feedback-positivo-vicioso': {
-        name: 'Feedback Positivo Vicioso',
-        description: 'Plataformas usam feedback positivo para viciar: mais cliques → mais extremismo → mais engajamento',
-        connections: ['loop-feedback-plataforma', 'feedback', 'vicio-digital', 'radicalizacao-algoritmica'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'radicalizacao-algoritmica': {
-        name: 'Radicalização Algorítmica',
-        description: 'YouTube/Facebook empurram usuários para extremos via feedback positivo (caso Caleb Cain)',
-        connections: ['feedback-positivo-vicioso', 'youtube-radicaliza', 'sujeito-automatico', 'camaras-eco'],
-        color: '#dc2626',
-        layer: 1
-    },
-    'youtube-radicaliza': {
-        name: 'Caso YouTube: Caleb Cain',
-        description: 'Peterson → Shapiro → Molyneux → Spencer. Algoritmo otimiza tempo de tela = empurra p/ extremismo',
-        connections: ['radicalizacao-algoritmica', 'feedback-positivo-vicioso', 'sujeito-automatico'],
-        color: '#dc2626',
-        layer: 1
-    },
-    'camaras-eco': {
-        name: 'Câmaras de Eco',
-        description: 'Algoritmos reforçam crenças existentes, isolando usuários em bolhas informacionais',
-        connections: ['radicalizacao-algoritmica', 'feedback-positivo-vicioso', 'polarizacao'],
-        color: '#dc2626',
-        layer: 1
-    },
-    'dados-novo-petroleo': {
-        name: '"Dados São o Novo Petróleo" (Crítica)',
-        description: 'Metáfora enganosa: petróleo é rival/escasso/natural. Dados são não-rival/abundante/trabalho vivo',
-        connections: ['informacao-nao-rival', 'mais-valia-informacional', 'dados-trabalho-cristalizado'],
-        color: '#f59e0b',
-        layer: 0
-    },
-    'dados-trabalho-cristalizado': {
-        name: 'Dados como Trabalho Cristalizado',
-        description: 'Metáfora correta: Seus cliques = trabalho na linha de montagem. Plataforma = dono da fábrica',
-        connections: ['dados-novo-petroleo', 'informacao-como-trabalho', 'mais-valia-informacional'],
-        color: '#a855f7',
-        layer: 0
-    },
-    'soberania-dados': {
-        name: 'Soberania de Dados',
-        description: 'Quem controla os dados? 3 modelos: propriedade privada (EUA), estatal (China), comum (proposta)',
-        connections: ['modelo-propriedade-privada', 'modelo-soberania-estatal', 'modelo-dados-comum', 'marco-civil-internet'],
-        color: '#3b82f6',
-        layer: 1
-    },
-    'modelo-propriedade-privada': {
-        name: 'Modelo 1: Propriedade Privada (Status Quo)',
-        description: 'Dados pertencem às plataformas. Resultado: concentração (GAFAM), vigilância, monetização da vida',
-        connections: ['soberania-dados', 'capitalismo-vigilancia', 'monopolio'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'modelo-soberania-estatal': {
-        name: 'Modelo 2: Soberania Estatal (China)',
-        description: 'Dados sob controle estatal. Planejamento + vigilância autoritária. Democracia inexistente',
-        connections: ['soberania-dados', 'china-cyberpunk', 'credito-social'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'modelo-dados-comum': {
-        name: 'Modelo 3: Dados como Comum',
-        description: 'Governança coletiva de dados. Data cooperatives, controle democrático da infraestrutura',
-        connections: ['soberania-dados', 'comum', 'cooperativa-dados', 'cataki-exemplo', 'infraestrutura-alternativa'],
-        color: '#16a34a',
-        layer: 1
-    },
-    'cooperativa-dados': {
-        name: 'Cooperativas de Dados',
-        description: 'Usuários se organizam coletivamente para controlar seus próprios dados',
-        connections: ['modelo-dados-comum', 'cooperativa-plataforma', 'comum', 'cataki-exemplo'],
-        color: '#16a34a',
-        layer: 1
-    },
-    'cataki-exemplo': {
-        name: 'Caso Cataki (Brasil)',
-        description: 'Plataforma cooperativa de catadores de recicláveis. Eles controlam seus próprios dados de coleta',
-        connections: ['cooperativa-dados', 'modelo-dados-comum', 'cooperativa-plataforma', 'brasil-resistencia'],
-        color: '#16a34a',
-        layer: 1
-    },
-    'marco-civil-internet': {
-        name: 'Marco Civil da Internet (2014)',
-        description: 'Tentativa brasileira de soberania digital. Lobby corporativo removeu data localization',
-        connections: ['soberania-dados', 'brasil-resistencia', 'dependencia-digital', 'lobby-big-tech'],
-        color: '#f59e0b',
-        layer: 1
-    },
-    'lobby-big-tech': {
-        name: 'Lobby de Big Tech',
-        description: 'Google/Facebook/Microsoft removeram exigências de soberania do Marco Civil',
-        connections: ['marco-civil-internet', 'monopolio', 'imperialismo-digital'],
-        color: '#dc2626',
-        layer: 1
-    },
-    'metabolismo-informacional': {
-        name: 'Metabolismo Informacional do Capital',
-        description: 'Sistema cibernético: extração (dados) → processamento (algoritmo) → mercadificação → feedback → acumulação',
-        connections: ['sintese-informacional', 'loop-feedback-plataforma', 'extracao-dados', 'produtos-previsao', 'subsuncao-real-cibernetica'],
-        color: '#a855f7',
-        layer: 1
-    },
-    'extracao-dados': {
-        name: 'Extração de Dados',
-        description: 'Trabalho humano (cognitivo, afetivo, atencional) gera dados como subproduto',
-        connections: ['metabolismo-informacional', 'trabalho-cognitivo', 'trabalho-afetivo', 'excedente-comportamental'],
-        color: '#f59e0b',
-        layer: 0
-    },
-    'subsuncao-real-cibernetica': {
-        name: 'Subsunção Real Cibernética',
-        description: 'Tese central: plataformas controlam rede informacional que media toda existência social',
-        connections: ['metabolismo-informacional', 'sintese-informacional', 'subsuncao-real', 'plataformizacao'],
-        color: '#a855f7',
-        layer: 1
-    },
-    'dupla-face-cibernetica': {
-        name: 'Dupla Face da Cibernética',
-        description: 'Mesma tecnologia: controle (sob capital) OU auto-organização (sob democracia). Depende de quem controla',
-        connections: ['sintese-informacional', 'cibernetica', 'planejamento-cibernetico', 'cybersyn'],
-        color: '#a855f7',
-        layer: 1
-    },
-    'bitcoin-sujeito-automatico': {
-        name: 'Caso Bitcoin: Sujeito Automático Puro',
-        description: 'Algoritmo autônomo valorizando valor sem controle humano. Forma-valor cristalizada em código',
-        connections: ['sujeito-automatico', 'capital-fictico', 'cripto-extrativismo', 'sintese-informacional'],
-        color: '#dc2626',
-        layer: 1
-    },
-    'cripto-extrativismo': {
-        name: 'Cripto-extrativismo',
-        description: 'Mineração de Bitcoin consome energia de países inteiros para valorizar capital fictício',
-        connections: ['bitcoin-sujeito-automatico', 'capital-fictico', 'crise-ecologica', 'extrativismo-dados'],
-        color: '#dc2626',
-        layer: 1
-    },
-    'lei-ashby-luta-classes': {
-        name: 'Lei de Ashby na Luta de Classes',
-        description: 'Batalha pela variedade: capital quer reduzir (controle), multidão quer aumentar (insubordinação)',
-        connections: ['lei-variedade-requisita', 'sintese-informacional', 'multidao-conceito', 'recusa-trabalho'],
-        color: '#a855f7',
-        layer: 1
-    },
-    'vigilancia-aumento-variedade': {
-        name: 'Vigilância como Aumento de Variedade do Capital',
-        description: 'Coleta massiva de dados = aumentar variedade do sistema de controle para antecipar/neutralizar resistência',
-        connections: ['lei-ashby-luta-classes', 'capitalismo-vigilancia', 'excedente-comportamental'],
-        color: '#dc2626',
-        layer: 1
-    },
-    'transparencia-algoritmica': {
-        name: 'Transparência Algorítmica',
-        description: 'Exigência de explicação das decisões algorítmicas. Luta de classes contra caixas-pretas de poder',
-        connections: ['fetiche-algoritmo', 'auditoria-algoritmica', 'contestacao-humana', 'ferramentas-luta'],
-        color: '#16a34a',
-        layer: 1
-    },
-    'auditoria-algoritmica': {
-        name: 'Auditoria Algorítmica Independente',
-        description: 'Investigar viés algorítmico (raça, gênero, classe) por entidades não-corporativas',
-        connections: ['transparencia-algoritmica', 'discriminacao-algoritmica', 'serasa-score'],
-        color: '#16a34a',
-        layer: 1
-    },
-    'contestacao-humana': {
-        name: 'Direito à Contestação Humana',
-        description: 'Decisões automatizadas devem poder ser questionadas por humanos (não-algoritmos)',
-        connections: ['transparencia-algoritmica', 'gerenciamento-algoritmico', 'uber-demissao-automatica'],
-        color: '#16a34a',
-        layer: 1
-    },
-    'socializacao-dados': {
-        name: 'Socialização de Dados',
-        description: 'Dados = trabalho cristalizado → devem ser propriedade social. Data trusts públicos, impostos sobre lucro de dados',
-        connections: ['modelo-dados-comum', 'mais-valia-informacional', 'dados-trabalho-cristalizado'],
-        color: '#16a34a',
-        layer: 1
-    },
-    'infraestrutura-alternativa': {
-        name: 'Infraestrutura Alternativa',
-        description: 'Construir fora do capital: cooperativas de plataforma, redes mesh, servidores próprios',
-        connections: ['sci-hub', 'cooperativa-plataforma', 'redes-mesh', 'mastodon', 'infoamazonia'],
-        color: '#16a34a',
-        layer: 1
-    },
-    'redes-mesh': {
-        name: 'Redes Mesh',
-        description: 'Internet comunitária peer-to-peer, sem provedores corporativos. Infraestrutura descentralizada',
-        connections: ['infraestrutura-alternativa', 'comum', 'exodo'],
-        color: '#16a34a',
-        layer: 1
-    },
-    'mastodon': {
-        name: 'Mastodon / Fediverse',
-        description: 'Rede social descentralizada, open-source, federada. Alternativa ao Twitter/Facebook',
-        connections: ['infraestrutura-alternativa', 'software-livre', 'commons-digital'],
-        color: '#16a34a',
-        layer: 1
-    },
-    'infoamazonia': {
-        name: 'Caso InfoAmazonia (Brasil)',
-        description: 'Rede de satélites comunitários monitora desmatamento fora de controle governamental/corporativo',
-        connections: ['infraestrutura-alternativa', 'brasil-resistencia', 'exodo', 'comum'],
-        color: '#16a34a',
-        layer: 1
-    },
-    'ferramentas-luta': {
-        name: '5 Princípios Táticos (Cap 11)',
-        description: 'Aumentar variedade, construir infraestrutura, transparência, socializar dados, cibernética horizontal',
-        connections: ['sintese-informacional', 'lei-ashby-luta-classes', 'infraestrutura-alternativa', 'transparencia-algoritmica', 'socializacao-dados'],
-        color: '#16a34a',
-        layer: 1
-    },
-    'metabolismo-industrial-vs-info': {
-        name: 'Metabolismo Industrial vs Informacional',
-        description: 'Séc XIX-XX (matéria/energia) vs Séc XXI (comportamento/dados). Mesma lógica de acumulação, nova base material',
-        connections: ['metabolismo-informacional', 'capitalismo', 'subsuncao-real-cibernetica'],
-        color: '#a855f7',
-        layer: 0
-    },
-    'residuo-digital': {
-        name: 'Resíduo Digital (Poluição Informacional)',
-        description: 'Metabolismo info produz: desinformação, vício, polarização, ansiedade (= CO₂ da era digital)',
-        connections: ['metabolismo-informacional', 'vicio-digital', 'radicalizacao-algoritmica', 'crise-saude-mental'],
-        color: '#dc2626',
-        layer: 1
-    },
-    'crise-saude-mental': {
-        name: 'Crise de Saúde Mental Digital',
-        description: 'Ansiedade, depressão, TDAH dispararam com redes sociais. Não é individual, é sistêmico',
-        connections: ['residuo-digital', 'vicio-digital', 'feedback-positivo-vicioso'],
-        color: '#dc2626',
-        layer: 1
-    },
-    'critica-ecossocialista-wertkritik': {
-        name: 'Debate: Ecossocialistas vs Wertkritik',
-        description: 'Moore/Malm: "foca só em valor, ignora natureza". Kurz: "crise ecológica = consequência da forma-valor"',
-        connections: ['wertkritik', 'crise-ecologica', 'decrescimento'],
-        color: '#16a34a',
-        layer: 0
-    },
-    'decrescimento': {
-        name: 'Decrescimento',
-        description: 'Economia pós-crescimento baseada em necessidades humanas e limites ecológicos',
-        connections: ['crise-ecologica', 'wertkritik', 'colapso-modernizacao'],
-        color: '#16a34a',
-        layer: 1
-    },
-    'critica-negativa-wertkritik': {
-        name: 'Crítica Negativa',
-        description: 'Força da Wertkritik: destrói ilusões reformistas. Limite: não constrói programa positivo',
-        connections: ['wertkritik', 'ultrarracionalismo', 'sintese-informacional'],
-        color: '#8b5cf6',
-        layer: 0
-    },
-    'ultrarracionalismo': {
-        name: 'Ultrarracionalismo (Cap 31)',
-        description: 'Fé cega em lógicas sistêmicas abstratas - naturaliza dominação (mercado, algoritmo, "TINA")',
-        connections: ['sujeito-automatico', 'critica-negativa-wertkritik', 'neoliberalismo-progressista'],
-        color: '#dc2626',
-        layer: 1
-    },
-    'neoliberalismo-progressista': {
-        name: 'Neoliberalismo Progressista',
-        description: 'Nancy Fraser: retórica emancipatória (diversidade, LGBTQIA+) + economia neoliberal (austeridade, precarização) = capitalismo com rosto progressista',
-        connections: ['ultrarracionalismo', 'sujeito-automatico', 'pt-brasil', 'captura-ideologica', 'individualizacao-politico', 'mercantilizacao-identidade'],
-        color: '#dc2626',
-        layer: 1
-    },
-    'pt-brasil': {
-        name: 'PT Brasil (2003-16, 2023-)',
-        description: 'Neoliberalismo progressista tropical: avanços reais (Bolsa Família, cotas, inclusão) dentro limites nunca buscou romper (pacto agronegócio, mercado financeiro)',
-        connections: ['neoliberalismo-progressista', 'hegemonia-avessas', 'lulismo', 'golpe-2016', 'interludio-fascista'],
-        color: '#dc2626',
-        layer: 1
-    },
-    'hegemonia-avessas': {
-        name: 'Hegemonia às Avessas',
-        description: 'Francisco de Oliveira: classe trabalhadora no governo mas governando PARA o capital. Políticas compensatórias pacificam base, ortodoxia econômica tranquiliza mercados',
-        connections: ['pt-brasil', 'neoliberalismo-progressista', 'conciliacao-classe'],
-        color: '#dc2626',
-        layer: 1
-    },
-    'golpe-2016': {
-        name: 'Golpe 2016 Brasil',
-        description: 'Impeachment Dilma: golpe parlamentar (não militar). Classe dominante cansou de conciliar, quis neoliberalismo puro. Interrupção democrática "legal"',
-        connections: ['pt-brasil', 'temer', 'interludio-fascista', 'lawfare'],
-        color: '#dc2626',
-        layer: 1
-    },
-    'temer': {
-        name: 'Temer (2016-18)',
-        description: 'Neoliberalismo tecnocrático: Teto Gastos EC 95, Reforma Trabalhista, privatizações. 9% aprovação mas eficiente em implementar agenda de classe',
-        connections: ['golpe-2016', 'austeridade-constitucionalizada', 'interludio-fascista', 'bolsonaro'],
-        color: '#dc2626',
-        layer: 1
-    },
-    'austeridade-constitucionalizada': {
-        name: 'Austeridade Constitucionalizada',
-        description: 'Teto Gastos EC 95/2016: congelamento investimentos públicos 20 anos. Inviabiliza políticas sociais estruturalmente - não importa quem ganhe eleições',
-        connections: ['temer', 'despolitizacao', 'ditadura-mercado'],
-        color: '#dc2626',
-        layer: 1
-    },
-    'interludio-fascista': {
-        name: 'Interlúdio Fascista Brasil (2016-22)',
-        description: 'Temer + Bolsonaro: reação neoliberal brutal quando conciliação não era mais suficiente. Reestruturou campo possibilidades políticas',
-        connections: ['golpe-2016', 'temer', 'bolsonaro', 'necropolitica'],
-        color: '#dc2626',
-        layer: 1
-    },
-    'bolsonaro': {
-        name: 'Bolsonaro (2019-22)',
-        description: 'Fascismo neoliberal tropical: Paulo Guedes ultraliberalismo + necropolítica (710k mortos COVID) + milicianismo digital + fundamentalismo + anti-intelectualismo',
-        connections: ['interludio-fascista', 'fascismo-neoliberal', 'necropolitica', 'milicianismo-digital', 'gabinete-odio'],
-        color: '#dc2626',
-        layer: 1
-    },
-    'fascismo-neoliberal': {
-        name: 'Fascismo Neoliberal',
-        description: 'Forma séc XXI: culto líder + nacionalismo reacionário + violência espetáculo MAS Estado mínimo pobres/máximo ricos, ultraliberal economicamente, mobilização via redes digitais',
-        connections: ['bolsonaro', 'milei', 'autoritarismo-mercado'],
-        color: '#dc2626',
-        layer: 1
-    },
-    'milicianismo-digital': {
-        name: 'Milicianismo Digital',
-        description: 'Bolsonaro construiu poder via WhatsApp/fake news/gabinete ódio. Algoritmos viciantes + mineração dados + microdirecionar desinformação',
-        connections: ['bolsonaro', 'gabinete-odio', 'engenharia-vicio', 'fake-news'],
-        color: '#dc2626',
-        layer: 1
-    },
-    'gabinete-odio': {
-        name: 'Gabinete do Ódio',
-        description: 'Estrutura Bolsonaro para produção/disseminação sistemática fake news, ataques coordenados, desinformação. Máquina de subjetivação fascista',
-        connections: ['milicianismo-digital', 'bolsonaro', 'hegemonia-fascista'],
-        color: '#dc2626',
-        layer: 1
-    },
-    'hegemonia-fascista': {
-        name: 'Hegemonia Fascista Bolsonarista',
-        description: '58mi votos 2022. Não fascistas convictos mas capturados: meritocracia ("pobre vagabundo"), punitivismo ("bandido bom morto"), moralismo, messiânico. Forma de vida não só voto',
-        connections: ['bolsonaro', 'gabinete-odio', 'subjetivacao-fascista'],
-        color: '#dc2626',
-        layer: 1
-    },
-    'lulismo-3': {
-        name: 'Lulismo 3.0 (2023-)',
-        description: 'Neoliberalismo progressista sob tutela fascista. Progressismo performático mas não pode tocar estruturas: sem maioria, mercados vigiam, ameaça golpista, herança institucional amarra',
-        connections: ['pt-brasil', 'interludio-fascista', 'captura-pela-ameaca', 'revolucao-passiva-avessas'],
-        color: '#dc2626',
-        layer: 1
-    },
-    'captura-pela-ameaca': {
-        name: 'Captura pela Ameaça',
-        description: 'Pós-Bolsonaro qualquer política minimamente progressista parece "vitória". Horizonte expectativas rebaixado. "Não sou Bolsonaro" basta como legitimação',
-        connections: ['lulismo-3', 'interludio-fascista'],
-        color: '#dc2626',
-        layer: 1
-    },
-    'captura-ideologica': {
-        name: 'Captura Ideológica (Cap 31)',
-        description: 'Três mecanismos: individualização político, mercantilização identidade, racionalidade tecnocrática como despolitização',
-        connections: ['neoliberalismo-progressista', 'individualizacao-politico', 'mercantilizacao-identidade', 'despolitizacao'],
-        color: '#dc2626',
-        layer: 1
-    },
-    'individualizacao-politico': {
-        name: 'Individualização do Político',
-        description: 'Problemas estruturais reframeados como responsabilidades individuais: mudança climática→consumo consciente, desigualdade gênero→empoderamento individual, racismo→educação antirracista',
-        connections: ['captura-ideologica', 'neoliberalismo-progressista', 'tecnosolucionismo'],
-        color: '#dc2626',
-        layer: 1
-    },
-    'mercantilizacao-identidade': {
-        name: 'Mercantilização da Identidade',
-        description: 'Identidades marginalizadas transformadas em nichos mercado: "Pink Money", afrofuturismo corporativo, feminismo de mercado. Extração mais-valia identitária',
-        connections: ['captura-ideologica', 'neoliberalismo-progressista', 'pink-capitalism'],
-        color: '#dc2626',
-        layer: 1
-    },
-    'pink-capitalism': {
-        name: 'Pink Capitalism',
-        description: 'População LGBTQIA+ como segmento consumidor. Marcas disputam com publicidade "inclusiva" mas lucros não retornam comunidade. Big Tech Pride Month mas amplifica ódio Sul Global',
-        connections: ['mercantilizacao-identidade', 'big-tech-woke'],
-        color: '#10b981',
-        layer: 1
-    },
-    'big-tech-woke': {
-        name: 'Big Tech "Woke"',
-        description: 'Google/Apple/Facebook relatórios diversidade, Pride Month, causas progressistas MAS extraem mais-valia dados, exploram moderadores, vendem vigilância, lobby anti-regulação',
-        connections: ['pink-capitalism', 'mercantilizacao-identidade', 'neoliberalismo-progressista'],
-        color: '#10b981',
-        layer: 1
-    },
-    'despolitizacao': {
-        name: 'Despolitização Tecnocrática',
-        description: 'Decisões políticas revestidas linguagem técnica "neutra" escondendo escolhas ideológicas: austeridade como "necessidade matemática", algoritmos como "objetivos"',
-        connections: ['captura-ideologica', 'austeridade-fiscal', 'neutralidade-algoritmica', 'jargao-gerencialista'],
-        color: '#dc2626',
-        layer: 1
-    },
-    'jargao-gerencialista': {
-        name: 'Jargão Gerencialista',
-        description: '"Otimização", "eficiência", "sinergia", "disrupção" - termos soam técnicos mas escondem agendas políticas (geralmente precarização trabalho, concentração poder)',
-        connections: ['despolitizacao', 'tecnosolucionismo'],
-        color: '#dc2626',
-        layer: 1
-    },
-    'milei': {
-        name: 'Milei Argentina (2023-)',
-        description: 'Fascismo libertário: retórica "liberdade" (Mises/Hayek/Rothbard, "dinamitar Banco Central") + prática autoritária (choque brutal, concentração poder executivo, repressão social)',
-        connections: ['fascismo-libertario', 'aceleracionismo-direita', 'pinochet'],
-        color: '#dc2626',
-        layer: 1
-    },
-    'fascismo-libertario': {
-        name: 'Fascismo Libertário',
-        description: 'Oxímoro aparente resolvido dialeticamente: libertário PARA capital (desregulamentação/privatização) e fascista PARA trabalho (repressão sindical/criminalização protesto)',
-        connections: ['milei', 'fascismo-neoliberal', 'autoritarismo-mercado'],
-        color: '#dc2626',
-        layer: 1
-    },
-    'autoritarismo-mercado': {
-        name: 'Autoritarismo de Mercado',
-        description: 'Estado forte necessário para implementar mercado livre contra resistência popular. Pinochet demonstrou: Chicago Boys + tortura = neoliberalismo real-existente',
-        connections: ['fascismo-libertario', 'milei', 'pinochet', 'acumulacao-primitiva'],
-        color: '#dc2626',
-        layer: 1
-    },
-    'petro-colombia': {
-        name: 'Petro Colômbia (2022-)',
-        description: 'Reformismo progressista: primeiro presidente esquerda história colombiana. Promessas ruptura (transição energética, reforma agrária, paz total) mas colisões com realidade estrutural',
-        connections: ['reformismo-progressista', 'dilema-reformismo-radical', 'via-eleitoral-limites'],
-        color: '#f59e0b',
-        layer: 1
-    },
-    'reformismo-progressista': {
-        name: 'Reformismo Progressista',
-        description: 'Tenta transformação estrutural via instituições desenhadas para impedi-la. Retórica transformadora + práticas constrangidas = captura em processo',
-        connections: ['petro-colombia', 'via-eleitoral-limites', 'revolucao-passiva-avessas'],
-        color: '#f59e0b',
-        layer: 1
-    },
-    'dilema-reformismo-radical': {
-        name: 'Dilema do Reformismo Radical',
-        description: 'Como transformar estruturas USANDO instituições criadas para preservá-las? Como demolir casa usando ferramentas pregadas no chão da casa? Allende enfrentou, Petro enfrenta',
-        connections: ['reformismo-progressista', 'petro-colombia', 'allende', 'via-eleitoral-limites'],
-        color: '#f59e0b',
-        layer: 1
-    },
-    'via-eleitoral-limites': {
-        name: 'Limites da Via Eleitoral',
-        description: 'Estruturas globais poder (mercados financeiros/FMI/oligarquias locais armadas) constrangem severamente margem manobra governos progressistas. Se via eleitoral não transforma, qual via?',
-        connections: ['reformismo-progressista', 'petro-colombia', 'dependencia', 'imperialismo-digital'],
-        color: '#f59e0b',
-        layer: 1
-    },
-    'revolucao-passiva-avessas': {
-        name: 'Revolução Passiva às Avessas',
-        description: 'Gramsci invertido: mudanças cosméticas (tirar Bolsonaro colocar Lula) para garantir nada muda fundamentalmente. Elites aceitam PT porque domesticou esquerda',
-        connections: ['lulismo-3', 'reformismo-progressista', 'hegemonia'],
-        color: '#8b5cf6',
-        layer: 1
-    },
-    'positivismo-dados': {
-        name: 'Positivismo de Dados',
-        description: 'Crença "dados falam por si", análise quantitativa massiva revela verdades objetivas sem teoria/interpretação. Ignora dados sempre construídos (o que medir, como categorizar)',
-        connections: ['ultrarracionalismo', 'vies-algoritmico', 'neutralidade-algoritmica'],
-        color: '#dc2626',
-        layer: 1
-    },
-    'tecnosolucionismo': {
-        name: 'Tecnosolucionismo',
-        description: 'Morozov: crença todo problema (social/político/existencial) tem solução tecnológica. Despolitiza: pobreza→apps microcrédito, solidão→redes sociais. Cidadãos→usuários, política→design produto',
-        connections: ['ultrarracionalismo', 'individualizacao-politico', 'solucionismo-tecnologico'],
-        color: '#dc2626',
-        layer: 1
-    },
-    'greenwashing': {
-        name: 'Greenwashing Corporativo',
-        description: 'Empresas extrativistas investem marketing "verde" continuam destruindo ecossistemas. Coopta linguagem ecológica (sustentabilidade/carbono neutro/ESG) legitimar business-as-usual',
-        connections: ['captura-ideologica', 'esg', 'ecocidio'],
-        color: '#10b981',
-        layer: 1
-    },
-    'aceleracionismo-direita': {
-        name: 'Aceleracionismo de Direita',
-        description: 'Acelerar colapso capitalismo/democracia liberal para purgar "fraquezas" emergir hierarquias "naturais" tecno-monarquia neofeudalista. Coopta crítica marxista mas inverte valores',
-        connections: ['milei', 'fascismo-libertario', 'nick-land'],
-        color: '#dc2626',
-        layer: 1
-    },
-    'esgotamento-ultrarracionalismo': {
-        name: 'Esgotamento do Ultrarracionalismo',
-        description: 'Sintomas crise terminal: crise climática inegável, desigualdade explosiva, colapso confiança institucional, ascensão alternativas "irracionais" (negacionismo, teorias conspiração)',
-        connections: ['ultrarracionalismo', 'crise-climatica', 'teorias-conspiracao', 'negacionismo'],
-        color: '#dc2626',
-        layer: 1
-    },
-    'racionalidades-plurais': {
-        name: 'Racionalidades Plurais',
-        description: 'Antídoto ultrarracionalismo: não abandonar razão mas pluralizá-la. Ubuntu, Nhandereko, Sumak Kawsay, Budismo/Taoísmo são racionalidades igualmente sofisticadas, apenas diferentes',
-        connections: ['ubuntu', 'nhandereko', 'sumak-kawsay', 'cosmotecnica', 'pluriverso'],
-        color: '#10b981',
-        layer: 1
-    },
-    'laboratorios-latino-americanos': {
-        name: 'Laboratórios Latino-Americanos (2020-25)',
-        description: 'Milei/PT/Petro não anomalias periféricas - laboratórios acelerados onde contradições capitalismo tardio manifestam-se forma mais crua. Periferia não atrasa, antecipa',
-        connections: ['milei', 'pt-brasil', 'lulismo-3', 'petro-colombia', 'dependencia'],
-        color: '#8b5cf6',
-        layer: 1
-    },
-    'pluriverso-emancipatorio': {
-        name: 'Pluriverso Emancipatório',
-        description: 'Multiplicidade racionalidades coexistindo/hibridizando/traduzindo-se mutuamente. Tecnologias serviço comunidades não corporações. Democracia radical mediada feedback cibernético',
-        connections: ['racionalidades-plurais', 'cosmotecnica', 'cooperativas-plataforma', 'democracia-cibernetica', 'soberania-digital'],
-        color: '#10b981',
-        layer: 1
-    },
-    'tempo-abstrato': {
-        name: 'Tempo Abstrato',
-        description: 'Postone: capitalismo impõe temporalidade abstrata (tempo-relógio) sobre tempo concreto da vida',
-        connections: ['moishe-postone', 'trabalho-abstrato', 'dominacao-abstrata'],
-        color: '#dc2626',
-        layer: 0
-    },
-    
-    // ========================================
-    // CONTINUAÇÃO CONCEITOS OUTROS CAPÍTULOS
-    // ========================================
     'plataformizacao': {
         name: 'Plataformização',
-        description: 'Monopolização da infraestrutura digital via efeitos de rede',
-        connections: ['capitalismo-vigilancia', 'uberizacao', 'resistencia', 'magalu', 'capital', 'fetichismo-digital', 'monopolio', 'efeito-rede', 'plataforma-lean', 'plataforma-publicidade', 'technofeudalism-varoufakis'],
+        description: 'Monopolização da infraestrutura digital',
+        connections: ["capitalismo-vigilancia", "uberizacao", "resistencia", "magalu", "capital", "fetichismo-digital", "monopolio"],
         color: '#ef4444',
-        layer: 0
-    },
-    'efeito-rede': {
-        name: 'Efeito de Rede',
-        description: 'Valor cresce exponencialmente com número de usuários (Lei de Metcalfe)',
-        connections: ['plataformizacao', 'monopolio', 'lock-in', 'guerra-plataformas-brasil'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'lock-in': {
-        name: 'Lock-in Effect',
-        description: 'Aprisionamento do usuário pela massa crítica de uma rede',
-        connections: ['efeito-rede', 'monopolio', 'whatsapp-exemplo'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'whatsapp-exemplo': {
-        name: 'Caso WhatsApp',
-        description: 'Exemplo de lock-in: impossível migrar sem perder toda a rede',
-        connections: ['lock-in', 'efeito-rede'],
-        color: '#10b981',
-        layer: 0
-    },
-    'guerra-plataformas-brasil': {
-        name: 'Guerra Rappi vs iFood (2020-2025)',
-        description: 'Estudo de caso sobre efeitos de rede e imperialismo digital',
-        connections: ['efeito-rede', 'plataformizacao', 'imperialismo-digital'],
-        color: '#10b981',
-        layer: 0
-    },
-    'plataforma-lean': {
-        name: 'Plataforma Lean',
-        description: 'Uber/iFood - intermediação sem ativos físicos (Srnicek)',
-        connections: ['plataformizacao', 'uberizacao', 'srnicek'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'plataforma-publicidade': {
-        name: 'Plataforma de Publicidade',
-        description: 'Google/Facebook - extração de dados para anúncios',
-        connections: ['plataformizacao', 'capitalismo-vigilancia', 'srnicek'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'srnicek': {
-        name: 'Nick Srnicek',
-        description: 'Teórico do capitalismo de plataforma (Platform Capitalism, 2016)',
-        connections: ['plataforma-lean', 'plataforma-publicidade', 'plataformizacao'],
-        color: '#8b5cf6',
         layer: 0
     },
     'decolonial': {
         name: 'Pensamento Decolonial',
         description: 'Crítica à colonialidade do saber e do poder',
-        connections: ['epistemologia-guarani', 'ubuntu', 'cosmotecnica', 'afrofuturismo', 'dubois-dupla-consciencia', 'cosmotecnica-yuk-hui'],
+        connections: ["epistemologia-guarani", "ubuntu", "cosmotecnica"],
         color: '#8b5cf6',
         layer: -1
     },
     'ubuntu': {
         name: 'Ubuntu',
-        description: 'Filosofia africana: "Eu sou porque nós somos" (Umuntu ngumuntu ngabantu). Ontologia relacional radical: eu emerge de nós, não preexiste. Desmond Tutu: pessoa Ubuntu não ameaçada por sucesso alheio, segura em pertencer todo maior. Vs individualismo digital capitalista',
-        connections: ['decolonial', 'ontologia-relacional', 'modo-colaborativo', 'ubuntu-software-livre', 'ubuntu-justica-restaurativa', 'ubuntu-tecnologia', 'ubuntu-dao', 'sumak-kawsay', 'nhandereko', 'pluriverso-digital'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'ubuntu-software-livre': {
-        name: 'Ubuntu e Software Livre',
-        description: 'FOSS pratica princípios análogos Ubuntu há décadas: "standing on shoulders giants", copyleft (liberdade só verdadeira se compartilhada), governança comunitária. MAS limitações: foco liberdades individuais (4 Liberdades), tecnoutopia meritocrática, cegueira colonial. Ubuntu radicaliza: interdependência essencial, software só livre se comunidade livre',
-        connections: ['ubuntu', 'software-livre', 'copyleft', 'ontologia-relacional', 'codigo-aberto'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'ubuntu-justica-restaurativa': {
-        name: 'Justiça Restaurativa Ubuntu',
-        description: 'Conflito = oportunidade restaurar harmonia comunidade, não punir indivíduo. Vs cultura cancelamento (destruição reputação permanente), ban algorítmico (silenciar unilateral sem diálogo), sistema penal digital (vigilância/listas negras/scores punitivos). Moderação Ubuntu: diálogo antes banimento, caminhos retorno sempre abertos, comunidades decidem regras, transformação não punição',
-        connections: ['ubuntu', 'justica-restaurativa', 'moderacao-comunitaria', 'governanca-comunitaria', 'ubuntu-dao'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'ubuntu-tecnologia': {
-        name: 'Tecnologia Baseada em Ubuntu',
-        description: '4 princípios práticos: (1) Identidades coletivas primárias (perfis de coletivos não indivíduos), (2) Reputação não-competitiva (contribuição ao comum vs acumulação individual, como Jopói Guarani), (3) Commons digitais por design (conteúdo/código/dados compartilhados default, restrição é exceção), (4) Interdependência explícita (algoritmos visibilizam cadeias trabalho/cuidado/conhecimento, ninguém cria sozinho)',
-        connections: ['ubuntu', 'identidades-coletivas', 'commons-digitais', 'reputacao-nao-competitiva', 'ubuntu-dao', 'jopoi'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'ubuntu-dao': {
-        name: 'Ubuntu DAO (África do Sul)',
-        description: 'DAO governada por princípios Ubuntu (2022-). Inovações: votação baseada contribuição comum não capital, consenso Ubuntu (85%+nenhuma minoria prejudicada), profits redistribuídos igualmente+20% fundo comum, exclusão sempre temporária com restauração. Resultados: 342 membros, R$ 2,1mi movimentados, zero golpes. Lição: Ubuntu funciona escala comunitária, precisa federação escalar não centralização, decisões levam semanas (trade-off profundidade vs velocidade)',
-        connections: ['ubuntu', 'ubuntu-tecnologia', 'ubuntu-justica-restaurativa', 'dao', 'governanca-comunitaria', 'blockchain-etico', 'cooperativas-plataforma'],
-        color: '#10b981',
-        layer: 0
-    },
-    'sumak-kawsay': {
-        name: 'Sumak Kawsay / Suma Qamaña (Buen Vivir)',
-        description: 'Cosmologia andina (Quéchua/Aymara) sobre vida boa. 4 características: (1) Comunitária (ninguém vive bem se comunidade mal), (2) Ecológica (Pachamama incluída), (3) Pluriversal (não há modelo único), (4) Qualitativa (não PIB). Alberto Acosta: não é desenvolvimentismo alternativo mas ALTERNATIVA ao desenvolvimentismo, questiona crescimento ilimitado',
-        connections: ['ubuntu', 'pachamama', 'buen-vivir', 'pluriverso-digital', 'constituicao-equador', 'direitos-natureza', 'sumak-kawsay-tecnologia', 'pacha-stack', 'nhandereko'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'pachamama': {
-        name: 'Pachamama (Mãe Terra)',
-        description: 'Cosmologia andina: natureza = sujeito de direitos, não objeto/propriedade. Constituições Equador (2008) Art 71 e Bolívia (2009): Pachamama tem direito respeito integral existência, manutenção/regeneração ciclos vitais. Revolução jurídica: primeira vez história moderna natureza deixa ser objeto para ser SUJEITO direitos',
-        connections: ['sumak-kawsay', 'direitos-natureza', 'direitos-natureza-digital', 'constituicao-equador', 'ecologia-digital', 'buen-vivir'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'constituicao-equador': {
-        name: 'Constituição Equador (2008)',
-        description: 'Novo constitucionalismo latino-americano. Art 275: regime desenvolvimento garante Buen Vivir/Sumak Kawsay. Art 71: Pachamama tem direitos. Comunicação como direito (não mercadoria). Mas contradição: Correa continuou extrativismo (mineração/petróleo territórios indígenas). Lição: não basta inscrever ética em documentos, precisa transformar estruturas materiais',
-        connections: ['sumak-kawsay', 'pachamama', 'buen-vivir', 'direitos-natureza', 'bolivia-constituicao', 'extrativismo', 'correa-contradicao'],
-        color: '#10b981',
-        layer: 0
-    },
-    'bolivia-constituicao': {
-        name: 'Constituição Bolívia (2009)',
-        description: 'Reconhece Suma Qamaña (versão Aymara Sumak Kawsay), Pachamama sujeito direitos. Lei Telecomunicações 2011: 17% espectro para rádios comunitárias indígenas. Estado reconhece pluriversalidade. Mas Evo Morales: expandiu extração lítio, construção estradas Amazônia boliviana. Contradição Estado nacional inserido capitalismo global vs cosmologias não-capitalistas',
-        connections: ['sumak-kawsay', 'pachamama', 'constituicao-equador', 'pluriversalidade-tecnologica', 'evo-morales-contradicao'],
-        color: '#10b981',
-        layer: 0
-    },
-    'sumak-kawsay-tecnologia': {
-        name: 'Tecnologia Sumak Kawsay',
-        description: '4 aplicações: (1) Contra growth hacking (para quê crescer? impacto comunitário/ecológico?), (2) Suficiência não abundância (limites materiais/ecológicos como feature), (3) Direitos natureza digital (ecossistemas digitais são sujeitos, biodiversidade software, habitats saudáveis, impacto ambiental métrica primária), (4) Pluriversalidade tecnológica (não "a" solução para "a" humanidade, tecnologias plurais adequadas contextos)',
-        connections: ['sumak-kawsay', 'pacha-stack', 'slow-tech', 'tecnologia-suficiencia', 'direitos-natureza-digital', 'biodiversidade-digital', 'pluriversalidade-tecnologica'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'pacha-stack': {
-        name: 'Pacha Stack (Framework Sumak Kawsay)',
-        description: 'Arquitetura software baseada Buen Vivir (Equador/Bolívia). Princípios: (1) Suficiência não otimização (código ineficiente legível, BD limita 100GB força distribuição, rate limits absolutos sem tier enterprise), (2) Impacto ecológico métrica primária (dashboard kWh não usuários, deploys só energia renovável, features pesadas desabilitadas pico), (3) Direitos natureza digital (dado mostra pegada ecológica, usuários liberam dados reduzir carga, sistema adormece ultrapassa limites). Adoção: 23 cooperativas andinas, 50k usuários, consumo 87% menor. Crítica: "limitações artificiais"',
-        connections: ['sumak-kawsay', 'sumak-kawsay-tecnologia', 'tecnologia-suficiencia', 'direitos-natureza-digital', 'slow-tech', 'cooperativas-plataforma'],
-        color: '#10b981',
-        layer: 0
-    },
-    'direitos-natureza-digital': {
-        name: 'Direitos da Natureza Digital',
-        description: 'Se rios/montanhas têm direitos (Pachamama), ecossistemas digitais também. 3 dimensões: (1) Biodiversidade software (proteger diversidade linguagens/protocolos/plataformas contra monocultura), (2) Habitats digitais saudáveis (redes não-tóxicas, não extraem, permitem regeneração), (3) Impacto ambiental obrigatório (toda tecnologia reporta pegada carbono/água/minerais raros). Pacha Stack implementa praticamente',
-        connections: ['pachamama', 'sumak-kawsay-tecnologia', 'pacha-stack', 'ecologia-digital', 'biodiversidade-digital', 'tecnologia-regenerativa'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'biodiversidade-digital': {
-        name: 'Biodiversidade Digital',
-        description: 'Analogia ecologia: monocultura frágil, diversidade resiliente. Digital: 5 plataformas globais (Google/Meta/Amazon/Apple/Microsoft) = monocultura tecnológica vulnerável. Biodiversidade: múltiplas linguagens/protocolos/plataformas coexistem. Fediverso exemplo: Mastodon/Pixelfed/PeerTube interoperáveis mas diversos. Direitos natureza digital protegem diversidade contra homogeneização',
-        connections: ['direitos-natureza-digital', 'fediverso', 'pluriversalidade-tecnologica', 'monocultura-digital', 'resiliencia-sistemas', 'variedade-requisito'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'pluriverso-digital': {
-        name: 'Pluriverso Digital',
-        description: '"Um mundo onde caibam muitos mundos" (zapatista) aplicado à tecnologia. 5 princípios: (1) Múltiplas cosmotécnicas (cada adequada território/história/comunidade), (2) Interoperabilidade sem universalidade (redes conectam sem impor modelos únicos), (3) Autodeterminação tecnológica (comunidades decidem próprias tecnologias), (4) Diversidade design (biodiversidade não monocultura), (5) Respeito não-digitalizar (direito offline/analógico/atraso voluntário). Vs monocultura cosmotécnica capitalismo plataforma',
-        connections: ['ubuntu', 'sumak-kawsay', 'nhandereko', 'cosmotecnicas-orientais', 'pluriversalidade-tecnologica', 'zapatistas', 'autodeterminacao-tecnologica', 'interoperabilidade-plural', 'camada-traducao-cosmotecnica'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'pluriversalidade-tecnologica': {
-        name: 'Pluriversalidade Tecnológica',
-        description: 'Não existe "a" solução digital para "a" humanidade. Sumak Kawsay exige tecnologias plurais adequadas contexto. Rede social Guarani opera tempo cíclico categorias Guarani (não seguidores/curtidas). Tecnologia chinesa inseparável Li/Qi (Yuk Hui). Ubuntu prioriza comunidade. Múltiplas cosmotécnicas coexistem sem hegemonizar uma à outra. Vs projeto Vale Silício plataformas "globais" = colonialismo epistemológico',
-        connections: ['pluriverso-digital', 'sumak-kawsay', 'cosmotecnica', 'yuk-hui-cosmotecnicas', 'interoperabilidade-plural', 'camada-traducao-cosmotecnica', 'monocultura-digital-vs-pluriverso'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'camada-traducao-cosmotecnica': {
-        name: 'Camada de Tradução Cosmotécnica (CTC)',
-        description: 'Protocolo intermediário permite diferentes cosmotécnicas comunicarem sem colonizar. Problema: rede Guarani tempo cíclico categorias próprias precisa interoperar Instagram. Solução CTC: (1) Semântica preservada (explica conceito sem tradução forçada, "like" sem equivalente Guarani), (2) Temporalidade respeitada (posts Guarani aparecem fora ordem cronológica com contexto), (3) Ontologia explicitada (mensagem marcada cosmologia origem). Status: Pluriverse Protocol (MIT+pesquisadores indígenas) desenvolvendo',
-        connections: ['pluriverso-digital', 'pluriversalidade-tecnologica', 'interoperabilidade-plural', 'traducao-sem-colonizacao', 'pluriverse-protocol'],
-        color: '#10b981',
-        layer: 0
-    },
-    'pluriverse-protocol': {
-        name: 'Pluriverse Protocol (MIT Media Lab)',
-        description: 'Projeto experimental Camada Tradução Cosmotécnica. Colaboração MIT Media Lab + pesquisadores indígenas. Objetivo: permitir múltiplas cosmotécnicas interoperarem sem homogeneização. Protocolo traduz semânticas/temporalidades/ontologias diferentes mantendo diferenças explícitas. Status: conceito em desenvolvimento, ainda não implementação produção',
-        connections: ['camada-traducao-cosmotecnica', 'pluriverso-digital', 'interoperabilidade-plural', 'mit-media-lab'],
-        color: '#10b981',
-        layer: 0
-    },
-    'interoperabilidade-plural': {
-        name: 'Interoperabilidade Plural',
-        description: 'Interoperabilidade sem homogeneização. Internet atual impõe protocolos universais (TCP/IP/HTTP/DNS) incorporam assunções ocidentais (endereçamento hierárquico, autoridade centralizada, tempo linear sincronizado). Interoperabilidade plural: redes conectam MAS preservam diferenças cosmológicas. CTC implementa. Fediverso exemplo parcial (ActivityPub interopera Mastodon/Pixelfed/PeerTube mantendo diferenças)',
-        connections: ['pluriverso-digital', 'pluriversalidade-tecnologica', 'camada-traducao-cosmotecnica', 'fediverso', 'activitypub', 'protocolos-abertos'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'principios-cosmotecnica-decolonial': {
-        name: '8 Princípios Cosmotécnica Decolonial',
-        description: 'Guia desenvolvimento tecnologias digitais decoloniais. (1) Primazia Nós (comunidade precede indivíduo), (2) Anti-Extrativismo (reciprocidade não extração), (3) Pluriversalidade (múltiplas cosmotécnicas não universal), (4) Temporalidades Múltiplas (não linear/acelerado), (5) Direitos Natureza (ecossistemas sujeitos), (6) Soberania Territorial (autodeterminação), (7) Conhecimento Comum (coletivo), (8) Justiça Restaurativa (restaurar não punir). Emergem ressonâncias Guarani/Oriental/Ubuntu/Sumak Kawsay',
-        connections: ['pluriverso-digital', 'ubuntu', 'sumak-kawsay', 'nhandereko', 'cosmotecnicas-orientais', 'primazia-nos', 'anti-extrativismo-digital', 'pluriversalidade-tecnologica', 'temporalidades-multiplas', 'direitos-natureza-digital', 'soberania-territorial-digital', 'conhecimento-comum', 'justica-restaurativa-digital'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'primazia-nos': {
-        name: 'Princípio Primazia do Nós',
-        description: 'Princípio 1 Cosmotécnica Decolonial. Ontologia: comunidade precede indivíduo. Prática: identidades coletivas padrão (não perfis individuais), governança comunitária plataformas (não CEOs), métricas sucesso baseadas fortalecimento laços sociais (não crescimento usuários). Ubuntu: "Eu sou porque nós somos". Nhandereko: "Nós" unidade básica. Taoísmo/Budismo: anatman, pratītyasamutpāda. Sumak Kawsay: bem viver comunitário',
-        connections: ['principios-cosmotecnica-decolonial', 'ubuntu', 'nhandereko', 'ontologia-relacional', 'identidades-coletivas', 'governanca-comunitaria', 'anatman', 'pratityasamutpada'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'anti-extrativismo-digital': {
-        name: 'Princípio Anti-Extrativismo Radical',
-        description: 'Princípio 2 Cosmotécnica Decolonial. Ontologia: reciprocidade não extração. Prática: transparência total fluxos valor, mecanismos reciprocidade obrigatórios (Jopói digital), arquiteturas impedem acumulação (limites propriedade, redistribuição forçada). Guarani: Jopói. Taoísmo: Wu wei. Ubuntu: compartilhamento ontológico. Sumak Kawsay: limite crescimento. Capitalismo precisa destruir reciprocidade porque economias reciprocidade não geram lucro',
-        connections: ['principios-cosmotecnica-decolonial', 'jopoi', 'wu-wei', 'ubuntu', 'sumak-kawsay', 'reciprocidade-digital', 'arquiteturas-anti-acumulacao', 'capitalismo-vigilancia-extrativista'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'temporalidades-multiplas': {
-        name: 'Princípio Temporalidades Múltiplas',
-        description: 'Princípio 4 Cosmotécnica Decolonial. Ontologia: tempo não é linear/abstrato/acelerado. Prática: slow tech, notificações baseadas importância real (não FOMO), direito atraso. Guarani: Oguatá Porã (processo=destino). Budismo: impermanência/tempo cíclico. Taoísmo: Jieqi 24 termos solares. Sumak Kawsay: Pachakuti tempo espiralar. Vs capitalismo 24/7 notificações infinitas scroll sem fim otimização constante',
-        connections: ['principios-cosmotecnica-decolonial', 'slow-tech', 'oguata-pora', 'anitya-impermanencia', 'jieqi', 'pachakuti', 'tempo-ciclico', 'direito-atraso', 'temporalidade'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'soberania-territorial-digital': {
-        name: 'Princípio Soberania Territorial',
-        description: 'Princípio 6 Cosmotécnica Decolonial. Ontologia: comunidades têm direito autodeterminação tecnológica. Prática: servidores/infraestrutura em territórios locais (não AWS/Azure), dados não podem sair território sem consentimento comunitário (não extração), protocolos decididos localmente. Tekoa Guarani: território condição modo ser. Redes mesh indígenas praticam (Oaxaca/Acre). Vs dependência estrutural colonialismo digital',
-        connections: ['principios-cosmotecnica-decolonial', 'tekoa-digital', 'redes-mesh-indigenas', 'autodeterminacao-tecnologica', 'soberania-digital', 'infraestrutura-comunitaria', 'minigrids-solares-data-centers'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'conhecimento-comum': {
-        name: 'Princípio Conhecimento como Comum',
-        description: 'Princípio 7 Cosmotécnica Decolonial. Ontologia: todo conhecimento é coletivo (ninguém cria sozinho). Prática: abolição propriedade intelectual conhecimentos tradicionais, licenças impedem cercamento (copyleft/AGPL), educação tecnológica pública. Ubuntu: interdependência explícita. Software Livre pratica mas precisa radicalizar: creditar cadeias completas trabalho, não mercantilizar sabedorias ancestrais, combater patentes yoga/ayurveda/plantas medicinais',
-        connections: ['principios-cosmotecnica-decolonial', 'ubuntu', 'software-livre', 'copyleft', 'commons-digitais', 'propriedade-intelectual-critica', 'extrativismo-epistemologico', 'tkdl-india'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'justica-restaurativa-digital': {
-        name: 'Princípio Justiça Restaurativa',
-        description: 'Princípio 8 Cosmotécnica Decolonial. Ontologia: conflito = oportunidade restaurar harmonia não punir. Prática: moderação comunitária (não algoritmo corporação), processos mediação antes banimento, nenhuma exclusão permanente (sempre caminhos retorno). Ubuntu: quando transgressão objetivo restaurar comunidade reconhecendo dano um é dano todos. Vs cultura cancelamento, shadowban algorítmico, crédito social punitivo, exclusão permanente',
-        connections: ['principios-cosmotecnica-decolonial', 'ubuntu-justica-restaurativa', 'moderacao-comunitaria', 'cultura-cancelamento-critica', 'shadowban', 'credito-social-china', 'ubuntu-dao'],
+        description: 'Filosofia africana: \"Eu sou porque nós somos\"',
+        connections: ["decolonial", "ontologia-relacional", "modo-colaborativo"],
         color: '#8b5cf6',
         layer: -1
     },
     'cosmotecnica': {
         name: 'Cosmotécnica',
         description: 'Técnicas enraizadas em cosmologias locais (Yuk Hui)',
-        connections: ['decolonial', 'epistemologia-guarani', 'ontologia-executavel', 'pluriverso-digital'],
+        connections: ["decolonial", "epistemologia-guarani", "ontologia-executavel"],
         color: '#8b5cf6',
         layer: -1
     },
     'guaiamum': {
         name: 'Guaiamum Lateral',
         description: 'Movimento diagonal, não-linear, caranguejo',
-        connections: ['temporalidade', 'navegacao-rizomatica', 'backfeed'],
+        connections: ["temporalidade", "navegacao-rizomatica", "backfeed"],
         color: '#10b981',
         layer: 0
     },
     'backfeed': {
         name: 'Backfeed',
         description: 'Retorno do futuro para o presente (antecipação)',
-        connections: ['feedback', 'temporalidade', 'guaiamum', 'sistema-ternario'],
+        connections: ["feedback", "temporalidade", "guaiamum", "sistema-ternario"],
         color: '#10b981',
         layer: 0
     },
     'opacidade': {
         name: 'Opacidade Estratégica',
         description: 'Resistir via não-transparência (Édouard Glissant)',
-        connections: ['resistencia', 'honeypots', 'captcha'],
+        connections: ["resistencia", "honeypots", "captcha"],
         color: '#10b981',
         layer: 0
     },
     'honeypots': {
         name: 'Honeypots',
         description: 'Armadilhas para capturar bots invasores',
-        connections: ['resistencia', 'opacidade', 'captcha'],
+        connections: ["resistencia", "opacidade", "captcha"],
         color: '#10b981',
         layer: 0
     },
     'ironia-politica': {
         name: 'Ironia Política',
         description: 'Crítica através da performance contraditória',
-        connections: ['critica-performativa', 'captcha', 'ontologia-executavel'],
+        connections: ["critica-performativa", "captcha", "ontologia-executavel"],
         color: '#10b981',
         layer: 0
     },
     'grafo-conceitos': {
         name: 'Grafo de Conceitos',
         description: 'Estrutura de dados que representa o rizoma',
-        connections: ['navegacao-rizomatica', 'rizoma', 'websocket'],
+        connections: ["navegacao-rizomatica", "rizoma", "websocket"],
         color: '#6366f1',
         layer: 1
     },
     'websocket': {
         name: 'WebSocket',
         description: 'Comunicação bidirecional em tempo real',
-        connections: ['modo-colaborativo', 'grafo-conceitos', 'nhandereko'],
+        connections: ["modo-colaborativo", "grafo-conceitos", "nhandereko"],
         color: '#6366f1',
         layer: 1
     },
     'meta-observacao': {
         name: 'Meta-Observação',
         description: 'Observar o ato de observar (segunda ordem)',
-        connections: ['segunda-ordem', 'ontologia-executavel', 'cibernetica'],
+        connections: ["segunda-ordem", "ontologia-executavel", "cibernetica"],
         color: '#10b981',
         layer: 0
     },
     'canvas-background': {
         name: 'Canvas Background',
         description: 'Sistema de arte generativa que performa a filosofia',
-        connections: ['ontologia-executavel', 'sistema-ternario', 'caos'],
+        connections: ["ontologia-executavel", "sistema-ternario", "caos"],
         color: '#10b981',
         layer: 0
     },
     'caos': {
         name: 'Caos Criativo',
         description: 'Desordem produtiva, não-entrópica',
-        connections: ['canvas-background', 'captcha', 'sistema-ternario'],
+        connections: ["canvas-background", "captcha", "sistema-ternario"],
         color: '#10b981',
         layer: 0
     },
-
-    // ========================================
-    // CAPÍTULO 12: INTERSECCIONALIDADE DIGITAL
-    // ========================================
-    'ciborgue': {
-        name: 'Figura do Ciborgue',
-        description: 'Híbrido humano-máquina que dissolve dualismos',
-        connections: ['donna-haraway', 'manifesto-ciborgue', 'pos-humanismo', 'corpo-informacional'],
-        color: '#ec4899',
-        layer: 0
-    },
-    'donna-haraway': {
-        name: 'Donna Haraway',
-        description: 'Teórica do ciborgue, feminismo pós-humanista',
-        connections: ['ciborgue', 'manifesto-ciborgue', 'conhecimento-situado', 'cyborg-feminism'],
-        color: '#8b5cf6',
-        layer: 0
-    },
-    'manifesto-ciborgue': {
-        name: 'Manifesto Ciborgue (1985)',
-        description: 'Dissolução de fronteiras natureza/cultura, humano/máquina',
-        connections: ['donna-haraway', 'ciborgue', 'xenofeminismo', 'glitch-feminism'],
-        color: '#a855f7',
-        layer: -1
-    },
-    'cyborg-feminism': {
-        name: 'Ciberfeminismo',
-        description: 'Tecnologia como espaço de luta feminista e reconfiguração',
-        connections: ['donna-haraway', 'xenofeminismo', 'glitch-feminism', 'tecnofeminismo', 'hackfeministas'],
-        color: '#ec4899',
-        layer: 0
-    },
-    'xenofeminismo': {
-        name: 'Xenofeminismo',
-        description: 'Tecnologia para abolir gênero naturalizado (Laboria Cuboniks)',
-        connections: ['cyborg-feminism', 'laboria-cuboniks', 'aceleracionismo', 'tecnofeminismo'],
-        color: '#a855f7',
-        layer: 1
-    },
-    'laboria-cuboniks': {
-        name: 'Laboria Cuboniks',
-        description: 'Coletivo autor do Manifesto Xenofeminista (2015)',
-        connections: ['xenofeminismo', 'cyborg-feminism', 'aceleracionismo'],
-        color: '#8b5cf6',
-        layer: 0
-    },
-    'glitch-feminism': {
-        name: 'Glitch Feminism',
-        description: 'Erro como resistência, corpo digital recusado (Legacy Russell)',
-        connections: ['cyborg-feminism', 'legacy-russell', 'manifesto-ciborgue', 'resistencia'],
-        color: '#ec4899',
-        layer: 0
-    },
-    'legacy-russell': {
-        name: 'Legacy Russell',
-        description: 'Teórica do glitch feminism, erro como potência',
-        connections: ['glitch-feminism', 'cyborg-feminism', 'avatar'],
-        color: '#8b5cf6',
-        layer: 0
-    },
-    'tecnofeminismo': {
-        name: 'Tecnofeminismo',
-        description: 'Tecnologia nem neutra nem determinista (Judy Wajcman)',
-        connections: ['cyborg-feminism', 'judy-wajcman', 'xenofeminismo', 'genero-computacao'],
-        color: '#a855f7',
-        layer: 0
-    },
-    'judy-wajcman': {
-        name: 'Judy Wajcman',
-        description: 'Socióloga, autora de TechnoFeminism (2004)',
-        connections: ['tecnofeminismo', 'cyborg-feminism', 'divisao-sexual-trabalho'],
-        color: '#8b5cf6',
-        layer: 0
-    },
-    'coding-rights-brasil': {
-        name: 'Coding Rights',
-        description: 'Organização brasileira de direitos digitais feminista',
-        connections: ['cyborg-feminism', 'hackfeministas', 'marialab', 'resistencia'],
-        color: '#22c55e',
-        layer: 0
-    },
-    'marialab': {
-        name: 'MariaLab',
-        description: 'Hacklab feminista de São Paulo (2017-presente)',
-        connections: ['coding-rights-brasil', 'hackfeministas', 'criptografia-popular', 'resistencia'],
-        color: '#22c55e',
-        layer: 0
-    },
-    'think-olga': {
-        name: 'Think Olga',
-        description: 'ONG contra assédio online e violência de gênero digital',
-        connections: ['cyborg-feminism', 'resistencia', 'violencia-digital'],
-        color: '#22c55e',
-        layer: 0
-    },
-    'hackfeministas': {
-        name: 'Hackfeministas',
-        description: 'Prática tecnológica feminista (criptografia, anonimato)',
-        connections: ['cyborg-feminism', 'coding-rights-brasil', 'marialab', 'criptografia-popular', 'signal-app'],
-        color: '#ec4899',
-        layer: 0
-    },
-    'signal-app': {
-        name: 'Signal',
-        description: 'App de mensagens criptografadas end-to-end',
-        connections: ['hackfeministas', 'criptografia-popular', 'tor-browser', 'resistencia'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'tor-browser': {
-        name: 'Tor Browser',
-        description: 'Navegação anônima via rede cebola',
-        connections: ['hackfeministas', 'signal-app', 'resistencia', 'criptografia-popular'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'afrofuturismo': {
-        name: 'Afrofuturismo',
-        description: 'Estética que reimagina passado/futuro negro via ficção científica',
-        connections: ['sun-ra', 'octavia-butler', 'kodwo-eshun', 'dubois-dupla-consciencia', 'decolonial'],
-        color: '#a855f7',
-        layer: 0
-    },
-    'sun-ra': {
-        name: 'Sun Ra',
-        description: 'Músico afrofuturista (Space is the Place, 1974)',
-        connections: ['afrofuturismo', 'sonic-fiction', 'mythos-tecnologico'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'octavia-butler': {
-        name: 'Octavia Butler',
-        description: 'Autora de ficção científica (Kindred, Xenogenesis)',
-        connections: ['afrofuturismo', 'samuel-delany', 'cyborg-feminism', 'corpo-informacional'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'samuel-delany': {
-        name: 'Samuel Delany',
-        description: 'Pioneiro afro-queer da FC (Babel-17, Dhalgren)',
-        connections: ['afrofuturismo', 'octavia-butler', 'corpo-informacional'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'dubois-dupla-consciencia': {
-        name: 'Dupla Consciência (Du Bois)',
-        description: 'Ver-se pelos olhos do opressor (The Souls of Black Folk, 1903)',
-        connections: ['afrofuturismo', 'decolonial', 'feedback-opressao'],
-        color: '#a855f7',
-        layer: -1
-    },
-    'kodwo-eshun': {
-        name: 'Kodwo Eshun',
-        description: 'Teórico da sonic fiction e do afrofuturismo',
-        connections: ['afrofuturismo', 'sonic-fiction', 'sun-ra', 'temporalidade'],
-        color: '#8b5cf6',
-        layer: 0
-    },
-    'sonic-fiction': {
-        name: 'Sonic Fiction',
-        description: 'Ficção sonora, música como veículo afrofuturista',
-        connections: ['kodwo-eshun', 'sun-ra', 'afrofuturismo', 'mythos-tecnologico'],
-        color: '#a855f7',
-        layer: 0
-    },
-    'cosmotecnica-yuk-hui': {
-        name: 'Cosmotécnicas (Yuk Hui)',
-        description: 'Técnicas enraizadas em cosmologias não-ocidentais',
-        connections: ['cosmotecnica', 'decolonial', 'afrofuturismo', 'epistemologia-guarani'],
-        color: '#a855f7',
-        layer: 0
-    },
-    'emicida-amarelo': {
-        name: 'Emicida (Amarelo)',
-        description: 'Álbum afrofuturista brasileiro (2019)',
-        connections: ['afrofuturismo', 'bia-ferreira', 'resistencia'],
-        color: '#22c55e',
-        layer: 0
-    },
-    'bia-ferreira': {
-        name: 'Bia Ferreira',
-        description: 'Cantora afrofuturista, ciberpunk periférico brasileiro',
-        connections: ['afrofuturismo', 'emicida-amarelo', 'resistencia'],
-        color: '#22c55e',
-        layer: 0
-    },
-    'neurodiversidade': {
-        name: 'Neurodiversidade',
-        description: 'Cérebros diversos como variação, não patologia',
-        connections: ['crip-theory', 'assistive-tech', 'design-universal', 'corpo-informacional'],
-        color: '#a855f7',
-        layer: 0
-    },
-    'crip-theory': {
-        name: 'Crip Theory',
-        description: 'Deficiência como construção social opressiva',
-        connections: ['neurodiversidade', 'robert-mcruer', 'alison-kafer', 'corpo-informacional'],
-        color: '#a855f7',
-        layer: 0
-    },
-    'robert-mcruer': {
-        name: 'Robert McRuer',
-        description: 'Teórico queer-crip (Crip Theory, 2006)',
-        connections: ['crip-theory', 'neurodiversidade', 'corpo-informacional'],
-        color: '#8b5cf6',
-        layer: 0
-    },
-    'alison-kafer': {
-        name: 'Alison Kafer',
-        description: 'Teórica feminist crip (Feminist, Queer, Crip, 2013)',
-        connections: ['crip-theory', 'neurodiversidade', 'futuro-acessivel'],
-        color: '#8b5cf6',
-        layer: 0
-    },
-    'assistive-tech': {
-        name: 'Tecnologias Assistivas',
-        description: 'Dupla face: libertação ou controle capacitista',
-        connections: ['neurodiversidade', 'design-universal', 'eugenia-digital', 'corpo-informacional'],
-        color: '#f59e0b',
-        layer: 0
-    },
-    'design-universal': {
-        name: 'Design Universal',
-        description: 'Acessibilidade como design para todos desde o início',
-        connections: ['assistive-tech', 'neurodiversidade', 'resistencia'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'exclusao-digital-brasil': {
-        name: 'Exclusão Digital no Brasil',
-        description: '45 milhões sem internet, capacitismo estrutural',
-        connections: ['neurodiversidade', 'assistive-tech', 'desigualdade', 'infraestrutura'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'eugenia-digital': {
-        name: 'Eugenia Digital',
-        description: 'Seleção genética via CRISPR e testes pré-natais',
-        connections: ['assistive-tech', 'crispr-etica', 'crip-theory', 'corpo-informacional'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'crispr-etica': {
-        name: 'CRISPR e Ética',
-        description: 'Edição genética: cura ou eliminação da diferença?',
-        connections: ['eugenia-digital', 'neurodiversidade', 'transumanismo'],
-        color: '#f59e0b',
-        layer: 0
-    },
-    'futuro-acessivel': {
-        name: 'Futuro Acessível',
-        description: 'Tecnologia para todos os corpos, não normalização',
-        connections: ['alison-kafer', 'design-universal', 'assistive-tech', 'utopia-concreta'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'andreas-malm': {
-        name: 'Andreas Malm',
-        description: 'Teórico do Capitaloceno e Fossil Capital',
-        connections: ['capitaloceno', 'fossil-capital', 'crise-ecologica', 'ecosocialismo'],
-        color: '#8b5cf6',
-        layer: 0
-    },
-    'capitaloceno': {
-        name: 'Capitaloceno',
-        description: 'Crise ecológica como produto do capitalismo, não da humanidade',
-        connections: ['andreas-malm', 'crise-ecologica', 'fossil-capital', 'jason-moore'],
-        color: '#a855f7',
-        layer: 0
-    },
-    'fossil-capital': {
-        name: 'Fossil Capital',
-        description: 'Capitalismo forjado no carvão e petróleo (Malm, 2016)',
-        connections: ['andreas-malm', 'capitaloceno', 'crise-ecologica', 'extracao-dados'],
-        color: '#ef4444',
-        layer: -1
-    },
-    'jason-moore': {
-        name: 'Jason W. Moore',
-        description: 'Teórico da world-ecology, capitalismo como web of life',
-        connections: ['capitaloceno', 'andreas-malm', 'crise-ecologica', 'ecosocialismo'],
-        color: '#8b5cf6',
-        layer: 0
-    },
-    'web-of-life': {
-        name: 'Web of Life',
-        description: 'Capitalismo como ecologia-mundo, não sistema econômico isolado',
-        connections: ['jason-moore', 'capitaloceno', 'crise-ecologica', 'infraestrutura'],
-        color: '#a855f7',
-        layer: 0
-    },
-    'kohei-saito': {
-        name: 'Kohei Saito',
-        description: 'Marxista ecológico japonês (Degrowth Communism, 2020)',
-        connections: ['ecosocialismo', 'degrowth-communism', 'decrescimento-digital', 'marx-ecologico'],
-        color: '#8b5cf6',
-        layer: 0
-    },
-    'degrowth-communism': {
-        name: 'Degrowth Communism',
-        description: 'Comunismo do decrescimento: abundância via suficiência',
-        connections: ['kohei-saito', 'ecosocialismo', 'decrescimento-digital', 'utopia-concreta'],
-        color: '#a855f7',
-        layer: 1
-    },
-    'decrescimento-digital': {
-        name: 'Decrescimento Digital',
-        description: 'Menos dispositivos, mais durabilidade, suficiência tecnológica',
-        connections: ['degrowth-communism', 'kohei-saito', 'low-tech', 'e-waste-brasil', 'ecosocialismo'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'low-tech': {
-        name: 'Low-Tech',
-        description: 'Tecnologia simples, reparável, de baixo impacto',
-        connections: ['decrescimento-digital', 'reparo', 'obsolescencia-programada', 'resistencia'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'e-waste-brasil': {
-        name: 'E-waste no Brasil',
-        description: '2,4 milhões de toneladas/ano, apenas 3% reciclado',
-        connections: ['decrescimento-digital', 'crise-ecologica', 'mineracao-amazonia', 'necropolitica-digital'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'mineracao-amazonia': {
-        name: 'Mineração na Amazônia',
-        description: 'Extração de coltan, ouro, lítio para dispositivos digitais',
-        connections: ['e-waste-brasil', 'crise-ecologica', 'extracao-dados', 'capitaloceno'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'green-new-deal-limites': {
-        name: 'Limites do Green New Deal',
-        description: 'Crescimento verde impossível: extração continua',
-        connections: ['ecosocialismo', 'degrowth-communism', 'crise-ecologica', 'capitaloceno'],
-        color: '#f59e0b',
-        layer: 0
-    },
-    'daos-plutocracia': {
-        name: 'DAOs como Plutocracia',
-        description: 'Organizações autônomas descentralizadas = 1 token = 1 voto',
-        connections: ['blockchain', 'web3-critique', 'capital-fictico', 'criptomoeda'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'web3-critique': {
-        name: 'Crítica ao Web3',
-        description: 'Descentralização ilusória, recentralização via capital',
-        connections: ['daos-plutocracia', 'molly-white', 'blockchain', 'criptomoeda', 'nft'],
-        color: '#f59e0b',
-        layer: 0
-    },
-    'molly-white': {
-        name: 'Molly White',
-        description: 'Crítica do Web3 (Web3 is Going Just Great)',
-        connections: ['web3-critique', 'ftx-collapse', 'criptomoeda'],
-        color: '#8b5cf6',
-        layer: 0
-    },
-    'ftx-collapse': {
-        name: 'Colapso da FTX',
-        description: 'Exchange fraudulenta, US$ 8 bilhões desviados (2022)',
-        connections: ['molly-white', 'web3-critique', 'criptomoeda', 'capital-fictico', 'terra-luna-collapse'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'terra-luna-collapse': {
-        name: 'Colapso Terra/Luna',
-        description: 'Stablecoin algorítmica: espiral da morte de US$ 40 bilhões (2022)',
-        connections: ['ftx-collapse', 'criptomoeda', 'capital-fictico', 'feedback-positivo'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'el-salvador-bitcoin': {
-        name: 'El Salvador Bitcoin',
-        description: 'Experimento autoritário falho: imposição de BTC como moeda legal',
-        connections: ['criptomoeda', 'ftx-collapse', 'capital-fictico', 'technofeudalism'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'technofeudalism-varoufakis': {
-        name: 'Tecnofeudalismo (Varoufakis)',
-        description: 'Plataformas como novos feudos, renda substituindo lucro',
-        connections: ['el-salvador-bitcoin', 'plataformizacao', 'extracao-renda', 'capitalismo-vigilancia'],
-        color: '#a855f7',
-        layer: 0
-    },
-    'ecosocialismo': {
-        name: 'Ecossocialismo Digital',
-        description: 'Convergência entre crise ecológica e tecnologia: decrescimento, reparo, suficiência',
-        connections: ['andreas-malm', 'jason-moore', 'kohei-saito', 'degrowth-communism', 'decrescimento-digital', 'green-new-deal-limites'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'criptografia-popular': {
-        name: 'Criptografia Popular',
-        description: 'Uso de criptografia end-to-end como ferramenta de resistência',
-        connections: ['hackfeministas', 'signal-app', 'tor-browser', 'resistencia', 'coding-rights-brasil'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'conhecimento-situado': {
-        name: 'Conhecimento Situado',
-        description: 'Epistemologia feminista: todo conhecimento é localizado, corporificado (Haraway)',
-        connections: ['donna-haraway', 'cyborg-feminism', 'decolonial'],
-        color: '#a855f7',
-        layer: 0
-    },
-    'violencia-digital': {
-        name: 'Violência Digital de Gênero',
-        description: 'Assédio, doxing, revenge porn - extensão digital da violência patriarcal',
-        connections: ['think-olga', 'cyborg-feminism', 'necropolitica-digital'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'mythos-tecnologico': {
-        name: 'Mythos Tecnológico',
-        description: 'Narrativas míticas na ficção científica afrofuturista',
-        connections: ['afrofuturismo', 'sun-ra', 'sonic-fiction'],
-        color: '#a855f7',
-        layer: 0
-    },
-    'feedback-opressao': {
-        name: 'Feedback de Opressão',
-        description: 'Ciclos auto-reforçadores de desigualdade algorítmica',
-        connections: ['dubois-dupla-consciencia', 'feedback-positivo', 'necropolitica-digital'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'avatar': {
-        name: 'Avatar Digital',
-        description: 'Representação digital corporificada, potencial de refúgio e reconfiguração',
-        connections: ['legacy-russell', 'glitch-feminism', 'ciborgue'],
-        color: '#10b981',
-        layer: 0
-    },
-    'reparo': {
-        name: 'Direito ao Reparo',
-        description: 'Movimento contra obsolescência programada, reparo como resistência',
-        connections: ['low-tech', 'obsolescencia-programada', 'decrescimento-digital'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'obsolescencia-programada': {
-        name: 'Obsolescência Programada',
-        description: 'Produtos projetados para quebrar, criando lixo eletrônico',
-        connections: ['e-waste-brasil', 'reparo', 'low-tech'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'marx-ecologico': {
-        name: 'Marx Ecológico',
-        description: 'Leitura ecológica de Marx: metabolic rift, relação sociedade-natureza',
-        connections: ['kohei-saito', 'ecosocialismo', 'capitaloceno'],
-        color: '#a855f7',
-        layer: 0
-    },
-    'extracao-renda': {
-        name: 'Extração de Renda Digital',
-        description: 'Plataformas extraem renda como novos rentistas feudais',
-        connections: ['technofeudalism-varoufakis', 'plataformizacao', 'capitalismo-vigilancia'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'criptomoeda': {
-        name: 'Criptomoedas',
-        description: 'Moedas digitais descentralizadas: promessa libertária, realidade especulativa',
-        connections: ['criptomoedas-capital-ficticio', 'bitcoin-sujeito-automatico', 'daos-plutocracia', 'web3-critique', 'ftx-collapse', 'terra-luna-collapse', 'el-salvador-bitcoin'],
-        color: '#f59e0b',
-        layer: 0
-    },
-    'nft': {
-        name: 'NFTs',
-        description: 'Non-fungible tokens: propriedade digital via blockchain, especulação artística',
-        connections: ['web3-critique', 'criptomoeda', 'capital-fictico'],
-        color: '#f59e0b',
-        layer: 0
-    },
-    'transumanismo': {
-        name: 'Transumanismo',
-        description: 'Ideologia de superação do corpo via tecnologia (crítica: eugenia tech)',
-        connections: ['crispr-etica', 'eugenia-digital', 'pos-humanismo'],
-        color: '#f59e0b',
-        layer: 0
-    },
-    'utopia-concreta': {
-        name: 'Utopia Concreta',
-        description: 'Futuros prefigurados no presente via práxis (Ernst Bloch)',
-        connections: ['futuro-acessivel', 'degrowth-communism', 'resistencia'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'desigualdade': {
-        name: 'Desigualdade Digital',
-        description: 'Exclusão estrutural via acesso desigual à tecnologia',
-        connections: ['exclusao-digital-brasil', 'divisao-sexual-trabalho', 'necropolitica-digital'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'infraestrutura': {
-        name: 'Infraestrutura Material',
-        description: 'Base física da internet: cabos, servidores, mineração, energia',
-        connections: ['web-of-life', 'fossil-capital', 'mineracao-amazonia', 'exclusao-digital-brasil'],
-        color: '#f59e0b',
-        layer: 0
-    },
-    'aceleracionismo': {
-        name: 'Aceleracionismo',
-        description: 'Corrente que propõe acelerar contradições do capitalismo (Nick Land vs Left Acc)',
-        connections: ['xenofeminismo', 'laboria-cuboniks', 'colapso-modernizacao'],
-        color: '#a855f7',
-        layer: 0
-    },
-    'pos-humanismo': {
-        name: 'Pós-Humanismo',
-        description: 'Crítica ao humanismo universalista, abertura a outras formas de vida',
-        connections: ['ciborgue', 'donna-haraway', 'transumanismo', 'neurodiversidade'],
-        color: '#a855f7',
-        layer: 0
-    },
-    'corpo-informacional': {
-        name: 'Corpo Informacional',
-        description: 'Corpo como interface, dados, código - nem puramente biológico nem digital',
-        connections: ['ciborgue', 'octavia-butler', 'neurodiversidade', 'crip-theory', 'assistive-tech', 'eugenia-digital'],
-        color: '#a855f7',
-        layer: 0
-    },
-
-    // ========================================
-    // CONCEITOS ADICIONAIS (CAPS 14-28)
-    // ========================================
     'trabalho-invisivel': {
         name: 'Trabalho Invisível',
         description: 'Trabalho técnico desvalorizado e não-reconhecido',
-        connections: ['eniac-six', 'genero-computacao', 'trabalho-reprodutivo', 'moderacao-conteudo'],
+        connections: ["eniac-six", "genero-computacao", "trabalho-reprodutivo", "moderacao-conteudo"],
         color: '#ec4899',
         layer: 0
     },
     'divisao-sexual-trabalho': {
         name: 'Divisão Sexual do Trabalho',
         description: 'Segregação de gênero no trabalho digital',
-        connections: ['genero-computacao', 'trabalho-invisivel', 'uberizacao'],
+        connections: ["genero-computacao", "trabalho-invisivel", "uberizacao"],
         color: '#ec4899',
         layer: 0
     },
     'moderacao-conteudo': {
         name: 'Moderação de Conteúdo',
         description: 'Trabalho traumático invisibilizado nas plataformas',
-        connections: ['trabalho-invisivel', 'capitalismo-vigilancia', 'necropolitica-digital'],
+        connections: ["trabalho-invisivel", "capitalismo-vigilancia", "necropolitica-digital"],
         color: '#ef4444',
         layer: 0
     },
     'necropolitica-digital': {
         name: 'Necropolítica Digital',
         description: 'Algoritmos que decidem quem vive e quem morre (Mbembe)',
-        connections: ['feedback-positivo', 'enigma', 'e-waste', 'moderacao-conteudo', 'gabinete-odio'],
+        connections: ["feedback-positivo", "enigma", "e-waste", "moderacao-conteudo", "gabinete-odio"],
         color: '#dc2626',
         layer: 0
     },
     'gabinete-odio': {
         name: 'Gabinete do Ódio',
         description: 'Feedback positivo amplificando genocídio via algoritmos',
-        connections: ['necropolitica-digital', 'feedback-positivo', 'viralizacao'],
+        connections: ["necropolitica-digital", "feedback-positivo", "viralizacao", "economia-politica-odio"],
         color: '#dc2626',
         layer: 0
+    },
+    'capitalismo-racial-digital': {
+        name: 'Capitalismo Racial Digital',
+        description: 'Reconhecimento facial erro 34% mulheres negras vs 0,8% homens brancos',
+        connections: ["necropolitica-digital", "discriminacao-algoritmica", "sistema-detecta", "compas"],
+        color: '#dc2626',
+        layer: 0
+    },
+    'sistema-detecta': {
+        name: 'Sistema Detecta (Bahia)',
+        description: '90% alertas miram jovens homens negros - genocídio algorítmico',
+        connections: ["capitalismo-racial-digital", "necropolitica-digital", "vigilancia-preditiva"],
+        color: '#dc2626',
+        layer: 0
+    },
+    'compas': {
+        name: 'COMPAS (Reincidência)',
+        description: '45% falsos positivos negros vs 23% brancos - racismo sistêmico',
+        connections: ["capitalismo-racial-digital", "discriminacao-algoritmica", "justica-preditiva"],
+        color: '#dc2626',
+        layer: 0
+    },
+    'clearview-ai': {
+        name: 'Clearview AI',
+        description: '3 bilhões rostos raspados sem consentimento - vigilância total',
+        connections: ["capitalismo-racial-digital", "vigilancia-dados", "capitalismo-vigilancia"],
+        color: '#dc2626',
+        layer: 0
+    },
+    'economia-politica-odio': {
+        name: 'Economia Política do Ódio',
+        description: 'R$ 12M contratos milícias digitais + mercado US$ 78B global',
+        connections: ["gabinete-odio", "necropolitica-digital", "desinformacao-industrial", "cambridge-analytica"],
+        color: '#dc2626',
+        layer: 0
+    },
+    'desinformacao-industrial': {
+        name: 'Desinformação Industrial',
+        description: '6 estágios: produtores→amplificadores→mercenários→plataformas→anunciantes→beneficiários',
+        connections: ["economia-politica-odio", "gabinete-odio", "capitalismo-vigilancia"],
+        color: '#dc2626',
+        layer: 0
+    },
+    'cambridge-analytica': {
+        name: 'Cambridge Analytica',
+        description: '87M perfis Facebook → microtargeting psicológico → Brexit/Trump',
+        connections: ["economia-politica-odio", "capitalismo-vigilancia", "engenharia-comportamento"],
+        color: '#dc2626',
+        layer: 0
+    },
+    'crise-epistemica': {
+        name: 'Crise Epistêmica',
+        description: '3 patologias: relativismo tóxico, conspiracionismo hiper-racional, fundamentalismo digital',
+        connections: ["economia-politica-odio", "fact-checking-estrutural", "colapso-verdade"],
+        color: '#dc2626',
+        layer: 0
+    },
+    'fact-checking-estrutural': {
+        name: 'Por Que Fact-Checking Falha',
+        description: '5 razões: assimetria temporal, não atinge bolhas, efeito backfire, assimetria recursos, problema sistêmico',
+        connections: ["crise-epistemica", "economia-politica-odio", "reformas-infraestruturais"],
+        color: '#dc2626',
+        layer: 0
+    },
+    'reformas-infraestruturais': {
+        name: '7 Reformas Infraestruturais',
+        description: 'Educação midiática, transparência algorítmica, desmonetização ódio, responsabilização plataformas, etc.',
+        connections: ["fact-checking-estrutural", "resistencia-digital", "dsa-europeia"],
+        color: '#10b981',
+        layer: 1
+    },
+    'vsm-necropolitico': {
+        name: 'VSM Necropolítico Expandido',
+        description: 'S1-S5 Facebook Papers: sistema viável para morte não democracia',
+        connections: ["necropolitica-digital", "facebook-papers", "frances-haugen", "moderacao-trauma"],
+        color: '#dc2626',
+        layer: 0
+    },
+    'facebook-papers': {
+        name: 'Facebook Papers',
+        description: 'Documentos internos: Zuckerberg sabia algoritmos matavam, priorizou lucro',
+        connections: ["vsm-necropolitico", "frances-haugen", "necropolitica-digital"],
+        color: '#dc2626',
+        layer: 0
+    },
+    'frances-haugen': {
+        name: 'Frances Haugen (Whistleblower)',
+        description: 'Ex-cientista dados Facebook expôs algoritmos ódio deliberados',
+        connections: ["facebook-papers", "vsm-necropolitico", "resistencia-digital"],
+        color: '#10b981',
+        layer: 0
+    },
+    'moderacao-trauma': {
+        name: 'Trauma Moderadores',
+        description: 'PTSD após visualizar atrocidades 8h/dia - trabalho necropolítico',
+        connections: ["vsm-necropolitico", "moderacao-conteudo", "autocuidado-militante"],
+        color: '#dc2626',
+        layer: 0
+    },
+    'resistencia-bem-sucedida': {
+        name: 'Resistência Bem-Sucedida',
+        description: 'Sleeping Giants R$ 30M cortados, TSE 700M posts removidos, DSA 6% multas',
+        connections: ["sleeping-giants", "tse-2022", "dsa-europeia", "whistleblowers"],
+        color: '#10b981',
+        layer: 1
+    },
+    'sleeping-giants': {
+        name: 'Sleeping Giants Brasil',
+        description: 'Campanha cortou R$ 30M publicidade sites ódio - boicote funciona',
+        connections: ["resistencia-bem-sucedida", "economia-politica-odio", "desmonetizacao-odio"],
+        color: '#10b981',
+        layer: 1
+    },
+    'tse-2022': {
+        name: 'TSE Eleições 2022',
+        description: '700 milhões posts fake news removidos - regulação possível',
+        connections: ["resistencia-bem-sucedida", "desinformacao-industrial", "regulacao-plataformas"],
+        color: '#10b981',
+        layer: 1
+    },
+    'dsa-europeia': {
+        name: 'Digital Services Act (UE)',
+        description: 'Multas até 6% receita global - responsabilização plataformas',
+        connections: ["resistencia-bem-sucedida", "reformas-infraestruturais", "regulacao-plataformas"],
+        color: '#10b981',
+        layer: 1
+    },
+    'whistleblowers': {
+        name: 'Whistleblowers (Haugen/Zhang/Wylie)',
+        description: 'Denunciantes internos expõem crimes corporativos - coragem política',
+        connections: ["frances-haugen", "resistencia-bem-sucedida", "transparencia-corporativa"],
+        color: '#10b981',
+        layer: 1
+    },
+    'autocuidado-militante': {
+        name: 'Autocuidado Militante',
+        description: '10 sinais PTSD + 7 estratégias individuais + 6 práticas coletivas',
+        connections: ["moderacao-trauma", "resistencia-bem-sucedida", "alegria-militante", "cuidado-coletivo"],
+        color: '#10b981',
+        layer: 1
+    },
+    'alegria-militante': {
+        name: 'Alegria Militante',
+        description: 'Audre Lorde: autocuidado não indulgência, é guerra política - contra cinismo necropolitico',
+        connections: ["autocuidado-militante", "resistencia-bem-sucedida", "necropolitica-digital"],
+        color: '#10b981',
+        layer: 1
+    },
+    'cuidado-coletivo': {
+        name: 'Cuidado Coletivo',
+        description: '6 práticas: check-ins emocionais, rodízio tarefas pesadas, espaços descompressão, terapia grupo, rituais celebração, cultura não-julgamento',
+        connections: ["autocuidado-militante", "resistencia-bem-sucedida", "organizacao-coletiva"],
+        color: '#10b981',
+        layer: 1
     },
     'viralizacao': {
         name: 'Viralização',
         description: 'Feedback positivo social (engajamento exponencial)',
-        connections: ['feedback-positivo', 'gabinete-odio', 'dopamina'],
+        connections: ["feedback-positivo", "gabinete-odio", "dopamina"],
         color: '#f97316',
         layer: 0
     },
     'gamificacao': {
         name: 'Gamificação',
         description: 'Mecânicas de jogo aplicadas para maximizar engajamento',
-        connections: ['recompensa-variavel', 'vicio-digital', 'uberizacao'],
+        connections: ["recompensa-variavel", "vicio-digital", "uberizacao"],
         color: '#f97316',
         layer: 0
     },
     'cybersyn': {
         name: 'Proyecto Cybersyn',
         description: 'Cibernética socialista no Chile de Allende (1971-73)',
-        connections: ['feedback-negativo', 'cibernetica', 'wiener', 'planejamento-participativo'],
+        connections: ["feedback-negativo", "cibernetica", "wiener", "planejamento-participativo"],
         color: '#22c55e',
         layer: -1
     },
     'planejamento-participativo': {
         name: 'Planejamento Participativo',
         description: 'Cibernética como ferramenta democrática, não tecnocrática',
-        connections: ['cybersyn', 'democracia-algoritmicica', 'resistencia'],
+        connections: ["cybersyn", "democracia-algoritmicica", "resistencia"],
         color: '#22c55e',
         layer: 0
     },
     'democracia-algoritmicica': {
         name: 'Democracia Algorítmica',
         description: 'Limites e possibilidades de tecnologia na democracia',
-        connections: ['problema-parada', 'limites-tecnologia', 'planejamento-participativo'],
+        connections: ["problema-parada", "limites-tecnologia", "planejamento-participativo"],
         color: '#7c3aed',
         layer: 0
     },
     'determinismo-tecnologico': {
         name: 'Determinismo Tecnológico',
         description: 'Crença falsa de que tecnologia resolve tudo',
-        connections: ['limites-tecnologia', 'problema-parada', 'fetichismo-digital'],
+        connections: ["limites-tecnologia", "problema-parada", "fetichismo-digital"],
         color: '#7c3aed',
         layer: 0
     },
     'homeostase': {
         name: 'Homeostase',
         description: 'Equilíbrio dinâmico via feedback negativo',
-        connections: ['feedback-negativo', 'cybersyn', 'autopoiese'],
+        connections: ["feedback-negativo", "cybersyn", "autopoiese"],
         color: '#10b981',
         layer: 0
     },
     'digitalizacao': {
         name: 'Digitalização',
         description: 'Conversão de tudo em bits - base da mercantilização digital',
-        connections: ['bit', 'teoria-informacao', 'mais-valia-dados', 'fetichismo-digital'],
+        connections: ["bit", "teoria-informacao", "mais-valia-dados", "fetichismo-digital"],
         color: '#8b5cf6',
         layer: 0
     },
     'extrativismo': {
         name: 'Extrativismo Digital',
         description: 'Mineração de dados + mineração literal (terras raras)',
-        connections: ['materialidade-computacao', 'ecologia-digital', 'e-waste', 'mais-valia-dados'],
+        connections: ["materialidade-computacao", "ecologia-digital", "e-waste", "mais-valia-dados"],
         color: '#22c55e',
         layer: 0
     },
     'geopolitica': {
         name: 'Geopolítica Digital',
         description: 'Guerra das redes, soberania tecnológica, BRICS vs OTAN',
-        connections: ['darpa', 'duplo-uso-militar', 'vigilancia', 'internet'],
+        connections: ["darpa", "duplo-uso-militar", "vigilancia", "internet"],
         color: '#dc2626',
         layer: 0
     },
     'internet': {
         name: 'Internet',
         description: 'ARPANET militar → www civil (mas vigilância permanece)',
-        connections: ['darpa', 'geopolitica', 'capitalismo-vigilancia'],
+        connections: ["darpa", "geopolitica", "capitalismo-vigilancia"],
         color: '#6366f1',
         layer: 0
     },
-
-    // ========================================
-    // CAPÍTULO 7: MARXISMO E TECNOLOGIA - DEBATES CLÁSSICOS
-    // ========================================
-    'determinismo-tecnologico': {
-        name: 'Determinismo Tecnológico',
-        description: 'Visão de que a tecnologia determina a sociedade ("o moinho a vapor nos deu o capitalista")',
-        connections: ['construtivismo-social', 'forcas-produtivas', 'relacoes-producao'],
-        color: '#ef4444',
-        layer: -1 // Passado (debate clássico)
-    },
-    'construtivismo-social': {
-        name: 'Construtivismo Social da Tecnologia',
-        description: 'A sociedade molda a tecnologia, não o contrário - escolhas políticas definem design',
-        connections: ['determinismo-tecnologico', 'operaismo', 'cosmotecnica'],
-        color: '#ef4444',
-        layer: -1
-    },
-    
-    // Escola de Frankfurt
-    'escola-frankfurt': {
-        name: 'Escola de Frankfurt',
-        description: 'Teoria crítica: Adorno, Horkheimer, Marcuse - crítica da razão instrumental',
-        connections: ['razao-instrumental', 'industria-cultural', 'marcuse', 'adorno'],
-        color: '#dc2626',
-        layer: -1
-    },
-    'razao-instrumental': {
-        name: 'Razão Instrumental',
-        description: 'Razão reduzida a cálculo de meios eficientes, sem questionar os fins',
-        connections: ['escola-frankfurt', 'adorno', 'marcuse', 'algoritmos'],
-        color: '#dc2626',
-        layer: 0 // Presente (crítica aplicável ao digital)
-    },
-    'adorno': {
-        name: 'Theodor Adorno',
-        description: 'Filósofo da Escola de Frankfurt - crítica da indústria cultural',
-        connections: ['escola-frankfurt', 'industria-cultural', 'pseudo-individualizacao', 'horkheimer'],
-        color: '#dc2626',
-        layer: -1
-    },
-    'horkheimer': {
-        name: 'Max Horkheimer',
-        description: 'Filósofo da Escola de Frankfurt - co-autor da Dialética do Esclarecimento',
-        connections: ['escola-frankfurt', 'adorno', 'razao-instrumental'],
-        color: '#dc2626',
-        layer: -1
-    },
-    'marcuse': {
-        name: 'Herbert Marcuse',
-        description: 'O Homem Unidimensional (1964) - tecnologia como controle através do conforto',
-        connections: ['escola-frankfurt', 'homem-unidimensional', 'falsas-necessidades', 'razao-instrumental'],
-        color: '#dc2626',
-        layer: -1
-    },
-    'homem-unidimensional': {
-        name: 'Homem Unidimensional',
-        description: 'Indivíduo cuja capacidade crítica foi suprimida por satisfação de falsas necessidades',
-        connections: ['marcuse', 'falsas-necessidades', 'industria-cultural', 'vicio-digital'],
-        color: '#dc2626',
-        layer: 0 // Presente (crítica ao usuário de redes sociais)
-    },
-    'falsas-necessidades': {
-        name: 'Falsas Necessidades',
-        description: 'Desejos criados pelo sistema para integrar indivíduos à lógica capitalista',
-        connections: ['marcuse', 'homem-unidimensional', 'industria-cultural', 'capitalismo-vigilancia'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'industria-cultural': {
-        name: 'Indústria Cultural',
-        description: 'Produção em massa de cultura padronizada para pacificar e controlar',
-        connections: ['adorno', 'escola-frankfurt', 'pseudo-individualizacao', 'plataformas', 'algoritmos'],
-        color: '#dc2626',
-        layer: 0 // Presente (Netflix, Spotify, TikTok)
-    },
-    'pseudo-individualizacao': {
-        name: 'Pseudo-Individualização',
-        description: 'Ilusão de escolha e personalidade dentro de sistema padronizado',
-        connections: ['industria-cultural', 'adorno', 'algoritmos', 'plataformas'],
-        color: '#dc2626',
-        layer: 0
-    },
-    
-    // Operaísmo Italiano
-    'operaismo': {
-        name: 'Operaísmo Italiano',
-        description: 'Inversão da perspectiva: luta operária como motor da história (Tronti, Panzieri)',
-        connections: ['tronti', 'panzieri', 'recusa-trabalho', 'composicao-tecnica', 'pos-operaismo'],
-        color: '#8b5cf6',
-        layer: -1 // Passado (anos 1960-70)
-    },
-    'tronti': {
-        name: 'Mario Tronti',
-        description: 'Operários e Capital (1966) - capital é REATIVO à luta operária',
-        connections: ['operaismo', 'recusa-trabalho', 'composicao-tecnica', 'composicao-politica'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'panzieri': {
-        name: 'Raniero Panzieri',
-        description: 'Fundador do operaísmo - tecnologia como arma política do capital',
-        connections: ['operaismo', 'tronti', 'composicao-tecnica'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'composicao-tecnica': {
-        name: 'Composição Técnica da Classe',
-        description: 'Organização do trabalho imposta pelo capital (divisão de tarefas, ritmo, hierarquia)',
-        connections: ['operaismo', 'composicao-politica', 'subsuncao-real', 'algoritmos'],
-        color: '#8b5cf6',
-        layer: 0 // Presente (gerenciamento algorítmico)
-    },
-    'composicao-politica': {
-        name: 'Composição Política da Classe',
-        description: 'Capacidade organizativa e consciência coletiva dos trabalhadores',
-        connections: ['operaismo', 'composicao-tecnica', 'recusa-trabalho', 'breque-apps'],
-        color: '#8b5cf6',
-        layer: 0
-    },
-    'recusa-trabalho': {
-        name: 'Recusa do Trabalho',
-        description: 'Estratégia: trabalhar menos, desvincular renda do trabalho, afirmar necessidades',
-        connections: ['operaismo', 'tronti', 'greve', 'breque-apps', 'pos-operaismo'],
-        color: '#8b5cf6',
-        layer: 0
-    },
-    'operario-massa': {
-        name: 'Operário-Massa',
-        description: 'Trabalhador fordista desqualificado mas concentrado (poder de bloqueio)',
-        connections: ['operaismo', 'fordismo', 'operario-social', 'composicao-tecnica'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'operario-social': {
-        name: 'Operário Social',
-        description: 'Exploração além da fábrica - cidade inteira como "fábrica social"',
-        connections: ['operario-massa', 'operaismo', 'pos-operaismo', 'uberizacao', 'fabrica-social'],
-        color: '#8b5cf6',
-        layer: 0 // Presente (trabalho de plataforma)
-    },
-    'fabrica-social': {
-        name: 'Fábrica Social',
-        description: 'Toda a sociedade se torna espaço de exploração e luta (não só a fábrica)',
-        connections: ['operario-social', 'pos-operaismo', 'uberizacao', 'breque-apps'],
-        color: '#8b5cf6',
-        layer: 0
-    },
-    
-    // Pensamento Pós-Colonial
-    'pos-colonialismo': {
-        name: 'Pensamento Pós-Colonial',
-        description: 'Crítica da modernidade europeia como projeto colonial (Fanon, Césaire, Quijano)',
-        connections: ['fanon', 'quijano', 'colonialidade', 'cosmotecnica', 'dependencia'],
-        color: '#22c55e',
-        layer: -1
-    },
-    'fanon': {
-        name: 'Frantz Fanon',
-        description: 'Os Condenados da Terra - violência colonial e descolonização tecnológica',
-        connections: ['pos-colonialismo', 'colonialidade', 'violencia-colonial', 'cosmotecnica'],
-        color: '#22c55e',
-        layer: -1
-    },
-    'quijano': {
-        name: 'Aníbal Quijano',
-        description: 'Colonialidade do Poder - modernidade inseparável da colonialidade',
-        connections: ['pos-colonialismo', 'colonialidade', 'centro-periferia', 'dependencia'],
-        color: '#22c55e',
-        layer: -1
-    },
-    'colonialidade': {
-        name: 'Colonialidade',
-        description: 'Padrões de poder colonial que sobrevivem ao colonialismo formal',
-        connections: ['quijano', 'pos-colonialismo', 'dependencia-tecnologica', 'extrativismo-dados'],
-        color: '#22c55e',
-        layer: 0 // Presente (colonialismo digital)
-    },
-    'dependencia-tecnologica': {
-        name: 'Dependência Tecnológica',
-        description: 'Sul não participa do design das tecnologias que usa - importa do Norte',
-        connections: ['colonialidade', 'centro-periferia', 'imperialismo-digital', 'cosmotecnica'],
-        color: '#22c55e',
-        layer: 0
-    },
-    'imperialismo-digital': {
-        name: 'Imperialismo Digital',
-        description: 'Continuidade do imperialismo via tecnologia (algoritmos, plataformas, IA)',
-        connections: ['dependencia-tecnologica', 'colonialidade', 'extrativismo-dados', 'geopolitica'],
-        color: '#22c55e',
-        layer: 0
-    },
-    'colonialismo-dados': {
-        name: 'Colonialismo de Dados',
-        description: 'Extração de dados do Sul por corporações do Norte (Couldry & Mejias)',
-        connections: ['extrativismo-dados', 'imperialismo-digital', 'mais-valia-dados', 'geopolitica'],
-        color: '#22c55e',
-        layer: 0
-    },
-    'extrativismo-dados': {
-        name: 'Extrativismo de Dados',
-        description: 'Dados como matéria-prima extraída sem compensação (paralelo colonial)',
-        connections: ['colonialismo-dados', 'capitalismo-vigilancia', 'mais-valia-dados', 'deterioracao-termos-troca'],
-        color: '#22c55e',
-        layer: 0
-    },
-    'cosmotecnica': {
-        name: 'Cosmotécnica',
-        description: 'Formas culturalmente específicas de relacionar cosmos e técnica (Yuk Hui)',
-        connections: ['pos-colonialismo', 'dependencia-tecnologica', 'nhandereko', 'fanon'],
-        color: '#22c55e',
-        layer: 1 // Futuro (alternativas ao eurocentrismo)
-    },
-    'yuk-hui': {
-        name: 'Yuk Hui',
-        description: 'Filósofo chinês - crítica da cosmotécnica europeia como única válida',
-        connections: ['cosmotecnica', 'pos-colonialismo', 'dependencia-tecnologica'],
-        color: '#22c55e',
-        layer: 1
-    },
-
-    // ========================================
-    // CAPÍTULO 4: ECONOMIA POLÍTICA E DEPENDÊNCIA
-    // ========================================
-    'centro-periferia': {
-        name: 'Modelo Centro-Periferia',
-        description: 'CEPAL/Prebisch: economia mundial dividida estruturalmente',
-        connections: ['cepal', 'prebisch', 'dependencia', 'deterioracao-termos-troca', 'neocolonialismo-digital'],
-        color: '#f59e0b',
-        layer: -1 // Passado (teoria anos 1950)
-    },
-    'cepal': {
-        name: 'CEPAL',
-        description: 'Comissão Econômica para América Latina - estruturalismo latino-americano',
-        connections: ['centro-periferia', 'prebisch', 'furtado', 'desenvolvimentismo'],
-        color: '#f59e0b',
-        layer: -1
-    },
-    'prebisch': {
-        name: 'Raúl Prebisch',
-        description: 'Economista argentino, fundador da CEPAL e teoria centro-periferia',
-        connections: ['cepal', 'centro-periferia', 'deterioracao-termos-troca'],
-        color: '#f59e0b',
-        layer: -1
-    },
-    'deterioracao-termos-troca': {
-        name: 'Deterioração dos Termos de Troca',
-        description: 'Preços de commodities caem vs manufaturados - transferência de valor',
-        connections: ['centro-periferia', 'prebisch', 'extrativismo', 'extrativismo-dados'],
-        color: '#f59e0b',
-        layer: 0
-    },
-    'dependencia': {
-        name: 'Teoria da Dependência',
-        description: 'Subdesenvolvimento não é etapa, é estrutura (Marini, Dos Santos)',
-        connections: ['centro-periferia', 'furtado', 'marini', 'superexploracao', 'dependencia-tecnologica'],
-        color: '#f59e0b',
-        layer: -1
-    },
-    'furtado': {
-        name: 'Celso Furtado',
-        description: 'Economista brasileiro - subdesenvolvimento como estrutura, não atraso',
-        connections: ['cepal', 'dependencia', 'desenvolvimentismo', 'zona-franca-manaus'],
-        color: '#f59e0b',
-        layer: -1
-    },
-    'marini': {
-        name: 'Ruy Mauro Marini',
-        description: 'Teórico marxista da dependência - conceito de superexploração',
-        connections: ['dependencia', 'superexploracao', 'uberizacao', 'mais-valia-absoluta'],
-        color: '#f59e0b',
-        layer: -1
-    },
-    'superexploracao': {
-        name: 'Superexploração do Trabalho',
-        description: 'Jornadas longas + ritmo intenso + salários abaixo subsistência',
-        connections: ['marini', 'dependencia', 'uberizacao', 'mais-valia-absoluta', 'moderacao-conteudo'],
-        color: '#ef4444',
-        layer: 0 // Presente (conceito ativo hoje)
-    },
-    'desenvolvimentismo': {
-        name: 'Desenvolvimentismo',
-        description: 'Projeto de industrialização nacional via Estado (CEPAL anos 50-60)',
-        connections: ['cepal', 'furtado', 'zona-franca-manaus', 'soberania-tecnologica'],
-        color: '#f59e0b',
-        layer: -1
-    },
-    'zona-franca-manaus': {
-        name: 'Zona Franca de Manaus',
-        description: 'Monta Samsung/LG mas não projeta - dependência tecnológica concreta',
-        connections: ['furtado', 'desenvolvimentismo', 'dependencia-tecnologica', 'subsuncao-real'],
-        color: '#f59e0b',
-        layer: 0
-    },
-    
-    // Debate do Cálculo Socialista
-    'calculo-socialista': {
-        name: 'Debate do Cálculo Socialista',
-        description: 'Mises vs Lange: é possível planejar economia sem mercado?',
-        connections: ['mises', 'hayek', 'lange', 'planejamento-cibernetico', 'cybersyn', 'ogas'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'mises': {
-        name: 'Ludwig von Mises',
-        description: 'Economista austríaco - argumentou impossibilidade do cálculo socialista',
-        connections: ['calculo-socialista', 'hayek', 'mercado'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'hayek': {
-        name: 'Friedrich Hayek',
-        description: '"Conhecimento disperso" (1945) - mercado como sistema de informação',
-        connections: ['mises', 'calculo-socialista', 'glushkov', 'planejamento-cibernetico'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'lange': {
-        name: 'Oskar Lange',
-        description: 'Economista polonês - propôs "socialismo de mercado" (equações)',
-        connections: ['calculo-socialista', 'hayek', 'planejamento-cibernetico'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'mercado': {
-        name: 'Mercado',
-        description: 'Sistema de coordenação via preços (Hayek: processa info dispersa)',
-        connections: ['hayek', 'mises', 'planejamento-cibernetico', 'algoritmos'],
-        color: '#8b5cf6',
-        layer: 0
-    },
-    
-    // ========================================
-    // CAPÍTULO 17: OGAS - A INTERNET VERMELHA DA URSS
-    // ========================================
-    
-    // Planejamento Cibernético
-    'planejamento-cibernetico': {
-        name: 'Planejamento Cibernético',
-        description: 'Cibernética resolve "problema do cálculo" via feedback em tempo real',
-        connections: ['calculo-socialista', 'hayek', 'ogas', 'cybersyn', 'glushkov', 'beer', 'gosplan'],
-        color: '#22c55e',
-        layer: 0
-    },
-    
-    // Problema do Planejamento Soviético
-    'gosplan': {
-        name: 'Gosplan',
-        description: 'Agência central de planejamento soviético (1921-1991) - coordenava 12 milhões de preços, 50 mil empresas',
-        connections: ['ogas', 'planejamento-cibernetico', 'burocracia-sovietica', 'planos-quinquenais'],
-        color: '#ef4444',
-        layer: -1
-    },
-    'planos-quinquenais': {
-        name: 'Planos Quinquenais',
-        description: 'Planos econômicos de 5 anos (1928-1991) - rígidos, desatualizados (6 meses a 2 anos de atraso)',
-        connections: ['gosplan', 'ogas', 'ineficiencia-burocratica'],
-        color: '#ef4444',
-        layer: -1
-    },
-    'ineficiencia-burocratica': {
-        name: 'Ineficiência Crônica do Planejamento',
-        description: '15-25% da produção soviética desperdiçada (50-80 bilhões rublos/ano)',
-        connections: ['gosplan', 'planos-quinquenais', 'economia-informal-sovietica', 'ogas'],
-        color: '#ef4444',
-        layer: -1
-    },
-    'economia-informal-sovietica': {
-        name: 'Economia Informal Soviética',
-        description: 'Blat (favores) + Tolkach (fixadores) - sistema real funcionava por opacidade',
-        connections: ['ineficiencia-burocratica', 'blat', 'tolkach', 'ogas-ameaca'],
-        color: '#ef4444',
-        layer: -1
-    },
-    'blat': {
-        name: 'Blat',
-        description: 'Sistema de favores/contatos pessoais para contornar ineficiências',
-        connections: ['economia-informal-sovietica', 'tolkach', 'burocracia-sovietica'],
-        color: '#ef4444',
-        layer: -1
-    },
-    'tolkach': {
-        name: 'Tolkach (Fixador)',
-        description: 'Intermediário semi-legal que resolvia gargalos via subornos e trocas',
-        connections: ['economia-informal-sovietica', 'blat', 'corrupcao-sovietica'],
-        color: '#ef4444',
-        layer: -1
-    },
-    
-    // O Projeto OGAS
-    'ogas': {
-        name: 'OGAS (Система Автоматизированная)',
-        description: 'Sistema Automatizado de Gestão da Economia Nacional (1962) - "internet vermelha" que nunca foi',
-        connections: ['glushkov', 'planejamento-cibernetico', 'cybersyn', 'feedback', 'arquitetura-ogas', 'fracasso-ogas'],
-        color: '#22c55e',
-        layer: -1
-    },
-    'arquitetura-ogas': {
-        name: 'Arquitetura OGAS (3 camadas)',
-        description: '(1) Centro Moscou, (2) 200 centros regionais, (3) 20 mil terminais em fábricas - rede hierárquica',
-        connections: ['ogas', 'glushkov', 'computadores-sovieticos-besm', 'rede-telex'],
-        color: '#22c55e',
-        layer: -1
-    },
-    'computadores-sovieticos-besm': {
-        name: 'Computadores BESM',
-        description: 'Série soviética (anos 60) - competitiva com IBM 7090, 1 milhão ops/seg',
-        connections: ['arquitetura-ogas', 'ogas', 'tecnologia-sovietica'],
-        color: '#22c55e',
-        layer: -1
-    },
-    'rede-telex': {
-        name: 'Rede de Telex',
-        description: 'Tecnologia de transmissão de dados proposta para OGAS - já existente, baixo custo',
-        connections: ['arquitetura-ogas', 'ogas'],
-        color: '#22c55e',
-        layer: -1
-    },
-    'economia-sem-dinheiro': {
-        name: 'Economia sem Dinheiro (visão Glushkov)',
-        description: 'Abolir rublo - transações via cartões magnéticos rastreáveis eletronicamente',
-        connections: ['ogas', 'glushkov', 'comunismo-automatico', 'vigilancia-total-risco'],
-        color: '#22c55e',
-        layer: -1
-    },
-    'comunismo-automatico': {
-        name: 'Comunismo Automático',
-        description: 'Sonho de Glushkov: sistema auto-regulado via feedback, política obsoleta',
-        connections: ['economia-sem-dinheiro', 'ogas', 'tecnocracia-sovietica', 'erro-glushkov'],
-        color: '#22c55e',
-        layer: -1
-    },
-    'erro-glushkov': {
-        name: 'Erro de Glushkov: Tecnocracia Sem Política',
-        description: 'Assumiu que burocratas aceitariam eficiência - ignorou que eles otimizam sobrevivência própria',
-        connections: ['comunismo-automatico', 'glushkov', 'burocracia-sovietica', 'resistencia-ogas'],
-        color: '#dc2626',
-        layer: -1
-    },
-    
-    // Atores Principais
-    'glushkov': {
-        name: 'Viktor Glushkov (1923-1982)',
-        description: 'Ciberneticista ucraniano, diretor Instituto Cibernética Kiev - arquiteto OGAS, morreu derrotado',
-        connections: ['ogas', 'planejamento-cibernetico', 'hayek', 'cibernetica', 'kitov', 'erro-glushkov'],
-        color: '#22c55e',
-        layer: -1
-    },
-    'kitov': {
-        name: 'Anatoly Kitov (1920-2005)',
-        description: 'Coronel e matemático - propôs EASU (1959), primeira rede dual militar-econômica, demitido em 1960',
-        connections: ['glushkov', 'ogas', 'easu', 'burocracia-militar'],
-        color: '#22c55e',
-        layer: -1
-    },
-    'easu': {
-        name: 'EASU (Sistema Unificado)',
-        description: 'Proposta de Kitov (1959): computadores militares processariam dados econômicos - rejeitada por generais',
-        connections: ['kitov', 'ogas', 'burocracia-militar'],
-        color: '#ef4444',
-        layer: -1
-    },
-    
-    // Resistência Burocrática ao OGAS
-    'resistencia-ogas': {
-        name: 'Resistência Burocrática ao OGAS',
-        description: 'Gosplan + ministérios + Partido + reformistas - aliança contra Glushkov (1962-1970)',
-        connections: ['ogas', 'burocracia-sovietica', 'gosplan-contra-ogas', 'ministerios-contra-ogas', 'partido-contra-ogas'],
-        color: '#dc2626',
-        layer: -1
-    },
-    'gosplan-contra-ogas': {
-        name: 'Gosplan Contra OGAS',
-        description: 'Planejadores temiam obsolescência - OGAS exporia ineficiência e acordos informais',
-        connections: ['resistencia-ogas', 'gosplan', 'ogas-ameaca', 'economia-informal-sovietica'],
-        color: '#dc2626',
-        layer: -1
-    },
-    'ogas-ameaca': {
-        name: 'OGAS como Ameaça Existencial',
-        description: 'Transparência = morte da burocracia - informação descentralizada = poder descentralizado',
-        connections: ['gosplan-contra-ogas', 'economia-informal-sovietica', 'informacao-poder'],
-        color: '#dc2626',
-        layer: -1
-    },
-    'ministerios-contra-ogas': {
-        name: 'Ministérios Contra OGAS',
-        description: 'Cada ministério = feudo isolado - OGAS propunha integração horizontal, ameaçava autonomia',
-        connections: ['resistencia-ogas', 'ogas', 'compartimentalizacao-burocratica'],
-        color: '#dc2626',
-        layer: -1
-    },
-    'compartimentalizacao-burocratica': {
-        name: 'Compartimentalização Burocrática',
-        description: 'Ministérios recusaram compartilhar dados - sabotagem via incompatibilidade',
-        connections: ['ministerios-contra-ogas', 'path-dependence', 'sistemas-incompativeis'],
-        color: '#dc2626',
-        layer: -1
-    },
-    'partido-contra-ogas': {
-        name: 'Partido Comunista Contra OGAS',
-        description: 'Medo de "ditador eletrônico" - e se computador recomendar algo contra linha do Partido?',
-        connections: ['resistencia-ogas', 'ogas', 'brezhnev-desconfia', 'tecnocracia-sovietica'],
-        color: '#dc2626',
-        layer: -1
-    },
-    'brezhnev-desconfia': {
-        name: 'Brezhnev: "Quem Controla Esse Sistema?"',
-        description: 'Liderança não entendia cibernética - desconfiava de "auto-regulação" (1967)',
-        connections: ['partido-contra-ogas', 'ogas', 'burocracia-sovietica'],
-        color: '#dc2626',
-        layer: -1
-    },
-    'reformistas-contra-ogas': {
-        name: 'Reformistas de Mercado Contra OGAS',
-        description: 'Liberman e cia temiam que planejamento eficiente fortalecesse ortodoxia - queriam mercado',
-        connections: ['resistencia-ogas', 'ogas', 'reformas-kosygin', 'alianca-paradoxal'],
-        color: '#dc2626',
-        layer: -1
-    },
-    'reformas-kosygin': {
-        name: 'Reformas Kosygin (1965)',
-        description: 'Tentativa de introduzir mecanismos de mercado - rival ideológico do OGAS',
-        connections: ['reformistas-contra-ogas', 'socialismo-mercado'],
-        color: '#ef4444',
-        layer: -1
-    },
-    'alianca-paradoxal': {
-        name: 'Aliança Paradoxal Contra OGAS',
-        description: 'Conservadores + reformistas, por razões opostas, se uniram contra Glushkov - esmagaram terceira via',
-        connections: ['reformistas-contra-ogas', 'partido-contra-ogas', 'resistencia-ogas'],
-        color: '#dc2626',
-        layer: -1
-    },
-    
-    // Fracasso e Lições
-    'fracasso-ogas': {
-        name: 'Fracasso do OGAS (1970)',
-        description: 'Politburo negou financiamento - optou por sistemas fragmentados incompatíveis',
-        connections: ['ogas', 'resistencia-ogas', 'morte-glushkov', 'sistemas-incompativeis', 'licoes-ogas'],
-        color: '#dc2626',
-        layer: -1
-    },
-    'sistemas-incompativeis': {
-        name: 'Sistemas Incompatíveis (anos 70-80)',
-        description: 'URSS construiu centenas de sistemas locais - nenhum falava com outro, desperdício massivo',
-        connections: ['fracasso-ogas', 'compartimentalizacao-burocratica', 'path-dependence'],
-        color: '#dc2626',
-        layer: -1
-    },
-    'morte-glushkov': {
-        name: 'Morte de Glushkov (1982)',
-        description: 'Ataque cardíaco aos 58 anos - exausto por 20 anos de luta burocrática',
-        connections: ['fracasso-ogas', 'glushkov', 'burocracia-mata-inovacao'],
-        color: '#dc2626',
-        layer: -1
-    },
-    'burocracia-mata-inovacao': {
-        name: 'Burocracia Mata Inovação',
-        description: 'Estruturas de poder preferem ineficiência a mudança que ameaça seu monopólio',
-        connections: ['morte-glushkov', 'fracasso-ogas', 'resistencia-ogas', 'path-dependence'],
-        color: '#dc2626',
-        layer: 0
-    },
-    
-    // Lições Críticas
-    'licoes-ogas': {
-        name: 'Cinco Lições do OGAS',
-        description: '1) Informação=Poder 2) Tech sem democracia=dominação 3) Path dependence 4) Timing crucial 5) Conhecimento local',
-        connections: ['fracasso-ogas', 'informacao-poder', 'tech-sem-democracia', 'path-dependence', 'conhecimento-local-hayek'],
-        color: '#8b5cf6',
-        layer: 0
-    },
-    'informacao-poder': {
-        name: 'Informação é Poder (Literal)',
-        description: 'Descentralizar informação = descentralizar poder - burocracia não aceitou',
-        connections: ['licoes-ogas', 'ogas-ameaca', 'capitalismo-vigilancia', 'centralizacao-dados'],
-        color: '#8b5cf6',
-        layer: 0
-    },
-    'tech-sem-democracia': {
-        name: 'Tecnologia sem Democracia = Dominação',
-        description: 'Planejamento para quem? Decidido por quem? OGAS falhou porque URSS não tinha democracia operária',
-        connections: ['licoes-ogas', 'erro-glushkov', 'controle-operario', 'nhandereko'],
-        color: '#8b5cf6',
-        layer: 0
-    },
-    'path-dependence': {
-        name: 'Path Dependence (Dependência de Trajetória)',
-        description: 'Decisões ruins do passado travam possibilidades futuras - investimentos em tech incompatível',
-        connections: ['licoes-ogas', 'sistemas-incompativeis', 'compartimentalizacao-burocratica', 'combustiveis-fosseis'],
-        color: '#8b5cf6',
-        layer: 0
-    },
-    'conhecimento-local-hayek': {
-        name: 'Paradoxo do Planejamento Ótimo',
-        description: 'Hayek certo: conhecimento local tácito não transmissível ao centro - mas solução não é mercado, é descentralização democrática',
-        connections: ['licoes-ogas', 'hayek', 'cybersyn-descentralizado', 'planejamento-subsidiario'],
-        color: '#8b5cf6',
-        layer: 0
-    },
-    'planejamento-subsidiario': {
-        name: 'Planejamento Subsidiário',
-        description: 'Decisões no nível mais baixo possível - coordenação só quando necessário',
-        connections: ['conhecimento-local-hayek', 'cybersyn', 'vsm', 'democracia-direta'],
-        color: '#10b981',
-        layer: 1
-    },
-    
-    // Contrafactuais
-    'contrafactual-ogas': {
-        name: 'E Se OGAS Tivesse Funcionado?',
-        description: '3 cenários: (1) Socialismo high-tech vence, (2) Distopia vigilância total, (3) Eficiência marginal mas colapso político',
-        connections: ['ogas', 'urss-internet-antes-eua', 'vigilancia-total-risco', 'fracasso-inevitavel'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'urss-internet-antes-eua': {
-        name: 'URSS Teria Internet Antes dos EUA',
-        description: 'OGAS online em 1975 vs ARPANET civil em 1983 - mundo digital bilíngue',
-        connections: ['contrafactual-ogas', 'ogas', 'arpanet'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'vigilancia-total-risco': {
-        name: 'Risco de Vigilância Total',
-        description: 'Economia sem dinheiro = toda transação rastreável - KGB integraria rede, Panóptico eletrônico',
-        connections: ['contrafactual-ogas', 'economia-sem-dinheiro', 'capitalismo-vigilancia'],
-        color: '#dc2626',
-        layer: -1
-    },
-    'fracasso-inevitavel': {
-        name: 'Fracasso Político Inevitável',
-        description: 'OGAS compraria 10-20 anos mas sem democracia, sem feedback consumidor, problemas nacionalismo - colapsaria',
-        connections: ['contrafactual-ogas', 'tech-sem-democracia', 'licoes-ogas'],
-        color: '#dc2626',
-        layer: -1
-    },
-    
-    // Conexões Teóricas
-    'burocracia-sovietica': {
-        name: 'Burocracia Soviética',
-        description: 'Estrato social que monopolizava planejamento/aparato estatal - defendia poder, não eficiência',
-        connections: ['gosplan', 'resistencia-ogas', 'blat', 'tolkach', 'burocracia-mata-inovacao'],
-        color: '#ef4444',
-        layer: -1
-    },
-    'tecnocracia-sovietica': {
-        name: 'Tecnocracia Soviética',
-        description: 'Elite científica (Glushkov, Kitov) que acreditava tech resolveria política - erro fatal',
-        connections: ['glushkov', 'kitov', 'erro-glushkov', 'comunismo-automatico'],
-        color: '#ef4444',
-        layer: -1
-    },
-    'ogas-vs-cybersyn': {
-        name: 'OGAS vs Cybersyn: Lição Dialética',
-        description: 'OGAS = 1ª ordem (controle de cima), Cybersyn = 2ª ordem (workers no loop) - por isso um falhou e outro quase funcionou',
-        connections: ['ogas', 'cybersyn', 'cibernetica-primeira-ordem', 'cibernetica-segunda-ordem', 'licoes-ogas'],
-        color: '#8b5cf6',
-        layer: 0
-    },
-    'beer': {
-        name: 'Stafford Beer',
-        description: 'Ciberneticista britânico - criou Cybersyn no Chile (VSM)',
-        connections: ['cybersyn', 'planejamento-cibernetico', 'wiener', 'vsm'],
-        color: '#22c55e',
-        layer: -1
-    },
-    'vsm': {
-        name: 'Viable System Model (VSM)',
-        description: 'Modelo de Beer: autonomia local + coordenação global',
-        connections: ['beer', 'cybersyn', 'feedback-negativo', 'autopoiese'],
-        color: '#22c55e',
-        layer: -1
-    },
-    'greve-caminhoneiros-1972': {
-        name: 'Greve dos Caminhoneiros (Chile, 1972)',
-        description: 'Cybersyn reorganizou logística em 24h - prova de conceito',
-        connections: ['cybersyn', 'beer', 'planejamento-cibernetico', 'feedback'],
-        color: '#22c55e',
-        layer: -1
-    },
-    'golpe-pinochet': {
-        name: 'Golpe de Pinochet (1973)',
-        description: 'Destruiu Cybersyn - mas não sua viabilidade técnica',
-        connections: ['cybersyn', 'necropolitica-digital', 'duplo-uso-militar'],
-        color: '#dc2626',
-        layer: -1
-    },
-    
-    // Cybersyn - Expansão Capítulo 18 (2025-10-28)
-    'allende': {
-        name: 'Salvador Allende',
-        description: 'Presidente socialista Chile (1970-73), via chilena ao socialismo, apoiou Cybersyn',
-        connections: ['cybersyn', 'unidade-popular', 'golpe-pinochet', 'fernando-flores'],
-        color: '#22c55e',
-        layer: -1
-    },
-    'unidade-popular': {
-        name: 'Unidade Popular',
-        description: 'Coalizão esquerda chilena que elegeu Allende (socialistas, comunistas, radicais)',
-        connections: ['allende', 'cybersyn', 'golpe-pinochet', 'via-chilena-socialismo'],
-        color: '#22c55e',
-        layer: -1
-    },
-    'via-chilena-socialismo': {
-        name: 'Via Chilena ao Socialismo',
-        description: 'Construir socialismo por vias democráticas/pacíficas, sem revolução armada - 3ª via',
-        connections: ['allende', 'unidade-popular', 'cybersyn', 'golpe-pinochet'],
-        color: '#22c55e',
-        layer: -1
-    },
-    'fernando-flores': {
-        name: 'Fernando Flores',
-        description: 'Ministro Economia Allende, arquiteto político Cybersyn, PhD Berkeley, senador Chile',
-        connections: ['cybersyn', 'beer', 'allende', 'tortura-ditadura', 'design-ontologico'],
-        color: '#22c55e',
-        layer: -1
-    },
-    'raul-espejo': {
-        name: 'Raúl Espejo',
-        description: 'Engenheiro 28 anos, liderou equipe Cyberstride, exilou-se UK após golpe',
-        connections: ['cybersyn', 'cyberstride', 'fernando-flores', 'golpe-pinochet'],
-        color: '#22c55e',
-        layer: -1
-    },
-    'gui-bonsiepe': {
-        name: 'Gui Bonsiepe',
-        description: 'Designer alemão que projetou sala operações Cybersyn - estética futurista igualitária',
-        connections: ['sala-operacoes-cybersyn', 'design-politico', 'cybersyn'],
-        color: '#22c55e',
-        layer: -1
-    },
-    'cyberstride': {
-        name: 'Cyberstride',
-        description: 'Software análise estatística Cybersyn - métodos bayesianos, detecta anomalias tempo real',
-        connections: ['cybersyn', 'algedonica', 'ibm-360', 'raul-espejo', 'filtro-variedade'],
-        color: '#22c55e',
-        layer: -1
-    },
-    'algedonica': {
-        name: 'Algedônica (Gráficos)',
-        description: 'Do grego algos (dor) + hedone (prazer) - visualização saúde econômica via cores',
-        connections: ['cyberstride', 'beer', 'cybersyn', 'dashboard-economico'],
-        color: '#22c55e',
-        layer: -1
-    },
-    'sala-operacoes-cybersyn': {
-        name: 'Sala de Operações (Opsroom)',
-        description: '7 cadeiras giratórias, painéis, telas - design para deliberação coletiva, não comando',
-        connections: ['cybersyn', 'gui-bonsiepe', 'design-politico', 'democracia-visual'],
-        color: '#22c55e',
-        layer: -1
-    },
-    'ibm-360': {
-        name: 'IBM 360/50',
-        description: 'Mainframe alugado usado pelo Cybersyn, devolvido à IBM após golpe 1973',
-        connections: ['cybersyn', 'cyberstride', 'tecnologia-apropriada'],
-        color: '#22c55e',
-        layer: -1
-    },
-    'telex-network': {
-        name: 'Rede de Telex',
-        description: '~500 máquinas telex (tech anos 30) conectando fábricas a Santiago - solução low-tech',
-        connections: ['cybernet', 'cybersyn', 'tecnologia-apropriada', 'gambiarra-revolucionaria'],
-        color: '#22c55e',
-        layer: -1
-    },
-    'tecnologia-apropriada': {
-        name: 'Tecnologia Apropriada',
-        description: 'Usar tech disponível/acessível criativamente, não esperar por futurismo - Cybersyn modelo',
-        connections: ['cybersyn', 'telex-network', 'gambiarra-revolucionaria', 'sul-global'],
-        color: '#10b981',
-        layer: 1
-    },
-    'variedade-requisita-ashby': {
-        name: 'Lei Variedade Requisita (Ashby)',
-        description: '"Apenas variedade pode absorver variedade" - controle precisa = complexidade do controlado',
-        connections: ['ashby', 'vsm', 'beer', 'cybersyn', 'anti-microgerenciamento'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'ashby': {
-        name: 'William Ross Ashby',
-        description: 'Ciberneticista britânico - Lei da Variedade Requisita, influenciou Beer',
-        connections: ['variedade-requisita-ashby', 'beer', 'wiener', 'cibernetica'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'atenuador-variedade': {
-        name: 'Atenuador de Variedade',
-        description: 'Centro filtra informação, lida apenas com exceções - evita sobrecarga (conceito Beer)',
-        connections: ['variedade-requisita-ashby', 'beer', 'vsm', 'cybersyn'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'amplificador-variedade': {
-        name: 'Amplificador de Variedade',
-        description: 'Centro dá ferramentas para unidades se auto-regularem - aumenta capacidade resposta',
-        connections: ['variedade-requisita-ashby', 'beer', 'vsm', 'cybersyn', 'autonomia-local'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'autonomia-vs-coesao': {
-        name: 'Autonomia vs Coesão',
-        description: 'Tensão central VSM: unidades precisam autonomia LOCAL + coesão GLOBAL para viabilidade',
-        connections: ['vsm', 'beer', 'cybersyn', 'federalismo-cibernetico'],
-        color: '#8b5cf6',
-        layer: 0
-    },
-    'sistema-1-vsm': {
-        name: 'Sistema 1 (VSM - Operações)',
-        description: 'Unidades autônomas fazem trabalho real - no Cybersyn: fábricas com autonomia decisória',
-        connections: ['vsm', 'beer', 'cybersyn', 'autonomia-local'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'sistema-2-vsm': {
-        name: 'Sistema 2 (VSM - Coordenação)',
-        description: 'Previne conflitos entre unidades - no Cybersyn: protocolos telex, alocação matéria-prima',
-        connections: ['vsm', 'beer', 'cybersyn', 'coordenacao-descentralizada'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'sistema-3-vsm': {
-        name: 'Sistema 3 (VSM - Controle Operacional)',
-        description: 'Otimiza recursos presente - no Cybersyn: Cyberstride detecta gargalos, realoca recursos',
-        connections: ['vsm', 'beer', 'cybersyn', 'cyberstride', 'otimizacao-tempo-real'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'sistema-4-vsm': {
-        name: 'Sistema 4 (VSM - Inteligência/Planejamento)',
-        description: 'Monitora ambiente externo, planeja futuro - no Cybersyn: economistas simulam políticas',
-        connections: ['vsm', 'beer', 'cybersyn', 'planejamento-adaptativo'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'sistema-5-vsm': {
-        name: 'Sistema 5 (VSM - Política/Identidade)',
-        description: 'Define valores, prioridades - no Cybersyn: governo Allende + assembleias trabalhadores',
-        connections: ['vsm', 'beer', 'cybersyn', 'democracia-economica', 'allende'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'greve-caminhoneiros-1972-detalhes': {
-        name: 'Greve 1972 - Logística Resistência',
-        description: '26 dias, CIA financiou, Cybersyn coordenou 200 caminhões leais em 24h - 30% capacidade mantida',
-        connections: ['greve-caminhoneiros-1972', 'cybersyn', 'cia-chile', 'prova-conceito'],
-        color: '#22c55e',
-        layer: 0
-    },
-    'cia-chile': {
-        name: 'CIA - Operação Fubelt',
-        description: 'US$ 8mi (~50mi hoje) para desestabilizar Allende - financiou greve, propaganda, golpe',
-        connections: ['golpe-pinochet', 'greve-caminhoneiros-1972', 'allende', 'imperialismo-digital'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'operacao-fubelt': {
-        name: 'Operação Fubelt (nome código)',
-        description: 'Plano CIA derrubar Allende - docs desclassificados provam financiamento golpe',
-        connections: ['cia-chile', 'golpe-pinochet', 'kissinger', 'nixon'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'kissinger': {
-        name: 'Henry Kissinger',
-        description: 'Secretário Estado EUA - "não deixaremos Chile virar outra Cuba" - ordenou sabotagem',
-        connections: ['cia-chile', 'operacao-fubelt', 'golpe-pinochet', 'imperialismo'],
-        color: '#dc2626',
-        layer: -1
-    },
-    'nixon': {
-        name: 'Richard Nixon',
-        description: 'Presidente EUA (1969-74) - ordenou CIA desestabilizar Allende, financiou golpe',
-        connections: ['cia-chile', 'operacao-fubelt', 'golpe-pinochet', 'guerra-fria'],
-        color: '#dc2626',
-        layer: -1
-    },
-    'tortura-ditadura-chile': {
-        name: 'Tortura Ditadura Pinochet',
-        description: '40 mil mortos/torturados/desaparecidos (1973-90) - Flores 3 anos Ilha Dawson',
-        connections: ['golpe-pinochet', 'fernando-flores', 'raul-espejo', 'necropolitica'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'destruicao-sala-operacoes': {
-        name: 'Destruição Sala Operações',
-        description: 'Soldados invadiram, pensaram "espionagem soviética", destruíram cadeiras/painéis',
-        connections: ['golpe-pinochet', 'sala-operacoes-cybersyn', 'apagamento-historico'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'apagamento-historico-cybersyn': {
-        name: 'Apagamento Histórico Cybersyn',
-        description: 'Ditadura destruiu docs, censurou história - esquecido até anos 2000 (Eden Medina)',
-        connections: ['golpe-pinochet', 'cybersyn', 'eden-medina', 'historia-luta'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'eden-medina': {
-        name: 'Eden Medina',
-        description: 'Historiadora MIT/Indiana - "Cybernetic Revolutionaries" (2011) - redescobriu Cybersyn',
-        connections: ['cybersyn', 'apagamento-historico-cybersyn', 'historia-luta', 'prova-viabilidade'],
-        color: '#10b981',
-        layer: 0
-    },
-    'prova-viabilidade-socialismo': {
-        name: 'Cybersyn = Prova Viabilidade',
-        description: 'Socialismo cibernético não é utopia - já foi feito, funcionou, foi assassinado (não falhou)',
-        connections: ['cybersyn', 'ogas-vs-cybersyn', 'eden-medina', 'licoes-para-hoje'],
-        color: '#10b981',
-        layer: 1
-    },
-    'licoes-cybersyn-hoje': {
-        name: 'Lições Cybersyn para Século XXI',
-        description: '1) Planejamento≠controle, 2) Tech apropriada>futurismo, 3) Design=política, 4) Defesa necessária, 5) Workers no loop',
-        connections: ['cybersyn', 'prova-viabilidade-socialismo', 'cooperativas-plataforma', 'blockchain-dao'],
-        color: '#10b981',
-        layer: 1
-    },
-    'cybersyn-2-0': {
-        name: 'Cybersyn 2.0 (possibilidades)',
-        description: 'Com internet, IA, blockchain, IoT - tudo que Cybersyn fez em 1971 é 100x mais fácil hoje',
-        connections: ['licoes-cybersyn-hoje', 'cooperativas-plataforma', 'blockchain-dao', 'xai', 'iot-sensores'],
-        color: '#10b981',
-        layer: 1
-    },
-    'design-politico': {
-        name: 'Design Político',
-        description: 'Design materializa valores - sala Cybersyn (igualitária) vs NASA (hierárquica)',
-        connections: ['sala-operacoes-cybersyn', 'gui-bonsiepe', 'dark-patterns', 'ux-emancipatorio'],
-        color: '#8b5cf6',
-        layer: 0
-    },
-    'co-design-democratico': {
-        name: 'Co-Design Democrático',
-        description: 'Flores organizou reuniões fábricas - workers decidiram quais dados coletar, como exibir',
-        connections: ['fernando-flores', 'cybersyn', 'participacao-trabalhadores', 'cibernetica-segunda-ordem'],
-        color: '#22c55e',
-        layer: 0
-    },
-    
-    // Dependência Digital (atualização 2025)
-    'dependencia-tecnologica': {
-        name: 'Dependência Tecnológica',
-        description: 'Periferia importa tech/IA, exporta dados brutos - nova colonialidade',
-        connections: ['dependencia', 'neocolonialismo-digital', 'soberania-tecnologica', 'extrativismo-dados'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'neocolonialismo-digital': {
-        name: 'Neocolonialismo Digital',
-        description: 'Centro-periferia atualizado: infraestrutura, algoritmos, dados',
-        connections: ['centro-periferia', 'dependencia-tecnologica', 'extrativismo-dados', 'geopolitica'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'extrativismo-dados': {
-        name: 'Extrativismo de Dados',
-        description: 'Dados = novo café/ouro/minério - extraídos da periferia de graça',
-        connections: ['neocolonialismo-digital', 'mais-valia-dados', 'deterioracao-termos-troca', 'capitalismo-vigilancia'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'soberania-tecnologica': {
-        name: 'Soberania Tecnológica',
-        description: 'Controle popular sobre infraestrutura, software, dados, algoritmos',
-        connections: ['dependencia-tecnologica', 'software-livre', 'plataformas-cooperativas', 'china-tech'],
-        color: '#10b981',
-        layer: 1 // Futuro (proposta)
-    },
-    'software-livre': {
-        name: 'Software Livre',
-        description: 'Código aberto, auditável, modificável - soberania via transparência',
-        connections: ['soberania-tecnologica', 'resistencia', 'gnu-linux', 'commons-digitais', 'infraestrutura-alternativa', 'mastodon', 'desescassificacao'],
-        color: '#10b981',
-        layer: 1
-    },
-    'gnu-linux': {
-        name: 'GNU/Linux',
-        description: 'Sistema operacional livre - base técnica da soberania',
-        connections: ['software-livre', 'soberania-tecnologica', 'stallman'],
-        color: '#10b981',
-        layer: 0
-    },
-    'stallman': {
-        name: 'Richard Stallman',
-        description: 'Fundador do movimento software livre (GNU, 1983)',
-        connections: ['gnu-linux', 'software-livre', 'commons-digitais'],
-        color: '#10b981',
-        layer: -1
-    },
-    'commons-digitais': {
-        name: 'Commons Digitais',
-        description: 'Bens comuns digitais - conhecimento não-mercantilizado',
-        connections: ['software-livre', 'general-intellect', 'resistencia', 'plataformas-cooperativas'],
-        color: '#10b981',
-        layer: 1
-    },
-    'plataformas-cooperativas': {
-        name: 'Plataformas Cooperativas',
-        description: 'Uber/iFood de propriedade dos trabalhadores',
-        connections: ['soberania-tecnologica', 'resistencia', 'nhandereko', 'commons-digitais', 'cooperativa-dados', 'cataki-exemplo'],
-        color: '#10b981',
-        layer: 1
-    },
-    'cooperativa-plataforma': {
-        name: 'Cooperativa de Plataforma (alias)',
-        description: 'Ver: Plataformas Cooperativas',
-        connections: ['plataformas-cooperativas'],
-        color: '#10b981',
-        layer: 1
-    },
-    'china-tech': {
-        name: 'Soberania Tech Chinesa',
-        description: 'Baidu/Alibaba/Huawei - rompeu dependência, mas criou nova periferia',
-        connections: ['soberania-tecnologica', 'geopolitica', 'neocolonialismo-digital', 'brics', 'china-capitalismo-estado', 'belt-road-digital'],
-        color: '#f59e0b',
-        layer: 0
-    },
-    'china-capitalismo-estado': {
-        name: 'Capitalismo de Estado Chinês',
-        description: 'Cap 25: PCCh subordina Big Techs (Jack Ma "reeducado"), mas mantém acumulação privada. Não é socialismo, é capitalismo autoritário',
-        connections: ['china-tech', 'jack-ma-reeducado', 'china-cibernetica-2ordem', 'china-vigilancia-total'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'jack-ma-reeducado': {
-        name: 'Jack Ma e os Limites do Bilionário',
-        description: 'Fundador Alibaba criticou reguladores (2020), IPO da Ant Group cancelado (US$ 37bi), Ma desapareceu por meses. Bilionários chineses = vassalos do Partido',
-        connections: ['china-capitalismo-estado', 'metacontrolador-estado'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'metacontrolador-estado': {
-        name: 'Estado como Metacontrolador',
-        description: 'China: Estado não apenas regula mercado, mas controla os próprios controladores (bilionários). Diferente do Ocidente onde capital captura Estado',
-        connections: ['jack-ma-reeducado', 'china-capitalismo-estado', 'china-cibernetica-2ordem'],
-        color: '#8b5cf6',
-        layer: 0
-    },
-    'china-cibernetica-2ordem': {
-        name: 'China: Cibernética de 2ª Ordem Total',
-        description: 'Sistema observa observação, controla controle. WeChat modela você sabendo que você sabe que está sendo modelado. Loop recursivo de controle',
-        connections: ['cibernetica-2ordem', 'china-vigilancia-total', 'credito-social', 'sujeito-preemptivo'],
-        color: '#8b5cf6',
-        layer: 0
-    },
-    'china-vigilancia-total': {
-        name: 'Vigilância Total Chinesa',
-        description: '600 milhões de câmeras + reconhecimento facial + crédito social. Não apenas observa, mas modula comportamento em tempo real',
-        connections: ['credito-social', 'reconhecimento-facial', 'china-cibernetica-2ordem', 'ultra-controle-espacotempo'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'ultra-controle-espacotempo': {
-        name: 'Ultra-Controle do Espaço-Tempo',
-        description: 'China esculpe experiência de realidade diferenciada: alta pontuação = tempo acelerado (sem filas), baixa = tempo comprimido (proibições)',
-        connections: ['credito-social', 'china-vigilancia-total', 'sujeito-preemptivo'],
-        color: '#8b5cf6',
-        layer: 0
-    },
-    'sujeito-preemptivo': {
-        name: 'Sujeito Pré-emptivo',
-        description: 'Indivíduo que internaliza vigilância, vira próprio vigia. Panóptico de Foucault interiorizado. Controle mais eficiente: auto-coerção',
-        connections: ['credito-social', 'china-cibernetica-2ordem', 'ultra-controle-espacotempo'],
-        color: '#8b5cf6',
-        layer: 0
-    },
-    'explosao-informacional': {
-        name: 'Explosão Informacional',
-        description: 'Feedback positivo descontrolado: mais vigilância → mais dados → mais vigilância. Sistema tão complexo que criadores não compreendem. Caixa-preta opaca',
-        connections: ['china-cibernetica-2ordem', 'feedback-positivo', 'hiperrealidade-baudrillard'],
-        color: '#8b5cf6',
-        layer: 0
-    },
-    'hiperrealidade-baudrillard': {
-        name: 'Hiperrealidade (Baudrillard)',
-        description: 'Mapa tão detalhado que se confunde com território, simulação precede e substitui o real. China: Estado não "conhece" cidadãos, os "sonha" via algoritmos',
-        connections: ['explosao-informacional', 'china-cibernetica-2ordem'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    '996-icu': {
-        name: 'Movimento 996.ICU',
-        description: 'Programadores chineses (2019) protestaram GitHub: 996 (9h-21h, 6 dias) = acabar na UTI. Alibaba/Huawei/Tencent forçam jornada ilegal. Repo censurado na China',
-        connections: ['superexploracao-digital-china', 'resistencia-trabalhadores-china', 'greves-selvagens-china'],
-        color: '#22c55e',
-        layer: 0
-    },
-    'superexploracao-digital-china': {
-        name: 'Superexploração Digital na China',
-        description: 'Regime 996, 350 milhões trabalhadores plataforma sem direitos, suicídios Foxconn (redes anti-suicídio instaladas). "Socialismo de mercado" = capitalismo brutal',
-        connections: ['996-icu', 'despotismo-digital-algoritmo', 'greves-selvagens-china'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'despotismo-digital-algoritmo': {
-        name: 'Despotismo Digital Algorítmico',
-        description: 'Entregadores Meituan: IA otimiza rotas assumindo infrações. Recusar violar lei = pontuação cai = menos pedidos. Algoritmo pune sem chefe humano',
-        connections: ['superexploracao-digital-china', 'credito-social', 'gerenciamento-algoritmico'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'greves-selvagens-china': {
-        name: 'Greves Selvagens na China',
-        description: '2-3 mil greves/protestos trabalhistas por ano (China Labour Bulletin). Sempre localizados (redes sociais controladas), repressão cirúrgica via reconhecimento facial',
-        connections: ['996-icu', 'superexploracao-digital-china', 'repressao-preventiva-china', 'resistencia-trabalhadores-china'],
-        color: '#22c55e',
-        layer: 0
-    },
-    'repressao-preventiva-china': {
-        name: 'Repressão Preventiva Algorítmica',
-        description: 'Antes de greve acontecer, algoritmos detectam "padrões suspeitos" (reuniões, palavras-chave). Líderes potenciais têm pontuação reduzida, movimentos restritos',
-        connections: ['greves-selvagens-china', 'credito-social', 'reconhecimento-facial'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'resistencia-trabalhadores-china': {
-        name: 'Táticas de Resistência Digital China',
-        description: 'Linguagem cifrada (Xi=Pooh), blockchain p/ docs #MeToo, sindicalismo código (desotimizar algoritmos), protestos silenciosos (A4 Revolution - papel branco)',
-        connections: ['996-icu', 'greves-selvagens-china', 'resistencia'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'belt-road-digital': {
-        name: 'Rota da Seda Digital (BRI)',
-        description: 'China exporta infraestrutura: cabos, 5G Huawei, vigilância Hikvision, e-gov chinês. 18 países adotaram (Zimbábue, Equador, Venezuela, Paquistão)',
-        connections: ['china-tech', 'armadilha-divida-digital', 'exportacao-autoritarismo', 'neocolonialismo-digital'],
-        color: '#f59e0b',
-        layer: 0
-    },
-    'armadilha-divida-digital': {
-        name: 'Armadilha da Dívida Digital',
-        description: 'Sri Lanka: calote empréstimo → entregou porto Hambantota 99 anos. Quênia: 80% orçamento em dívidas chinesas. Equador: ECU 911 vigilância como pagamento',
-        connections: ['belt-road-digital', 'neocolonialismo-digital', 'dependencia-tecnologica'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'exportacao-autoritarismo': {
-        name: 'Exportação Autoritarismo Tecnológico',
-        description: '18 países adotaram vigilância chinesa. Apelo: tecnologia sem exigências "direitos humanos". China não julga uso — só fornece manual',
-        connections: ['belt-road-digital', 'armadilha-divida-digital', 'credito-social-venezuela'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'credito-social-venezuela': {
-        name: 'Carnet de la Patria (Venezuela)',
-        description: 'Sistema crédito social desenvolvido por ZTE (China), controla acesso a alimentos subsidiados. Opositores governo têm benefícios bloqueados automaticamente',
-        connections: ['exportacao-autoritarismo', 'credito-social', 'necropolitica-digital'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'brics': {
-        name: 'BRICS Pay',
-        description: 'Sistema de pagamentos Sul-Sul - escapa SWIFT/dólar',
-        connections: ['soberania-tecnologica', 'china-tech', 'geopolitica'],
-        color: '#10b981',
-        layer: 1
-    },
-    
-    // Ferramentas Digitais para Planejamento
-    'blockchain-dao': {
-        name: 'Blockchain/DAOs',
-        description: 'Registros transparentes de decisões coletivas sem autoridade central',
-        connections: ['planejamento-cibernetico', 'soberania-tecnologica', 'democracia-algoritmicica'],
-        color: '#6366f1',
-        layer: 1
-    },
-    'orcamento-participativo-digital': {
-        name: 'Orçamento Participativo Digital',
-        description: 'Plataformas como Decidim (Barcelona) - cidadãos votam prioridades',
-        connections: ['planejamento-participativo', 'democracia-algoritmicica', 'barcelona-tech'],
-        color: '#10b981',
-        layer: 1
-    },
-    'barcelona-tech': {
-        name: 'Barcelona Tech Soberana',
-        description: 'Software livre na administração, Decidim, migração de Microsoft',
-        connections: ['soberania-tecnologica', 'orcamento-participativo-digital', 'software-livre'],
-        color: '#10b981',
-        layer: 0
-    },
-    'modelagem-sistemas-dinamicos': {
-        name: 'Modelagem de Sistemas Dinâmicos',
-        description: 'Stella/Vensim - simula impactos de políticas antes de implementar',
-        connections: ['planejamento-cibernetico', 'feedback', 'cybersyn'],
-        color: '#8b5cf6',
-        layer: 1
-    },
-    'iot-sensores': {
-        name: 'Redes de Sensores IoT',
-        description: 'Agricultura urbana, microgrids energéticas peer-to-peer',
-        connections: ['planejamento-cibernetico', 'soberania-tecnologica', 'ecologia-digital'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'xai': {
-        name: 'IA Explicável (XAI)',
-        description: 'Algoritmos que mostram POR QUÊ decidiram - auditoria democrática',
-        connections: ['transparencia-algoritmica', 'democracia-algoritmicica', 'tres-perguntas-algoritmo'],
-        color: '#6366f1',
-        layer: 1
-    },
-    
-    // Casos de Superexploração Digital
-    'moderacao-filipinas': {
-        name: 'Moderação nas Filipinas',
-        description: 'Superexploração racial+colonial - trabalho mais violento, menor salário',
-        connections: ['superexploracao', 'moderacao-conteudo', 'neocolonialismo-digital', 'necropolitica-digital'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'subsuncao-real': {
-        name: 'Subsunção Real',
-        description: 'Capital reorganiza processo de trabalho via tecnologia (máquinas incorporam conhecimento do trabalhador)',
-        connections: ['subsuncao-formal', 'zona-franca-manaus', 'gerenciamento-algoritmico', 'uberizacao', 'composicao-organica-capital', 'general-intellect', 'automacao'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'subsuncao-formal': {
-        name: 'Subsunção Formal',
-        description: 'Capital controla trabalho sem alterar processo técnico (artesão vira empregado)',
-        connections: ['subsuncao-real', 'mais-valia', 'extracao-dados'],
-        color: '#f87171',
-        layer: 0
-    },
-    'composicao-organica-capital': {
-        name: 'Composição Orgânica do Capital (COC)',
-        description: 'Razão c/v: capital constante (máquinas) sobre capital variável (trabalho). Alta COC = muita automação',
-        connections: ['capital-constante', 'capital-variavel', 'queda-taxa-lucro', 'automacao', 'general-intellect'],
-        color: '#8b5cf6',
-        layer: 0
-    },
-    'capital-constante': {
-        name: 'Capital Constante (c)',
-        description: 'Meios de produção (máquinas, matéria-prima) que apenas transferem valor, não criam valor novo',
-        connections: ['composicao-organica-capital', 'capital-variavel', 'automacao'],
-        color: '#a78bfa',
-        layer: 0
-    },
-    'capital-variavel': {
-        name: 'Capital Variável (v)',
-        description: 'Força de trabalho (salários) — única fonte que cria valor novo (mais-valia)',
-        connections: ['composicao-organica-capital', 'capital-constante', 'mais-valia', 'trabalho-vivo'],
-        color: '#c4b5fd',
-        layer: 0
-    },
-    'queda-taxa-lucro': {
-        name: 'Lei da Queda Tendencial da Taxa de Lucro',
-        description: 'COC aumenta (mais máquinas, menos trabalho) → fonte de lucro diminui → taxa de lucro cai',
-        connections: ['composicao-organica-capital', 'contratendencias', 'crise-capitalista', 'automacao', 'financeirizacao'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'contratendencias': {
-        name: 'Contratendências à Queda do Lucro',
-        description: 'Estratégias para compensar queda: superexploração, barateamento de máquinas, imperialismo, crédito, monopólio',
-        connections: ['queda-taxa-lucro', 'superexploracao', 'neocolonialismo-digital', 'financeirizacao', 'big-tech', 'uberizacao'],
-        color: '#f59e0b',
-        layer: 0
-    },
-    'general-intellect': {
-        name: 'General Intellect (Intelecto Geral)',
-        description: 'Conhecimento social acumulado (ciência, tecnologia, cooperação) como principal força produtiva — contradição: conhecimento quer ser livre, capital precisa cercá-lo',
-        connections: ['subsuncao-real', 'trabalho-imaterial', 'composicao-organica-capital', 'software-livre', 'propriedade-intelectual', 'comum-digital', 'ia', 'algoritmos', 'plataformas'],
-        color: '#a855f7',
-        layer: 0
-    },
-    'propriedade-intelectual': {
-        name: 'Propriedade Intelectual',
-        description: 'Copyright, patentes, DRM — cercamento do conhecimento para criar escassez artificial',
-        connections: ['general-intellect', 'comum-digital', 'pirataria', 'software-livre', 'big-tech'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'comum-digital': {
-        name: 'O Comum Digital',
-        description: 'Conhecimento produzido coletivamente que deveria ser apropriado coletivamente (Wikipedia, Linux, ciência aberta)',
-        connections: ['general-intellect', 'software-livre', 'propriedade-intelectual', 'plataformas-cooperativas', 'resistencia'],
-        color: '#10b981',
-        layer: 1
-    },
-
-    // ========================================
-    // CAPÍTULO 13: SEXUALIDADE E RELIGIÃO NA ERA DIGITAL (EXPANSÃO v10)
-    // ========================================
-    // 70+ novos conceitos: plataformização de sexo e fé
-    // Tinder/Grindr: gamificação do desejo, Elo Score, hierarquias de desejabilidade
-    // OnlyFans/Privacy: uberização do trabalho sexual, rentismo, geopolítica
-    // Shadowbanning: censura algorítmica de corpos queer/trans, viés puritano
-    // Igreja digital: streaming de cultos, dízimo via Pix, CRM religioso
-    // Influencers da fé: pastores-celebridades, teologia da prosperidade, mercantilização
-    // Gabinete do Ódio: WhatsApp como infraestrutura de fundamentalismo, fake news
-    // Necropolítica antivacina: religião digital mata, desinformação COVID
-    // Casos brasileiros: Universal, Padre Fábio de Melo, Privacy, "kit gay"
-    // Ambivalência: libertação (comunidades LGBTQIA+) vs. opressão (extração capitalista)
-    // Conexões: Caps 3 (vigilância), 8 (trabalho afetivo), 12 (ciberfeminismo), 14 (vício), 21 (Bolsonarismo), 22 (necropolítica)
-    // Total: ~530 conceitos mapeados
-
-    'plataformizacao-sexualidade': {
-        name: 'Plataformização da Sexualidade',
-        description: 'Desejo transformado em mercado algorítmico — apps de namoro, trabalho sexual digital, comunidades dissidentes online',
-        connections: ['tinder', 'grindr', 'onlyfans', 'excedente-comportamental', 'trabalho-afetivo', 'gamificacao'],
-        color: '#ec4899',
-        layer: 0
-    },
-    'tinder': {
-        name: 'Tinder',
-        description: 'App de relacionamento baseado em gamificação (swipe), algoritmo Elo Score classifica "desejabilidade"',
-        connections: ['elo-score', 'gamificacao', 'mercado-bilateral', 'extracao-dados-intimos', 'grindr'],
-        color: '#f43f5e',
-        layer: 0
-    },
-    'elo-score': {
-        name: 'Elo Score (Tinder)',
-        description: 'Sistema de ranking de "desejabilidade" (2016-19): usuários com alto score só veem outros de alto score, criando hierarquias invisíveis de raça/classe/corpo',
-        connections: ['tinder', 'hierarquia-desejabilidade', 'discriminacao-algoritmica', 'gamificacao'],
-        color: '#dc2626',
-        layer: -1
-    },
-    'hierarquia-desejabilidade': {
-        name: 'Hierarquia de Desejabilidade Algorítmica',
-        description: 'Algoritmos de apps de namoro reforçam padrões sociais de beleza, raça, classe — concentram matches no topo, invisibilizam base',
-        connections: ['elo-score', 'tinder', 'racismo-algoritmos', 'grindr-racismo', 'shadowbanning'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'mercado-bilateral': {
-        name: 'Mercado Bilateral Sexual',
-        description: 'Apps conectam dois lados (homens/mulheres, tops/bottoms) e lucram com desequilíbrios de oferta/demanda — escassez de atenção produzida algoritmicamente',
-        connections: ['tinder', 'grindr', 'plataformizacao', 'onlyfans', 'extracao-valor'],
-        color: '#f59e0b',
-        layer: 0
-    },
-    'extracao-dados-intimos': {
-        name: 'Extração de Dados Íntimos',
-        description: 'Apps de namoro coletam padrões de desejo (loiros vs morenos, tempo olhando fotos, horários de busca) e vendem a anunciantes ou vazam em breaches',
-        connections: ['tinder', 'grindr', 'excedente-comportamental', 'vigilancia-digital', 'ashley-madison'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'ashley-madison': {
-        name: 'Caso Ashley Madison (2015)',
-        description: 'Site de affair extraconjugal hackeado, 32M usuários expostos, relatos de suicídios — dados íntimos como arma',
-        connections: ['extracao-dados-intimos', 'vigilancia-digital', 'necropolitica-digital'],
-        color: '#991b1b',
-        layer: -1
-    },
-    'grindr': {
-        name: 'Grindr',
-        description: 'Primeiro app geolocalizado (2009) para homens gays/bi — liberação (acesso comunitário) + vigilância (venda de localização, caça policial)',
-        connections: ['tinder', 'grindr-vigilancia', 'grindr-racismo', 'comunidades-dissidentes-online', 'necropolitica-digital'],
-        color: '#ec4899',
-        layer: 0
-    },
-    'grindr-vigilancia': {
-        name: 'Grindr e Vigilância Queer',
-        description: 'Em países que criminalizam homossexualidade, polícias/milícias usam Grindr para caçar pessoas LGBTQIA+ via triangulação de localização',
-        connections: ['grindr', 'necropolitica-digital', 'vigilancia-digital', 'homofobia-estado'],
-        color: '#991b1b',
-        layer: 0
-    },
-    'grindr-racismo': {
-        name: 'Racismo no Grindr',
-        description: 'Perfis explicitamente racistas ("no blacks", "no asians") eram comuns até 2020; algoritmo continua reforçando preferências racializadas',
-        connections: ['grindr', 'hierarquia-desejabilidade', 'racismo-algoritmos', 'discriminacao-algoritmica'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'onlyfans': {
-        name: 'OnlyFans',
-        description: 'Plataforma de conteúdo adulto via assinatura (2016) — promessa de autonomia mascara precarização, taxa 20%, dependência algorítmica',
-        connections: ['trabalho-sexual-digital', 'uberizacao', 'rentismo-plataforma', 'privacy-brasil', 'trabalho-afetivo'],
-        color: '#ec4899',
-        layer: 0
-    },
-    'trabalho-sexual-digital': {
-        name: 'Trabalho Sexual Digital',
-        description: 'Produção de conteúdo erótico via plataformas (OnlyFans, Privacy) — uberização do sex work, mesmo modelo de precarização',
-        connections: ['onlyfans', 'privacy-brasil', 'uberizacao', 'trabalho-afetivo', 'rentismo-plataforma'],
-        color: '#f43f5e',
-        layer: 0
-    },
-    'rentismo-plataforma': {
-        name: 'Rentismo de Plataforma Sexual',
-        description: 'OnlyFans/Privacy extraem 20-25% sem produzir nada — puro rentismo, como Uber/Airbnb. Creators assumem 100% do risco, plataforma lucra sempre',
-        connections: ['onlyfans', 'privacy-brasil', 'extracao-valor', 'plataformizacao', 'uberizacao'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'privacy-brasil': {
-        name: 'Privacy.com (Brasil)',
-        description: 'Plataforma brasileira de trabalho sexual digital (ex-Fatal Model), aceita Pix, taxa 25% — alternativa de sobrevivência para pessoas trans/travestis',
-        connections: ['onlyfans', 'trabalho-sexual-digital', 'rentismo-plataforma', 'transfobia', 'precarizacao'],
-        color: '#ec4899',
-        layer: 0
-    },
-    'geopolitica-trabalho-sexual-digital': {
-        name: 'Geopolítica do Trabalho Sexual Digital',
-        description: 'Creators do Norte Global (brancos, inglês, acesso bancário) ganham milhares; Sul Global (racializados, barreiras) disputam migalhas — colonialismo sexual digital',
-        connections: ['onlyfans', 'privacy-brasil', 'imperialismo-digital', 'divisao-internacional-trabalho', 'racismo-algoritmos'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'comunidades-dissidentes-online': {
-        name: 'Comunidades Dissidentes Online',
-        description: 'Internet como espaço vital para LGBTQIA+ (informação, solidariedade, comunidade), mas sujeito a shadowbanning e censura algorítmica',
-        connections: ['grindr', 'tumblr-porn-ban', 'shadowbanning', 'moderacao-conteudo-ia', 'resistencia'],
-        color: '#8b5cf6',
-        layer: 1
-    },
-    'tumblr-porn-ban': {
-        name: 'Tumblr Porn Ban (2018)',
-        description: 'Banimento total de conteúdo adulto no Tumblr — algoritmo deletou arte queer, educação sexual, nus artísticos. Genocídio cultural digital',
-        connections: ['comunidades-dissidentes-online', 'shadowbanning', 'censura-algoritmica', 'moderacao-conteudo-ia', 'apple-censura'],
-        color: '#991b1b',
-        layer: -1
-    },
-    'apple-censura': {
-        name: 'Apple como Censora',
-        description: 'Tumblr foi removido da App Store por "não moderar adequadamente" — pressão de Apple/anunciantes levou ao ban que destruiu comunidade queer',
-        connections: ['tumblr-porn-ban', 'big-tech', 'censura-algoritmica', 'puritanismo-algoritmico'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'shadowbanning': {
-        name: 'Shadowbanning de Conteúdo Queer',
-        description: 'Redução invisível de alcance de posts LGBTQIA+ (não avisa, só reduz visibilidade) — hashtags #gay, #lesbian, #trans têm 40-60% menos alcance',
-        connections: ['moderacao-conteudo-ia', 'censura-algoritmica', 'instagram-trans', 'discriminacao-algoritmica', 'necropolitica-digital'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'moderacao-conteudo-ia': {
-        name: 'Moderação de Conteúdo via IA',
-        description: 'Algoritmos treinados com viés puritano branco — corpos racializados/trans flagrados como "sexuais" mesmo em contextos não-eróticos',
-        connections: ['shadowbanning', 'tumblr-porn-ban', 'instagram-trans', 'puritanismo-algoritmico', 'racismo-algoritmos'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'puritanismo-algoritmico': {
-        name: 'Puritanismo Algorítmico',
-        description: 'Valores sexuais anglo-saxões codificados em algoritmos de moderação — sexo é "obsceno", violência é "jornalística". Eurocentrismo.',
-        connections: ['moderacao-conteudo-ia', 'shadowbanning', 'tumblr-porn-ban', 'colonialismo-digital'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'instagram-trans': {
-        name: 'Instagram e Invisibilização Trans',
-        description: 'Posts de pessoas trans têm 37% menos alcance; fotos pós-cirurgia removidas como "nudez"; hashtags trans marcadas "sensíveis" — transfobia estrutural codificada',
-        connections: ['shadowbanning', 'moderacao-conteudo-ia', 'transfobia', 'discriminacao-algoritmica', 'necropolitica-digital'],
-        color: '#991b1b',
-        layer: 0
-    },
-    'plataformizacao-religiao': {
-        name: 'Plataformização da Religião',
-        description: 'Fé transformada em produto midiático — streaming de cultos, dízimo via Pix, CRM religioso, gamificação espiritual',
-        connections: ['igreja-digital', 'influencer-fe', 'dizimo-pix', 'teologia-prosperidade', 'excedente-comportamental'],
-        color: '#a855f7',
-        layer: 0
-    },
-    'igreja-digital': {
-        name: 'Igreja Digital',
-        description: 'Templos como impérios de mídia — streaming 4K, multiplataforma (YouTube, Instagram, TikTok, WhatsApp), comunidade 24/7 global',
-        connections: ['igreja-universal', 'plataformizacao-religiao', 'influencer-fe', 'dizimo-pix', 'metaverso-cristao'],
-        color: '#8b5cf6',
-        layer: 0
-    },
-    'igreja-universal': {
-        name: 'Igreja Universal do Reino de Deus',
-        description: 'Pioneira em mediatização religiosa no Brasil — Rede Record, Templo de Salomão, streaming global, faturamento R$ 1bi/ano dízimos + R$ 3-5bi Record',
-        connections: ['igreja-digital', 'teologia-prosperidade', 'dizimo-pix', 'edir-macedo', 'expansao-africa'],
-        color: '#7c3aed',
-        layer: -1
-    },
-    'edir-macedo': {
-        name: 'Edir Macedo',
-        description: 'Fundador da Igreja Universal (1977), bispo-empresário, dono da Record — exemplo de mercantilização total da fé',
-        connections: ['igreja-universal', 'teologia-prosperidade', 'influencer-fe'],
-        color: '#6d28d9',
-        layer: 0
-    },
-    'dizimo-pix': {
-        name: 'Dízimo via Pix',
-        description: 'Apps de igreja permitem ofertas em tempo real durante cultos via Pix/cartão — gamificação (doar X = receber Y bênçãos)',
-        connections: ['igreja-digital', 'igreja-universal', 'plataformizacao-religiao', 'extracao-dados-religiosos', 'gamificacao'],
-        color: '#a855f7',
-        layer: 0
-    },
-    'extracao-dados-religiosos': {
-        name: 'Extração de Dados Religiosos',
-        description: 'Apps de igreja coletam CPF, renda, histórico de dízimo, horários de uso — dados vendidos a empresas (empréstimo, seguro, funerárias)',
-        connections: ['dizimo-pix', 'excedente-comportamental', 'vigilancia-digital', 'crm-religioso'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'crm-religioso': {
-        name: 'CRM Religioso',
-        description: 'Customer Relationship Management aplicado à fé — cadastro de fiéis, segmentação, automação ("Notamos sua ausência, ore conosco hoje às 19h")',
-        connections: ['igreja-digital', 'extracao-dados-religiosos', 'gamificacao', 'dizimo-pix'],
-        color: '#a855f7',
-        layer: 0
-    },
-    'metaverso-cristao': {
-        name: 'Metaverso Cristão',
-        description: 'Cultos em VRChat/Roblox, avatares abraçam, dízimo em cripto — fé como experiência totalmente mediada por plataformas',
-        connections: ['igreja-digital', 'plataformizacao-religiao', 'dessacralizacao'],
-        color: '#8b5cf6',
-        layer: 1
-    },
-    'influencer-fe': {
-        name: 'Influenciador da Fé',
-        description: 'Pastores/padres como celebridades digitais — autoridade via marca pessoal, múltiplos fluxos de receita (dízimos, livros, cursos, merchandising)',
-        connections: ['silas-malafaia', 'padre-fabio-melo', 'igreja-digital', 'teologia-prosperidade', 'trabalho-afetivo'],
-        color: '#a855f7',
-        layer: 0
-    },
-    'silas-malafaia': {
-        name: 'Silas Malafaia',
-        description: 'Pastor-celebridade (2,3M seguidores), exemplo de influencer de fé — vende prosperidade, apoia Bolsonarismo, lucra com livros/eventos',
-        connections: ['influencer-fe', 'teologia-prosperidade', 'bolsonarismo', 'gabinete-odio'],
-        color: '#7c3aed',
-        layer: 0
-    },
-    'padre-fabio-melo': {
-        name: 'Padre Fábio de Melo',
-        description: 'Padre-cantor-escritor (8,5M seguidores) — autoajuda católica, bem-estar emocional, patrimônio R$ 15-30M. Mercantilização do sofrimento',
-        connections: ['influencer-fe', 'catolicismo-plataforma', 'trabalho-afetivo', 'mercantilizacao-sofrimento'],
-        color: '#8b5cf6',
-        layer: 0
-    },
-    'catolicismo-plataforma': {
-        name: 'Catolicismo de Plataforma',
-        description: 'Diferente de neopentecostais, católicos vendem bem-estar emocional + autoajuda cristã, não milagre/prosperidade',
-        connections: ['padre-fabio-melo', 'influencer-fe', 'igreja-digital'],
-        color: '#a855f7',
-        layer: 0
-    },
-    'teologia-prosperidade': {
-        name: 'Teologia da Prosperidade',
-        description: 'Doutrina neopentecostal: Deus recompensa fé/dízimos com riqueza material — transforma relação com divino em transação comercial',
-        connections: ['igreja-universal', 'edir-macedo', 'influencer-fe', 'silas-malafaia', 'mercantilizacao-fe'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'mercantilizacao-fe': {
-        name: 'Mercantilização da Fé',
-        description: 'Esperança/sentido/comunidade transformados em produtos — venda de água ungida, sal abençoado, cursos de fé, tudo via e-commerce',
-        connections: ['teologia-prosperidade', 'igreja-universal', 'influencer-fe', 'subsuncao-real-vida'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'mindfulness-capitalista': {
-        name: 'Mindfulness Capitalista',
-        description: 'Apps de meditação (Headspace, Calm) transformam budismo em produto de bem-estar mental — anestésico social, não libertação',
-        connections: ['influencer-fe', 'gamificacao', 'mercantilizacao-fe', 'subsuncao-real-vida'],
-        color: '#a855f7',
-        layer: 0
-    },
-    'gabinete-odio': {
-        name: 'Gabinete do Ódio',
-        description: 'Núcleo de operadores digitais do governo Bolsonaro (2019-22) — coordenação de desinformação, pânico moral, ataques via WhatsApp/Telegram',
-        connections: ['bolsonarismo', 'whatsapp-fundamentalismo', 'fake-news-religiosa', 'panico-moral', 'silas-malafaia'],
-        color: '#991b1b',
-        layer: -1
-    },
-    'whatsapp-fundamentalismo': {
-        name: 'WhatsApp como Infraestrutura do Fundamentalismo',
-        description: 'Redes criptografadas mobilizam grupos evangélicos — cascata de mensagens, linguagem religiosa + política, áudio/vídeo emocional',
-        connections: ['gabinete-odio', 'fake-news-religiosa', 'panico-moral', 'criptografia-escudo', 'bolsonarismo'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'criptografia-escudo': {
-        name: 'Criptografia como Escudo',
-        description: 'WhatsApp usa criptografia ponta-a-ponta — fake news circula sem consequência, pois plataforma não vê, Justiça não acessa',
-        connections: ['whatsapp-fundamentalismo', 'gabinete-odio', 'fake-news-religiosa'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'fake-news-religiosa': {
-        name: 'Fake News Religiosa',
-        description: 'Desinformação mistura versículos bíblicos + teoria conspiratória + anticomunismo — impossível separar fé de fake',
-        connections: ['gabinete-odio', 'whatsapp-fundamentalismo', 'kit-gay', 'panico-moral', 'necropolitica-antivacina'],
-        color: '#991b1b',
-        layer: 0
-    },
-    'kit-gay': {
-        name: 'Fake News do "Kit Gay"',
-        description: 'Material didático "Escola Sem Homofobia" (2011) distorcido como "kit pornográfico pra ensinar crianças a ser gay" — circulou por 7+ anos, elegeu Bolsonaro',
-        connections: ['fake-news-religiosa', 'panico-moral', 'bolsonarismo', 'gabinete-odio'],
-        color: '#991b1b',
-        layer: -1
-    },
-    'panico-moral': {
-        name: 'Pânico Moral',
-        description: 'Onda de medo desproporcional contra grupo/prática cultural ("ideologia de gênero", "kit gay") — mobiliza votos, não precisa ser verdade',
-        connections: ['fake-news-religiosa', 'kit-gay', 'ideologia-genero', 'whatsapp-fundamentalismo'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'ideologia-genero': {
-        name: '"Ideologia de Gênero"',
-        description: 'Termo pejorativo usado por fundamentalistas para atacar educação sexual, direitos LGBTQIA+, estudos de gênero — não existe academicamente',
-        connections: ['panico-moral', 'fake-news-religiosa', 'kit-gay', 'bolsonarismo'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'necropolitica-antivacina': {
-        name: 'Necropolítica Antivacina',
-        description: 'Grupos religiosos brasileiros disseminaram fake news antivacina COVID (chip de Bill Gates, "marca da Besta") — 150-200mil mortes evitáveis',
-        connections: ['fake-news-religiosa', 'gabinete-odio', 'bolsonarismo', 'necropolitica-digital', 'algoritmos-matam'],
-        color: '#7f1d1d',
-        layer: -1
-    },
-    'algoritmos-matam': {
-        name: 'Algoritmos Matam',
-        description: 'Plataformas amplificaram desinformação antivacina (alto engajamento = viralização); WhatsApp protegeu divulgadores com criptografia. Genocídio algorítmico-religioso',
-        connections: ['necropolitica-antivacina', 'necropolitica-digital', 'whatsapp-fundamentalismo', 'gabinete-odio'],
-        color: '#7f1d1d',
-        layer: 0
-    },
-    'subsuncao-real-vida': {
-        name: 'Subsunção Real da Vida',
-        description: 'Capitalismo captura totalidade da existência (desejo, fé, afetos, sono) — não apenas trabalho produtivo, mas alma inteira vira mercadoria',
-        connections: ['plataformizacao-sexualidade', 'plataformizacao-religiao', 'trabalho-afetivo', 'excedente-comportamental', 'mercantilizacao-fe'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'alma-algoritmo': {
-        name: 'A Alma no Algoritmo',
-        description: 'Algoritmo como intermediário de relações com outros e com transcendente — busca por conexão/sentido capturada para maximizar lucro',
-        connections: ['subsuncao-real-vida', 'plataformizacao-sexualidade', 'plataformizacao-religiao', 'fetiche-algoritmo'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'ambivalencia-tecnologia': {
-        name: 'Ambivalência Irredutível da Tecnologia',
-        description: 'Mesma ferramenta liberta (comunidades LGBTQIA+) e oprime (extração capitalista) — contradição não se resolve tecnicamente, é luta política',
-        connections: ['comunidades-dissidentes-online', 'grindr', 'onlyfans', 'resistencia', 'plataformas-cooperativas'],
-        color: '#8b5cf6',
-        layer: 1
-    },
-    'necropolitica-algoritmica': {
-        name: 'Necropolítica Algorítmica',
-        description: 'Algoritmos "deixam morrer" ao invisibilizar conteúdo vital, amplificar desinformação mortal, expor usuários vulneráveis — morte social/literal',
-        connections: ['shadowbanning', 'instagram-trans', 'necropolitica-antivacina', 'grindr-vigilancia', 'necropolitica-digital'],
-        color: '#7f1d1d',
-        layer: 0
-    },
-
-    // ========================================
-    // CAPÍTULO 14: ENGENHARIA DO VÍCIO — JOGOS, APOSTAS E EXTRAÇÃO DO GOZO
-    // ========================================
-    // Conceitos centrais: design viciante, neurociência da recompensa, apostas/jogos como casino,
-    // genealogia histórica, casos globais, movimentos de resistência
-    
-    'engenharia-vicio': {
-        name: 'Engenharia do Vício',
-        description: 'Uso sistemático de psicologia comportamental e neurociência para criar produtos que geram dependência compulsiva',
-        connections: ['skinner-caixa', 'recompensa-variavel', 'gaas', 'loot-box', 'dopamina', 'gozo'],
-        color: '#dc2626',
-        layer: 0 // Presente
-    },
-    'gaas': {
-        name: 'Games as a Service (GaaS)',
-        description: 'Modelo de negócio: não vender jogo completo, mas manter jogador engajado indefinidamente via updates/passes/microtransações',
-        connections: ['engenharia-vicio', 'loot-box', 'recompensa-variavel', 'fomo', 'plataformizacao'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'loot-box': {
-        name: 'Loot Box (Caixa de Recompensa)',
-        description: 'Caixa virtual com recompensa aleatória — mecanicamente idêntica a slot machine, mas não regulada como jogo de azar',
-        connections: ['gaas', 'recompensa-variavel', 'skinner-caixa', 'dopamina', 'regulacao-loot-box'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'skinner-caixa': {
-        name: 'Caixa de Skinner',
-        description: 'Dispositivo experimental de B.F. Skinner (1930s): rato pressiona alavanca para comida — metáfora para apps viciantes',
-        connections: ['recompensa-variavel', 'engenharia-vicio', 'behaviorismo', 'fogg-modelo'],
-        color: '#dc2626',
-        layer: -1 // Passado
-    },
-    'recompensa-variavel': {
-        name: 'Recompensa Variável Intermitente',
-        description: 'Recompensa imprevisível cria comportamento mais compulsivo que recompensa constante (descoberta de Skinner)',
-        connections: ['skinner-caixa', 'loot-box', 'dopamina', 'slot-machine', 'refresh-feed'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'dopamina': {
-        name: 'Dopamina e Sistema de Recompensa',
-        description: 'Neurotransmissor liberado na ANTECIPAÇÃO de recompensa (não ao recebê-la) — base neurológica do vício',
-        connections: ['recompensa-variavel', 'nucleo-accumbens', 'schultz-dopamina', 'superstimulo', 'craving'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'nucleo-accumbens': {
-        name: 'Núcleo Accumbens',
-        description: 'Região cerebral onde dopamina é liberada — centro do sistema de recompensa',
-        connections: ['dopamina', 'superstimulo', 'dessensibilizacao'],
-        color: '#f97316',
-        layer: 0
-    },
-    'schultz-dopamina': {
-        name: 'Pesquisas de Wolfram Schultz',
-        description: 'Neurocientista (Cambridge) provou que dopamina dispara na ANTECIPAÇÃO, não na recompensa — imprevisibilidade maximiza dopamina',
-        connections: ['dopamina', 'recompensa-variavel', 'nucleo-accumbens'],
-        color: '#f97316',
-        layer: -1
-    },
-    'superstimulo': {
-        name: 'Superstímulo',
-        description: 'Estímulo artificial (drogas, jogos, redes sociais) muito mais intenso que estímulos naturais — sistema de recompensa não evoluiu para isso',
-        connections: ['dopamina', 'nucleo-accumbens', 'vicio-digital', 'dessensibilizacao'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'dessensibilizacao': {
-        name: 'Dessensibilização (Tolerância)',
-        description: 'Cérebro reduz receptores de dopamina após exposição repetida — precisa doses cada vez maiores para mesmo efeito',
-        connections: ['superstimulo', 'dopamina', 'sensibilizacao', 'vicio-quimico-vs-comportamental'],
-        color: '#f97316',
-        layer: 0
-    },
-    'sensibilizacao': {
-        name: 'Sensibilização (Craving)',
-        description: 'Cérebro se torna hiperreativo a PISTAS associadas ao vício (som de notificação, anúncio de aposta) — dispara desejo automaticamente',
-        connections: ['dessensibilizacao', 'craving', 'dopamina'],
-        color: '#f97316',
-        layer: 0
-    },
-    'craving': {
-        name: 'Craving (Fissura)',
-        description: 'Desejo compulsivo disparado por pistas ambientais — redução de prazer + aumento de compulsão',
-        connections: ['sensibilizacao', 'dopamina', 'gozo'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'gozo': {
-        name: 'Gozo (conceito lacaniano)',
-        description: 'Prazer excessivo, repetitivo, mortífero — não mais prazer, mas compulsão de repetição (pulsão de morte)',
-        connections: ['craving', 'engenharia-vicio', 'sujeito-automatico', 'vicio-valor'],
-        color: '#7f1d1d',
-        layer: 0
-    },
-    'vicio-valor': {
-        name: 'Viciados em Valor',
-        description: 'Viciado preso em loop de compulsão = encarnação perfeita do Sujeito Automático do Valor (D-M-D\' infinito)',
-        connections: ['gozo', 'sujeito-automatico', 'engenharia-vicio', 'capital-ficticio'],
-        color: '#7f1d1d',
-        layer: 0
-    },
-    'vicio-quimico-vs-comportamental': {
-        name: 'Vício Químico vs Comportamental',
-        description: 'Estudo Cambridge 2017: jogadores compulsivos têm ativação cerebral IDÊNTICA a dependentes químicos',
-        connections: ['dessensibilizacao', 'dopamina', 'gozo'],
-        color: '#f97316',
-        layer: 0
-    },
-    
-    // Genealogia histórica do design viciante
-    'slot-machine': {
-        name: 'Slot Machine (Caça-Níqueis)',
-        description: 'Máquina de apostas de Las Vegas (1960s+) — laboratório original do design viciante: recompensa variável, sons, celebração de "quase-ganhar"',
-        connections: ['recompensa-variavel', 'schull-addiction-design', 'casino-fisico', 'loot-box'],
-        color: '#dc2626',
-        layer: -1
-    },
-    'schull-addiction-design': {
-        name: 'Natasha Dow Schüll: Addiction by Design',
-        description: 'Antropóloga documenta design de slots em Las Vegas — objetivo mudou de "ganhar jackpot" para "entrar na zona" (estado dissociativo)',
-        connections: ['slot-machine', 'casino-fisico', 'engenharia-vicio'],
-        color: '#f97316',
-        layer: -1
-    },
-    'casino-fisico': {
-        name: 'Casino Físico (Las Vegas 1960-90)',
-        description: 'Arquitetura de vício: sem relógios/janelas, labirintos, luzes/sons constantes, bebidas grátis — desorientação temporal',
-        connections: ['slot-machine', 'schull-addiction-design', 'casino-online'],
-        color: '#dc2626',
-        layer: -1
-    },
-    'casino-online': {
-        name: 'Casino Online (1990-2010)',
-        description: 'Eliminação de barreiras físicas + DADOS EM TEMPO REAL — personalização algorítmica: se você vai desistir, sistema oferece bônus',
-        connections: ['casino-fisico', 'feedback-cibernetico-vicio', 'cassino-bolso', 'bets-brasil'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'feedback-cibernetico-vicio': {
-        name: 'Feedback Cibernético do Vício',
-        description: 'Casino online = sistema cibernético que ajusta em tempo real para manter jogador no "estado ideal" de compulsão',
-        connections: ['casino-online', 'feedback-negativo', 'homeostase-perversa'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'homeostase-perversa': {
-        name: 'Homeostase Perversa',
-        description: 'Algoritmo busca "equilíbrio" — nem desistindo (0 lucro), nem ganhando demais (prejuízo) — manter no loop infinito',
-        connections: ['feedback-cibernetico-vicio', 'homeostase', 'engenharia-vicio'],
-        color: '#7f1d1d',
-        layer: 0
-    },
-    'fogg-modelo': {
-        name: 'B.J. Fogg: Behavior Model',
-        description: 'Psicólogo Stanford ensina design de comportamento: Motivação + Habilidade (facilidade) + Gatilho (notificação) = Ação',
-        connections: ['skinner-caixa', 'stanford-lab-persuasivo', 'engenharia-vicio', 'dark-patterns'],
-        color: '#dc2626',
-        layer: -1
-    },
-    'stanford-lab-persuasivo': {
-        name: 'Persuasive Technology Lab (Stanford)',
-        description: 'B.J. Fogg fundou lab em 1998 — alunos incluem fundadores Instagram, autor de "Hooked" — ensino explícito de manipulação',
-        connections: ['fogg-modelo', 'eyal-hooked', 'engenharia-vicio'],
-        color: '#dc2626',
-        layer: -1
-    },
-    'eyal-hooked': {
-        name: 'Nir Eyal: Hooked',
-        description: 'Livro-manual de como criar "hábitos" (eufemismo para vício) — ex-aluno de Fogg, depois se arrependeu publicamente (2019)',
-        connections: ['stanford-lab-persuasivo', 'fogg-modelo', 'engenharia-vicio'],
-        color: '#f97316',
-        layer: 0
-    },
-    
-    // Apostas esportivas (Bets)
-    'bets-apostas': {
-        name: 'Apostas Esportivas (Bets)',
-        description: 'Transformar paixão do torcedor em ativo financeiro — "acreditar" no time vira ato de investimento',
-        connections: ['influencer-bets', 'casa-sempre-vence', 'bets-brasil', 'epidemia-bets-brasil'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'influencer-bets': {
-        name: 'Influenciador de Bets',
-        description: 'Figura que vende ilusão de vencer acaso via "análise" — ganha não com apostas, mas com código de afiliado e cursos',
-        connections: ['bets-apostas', 'piramide-digital', 'afiliados-modelo'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'afiliados-modelo': {
-        name: 'Modelo de Afiliados',
-        description: 'Influencer ganha 30-50% do que seus seguidores PERDEM — incentivo financeiro para promover vício',
-        connections: ['influencer-bets', 'piramide-digital', 'epidemia-bets-brasil'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'casa-sempre-vence': {
-        name: '"A Casa Sempre Vence"',
-        description: 'Probabilidades estatísticas garantem que, no agregado, plataforma sempre lucra — apostador individual pode ganhar, massa sempre perde',
-        connections: ['bets-apostas', 'ilusao-controle'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'ilusao-controle': {
-        name: 'Ilusão de Controle',
-        description: 'Crença de que conhecimento/habilidade pode vencer acaso — erro cognitivo explorado por apostas/jogos',
-        connections: ['casa-sempre-vence', 'bets-apostas', 'gozo'],
-        color: '#f97316',
-        layer: 0
-    },
-    'bets-brasil': {
-        name: 'Regulamentação Bets Brasil (Lei 14.790/2023)',
-        description: 'Governo legalizou apostas online com taxação ridícula (18%) e SEM proibir publicidade — Estado como sócio do vício',
-        connections: ['epidemia-bets-brasil', 'bets-apostas', 'clubes-outdoors'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'epidemia-bets-brasil': {
-        name: 'Epidemia das Bets (Brasil 2023-24)',
-        description: '25 milhões apostaram, R$ 100bi/ano movimentados — trabalhadores perdendo salário inteiro, casos de suicídio, classe C/D/E mais afetada',
-        connections: ['bets-brasil', 'afiliados-modelo', 'necropolitica-bets', 'agiota-digital'],
-        color: '#7f1d1d',
-        layer: 0
-    },
-    'clubes-outdoors': {
-        name: 'Clubes como Outdoors de Bets',
-        description: 'Todos 20 times Série A viraram outdoors (camisas, placas, naming rights) — clubes em crise vendem integridade por patrocínio',
-        connections: ['bets-brasil', 'epidemia-bets-brasil', 'corrupcao-esportiva'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'corrupcao-esportiva': {
-        name: 'Corrupção de Resultados',
-        description: 'Apostas online facilitam manipulação de jogos — jogadores/árbitros subornados para garantir resultados específicos',
-        connections: ['clubes-outdoors', 'bets-apostas'],
-        color: '#7f1d1d',
-        layer: 0
-    },
-    'necropolitica-bets': {
-        name: 'Necropolítica via Bets',
-        description: 'Jovens negros da periferia com salário R$ 1.400 perdendo tudo — "deixar morrer por endividamento" enquanto extrai lucro até o fim',
-        connections: ['epidemia-bets-brasil', 'necropolitica-digital', 'agiota-digital', 'periferia-laboratorio'],
-        color: '#7f1d1d',
-        layer: 0
-    },
-    'agiota-digital': {
-        name: 'Casa de Apostas como Agiota Digital',
-        description: 'Facilidade de depositar via Pix + algoritmo viciante = nova agiotagem sem violência física, mas com violência estrutural',
-        connections: ['necropolitica-bets', 'epidemia-bets-brasil', 'cassino-bolso'],
-        color: '#7f1d1d',
-        layer: 0
-    },
-    'periferia-laboratorio': {
-        name: 'Periferia como Laboratório',
-        description: 'População precarizada, sem educação financeira, desemprego alto — teste de até onde pode-se extrair valor de quem não tem nada',
-        connections: ['necropolitica-bets', 'epidemia-bets-brasil', 'extrativismo'],
-        color: '#7f1d1d',
-        layer: 0
-    },
-    
-    // Cassino no bolso
-    'cassino-bolso': {
-        name: 'Cassino no Bolso',
-        description: 'Eliminação RADICAL de atrito: disponível 24/7, a um clique — remove "freios" naturais do comportamento',
-        connections: ['casino-online', 'jogo-tigrinho', 'dark-patterns', 'acessibilidade-infinita'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'acessibilidade-infinita': {
-        name: 'Acessibilidade Infinita',
-        description: 'Casino físico tem barreiras (deslocamento, troca de dinheiro) — online não tem nenhuma, potencializa vício',
-        connections: ['cassino-bolso', 'casino-online', '24-7-capitalismo'],
-        color: '#dc2626',
-        layer: 0
-    },
-    '24-7-capitalismo': {
-        name: 'Capitalismo 24/7',
-        description: 'Jonathan Crary: capitalismo busca eliminar sono como última barreira — cripto/apostas nunca fecham',
-        connections: ['acessibilidade-infinita', 'cripto-trading-vicio', 'extrativismo'],
-        color: '#7f1d1d',
-        layer: 0
-    },
-    'jogo-tigrinho': {
-        name: 'Jogo do Tigrinho (Brasil)',
-        description: 'Slot online disfarçado de "jogo de habilidade" — viral entre população precarizada, promessa de "ganho rápido"',
-        connections: ['cassino-bolso', 'epidemia-bets-brasil', 'slot-machine'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'dark-patterns': {
-        name: 'Dark Patterns (Padrões Sombrios)',
-        description: 'Design manipulativo: depósito fácil vs saque difícil, celebração de pequenas vitórias, "quase-ganhar" para incentivar mais tentativa',
-        connections: ['cassino-bolso', 'engenharia-vicio', 'opacidade'],
-        color: '#dc2626',
-        layer: 0
-    },
-    
-    // Criptomoedas e NFTs como vício
-    'cripto-trading-vicio': {
-        name: 'Trading de Cripto como Vício',
-        description: 'Mercado 24/7 + notificações constantes + gamificação (confetes no Robinhood) = slot machine financeira',
-        connections: ['24-7-capitalismo', 'robinhood-gamificacao', 'nft-loot-box'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'robinhood-gamificacao': {
-        name: 'Robinhood: Gamificação do Trading',
-        description: 'App de ações com confetes virtuais, gráficos estilo videogame — multado US$ 70mi (2020) por "gamificação de investimentos"',
-        connections: ['cripto-trading-vicio', 'dark-patterns', 'engenharia-vicio'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'nft-loot-box': {
-        name: 'NFTs como Loot Box Descentralizada',
-        description: 'NFTs de colecionáveis = exatamente mesma mecânica de loot box (comprar sem saber valor) — blockchain não muda psicologia',
-        connections: ['loot-box', 'cripto-trading-vicio', 'axie-infinity'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'axie-infinity': {
-        name: 'Axie Infinity (Filipinas 2021)',
-        description: 'Jogo "play-to-earn": pobres jogavam 10-12h/dia por criptomoedas — token colapsou 95%, revelou-se trabalho precarizado + pirâmide',
-        connections: ['nft-loot-box', 'cripto-trading-vicio', 'trabalho-precarizado'],
-        color: '#7f1d1d',
-        layer: 0
-    },
-    
-    // Casos globais de regulação
-    'china-controle-jogos': {
-        name: 'China: Limite de 90min/dia',
-        description: 'Governo chinês (2019) limitou jogos para menores: 90min dias úteis, 3h feriados, nada 22h-8h — chamou videogames de "ópio espiritual"',
-        connections: ['regulacao-loot-box', 'guerras-opio', 'resistencia-regulacao'],
-        color: '#22c55e',
-        layer: 0
-    },
-    'guerras-opio': {
-        name: 'Guerras do Ópio (1839-60)',
-        description: 'Império Britânico viciou China em ópio para criar mercado — paralelo histórico: design viciante digital = colonialismo cognitivo',
-        connections: ['china-controle-jogos', 'extrativismo', 'necropolitica-bets'],
-        color: '#dc2626',
-        layer: -1
-    },
-    'eua-lobby-cassino': {
-        name: 'EUA: Lobby Bloqueia Regulação',
-        description: 'Indústria de jogos doou milhões para Congresso, ESRB (autorregulação) é financiada por empresas — conflito de interesses',
-        connections: ['regulacao-loot-box', 'resistencia-regulacao'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'europa-fragmentada': {
-        name: 'Europa: Regulação Fragmentada',
-        description: 'Bélgica/Holanda baniram loot boxes (2018), UK fez revisão — mas empresas simplesmente bloqueiam IPs desses países',
-        connections: ['regulacao-loot-box', 'belgica-ban-loot-box', 'resistencia-regulacao'],
-        color: '#f97316',
-        layer: 0
-    },
-    'belgica-ban-loot-box': {
-        name: 'Bélgica Bane Loot Boxes (2018)',
-        description: 'Primeiro país a declarar loot boxes ilegais sob leis de jogo de azar — EA removeu de FIFA, mas só na Bélgica',
-        connections: ['europa-fragmentada', 'loot-box', 'regulacao-loot-box'],
-        color: '#22c55e',
-        layer: 0
-    },
-    'regulacao-loot-box': {
-        name: 'Movimento por Regulação de Loot Boxes',
-        description: 'Pesquisadores, pais, gamers pressionam governos — classificar como jogo de azar, proibir para menores',
-        connections: ['belgica-ban-loot-box', 'europa-fragmentada', 'china-controle-jogos', 'resistencia-vicio'],
-        color: '#22c55e',
-        layer: 1
-    },
-    
-    // Psicologia social do vício
-    'vergonha-vicio': {
-        name: 'Vergonha como Controle',
-        description: 'Narrativa "responsabilidade pessoal" culpa viciado, não design — privatização do fracasso, socialização do lucro',
-        connections: ['neoliberalismo', 'vicio-nao-falha-moral', 'isolamento-vicio'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'vicio-nao-falha-moral': {
-        name: 'Vício ≠ Falha Moral',
-        description: 'Vício é ESTRUTURALMENTE PRODUZIDO por design corporativo + precarização social — não fraqueza individual',
-        connections: ['vergonha-vicio', 'engenharia-vicio', 'resistencia-vicio'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'isolamento-vicio': {
-        name: 'Isolamento e Invisibilidade',
-        description: 'Vício digital é invisível (vs álcool/cigarro) — facilita negação, atrasa intervenção (média 7-10 anos)',
-        connections: ['vergonha-vicio', 'comunidades-recuperacao'],
-        color: '#f97316',
-        layer: 0
-    },
-    'comunidades-recuperacao': {
-        name: 'Comunidades de Recuperação',
-        description: 'r/problemgambling, Gamblers Anonymous — apoio mútuo + POLITIZAÇÃO do vício (reconhecer sistema predatório)',
-        connections: ['isolamento-vicio', 'resistencia-vicio', 'gamblers-anonymous'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'gamblers-anonymous': {
-        name: 'Gamblers Anonymous',
-        description: 'Programa de 12 Passos para jogo compulsivo — modelo AA aplicado a apostas',
-        connections: ['comunidades-recuperacao', 'resistencia-vicio'],
-        color: '#22c55e',
-        layer: 1
-    },
-    
-    // Responsabilidade corporativa
-    'facebook-files-vicio': {
-        name: 'Facebook Files: "Pioramos Imagem Corporal"',
-        description: 'Documentos vazados (2021): Facebook sabia há anos que Instagram causa depressão em adolescentes, mas priorizou engagement',
-        connections: ['haugen-whistleblower', 'conhecimento-corporativo-oculto', 'lucro-acima-saude'],
-        color: '#7f1d1d',
-        layer: 0
-    },
-    'haugen-whistleblower': {
-        name: 'Frances Haugen (Whistleblower)',
-        description: 'Ex-funcionária vazou Facebook Files — provou decisão consciente de priorizar lucro sobre saúde mental',
-        connections: ['facebook-files-vicio', 'conhecimento-corporativo-oculto'],
-        color: '#22c55e',
-        layer: 0
-    },
-    'zynga-whales': {
-        name: 'Caso Zynga: "Ordenhar Baleias"',
-        description: 'Emails internos (2012): FarmVille designers discutiam como identificar "whales" e criar recursos para "ordenhar" esses usuários',
-        connections: ['whales-usuarios', 'conhecimento-corporativo-oculto', 'gaas'],
-        color: '#7f1d1d',
-        layer: 0
-    },
-    'whales-usuarios': {
-        name: 'Whales (Baleias)',
-        description: 'Termo da indústria: usuários que gastam desproporcionalmente — representam 40-60% da receita de jogos/apostas predatórios',
-        connections: ['zynga-whales', 'diversao-responsavel-falacia', 'engenharia-vicio'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'diversao-responsavel-falacia': {
-        name: 'Falácia da "Diversão Responsável"',
-        description: 'Empresas alegam "só pequena minoria vicia" — mas viciados são 40-60% da receita. Não é efeito colateral, É O MODELO DE NEGÓCIO',
-        connections: ['whales-usuarios', 'conhecimento-corporativo-oculto', 'vicio-nao-falha-moral'],
-        color: '#7f1d1d',
-        layer: 0
-    },
-    'conhecimento-corporativo-oculto': {
-        name: 'Conhecimento Corporativo Oculto',
-        description: 'Paralelo com Cigarette Papers (1990s): tabaco sabia desde 1960 que causa câncer, mas ocultou — Big Tech repete padrão',
-        connections: ['facebook-files-vicio', 'zynga-whales', 'haugen-whistleblower', 'lucro-acima-saude'],
-        color: '#7f1d1d',
-        layer: 0
-    },
-    'lucro-acima-saude': {
-        name: 'Lucro Acima de Saúde Mental',
-        description: 'Decisão corporativa consciente: sabem que design causa dano, mas mudar reduziria engagement/receita',
-        connections: ['conhecimento-corporativo-oculto', 'facebook-files-vicio', 'diversao-responsavel-falacia'],
-        color: '#7f1d1d',
-        layer: 0
-    },
-    
-    // Resistência e alternativas
-    'resistencia-vicio': {
-        name: 'Resistência à Engenharia do Vício',
-        description: 'Movimento conecta experiência pessoal a luta política: class actions, boicotes, pressão regulatória, design ético',
-        connections: ['regulacao-loot-box', 'comunidades-recuperacao', 'class-action-loot-box', 'slow-gaming', 'design-etico'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'class-action-loot-box': {
-        name: 'Class Actions contra Loot Boxes',
-        description: 'Pais processam EA (2020, Canadá) — loot boxes violam leis de proteção ao consumidor. EA pagou US$ 10mi sem admitir culpa',
-        connections: ['resistencia-vicio', 'loot-box', 'regulacao-loot-box'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'boicote-battlefront': {
-        name: 'Boicote Star Wars Battlefront II (2017)',
-        description: 'Comunidade gamer revoltou contra loot boxes predatórias — comentário da EA = mais downvotado da história do Reddit (668k)',
-        connections: ['resistencia-vicio', 'loot-box', 'class-action-loot-box'],
-        color: '#22c55e',
-        layer: 0
-    },
-    'slow-gaming': {
-        name: 'Movimento Slow Gaming',
-        description: 'Jogos que RESPEITAM tempo do jogador — Journey, Stardew Valley, Hollow Knight — sem microtransações, sem pressão temporal',
-        connections: ['resistencia-vicio', 'design-etico', 'stardew-valley'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'stardew-valley': {
-        name: 'Stardew Valley (Caso)',
-        description: 'Jogo feito por 1 pessoa (Eric Barone), vendeu 20mi+ cópias — prova que lucratividade ≠ predatoriedade',
-        connections: ['slow-gaming', 'design-etico'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'design-etico': {
-        name: 'Design Ético (Anti-Dark-Patterns)',
-        description: 'Celeste (assist mode), Hades (progressão sem FOMO) — escolhas de design que priorizam bem-estar sobre maximização de engagement',
-        connections: ['slow-gaming', 'resistencia-vicio', 'stardew-valley'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'fomo': {
-        name: 'FOMO (Fear of Missing Out)',
-        description: 'Medo de ficar de fora — explorado por eventos temporários, passes de batalha, recompensas de login diário',
-        connections: ['gaas', 'engenharia-vicio', 'design-etico'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'refresh-feed': {
-        name: 'Refresh Feed = Slot Machine',
-        description: 'Atualizar feed de redes sociais/email = puxar alavanca de slot machine — incerteza sobre recompensa maximiza dopamina',
-        connections: ['recompensa-variavel', 'dopamina', 'vicio-digital', 'infinite-scroll'],
-        color: '#dc2626',
-        layer: 0
-    },
-
-    // ========================================
-    // CAPÍTULO 15: ESPORTES E ESPORTS (PLATAFORMIZAÇÃO DO CORPO-ATLETA)
-    // ========================================
-    'datificacao-corpo-atleta': {
-        name: 'Datificação do Corpo-Atleta',
-        description: 'Transformação do corpo atlético em fluxo contínuo de dados biométricos via wearables — vigilância total da performance',
-        connections: ['atleta-quantificado', 'wearables', 'panoptico-esportivo', 'tirania-metrica', 'gerenciamento-algoritmico'],
-        color: '#f97316',
-        layer: 0
-    },
-    'atleta-quantificado': {
-        name: 'Atleta Quantificado',
-        description: 'Corpo-atleta reduzido a métricas (FC, velocidade, distância, fadiga) — se não vira dado, não existe',
-        connections: ['datificacao-corpo-atleta', 'wearables', 'tirania-metrica', 'biometria'],
-        color: '#f97316',
-        layer: 0
-    },
-    'wearables': {
-        name: 'Wearables Esportivos',
-        description: 'GPS vestíveis, monitores cardíacos, sensores movimento (StatSports, Catapult, Zebra) — panóptico portátil no corpo',
-        connections: ['atleta-quantificado', 'panoptico-esportivo', 'datificacao-corpo-atleta', 'biometria'],
-        color: '#f97316',
-        layer: 0
-    },
-    'panoptico-esportivo': {
-        name: 'Panóptico Esportivo',
-        description: 'Vigilância 24/7 via wearables — atleta internaliza supervisor (Foucault aplicado ao esporte digital)',
-        connections: ['wearables', 'datificacao-corpo-atleta', 'tirania-metrica', 'vigilancia-capitalismo'],
-        color: '#f97316',
-        layer: 0
-    },
-    'tirania-metrica': {
-        name: 'Tirania da Métrica',
-        description: 'Apenas o mensurável tem valor — intuição, criatividade, aspectos humanos não-quantificáveis são descartáveis',
-        connections: ['datificacao-corpo-atleta', 'atleta-quantificado', 'ia-tatica', 'moneyball'],
-        color: '#f97316',
-        layer: 0
-    },
-    'moneyball': {
-        name: 'Moneyball (2003)',
-        description: 'Livro de Michael Lewis — origem da datificação massiva no esporte via sabermetrics (análise estatística avançada)',
-        connections: ['tirania-metrica', 'datificacao-corpo-atleta', 'ia-tatica'],
-        color: '#f97316',
-        layer: -1
-    },
-    'ia-tatica': {
-        name: 'IA Tática',
-        description: 'Algoritmos (InStat, Wyscout) recomendam substituições/estratégias em tempo real — técnico obedece modelo, não "sente" jogo',
-        connections: ['tirania-metrica', 'datificacao-corpo-atleta', 'vies-algoritmico-esporte', 'algoritmo'],
-        color: '#f97316',
-        layer: 0
-    },
-    'vies-algoritmico-esporte': {
-        name: 'Viés Algorítmico no Scouting',
-        description: 'IA supervaloriza atributos físicos em jogadores negros, subvaloriza cognitivos — racismo codificado',
-        connections: ['ia-tatica', 'necropolítica-esportiva', 'discriminacao-algoritmica', 'corpo-negro-commodity'],
-        color: '#f97316',
-        layer: 0
-    },
-    'mercadificacao-biometrica': {
-        name: 'Mercadificação Biométrica',
-        description: 'Dados corporais viram ativos financeiros — Sorare (NFTs de jogadores), tokenização de atletas via blockchain',
-        connections: ['datificacao-corpo-atleta', 'tokenizacao-atletas', 'fan-tokens', 'capital-ficticio'],
-        color: '#f97316',
-        layer: 0
-    },
-    'tokenizacao-atletas': {
-        name: 'Tokenização de Atletas',
-        description: 'Plataformas (Liqi, Mintable) vendem "frações" da carreira de jovens — atleta como startup, corpo hipotecado desde infância',
-        connections: ['mercadificacao-biometrica', 'corpo-negro-commodity', 'precarizacao', 'blockchain'],
-        color: '#f97316',
-        layer: 0
-    },
-    'biohacking-atletico': {
-        name: 'Biohacking Atlético',
-        description: 'Câmaras hiperbáricas, crioterapia, peptídeos, tDCS, CRISPR futuro — aristocracia bioquímica no esporte',
-        connections: ['datificacao-corpo-atleta', 'deteccao-genetica-talentos', 'biopolitica'],
-        color: '#f97316',
-        layer: 0
-    },
-    'deteccao-genetica-talentos': {
-        name: 'Detecção Genética de Talentos',
-        description: 'China escaneia DNA de milhões de crianças buscando genes elite (ACTN3, ACE) — biopolítica máxima',
-        connections: ['biohacking-atletico', 'biopolitica', 'necropolítica-esportiva'],
-        color: '#f97316',
-        layer: 0
-    },
-    'esports-laboratorio-neoliberal': {
-        name: 'Esports como Experimento Neoliberal',
-        description: 'Pirâmide extrema (99% <salário-mínimo), sem direitos trabalhistas, exploração juvenil, descartabilidade aos 24 anos',
-        connections: ['pro-gamer', 'burnout-esports', 'precarizacao', 'gamificacao-trabalho-alienado'],
-        color: '#f97316',
-        layer: 0
-    },
-    'pro-gamer': {
-        name: 'Pro-Gamer',
-        description: 'Ciber-atleta: trabalho cognitivo 10-14h/dia, LER, burnout, carreira até 24 anos — trabalho imaterial extremo',
-        connections: ['esports-laboratorio-neoliberal', 'burnout-esports', 'trabalho-imaterial', 'propriedade-privada-jogo'],
-        color: '#f97316',
-        layer: 0
-    },
-    'burnout-esports': {
-        name: 'Burnout em Esports',
-        description: 'Exaustão epidêmica — rotina 10-14h/dia, aposentadoria aos 24 anos, "taylorização do lazer"',
-        connections: ['pro-gamer', 'esports-laboratorio-neoliberal', 'burnout', 'gamificacao-trabalho-alienado'],
-        color: '#f97316',
-        layer: 0
-    },
-    'propriedade-privada-jogo': {
-        name: 'Propriedade Privada do Jogo',
-        description: 'Riot/Valve possuem código do jogo — podem mudar regras unilateralmente, tornar skills obsoletas overnight (vassalagem digital)',
-        connections: ['pro-gamer', 'vassalagem-digital', 'plataformizacao', 'software-livre'],
-        color: '#f97316',
-        layer: 0
-    },
-    'vassalagem-digital': {
-        name: 'Vassalagem Digital',
-        description: 'Jogador não tem "direito ao jogo", só licença revogável — desenvolvedor controla campo, regras, narrativa, economia',
-        connections: ['propriedade-privada-jogo', 'pro-gamer', 'plataformizacao'],
-        color: '#f97316',
-        layer: 0
-    },
-    'dupla-exploracao-pro-gamer': {
-        name: 'Dupla Exploração do Pro-Gamer',
-        description: 'Desenvolvedora extrai valor do skill + plataforma streaming (Twitch/YouTube) fica com 50% receita — três patrões, zero contrato formal',
-        connections: ['pro-gamer', 'plataformizacao', 'extracao-valor', 'uberizacao'],
-        color: '#f97316',
-        layer: 0
-    },
-    'gamificacao-trabalho-alienado': {
-        name: 'Gamificação do Trabalho Alienado',
-        description: 'Esports = autoexploração voluntária travestida de paixão — quando lazer vira trabalho, não precisa coerção externa (Jamie Woodcock)',
-        connections: ['esports-laboratorio-neoliberal', 'burnout-esports', 'trabalho-imaterial', 'vicio-digital'],
-        color: '#f97316',
-        layer: 0
-    },
-    'torcedor-produtor': {
-        name: 'Torcedor-Produtor',
-        description: 'Fã realiza trabalho afetivo/cognitivo não-pago (criar meme, debater tática, votar enquete) monetizado por plataformas',
-        connections: ['trabalho-afetivo-nao-remunerado', 'fantasy-sports', 'fan-tokens', 'trabalho-digital-nao-remunerado'],
-        color: '#f97316',
-        layer: 0
-    },
-    'trabalho-afetivo-nao-remunerado': {
-        name: 'Trabalho Afetivo Não-Remunerado da Torcida',
-        description: 'Paixão pelo time = combustível grátis — quanto mais você ama, mais trabalha (subsunção total da vida via afeto)',
-        connections: ['torcedor-produtor', 'trabalho-afetivo', 'extracao-valor', 'afetos-expropriados'],
-        color: '#f97316',
-        layer: 0
-    },
-    'fantasy-sports': {
-        name: 'Fantasy Sports',
-        description: 'DraftKings, FanDuel, Cartola FC — trabalho analítico gratuito gera dataset massivo vendido para casas de apostas',
-        connections: ['torcedor-produtor', 'apostas-esportivas', 'trabalho-digital-nao-remunerado', 'engenharia-vicio'],
-        color: '#f97316',
-        layer: 0
-    },
-    'fan-tokens': {
-        name: 'Fan Tokens',
-        description: 'Socios.com (Barcelona, Flamengo) — financeirização da paixão, especulação sem democracia, migalhas simbólicas de participação',
-        connections: ['torcedor-produtor', 'financeirizacao-paixao', 'cripto-especulacao', 'blockchain'],
-        color: '#f97316',
-        layer: 0
-    },
-    'financeirizacao-paixao': {
-        name: 'Financeirização da Paixão',
-        description: 'Transformar pertencimento (relação comunitária) em ativo especulável — amor ao clube vira derivativo financeiro',
-        connections: ['fan-tokens', 'apostas-esportivas', 'mercadificacao', 'capital-ficticio'],
-        color: '#f97316',
-        layer: 0
-    },
-    'apostas-esportivas': {
-        name: 'Apostas Esportivas',
-        description: '98% perdem longo prazo, in-play betting = slot machine disfarçada, vício epidêmico (15-20% apostadores Brasil)',
-        connections: ['fantasy-sports', 'financeirizacao-paixao', 'engenharia-vicio', 'apostas-brasil-epidemia'],
-        color: '#f97316',
-        layer: 0
-    },
-    'apostas-brasil-epidemia': {
-        name: 'Epidemia de Apostas no Brasil',
-        description: '2023-24: 25mi apostadores, R$ 100bi/ano, periferia perde R$ 200-500/mês — apostas como agiota digital (Rosana Pinheiro-Machado)',
-        connections: ['apostas-esportivas', 'necropolítica-bets', 'extracao-periferia', 'vicio-digital'],
-        color: '#f97316',
-        layer: 0
-    },
-    'necropolítica-bets': {
-        name: 'Necropolítica via Bets',
-        description: 'Jovens negros periferia perdem salário inteiro, violência doméstica por perdas, casas de apostas = agiota digital',
-        connections: ['apostas-brasil-epidemia', 'necropolítica', 'extracao-periferia', 'corpo-negro-commodity'],
-        color: '#f97316',
-        layer: 0
-    },
-    'necropolítica-esportiva': {
-        name: 'Necropolítica Esportiva',
-        description: 'Corpos negros = commodity extraível/descartável — 70%+ jogadores negros, 1%< dirigentes (Achille Mbembe aplicado ao esporte)',
-        connections: ['corpo-negro-commodity', 'extrativismo-corporal', 'necropolítica', 'vies-algoritmico-esporte'],
-        color: '#f97316',
-        layer: 0
-    },
-    'corpo-negro-commodity': {
-        name: 'Corpo Negro como Commodity',
-        description: 'Corpos negros mensurados/otimizados/descartados, mentes brancas (técnicos/analistas) controlam dados — da senzala ao estádio',
-        connections: ['necropolítica-esportiva', 'extrativismo-corporal', 'datificacao-corpo-atleta', 'racismo-estrutural'],
-        color: '#f97316',
-        layer: 0
-    },
-    'extrativismo-corporal': {
-        name: 'Extrativismo Corporal',
-        description: 'Clubes europeus "fazendas de talentos" África/América Latina — 0,1% sucesso, 99,9% descartados sem educação/profissão',
-        connections: ['necropolítica-esportiva', 'corpo-negro-commodity', 'extrativismo-dados', 'colonialismo-digital'],
-        color: '#f97316',
-        layer: 0
-    },
-    'varzea-invisivel': {
-        name: 'Várzea Invisível para Algoritmos',
-        description: 'Jovem periferia sem dados desde criança (sem wearable aos 8 anos) = invisível para scouting — datificação exclui pobres',
-        connections: ['datificacao-corpo-atleta', 'extracao-periferia', 'necropolítica-esportiva'],
-        color: '#f97316',
-        layer: 0
-    },
-    'extracao-periferia': {
-        name: 'Extração da Periferia via Esporte',
-        description: 'Apostas + academias privatizadas caras + várzea invisível = fechamento de canal de mobilidade social via futebol',
-        connections: ['varzea-invisivel', 'apostas-brasil-epidemia', 'necropolítica-bets'],
-        color: '#f97316',
-        layer: 0
-    },
-    'sindicatos-esports': {
-        name: 'Sindicatos de Esports',
-        description: 'CSPPA (Counter-Strike), FPA (Fortnite) — luta por contratos padronizados, salário-mínimo, seguro-saúde, propriedade de dados',
-        connections: ['pro-gamer', 'resistencia-plataformas', 'organizacao-coletiva', 'direito-dados-biometricos'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'direito-dados-biometricos': {
-        name: 'Direito à Propriedade de Dados Biométricos',
-        description: 'Sindicato Atletas (Brasil) — atleta deve autorizar venda de dados corporais para terceiros (apostas, games)',
-        connections: ['sindicatos-esports', 'datificacao-corpo-atleta', 'soberania-dados', 'transparencia-radical-dados'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'jogos-open-source': {
-        name: 'Jogos Open-Source',
-        description: 'Xonotic, 0 A.D., movimento Libre Gaming — comunidade controla código, governança democrática, sem propriedade corporativa',
-        connections: ['propriedade-privada-jogo', 'software-livre', 'cooperativas-plataforma', 'resistencia-plataformas'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'transparencia-radical-dados': {
-        name: 'Transparência Radical de Dados',
-        description: 'FairPlay Alliance — exigir publicação de todos dados biométricos em formato aberto (API) — fim do monopólio analítico',
-        connections: ['direito-dados-biometricos', 'datificacao-corpo-atleta', 'transparencia-algoritmica', 'dados-abertos'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'esporte-comunitario': {
-        name: 'Esporte Comunitário Não-Plataformizado',
-        description: 'Várzea, LAN parties, Right to Play — prática fora da lógica performance/lucro, memória de que jogo nos pertence',
-        connections: ['resistencia-plataformas', 'comum', 'nhandereko', 'varzea-invisivel'],
-        color: '#22c55e',
-        layer: 1
-    },
-
-    // ========================================
-    // CAPÍTULO 16: FARMÁCIA GLOBAL E GUERRA ÀS DROGAS DIGITAL
-    // ========================================
-    'farmacia-apartheid': {
-        name: 'Farmácia de Apartheid',
-        description: 'Sistema onde acesso, qualidade e status legal de substâncias dependem radicalmente de classe e raça — CEO microdosando LSD é inovador, jovem negro vendendo maconha é criminoso',
-        connections: ['guerra-drogas', 'policiamento-preditivo', 'complexo-industrial-terapeutico', 'reducao-danos-seletiva', 'necropolitica'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'guerra-drogas': {
-        name: 'Guerra às Drogas',
-        description: 'Política de proibição iniciada nos anos 70 (Nixon) — nunca foi sobre drogas, sempre sobre controle de populações racializadas (negros, latinos). Encarceramento em massa, militarização, genocídio',
-        connections: ['farmacia-apartheid', 'policiamento-preditivo', 'racismo-algoritmico', 'necropolitica', 'ehrlichman-quote'],
-        color: '#dc2626',
-        layer: -1
-    },
-    'ehrlichman-quote': {
-        name: 'Confissão de Ehrlichman (Nixon)',
-        description: '"Não podíamos tornar ilegal ser negro ou hippie, mas ao associar negros à heroína e hippies à maconha, e criminalizá-las, poderíamos desorganizar essas comunidades." (Assessor de Nixon, admitindo racismo estrutural da Guerra às Drogas)',
-        connections: ['guerra-drogas', 'racismo-algoritmico', 'policiamento-preditivo'],
-        color: '#dc2626',
-        layer: -1
-    },
-    'policiamento-preditivo': {
-        name: 'Policiamento Preditivo',
-        description: 'Algoritmos (PredPol, HunchLab) que "preveem" crimes usando dados históricos — aprende viés policial como se fosse verdade, reforça patrulhamento em bairros negros, cria loop de feedback vicioso',
-        connections: ['guerra-drogas', 'racismo-algoritmico', 'loop-feedback-vicioso', 'chicago-heat-list', 'gerenciamento-algoritmico'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'loop-feedback-vicioso': {
-        name: 'Loop de Feedback Vicioso (Policiamento)',
-        description: 'Algoritmo manda polícia para bairro X → mais prisões em X → mais dados "confirmando" que X é perigoso → mais policiamento → loop infinito. Discriminação ganha verniz de objetividade matemática',
-        connections: ['policiamento-preditivo', 'racismo-algoritmico', 'viés-algoritmico', 'profecia-autorrealizavel'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'chicago-heat-list': {
-        name: 'Chicago Heat List (2013-2019)',
-        description: '400 mil pessoas colocadas em "lista de risco de violência" baseada em algoritmo. Taxa de acerto: 0,3%. 99,7% falsos positivos. Maioria negros/latinos. Descontinuada em 2019 após pressão de movimentos',
-        connections: ['policiamento-preditivo', 'loop-feedback-vicioso', 'profecia-autorrealizavel', 'racismo-algoritmico'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'reconhecimento-facial-brasil': {
-        name: 'Reconhecimento Facial no Brasil',
-        description: 'Sistemas instalados em RJ, Salvador, SP — taxa de erro 34% maior para negros. Prisões erradas documentadas (homem RJ 9 dias preso, mulher Salvador estuprada na cadeia). Automação da injustiça racial',
-        connections: ['policiamento-preditivo', 'racismo-algoritmico', 'necropolitica', 'farmacia-apartheid'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'racismo-algoritmico': {
-        name: 'Racismo Algorítmico',
-        description: 'Discriminação racial codificada em software — dados históricos refletem séculos de racismo, IA aprende viés como padrão, legitima com aparência científica. Não é bug, é feature do sistema',
-        connections: ['policiamento-preditivo', 'loop-feedback-vicioso', 'viés-algoritmico', 'guerra-drogas', 'reconhecimento-facial-brasil'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'profecia-autorrealizavel': {
-        name: 'Profecia Autorrealizável',
-        description: 'Aumentar vigilância sobre alguém aumenta probabilidade de prisão (qualquer infração menor vira crime). Sistema cria realidade que afirma prever — cibernética perversa',
-        connections: ['loop-feedback-vicioso', 'policiamento-preditivo', 'chicago-heat-list'],
-        color: '#dc2626',
-        layer: 0
-    },
-
-    // Silk Road e Mercados Digitais
-    'silk-road': {
-        name: 'Silk Road (2011-2013)',
-        description: 'Mercado dark web que aplicou lógica e-commerce ao tráfico — avaliações, escrow, testagem comunitária. Criou redução de danos privatizada para elite branca do Norte Global',
-        connections: ['reducao-danos-seletiva', 'dark-web', 'tor-bitcoin', 'ross-ulbricht', 'farmacia-apartheid'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'dark-web': {
-        name: 'Dark Web',
-        description: 'Redes sobrepostas (overlay networks) que exigem software específico para acesso — Tor (The Onion Router) anonimiza tráfego. ~6% da internet. Nem tudo é ilegal, mas inclui mercados de drogas',
-        connections: ['silk-road', 'tor-bitcoin', 'telegram-whatsapp-trafico'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'tor-bitcoin': {
-        name: 'Tor + Bitcoin = Anonimato',
-        description: 'Combinação de rede Tor (anonimato de identidade) + Bitcoin (pagamento pseudônimo) criou infraestrutura de mercado sem Estado — confiança via algoritmo, não pessoas',
-        connections: ['silk-road', 'dark-web', 'reducao-danos-seletiva'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'ross-ulbricht': {
-        name: 'Ross Ulbricht',
-        description: 'Criador do Silk Road, preso em 2013, condenado a prisão perpétua (2 perpétuas + 40 anos). Justificava com retórica libertária, mas sistema beneficiou principalmente elite branca',
-        connections: ['silk-road', 'reducao-danos-seletiva'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'telegram-whatsapp-trafico': {
-        name: 'Telegram/WhatsApp como Mercado',
-        description: 'Apps de mensagens apropriados como infraestrutura de tráfico — canais públicos (vitrine), grupos fechados (testagem/redução de danos), mensagens privadas (pedido). Mais acessível que dark web, mantém apartheid',
-        connections: ['silk-road', 'dark-web', 'reducao-danos-seletiva', 'farmacia-apartheid'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'reducao-danos-seletiva': {
-        name: 'Redução de Danos Seletiva',
-        description: 'Silk Road/Telegram oferecem segurança (testagem, pureza) para quem tem capital técnico/social — violência da proibição empurrada para produtores do Sul e varejistas de periferia. Apartheid se mantém',
-        connections: ['silk-road', 'telegram-whatsapp-trafico', 'farmacia-apartheid', 'reducao-danos-universal'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'reducao-danos-universal': {
-        name: 'Redução de Danos Universal',
-        description: 'Abordagem de saúde pública: troca de seringas, salas de uso supervisionado, testagem de substâncias, distribuição naloxona — trata usuário com dignidade. Portugal (2001): mortes por overdose -85%, HIV -90%',
-        connections: ['reducao-danos-seletiva', 'descriminalizacao-portugal', 'farmacia-apartheid', 'politicas-drogas-radical'],
-        color: '#22c55e',
-        layer: 1
-    },
-
-    // Complexo Industrial-Terapêutico
-    'complexo-industrial-terapeutico': {
-        name: 'Complexo Industrial-Terapêutico',
-        description: 'Aliança indústria farmacêutica + biotecnologia + bem-estar para medicalizar/mercantilizar substâncias psicoativas — psilocibina de US$ 10 mil/dose, cetamina "Starbucks dos psicodélicos"',
-        connections: ['farmacia-apartheid', 'renascimento-psicodelico', 'telemedicina-express', 'apropiacao-cultural-plantas'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'renascimento-psicodelico': {
-        name: 'Renascimento Psicodélico Corporativo',
-        description: 'Startups (COMPASS, Atai, Field Trip) patenteiam compostos de plantas milenares — IPOs milionários, tratamento US$ 10-20 mil, acesso restrito a elite. Conhecimento indígena = matéria-prima gratuita',
-        connections: ['complexo-industrial-terapeutico', 'compass-pathways', 'apropiacao-cultural-plantas', 'peter-thiel-psicodelicos'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'compass-pathways': {
-        name: 'COMPASS Pathways',
-        description: 'Startup britânica que patenteou psilocibina sintética. IPO 2020: US$ 127 milhões. Fundador: George Goldsmith (ex-private equity). Maior acionista: Peter Thiel (bilionário libertário)',
-        connections: ['renascimento-psicodelico', 'peter-thiel-psicodelicos', 'complexo-industrial-terapeutico'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'peter-thiel-psicodelicos': {
-        name: 'Peter Thiel + Psicodélicos',
-        description: 'Bilionário do PayPal investe pesado em biotecnologia psicodélica (COMPASS, Atai) — aplica lógica Vale do Silício (patentes, IPOs, rentismo) a conhecimento milenar de povos indígenas',
-        connections: ['compass-pathways', 'renascimento-psicodelico', 'apropiacao-cultural-plantas'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'telemedicina-express': {
-        name: 'Telemedicina como Farmácia Express',
-        description: 'Apps (Cerebral, Hims/Hers, Vittude/Zenklub) prescrevem Adderall/Rivotril após consulta 15-30min — risco de overdiagnosis, abuso, falta acompanhamento. Farmácia vira vending machine',
-        connections: ['complexo-industrial-terapeutico', 'cerebral-adderall', 'farmacia-apartheid'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'cerebral-adderall': {
-        name: 'Cerebral (Escândalo 2022)',
-        description: 'App de "saúde mental" que prescrevia Adderall/Ritalina excessivamente via telemedicina. Investigado pela DEA. CEO renunciou. Modelo: assinatura mensal + medicamento = incentivo a overdiagnosis de TDAH',
-        connections: ['telemedicina-express', 'complexo-industrial-terapeutico'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'epidemia-opioides': {
-        name: 'Epidemia de Opioides (EUA)',
-        description: '~100 mil mortes/ano desde 2020. Purdue Pharma (OxyContin) mentiu "menos de 1% vicia", pagou bônus por prescrições, criou epidemia. Multa US$ 8 bi, família Sackler mantém US$ 10 bi. Ninguém preso',
-        connections: ['purdue-pharma-sackler', 'complexo-industrial-terapeutico', 'farmacia-apartheid'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'purdue-pharma-sackler': {
-        name: 'Purdue Pharma / Família Sackler',
-        description: 'Fabricante de OxyContin. Marketing criminoso causou epidemia opioides. Declara falência 2020, paga US$ 8 bi. Família Sackler (donos) mantém fortuna pessoal US$ 10 bi. Quando corporação causa epidemia de dependência, é "crise de saúde pública". Quando jovem de favela vende droga, é "tráfico"',
-        connections: ['epidemia-opioides', 'farmacia-apartheid', 'complexo-industrial-terapeutico'],
-        color: '#dc2626',
-        layer: 0
-    },
-
-    // Apropriação Cultural
-    'apropiacao-cultural-plantas': {
-        name: 'Apropriação Cultural de Plantas Medicinais',
-        description: 'Conhecimento milenar indígena (ayahuasca, kambo, rapé) extraído, mercantilizado, vendido como "bem-estar" para elite — contexto ritual/espiritual apagado, povos originários não compensados',
-        connections: ['complexo-industrial-terapeutico', 'renascimento-psicodelico', 'ayahuasca-10mil', 'extrativismo-epistemico', 'nhandereko'],
-        connections: ['ayahuasca-10mil', 'kambo-biohacking', 'rape-amsterdam', 'extrativismo-epistemico'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'ayahuasca-10mil': {
-        name: 'Ayahuasca de US$ 10 mil',
-        description: 'Retiros Peru/Brasil para executivos do Vale do Silício — 5 dias, resort, wifi, yoga, "xamã autêntico" (sem conexão real com tradição). Cliente volta, post LinkedIn sobre "liderança visionária". Comunidade indígena? Zero compensação',
-        connections: ['apropiacao-cultural-plantas', 'complexo-industrial-terapeutico', 'extrativismo-epistemico'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'kambo-biohacking': {
-        name: 'Kambo Biohacking',
-        description: 'Secreção de sapo amazônico usada em rituais de purificação indígenas — vendida em clínicas Los Angeles (US$ 150/sessão) como "detox/boost imunológico". Ciência duvidosa. Povos Katukina/Yawanawá? Zero benefício',
-        connections: ['apropiacao-cultural-plantas', 'extrativismo-epistemico'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'rape-amsterdam': {
-        name: 'Rapé em Lojas Esotéricas',
-        description: 'Tabaco + cinzas de plantas (medicina tradicional amazônica) — vendido em Berlim/Amsterdam para "expansão de consciência". Preço 1000% acima do valor local. Povos indígenas = fornecedores precarizados',
-        connections: ['apropiacao-cultural-plantas', 'extrativismo-epistemico'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'extrativismo-epistemico': {
-        name: 'Extrativismo Epistêmico',
-        description: 'Extração de conhecimento de povos marginalizados sem permissão/compensação — descontextualização, mercantilização, apagamento, duplo padrão legal. Violência epistêmica = colonialismo digital',
-        connections: ['apropiacao-cultural-plantas', 'ayahuasca-10mil', 'kambo-biohacking', 'rape-amsterdam', 'nhandereko'],
-        color: '#dc2626',
-        layer: 0
-    },
-
-    // Resistências e Alternativas
-    'descriminalizacao-portugal': {
-        name: 'Descriminalização em Portugal (2001)',
-        description: 'Todas as drogas descriminalizadas. Resultado: mortes por overdose -85%, infecções HIV -90%, uso problemático -50%. FUNCIONA. Trata usuário com dignidade, investe em saúde pública',
-        connections: ['reducao-danos-universal', 'politicas-drogas-radical', 'farmacia-apartheid'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'politicas-drogas-radical': {
-        name: 'Políticas de Drogas Radicalmente Diferentes',
-        description: 'Descriminalização total + redução de danos universal + legalização regulada (não via mercado, via distribuição pública/cooperativa) + reparação histórica (anistia, indenização, investimento periferia)',
-        connections: ['descriminalizacao-portugal', 'reducao-danos-universal', 'farmacia-apartheid', 'guerra-drogas'],
-        color: '#22c55e',
-        layer: 1
-    },
-
-    // ========================================
-    // CAPÍTULO 19: OUTROS EXPERIMENTOS E NOVA FRONTEIRA DO PLANEJAMENTO
-    // ========================================
-    
-    // 19.1 - Autogestão Iugoslávia
-    'autogestao-iugoslavia': {
-        name: 'Autogestão Iugoslava (Samoupravljanje)',
-        description: 'Empresas geridas por conselhos de trabalhadores eleitos. Propriedade social (nem privada nem estatal). Mercado socialista: competição + autogestão = contradição que causou colapso',
-        connections: ['tito', 'kardelj', 'propriedade-social', 'mercado-socialista', 'cooperativismo-plataforma'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'tito': {
-        name: 'Josip Broz Tito',
-        description: 'Líder iugoslavo. Rompeu com Stalin (1948), criou "terceira via": socialismo não-stalinista. Nacionalismo comunista vs controle soviético',
-        connections: ['autogestao-iugoslavia', 'kardelj', 'cisma-stalin'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'kardelj': {
-        name: 'Edvard Kardelj',
-        description: 'Teórico da autogestão. Paradoxo: teorizou contra burocracia estatal, mas foi vice-presidente por décadas. Sistema dependia de carisma, não estruturas',
-        connections: ['autogestao-iugoslavia', 'tito', 'propriedade-social'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'propriedade-social': {
-        name: 'Propriedade Social',
-        description: 'Categoria jurídica única: nem privada nem estatal, pertence "à sociedade". Gerida por trabalhadores. Tentativa de superar tanto capitalismo quanto estatismo',
-        connections: ['autogestao-iugoslavia', 'kardelj', 'cooperativismo-plataforma'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'mercado-socialista': {
-        name: 'Mercado Socialista',
-        description: 'Cooperativas autogeridas competindo em mercado. Cresceu 6%/ano (1950-70), MAS mercado pressiona comportamento capitalista: demissões, desigualdade, subprodução',
-        connections: ['autogestao-iugoslavia', 'benjamin-ward', 'colapso-iugoslavia'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'benjamin-ward': {
-        name: 'Benjamin Ward (Problema Teórico)',
-        description: 'Cooperativas maximizam renda/trabalhador, não emprego total. Resultado: subprodução crônica, resistência contratar mesmo com demanda alta',
-        connections: ['mercado-socialista', 'autogestao-iugoslavia'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'colapso-iugoslavia': {
-        name: 'Colapso Iugoslávia (1991-99)',
-        description: '140 mil mortos, 4 milhões deslocados. Genocídio Srebrenica (8 mil). Desigualdade regional (Eslovênia 5-6x Kosovo), dívida US$ 20bi, nacionalismo. Lição: autogestão + mercado = contradição insuperável',
-        connections: ['mercado-socialista', 'autogestao-iugoslavia'],
-        color: '#ef4444',
-        layer: -1
-    },
-    
-    // 19.2 - Cuba Período Especial
-    'periodo-especial-cuba': {
-        name: 'Período Especial Cuba (1991-93)',
-        description: 'Colapso URSS = PIB -35%, importações -75%, petróleo -86%. Calorias 3000→1900/dia. Transição energética abrupta forçada. Inovação na adversidade',
-        connections: ['organoponicos', 'companioni', 'biotecnologia-cubana', 'resiliencia-local'],
-        color: '#8b5cf6',
-        layer: -1
-    },
-    'organoponicos': {
-        name: 'Organopônicos (Hortas Urbanas)',
-        description: 'Agricultura urbana orgânica. 20-30 kg/m²/ano (10x normal). 26 mil hortas em Havana (1997), 50% dos vegetais. Modelo global (FAO/PNUD)',
-        connections: ['periodo-especial-cuba', 'companioni', 'permacultura'],
-        color: '#22c55e',
-        layer: 0
-    },
-    'companioni': {
-        name: 'Nelso Companioni',
-        description: 'Agrônomo pioneiro dos organopônicos. Alamar (Havana). Provou: em crise, comunidades locais inovam mais rápido que burocracia central',
-        connections: ['organoponicos', 'periodo-especial-cuba'],
-        color: '#22c55e',
-        layer: 0
-    },
-    'biotecnologia-cubana': {
-        name: 'Biotecnologia Cubana',
-        description: 'Vacinas próprias: meningite B, hepatite B, COVID (Abdala/Soberana). Genéricos de qualidade. Paradoxo: país bloqueado há 60 anos com indústria farmacêutica avançada',
-        connections: ['periodo-especial-cuba'],
-        color: '#22c55e',
-        layer: 0
-    },
-    'resiliencia-local': {
-        name: 'Resiliência Local vs Rigidez Central',
-        description: 'Cuba: capacidade de auto-organização local extraordinária, MAS burocracia central atrasou escala. Lição: precisa cibernética 2ª ordem (autonomia local + coordenação democrática)',
-        connections: ['periodo-especial-cuba', 'organoponicos', 'cybersyn', 'cooperativismo-plataforma'],
-        color: '#22c55e',
-        layer: 1
-    },
-    
-    // 19.3 - Crédito Social e Governança por Score
-    'credito-social-china': {
-        name: 'Sistema de Crédito Social Chinês',
-        description: 'NÃO é "score único Black Mirror". Ecossistema fragmentado 3 camadas: financeiro (PBOC), corporativo (blacklists empresas), pilotos municipais (~40 cidades)',
-        connections: ['pboc', 'enterprise-social-credit', 'sesame-credit', 'governanca-algoritmica'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'pboc': {
-        name: 'PBOC (Crédito Financeiro)',
-        description: 'Banco Central China. Score de crédito tradicional (como Serasa/FICO). 560 milhões pessoas. Histórico empréstimos. Mais "normal" dos três sistemas',
-        connections: ['credito-social-china', 'serasa-fico'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'enterprise-social-credit': {
-        name: 'Enterprise Social Credit',
-        description: 'Foco: compliance corporativo. 33 milhões blacklists empresas. 290 milhões restrições aplicadas (CEOs impedidos viajar, licitações bloqueadas). Combate fraude/poluição',
-        connections: ['credito-social-china'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'sesame-credit': {
-        name: 'Sesame Credit (Zhima - Alibaba)',
-        description: 'Score privado 350-950. Combina: pagamentos + compras + rede social + comportamento online. Capitalismo de vigilância chinês. Comprar fraldas ↑ score, videogames ↓',
-        connections: ['credito-social-china', 'capitalismo-vigilancia'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'serasa-fico': {
-        name: 'Serasa/FICO (Crédito Ocidental)',
-        description: 'Governança algorítmica privada. Brasil: 69 milhões negativados (1 em 3 adultos). EUA: racismo codificado (brancos 734, negros 677 = juros 3-5% maiores)',
-        connections: ['pboc', 'governanca-algoritmica', 'racismo-algoritmico'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'governanca-algoritmica': {
-        name: 'Governança Algorítmica',
-        description: 'Convergência global: Ocidente = vigilância privada para lucro, China = vigilância estatal-corporativa para controle. Ambos distópicos. Precisamos: código aberto + trusts de dados cooperativos',
-        connections: ['credito-social-china', 'serasa-fico', 'sesame-credit', 'capitalismo-vigilancia'],
-        color: '#ef4444',
-        layer: 0
-    },
-    
-    // 19.4 - Cooperativismo de Plataforma
-    'cooperativismo-plataforma': {
-        name: 'Cooperativismo de Plataforma',
-        description: 'Plataformas digitais de propriedade e gestão democrática dos trabalhadores/usuários. Mesma tecnologia (apps), controle invertido. Alternativa existe e funciona (centenas de cooperativas), barreira é POLÍTICA',
-        connections: ['trebor-scholz', 'coopcycle', 'fairbnb', 'up-go', 'resonate', 'stocksy', 'cooperativas-brasil'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'trebor-scholz': {
-        name: 'Trebor Scholz',
-        description: 'Acadêmico alemão-americano. Cunhou "platform cooperativism" (2014), livro-manifesto (2016). Platform Cooperativism Consortium (New School NYC). Argumento: cooperativas mais sustentáveis que startups VC',
-        connections: ['cooperativismo-plataforma'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'coopcycle': {
-        name: 'CoopCycle (Europa)',
-        description: '30+ cooperativas entrega bicicleta, 10 países. Software livre (GitHub). Taxa 15-20% vs 30-40% Uber Eats. Federação = economia de escala. Modelo replicável',
-        connections: ['cooperativismo-plataforma', 'software-livre', 'federacao-cooperativas'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'fairbnb': {
-        name: 'Fairbnb (Itália/Holanda)',
-        description: '50% das taxas → projetos comunitários locais. Anti-gentrificação. 500 listagens vs 7 milhões Airbnb. Pequena mas crescendo em cidades conscientes',
-        connections: ['cooperativismo-plataforma'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'up-go': {
-        name: 'Up & Go (Nova York)',
-        description: 'Cooperativa limpeza. Mulheres latinas/imigrantes. 95% pagamento → trabalhadoras vs 50-60% apps capitalistas. Trabalhadoras ganham 40-50% mais, decidem tudo democraticamente',
-        connections: ['cooperativismo-plataforma'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'resonate': {
-        name: 'Resonate (Streaming Musical)',
-        description: 'Stream-to-own: 0.002€/stream, 9x = compra 0.02€. Governança multi-stakeholder (artistas + ouvintes + trabalhadores). Vs Spotify que paga 0.003€/stream infinito',
-        connections: ['cooperativismo-plataforma'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'stocksy': {
-        name: 'Stocksy (Fotos - Canadá)',
-        description: 'Cooperativa fotógrafos. 50-75% venda foto vs 15-35% Shutterstock. US$ 15mi faturamento (2022), distribuiu US$ 7,5mi para 1.000+ fotógrafos-membros',
-        connections: ['cooperativismo-plataforma'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'cooperativas-brasil': {
-        name: 'Cooperativas Digitais Brasil',
-        description: 'Motorsapp (SP, mototaxistas, taxa 12%), Celeiro (Porto Alegre, orgânicos), Cataki (100+ cooperativas catadores). Potencial inexplorado, precisam apoio estatal',
-        connections: ['cooperativismo-plataforma'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'barreiras-cooperativas': {
-        name: '5 Barreiras Escala Cooperativas',
-        description: '1) Capital (VCs despejaram US$ 25bi no Uber), 2) Efeitos rede/lock-in, 3) Infraestrutura tech cara, 4) Dumping predatório, 5) Legislação hostil. Solução: apoio estatal + federação',
-        connections: ['cooperativismo-plataforma', 'coopcycle', 'apoio-estatal-cooperativas'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'federacao-cooperativas': {
-        name: 'Federação de Cooperativas',
-        description: 'Estratégia escala: cooperativas locais pequenas, federadas em rede grande. Compartilham: software, marca, conhecimento, contratos públicos. CoopCycle = 30 coops = 1.500 trabalhadores',
-        connections: ['coopcycle', 'cooperativismo-plataforma', 'software-livre'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'apoio-estatal-cooperativas': {
-        name: 'Apoio Estatal a Cooperativas',
-        description: 'Estado precisa tomar lado: financiar formação, compras públicas cooperativas, forçar interoperabilidade (API aberta), facilitar conversão empresa→cooperativa. Barcelona, Bologna = modelos',
-        connections: ['cooperativismo-plataforma', 'barreiras-cooperativas'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'software-livre': {
-        name: 'Software Livre como Commons',
-        description: 'Linux roda 90% servidores. Cooperativas podem compartilhar stack tecnológico (OSRM = roteamento livre). Custos divididos, benefícios compartilhados. Tech não é barreira',
-        connections: ['coopcycle', 'federacao-cooperativas', 'cooperativismo-plataforma'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'coordenacao-distribuida': {
-        name: 'Coordenação Distribuída',
-        description: 'Futuro pós-capitalista: autonomia local + coordenação global via plataformas digitais transparentes. VSM de Beer aplicado a federação de cooperativas. Planejamento ≠ controle, = liberdade coletiva',
-        connections: ['cooperativismo-plataforma', 'resiliencia-local', 'vsm', 'cybersyn'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'planejamento-participativo-digital': {
-        name: 'Planejamento Participativo Digital',
-        description: 'Deliberação direta trabalhadores/consumidores via plataformas. IA para simulação cenários, orçamento participativo em escala nacional/global. Tecnologia existe, falta vontade política',
-        connections: ['coordenacao-distribuida', 'cooperativismo-plataforma'],
-        color: '#22c55e',
-        layer: 1
-    },
-
-    // ========================================
-    // CAPÍTULO 20: GUERRA DAS REDES - GEOPOLÍTICA CIBERNÉTICA
-    // ========================================
-    'privilegio-exorbitante': {
-        name: 'Privilégio Exorbitante do Dólar',
-        description: 'Valéry Giscard d\'Estaing (1960s): vantagem estrutural EUA por emitir moeda reserva global. 88% transações envolvem dólar, 59% reservas mundiais. EUA imprime dólares para pagar déficit US$ 1 tri/ano sem sofrer inflação (exportada ao mundo)',
-        connections: ['petrodolar', 'swift', 'desdolarizacao', 'imperio-dolar'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'petrodolar': {
-        name: 'Petrodólar',
-        description: 'Acordo Nixon-Saud (1974): petróleo vendido APENAS em dólares. Criou demanda artificial permanente pela moeda americana. Petróleo = commodity mais comercializada (US$ 2 tri/ano), logo todos precisam acumular dólares. Base do privilégio exorbitante',
-        connections: ['privilegio-exorbitante', 'imperio-dolar', 'desdolarizacao'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'imperio-dolar': {
-        name: 'Arquitetura do Império do Dólar',
-        description: 'Sistema financeiro global = sistema cibernético centralizado. Dólar = protocolo universal, SWIFT = infraestrutura de controle. Permite EUA monitorar/bloquear/sancionar qualquer país. Poder de rede em forma pura',
-        connections: ['swift', 'privilegio-exorbitante', 'petrodolar', 'sancoes-financeiras'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'swift': {
-        name: 'SWIFT',
-        description: 'Society for Worldwide Interbank Financial Telecommunication (1973). 11.000 bancos, 44,8 mi mensagens/dia. Formalmente cooperativa neutra (Bélgica), mas funciona como extensão do Tesouro dos EUA. Jurisdição sobre dólar = poder geopolítico',
-        connections: ['imperio-dolar', 'sancoes-financeiras', 'cips', 'spfs', 'brics-pay'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'sancoes-financeiras': {
-        name: 'Sanções Financeiras como Guerra de Informação',
-        description: 'Desconectar país do SWIFT = isolar economicamente sem disparar tiro. Casos: Irã 2012, Rússia 2022 (7 bancos, rublo -30%, US$ 300 bi reservas congeladas). É ataque à INFRAESTRUTURA DE INFORMAÇÃO, não aos ativos. Poder de rede puro',
-        connections: ['swift', 'imperio-dolar', 'sancoes-russia-2022', 'desdolarizacao'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'sancoes-russia-2022': {
-        name: 'Caso: Sanções Russas 2022',
-        description: '26/fev/2022: 7 bancos russos excluídos do SWIFT. Impacto imediato: rublo -30%, inflação 2%→17%, importações colapsaram. MAS: economia não colapsou — SPFS expandido, comércio em yuan/rublo, Bitcoin +400%. Sanções aceleraram desdolarização global',
-        connections: ['sancoes-financeiras', 'swift', 'spfs', 'cips', 'desdolarizacao'],
-        color: '#dc2626',
-        layer: 0
-    },
-    'desdolarizacao': {
-        name: 'Desdolarização',
-        description: 'Não banir dólar, mas torná-lo redundante/opcional. Comércio em moedas locais, sistemas pagamento alternativos (CIPS, SPFS, BRICS Pay). Acelerada pós-sanções russas 2022 — países perceberam: depender 100% SWIFT = risco existencial',
-        connections: ['brics-pay', 'cips', 'spfs', 'sancoes-russia-2022', 'multipolaridade'],
-        color: '#047857',
-        layer: 1
-    },
-    'cips': {
-        name: 'CIPS (Sistema Chinês)',
-        description: 'Cross-Border Interbank Payment System (2015, PBOC). 1.444 participantes em 109 países, US$ 98 tri/ano volume. Liquida transações em yuan (vs SWIFT que só envia mensagens). Yuan ainda 2-3% reservas globais, mas crescendo 15%/ano. Semente de infraestrutura paralela',
-        connections: ['swift', 'desdolarizacao', 'yuan-digital', 'brics-pay', 'multipolaridade'],
-        color: '#047857',
-        layer: 1
-    },
-    'spfs': {
-        name: 'SPFS (Sistema Russo)',
-        description: 'System for Transfer of Financial Messages (2014, Banco Central Rússia). 556 participantes (20 países), 2,5 mi mensagens/dia. Custo 10x menor que SWIFT, mas lento (horas, não segundos). Modo emergência — funciona, mas ninguém quer usar exceto sob sanções',
-        connections: ['swift', 'desdolarizacao', 'sancoes-russia-2022', 'brics-pay'],
-        color: '#047857',
-        layer: 1
-    },
-    'brics-pay': {
-        name: 'BRICS Pay',
-        description: 'Plataforma federada integrando Pix (Brasil), UPI (Índia), FPS (Rússia), Alipay/WeChat (China). Não é moeda única — é camada de interoperabilidade. 3,5 bi pessoas (45% humanidade), PIB US$ 28 tri. Fase piloto 2025, implementação 2027-30. Estratégia: começar nicho, expandir via efeito rede',
-        connections: ['desdolarizacao', 'cips', 'spfs', 'pix', 'multipolaridade', 'soberania-rede'],
-        color: '#047857',
-        layer: 1
-    },
-    'yuan-digital': {
-        name: 'Yuan Digital (e-CNY)',
-        description: 'CBDC chinês. Permite internacionalização do yuan mantendo controle de capital. Dilema: liberalizar para competir com dólar OU manter controle para estabilidade? China tenta ambos via moeda digital. Se combinar com CIPS = ecossistema completo independente do dólar',
-        connections: ['cips', 'desdolarizacao', 'cbdcs', 'vigilancia-financeira'],
-        color: '#047857',
-        layer: 1
-    },
-    'multipolaridade': {
-        name: 'Multipolaridade e Variedade',
-        description: 'Sistema multipolar (múltiplas moedas/protocolos) = alta variedade (Lei de Ashby). Menos eficiente que unipolar, mas MUITO mais resiliente. Se um nó falha/vira arma, outros compensam. Batalha geopolítica = batalha pela variedade: EUA quer baixa (controle), BRICS quer alta (autonomia)',
-        connections: ['lei-ashby-geopolitica', 'vsm-geopolitico', 'brics-pay', 'soberania-rede'],
-        color: '#8b5cf6',
-        layer: 1
-    },
-    'lei-ashby-geopolitica': {
-        name: 'Lei de Ashby Aplicada à Geopolítica',
-        description: '"Apenas variedade absorve variedade" (Ashby 1956). Sistema unipolar: Centro (EUA) tem 1 protocolo mas absorve variedade de 193 países via SWIFT. Sistema multipolar: Variedade distribuída — nenhum centro pode absorver tudo. Poder diluído = democracia de rede',
-        connections: ['multipolaridade', 'vsm-geopolitico', 'lei-ashby', 'variedade-requisita'],
-        color: '#8b5cf6',
-        layer: 1
-    },
-    'vsm-geopolitico': {
-        name: 'VSM Geopolítico',
-        description: 'Stafford Beer aplicado a sistemas financeiros globais. Unipolar: S3 hipertrofiado (controle Tesouro EUA), S1 atrofiado (bancos sem autonomia). Multipolar: S1 robusto (autonomia local), S2 cooperativo (BRICS Pay), S3 descentralizado (bancos centrais nacionais). VSM distribuído = mais viável',
-        connections: ['multipolaridade', 'vsm', 'lei-ashby-geopolitica', 'brics-pay'],
-        color: '#8b5cf6',
-        layer: 1
-    },
-    'soberania-rede': {
-        name: 'Soberania de Rede',
-        description: 'Capacidade de controlar infraestrutura própria de informação/comunicação. Não basta ter moeda alternativa — precisa de cabos submarinos, data centers, satélites. Sem infraestrutura física própria = colônia digital, mesmo com protocolos alternativos',
-        connections: ['brics-pay', 'cabos-submarinos', 'data-centers-soberania', 'starlink-geopolitica', 'infraestrutura-critica'],
-        color: '#06b6d4',
-        layer: 1
-    },
-    'cabos-submarinos': {
-        name: 'Cabos Submarinos',
-        description: '99% tráfego internet entre continentes. 530 cabos, 1,4 mi km. Controle: Google 33, Meta 17, Amazon 14, China 25 (Rota Seda Digital). Sul-Sul subdesenvolvido: ZERO cabos diretos África-LATAM — tráfego passa por EUA/Europa (+200ms latência). NSA intercepta tudo (Snowden 2013)',
-        connections: ['soberania-rede', 'espionagem-nsa', 'infraestrutura-critica', 'rota-seda-digital'],
-        color: '#06b6d4',
-        layer: 0
-    },
-    'espionagem-nsa': {
-        name: 'Espionagem NSA em Cabos',
-        description: 'Programa TEMPORA (UK): NSA + GCHQ copiam TODO tráfego que passa por cabos britânicos. Snowden revelou 2013. Pontos de aterrissagem de cabos = pontos de interceptação. Não há privacidade estrutural quando infraestrutura é controlada por adversário',
-        connections: ['cabos-submarinos', 'soberania-rede', 'vigilancia-massa', 'cloud-act'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'starlink-geopolitica': {
-        name: 'Starlink e Militarização do Espaço',
-        description: '5.500 satélites Musk (60% de todos satélites órbita), meta 42.000 até 2027. 2,6 mi assinantes, latência 20-40ms. Uso militar Ucrânia (20k terminais) — mas Musk tem controle total, desliga regiões. Infraestrutura crítica privatizada = feudalismo digital espacial',
-        connections: ['soberania-rede', 'infraestrutura-critica', 'alternativas-starlink', 'brasil-amazonia-starlink'],
-        color: '#a855f7',
-        layer: 0
-    },
-    'alternativas-starlink': {
-        name: 'Alternativas Soberanas a Starlink',
-        description: 'Guowang chinês (13.000 satélites até 2030), Sfera russo (640), IRIS² UE (290, €6 bi), ISRO Índia (200). Brasil: ZERO plano soberano — dependência total Starlink/Amazon Kuiper. Corrida espacial 2.0: quem controla órbita baixa controla internet do futuro',
-        connections: ['starlink-geopolitica', 'soberania-rede'],
-        color: '#a855f7',
-        layer: 1
-    },
-    'brasil-amazonia-starlink': {
-        name: 'Starlink na Amazônia',
-        description: '200k assinantes Starlink na Amazônia (única opção áreas remotas). Governo Lula tentou regular (representante legal, bloqueio X/Twitter 2023-24). Tensão: como regular infraestrutura crítica controlada por bilionário estrangeiro? Soberania amazônica ameaçada',
-        connections: ['starlink-geopolitica', 'soberania-rede', 'brasil-geopolitica'],
-        color: '#a855f7',
-        layer: 0
-    },
-    'data-centers-soberania': {
-        name: 'Data Centers e Soberania Digital',
-        description: 'AWS 32% mercado global (US$ 90 bi/ano), Azure 23%, Google 11% — Big 3 = 66% processamento mundial. Brasil 70% dados em nuvens americanas. CLOUD Act (2018): EUA pode requisitar dados MESMO fora território americano. Sem data centers públicos = colônia digital',
-        connections: ['soberania-rede', 'cloud-act', 'brasil-dados-eua', 'alternativas-nuvem'],
-        color: '#fb923c',
-        layer: 0
-    },
-    'cloud-act': {
-        name: 'CLOUD Act (2018)',
-        description: 'Lei americana: governo EUA pode requisitar dados armazenados por empresas americanas, MESMO em servidores fora dos EUA. Microsoft tem data center em Dublin? FBI pode exigir dados de clientes europeus. Viola GDPR. Hipocrisia: EUA acusa Huawei de espionagem mas faz o mesmo via Cisco/Juniper',
-        connections: ['data-centers-soberania', 'espionagem-nsa', 'soberania-rede'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'brasil-dados-eua': {
-        name: 'Brasil: 70% Dados em Nuvens Americanas',
-        description: 'LGPD (2020) exige dados sensíveis no Brasil, mas infraestrutura pública insuficiente (Serpro 20 petabytes vs AWS 200+ exabytes). Empresas pagam multas ou usam "data centers locais" AWS (que são apenas pontos presença conectados a infraestrutura americana). Soberania ilusória',
-        connections: ['data-centers-soberania', 'soberania-rede', 'brasil-geopolitica', 'lgpd'],
-        color: '#fb923c',
-        layer: 0
-    },
-    'alternativas-nuvem': {
-        name: 'Alternativas Soberanas de Nuvem',
-        description: 'Gaia-X (UE): fracasso — virou "selo certificação" ao invés de infraestrutura real. China: monopólio estatal-privado (Alibaba, Tencent, Huawei) + Grande Firewall. Índia: MeghRaj (nuvem governamental). Brasil precisa: "AWS pública" interoperável com BRICS. Custo: R$ 50-100 bi em 10 anos',
-        connections: ['data-centers-soberania', 'soberania-rede', 'brics-infraestrutura'],
-        color: '#fb923c',
-        layer: 1
-    },
-    'rota-seda-digital': {
-        name: 'Rota da Seda Digital (China)',
-        description: 'Extensão da Belt and Road Initiative: China constrói cabos submarinos, data centers, redes 5G na Ásia, África, LATAM. HMN Tech + China Telecom controlam 25 cabos (crescimento 400% desde 2015). Conecta Sul-Sul sem passar por EUA/Europa — mas substitui dependência americana por chinesa',
-        connections: ['cabos-submarinos', 'soberania-rede', 'cips', 'multipolaridade'],
-        color: '#06b6d4',
-        layer: 1
-    },
-    'infraestrutura-critica': {
-        name: 'Infraestrutura Crítica Digital',
-        description: 'Cabos submarinos, data centers, satélites, sistemas pagamento = infraestrutura crítica — ataques cibernéticos = ato de guerra. Pontos de estrangulamento: Estreito de Malaca (12 cabos, 40% tráfego Ásia-Ocidente), Suez (8), Bering (2). Cortar poucos cabos isola continentes',
-        connections: ['cabos-submarinos', 'soberania-rede', 'starlink-geopolitica', 'swift'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'brics-infraestrutura': {
-        name: 'Infraestrutura BRICS',
-        description: 'Proposta: cabos Sul-Sul (Brasil-África, Índia-África, China-LATAM), data centers públicos regionais, constelações satélites próprias. Custo estimado: US$ 200-500 bi em 15 anos. Parece caro? Defesa EUA custa US$ 900 bi/ANO. Infraestrutura digital É defesa nacional do século XXI',
-        connections: ['soberania-rede', 'brics-pay', 'cabos-submarinos', 'alternativas-starlink', 'data-centers-soberania'],
-        color: '#047857',
-        layer: 1
-    },
-    'brasil-geopolitica': {
-        name: 'Dilema Brasileiro: Entre Blocos',
-        description: 'Brasil: faz parte BRICS (apoia desdolarização) mas integrado a EUA (comércio US$ 80 bi/ano, investimentos US$ 120 bi). Tenta "equilibrar", mas acaba subordinado a ambos — não tem soberania de rede própria. Precisa escolher: construir alternativas OU aceitar dependência permanente',
-        connections: ['brics-pay', 'soberania-rede', 'brasil-dados-eua', 'brasil-amazonia-starlink', 'pix'],
-        color: '#f59e0b',
-        layer: 0
-    },
-    'pix': {
-        name: 'Pix: Soberania de Pagamento',
-        description: 'Sistema público pagamento instantâneo (Banco Central, 2020). 155 milhões usuários, gratuito. Antes: Visa/Mastercard monopolizavam. Depois: sistema nacional soberano. Maior sucesso política pública digital da década. BRICS Pay tenta replicar Pix em escala internacional',
-        connections: ['brics-pay', 'soberania-rede', 'brasil-geopolitica', 'desdolarizacao'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'cbdcs': {
-        name: 'CBDCs (Moedas Digitais Banco Central)',
-        description: 'Drex (Brasil), e-CNY (China), euro digital (UE). Aceleram desdolarização (facilitam pagamentos internacionais) MAS aumentam vigilância estatal (rastreamento total transações). Trade-off: privacidade vs soberania monetária. Precisa design que minimize vigilância (criptografia conhecimento zero)',
-        connections: ['yuan-digital', 'desdolarizacao', 'vigilancia-financeira', 'pix'],
-        color: '#f59e0b',
-        layer: 1
-    },
-    'vigilancia-financeira': {
-        name: 'Vigilância Financeira',
-        description: 'SWIFT permite EUA monitorar todas transações em dólar (panóptico financeiro global). CBDCs permitem Estados rastrearem 100% transações cidadãos. Capitalismo vigilância (Ocidente, privado) vs Socialismo vigilância (China, estatal). Ambos distópicos. Alternativa: governança algorítmica democrática, código aberto',
-        connections: ['swift', 'yuan-digital', 'cbdcs', 'capitalismo-vigilancia', 'crédito-social-china'],
-        color: '#ef4444',
-        layer: 0
-    },
-    
-    // ============================================
-    // CAPÍTULO 21: INSERÇÃO SUBORDINADA DO BRASIL
-    // ============================================
-    
-    'colonialismo-digital': {
-        name: 'Colonialismo Digital',
-        description: 'Dinâmica onde países centrais (EUA, China) extraem dados brutos da periferia (Brasil, África, LATAM) para alimentar indústrias IA/tech, reforçando dependência. Fornecemos matéria-prima (dados) grátis, importamos produtos manufaturados (software, nuvem, IA) a preço alto. Ciclo colonial clássico atualizado',
-        connections: ['extrativismo-dados', 'dependencia-tecnologica', 'teoria-dependencia', 'mais-valia-dados'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'extrativismo-dados': {
-        name: 'Extrativismo de Dados',
-        description: 'Brasil = fazenda de dados. 180mi conectados geram US$ 87bi/ano em dados (4,2% PIB), mas 78% extraído por Big Techs americanas (Meta, Google, Amazon). Dados brutos brasileiros treinam modelos IA estrangeiros, lucro remitido ao Norte. Novo pau-brasil, nova soja — commodity exportada sem agregação valor',
-        connections: ['colonialismo-digital', 'big-techs-brasil', 'infraestrutura-dependente', 'mais-valia-dados'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'big-techs-brasil': {
-        name: 'Big Techs no Brasil',
-        description: 'Domínio total: WhatsApp 165mi, Google 140mi, Instagram 119mi, TikTok 82mi, YouTube 142mi usuários. 20 bilhões mensagens/dia extraídas. Lucro Big Techs com dados brasileiros: US$ 12-15bi/ano. Impostos pagos: <5% (evasão offshore Irlanda/Holanda). Controle infraestrutura = controle soberania',
-        connections: ['extrativismo-dados', 'lobby-big-techs', 'dependencia-whatsapp', 'unicornios-brasileiros'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'unicornios-brasileiros': {
-        name: 'Unicórnios Brasileiros',
-        description: '30 startups US$ 1bi+ (Nubank, iFood, 99, QuintoAndar). Mídia vende como "sucesso brasileiro", mas análise materialista: 87% capital de VCs americanos, 92% hospedados AWS/Azure, 100% exit strategy vender para Big Tech ou abrir capital NYSE (não Brasil). Estrutura offshore (Delaware, Cayman) — lucro não fica. É dependência disfarçada',
-        connections: ['big-techs-brasil', 'dependencia-tecnologica', 'extrativismo-dados', 'capital-estrangeiro'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'infraestrutura-dependente': {
-        name: 'Infraestrutura Digital Dependente',
-        description: '19 cabos submarinos (vs 530 globais), 90% tráfego via Fortaleza→Lisboa/Miami, NSA monitora (TEMPORA). 120 data centers: 70% AWS/Google/Azure. CLOUD Act (2018): EUA pode requisitar dados mesmo se armazenados no Brasil — viola LGPD e soberania. Dados "no Brasil" mas servidores estrangeiros = ilusão',
-        connections: ['extrativismo-dados', 'cloud-act', 'cabos-submarinos', 'dependencia-whatsapp'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'cloud-act': {
-        name: 'CLOUD Act (2018)',
-        description: 'Lei americana: governo EUA pode requisitar dados de empresas americanas MESMO se armazenados fora do território americano. Viola soberania nacional e LGPD brasileira. 78% sistemas gov.br hospedados em nuvens estrangeiras = EUA tem acesso legal a dados sensíveis brasileiros. Soberania digital sem infraestrutura soberana = ilusão',
-        connections: ['infraestrutura-dependente', 'lgpd-enfraquecida', 'soberania-digital', 'data-centers'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'maquiladora-digital': {
-        name: 'Maquiladora Digital',
-        description: 'Brasil = fábrica de cliques. Analogia maquiladoras México (anos 60): plataformas fornecem infraestrutura/algoritmo (EUA), trabalhadores brasileiros "montam" serviços (entregam comida, transportam), lucro retorna ao Norte. Maquila física tinha prédio; digital = invisível mas exploração = idêntica ou pior',
-        connections: ['superexploracao-digital', 'uberizacao', 'plataformas-trabalho', 'teoria-dependencia'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'superexploracao-digital': {
-        name: 'Superexploração Digital',
-        description: 'Conceito Ruy Mauro Marini atualizado. Entregador iFood: 10-12h/dia, 6-7 dias/semana, R$ 1.200-1.500/mês líquido após custos = R$ 5-6/hora (vs CLT R$ 6,30/h + direitos). 47% sofreram acidente sem indenização, 78% sem INSS = velhice miséria. Remuneração ABAIXO custo reprodução força trabalho — compensando posição periférica Brasil',
-        connections: ['maquiladora-digital', 'teoria-dependencia', 'breque-apps', 'fairwork', 'gerenciamento-algoritmico'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'breque-apps': {
-        name: 'Breque dos Apps (2020)',
-        description: '1º julho 2020: primeira greve nacional trabalhadores plataforma, 100+ cidades, pleno pico COVID-19. Pautas: valor mínimo R$ 10/entrega, seguro acidente/saúde/morte, fim desativação arbitrária, EPIs gratuitos. Organização: WhatsApp/Instagram descentralizada, Paulo Lima (Galo da Madrugada) liderança perseguida. Resultado: concessões parciais temporárias, mas ZERO reconhecimento vínculo',
-        connections: ['superexploracao-digital', 'fairwork', 'plataformas-trabalho', 'paulo-lima'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'fairwork': {
-        name: 'Fairwork Foundation',
-        description: 'Org. pesquisa Oxford avalia plataformas trabalho digital (5 princípios: remuneração, condições, contratos, gestão, representação justas). Pontuação 0-10. Brasil (2023): iFood 2/10, Uber 1/10, 99 2/10, Rappi 0/10, Loggi 2/10. NENHUMA alcança 50%. Sem poder regulatório, mas relatórios usados por sindicatos/legisladores pressionar',
-        connections: ['superexploracao-digital', 'breque-apps', 'plataformas-trabalho', 'clt-plataformas'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'dependencia-whatsapp': {
-        name: 'Dependência WhatsApp',
-        description: 'Caso 19/dez/2016: juiz Sergipe bloqueou WhatsApp 48h, STF suspendeu em 12h mas caos total. 93% brasileiros usam como principal ferramenta comunicação. Pequenos negócios dependem WhatsApp Business. Meta ameaçou sair do Brasil se continuassem bloqueios — governo recuou, mudou Marco Civil. Empresa americana venceu Estado brasileiro. Serviço essencial de fato (água, luz) mas sem regulação como tal',
-        connections: ['big-techs-brasil', 'infraestrutura-dependente', 'soberania-digital', 'marco-civil'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'lobby-big-techs': {
-        name: 'Lobby Big Techs',
-        description: 'Gastos registrados 2018-23: Google R$ 18,7mi, Meta R$ 12,4mi, Uber R$ 9,8mi, Amazon R$ 7,2mi, Microsoft R$ 5,6mi, iFood R$ 4,1mi. Estratégias: financiamento eleitoral, think tanks (ITS Rio, InternetLab), revolving door (ex-reguladores contratados), narrativa "inovação vs atraso". Vitórias: LGPD enfraquecida, PL Fake News travado 4 anos, tributação 0-2% efetiva, regulação apps transporte 0 aprovadas',
-        connections: ['big-techs-brasil', 'lgpd-enfraquecida', 'pl-fake-news-travado', 'captura-legislativa'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'lgpd-enfraquecida': {
-        name: 'LGPD Enfraquecida',
-        description: 'Lei Geral Proteção Dados (2020): versão final SEM multas automáticas, SEM proibição transferência internacional dados, SEM exigência servidores nacionais. Big Tech aprovou. Lobby conseguiu esvaziar. LGPD existe, mas infraestrutura para aplicá-la = controlada por quem ela deveria regular. Lei sem dentes',
-        connections: ['lobby-big-techs', 'cloud-act', 'soberania-digital', 'captura-legislativa'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'pix-soberania': {
-        name: 'Pix: Soberania Digital',
-        description: 'Lançado 16/nov/2020. MAIOR VITÓRIA soberania digital brasileira 30 anos. Sistema pagamentos instantâneos BC, público, gratuito, nacional. 152mi usuários (78% adultos), R$ 17,2 tri/ano, 42 bi transações/ano. Quebrou duopólio Visa/Mastercard (cobravam R$ 50-70bi/ano taxas). Incluiu 20mi desbancarizados. Funciona: BC mandou (autonomia), infraestrutura pública, gratuito (matou Big Tech), padrão aberto',
-        connections: ['soberania-digital', 'brics-pay', 'banco-central-autonomia', 'pagamentos-instantaneos'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'educacao-colonizada': {
-        name: 'Educação Tecnológica Colonizada',
-        description: 'Análise 120 currículos TI Brasil: 87% bibliografia 100% americana (Cormen, Tanenbaum), 92% stack americano (Java, Python, AWS), 78% cases Google/Facebook/Amazon, 65% professores PhD EUA/Europa reproduzem agenda Norte, ZERO disciplinas soberania digital. Resultado: engenheiros sonham trabalhar Vale do Silício, não construir Vale brasileiro. Imaginário colonizado',
-        connections: ['fuga-cerebros-digital', 'dependencia-tecnologica', 'capital-humano-exportado', 'curriculo-importado'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'fuga-cerebros-digital': {
-        name: 'Fuga de Cérebros Digital',
-        description: '32 mil engenheiros/cientistas brasileiros no Vale do Silício (Google, Meta, Amazon, Apple, Microsoft). Custo formação: R$ 250 mil/engenheiro (graduação + pós federais públicas) = R$ 8bi investimento público total. Salário Vale: US$ 180k/ano (R$ 75k/mês, 9x mais que Brasil R$ 8k). Impostos: zero retorna ao Brasil (pagam nos EUA). Patentes: 100% registradas EUA. Brasil = escola técnica império',
-        connections: ['educacao-colonizada', 'capital-humano-exportado', 'dependencia-tecnologica', 'engenheiros-soberania'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'custo-dependencia': {
-        name: 'Custo da Dependência Digital',
-        description: 'US$ 54,5bi/ano (2,6% PIB): nuvem US$ 8,7bi, licenças software US$ 12,4bi, royalties US$ 4,2bi, hardware US$ 18,9bi, publicidade digital US$ 6,5bi, streaming US$ 3,8bi. Comparação: = 1,5x Bolsa Família, 1,3x SUS inteiro, 3,6x todas federais, 22x CNPq+Capes. Dinheiro existe — falta vontade política',
-        connections: ['extrativismo-dados', 'dependencia-tecnologica', 'politicas-soberania', 'orcamento-publico'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'politicas-soberania': {
-        name: '10 Políticas para Soberania Digital',
-        description: '(1) Nuvem Brasil R$ 15bi/5anos, (2) Cabos Sul-Sul US$ 2bi, (3) 5G soberano R$ 25bi, (4) CLT plataformas, (5) Taxar Big Techs 15% faturamento = R$ 9bi/ano, (6) Cooperativas digitais R$ 10bi/5anos, (7) IA soberana R$ 5bi LLM português/espanhol, (8) Software livre gov.br, (9) Fábrica semicondutores 28nm BRICS US$ 8bi, (10) "Engenheiros Soberania" 100 mil bolsas R$ 12bi/4anos. Total: R$ 100-120bi/5anos = viável',
-        connections: ['pix-soberania', 'soberania-digital', 'ia-soberana', 'nuvem-brasil', 'engenheiros-soberania'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'soberania-digital': {
-        name: 'Soberania Digital',
-        description: 'Capacidade país controlar infraestrutura tecnológica crítica (dados, servidores, cabos, software, IA) sem dependência potências estrangeiras. Não significa autarquia (impossível), mas REDUNDÂNCIA — ter alternativas nacionais/BRICS para não ficar refém. Pix prova: é possível. Barreira = política (lobby), não técnica. Mercado sozinho reproduz subordinação — soberania exige Estado',
-        connections: ['pix-soberania', 'politicas-soberania', 'dependencia-tecnologica', 'brics-cooperacao-tech'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'clt-plataformas': {
-        name: 'CLT para Plataformas',
-        description: 'Política: reconhecer vínculo empregatício automático (motorista Uber = empregado Uber). Salário mínimo/hora + INSS + férias + 13º. Acabar "PJ fake". Plataforma pode continuar operando — mas pagando direitos trabalhistas. PL 3748/20 arquivado 2022, PL 1665/23 travado há 18 meses. Lobby vence sempre',
-        connections: ['superexploracao-digital', 'fairwork', 'politicas-soberania', 'lobby-big-techs'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'engenheiros-soberania': {
-        name: 'Programa Engenheiros da Soberania',
-        description: 'Proposta: 100 mil bolsas integrais graduação TI (R$ 2.500/mês × 4 anos) em federais. Contrapartida: trabalhar 3 anos em projetos públicos soberania digital (nuvem Brasil, IA soberana, cooperativas). Custo: R$ 12bi/4anos. Garante cérebros ficam no país + projetos têm mão-de-obra. Reverter fuga cérebros. Anos 50-70 Brasil fez isso com engenharia (Petrobras, Embraer, Embrapa)',
-        connections: ['fuga-cerebros-digital', 'politicas-soberania', 'educacao-colonizada', 'ia-soberana'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'ia-soberana': {
-        name: 'IA Soberana',
-        description: 'Projeto nacional treinar LLM português/espanhol com R$ 5bi (parceria Fapesp + CNPq + empresas estatais). Dados domínio público brasileiro. Modelo open source. Competir com ChatGPT em conhecimento LATAM. Não precisa ser MELHOR que GPT-4 — precisa ser ALTERNATIVA nacional. Evitar dependência total modelos americanos que podem negar acesso (sanções, políticas)',
-        connections: ['politicas-soberania', 'soberania-digital', 'engenheiros-soberania', 'brics-cooperacao-tech'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'nuvem-brasil': {
-        name: 'Nuvem Brasil',
-        description: 'Proibir órgãos públicos contratar AWS/Azure/Google Cloud. Criar RNP Cloud (Rede Nacional Ensino Pesquisa) para gov.br + universidades + hospitais. Custo: R$ 15bi/5anos. Economia: R$ 8bi/ano após implementação (hoje gastamos isso com nuvens estrangeiras). Impede CLOUD Act americano acessar dados sensíveis brasileiros. Replicar modelo Pix: BC mandou, funcionou',
-        connections: ['politicas-soberania', 'cloud-act', 'infraestrutura-dependente', 'soberania-digital'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'dependencia-tecnologica': {
-        name: 'Dependência Tecnológica',
-        description: 'Brasil importa 90% tecnologia crítica: sistemas operacionais (Windows, iOS, Android), nuvem (AWS, Azure, Google), IA (OpenAI, Google, Meta), chips (Taiwan, China, EUA), cabos (consórcios privados), satélites (Starlink). Consequência: qualquer decisão política que desagrade centros pode resultar em pressão sobre infraestrutura crítica. É colônia permanente enquanto durar',
-        connections: ['colonialismo-digital', 'soberania-digital', 'custo-dependencia', 'politicas-soberania'],
-        color: '#ef4444',
-        layer: 0
-    },
-
-    // ========================================
-    // CAPÍTULO 24: POLÍTICAS CONCRETAS
-    // ========================================
-    'politicas-concretas': {
-        name: 'Políticas Concretas para Revolução Cibernética',
-        description: 'Agenda integrada 10 domínios: regulação plataformas, soberania digital, democracia participativa, cooperativismo, taxação Big Techs, educação emancipatória, privacidade fundamental, mídia pública, transição energética justa, renda básica universal. Horizonte temporal: imediato (1-2 anos), médio prazo (5-10 anos), estrutural (20-30 anos)',
-        connections: ['regulacao-plataformas', 'democracia-participativa-digital', 'cooperativismo-plataforma', 'taxacao-big-techs', 'educacao-emancipatoria', 'privacidade-direito-fundamental', 'midia-publica-digital', 'transicao-energetica-justa', 'renda-basica-universal'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'regulacao-plataformas': {
-        name: 'Regulação Plataformas',
-        description: 'CLT digital obrigatória, piso R$ 2.500/mês, fim falsa autonomia. Lei SP 17.468/2021: seguro obrigatório, bloqueio judicial apenas, transparência algoritmo - ZERO fiscalização. DSA Europa: multa 6% faturamento, auditoria algoritmos, remoção ilegal 24h. DMA Europa: fim bundling, fee 30% ilegal. Enforcement gap: leis existem, implementação zero',
-        connections: ['clt-plataformas', 'dsa-europa', 'dma-europa', 'lei-sp-plataformas', 'enforcement-gap', 'modelo-barcelona'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'dsa-europa': {
-        name: 'Digital Services Act (DSA)',
-        description: 'Lei europeia 2022: plataformas >45mi usuários UE = "very large platforms" (VLOP). Obrigações: auditoria independente algoritmos, transparência moderação conteúdo, remover ilegal 24h, relatórios semestrais, cooperação autoridades. Multa até 6% faturamento GLOBAL. Meta multada €1,2bi (2023)',
-        connections: ['regulacao-plataformas', 'dma-europa', 'transparencia-algoritmica', 'multas-efetivas'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'dma-europa': {
-        name: 'Digital Markets Act (DMA)',
-        description: 'Lei antimonopólio digital UE 2022: "gatekeepers" (receita €7,5bi UE + capitalização €75bi + 45mi usuários). Proibições: bundling (WhatsApp interoperar Signal/Telegram), self-preferencing (Google favorece próprios produtos), fee 30% app stores. Multa 10% faturamento, reincidência 20%. Apple obrigada permitir app stores alternativos iOS',
-        connections: ['regulacao-plataformas', 'dsa-europa', 'jardins-murados', 'interoperabilidade'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'lei-sp-plataformas': {
-        name: 'Lei SP 17.468/2021',
-        description: 'Lei municipal São Paulo apps entrega: seguro acidente obrigatório, bloqueio apenas judicial, transparência critérios algoritmo, direito contestação. MAS: zero fiscalização, zero multas aplicadas, zero transparência efetiva (empresas alegam "segredo negócio"). Lei ABC SP 7.349/2022: taxa 1% faturamento → fundo trabalhadores. Nenhuma outra prefeitura replicou',
-        connections: ['regulacao-plataformas', 'enforcement-gap', 'breque-dos-apps', 'transparencia-algoritmica'],
-        color: '#f59e0b',
-        layer: 1
-    },
-    'enforcement-gap': {
-        name: 'Enforcement Gap',
-        description: 'Lacuna aplicação: leis existem, implementação zero. LGPD sem multas (ANPD orçamento R$ 19mi), Lei SP plataformas sem fiscalização, Marco Civil sem neutralidade rede. Causas: 1) captura regulador (lobby), 2) orçamento insuficiente, 3) falta vontade política. Solução: multas automáticas + força-tarefa MPT + orçamento fiscalização',
-        connections: ['lei-sp-plataformas', 'lgpd-enfraquecida', 'lobby-big-techs', 'modelo-barcelona'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'modelo-barcelona': {
-        name: 'Modelo Barcelona',
-        description: 'Salário mínimo €10/h plataformas (2024), 15 fiscais específicos apps, multas aplicadas (Glovo €890k, Deliveroo €250k). Software livre: 70% sistemas municipais migrados (economiza €35mi/ano). Decidim: democracia participativa digital 400k usuários. Barcelona En Comú (2015-2023): mostra que regulação + fiscalização + investimento público = viável',
-        connections: ['regulacao-plataformas', 'decidim-barcelona', 'software-livre-publico', 'enforcement-gap'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'democracia-participativa-digital': {
-        name: 'Democracia Participativa Digital',
-        description: 'Orçamento participativo escala, assembleias digitais, blockchain auditorias. Decidim Barcelona 400k usuários, vTaiwan consensus blockchain, Participa.br R$ 4bi piloto. Quadratic voting, assembleias híbridas (presencial + online), IA facilitação (resumo propostas, simulação impacto). Riscos: exclusão digital, manipulação bots, baixo letramento',
-        connections: ['decidim-barcelona', 'vtaiwan', 'participa-br', 'quadratic-voting', 'assembleias-hibridas', 'ia-facilitacao'],
-        color: '#8b5cf6',
-        layer: 1
-    },
-    'decidim-barcelona': {
-        name: 'Decidim Barcelona',
-        description: 'Plataforma democracia participativa Barcelona: 400 mil usuários, 60 mil propostas, 14 mil aceitas e implementadas (2016-2023). Software livre AGPLv3, replicado 400+ cidades globalmente. Funcionalidades: propostas, debates, votação, assembleias presenciais, orçamento participativo. Transparência 100%: código, dados, decisões. Prova que escala é possível',
-        connections: ['democracia-participativa-digital', 'modelo-barcelona', 'software-livre-publico', 'participa-br'],
-        color: '#8b5cf6',
-        layer: 1
-    },
-    'vtaiwan': {
-        name: 'vTaiwan',
-        description: 'Plataforma consensus Taiwan (2015-presente): usa blockchain propostas (Uber, Airbnb, fintech, álcool online). Processo: 1) Apresentação stakeholders, 2) Brainstorming público, 3) Reflexão (votação Pol.is), 4) Legislação. 80% concordância prévia votação (evita polarização). Uber regulado 2016 sem greve/violência. Governo digital Audrey Tang',
-        connections: ['democracia-participativa-digital', 'blockchain-governanca', 'consensus-decision', 'audrey-tang'],
-        color: '#8b5cf6',
-        layer: 1
-    },
-    'participa-br': {
-        name: 'Participa.br',
-        description: 'Plataforma orçamento participativo federal Brasil: R$ 4bi votados 2025 (0,07% orçamento), mas baixa divulgação (500k votantes vs 150mi eleitores = 0,3%). Problema: 1) pouca grana, 2) baixa divulgação, 3) propostas limitadas. Potencial: se R$ 200bi/ano (4% orçamento) + divulgação massiva = 30-50mi participantes',
-        connections: ['democracia-participativa-digital', 'decidim-barcelona', 'orcamento-participativo', 'exclusao-digital'],
-        color: '#f59e0b',
-        layer: 1
-    },
-    'quadratic-voting': {
-        name: 'Quadratic Voting',
-        description: 'Voto peso raiz quadrada: 1 voto = 1 crédito, 4 votos = 16 créditos, 9 votos = 81 créditos. Evita captura por ricos (comprar 10 mil votos custa 100 milhões créditos). Testado Colorado 2019 (orçamento participativo US$ 5mi), Taiwan vTaiwan, Porto Alegre 2023 (R$ 500 mil). Ferramenta matemática anti-plutocracia',
-        connections: ['democracia-participativa-digital', 'vtaiwan', 'teoria-jogos', 'anti-captura'],
-        color: '#8b5cf6',
-        layer: 1
-    },
-    'assembleias-hibridas': {
-        name: 'Assembleias Híbridas',
-        description: 'Presencial + online simultâneo, tradução tempo real, acessibilidade (Libras, audiodescrição). Quebra barreira geográfica (interior participa capital) e temporal (assíncrono). Problema Porto Alegre: 1.500 reuniões presenciais/ano (30k participantes) = caro/elitizado. Solução híbrida: 300 presenciais + 5 mil online = democratiza SEM perder vínculos locais',
-        connections: ['democracia-participativa-digital', 'inclusao-digital', 'acessibilidade-digital', 'orcamento-participativo'],
-        color: '#8b5cf6',
-        layer: 1
-    },
-    'ia-facilitacao': {
-        name: 'IA Facilitação Democrática',
-        description: 'IA resume automaticamente propostas (GPT-4), clustering propostas similares, simulação impacto fiscal/social/ambiental, tradução tempo real, acessibilidade (texto→voz, voz→texto). MAS decisão final = humana. IA = assistente não substituto. Risco: viés algoritmo, captura Big Tech. Solução: modelos abertos (LLaMA), auditoria independente, código transparente',
-        connections: ['democracia-participativa-digital', 'ia-soberana', 'transparencia-algoritmica', 'auditoria-algoritmos'],
-        color: '#8b5cf6',
-        layer: 1
-    },
-    'cooperativismo-plataforma': {
-        name: 'Cooperativismo de Plataforma',
-        description: 'Fundo público R$ 10bi, isenção fiscal 10 anos, compras públicas priorizam. Motorsapp SP 2.500 mototaxistas (taxa 12% vs 25% Uber), CoopCycle 30+ cooperativas 10 países, Fairbnb 50% taxa → projetos comunitários. Problema: VCs despejaram US$ 25bi Uber 2009-2020 (dumping), cooperativas sem acesso capital paciente. Solução: venture capital socialista (BNDES)',
-        connections: ['motorsapp', 'coopcycle', 'fairbnb', 'fundo-cooperativas-digitais', 'compras-publicas-cooperativas', 'venture-capital-socialista'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'fundo-cooperativas-digitais': {
-        name: 'Fundo Nacional Cooperativas Digitais',
-        description: 'Proposta: R$ 10bi BNDES, crédito subsidiado 2% juros, carência 3 anos, prazo 10 anos. Contrapartida: governança democrática (1 pessoa=1 voto), software livre, transparência financeira. Viabiliza cooperativas competir com plataformas capitalistas. Motorsapp precisa R$ 5mi capital giro escalar 2.500→10 mil trabalhadores — banco comercial cobra 15-20% juros (inviável)',
-        connections: ['cooperativismo-plataforma', 'bndes-social', 'venture-capital-socialista', 'motorsapp'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'compras-publicas-cooperativas': {
-        name: 'Compras Públicas Priorizam Cooperativas',
-        description: 'Lei 12.690/2012 existe: 30% contratos governo devem priorizar cooperativas. Realidade: <5% cumprem (falta fiscalização + lobby terceirização). Proposta: multa automática gestores não cumprem + portal transparência + meta 30% até 2027. Estado gasta R$ 150bi/ano terceirização — 30% = R$ 45bi/ano para cooperativas',
-        connections: ['cooperativismo-plataforma', 'lei-12690-2012', 'terceirizacao-publica', 'enforcement-gap'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'venture-capital-socialista': {
-        name: 'Venture Capital Socialista',
-        description: 'BNDES cria fundo R$ 10bi específico cooperativas digitais, retorno SOCIAL não lucro. Aceita payback longo (10-15 anos vs 5-7 anos VCs), não exige exit (IPO/aquisição), permite governança democrática (VCs sempre exigem controle board). Modelo EXISTIU: BNDESPAR investiu Embraer/Petrobras/Vale anos 50-70. Precisa recriar para economia digital',
-        connections: ['fundo-cooperativas-digitais', 'cooperativismo-plataforma', 'bndes-social', 'capital-paciente'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'taxacao-big-techs': {
-        name: 'Taxação Big Techs',
-        description: 'OCDE 15% mínimo global, taxa bits, imposto renda algoritmos, fim paraísos fiscais. Brasil perdeu R$ 10,5bi impostos (2020-23) por transferência lucros. Taxa bits R$ 0,01/GB tráfego internacional = R$ 15-20bi/ano. Imposto renda algoritmos: lucro automação >60% = taxa extra 10-20%. França 2019 taxa 3% receita digital = €500mi',
-        connections: ['ocde-pilar-1', 'taxa-bits', 'imposto-renda-algoritmos', 'fim-paraisos-fiscais', 'franca-taxa-digital'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'ocde-pilar-1': {
-        name: 'OCDE Pilar 1',
-        description: 'Acordo OCDE 2021: 25% lucro acima 10% margem taxado onde usuários estão (não sede). Impacta Google/Meta/Amazon (margem 20-30%). Brasil deixa arrecadar R$ 3-4bi/ano por não ter implementado ainda (lobby venceu). 140 países assinaram — Brasil na lista mas não legislou. PL travado Congresso desde 2022',
-        connections: ['taxacao-big-techs', 'lobby-big-techs', 'transferencia-lucros', 'base-erosion'],
-        color: '#f59e0b',
-        layer: 1
-    },
-    'taxa-bits': {
-        name: 'Taxa Bits',
-        description: 'R$ 0,01 por GB tráfego internacional (exceção educação/saúde). Brasil 800 Gbps tráfego médio internacional (2024) = 3,5 exabytes/ano. Taxa = R$ 35bi/ano. Mas só taxar Big Techs (Google, Meta, Netflix, Amazon) = 70% tráfego = R$ 24,5bi/ano. Arrecadação: financia nuvem Brasil, IA soberana, cooperativas digitais',
-        connections: ['taxacao-big-techs', 'trafego-internacional', 'nuvem-brasil', 'ia-soberana'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'imposto-renda-algoritmos': {
-        name: 'Imposto Renda Algoritmos',
-        description: 'Lucro gerado automação >60% força trabalho = taxa extra 10-20%, redistributivo (financia renda básica). Bill Gates propôs 2017 ("robot tax"), rejeitado lobby. Justificativa: IA elimina empregos, concentra renda, precisa redistribuir produtividade. Cálculo: empresa 1.000 funcionários → 100 (automação 90%) → taxa 15% lucro extra = R$ 50-100mi/ano grandes empresas',
-        connections: ['taxacao-big-techs', 'renda-basica-universal', 'automacao-desemprego', 'robot-tax'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'fim-paraisos-fiscais': {
-        name: 'Fim Paraísos Fiscais',
-        description: 'Lista negra Brasil (Irlanda 12,5%, Holanda, Luxemburgo, Cayman) + sanções: multa 40% transações, proibição contratos públicos, COAF monitora. Modelo GAFI (lavagem dinheiro). Big Techs: Google Holanda (€19bi lucros 2022, imposto €3,5bi = 18%), Meta Irlanda (€23bi, imposto €2,9bi = 12%). Brasil: Zero. Acabar com isso = R$ 8-10bi/ano extra',
-        connections: ['taxacao-big-techs', 'transferencia-lucros', 'ocde-pilar-1', 'base-erosion'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'franca-taxa-digital': {
-        name: 'Taxa Digital França',
-        description: 'Lei 2019: 3% receita digital empresas faturamento global >€750mi. Google/Amazon/Meta/Apple pagaram €500mi/ano. Google repassou custo anunciantes (mas continuou operando). Caso prático: possível taxar mesmo sem acordo global. UE quer 15% até 2027. Brasil: zero progresso (lobby)',
-        connections: ['taxacao-big-techs', 'ocde-pilar-1', 'lobby-big-techs', 'modelo-europeu'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'educacao-emancipatoria': {
-        name: 'Educação Emancipatória',
-        description: 'Currículo crítico TI, epistemologias plurais, software livre, letramento algorítmico. 87% cursos TI BR bibliografia 100% EUA — zero Freire, Furtado, epistemologias Sul. Currículo ético TI: obrigatório Ética/Filosofia (Bateson/Freire), História Tecnologia (Cybersyn/OGAS), epistemologias indígenas (Nhandereko). Software livre curriculo: substituir licenças proprietárias = R$ 8bi/ano economia',
-        connections: ['curriculo-etico-ti', 'epistemologias-plurais-educacao', 'software-livre-educacao', 'letramento-algoritmico', 'engenheiros-soberania'],
-        color: '#8b5cf6',
-        layer: 1
-    },
-    'curriculo-etico-ti': {
-        name: 'Currículo Ético TI',
-        description: 'Obrigatório graduação TI: Ética Tecnologia (40h), História Tecnologia (40h), Epistemologias Plurais (40h). Conteúdo: cibernética Bateson, pedagogia Freire, Cybersyn/OGAS, Nhandereko guarani, Ubuntu africano, criptografia privacidade, software livre. Eliminar colonialismo epistêmico (100% bibliografia EUA). Formar engenheiros críticos não servos império',
-        connections: ['educacao-emancipatoria', 'epistemologias-plurais-educacao', 'educacao-colonizada', 'freire-digital'],
-        color: '#8b5cf6',
-        layer: 1
-    },
-    'epistemologias-plurais-educacao': {
-        name: 'Epistemologias Plurais na Educação',
-        description: 'Incluir: Nhandereko guarani (conhecimento relacional não-hierárquico), Ubuntu africano (pessoa = pessoa através pessoas), Buen Vivir andino (Sumak Kawsay), cosmotécnicas chinesas (Yuk Hui), pedagogia freiriana. Não é "diversidade cultural" folclórica — são SISTEMAS COMPLETOS pensamento. Descolonizar imaginário tecnológico',
-        connections: ['curriculo-etico-ti', 'nhandereko', 'ubuntu-filosofia', 'buen-vivir', 'yuk-hui-cosmotecnicas'],
-        color: '#8b5cf6',
-        layer: 1
-    },
-    'software-livre-educacao': {
-        name: 'Software Livre na Educação',
-        description: 'Substituir TODAS licenças proprietárias ensino público: Windows→Linux, Office→LibreOffice, Photoshop→GIMP, AutoCAD→FreeCAD. Economia: R$ 8bi/ano (licenças). Pedagogia: ensinar soberania tecnológica desde cedo. Kerala Índia fez 2008: 100% escolas Linux, economia US$ 427mi, formou geração desenvolvedores',
-        connections: ['educacao-emancipatoria', 'linux-educacional', 'soberania-digital', 'kerala-linux'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'letramento-algoritmico': {
-        name: 'Letramento Algorítmico',
-        description: 'Ensinar viés IA desde ensino médio, como funcionam recomendações, privacidade/vigilância. Não é "programação" — é CRÍTICA algoritmos. Perguntas: Por que YouTube recomenda isso? Como TikTok sabe meus gostos? Por que anúncio segue? Objetivo: cidadãos capazes questionar não apenas usar. Freire digital: conscientização tecnológica',
-        connections: ['educacao-emancipatoria', 'freire-digital', 'transparencia-algoritmica', 'pensamento-critico-digital'],
-        color: '#8b5cf6',
-        layer: 1
-    },
-    'privacidade-direito-fundamental': {
-        name: 'Privacidade como Direito Fundamental',
-        description: 'E2EE obrigatório, proibição reconhecimento facial, habeas data real. LGPD 2018 avanço MAS: sem servidores obrigatórios BR, sem proibição transferência, ANPD orçamento R$ 19mi (ridículo). E2EE obrigatório default, reconhecimento facial moratória 5 anos, habeas data digital (saber TUDO empresas têm, deletar imediatamente). Multas LGPD: 2% → 6% faturamento GLOBAL (GDPR)',
-        connections: ['e2ee-obrigatorio', 'reconhecimento-facial-proibido', 'habeas-data-digital', 'lgpd-fortalecida', 'gdpr-modelo'],
-        color: '#8b5cf6',
-        layer: 1
-    },
-    'e2ee-obrigatorio': {
-        name: 'E2EE Obrigatório',
-        description: 'Criptografia ponta-a-ponta default (WhatsApp tem, Meta quer enfraquecer). Proibir backdoors (pressão FBI/Abin). Apenas usuários podem ler mensagens — nem empresa, nem governo. Exceção: ordem judicial específica (não backdoor geral). Signal modelo ouro. Brasil: projeto lei PL 2630/2020 ("PL Fake News") queria quebrar E2EE — derrotado pressão sociedade civil',
-        connections: ['privacidade-direito-fundamental', 'signal-e2ee', 'pl-2630-fake-news', 'backdoors-proibidos'],
-        color: '#8b5cf6',
-        layer: 1
-    },
-    'reconhecimento-facial-proibido': {
-        name: 'Reconhecimento Facial Proibido',
-        description: 'Moratória 5 anos, depois apenas judicial + transparência 100%. San Francisco proibiu 2019 (primeira cidade mundo). Clearview AI raspou 3bi fotos redes sociais, vendeu polícias, ilegal GDPR. Brasil: polícias usam sem lei, viés racial (80% falsos positivos negros). Câmeras vigilância = infraestrutura necropolítica. Proibir uso público, criminalizar privado sem consentimento',
-        connections: ['privacidade-direito-fundamental', 'clearview-ai', 'vies-racial-ia', 'san-francisco-proibicao', 'vigilancia-facial'],
-        color: '#8b5cf6',
-        layer: 1
-    },
-    'habeas-data-digital': {
-        name: 'Habeas Data Digital',
-        description: 'Direito saber TUDO empresas têm sobre você: dados coletados, inferências (IA prevê renda/orientação/saúde), compartilhamento terceiros. Deletar imediatamente (não "30 dias úteis"), portabilidade completa (migrar Google→alternativa 1 clique). LGPD permite mas empresas dificultam (interface confusa, demora, dados incompletos). Solução: multa automática descumprimento + padrão técnico portabilidade',
-        connections: ['privacidade-direito-fundamental', 'lgpd-fortalecida', 'portabilidade-dados', 'right-to-be-forgotten'],
-        color: '#8b5cf6',
-        layer: 1
-    },
-    'lgpd-fortalecida': {
-        name: 'LGPD Fortalecida',
-        description: 'Mudanças necessárias: 1) Multas 2% → 6% faturamento GLOBAL (GDPR), 2) Servidores dados sensíveis obrigatório Brasil (saúde, genoma, biometria), 3) Proibir transferência internacional sem acordo adequação, 4) ANPD orçamento R$ 19mi → R$ 500mi (200 fiscais). Atual: ANPD 50 funcionários fiscalizar Google/Meta/Amazon — piada',
-        connections: ['privacidade-direito-fundamental', 'lgpd-enfraquecida', 'gdpr-modelo', 'anpd-orcamento'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'gdpr-modelo': {
-        name: 'GDPR Modelo Europeu',
-        description: 'General Data Protection Regulation UE 2018: padrão-ouro privacidade. Multa 4% faturamento global (Amazon €746mi, Google €90mi Meta €1,2bi). Opt-in não opt-out, consentimento revogável 1 clique, portabilidade obrigatória, data protection officers obrigatórios. Brasil: copiou estrutura mas esvaziou fiscalização/multas. Precisa copiar implementação também',
-        connections: ['lgpd-fortalecida', 'privacidade-direito-fundamental', 'modelo-europeu', 'dsa-europa'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'midia-publica-digital': {
-        name: 'Mídia Pública Digital',
-        description: 'BBC/CBC Brasil, financiamento estável, algoritmo transparente, fact-checking ágil. EBC destroçada: orçamento R$ 600mi → R$ 200mi (2014-2020), captura Bolsonaro. Proposta: EBC recebe 0,5% PIB (R$ 50bi/ano), independência garantida lei, conselho sociedade civil, proibição censura. Plataforma digital: streaming/podcast/redes sociais públicas, algoritmo código aberto, fact-checking tempo real',
-        connections: ['ebc-destroida', 'modelo-bbc', 'modelo-cbc', 'plataforma-digital-publica', 'fact-checking-agil'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'modelo-bbc': {
-        name: 'Modelo BBC',
-        description: 'British Broadcasting Corporation: £3,7bi/ano (taxa TV £159/ano/domicílio), 22 mil funcionários, 33% audiência UK, independência garantida royal charter (Parlamento não interfere conteúdo). Notícias, séries, documentários, educação. BBC World Service: transmissão 42 idiomas. Algoritmo iPlayer público. Prova que mídia pública qualidade + independência = viável',
-        connections: ['midia-publica-digital', 'ebc-destroida', 'financiamento-estavel', 'independencia-editorial'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'modelo-cbc': {
-        name: 'Modelo CBC Canadá',
-        description: 'Canadian Broadcasting Corporation: C$ 1,2bi/ano (70% verba pública, 30% publicidade), 6.400 funcionários, conteúdo bilíngue (inglês-francês), 15% audiência nacional. Independência: CBC Act proíbe governo interferir. Rádio + TV + digital. Crítica: dependência parcial publicidade cria conflito interesses. Brasil: aprender independência, evitar publicidade',
-        connections: ['midia-publica-digital', 'modelo-bbc', 'ebc-destroida', 'independencia-editorial'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'plataforma-digital-publica': {
-        name: 'Plataforma Digital Pública',
-        description: 'EBC cria: streaming nacional (filmes/séries/docs brasileiros), podcast rede, rede social pública (Mastodon), agregador notícias. Algoritmo código aberto GitHub, sem vigilância, sem vendagem dados. Modelo: BBC iPlayer (30mi usuários UK), ARD Mediathek (Alemanha). Quebra monopólio Netflix/YouTube/Spotify — oferece alternativa pública gratuita qualidade',
-        connections: ['midia-publica-digital', 'modelo-bbc', 'mastodon-publico', 'streaming-nacional'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'fact-checking-agil': {
-        name: 'Fact-Checking Ágil',
-        description: 'Equipe 500 jornalistas EBC, IA detecta viralização fake news (>100k compartilhamentos 6h), desmentido propagado mesma velocidade mentira (push notification, trending topics, parceria WhatsApp/Telegram). Problema atual: Lupa/Aos Fatos desmentem 48h depois, fake news já 10mi visualizações. Solução: infraestrutura pública + tecnologia + velocidade. Modelo: Taiwan fact-check 60min',
-        connections: ['midia-publica-digital', 'ia-facilitacao', 'combate-desinformacao', 'taiwan-fact-check'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'transicao-energetica-justa': {
-        name: 'Transição Energética Justa',
-        description: 'Empregos verdes digitais, retrofit trabalhadores, planejamento democrático. Data centers 1-2% energia global (416 TWh/ano), mineração Bitcoin 150 TWh/ano. Obrigar data centers 80% energia renovável LOCAL (não créditos), 10 anos transição. Retrofit trabalhadores combustão → solar/eólica/baterias, 500 mil empregos BR. Planejamento VSM: ONS democratizado, assembleias clima',
-        connections: ['data-centers-renovaveis', 'retrofit-trabalhadores', 'planejamento-vsm-energia', 'just-transition', 'empregos-verdes-digitais'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'data-centers-renovaveis': {
-        name: 'Data Centers 100% Renováveis',
-        description: 'Proibir órgãos públicos contratar data centers não-renováveis. Google/Meta prometem 100% renovável 2030, MAS compram créditos carbono (greenwashing) não constroem renováveis. Proposta: 80% energia renovável LOCAL, 10 anos prazo, multa 5% faturamento. Inclui: resfriamento eficiente (agua reutilizada), hardware vida longa (não obsolescência programada)',
-        connections: ['transicao-energetica-justa', 'greenwashing-big-tech', 'energia-renovavel', 'nuvem-brasil'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'retrofit-trabalhadores': {
-        name: 'Retrofit Trabalhadores',
-        description: 'Trabalhadores petróleo/carvão/combustão não podem pagar crise climática. Programa: renda transição 3 anos (100% salário) + requalificação gratuita (energia solar, eólica, baterias, eficiência energética). 200 mil trabalhadores petróleo BR, 300 mil veículos combustão. Custo: R$ 25-30bi/3anos. Cria 500 mil empregos verdes. Modelo: Alemanha Energiewende',
-        connections: ['transicao-energetica-justa', 'just-transition', 'empregos-verdes-digitais', 'renda-transicao'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'just-transition': {
-        name: 'Just Transition (Transição Justa)',
-        description: 'Princípio: trabalhadores/comunidades dependentes combustíveis fósseis não podem arcar sozinhos custo transição verde. Direitos: emprego alternativo garantido, renda durante transição, voz decisões (não imposto cima). OIT Diretrizes 2015. Movimento sindical + ambiental. Evita resistência trabalhadores (que temem perder emprego) à transição. Solidariedade não sacrifício',
-        connections: ['retrofit-trabalhadores', 'transicao-energetica-justa', 'sindicalismo-ambiental', 'oit-diretrizes'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'empregos-verdes-digitais': {
-        name: 'Empregos Verdes Digitais',
-        description: '500 mil empregos BR: instalação/manutenção solar (200k), eólica (100k), baterias/armazenamento (80k), eficiência energética predial (120k). Salário médio R$ 3.500-5.000/mês (acima média nacional R$ 2.900). Requer formação técnica 6-18 meses. Financiamento: taxação Big Techs + fim subsídios fósseis (R$ 80bi/ano petróleo/carvão)',
-        connections: ['transicao-energetica-justa', 'retrofit-trabalhadores', 'economia-verde', 'fim-subsidios-fosseis'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'renda-basica-universal': {
-        name: 'Renda Básica Universal',
-        description: 'Piloto R$ 1.000/mês, financiamento taxação IA/algoritmos, experimento controlado. UBI: incondicional, individual, universal, periódico. Maricá RJ R$ 70/mês (2019) 42 mil famílias. Piloto proposto: 10 municípios (100 mil pessoas), 3 anos, custo R$ 3,6bi. Financiamento: taxa algoritmos (R$ 15-20bi/ano), imposto grandes fortunas (R$ 40-60bi/ano), reformar isenções (R$ 350bi/ano)',
-        connections: ['piloto-ubi-brasil', 'marica-renda-basica', 'financiamento-ubi', 'argumento-automacao', 'argumento-dignidade'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'piloto-ubi-brasil': {
-        name: 'Piloto UBI Brasil',
-        description: '10 municípios (5 urbanos + 5 rurais), 100 mil pessoas, R$ 1.000/mês, 3 anos duração, custo R$ 3,6bi. Métricas: saúde mental, empreendedorismo, educação, criminalidade, trabalho formal/informal. Grupo controle (50 mil sem UBI) para comparar. Modelo: Finlândia 2017-18 (2 mil pessoas), Quênia GiveDirectly (20 mil pessoas 12 anos)',
-        connections: ['renda-basica-universal', 'marica-renda-basica', 'experimento-controlado', 'finlandia-ubi'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'marica-renda-basica': {
-        name: 'Maricá Renda Básica',
-        description: 'Município RJ (165 mil hab): Renda Básica Cidadania R$ 70-130/mês (2019-presente), 42 mil famílias (60% população). Moeda local mumbuca (app), não pode sacar (circula comércio local). Resultados: comércio local +30%, desemprego -10%, saúde mental +15%. Financiamento: royalties petróleo. Prova que funciona escala municipal',
-        connections: ['renda-basica-universal', 'piloto-ubi-brasil', 'moeda-local', 'royalties-petroleo'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'financiamento-ubi': {
-        name: 'Financiamento UBI',
-        description: 'R$ 214mi brasileiros × R$ 1.000/mês × 12 meses = R$ 2,6 tri/ano (50% PIB) = INVIÁVEL total. MAS: 1) Taxa algoritmos R$ 15-20bi/ano, 2) Imposto grandes fortunas (>R$ 10mi) 1% = R$ 40-60bi/ano, 3) Reformar isenções fiscais empresas R$ 350bi/ano → reduzir 30% = R$ 105bi, 4) Taxação Big Techs R$ 10bi/ano. Total: R$ 170-195bi/ano = UBI R$ 680/pessoa/mês viável',
-        connections: ['renda-basica-universal', 'imposto-grandes-fortunas', 'reforma-isencoes-fiscais', 'taxa-algoritmos'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'argumento-automacao': {
-        name: 'Argumento Automação UBI',
-        description: 'IA elimina 30-40% empregos 20 anos (Goldman Sachs). Produtividade aumenta (IA + robôs), mas renda concentra (donos capital). UBI redistribui produtividade: se robô substitui 1 trabalhador produzindo R$ 10k/mês, tributar 30% = R$ 3k/mês financia UBI 3 pessoas. Não é "dar dinheiro atoa" — é DIVIDENDO social da automação',
-        connections: ['renda-basica-universal', 'automacao-desemprego', 'imposto-renda-algoritmos', 'dividendo-social'],
-        color: '#8b5cf6',
-        layer: 1
-    },
-    'argumento-dignidade': {
-        name: 'Argumento Dignidade UBI',
-        description: 'Trabalho não define valor humano. UBI libera tempo para: arte, cuidado (crianças/idosos), comunidade, política, educação, invenção. Bertrand Russell "Elogio ao Ócio" (1932): trabalho 4h/dia suficiente, resto criatividade. Crítica ética protestante (trabalho = virtude, ócio = vício). UBI = DIREITO existir, não caridade',
-        connections: ['renda-basica-universal', 'bertrand-russell-ocio', 'etica-protestante-critica', 'tempo-livre-criativo'],
-        color: '#8b5cf6',
-        layer: 1
-    },
-    'sintese-integrada-politicas': {
-        name: 'Síntese Integrada 10 Domínios',
-        description: 'Políticas não são independentes — regulação financia UBI (taxação Big Techs), soberania permite cooperativas (nuvem pública), educação forma quadros (engenheiros soberania), mídia pública combate desinformação (fact-checking), democracia participativa legitima (Decidim), transição energética financia (royalties), privacidade protege (LGPD forte). É SISTEMA integrado não lista fragmentada',
-        connections: ['politicas-concretas', 'visao-sistemica', 'feedback-loops-politicos', 'sinergia-politicas'],
-        color: '#8b5cf6',
-        layer: 1
-    },
-    'obstaculo-central-politico': {
-        name: 'Obstáculo Central é Político',
-        description: 'Não é viabilidade técnica/econômica — é POLÍTICO (lobby + ideologia + correlação forças). Dinheiro existe (R$ 350bi/ano isenções, R$ 600bi/ano juros dívida), tecnologia existe (Pix prova), conhecimento existe (engenheiros formados). Falta: VONTADE POLÍTICA + enfrentar Big Tech + romper ideologia neoliberal ("Estado não inova", "mercado resolve")',
-        connections: ['sintese-integrada-politicas', 'lobby-big-techs', 'ideologia-neoliberal', 'correlacao-forcas'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'estrategia-transicao': {
-        name: 'Estratégia Transição',
-        description: 'Vitórias rápidas (regulação plataformas leis municipais, Barcelona modelo) constroem poder para reformas estruturais (soberania digital, UBI). Sequência: 1) Vitórias locais (leis municipais, cooperativas piloto), 2) Acúmulo forças (articulação nacional, pressão midiática), 3) Salto escala (leis federais, BNDES, BC). Não é gradualismo — é ACUMULAÇÃO ESTRATÉGICA',
-        connections: ['sintese-integrada-politicas', 'vitorias-rapidas', 'reformas-estruturais', 'acumulacao-forcas'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'licao-cybersyn-defensabilidade': {
-        name: 'Lição Cybersyn: Defensabilidade',
-        description: 'Alternativas precisam aparato defesa (legal, político, físico), senão destruídas. Cybersyn funcionou 1971-73 mas CIA+Pinochet destruíram. Pix funciona porque BC autônomo + governo protegeu. Cooperativas precisam: leis protegem (CLT plataformas), financiamento público (BNDES), defesa jurídica (MPT), articulação internacional (impossível isolar). CONSTRUIR não basta — DEFENDER necessário',
-        connections: ['estrategia-transicao', 'cybersyn', 'pix-soberania', 'aparato-defesa'],
-        color: '#ef4444',
-        layer: 0
-    },
-    'papel-movimentos-sociais': {
-        name: 'Papel Movimentos Sociais',
-        description: 'MST sementes digitais (agroecologia + soberania alimentar), Zapatistas redes autônomas (México), cooperativas catadores (Cataki 100+ cooperativas), MTD ocupações digitais. Não esperar Estado — CONSTRUIR alternativas já. Estado disputa depois (Barcelona, Kerala). Movimento social = laboratório práticas pós-capitalistas',
-        connections: ['estrategia-transicao', 'mst-digital', 'zapatistas-autonomia', 'cataki-cooperativas', 'prefiguracao-politica'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'papel-intelectuais': {
-        name: 'Papel Intelectuais',
-        description: 'Produzir conhecimento aplicado não torres marfim. Traduzir técnica→política (VSM para sindicalistas, blockchain para cooperativas). Conectar lutas (trabalhadores plataforma + ambientalistas + feministas). Gramsci intelectual orgânico: não neutro, comprometido transformação. Universidade pública = infraestrutura comum, não fábrica diplomas',
-        connections: ['estrategia-transicao', 'gramsci-intelectual-organico', 'universidade-publica', 'traducao-conhecimento'],
-        color: '#8b5cf6',
-        layer: 1
-    },
-    'papel-estado-disputavel': {
-        name: 'Papel Estado Disputável',
-        description: 'Estado não neutro mas disputável — ganhar eleições não basta, precisa transformar aparelho (meritocracia→democracia). BC criou Pix porque tinha autonomia técnica + vontade política. EBC destroçada porque faltou defesa institucional. Lição: ocupar Estado + reformar estrutura + criar trincheiras (conselhos, ouvidorias, transparência). Estado = campo batalha não ferramenta neutra',
-        connections: ['estrategia-transicao', 'disputa-estado', 'autonomia-institucional', 'reforma-aparelho-estado'],
-        color: '#8b5cf6',
-        layer: 1
-    },
-    'horizonte-utopico-realista': {
-        name: 'Horizonte Utópico Realista',
-        description: 'Comunismo cibernético = infraestrutura pública + planejamento democrático + diversidade tecnológica. Não é sonho distante — é POSSÍVEL com tecnologia atual. Utopia não significa impossível, significa ainda-não-realizado-mas-realizável (Ernst Bloch). Pix, Wikipedia, Linux, Cuba biotecnologia, Kerala educação = PROVAS que funciona. Barreira = política não técnica',
-        connections: ['sintese-integrada-politicas', 'comunismo-cibernetico', 'ernst-bloch-utopia', 'exemplos-funcionam'],
-        color: '#22c55e',
-        layer: 1
-    },
-    'proximos-passos': {
-        name: 'Próximos Passos',
-        description: 'Organização (cooperativas/sindicatos/partidos), experimentação (pilotos locais), escala (federação/Estado). 1) ORGANIZAR: breques apps, cooperativas entrega, sindicatos tech. 2) EXPERIMENTAR: UBI municipal, Decidim cidades, software livre escolas. 3) ESCALAR: pressão legislativa, ocupação Estado, articulação BRICS. É práxis não teoria — FAZER transformando, não esperar condições ideais',
-        connections: ['politicas-concretas', 'organizacao-popular', 'experimentacao-local', 'escala-nacional', 'praxis-transformadora'],
-        color: '#22c55e',
-        layer: 1
-    },
-
-    // ========================================
-    // CAPÍTULO 30: O SALTO DIALÉTICO
-    // ========================================
     'salto-dialetico': {
         name: 'Salto Dialético',
-        description: 'Processo pelo qual filosofia abstrata se transforma em ciência concreta que recria o mundo. Não é abandono da filosofia mas sua CONCRETIZAÇÃO via ferramentas materiais',
-        connections: ['tese-antitese-sintese', 'filosofia-ciencia', 'materialismo-dialetico', 'praxis', 'condicoes-materiais-salto'],
+        description: 'Processo pelo qual filosofia abstrata se transforma em ciência concreta que recria o mundo',
+        connections: ["tese-antitese-sintese", "filosofia-ciencia", "materialismo-dialetico", "praxis"],
         color: '#8b5cf6',
         layer: 1
     },
     'tese-antitese-sintese': {
         name: 'Tese-Antítese-Síntese',
-        description: 'Movimento dialético hegeliano: contradição gera superação qualitativa. Tese (filosofia abstrata) → Antítese (crise da abstração) → Síntese (ciência concreta) → Nova Tese (nova filosofia)',
-        connections: ['salto-dialetico', 'negacao-negacao', 'espiral-dialetica', 'hegel'],
+        description: 'Movimento dialético hegeliano: contradição gera superação qualitativa',
+        connections: ["salto-dialetico", "negacao-negacao", "espiral-dialetica"],
         color: '#8b5cf6',
         layer: 1
     },
     'filosofia-ciencia': {
         name: 'Filosofia → Ciência',
-        description: 'Transformação de abstração em ferramentas materiais testáveis. Três saltos históricos: Aristóteles→Newton, Alquimia→Química, Lógica→Computação',
-        connections: ['salto-dialetico', 'aristoteles-newton', 'alquimia-quimica', 'logica-computacao'],
+        description: 'Transformação de abstração em ferramentas materiais testáveis',
+        connections: ["salto-dialetico", "aristoteles-newton", "alquimia-quimica", "logica-computacao"],
         color: '#8b5cf6',
         layer: 1
     },
     'aristoteles-newton': {
         name: 'Aristóteles → Newton',
-        description: 'Primeiro salto: filosofia natural → física matemática experimental. Crise (anomalias Tycho Brahe) → Ponte (telescópio, matemática, experimentos) → Recriação (Revolução Industrial)',
-        connections: ['filosofia-ciencia', 'telescopio-galileu', 'metodo-cientifico', 'revolucao-industrial', 'crise-abstracao'],
+        description: 'Primeiro salto: filosofia natural → física matemática experimental',
+        connections: ["filosofia-ciencia", "telescopio-galileu", "metodo-cientifico", "revolucao-industrial"],
         color: '#ef4444',
         layer: -1
     },
     'crise-abstracao': {
         name: 'Crise da Abstração',
-        description: 'Fase 1 do salto: quando filosofia encontra contradições empíricas insolúveis. Aristóteles não explica dados de Brahe, alquimia não prevê reações, lógica formal permanece abstrata',
-        connections: ['salto-dialetico', 'anomalias-empiricas', 'limites-paradigma', 'kuhn'],
+        description: 'Fase 1: quando filosofia encontra contradições empíricas insolúveis',
+        connections: ["salto-dialetico", "anomalias-empiricas", "limites-paradigma"],
         color: '#8b5cf6',
         layer: 1
     },
     'anomalias-empiricas': {
         name: 'Anomalias Empíricas',
-        description: 'Observações que teoria vigente não consegue explicar (Kuhn). Epiciclos acumulam-se, modelo fica absurdamente complexo, crise se instala',
-        connections: ['crise-abstracao', 'mudanca-paradigma', 'kuhn'],
+        description: 'Observações que teoria vigente não consegue explicar (Kuhn)',
+        connections: ["crise-abstracao", "tycho-brahe", "mudanca-paradigma"],
         color: '#8b5cf6',
         layer: 1
     },
     'telescopio-galileu': {
         name: 'Telescópio de Galileu',
-        description: 'Instrumento material que força crise teórica: luas de Júpiter contradizem geocentrismo. Não apenas "olhar melhor" — cria NOVOS DADOS empíricos que filosofia aristotélica não assimila',
-        connections: ['aristoteles-newton', 'ponte-metodologica', 'instrumentos-cientificos'],
+        description: 'Instrumento material que força crise teórica: luas de Júpiter contradizem geocentrismo',
+        connections: ["aristoteles-newton", "ponte-metodologica", "instrumentos-cientificos"],
         color: '#ef4444',
         layer: -1
     },
     'ponte-metodologica': {
         name: 'Ponte Metodológica',
-        description: 'Fase 2 do salto: ferramentas materiais que operacionalizam conceitos filosóficos. Instrumentos (telescópio, balança), matematização (F=ma), experimentos controlados (isolar variáveis)',
-        connections: ['salto-dialetico', 'instrumentos-cientificos', 'matematizacao', 'metodo-experimental'],
+        description: 'Fase 2: ferramentas materiais que operacionalizam conceitos filosóficos',
+        connections: ["salto-dialetico", "instrumentos-cientificos", "matematizacao", "metodo-experimental"],
         color: '#8b5cf6',
         layer: 1
     },
     'instrumentos-cientificos': {
         name: 'Instrumentos Científicos',
-        description: 'Ferramentas que estendem sentidos e permitem testar teoria. Telescópio (Galileu), balança analítica (Lavoisier), Máquina de Turing (computação)',
-        connections: ['ponte-metodologica', 'telescopio-galileu', 'balanca-lavoisier', 'maquina-turing'],
+        description: 'Ferramentas que estendem sentidos e permitem testar teoria',
+        connections: ["ponte-metodologica", "telescopio-galileu", "balanca-lavoisier", "maquina-turing"],
         color: '#8b5cf6',
         layer: 1
     },
     'matematizacao': {
         name: 'Matematização',
-        description: 'Expressão de fenômenos naturais em linguagem matemática (F=ma). Matemática se torna ferramenta preditiva, não apenas descritiva. Newton operacionaliza conceitos via cálculo',
-        connections: ['ponte-metodologica', 'linguagem-operacional', 'previsibilidade'],
+        description: 'Expressão de fenômenos naturais em linguagem matemática (F=ma)',
+        connections: ["ponte-metodologica", "newton-principia", "linguagem-operacional"],
         color: '#8b5cf6',
         layer: 1
     },
     'metodo-experimental': {
         name: 'Método Experimental',
-        description: 'Isolar variáveis, criar condições controladas, replicar observações. Galileu planos inclinados desacelera queda para poder medir. Intervenção humana recria natureza em miniatura para interrogá-la',
-        connections: ['ponte-metodologica', 'reproducibilidade', 'controle-variaveis'],
+        description: 'Isolar variáveis, criar condições controladas, replicar observações',
+        connections: ["ponte-metodologica", "plano-inclinado-galileu", "reproducibilidade"],
         color: '#8b5cf6',
         layer: 1
     },
     'recriacao-real': {
         name: 'Recriação do Real',
-        description: 'Fase 3 do salto: nova ciência gera tecnologias que transformam mundo material. Física→máquinas vapor, Química→indústria química, Computação→era digital. Mundo como objeto intervenção humana',
-        connections: ['salto-dialetico', 'revolucao-industrial', 'industria-quimica', 'era-digital'],
+        description: 'Fase 3: nova ciência gera tecnologias que transformam mundo material',
+        connections: ["salto-dialetico", "revolucao-industrial", "industria-quimica", "era-digital"],
         color: '#8b5cf6',
         layer: 1
     },
     'revolucao-industrial': {
         name: 'Revolução Industrial',
-        description: 'Física newtoniana materializada em máquinas a vapor, ferrovias, fábricas. Não apenas descrição melhor do mundo — TRANSFORMAÇÃO do mundo. Novo paradigma filosófico (universo como máquina)',
-        connections: ['aristoteles-newton', 'recriacao-real', 'forcas-produtivas', 'capitalismo'],
+        description: 'Física newtoniana materializada em máquinas a vapor, ferrovias, fábricas',
+        connections: ["aristoteles-newton", "recriacao-real", "forcas-produtivas", "capitalismo"],
         color: '#ef4444',
         layer: 0
     },
     'alquimia-quimica': {
         name: 'Alquimia → Química',
-        description: 'Segundo salto: proto-ciência hermética → ciência quantitativa elementos. Crise (não sistematiza) → Ponte (balança Lavoisier, nomenclatura) → Recriação (síntese ureia, indústria química)',
-        connections: ['filosofia-ciencia', 'balanca-lavoisier', 'conservacao-massa', 'industria-quimica'],
+        description: 'Segundo salto: proto-ciência hermética → ciência quantitativa dos elementos',
+        connections: ["filosofia-ciencia", "balanca-lavoisier", "conservacao-massa", "industria-quimica"],
         color: '#ef4444',
         layer: -1
     },
     'balanca-lavoisier': {
         name: 'Balança Analítica de Lavoisier',
-        description: 'Instrumento que quantifica massa, provando conservação e destruindo ideia alquímica de "essências" adicionáveis/removíveis. Matéria é matéria, quantificável',
-        connections: ['alquimia-quimica', 'instrumentos-cientificos', 'conservacao-massa'],
+        description: 'Instrumento que quantifica massa, provando conservação e destruindo alquimia',
+        connections: ["alquimia-quimica", "instrumentos-cientificos", "conservacao-massa"],
         color: '#ef4444',
         layer: -1
     },
     'conservacao-massa': {
         name: 'Lei da Conservação da Massa',
-        description: 'Nada se cria, nada se perde — massa total constante em reações químicas. Lavoisier destrói alquimia via quantificação rigorosa',
-        connections: ['balanca-lavoisier', 'nomenclatura-sistematica', 'materialismo-cientifico'],
+        description: 'Nada se cria, nada se perde — massa total é constante em reações químicas',
+        connections: ["balanca-lavoisier", "nomenclatura-sistematica", "materialismo-cientifico"],
         color: '#ef4444',
         layer: -1
     },
     'nomenclatura-sistematica': {
         name: 'Nomenclatura Química Sistemática',
-        description: 'Abandono de símbolos herméticos (☽ prata, ☿ mercúrio), criação nomes descritivos baseados composição (H₂O). Linguagem torna-se ferramenta operacional não poética',
-        connections: ['alquimia-quimica', 'linguagem-operacional'],
+        description: 'Abandono de símbolos herméticos, criação de linguagem descritiva (H₂O)',
+        connections: ["alquimia-quimica", "linguagem-operacional"],
         color: '#ef4444',
         layer: -1
     },
     'industria-quimica': {
         name: 'Indústria Química',
-        description: 'Química materializada: fertilizantes (Haber-Bosch), corantes sintéticos, plásticos, medicamentos. Química transformou materialmente mundo. Humanos CRIAM substâncias não apenas descobrem',
-        connections: ['alquimia-quimica', 'recriacao-real', 'sintese-ureia', 'materialidade-computacao'],
+        description: 'Química materializada: fertilizantes, corantes, plásticos, medicamentos sintéticos',
+        connections: ["alquimia-quimica", "recriacao-real", "sintese-ureia", "materialidade-computacao"],
         color: '#10b981',
         layer: 0
     },
     'sintese-ureia': {
         name: 'Síntese da Ureia (Wöhler 1828)',
-        description: 'Primeira substância orgânica sintetizada artificialmente — quebra barreira vivo/não-vivo. Se compostos orgânicos podem ser sintetizados, talvez vida seja "apenas química"',
-        connections: ['industria-quimica', 'materialismo-cientifico'],
+        description: 'Primeira substância orgânica sintetizada artificialmente — quebra barreira vivo/não-vivo',
+        connections: ["industria-quimica", "materialismo-cientifico"],
         color: '#10b981',
         layer: 0
     },
     'logica-computacao': {
         name: 'Lógica → Computação',
-        description: 'Terceiro salto: cálculo formal pensamento → máquinas universais silício. Crise (lógica abstrata) → Ponte (Turing, Shannon, von Neumann) → Recriação (Era Digital, capitalismo plataforma)',
-        connections: ['filosofia-ciencia', 'maquina-turing', 'circuitos-logicos', 'era-digital'],
+        description: 'Terceiro salto: cálculo formal do pensamento → máquinas universais de silício',
+        connections: ["filosofia-ciencia", "maquina-turing", "circuitos-logicos", "era-digital"],
         color: '#6366f1',
         layer: 0
     },
     'maquina-turing': {
         name: 'Máquina de Turing',
-        description: 'Experimento mental (1936): qualquer computação redutível a operações simples (leia, escreva, mova, repita). Inicialmente filosofia, continha semente materialização',
-        connections: ['logica-computacao', 'instrumentos-cientificos', 'arquitetura-von-neumann', 'teoria-computabilidade'],
+        description: 'Experimento mental (1936): qualquer computação redutível a operações simples',
+        connections: ["logica-computacao", "instrumentos-cientificos", "arquitetura-von-neumann", "teoria-computabilidade"],
         color: '#6366f1',
         layer: 0
     },
     'circuitos-logicos': {
         name: 'Circuitos Lógicos',
-        description: 'Claude Shannon: operações booleanas (AND/OR/NOT) implementáveis em circuitos elétricos. De repente filosofia da lógica se torna ENGENHARIA',
-        connections: ['logica-computacao', 'portas-logicas', 'shannon'],
+        description: 'Claude Shannon: operações booleanas (AND/OR/NOT) implementáveis em eletrônica',
+        connections: ["logica-computacao", "portas-logicas", "shannon"],
         color: '#6366f1',
         layer: 0
     },
     'arquitetura-von-neumann': {
         name: 'Arquitetura de von Neumann',
-        description: 'Modelo computador programa armazenado — base todos computadores modernos. Transformou lógica abstrata em MÁQUINAS UNIVERSAIS. Pensamento tornou-se máquina',
-        connections: ['maquina-turing', 'computador-universal', 'cibernetica'],
+        description: 'Modelo de computador de programa armazenado — base de todos computadores modernos',
+        connections: ["maquina-turing", "computador-universal", "cibernetica"],
         color: '#6366f1',
         layer: 0
     },
     'era-digital': {
         name: 'Era Digital',
-        description: 'Lógica materializada: ciberespaço (novo território), subjetividade algorítmica (algoritmos constituem sujeitos), capitalismo plataforma. Lógica não apenas processa informação — CONSTITUI existência humana',
-        connections: ['logica-computacao', 'recriacao-real', 'capitalismo-plataforma', 'sujeito-automatico'],
+        description: 'Lógica materializada: ciberespaço, algoritmos constituindo sujeitos, internet',
+        connections: ["logica-computacao", "recriacao-real", "capitalismo-plataforma", "sujeito-automatico"],
         color: '#6366f1',
         layer: 0
     },
     'condicoes-materiais-salto': {
         name: 'Condições Materiais do Salto',
-        description: 'Saltos exigem: (1) infraestrutura tecnológica, (2) relações sociais adequadas, (3) hegemonia cultural. Por que alguns saltos completam e outros abortam?',
-        connections: ['salto-dialetico', 'infraestrutura-tecnologica', 'relacoes-producao', 'hegemonia-cultural'],
+        description: 'Saltos exigem infraestrutura, relações sociais e hegemonia cultural adequadas',
+        connections: ["salto-dialetico", "infraestrutura-tecnologica", "relacoes-producao", "hegemonia-cultural"],
         color: '#8b5cf6',
         layer: 1
     },
     'infraestrutura-tecnologica': {
         name: 'Infraestrutura Tecnológica',
-        description: 'Base material prévia necessária. Galileu precisou vidro qualidade para telescópio, revolução digital precisou transistores. Países periféricos não replicam saltos por ausência infraestrutura acumulada (não falta inteligência)',
-        connections: ['condicoes-materiais-salto', 'dependencia-tecnologica', 'cadeia-suprimentos'],
+        description: 'Base material prévia necessária (vidro para telescópio, silício para chips)',
+        connections: ["condicoes-materiais-salto", "dependencia-tecnologica", "cadeia-suprimentos"],
         color: '#8b5cf6',
         layer: 1
     },
     'hegemonia-cultural': {
         name: 'Hegemonia Cultural',
-        description: 'Consenso ativo sobre racionalidade (Gramsci). Saltos precisam aceitação cultural. Alquimia→Química exigiu Iluminismo dessacralizar natureza. Hoje: saltos ecológicos/decoloniais encontram resistência hegemônica neoliberal',
-        connections: ['condicoes-materiais-salto', 'iluminismo', 'dessacralizacao-natureza', 'cosmotecnica'],
+        description: 'Consenso ativo sobre racionalidade (Gramsci) — saltos precisam ser aceitos culturalmente',
+        connections: ["condicoes-materiais-salto", "iluminismo", "dessacralizacao-natureza", "cosmotecnica"],
         color: '#8b5cf6',
         layer: 1
     },
     'iluminismo': {
         name: 'Iluminismo',
-        description: 'Projeto cultural: razão universal, progresso linear, instrumentalização natureza. Kant "Sapere aude" (ouse saber). Preparou terreno cultural para saltos científicos modernos',
-        connections: ['hegemonia-cultural', 'sapere-aude', 'universalismo-racionalista', 'ultrarracionalismo'],
+        description: 'Projeto cultural: razão universal, progresso linear, instrumentalização da natureza',
+        connections: ["hegemonia-cultural", "sapere-aude", "universalismo-racionalista", "ultrarracionalismo"],
         color: '#8b5cf6',
         layer: 1
     },
     'sapere-aude': {
         name: 'Sapere Aude (Kant)',
-        description: '"Ouse saber" — lema iluminista razão liberada de superstição. Luz razão dissiparia trevas ignorância. Emancipação via conhecimento',
-        connections: ['iluminismo', 'emancipacao-racional'],
+        description: '\"Ouse saber\" — lema iluminista da razão liberada de superstição',
+        connections: ["iluminismo", "emancipacao-racional"],
         color: '#8b5cf6',
         layer: 1
     },
     'dessacralizacao-natureza': {
         name: 'Dessacralização da Natureza',
-        description: 'Natureza deixa ser sagrada, torna-se recurso quantificável explorável. Não é pecado profaná-la, matematizá-la, instrumentalizá-la. Projeto cultural que permitiu saltos científicos modernos',
-        connections: ['hegemonia-cultural', 'matematizacao', 'extrativismo', 'cosmotecnica'],
+        description: 'Natureza deixa de ser sagrada, torna-se recurso quantificável e explorável',
+        connections: ["hegemonia-cultural", "matematizacao", "extrativismo", "cosmotecnica"],
         color: '#8b5cf6',
         layer: 1
     },
     'saltos-abortados': {
         name: 'Saltos Abortados',
-        description: 'Transformações impedidas por: (1) repressão direta (destruição física), (2) cooptação capitalista (neutralizar conteúdo político), (3) limitação epistêmica (colonização imaginação)',
-        connections: ['salto-dialetico', 'repressao-direta', 'cooptacao-capitalista', 'colonizacao-imaginacao'],
+        description: 'Transformações impedidas por repressão, cooptação ou limitação epistêmica',
+        connections: ["salto-dialetico", "repressao-direta", "cooptacao-capitalista", "colonizacao-imaginacao"],
         color: '#ef4444',
         layer: 0
     },
     'repressao-direta': {
         name: 'Repressão Direta',
-        description: 'Destruição física infraestrutura revolucionária. Cybersyn queimado 1973 (Pinochet), Panteras Negras assassinados (COINTELPRO), Primavera Árabe esmagada. Assassinato de possibilidade',
-        connections: ['saltos-abortados', 'golpe-chile', 'cointelpro', 'terrorismo-estado'],
+        description: 'Destruição física de infraestrutura revolucionária (Cybersyn queimado, Panteras mortos)',
+        connections: ["saltos-abortados", "golpe-chile", "cointelpro", "terrorismo-estado"],
         color: '#ef4444',
         layer: 0
     },
     'golpe-chile': {
         name: 'Golpe no Chile (1973)',
-        description: 'Pinochet destrói Cybersyn, mata/exila técnicos. Não foi "falha técnica" — foi assassinato deliberado de possibilidade. Sala Operações queimada, computadores destruídos',
-        connections: ['repressao-direta', 'cybersyn', 'allende'],
+        description: 'Pinochet destrói Cybersyn, mata/exila técnicos — assassinato de possibilidade',
+        connections: ["repressao-direta", "cybersyn", "allende"],
         color: '#ef4444',
         layer: 0
     },
     'cooptacao-capitalista': {
         name: 'Cooptação Capitalista',
-        description: 'Capital metaboliza críticas despolitizando via mercantilização. Contracultura→publicidade rebeldia, feminismo→girl boss, open source→Big Tech usa Linux grátis lucra bilhões',
-        connections: ['saltos-abortados', 'neutralizar-conteudo', 'feminismo-girlboss', 'opensource-bigtech'],
+        description: 'Capital metaboliza críticas, despolitiza via mercantilização (contracultura→publicidade)',
+        connections: ["saltos-abortados", "neutralizar-conteudo", "feminismo-girlboss", "opensource-bigtech"],
         color: '#10b981',
         layer: 0
     },
     'neutralizar-conteudo': {
         name: 'Neutralizar Conteúdo, Manter Forma',
-        description: 'Padrão cooptação: aceitar forma radical mas esvaziar conteúdo revolucionário. Cooperativas→Uber "cooperativo" (forma cooperativa, conteúdo capitalista), blockchain→especulação (P2P forma, acumulação conteúdo)',
-        connections: ['cooptacao-capitalista', 'cooperativas-uber', 'blockchain-especulativo', 'greenwashing'],
+        description: 'Padrão: aceitar forma radical mas esvaziar conteúdo revolucionário',
+        connections: ["cooptacao-capitalista", "cooperativas-uber", "blockchain-especulativo", "greenwashing"],
         color: '#10b981',
         layer: 0
     },
     'feminismo-girlboss': {
         name: 'Feminismo → Girl Boss',
-        description: 'Movimento anticapitalista reduzido a empoderamento individual no mercado (Sheryl Sandberg "Lean In"). Feminismo como técnica ascender DENTRO capitalismo não superá-lo',
-        connections: ['cooptacao-capitalista', 'neoliberalismo-progressista'],
+        description: 'Movimento anticapitalista reduzido a empoderamento individual no mercado (Lean In)',
+        connections: ["cooptacao-capitalista", "neoliberalismo-progressista"],
         color: '#10b981',
         layer: 0
     },
     'opensource-bigtech': {
         name: 'Open Source → Big Tech',
-        description: 'Software livre capturado: Google/Facebook/Amazon usam Linux/Kubernetes/Apache gratuitamente, lucram bilhões, não retribuem proporcionalmente. Commons capturado por capital',
-        connections: ['cooptacao-capitalista', 'commons-digital', 'extracao-valor'],
+        description: 'Software livre capturado: Google/Facebook usam Linux/Apache gratuitamente, lucram bilhões',
+        connections: ["cooptacao-capitalista", "commons-digital", "extracao-valor"],
         color: '#10b981',
         layer: 0
     },
     'colonizacao-imaginacao': {
         name: 'Colonização da Imaginação',
-        description: 'Incapacidade conceber alternativas — realismo capitalista (Mark Fisher). "Mais fácil imaginar fim do mundo que fim do capitalismo". TINA (There Is No Alternative)',
-        connections: ['saltos-abortados', 'realismo-capitalista', 'tina', 'cosmotecnica'],
+        description: 'Incapacidade de conceber alternativas — realismo capitalista (Mark Fisher)',
+        connections: ["saltos-abortados", "realismo-capitalista", "tina", "cosmotecnica"],
         color: '#ef4444',
         layer: 0
     },
     'realismo-capitalista': {
         name: 'Realismo Capitalista',
-        description: 'Mark Fisher: capitalismo apresentado como horizonte insuperável. Não conseguimos IMAGINAR alternativas então não lutamos por elas. Expandir imaginário político = pré-condição saltos emancipatórios',
-        connections: ['colonizacao-imaginacao', 'hegemonia', 'naturalizacao-capitalismo'],
+        description: '\"Mais fácil imaginar fim do mundo que fim do capitalismo\" (Mark Fisher)',
+        connections: ["colonizacao-imaginacao", "hegemonia", "naturalizacao-capitalismo"],
         color: '#ef4444',
         layer: 0
     },
     'tina': {
         name: 'TINA (There Is No Alternative)',
-        description: 'Slogan thatcherista: neoliberalismo como única racionalidade possível. Cosmotécnicas plurais mostram: racionalidades alternativas JÁ EXISTEM, funcionaram milênios, produziram civilizações complexas sem capitalismo',
-        connections: ['realismo-capitalista', 'hegemonia', 'cosmotecnica'],
+        description: 'Slogan thatcherista: neoliberalismo como única racionalidade possível',
+        connections: ["realismo-capitalista", "hegemonia", "cosmotecnica"],
         color: '#ef4444',
         layer: 0
     },
     'salto-livro': {
         name: 'O Salto Que Este Livro Tenta',
-        description: 'Meta-reflexão: livro como Fases 1-2 do salto (teoria + instrumentos conceituais), leitor completa Fase 3 com prática (organizar cooperativas, implementar protocolos, construir redes mesh)',
-        connections: ['salto-dialetico', 'teoria-pratica', 'leitor-construtor', 'praxis'],
+        description: 'Meta-reflexão: livro como Fases 1-2 do salto, leitor completa Fase 3 com prática',
+        connections: ["salto-dialetico", "teoria-pratica", "leitor-construtor", "praxis"],
         color: '#8b5cf6',
         layer: 1
     },
     'leitor-construtor': {
         name: 'De Leitor a Construtor',
-        description: 'Fase 3 pendente: organizar cooperativas plataforma (CoopCycle/Resonate código aberto disponível), implementar protocolos federados (Matrix/Mastodon funcionais AGORA), construir redes mesh (indígenas já fazem, aprender/replicar), pressionar políticas públicas (tributação Big Tech, RBU)',
-        connections: ['salto-livro', 'cooperativas-plataforma', 'protocolos-federados', 'redes-mesh', 'politicas-publicas'],
+        description: 'Fase 3 pendente: organizar cooperativas, implementar protocolos, construir redes mesh',
+        connections: ["salto-livro", "cooperativas-plataforma", "protocolos-federados", "redes-mesh", "politicas-publicas"],
         color: '#8b5cf6',
         layer: 1
     },
     'espiral-dialetica': {
         name: 'Espiral Dialética',
-        description: 'Conhecimento não linear nem circular — espiral ascendente acumulando complexidade. Cada salto ACUMULA conhecimento, expande possibilidades. Não há "fim da história"',
-        connections: ['tese-antitese-sintese', 'progresso-nao-linear', 'acumulacao-conhecimento'],
+        description: 'Conhecimento não linear nem circular — espiral ascendente acumulando complexidade',
+        connections: ["tese-antitese-sintese", "progresso-nao-linear", "acumulacao-conhecimento"],
         color: '#8b5cf6',
         layer: 1
     },
     'humildade-epistemologica': {
         name: 'Humildade Epistemológica',
-        description: 'Toda síntese é provisória — novas crises gerarão novos saltos (INCLUSIVE ESTE LIVRO). Não há verdade final. Complexidade crescente = evolução (não bug, é feature)',
-        connections: ['espiral-dialetica', 'falibilismo', 'conhecimento-processo'],
+        description: 'Toda síntese é provisória — novas crises gerarão novos saltos (inclusive deste livro)',
+        connections: ["espiral-dialetica", "falibilismo", "conhecimento-processo"],
         color: '#8b5cf6',
         layer: 1
     },
     'urgencia-etica': {
         name: 'Urgência Ética',
-        description: 'Saltos atuais (IA, computação quântica, bioengenharia) exigem direcionamento consciente. TEMPO É LIMITADO. Responsabilidade coletiva direcionar saltos para fins emancipatórios não opressivos',
-        connections: ['salto-dialetico', 'ia-salto-andamento', 'responsabilidade-coletiva'],
+        description: 'Saltos atuais (IA, quântica, bio) exigem direcionamento consciente — tempo é limitado',
+        connections: ["salto-dialetico", "ia-salto-andamento", "responsabilidade-coletiva"],
         color: '#ef4444',
         layer: 0
     },
     'ia-salto-andamento': {
         name: 'IA como Salto em Andamento',
-        description: 'De lógica determinística (Turing) → sistemas probabilísticos (redes neurais). Fase 1 (lógica booleana não lida ambiguidade), Fase 2 (LLMs, GPUs, Big Data), Fase 3 (recriar mundo — MAS quem controla?)',
-        connections: ['urgencia-etica', 'ia', 'crise-paradigma-booleano', 'democracia-aumentada-vs-totalitarismo'],
+        description: 'De lógica determinística (Turing) → sistemas probabilísticos (redes neurais) — quem controla?',
+        connections: ["urgencia-etica", "ia", "crise-paradigma-booleano", "democracia-aumentada-vs-totalitarismo"],
         color: '#6366f1',
         layer: 0
     },
     'crise-paradigma-booleano': {
         name: 'Crise do Paradigma Booleano',
-        description: 'Lógica True/False inadequada para ambiguidade (linguagem natural, reconhecimento padrões complexos). Redes neurais são caixa-preta probabilística — nova ontologia computacional emergindo',
-        connections: ['ia-salto-andamento', 'logica-computacao', 'emergencia'],
+        description: 'Lógica True/False inadequada para ambiguidade — redes neurais são caixa-preta probabilística',
+        connections: ["ia-salto-andamento", "logica-computacao", "emergencia"],
         color: '#6366f1',
         layer: 0
     },
     'democracia-aumentada-vs-totalitarismo': {
         name: 'Democracia Aumentada vs Totalitarismo',
-        description: 'Bifurcação: IA pode gerar Cybersyn 2.0 (democracia econômica tempo real) OU Social Credit System global (totalitarismo algorítmico). DECISÃO TOMADA AGORA enquanto você lê. Caps 21+25 urgentes',
-        connections: ['ia-salto-andamento', 'cybersyn', 'soberania-digital', 'vigilancia'],
+        description: 'Bifurcação: IA pode gerar Cybersyn 2.0 OU Social Credit System global',
+        connections: ["ia-salto-andamento", "cybersyn", "soberania-digital", "vigilancia"],
         color: '#6366f1',
         layer: 0
     }

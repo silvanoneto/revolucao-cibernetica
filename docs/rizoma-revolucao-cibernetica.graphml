@@ -686,6 +686,138 @@
       <data key="color">#dc2626</data>
       <data key="layer">0</data>
     </node>
+    <node id="capitalismo-racial-digital">
+      <data key="name">Capitalismo Racial Digital</data>
+      <data key="description">Reconhecimento facial erro 34% mulheres negras vs 0,8% homens brancos</data>
+      <data key="color">#dc2626</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="sistema-detecta">
+      <data key="name">Sistema Detecta (Bahia)</data>
+      <data key="description">90% alertas miram jovens homens negros - genocídio algorítmico</data>
+      <data key="color">#dc2626</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="compas">
+      <data key="name">COMPAS (Reincidência)</data>
+      <data key="description">45% falsos positivos negros vs 23% brancos - racismo sistêmico</data>
+      <data key="color">#dc2626</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="clearview-ai">
+      <data key="name">Clearview AI</data>
+      <data key="description">3 bilhões rostos raspados sem consentimento - vigilância total</data>
+      <data key="color">#dc2626</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="economia-politica-odio">
+      <data key="name">Economia Política do Ódio</data>
+      <data key="description">R$ 12M contratos milícias digitais + mercado US$ 78B global</data>
+      <data key="color">#dc2626</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="desinformacao-industrial">
+      <data key="name">Desinformação Industrial</data>
+      <data key="description">6 estágios: produtores→amplificadores→mercenários→plataformas→anunciantes→beneficiários</data>
+      <data key="color">#dc2626</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="cambridge-analytica">
+      <data key="name">Cambridge Analytica</data>
+      <data key="description">87M perfis Facebook → microtargeting psicológico → Brexit/Trump</data>
+      <data key="color">#dc2626</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="crise-epistemica">
+      <data key="name">Crise Epistêmica</data>
+      <data key="description">3 patologias: relativismo tóxico, conspiracionismo hiper-racional, fundamentalismo digital</data>
+      <data key="color">#dc2626</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="fact-checking-estrutural">
+      <data key="name">Por Que Fact-Checking Falha</data>
+      <data key="description">5 razões: assimetria temporal, não atinge bolhas, efeito backfire, assimetria recursos, problema sistêmico</data>
+      <data key="color">#dc2626</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="reformas-infraestruturais">
+      <data key="name">7 Reformas Infraestruturais</data>
+      <data key="description">Educação midiática, transparência algorítmica, desmonetização ódio, responsabilização plataformas, etc.</data>
+      <data key="color">#10b981</data>
+      <data key="layer">1</data>
+    </node>
+    <node id="vsm-necropolitico">
+      <data key="name">VSM Necropolítico Expandido</data>
+      <data key="description">S1-S5 Facebook Papers: sistema viável para morte não democracia</data>
+      <data key="color">#dc2626</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="facebook-papers">
+      <data key="name">Facebook Papers</data>
+      <data key="description">Documentos internos: Zuckerberg sabia algoritmos matavam, priorizou lucro</data>
+      <data key="color">#dc2626</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="frances-haugen">
+      <data key="name">Frances Haugen (Whistleblower)</data>
+      <data key="description">Ex-cientista dados Facebook expôs algoritmos ódio deliberados</data>
+      <data key="color">#10b981</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="moderacao-trauma">
+      <data key="name">Trauma Moderadores</data>
+      <data key="description">PTSD após visualizar atrocidades 8h/dia - trabalho necropolítico</data>
+      <data key="color">#dc2626</data>
+      <data key="layer">0</data>
+    </node>
+    <node id="resistencia-bem-sucedida">
+      <data key="name">Resistência Bem-Sucedida</data>
+      <data key="description">Sleeping Giants R$ 30M cortados, TSE 700M posts removidos, DSA 6% multas</data>
+      <data key="color">#10b981</data>
+      <data key="layer">1</data>
+    </node>
+    <node id="sleeping-giants">
+      <data key="name">Sleeping Giants Brasil</data>
+      <data key="description">Campanha cortou R$ 30M publicidade sites ódio - boicote funciona</data>
+      <data key="color">#10b981</data>
+      <data key="layer">1</data>
+    </node>
+    <node id="tse-2022">
+      <data key="name">TSE Eleições 2022</data>
+      <data key="description">700 milhões posts fake news removidos - regulação possível</data>
+      <data key="color">#10b981</data>
+      <data key="layer">1</data>
+    </node>
+    <node id="dsa-europeia">
+      <data key="name">Digital Services Act (UE)</data>
+      <data key="description">Multas até 6% receita global - responsabilização plataformas</data>
+      <data key="color">#10b981</data>
+      <data key="layer">1</data>
+    </node>
+    <node id="whistleblowers">
+      <data key="name">Whistleblowers (Haugen/Zhang/Wylie)</data>
+      <data key="description">Denunciantes internos expõem crimes corporativos - coragem política</data>
+      <data key="color">#10b981</data>
+      <data key="layer">1</data>
+    </node>
+    <node id="autocuidado-militante">
+      <data key="name">Autocuidado Militante</data>
+      <data key="description">10 sinais PTSD + 7 estratégias individuais + 6 práticas coletivas</data>
+      <data key="color">#10b981</data>
+      <data key="layer">1</data>
+    </node>
+    <node id="alegria-militante">
+      <data key="name">Alegria Militante</data>
+      <data key="description">Audre Lorde: autocuidado não indulgência, é guerra política - contra cinismo necropolitico</data>
+      <data key="color">#10b981</data>
+      <data key="layer">1</data>
+    </node>
+    <node id="cuidado-coletivo">
+      <data key="name">Cuidado Coletivo</data>
+      <data key="description">6 práticas: check-ins emocionais, rodízio tarefas pesadas, espaços descompressão, terapia grupo, rituais celebração, cultura não-julgamento</data>
+      <data key="color">#10b981</data>
+      <data key="layer">1</data>
+    </node>
     <node id="viralizacao">
       <data key="name">Viralização</data>
       <data key="description">Feedback positivo social (engajamento exponencial)</data>
@@ -1301,6 +1433,59 @@
     <edge source="necropolitica-digital" target="gabinete-odio"/>
     <edge source="gabinete-odio" target="feedback-positivo"/>
     <edge source="gabinete-odio" target="viralizacao"/>
+    <edge source="gabinete-odio" target="economia-politica-odio"/>
+    <edge source="capitalismo-racial-digital" target="necropolitica-digital"/>
+    <edge source="capitalismo-racial-digital" target="discriminacao-algoritmica"/>
+    <edge source="capitalismo-racial-digital" target="sistema-detecta"/>
+    <edge source="capitalismo-racial-digital" target="compas"/>
+    <edge source="sistema-detecta" target="necropolitica-digital"/>
+    <edge source="sistema-detecta" target="vigilancia-preditiva"/>
+    <edge source="compas" target="discriminacao-algoritmica"/>
+    <edge source="compas" target="justica-preditiva"/>
+    <edge source="clearview-ai" target="capitalismo-racial-digital"/>
+    <edge source="clearview-ai" target="vigilancia-dados"/>
+    <edge source="clearview-ai" target="capitalismo-vigilancia"/>
+    <edge source="economia-politica-odio" target="necropolitica-digital"/>
+    <edge source="economia-politica-odio" target="desinformacao-industrial"/>
+    <edge source="economia-politica-odio" target="cambridge-analytica"/>
+    <edge source="desinformacao-industrial" target="gabinete-odio"/>
+    <edge source="desinformacao-industrial" target="capitalismo-vigilancia"/>
+    <edge source="cambridge-analytica" target="capitalismo-vigilancia"/>
+    <edge source="cambridge-analytica" target="engenharia-comportamento"/>
+    <edge source="crise-epistemica" target="economia-politica-odio"/>
+    <edge source="crise-epistemica" target="fact-checking-estrutural"/>
+    <edge source="crise-epistemica" target="colapso-verdade"/>
+    <edge source="fact-checking-estrutural" target="economia-politica-odio"/>
+    <edge source="fact-checking-estrutural" target="reformas-infraestruturais"/>
+    <edge source="reformas-infraestruturais" target="resistencia-digital"/>
+    <edge source="reformas-infraestruturais" target="dsa-europeia"/>
+    <edge source="vsm-necropolitico" target="necropolitica-digital"/>
+    <edge source="vsm-necropolitico" target="facebook-papers"/>
+    <edge source="vsm-necropolitico" target="frances-haugen"/>
+    <edge source="vsm-necropolitico" target="moderacao-trauma"/>
+    <edge source="facebook-papers" target="frances-haugen"/>
+    <edge source="facebook-papers" target="necropolitica-digital"/>
+    <edge source="frances-haugen" target="resistencia-digital"/>
+    <edge source="moderacao-trauma" target="moderacao-conteudo"/>
+    <edge source="moderacao-trauma" target="autocuidado-militante"/>
+    <edge source="resistencia-bem-sucedida" target="sleeping-giants"/>
+    <edge source="resistencia-bem-sucedida" target="tse-2022"/>
+    <edge source="resistencia-bem-sucedida" target="dsa-europeia"/>
+    <edge source="resistencia-bem-sucedida" target="whistleblowers"/>
+    <edge source="sleeping-giants" target="economia-politica-odio"/>
+    <edge source="sleeping-giants" target="desmonetizacao-odio"/>
+    <edge source="tse-2022" target="desinformacao-industrial"/>
+    <edge source="tse-2022" target="regulacao-plataformas"/>
+    <edge source="dsa-europeia" target="regulacao-plataformas"/>
+    <edge source="whistleblowers" target="frances-haugen"/>
+    <edge source="whistleblowers" target="transparencia-corporativa"/>
+    <edge source="autocuidado-militante" target="resistencia-bem-sucedida"/>
+    <edge source="autocuidado-militante" target="alegria-militante"/>
+    <edge source="autocuidado-militante" target="cuidado-coletivo"/>
+    <edge source="alegria-militante" target="resistencia-bem-sucedida"/>
+    <edge source="alegria-militante" target="necropolitica-digital"/>
+    <edge source="cuidado-coletivo" target="resistencia-bem-sucedida"/>
+    <edge source="cuidado-coletivo" target="organizacao-coletiva"/>
     <edge source="viralizacao" target="dopamina"/>
     <edge source="gamificacao" target="vicio-digital"/>
     <edge source="gamificacao" target="uberizacao"/>
