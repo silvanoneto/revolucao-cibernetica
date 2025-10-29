@@ -44450,17 +44450,6 @@
     <!-- Service Worker (opcional - descomente para habilitar cache offline) -->
     <!-- <script src="./assets/scripts/sw-register.js" defer></script> -->
 
-    <script>
-        // Verificação de entrada - redirecionar se não passou pelo captcha
-        (function () {
-            const passed = sessionStorage.getItem('entry_captcha_passed');
-            if (passed !== 'true') {
-                // Redirecionar para página de entrada com URL de retorno
-                window.location.href = 'entry.html?return=index.html';
-            }
-        })();
-    </script>
-
     <!-- Sistema de Navegação Ternária -->
     <script src="assets/scripts/ternary-navigation.js" defer></script>
 
