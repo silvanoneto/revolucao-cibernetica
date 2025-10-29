@@ -111,7 +111,29 @@ id,name,description,color,layer,connections_count
 "divisao-sexual-trabalho","Divisão Sexual do Trabalho","Segregação de gênero no trabalho digital","#ec4899",0,3
 "moderacao-conteudo","Moderação de Conteúdo","Trabalho traumático invisibilizado nas plataformas","#ef4444",0,3
 "necropolitica-digital","Necropolítica Digital","Algoritmos que decidem quem vive e quem morre (Mbembe)","#dc2626",0,5
-"gabinete-odio","Gabinete do Ódio","Feedback positivo amplificando genocídio via algoritmos","#dc2626",0,3
+"gabinete-odio","Gabinete do Ódio","Feedback positivo amplificando genocídio via algoritmos","#dc2626",0,4
+"capitalismo-racial-digital","Capitalismo Racial Digital","Reconhecimento facial erro 34% mulheres negras vs 0,8% homens brancos","#dc2626",0,4
+"sistema-detecta","Sistema Detecta (Bahia)","90% alertas miram jovens homens negros - genocídio algorítmico","#dc2626",0,3
+"compas","COMPAS (Reincidência)","45% falsos positivos negros vs 23% brancos - racismo sistêmico","#dc2626",0,3
+"clearview-ai","Clearview AI","3 bilhões rostos raspados sem consentimento - vigilância total","#dc2626",0,3
+"economia-politica-odio","Economia Política do Ódio","R$ 12M contratos milícias digitais + mercado US$ 78B global","#dc2626",0,4
+"desinformacao-industrial","Desinformação Industrial","6 estágios: produtores→amplificadores→mercenários→plataformas→anunciantes→beneficiários","#dc2626",0,3
+"cambridge-analytica","Cambridge Analytica","87M perfis Facebook → microtargeting psicológico → Brexit/Trump","#dc2626",0,3
+"crise-epistemica","Crise Epistêmica","3 patologias: relativismo tóxico, conspiracionismo hiper-racional, fundamentalismo digital","#dc2626",0,3
+"fact-checking-estrutural","Por Que Fact-Checking Falha","5 razões: assimetria temporal, não atinge bolhas, efeito backfire, assimetria recursos, problema sistêmico","#dc2626",0,3
+"reformas-infraestruturais","7 Reformas Infraestruturais","Educação midiática, transparência algorítmica, desmonetização ódio, responsabilização plataformas, etc.","#10b981",1,3
+"vsm-necropolitico","VSM Necropolítico Expandido","S1-S5 Facebook Papers: sistema viável para morte não democracia","#dc2626",0,4
+"facebook-papers","Facebook Papers","Documentos internos: Zuckerberg sabia algoritmos matavam, priorizou lucro","#dc2626",0,3
+"frances-haugen","Frances Haugen (Whistleblower)","Ex-cientista dados Facebook expôs algoritmos ódio deliberados","#10b981",0,3
+"moderacao-trauma","Trauma Moderadores","PTSD após visualizar atrocidades 8h/dia - trabalho necropolítico","#dc2626",0,3
+"resistencia-bem-sucedida","Resistência Bem-Sucedida","Sleeping Giants R$ 30M cortados, TSE 700M posts removidos, DSA 6% multas","#10b981",1,4
+"sleeping-giants","Sleeping Giants Brasil","Campanha cortou R$ 30M publicidade sites ódio - boicote funciona","#10b981",1,3
+"tse-2022","TSE Eleições 2022","700 milhões posts fake news removidos - regulação possível","#10b981",1,3
+"dsa-europeia","Digital Services Act (UE)","Multas até 6% receita global - responsabilização plataformas","#10b981",1,3
+"whistleblowers","Whistleblowers (Haugen/Zhang/Wylie)","Denunciantes internos expõem crimes corporativos - coragem política","#10b981",1,3
+"autocuidado-militante","Autocuidado Militante","10 sinais PTSD + 7 estratégias individuais + 6 práticas coletivas","#10b981",1,4
+"alegria-militante","Alegria Militante","Audre Lorde: autocuidado não indulgência, é guerra política - contra cinismo necropolitico","#10b981",1,3
+"cuidado-coletivo","Cuidado Coletivo","6 práticas: check-ins emocionais, rodízio tarefas pesadas, espaços descompressão, terapia grupo, rituais celebração, cultura não-julgamento","#10b981",1,3
 "viralizacao","Viralização","Feedback positivo social (engajamento exponencial)","#f97316",0,3
 "gamificacao","Gamificação","Mecânicas de jogo aplicadas para maximizar engajamento","#f97316",0,3
 "cybersyn","Proyecto Cybersyn","Cibernética socialista no Chile de Allende (1971-73)","#22c55e",-1,4
